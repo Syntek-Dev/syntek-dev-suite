@@ -1,0 +1,14 @@
+{
+  "name": "syntek-marketplace",
+  "owner": {
+    "name": "Syntek Developers",
+    "url": "https://syntekdevelopers.com"
+  },
+  "plugins": [
+    {
+      "name": "syntek-dev-suite",
+      "source": "./",
+      "description": "Syntek Developers full-stack AI agent suite for Claude Code - includes agents, commands, skills, and templates for TALL, Django, React, and React Native stacks"
+    }
+  ]
+}

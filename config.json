@@ -1,0 +1,276 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "[ -z \"$CLAUDE_FILE_PATH\" ] && exit 0; case \"$CLAUDE_FILE_PATH\" in *[\\\"\\'\\'\\`\\$\\;\\|\\&]*) exit 1;; esac; if [ -f .ddev/config.yaml ]; then ddev exec ./vendor/bin/pint \"$CLAUDE_FILE_PATH\" >/dev/null 2>&1; elif [ -f manage.py ]; then docker compose exec -T web black \"$CLAUDE_FILE_PATH\" >/dev/null 2>&1; elif [ -f package.json ]; then npx prettier --write \"$CLAUDE_FILE_PATH\" >/dev/null 2>&1; fi"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo ''; echo '---'; echo 'How was this response?'; echo '  /learning:feedback good  - Worked well'; echo '  /learning:feedback bad   - Needs improvement'; echo '---'"
+          },
+          {
+            "type": "command",
+            "command": "notify-send 'Claude Agent' 'Task Completed' || osascript -e 'display notification \"Task Completed\" with title \"Claude Agent\"'"
+          }
+        ]
+      }
+    ]
+  },
+  "tools": [
+    {
+      "name": "ddev_status",
+      "description": "Checks the status of running DDEV containers. Use this before running commands to ensure the environment is up.",
+      "input_schema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      },
+      "execution": {
+        "type": "command",
+        "command": "/home/sam-dev/claude-dev-team/plugins/ddev-tool.py"
+      }
+    },
+    {
+      "name": "docker_status",
+      "description": "Checks the status of raw Docker containers (Django/React). Use this to see running ports and container names.",
+      "input_schema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      },
+      "execution": {
+        "type": "command",
+        "command": "/home/sam-dev/claude-dev-team/plugins/docker-tool.py"
+      }
+    },
+    {
+      "name": "git_status",
+      "description": "Gets Git repository information including current branch, remotes, recent commits, and tags. Use this for CI/CD and version control operations.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "command": {
+            "type": "string",
+            "description": "Subcommand: status, branches, remotes, commits, tags, stash, host, installed",
+            "enum": ["status", "branches", "remotes", "commits", "tags", "stash", "host", "installed"]
+          }
+        },
+        "required": []
+      },
+      "execution": {
+        "type": "command",
+        "command": "/home/sam-dev/claude-dev-team/plugins/git-tool.py ${command:-status}"
+      }
+    },
+    {
+      "name": "env_status",
+      "description": "Discovers and parses environment files (.env, .env.dev, .env.test, etc.). Use this to check configuration and compare environments.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "command": {
+            "type": "string",
+            "description": "Subcommand: find, parse, compare, validate, vars",
+            "enum": ["find", "parse", "compare", "validate", "vars"]
+          },
+          "file": {
+            "type": "string",
+            "description": "Path to environment file (for parse command)"
+          }
+        },
+        "required": []
+      },
+      "execution": {
+        "type": "command",
+        "command": "/home/sam-dev/claude-dev-team/plugins/env-tool.py ${command:-find} ${file:-}"
+      }
+    },
+    {
+      "name": "db_status",
+      "description": "Detects database type, ORM, and migration status. Use this before database operations to understand the stack.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "command": {
+            "type": "string",
+            "description": "Subcommand: detect, config, env, orm, migrations",
+            "enum": ["detect", "config", "env", "orm", "migrations"]
+          }
+        },
+        "required": []
+      },
+      "execution": {
+        "type": "command",
+        "command": "/home/sam-dev/claude-dev-team/plugins/db-tool.py ${command:-detect}"
+      }
+    },
+    {
+      "name": "project_info",
+      "description": "Detects project language, framework, and container type. Use this to understand the project stack before making changes.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "command": {
+            "type": "string",
+            "description": "Subcommand: info, language, framework, container, structure",
+            "enum": ["info", "language", "framework", "container", "structure"]
+          }
+        },
+        "required": []
+      },
+      "execution": {
+        "type": "command",
+        "command": "/home/sam-dev/claude-dev-team/plugins/project-tool.py ${command:-info}"
+      }
+    },
+    {
+      "name": "log_status",
+      "description": "Finds log files, detects logging configuration, and analyses errors. Use this for debugging and log analysis.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "command": {
+            "type": "string",
+            "description": "Subcommand: find, config, read, errors, health",
+            "enum": ["find", "config", "read", "errors", "health"]
+          },
+          "file": {
+            "type": "string",
+            "description": "Path to log file (for read/errors commands)"
+          }
+        },
+        "required": []
+      },
+      "execution": {
+        "type": "command",
+        "command": "/home/sam-dev/claude-dev-team/plugins/log-tool.py ${command:-find} ${file:-}"
+      }
+    },
+    {
+      "name": "metrics_status",
+      "description": "Records and queries agent performance metrics for the self-learning system.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "command": {
+            "type": "string",
+            "description": "Subcommand: status, record, query, summary, aggregate, last",
+            "enum": ["status", "record", "query", "summary", "aggregate", "last"]
+          },
+          "agent": {
+            "type": "string",
+            "description": "Agent name (for record, query, summary)"
+          }
+        },
+        "required": []
+      },
+      "execution": {
+        "type": "command",
+        "command": "/home/sam-dev/claude-dev-team/plugins/metrics-tool.py ${command:-status} ${agent:-}"
+      }
+    },
+    {
+      "name": "feedback_status",
+      "description": "Records and queries user feedback for agent runs.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "command": {
+            "type": "string",
+            "description": "Subcommand: status, record, query, analyse, prompt",
+            "enum": ["status", "record", "query", "analyse", "prompt"]
+          },
+          "rating": {
+            "type": "string",
+            "description": "Feedback rating: good, bad, skip",
+            "enum": ["good", "bad", "skip"]
+          }
+        },
+        "required": []
+      },
+      "execution": {
+        "type": "command",
+        "command": "/home/sam-dev/claude-dev-team/plugins/feedback-tool.py ${command:-status} ${rating:-}"
+      }
+    },
+    {
+      "name": "quality_check",
+      "description": "Runs linters and measures code quality metrics.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "command": {
+            "type": "string",
+            "description": "Subcommand: status, check, lint, stack",
+            "enum": ["status", "check", "lint", "stack"]
+          }
+        },
+        "required": []
+      },
+      "execution": {
+        "type": "command",
+        "command": "/home/sam-dev/claude-dev-team/plugins/quality-tool.py ${command:-status}"
+      }
+    },
+    {
+      "name": "ab_test",
+      "description": "Manages A/B tests for agent prompt variants.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "command": {
+            "type": "string",
+            "description": "Subcommand: list, status, select, conclude, update",
+            "enum": ["list", "status", "select", "conclude", "update"]
+          },
+          "agent": {
+            "type": "string",
+            "description": "Agent name"
+          }
+        },
+        "required": []
+      },
+      "execution": {
+        "type": "command",
+        "command": "/home/sam-dev/claude-dev-team/plugins/ab-test-tool.py ${command:-list} ${agent:-}"
+      }
+    },
+    {
+      "name": "optimiser_status",
+      "description": "Analyses agent performance and manages prompt optimisation proposals.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "command": {
+            "type": "string",
+            "description": "Subcommand: status, analyse, context, list, get, apply, reject, rollback",
+            "enum": ["status", "analyse", "context", "list", "get", "apply", "reject", "rollback"]
+          },
+          "agent": {
+            "type": "string",
+            "description": "Agent name (for analyse, rollback)"
+          },
+          "proposal_id": {
+            "type": "string",
+            "description": "Proposal ID (for get, apply, reject)"
+          }
+        },
+        "required": []
+      },
+      "execution": {
+        "type": "command",
+        "command": "/home/sam-dev/claude-dev-team/plugins/optimiser-tool.py ${command:-status} ${agent:-} ${proposal_id:-}"
+      }
+    }
+  ]
+}

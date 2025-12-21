@@ -1,0 +1,19 @@
+{
+  "name": "syntek-dev-suite",
+  "version": "1.0.0",
+  "description": "Syntek Developers full-stack AI agent suite for Claude Code",
+  "author": {
+    "name": "Syntek Developers",
+    "url": "https://syntekdevelopers.com"
+  },
+  "keywords": [
+    "claude-code",
+    "ai-agents",
+    "development",
+    "full-stack",
+    "laravel",
+    "django",
+    "react",
+    "react-native"
+  ]
+}

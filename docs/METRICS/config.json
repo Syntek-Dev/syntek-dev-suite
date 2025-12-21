@@ -1,0 +1,18 @@
+{
+  "enabled": true,
+  "feedback_prompt_enabled": true,
+  "feedback_required": true,
+  "ab_testing_enabled": true,
+  "auto_optimisation_enabled": true,
+  "min_runs_for_analysis": 50,
+  "retention_days": 90,
+  "quality_checks": {
+    "run_linter": true,
+    "run_tests": false
+  },
+  "safety_thresholds": {
+    "min_satisfaction_rate": 0.60,
+    "max_rerun_rate": 0.30,
+    "confidence_required": 0.70
+  }
+}
