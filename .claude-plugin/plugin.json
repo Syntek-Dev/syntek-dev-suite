@@ -16,7 +16,7 @@
     "react",
     "react-native"
   ],
-  "commands": "./commands/",
-  "agents": "./agents/",
-  "skills": "./skills/"
+  "commands": "./commands/*.md",
+  "agents": "./agents/*.md",
+  "skills": "./skills/**/*.md"
 }
