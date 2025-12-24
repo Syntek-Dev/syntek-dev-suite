@@ -15,8 +15,5 @@
     "django",
     "react",
     "react-native"
-  ],
-  "commands": "./commands/*.md",
-  "agents": "./agents/*.md",
-  "skills": "./skills/**/*.md"
+  ]
 }
