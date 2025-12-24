@@ -4,21 +4,20 @@
 
 This folder contains the Claude Code plugin configuration files that define the Syntek Dev Suite plugin metadata and marketplace registration. These files are read by Claude Code to identify and load the plugin.
 
-**Version:** 1.0.0
+**Version:** 1.2.0
 
 ---
 
 
 ## Table of Contents
 
-- [.claude-plugin](#claude-plugin)
-  - [Overview](#overview)
-  - [Table of Contents](#table-of-contents)
-  - [Directory Tree](#directory-tree)
-  - [Files](#files)
-  - [Usage](#usage)
-    - [Plugin Installation](#plugin-installation)
-  - [Related Sections](#related-sections)
+- [Overview](#overview)
+- [Table of Contents](#table-of-contents)
+- [Directory Tree](#directory-tree)
+- [Files](#files)
+- [Usage](#usage)
+  - [Plugin Installation](#plugin-installation)
+- [Related Sections](#related-sections)
 
 ## Directory Tree
 
@@ -33,10 +32,10 @@ This folder contains the Claude Code plugin configuration files that define the 
 
 ## Files
 
-| File | Purpose |
-|------|---------|
-| `plugin.json` | Defines the plugin name, version, description, author, and keywords for Claude Code |
-| `marketplace.json` | Registers the plugin with the Syntek marketplace and defines available plugins |
+| File               | Purpose                                                                             |
+| ------------------ | ----------------------------------------------------------------------------------- |
+| `plugin.json`      | Defines the plugin name, version, description, author, and keywords for Claude Code |
+| `marketplace.json` | Registers the plugin with the Syntek marketplace and defines available plugins      |
 
 ---
 

@@ -8,41 +8,40 @@ Use this template to set up a headless Django/Wagtail backend with PostgreSQL th
 
 ## Table of Contents
 
-- [Django/Wagtail Headless Backend Template](#djangowagtail-headless-backend-template)
-  - [Table of Contents](#table-of-contents)
-  - [Architecture Overview](#architecture-overview)
-  - [Template Repository](#template-repository)
-    - [Creating a New Project from Template](#creating-a-new-project-from-template)
-    - [Post-Clone Setup](#post-clone-setup)
-  - [Project CLAUDE.md](#project-claudemd)
-  - [GraphQL API](#graphql-api)
-    - [Endpoint](#endpoint)
-    - [Authentication](#authentication)
-    - [Example Query](#example-query)
-    - [Example Mutation](#example-mutation)
-  - [Code Conventions](#code-conventions)
-    - [Django/Views](#djangoviews)
-    - [Wagtail (Headless)](#wagtail-headless)
-    - [Type Hinting](#type-hinting)
-  - [Database Schema](#database-schema)
-  - [Commands](#commands)
-    - [.claude/commands/dev.md](#claudecommandsdevmd)
-    - [.claude/commands/test.md](#claudecommandstestmd)
-    - [.claude/commands/staging.md](#claudecommandsstagingmd)
-    - [.claude/commands/production.md](#claudecommandsproductionmd)
-    - [.claude/commands/migrate.md](#claudecommandsmigratemd)
-    - [.claude/commands/schema.md](#claudecommandsschemamd)
-    - [.claude/commands/make-resolver.md](#claudecommandsmake-resolvermd)
-  - [Directory Structure](#directory-structure)
-  - [GraphQL Dependencies](#graphql-dependencies)
-  - [CORS Configuration](#cors-configuration)
-  - [Environment-Specific Command Files](#environment-specific-command-files)
-    - [Required Root-Level Scripts](#required-root-level-scripts)
-    - [dev.sh](#devsh)
-    - [test.sh](#testsh)
-    - [staging.sh](#stagingsh)
-    - [production.sh](#productionsh)
-    - [Command File Permissions](#command-file-permissions)
+- [Table of Contents](#table-of-contents)
+- [Architecture Overview](#architecture-overview)
+- [Template Repository](#template-repository)
+  - [Creating a New Project from Template](#creating-a-new-project-from-template)
+  - [Post-Clone Setup](#post-clone-setup)
+- [Project CLAUDE.md](#project-claudemd)
+- [GraphQL API](#graphql-api)
+  - [Endpoint](#endpoint)
+  - [Authentication](#authentication)
+  - [Example Query](#example-query)
+  - [Example Mutation](#example-mutation)
+- [Code Conventions](#code-conventions)
+  - [Django/Views](#djangoviews)
+  - [Wagtail (Headless)](#wagtail-headless)
+  - [Type Hinting](#type-hinting)
+- [Database Schema](#database-schema)
+- [Commands](#commands)
+  - [.claude/commands/dev.md](#claudecommandsdevmd)
+  - [.claude/commands/test.md](#claudecommandstestmd)
+  - [.claude/commands/staging.md](#claudecommandsstagingmd)
+  - [.claude/commands/production.md](#claudecommandsproductionmd)
+  - [.claude/commands/migrate.md](#claudecommandsmigratemd)
+  - [.claude/commands/schema.md](#claudecommandsschemamd)
+  - [.claude/commands/make-resolver.md](#claudecommandsmake-resolvermd)
+- [Directory Structure](#directory-structure)
+- [GraphQL Dependencies](#graphql-dependencies)
+- [CORS Configuration](#cors-configuration)
+- [Environment-Specific Command Files](#environment-specific-command-files)
+  - [Required Root-Level Scripts](#required-root-level-scripts)
+  - [dev.sh](#devsh)
+  - [test.sh](#testsh)
+  - [staging.sh](#stagingsh)
+  - [production.sh](#productionsh)
+  - [Command File Permissions](#command-file-permissions)
 
 
 ---
@@ -116,16 +115,16 @@ Create this file at `.claude/CLAUDE.md` or `CLAUDE.md` in the project root:
 
 ## Stack Overview
 
-| Component | Technology |
-|-----------|------------|
-| **Type** | Headless Backend (GraphQL API) |
-| **Language** | Python 3.12 |
-| **Framework** | Django 5.x / Wagtail 6.x |
-| **API** | GraphQL (Strawberry or Graphene) |
-| **Database** | PostgreSQL 15 |
-| **Server** | Gunicorn / Nginx |
-| **Testing** | pytest, pytest-django |
-| **Container** | Docker Compose |
+| Component     | Technology                       |
+| ------------- | -------------------------------- |
+| **Type**      | Headless Backend (GraphQL API)   |
+| **Language**  | Python 3.12                      |
+| **Framework** | Django 5.x / Wagtail 6.x         |
+| **API**       | GraphQL (Strawberry or Graphene) |
+| **Database**  | PostgreSQL 15                    |
+| **Server**    | Gunicorn / Nginx                 |
+| **Testing**   | pytest, pytest-django            |
+| **Container** | Docker Compose                   |
 
 ---
 
@@ -148,36 +147,36 @@ Both frontends consume the same GraphQL API and share styling from `stack-shared
 
 ## Environment
 
-| Setting | Value |
-|---------|-------|
-| **Local URL** | http://localhost:8000 |
-| **GraphQL Endpoint** | http://localhost:8000/graphql/ |
-| **GraphQL Playground** | http://localhost:8000/graphql/ (dev only) |
-| **Admin URL** | /admin/ |
-| **Wagtail Admin** | /cms/ |
-| **Database (Dev)** | [project-name]_dev |
-| **Database (Test)** | [project-name]_test |
-| **Database (Staging)** | [project-name]_staging |
-| **Database (Production)** | [project-name]_production |
-| **Locale** | en_GB |
-| **Timezone** | Europe/London |
-| **Currency** | GBP (£) |
+| Setting                   | Value                                     |
+| ------------------------- | ----------------------------------------- |
+| **Local URL**             | http://localhost:8000                     |
+| **GraphQL Endpoint**      | http://localhost:8000/graphql/            |
+| **GraphQL Playground**    | http://localhost:8000/graphql/ (dev only) |
+| **Admin URL**             | /admin/                                   |
+| **Wagtail Admin**         | /cms/                                     |
+| **Database (Dev)**        | [project-name]_dev                        |
+| **Database (Test)**       | [project-name]_test                       |
+| **Database (Staging)**    | [project-name]_staging                    |
+| **Database (Production)** | [project-name]_production                 |
+| **Locale**                | en_GB                                     |
+| **Timezone**              | Europe/London                             |
+| **Currency**              | GBP (£)                                   |
 
 ---
 
 ## Key Locations
 
-| Directory | Purpose |
-|-----------|---------|
-| `apps/core/` | Shared functionality and utilities |
-| `apps/core/schema.py` | Root GraphQL schema |
-| `apps/users/` | User management and authentication |
-| `apps/users/schema.py` | User-related GraphQL types/queries |
-| `apps/content/` | Wagtail content (headless pages, snippets) |
-| `apps/content/schema.py` | Content GraphQL types/queries |
-| `apps/api/` | GraphQL configuration and middleware |
-| `config/settings/` | Environment-specific settings |
-| `tests/` | Test files |
+| Directory                | Purpose                                    |
+| ------------------------ | ------------------------------------------ |
+| `apps/core/`             | Shared functionality and utilities         |
+| `apps/core/schema.py`    | Root GraphQL schema                        |
+| `apps/users/`            | User management and authentication         |
+| `apps/users/schema.py`   | User-related GraphQL types/queries         |
+| `apps/content/`          | Wagtail content (headless pages, snippets) |
+| `apps/content/schema.py` | Content GraphQL types/queries              |
+| `apps/api/`              | GraphQL configuration and middleware       |
+| `config/settings/`       | Environment-specific settings              |
+| `tests/`                 | Test files                                 |
 
 ---
 
@@ -647,12 +646,12 @@ CORS_ALLOW_CREDENTIALS = True
 
 ### Required Root-Level Scripts
 
-| File | Purpose | Environment |
-|------|---------|-------------|
-| `dev.sh` | Start development environment | Development |
-| `test.sh` | Run test suite with test database | Testing |
-| `staging.sh` | Deploy to staging environment | Staging |
-| `production.sh` | Deploy to production environment | Production |
+| File            | Purpose                           | Environment |
+| --------------- | --------------------------------- | ----------- |
+| `dev.sh`        | Start development environment     | Development |
+| `test.sh`       | Run test suite with test database | Testing     |
+| `staging.sh`    | Deploy to staging environment     | Staging     |
+| `production.sh` | Deploy to production environment  | Production  |
 
 ### dev.sh
 

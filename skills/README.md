@@ -6,26 +6,25 @@ This folder contains stack-specific skills that agents use to apply the correct 
 
 Each skill is a `SKILL.md` file within a named folder that provides detailed guidance for agents working with that stack.
 
-**Version:** 1.0.0
+**Version:** 1.2.0
 
 ---
 
 ## Table of Contents
 
-- [Skills](#skills)
-  - [Overview](#overview)
-  - [Table of Contents](#table-of-contents)
-  - [Directory Tree](#directory-tree)
-  - [Available Skills](#available-skills)
-    - [Stack Skills](#stack-skills)
-    - [Global Skill](#global-skill)
-  - [How Skills Work](#how-skills-work)
-    - [Skill Loading Example](#skill-loading-example)
-  - [Usage](#usage)
-    - [Setting the Skill Target](#setting-the-skill-target)
-    - [Available Skill Targets](#available-skill-targets)
-    - [Creating a Custom Skill](#creating-a-custom-skill)
-  - [Related Sections](#related-sections)
+- [Overview](#overview)
+- [Table of Contents](#table-of-contents)
+- [Directory Tree](#directory-tree)
+- [Available Skills](#available-skills)
+  - [Stack Skills](#stack-skills)
+  - [Global Skill](#global-skill)
+- [How Skills Work](#how-skills-work)
+  - [Skill Loading Example](#skill-loading-example)
+- [Usage](#usage)
+  - [Setting the Skill Target](#setting-the-skill-target)
+  - [Available Skill Targets](#available-skill-targets)
+  - [Creating a Custom Skill](#creating-a-custom-skill)
+- [Related Sections](#related-sections)
 
 ---
 
@@ -54,27 +53,27 @@ skills/
 
 ### Stack Skills
 
-| Skill | Folder | Technologies |
-|-------|--------|--------------|
-| **TALL Stack** | `stack-tall/` | Laravel 12.x, Livewire 3.x, Alpine.js 3.x, Tailwind CSS 4.x, MariaDB 12 |
-| **Django Stack** | `stack-django/` | Python 3.14, Django 6.x, Wagtail 7.x, PostgreSQL 18, Strawberry GraphQL |
-| **React Stack** | `stack-react/` | TypeScript 5.9, React 19.x, Next.js 16.x, Tailwind CSS 4.x, Node.js 24 |
-| **Mobile Stack** | `stack-mobile/` | TypeScript 5.9, React Native 0.83.x, Expo, NativeWind 4.x |
-| **Shared Library** | `stack-shared-lib/` | TypeScript 5.9, NPM package for web and mobile |
+| Skill              | Folder              | Technologies                                                            |
+| ------------------ | ------------------- | ----------------------------------------------------------------------- |
+| **TALL Stack**     | `stack-tall/`       | Laravel 12.x, Livewire 3.x, Alpine.js 3.x, Tailwind CSS 4.x, MariaDB 12 |
+| **Django Stack**   | `stack-django/`     | Python 3.14, Django 6.x, Wagtail 7.x, PostgreSQL 18, Strawberry GraphQL |
+| **React Stack**    | `stack-react/`      | TypeScript 5.9, React 19.x, Next.js 16.x, Tailwind CSS 4.x, Node.js 24  |
+| **Mobile Stack**   | `stack-mobile/`     | TypeScript 5.9, React Native 0.83.x, Expo, NativeWind 4.x               |
+| **Shared Library** | `stack-shared-lib/` | TypeScript 5.9, NPM package for web and mobile                          |
 
 ### Global Skill
 
 The `global-workflow` skill is **always applied** regardless of stack. It provides:
 
-| Setting | Value |
-|---------|-------|
-| **Language** | British English spelling |
-| **Date Format** | DD/MM/YYYY |
-| **Time Format** | 24-hour clock (14:30) |
-| **Timezone** | Europe/London (GMT/BST) |
-| **Currency** | GBP (£1,234.56) |
-| **Git** | Commit message standards |
-| **Documentation** | File header formats |
+| Setting           | Value                    |
+| ----------------- | ------------------------ |
+| **Language**      | British English spelling |
+| **Date Format**   | DD/MM/YYYY               |
+| **Time Format**   | 24-hour clock (14:30)    |
+| **Timezone**      | Europe/London (GMT/BST)  |
+| **Currency**      | GBP (£1,234.56)          |
+| **Git**           | Commit message standards |
+| **Documentation** | File header formats      |
 
 ---
 
@@ -125,13 +124,13 @@ In your project's `.claude/CLAUDE.md`:
 
 ### Available Skill Targets
 
-| Project Type | Skill Target |
-|--------------|--------------|
-| Laravel + Livewire + Alpine + Tailwind | `stack-tall` |
-| Django + Wagtail + PostgreSQL | `stack-django` |
-| React + Next.js + TypeScript | `stack-react` |
-| React Native + Expo | `stack-mobile` |
-| NPM shared library | `stack-shared-lib` |
+| Project Type                           | Skill Target       |
+| -------------------------------------- | ------------------ |
+| Laravel + Livewire + Alpine + Tailwind | `stack-tall`       |
+| Django + Wagtail + PostgreSQL          | `stack-django`     |
+| React + Next.js + TypeScript           | `stack-react`      |
+| React Native + Expo                    | `stack-mobile`     |
+| NPM shared library                     | `stack-shared-lib` |
 
 ### Creating a Custom Skill
 

@@ -1,6 +1,6 @@
 ---
 description: "[Agent] Version management - semantic versioning, changelogs, and markdown headers"
-usage: /agent:version [command] [args]
+argument-hint: "[command] [args]"
 ---
 
 Spawn the `dev-team:version` agent (model: sonnet) to manage version files and documentation.

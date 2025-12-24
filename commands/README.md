@@ -2,23 +2,22 @@
 
 ## Table of Contents
 
-- [Commands](#commands)
-  - [Table of Contents](#table-of-contents)
-  - [Overview](#overview)
-  - [Directory Tree](#directory-tree)
-  - [Commands by Category](#commands-by-category)
-    - [Plugin Commands](#plugin-commands)
-    - [Agent Commands](#agent-commands)
-      - [Planning \& Architecture](#planning--architecture)
-      - [Development](#development)
-      - [Quality \& Testing](#quality--testing)
-      - [Refactoring \& Maintenance](#refactoring--maintenance)
-      - [Infrastructure](#infrastructure)
-      - [Specialised](#specialised)
-    - [Learning Commands](#learning-commands)
-  - [Usage](#usage)
-    - [Command Structure](#command-structure)
-  - [Related Sections](#related-sections)
+- [Table of Contents](#table-of-contents)
+- [Overview](#overview)
+- [Directory Tree](#directory-tree)
+- [Commands by Category](#commands-by-category)
+  - [Plugin Commands](#plugin-commands)
+  - [Agent Commands](#agent-commands)
+    - [Planning \& Architecture](#planning--architecture)
+    - [Development](#development)
+    - [Quality \& Testing](#quality--testing)
+    - [Refactoring \& Maintenance](#refactoring--maintenance)
+    - [Infrastructure](#infrastructure)
+    - [Specialised](#specialised)
+  - [Learning Commands](#learning-commands)
+- [Usage](#usage)
+  - [Command Structure](#command-structure)
+- [Related Sections](#related-sections)
 
 ---
 
@@ -31,7 +30,7 @@ Commands follow a prefix convention:
 - `/plugin:` - Plugin management commands
 - `/learning:` - Self-learning system commands
 
-**Version:** 1.0.0
+**Version:** 1.2.0
 
 ---
 
@@ -79,76 +78,76 @@ commands/
 
 ### Plugin Commands
 
-| Command | File | Description |
-|---------|------|-------------|
+| Command        | File      | Description                               |
+| -------------- | --------- | ----------------------------------------- |
 | `/plugin:init` | `init.md` | Initialise Syntek Dev Suite for a project |
 
 ### Agent Commands
 
 #### Planning & Architecture
 
-| Command | File | Model | Description |
-|---------|------|-------|-------------|
-| `/agent:plan` | `plan.md` | Opus | Create architectural plans |
-| `/agent:stories` | `stories.md` | Haiku | Generate user stories |
-| `/agent:sprint` | `sprint.md` | Sonnet | Organise sprints |
-| `/agent:completion` | `completion.md` | Sonnet | Track completion |
+| Command             | File            | Model  | Description                |
+| ------------------- | --------------- | ------ | -------------------------- |
+| `/agent:plan`       | `plan.md`       | Opus   | Create architectural plans |
+| `/agent:stories`    | `stories.md`    | Haiku  | Generate user stories      |
+| `/agent:sprint`     | `sprint.md`     | Sonnet | Organise sprints           |
+| `/agent:completion` | `completion.md` | Sonnet | Track completion           |
 
 #### Development
 
-| Command | File | Model | Description |
-|---------|------|-------|-------------|
-| `/agent:setup` | `setup.md` | Sonnet | Project setup |
-| `/agent:backend` | `backend.md` | Sonnet | Backend development |
+| Command           | File          | Model  | Description          |
+| ----------------- | ------------- | ------ | -------------------- |
+| `/agent:setup`    | `setup.md`    | Sonnet | Project setup        |
+| `/agent:backend`  | `backend.md`  | Sonnet | Backend development  |
 | `/agent:frontend` | `frontend.md` | Sonnet | Frontend development |
-| `/agent:database` | `database.md` | Sonnet | Database design |
-| `/agent:auth` | `auth.md` | Sonnet | Authentication |
+| `/agent:database` | `database.md` | Sonnet | Database design      |
+| `/agent:auth`     | `auth.md`     | Sonnet | Authentication       |
 
 #### Quality & Testing
 
-| Command | File | Model | Description |
-|---------|------|-------|-------------|
+| Command              | File             | Model  | Description |
+| -------------------- | ---------------- | ------ | ----------- |
 | `/agent:test-writer` | `test-writer.md` | Sonnet | Write tests |
-| `/agent:qa-tester` | `qa-tester.md` | Sonnet | QA testing |
-| `/agent:review` | `review.md` | Sonnet | Code review |
-| `/agent:debug` | `debug.md` | Opus | Debugging |
+| `/agent:qa-tester`   | `qa-tester.md`   | Sonnet | QA testing  |
+| `/agent:review`      | `review.md`      | Sonnet | Code review |
+| `/agent:debug`       | `debug.md`       | Opus   | Debugging   |
 
 #### Refactoring & Maintenance
 
-| Command | File | Model | Description |
-|---------|------|-------|-------------|
-| `/agent:refactor` | `refactor.md` | Sonnet | Refactoring |
-| `/agent:syntax` | `syntax.md` | Haiku | Syntax fixing |
-| `/agent:docs` | `docs.md` | Haiku | Documentation |
+| Command           | File          | Model  | Description   |
+| ----------------- | ------------- | ------ | ------------- |
+| `/agent:refactor` | `refactor.md` | Sonnet | Refactoring   |
+| `/agent:syntax`   | `syntax.md`   | Haiku  | Syntax fixing |
+| `/agent:docs`     | `docs.md`     | Haiku  | Documentation |
 
 #### Infrastructure
 
-| Command | File | Model | Description |
-|---------|------|-------|-------------|
-| `/agent:cicd` | `cicd.md` | Sonnet | CI/CD pipelines |
-| `/agent:security` | `security.md` | Sonnet | Security |
-| `/agent:logging` | `logging.md` | Sonnet | Logging |
-| `/agent:git` | `git.md` | Sonnet | Git workflows |
+| Command           | File          | Model  | Description     |
+| ----------------- | ------------- | ------ | --------------- |
+| `/agent:cicd`     | `cicd.md`     | Sonnet | CI/CD pipelines |
+| `/agent:security` | `security.md` | Sonnet | Security        |
+| `/agent:logging`  | `logging.md`  | Sonnet | Logging         |
+| `/agent:git`      | `git.md`      | Sonnet | Git workflows   |
 
 #### Specialised
 
-| Command | File | Model | Description |
-|---------|------|-------|-------------|
-| `/agent:gdpr` | `gdpr.md` | Sonnet | GDPR compliance |
-| `/agent:seo` | `seo.md` | Sonnet | SEO |
-| `/agent:notifications` | `notifications.md` | Sonnet | Notifications |
-| `/agent:export` | `export.md` | Sonnet | Export generation |
-| `/agent:reporting` | `reporting.md` | Sonnet | Reporting |
-| `/agent:data` | `data.md` | Sonnet | Data analysis |
-| `/agent:support-articles` | `support-articles.md` | Sonnet | Help docs |
+| Command                   | File                  | Model  | Description       |
+| ------------------------- | --------------------- | ------ | ----------------- |
+| `/agent:gdpr`             | `gdpr.md`             | Sonnet | GDPR compliance   |
+| `/agent:seo`              | `seo.md`              | Sonnet | SEO               |
+| `/agent:notifications`    | `notifications.md`    | Sonnet | Notifications     |
+| `/agent:export`           | `export.md`           | Sonnet | Export generation |
+| `/agent:reporting`        | `reporting.md`        | Sonnet | Reporting         |
+| `/agent:data`             | `data.md`             | Sonnet | Data analysis     |
+| `/agent:support-articles` | `support-articles.md` | Sonnet | Help docs         |
 
 ### Learning Commands
 
-| Command | File | Description |
-|---------|------|-------------|
+| Command              | File                   | Description                     |
+| -------------------- | ---------------------- | ------------------------------- |
 | `/learning:feedback` | `learning-feedback.md` | Submit feedback on agent output |
-| `/learning:ab-test` | `learning-ab-test.md` | Manage A/B tests for prompts |
-| `/learning:optimise` | `learning-optimise.md` | Analyse and optimise prompts |
+| `/learning:ab-test`  | `learning-ab-test.md`  | Manage A/B tests for prompts    |
+| `/learning:optimise` | `learning-optimise.md` | Analyse and optimise prompts    |
 
 ---
 

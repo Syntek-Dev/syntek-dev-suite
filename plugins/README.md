@@ -6,25 +6,24 @@ This folder contains Python utility tools that agents use to gather information 
 
 All tools are executable Python scripts that can be run directly from the command line.
 
-**Version:** 1.1.0
+**Version:** 1.2.0
 
 ---
 
 ## Table of Contents
 
-- [Plugins](#plugins)
-  - [Overview](#overview)
-  - [Table of Contents](#table-of-contents)
-  - [Directory Tree](#directory-tree)
-  - [Tools](#tools)
-    - [Environment Detection](#environment-detection)
-    - [Project Analysis](#project-analysis)
-    - [Self-Learning System](#self-learning-system)
-  - [Usage](#usage)
-    - [Direct Execution](#direct-execution)
-    - [Agent Usage](#agent-usage)
-    - [JSON Output](#json-output)
-  - [Related Sections](#related-sections)
+- [Overview](#overview)
+- [Table of Contents](#table-of-contents)
+- [Directory Tree](#directory-tree)
+- [Tools](#tools)
+  - [Environment Detection](#environment-detection)
+  - [Project Analysis](#project-analysis)
+  - [Self-Learning System](#self-learning-system)
+- [Usage](#usage)
+  - [Direct Execution](#direct-execution)
+  - [Agent Usage](#agent-usage)
+  - [JSON Output](#json-output)
+- [Related Sections](#related-sections)
 
 
 ## Directory Tree
@@ -53,31 +52,31 @@ plugins/
 
 ### Environment Detection
 
-| Tool | Command | Description |
-|------|---------|-------------|
-| `chrome-tool.py` | `./plugins/chrome-tool.py detect` | Cross-platform Chrome detection and configuration |
-| `ddev-tool.py` | `./plugins/ddev-tool.py status` | Check DDEV container status and configuration |
+| Tool             | Command                           | Description                                        |
+| ---------------- | --------------------------------- | -------------------------------------------------- |
+| `chrome-tool.py` | `./plugins/chrome-tool.py detect` | Cross-platform Chrome detection and configuration  |
+| `ddev-tool.py`   | `./plugins/ddev-tool.py status`   | Check DDEV container status and configuration      |
 | `docker-tool.py` | `./plugins/docker-tool.py status` | Check Docker containers, compose, images, networks |
-| `env-tool.py` | `./plugins/env-tool.py find` | Discover and validate environment files |
+| `env-tool.py`    | `./plugins/env-tool.py find`      | Discover and validate environment files            |
 
 ### Project Analysis
 
-| Tool | Command | Description |
-|------|---------|-------------|
-| `project-tool.py` | `./plugins/project-tool.py info` | Detect language, framework, and project structure |
-| `db-tool.py` | `./plugins/db-tool.py detect` | Detect database type and ORM in use |
-| `git-tool.py` | `./plugins/git-tool.py status` | Get Git repository status, branches, remotes |
-| `log-tool.py` | `./plugins/log-tool.py find` | Find and analyse log files |
-| `quality-tool.py` | `./plugins/quality-tool.py check` | Run code quality checks and linting |
+| Tool              | Command                           | Description                                       |
+| ----------------- | --------------------------------- | ------------------------------------------------- |
+| `project-tool.py` | `./plugins/project-tool.py info`  | Detect language, framework, and project structure |
+| `db-tool.py`      | `./plugins/db-tool.py detect`     | Detect database type and ORM in use               |
+| `git-tool.py`     | `./plugins/git-tool.py status`    | Get Git repository status, branches, remotes      |
+| `log-tool.py`     | `./plugins/log-tool.py find`      | Find and analyse log files                        |
+| `quality-tool.py` | `./plugins/quality-tool.py check` | Run code quality checks and linting               |
 
 ### Self-Learning System
 
-| Tool | Command | Description |
-|------|---------|-------------|
-| `metrics-tool.py` | `./plugins/metrics-tool.py record` | Record agent run metrics |
-| `feedback-tool.py` | `./plugins/feedback-tool.py submit` | Submit user feedback on agent output |
-| `ab-test-tool.py` | `./plugins/ab-test-tool.py list` | Manage A/B tests for prompt variants |
-| `optimiser-tool.py` | `./plugins/optimiser-tool.py analyse` | Analyse and optimise agent prompts |
+| Tool                | Command                               | Description                          |
+| ------------------- | ------------------------------------- | ------------------------------------ |
+| `metrics-tool.py`   | `./plugins/metrics-tool.py record`    | Record agent run metrics             |
+| `feedback-tool.py`  | `./plugins/feedback-tool.py submit`   | Submit user feedback on agent output |
+| `ab-test-tool.py`   | `./plugins/ab-test-tool.py list`      | Manage A/B tests for prompt variants |
+| `optimiser-tool.py` | `./plugins/optimiser-tool.py analyse` | Analyse and optimise agent prompts   |
 
 ---
 
@@ -106,16 +105,16 @@ Tools can be run directly from the command line:
 
 Agents use these tools automatically to gather context:
 
-| Agent | Tools Used |
-|-------|------------|
-| **Setup Agent** | `project-tool.py`, `env-tool.py`, `docker-tool.py`, `ddev-tool.py`, `chrome-tool.py` |
-| **CI/CD Agent** | `git-tool.py`, `docker-tool.py`, `ddev-tool.py` |
-| **Database Agent** | `db-tool.py`, `env-tool.py` |
-| **Backend Agent** | `project-tool.py`, `db-tool.py`, `env-tool.py` |
-| **Logging Agent** | `log-tool.py`, `project-tool.py` |
-| **Debugger Agent** | `log-tool.py`, `env-tool.py`, `chrome-tool.py` |
-| **QA Tester Agent** | `project-tool.py`, `chrome-tool.py` |
-| **Test Writer Agent** | `project-tool.py`, `chrome-tool.py` |
+| Agent                 | Tools Used                                                                           |
+| --------------------- | ------------------------------------------------------------------------------------ |
+| **Setup Agent**       | `project-tool.py`, `env-tool.py`, `docker-tool.py`, `ddev-tool.py`, `chrome-tool.py` |
+| **CI/CD Agent**       | `git-tool.py`, `docker-tool.py`, `ddev-tool.py`                                      |
+| **Database Agent**    | `db-tool.py`, `env-tool.py`                                                          |
+| **Backend Agent**     | `project-tool.py`, `db-tool.py`, `env-tool.py`                                       |
+| **Logging Agent**     | `log-tool.py`, `project-tool.py`                                                     |
+| **Debugger Agent**    | `log-tool.py`, `env-tool.py`, `chrome-tool.py`                                       |
+| **QA Tester Agent**   | `project-tool.py`, `chrome-tool.py`                                                  |
+| **Test Writer Agent** | `project-tool.py`, `chrome-tool.py`                                                  |
 
 ### JSON Output
 

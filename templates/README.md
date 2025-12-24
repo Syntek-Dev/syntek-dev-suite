@@ -6,28 +6,27 @@ This folder contains project templates that define the `CLAUDE.md` configuration
 
 Each template is a complete `CLAUDE.md` file with placeholders for project-specific information.
 
-**Version:** 1.0.0
+**Version:** 1.2.0
 
 ---
 
 ## Table of Contents
 
-- [Templates](#templates)
-  - [Overview](#overview)
-  - [Table of Contents](#table-of-contents)
-  - [Directory Tree](#directory-tree)
-  - [Available Templates](#available-templates)
-  - [What Templates Provide](#what-templates-provide)
-    - [Stack Overview](#stack-overview)
-    - [Skill Targets](#skill-targets)
-    - [Environment](#environment)
-    - [Development Standards](#development-standards)
-    - [Placeholders](#placeholders)
-  - [Usage](#usage)
-    - [Using /plugin:init (Recommended)](#using-plugininit-recommended)
-    - [Manual Setup](#manual-setup)
-    - [Template Selection Guide](#template-selection-guide)
-  - [Related Sections](#related-sections)
+- [Overview](#overview)
+- [Table of Contents](#table-of-contents)
+- [Directory Tree](#directory-tree)
+- [Available Templates](#available-templates)
+- [What Templates Provide](#what-templates-provide)
+  - [Stack Overview](#stack-overview)
+  - [Skill Targets](#skill-targets)
+  - [Environment](#environment)
+  - [Development Standards](#development-standards)
+  - [Placeholders](#placeholders)
+- [Usage](#usage)
+  - [Using /plugin:init (Recommended)](#using-plugininit-recommended)
+  - [Manual Setup](#manual-setup)
+  - [Template Selection Guide](#template-selection-guide)
+- [Related Sections](#related-sections)
 
 ---
 
@@ -47,13 +46,13 @@ templates/
 
 ## Available Templates
 
-| Template | File | Stack | Container |
-|----------|------|-------|-----------|
-| **TALL Stack** | `tall-project.md` | Laravel 12.x, Livewire 3.x, Alpine.js, Tailwind 4.x | DDEV |
-| **Django Stack** | `django-project.md` | Python 3.14, Django 6.x, Wagtail 7.x, PostgreSQL 18 | Docker Compose |
-| **React Stack** | `react-project.md` | TypeScript 5.9, React 19.x, Next.js 16.x, Tailwind 4.x | Docker |
-| **Mobile Stack** | `mobile-project.md` | TypeScript 5.9, React Native 0.83.x, Expo, NativeWind 4.x | Docker |
-| **Shared Library** | `shared-lib-project.md` | TypeScript 5.9, NPM package for web/mobile | Docker |
+| Template           | File                    | Stack                                                     | Container      |
+| ------------------ | ----------------------- | --------------------------------------------------------- | -------------- |
+| **TALL Stack**     | `tall-project.md`       | Laravel 12.x, Livewire 3.x, Alpine.js, Tailwind 4.x       | DDEV           |
+| **Django Stack**   | `django-project.md`     | Python 3.14, Django 6.x, Wagtail 7.x, PostgreSQL 18       | Docker Compose |
+| **React Stack**    | `react-project.md`      | TypeScript 5.9, React 19.x, Next.js 16.x, Tailwind 4.x    | Docker         |
+| **Mobile Stack**   | `mobile-project.md`     | TypeScript 5.9, React Native 0.83.x, Expo, NativeWind 4.x | Docker         |
+| **Shared Library** | `shared-lib-project.md` | TypeScript 5.9, NPM package for web/mobile                | Docker         |
 
 ---
 
@@ -87,12 +86,12 @@ Each template includes configuration for:
 
 Templates contain placeholders that need to be replaced:
 
-| Placeholder | Replace With |
-|-------------|--------------|
-| `[Insert Project Name]` | Your project name |
-| `[Insert Description]` | Project description |
-| `[Insert Database Name]` | Database name |
-| `[Insert Domain]` | Development domain |
+| Placeholder              | Replace With        |
+| ------------------------ | ------------------- |
+| `[Insert Project Name]`  | Your project name   |
+| `[Insert Description]`   | Project description |
+| `[Insert Database Name]` | Database name       |
+| `[Insert Domain]`        | Development domain  |
 
 ---
 
@@ -153,12 +152,12 @@ Open `.claude/CLAUDE.md` and replace all placeholders with your project details.
 
 ### Template Selection Guide
 
-| If Your Project Uses... | Use Template |
-|------------------------|--------------|
-| Laravel, PHP, Livewire, DDEV | `tall-project.md` |
-| Django, Python, Wagtail | `django-project.md` |
-| React, Next.js, TypeScript | `react-project.md` |
-| React Native, Expo | `mobile-project.md` |
+| If Your Project Uses...               | Use Template            |
+| ------------------------------------- | ----------------------- |
+| Laravel, PHP, Livewire, DDEV          | `tall-project.md`       |
+| Django, Python, Wagtail               | `django-project.md`     |
+| React, Next.js, TypeScript            | `react-project.md`      |
+| React Native, Expo                    | `mobile-project.md`     |
 | NPM package shared between web/mobile | `shared-lib-project.md` |
 
 ---
