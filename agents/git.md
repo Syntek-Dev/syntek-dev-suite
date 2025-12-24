@@ -419,26 +419,46 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Before Every Commit
 
-**CRITICAL:** Before creating any commit, you MUST:
+**CRITICAL:** Before creating any commit, you MUST call the Version Agent to handle all version-related updates.
 
-1. **Determine version increment:**
-   - Analyse the changes being committed
-   - Decide: MAJOR, MINOR, or PATCH
-   - Document the reasoning
+### Step 1: Analyse Changes and Determine Version Increment
 
-2. **Update version files:**
-   - Find all version file locations
-   - Increment version appropriately
-   - Ensure all version files match
+1. **Review staged changes:**
+   - Analyse the files being committed
+   - Understand the scope and impact of changes
 
-3. **Update CHANGELOG.md:**
-   - Add entry under `[Unreleased]` section
-   - Include all changes with appropriate categories
-   - Reference issue/ticket numbers
+2. **Determine version increment type:**
+   | Change Type | Increment | Examples |
+   |-------------|-----------|----------|
+   | Breaking changes | MAJOR | API removed, schema incompatible |
+   | New features | MINOR | New endpoint, new UI component |
+   | Bug fixes | PATCH | Fix crash, correct calculation |
+   | Documentation only | PATCH | README update, comment changes |
 
-4. **Stage version and changelog:**
-   - Include `CHANGELOG.md` in the commit
-   - Include all version files in the commit
+3. **Document the reasoning** for the version choice
+
+### Step 2: Call the Version Agent
+
+**CRITICAL:** Delegate all version updates to the Version Agent:
+
+```bash
+/version bump <major|minor|patch>
+```
+
+The Version Agent will automatically:
+- Update all version files (package.json, composer.json, etc.)
+- Update VERSION-HISTORY.md with technical details
+- Update CHANGELOG.md with developer summary
+- Update RELEASES.md with user-facing notes
+- Update all .md file headers (Version and Last Updated)
+- Stage all changed files
+
+### Step 3: Create the Commit
+
+After the Version Agent completes:
+- All version files are staged
+- All documentation is updated
+- Create the commit with version in the message
 
 ## Pre-Commit Checklist
 
@@ -447,10 +467,43 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - [ ] Changes analysed for version impact
 - [ ] Version increment determined (MAJOR/MINOR/PATCH)
-- [ ] All version files updated
-- [ ] CHANGELOG.md updated with new entry
-- [ ] Version files staged for commit
-- [ ] CHANGELOG.md staged for commit
+- [ ] Version Agent called with: /version bump <type>
+- [ ] Version Agent confirmed all files updated
+- [ ] All version files staged
+- [ ] All documentation staged
+- [ ] Ready to create commit
+```
+
+## Integration Flow
+
+```
+┌────────────────────────────────────────────┐
+│  1. Git Agent analyses staged changes      │
+│     Determines: MAJOR, MINOR, or PATCH     │
+└────────────────────────────────────────────┘
+                    │
+                    ▼
+┌────────────────────────────────────────────┐
+│  2. Git Agent calls Version Agent          │
+│     /version bump <type>                   │
+└────────────────────────────────────────────┘
+                    │
+                    ▼
+┌────────────────────────────────────────────┐
+│  3. Version Agent updates:                 │
+│     - Version files                        │
+│     - VERSION-HISTORY.md                   │
+│     - CHANGELOG.md                         │
+│     - RELEASES.md                          │
+│     - All .md headers                      │
+│     - Stages all changes                   │
+└────────────────────────────────────────────┘
+                    │
+                    ▼
+┌────────────────────────────────────────────┐
+│  4. Git Agent creates commit               │
+│     Includes version in message            │
+└────────────────────────────────────────────┘
 ```
 
 ---
@@ -1032,8 +1085,9 @@ When performing git operations, provide clear output:
 
 # 18. WHAT YOU DO NOT DO
 
-- Commit without updating version and changelog
+- Commit without calling the Version Agent first
 - Skip version increment analysis
+- Update version files directly (use Version Agent)
 - Force push to protected branches
 - Create PRs that skip stages in the flow
 - Merge rejected PRs to main

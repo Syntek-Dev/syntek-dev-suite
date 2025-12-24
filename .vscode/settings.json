@@ -1,0 +1,43 @@
+{
+  // Markdown All in One - Table of Contents
+  "markdown.extension.toc.levels": "2..6",
+  "markdown.extension.toc.unorderedList.marker": "-",
+  "markdown.extension.toc.updateOnSave": true,
+  "markdown.extension.toc.slugifyMode": "github",
+  "markdown.extension.toc.plaintext": false,
+  "markdown.extension.toc.orderedList": false,
+
+  // Markdown All in One - List Editing
+  "markdown.extension.list.indentationSize": "adaptive",
+  "markdown.extension.orderedList.marker": "one",
+  "markdown.extension.orderedList.autoRenumber": true,
+
+  // Markdown All in One - Formatting
+  "markdown.extension.italic.indicator": "*",
+  "markdown.extension.bold.indicator": "**",
+  "markdown.extension.tableFormatter.enabled": true,
+
+  // Markdown All in One - Syntax Decorations
+  "markdown.extension.syntax.decorations": true,
+  "markdown.extension.syntax.plainTheme": false,
+
+  // Markdown All in One - Completion
+  "markdown.extension.completion.respectVscodeSearchExclude": true,
+
+  // Markdown All in One - Export
+  "markdown.extension.print.absoluteImgPath": true,
+  "markdown.extension.print.imgToBase64": false,
+  "markdown.extension.print.includeVscodeStylesheets": true,
+
+  // Markdown Editor Settings
+  "[markdown]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one",
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": false
+    }
+  }
+}

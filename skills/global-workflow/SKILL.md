@@ -36,6 +36,15 @@ This skill defines project-wide standards. All agents MUST apply these settings.
     - [Version Format](#version-format)
     - [Pre-Commit Requirements](#pre-commit-requirements)
   - [7. Documentation Standards](#7-documentation-standards)
+    - [Markdown Generation Guidelines](#markdown-generation-guidelines)
+      - [Table of Contents](#table-of-contents)
+      - [Text Formatting](#text-formatting)
+      - [Lists](#lists)
+      - [Tables](#tables)
+      - [Code Blocks](#code-blocks)
+      - [Headings](#headings)
+      - [Horizontal Rules](#horizontal-rules)
+      - [Best Practices](#best-practices)
     - [Bug Fix Documentation](#bug-fix-documentation)
   - [8. Code Comment Standards](#8-code-comment-standards)
     - [File Headers](#file-headers)
@@ -396,6 +405,127 @@ MAJOR.MINOR.PATCH
 | **Location** | `docs/` folder |
 | **Filenames** | CAPITALISED with lowercase `.md` extension |
 | **Required** | Table of Contents in all docs |
+| **Extension** | Markdown All in One (yzhang.markdown-all-in-one) |
+
+### Markdown Generation Guidelines
+
+When generating markdown documentation, follow these standards for compatibility with the Markdown All in One extension:
+
+#### Table of Contents
+
+1. **Placement**: After document title and introduction, before main content
+2. **Format**: Unordered list with `-` marker
+3. **Heading**: Use `## Table of Contents`
+4. **Indentation**: 2 spaces per nesting level
+5. **Links**: Use anchor link format `[Text](#heading-slug)`
+6. **Slug Format**: Lowercase, hyphens for spaces, remove special chars
+
+**Example:**
+```markdown
+## Table of Contents
+
+- [Main Title](#main-title)
+  - [Table of Contents](#table-of-contents)
+  - [Section 1](#section-1)
+    - [Subsection 1.1](#subsection-11)
+```
+
+#### Text Formatting
+
+| Format | Syntax | Example |
+|--------|--------|---------|
+| **Bold** | `**text**` | `**important**` |
+| *Italic* | `*text*` | `*emphasise*` |
+| ~~Strikethrough~~ | `~~text~~` | `~~deprecated~~` |
+| `Inline code` | \`code\` | \`function()\` |
+
+#### Lists
+
+**Unordered Lists:**
+- Use `-` marker consistently
+- 2 spaces for indentation
+
+```markdown
+- Item 1
+  - Nested item 1.1
+  - Nested item 1.2
+- Item 2
+```
+
+**Ordered Lists:**
+- Use `1.` marker for all items (auto-renumbering)
+- 3 spaces for indentation
+
+```markdown
+1. First step
+   1. Sub-step 1.1
+   1. Sub-step 1.2
+1. Second step
+```
+
+**Task Lists:**
+- Use for checklists and action items
+- Format: `- [ ]` for incomplete, `- [x]` for complete
+
+```markdown
+- [ ] Task to do
+- [x] Completed task
+```
+
+#### Tables
+
+Use GitHub Flavoured Markdown table syntax:
+
+```markdown
+| Column 1 | Column 2 | Column 3 |
+|----------|----------|----------|
+| Value 1  | Value 2  | Value 3  |
+```
+
+**Alignment:**
+- Left: `|:---------|`
+- Centre: `|:--------:|`
+- Right: `|---------:|`
+
+#### Code Blocks
+
+**Fenced Code Blocks:**
+Always specify language for syntax highlighting:
+
+```markdown
+\`\`\`typescript
+const example = "code";
+\`\`\`
+```
+
+**Common Languages:**
+`python`, `typescript`, `javascript`, `bash`, `json`, `sql`, `php`, `dart`, `html`, `css`
+
+#### Headings
+
+**Hierarchy:**
+- `# Title` - Document title (once per file)
+- `## Section` - Main sections
+- `### Subsection` - Subsections
+- `####` and beyond - As needed (avoid excessive nesting)
+
+**Excluding from TOC:**
+Add `<!-- omit in toc -->` to exclude heading:
+```markdown
+## Internal Notes <!-- omit in toc -->
+```
+
+#### Horizontal Rules
+
+Use `---` for horizontal rules between major sections.
+
+#### Best Practices
+
+1. **Consistency**: Use same syntax throughout (e.g., `**bold**` not `__bold__`)
+2. **British English**: Follow CLAUDE.md localisation settings
+3. **Blank Lines**: Add blank lines before/after headings, code blocks, tables
+4. **Line Length**: Keep lines under 120 characters where practical
+5. **TOC Inclusion**: Always include TOC section; extension handles updates for users
 
 ### Bug Fix Documentation
 

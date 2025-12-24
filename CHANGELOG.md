@@ -14,6 +14,28 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.2.0] - 24/12/2025
+
+### Added
+- Version Agent for semantic versioning and markdown metadata management
+- Version command (`/version`) with bump, init, headers, and status subcommands
+- Markdown metadata headers standard (Last Updated, Version, Maintained By, Language, Timezone)
+- Markdown All in One VS Code extension integration for enhanced editing
+- GitHub Flavoured Markdown (GFM) documentation standards
+- VS Code recommended extensions configuration (`.vscode/extensions.json`)
+- VS Code workspace settings for markdown formatting (`.vscode/settings.json`)
+- Version examples: VERSION-HISTORY-TEMPLATE, RELEASES-TEMPLATE, GIT-INTEGRATION, MARKDOWN-HEADERS
+- Implementation plan for Markdown All in One integration
+
+### Changed
+- Updated CLAUDE.md with version management documentation and markdown standards
+- Enhanced git agent to call Version Agent before commits
+- Updated README.md structure and content
+- Improved setup templates with metadata header support
+- Enhanced global workflow skill with version management patterns
+
+---
+
 ## [1.1.0] - 24/12/2025
 
 ### Added

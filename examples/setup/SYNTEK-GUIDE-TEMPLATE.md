@@ -1,6 +1,6 @@
 # Syntek Dev Suite - Plugin Usage Guide
 
-**Version:** 1.0.0
+**Version:** 1.1.0
 **Plugin:** syntek-dev-suite
 **Maintained by:** Syntek Developers
 
@@ -22,7 +22,7 @@
     - [Phase 7: Review and Refactoring](#phase-7-review-and-refactoring)
     - [Phase 8: Completion and PR](#phase-8-completion-and-pr)
     - [Workflow Summary](#workflow-summary)
-  - [Command Types](#command-types)
+  - [Command Reference](#command-reference)
   - [Agent Commands](#agent-commands)
     - [Planning \& Architecture](#planning--architecture)
     - [Development](#development)
@@ -32,6 +32,10 @@
     - [Specialised](#specialised)
   - [Plugin Commands](#plugin-commands)
   - [Learning Commands](#learning-commands)
+  - [Version Management](#version-management)
+    - [Version Commands](#version-commands)
+    - [Version Files Managed](#version-files-managed)
+    - [Markdown Metadata Headers](#markdown-metadata-headers)
   - [Skills Reference](#skills-reference)
     - [Stack Skills](#stack-skills)
     - [Global Skill](#global-skill)
@@ -41,9 +45,13 @@
     - [Giving Feedback](#giving-feedback)
     - [Project-Specific Learning](#project-specific-learning)
     - [Learning Best Practices](#learning-best-practices)
+  - [Markdown All in One Extension](#markdown-all-in-one-extension)
+    - [Key Features](#key-features)
+    - [Keyboard Shortcuts](#keyboard-shortcuts)
+    - [Table of Contents](#table-of-contents-1)
   - [Best Practices](#best-practices)
-    - [1. Always Start with `/agent:plan`](#1-always-start-with-agentplan)
-    - [2. Use `/agent:qa-tester` Before Merging](#2-use-agentqa-tester-before-merging)
+    - [1. Always Start with `/syntek-dev-suite:plan`](#1-always-start-with-syntek-dev-suiteplan)
+    - [2. Use `/syntek-dev-suite:qa-tester` Before Merging](#2-use-syntek-dev-suiteqa-tester-before-merging)
     - [3. Keep CLAUDE.md Updated](#3-keep-claudemd-updated)
     - [4. Let Agents Read Files](#4-let-agents-read-files)
     - [5. Use the Right Model](#5-use-the-right-model)
@@ -52,7 +60,7 @@
     - [8. Give Feedback](#8-give-feedback)
   - [Environment Commands](#environment-commands)
   - [Browser Configuration](#browser-configuration)
-    - [Browser Binary Path](#browser-binary-path)
+    - [Browser Environment Variable](#browser-environment-variable)
     - [Launching Chrome](#launching-chrome)
     - [Claude Code Chrome Integration](#claude-code-chrome-integration)
     - [E2E Test Configuration](#e2e-test-configuration)
@@ -69,22 +77,22 @@ The Syntek Dev Suite provides specialised AI agents for full-stack development. 
 
 ```bash
 # Plan a new feature
-/agent:plan Add user authentication with social login
+/syntek-dev-suite:plan Add user authentication with social login
 
 # Implement backend
-/agent:backend Create the User model and auth endpoints
+/syntek-dev-suite:backend Create the User model and auth endpoints
 
 # Implement frontend
-/agent:frontend Create the login form component
+/syntek-dev-suite:frontend Create the login form component
 
 # Write tests
-/agent:test-writer Write tests for the auth flow
+/syntek-dev-suite:test-writer Write tests for the auth flow
 
 # Review code
-/agent:qa-tester Review the auth implementation
+/syntek-dev-suite:qa-tester Review the auth implementation
 
 # Give feedback to improve the agent
-/learning:feedback good
+/syntek-dev-suite:learning-feedback good
 ```
 
 ---
@@ -101,13 +109,13 @@ git clone git@github.com:your-org/your-project.git
 cd your-project
 
 # 2. Initialise the plugin for your project
-/plugin:init
+/syntek-dev-suite:init
 
 # 3. Edit .claude/CLAUDE.md with your project details
 # Replace all [Insert...] placeholders
 
 # 4. Create core Git branches
-/agent:git Create main, develop, staging, and production branches with appropriate protection rules
+/syntek-dev-suite:git Create main, develop, staging, and production branches with appropriate protection rules
 git commit -m "chore: initialise project structure"
 ```
 
@@ -115,11 +123,11 @@ git commit -m "chore: initialise project structure"
 
 ```bash
 # 1. Generate user stories from requirements
-/agent:stories Based on this PRD, create user stories for user authentication feature
+/syntek-dev-suite:stories Based on this PRD, create user stories for user authentication feature
 git commit -m "docs: add user authentication stories"
 
 # 2. Organise stories into sprints
-/agent:sprint Organise the authentication stories into Sprint 1, prioritising login and registration
+/syntek-dev-suite:sprint Organise the authentication stories into Sprint 1, prioritising login and registration
 git commit -m "docs: plan Sprint 1 with authentication stories"
 
 # 3. Create a branch for the first user story
@@ -130,7 +138,7 @@ git checkout -b feature/US-001-user-login
 
 ```bash
 # 1. Plan the implementation
-/agent:plan Plan the implementation for US-001: User Login with email/password
+/syntek-dev-suite:plan Plan the implementation for US-001: User Login with email/password
 git commit -m "docs: add implementation plan for US-001"
 ```
 
@@ -138,11 +146,11 @@ git commit -m "docs: add implementation plan for US-001"
 
 ```bash
 # 1. Write tests first (TDD)
-/agent:test-writer Write tests for the LoginController and AuthService
+/syntek-dev-suite:test-writer Write tests for the LoginController and AuthService
 git commit -m "test: add login controller and auth service tests"
 
 # 2. Generate documentation for the feature
-/agent:docs Document the authentication API endpoints
+/syntek-dev-suite:docs Document the authentication API endpoints
 git commit -m "docs: add authentication API documentation"
 ```
 
@@ -150,25 +158,25 @@ git commit -m "docs: add authentication API documentation"
 
 ```bash
 # 1. Implement backend code
-/agent:backend Implement the LoginController to pass the tests
+/syntek-dev-suite:backend Implement the LoginController to pass the tests
 git commit -m "feat: implement login controller"
 
-/agent:backend Implement the AuthService for password validation
+/syntek-dev-suite:backend Implement the AuthService for password validation
 git commit -m "feat: implement auth service"
 
 # 2. Implement frontend code
-/agent:frontend Create the login form component
+/syntek-dev-suite:frontend Create the login form component
 git commit -m "feat: add login form component"
 
-/agent:frontend Add form validation and error handling
+/syntek-dev-suite:frontend Add form validation and error handling
 git commit -m "feat: add login form validation"
 
 # 3. Add logging
-/agent:logging Add audit logging for login attempts
+/syntek-dev-suite:logging Add audit logging for login attempts
 git commit -m "feat: add login audit logging"
 
 # 4. Fix any syntax or linting issues
-/agent:syntax Fix linting errors in the auth module
+/syntek-dev-suite:syntax Fix linting errors in the auth module
 git commit -m "style: fix linting errors in auth module"
 ```
 
@@ -176,7 +184,7 @@ git commit -m "style: fix linting errors in auth module"
 
 ```bash
 # 1. Run QA testing
-/agent:qa-tester Review the login implementation for security and edge cases
+/syntek-dev-suite:qa-tester Review the login implementation for security and edge cases
 git commit -m "fix: address QA feedback on login security"
 
 # 2. Perform manual tests and document results
@@ -184,7 +192,7 @@ git commit -m "fix: address QA feedback on login security"
 git commit -m "docs: add manual test results for login"
 
 # 3. Fix any bugs discovered
-/agent:debug Fix the session timeout issue discovered in testing
+/syntek-dev-suite:debug Fix the session timeout issue discovered in testing
 git commit -m "fix: correct session timeout handling"
 ```
 
@@ -192,19 +200,19 @@ git commit -m "fix: correct session timeout handling"
 
 ```bash
 # 1. Code review
-/agent:review Review the authentication module for SOLID principles and security
+/syntek-dev-suite:review Review the authentication module for SOLID principles and security
 git commit -m "refactor: apply code review suggestions"
 
 # 2. Refactor if needed
-/agent:refactor Extract password validation logic into separate service
+/syntek-dev-suite:refactor Extract password validation logic into separate service
 git commit -m "refactor: extract password validation service"
 
 # 3. Update documentation
-/agent:docs Update the auth documentation with the new service structure
+/syntek-dev-suite:docs Update the auth documentation with the new service structure
 git commit -m "docs: update auth documentation"
 
 # 4. Generate support articles if user-facing
-/agent:support-articles Write help article for "How to log in to your account"
+/syntek-dev-suite:support-articles Write help article for "How to log in to your account"
 git commit -m "docs: add login help article"
 ```
 
@@ -212,7 +220,7 @@ git commit -m "docs: add login help article"
 
 ```bash
 # 1. Mark the story as complete
-/agent:completion Mark US-001 as complete with implementation notes
+/syntek-dev-suite:completion Mark US-001 as complete with implementation notes
 git commit -m "docs: mark US-001 as complete"
 
 # 2. Push and create PR
@@ -249,15 +257,13 @@ Repository Setup → User Stories → Sprint Planning → Create Branch
 
 ---
 
-## Command Types
+## Command Reference
 
-All Syntek commands are prefixed with their type for clarity:
+All Syntek Dev Suite commands use the `/syntek-dev-suite:` prefix:
 
-| Prefix | Type | Description |
-|--------|------|-------------|
-| `/agent:` | Agent | Spawns a specialised AI agent |
-| `/plugin:` | Plugin | Plugin management commands |
-| `/learning:` | Learning | Self-learning system commands |
+```bash
+/syntek-dev-suite:<command> [arguments]
+```
 
 ---
 
@@ -267,58 +273,58 @@ All Syntek commands are prefixed with their type for clarity:
 
 | Command | Model | Description |
 |---------|-------|-------------|
-| `/agent:plan` | Opus | Create architectural plans, break down features |
-| `/agent:stories` | Haiku | Generate user stories from requirements |
-| `/agent:sprint` | Sonnet | Organise stories into balanced sprints |
-| `/agent:completion` | Sonnet | Track story and sprint completion |
+| `/syntek-dev-suite:plan` | Opus | Create architectural plans, break down features |
+| `/syntek-dev-suite:stories` | Haiku | Generate user stories from requirements |
+| `/syntek-dev-suite:sprint` | Sonnet | Organise stories into balanced sprints |
+| `/syntek-dev-suite:completion` | Sonnet | Track story and sprint completion |
 
 ### Development
 
 | Command | Model | Description |
 |---------|-------|-------------|
-| `/agent:setup` | Sonnet | Project initialisation and configuration |
-| `/agent:backend` | Sonnet | Backend development, APIs, database |
-| `/agent:frontend` | Sonnet | UI/UX, components, accessibility |
-| `/agent:database` | Sonnet | Database design, migrations, optimisation |
-| `/agent:auth` | Sonnet | Authentication, MFA, session management |
+| `/syntek-dev-suite:setup` | Sonnet | Project initialisation and configuration |
+| `/syntek-dev-suite:backend` | Sonnet | Backend development, APIs, database |
+| `/syntek-dev-suite:frontend` | Sonnet | UI/UX, components, accessibility |
+| `/syntek-dev-suite:database` | Sonnet | Database design, migrations, optimisation |
+| `/syntek-dev-suite:auth` | Sonnet | Authentication, MFA, session management |
 
 ### Quality & Testing
 
 | Command | Model | Description |
 |---------|-------|-------------|
-| `/agent:test-writer` | Sonnet | TDD test suites and stubs |
-| `/agent:qa-tester` | Sonnet | Hostile QA, security, edge cases |
-| `/agent:review` | Sonnet | Code review, SOLID, security |
-| `/agent:debug` | Opus | Root cause analysis, debugging |
+| `/syntek-dev-suite:test-writer` | Sonnet | TDD test suites and stubs |
+| `/syntek-dev-suite:qa-tester` | Sonnet | Hostile QA, security, edge cases |
+| `/syntek-dev-suite:review` | Sonnet | Code review, SOLID, security |
+| `/syntek-dev-suite:debug` | Opus | Root cause analysis, debugging |
 
 ### Refactoring & Maintenance
 
 | Command | Model | Description |
 |---------|-------|-------------|
-| `/agent:refactor` | Sonnet | Code cleanup without changing logic |
-| `/agent:syntax` | Haiku | Fix syntax and linting errors |
-| `/agent:docs` | Haiku | Technical documentation |
+| `/syntek-dev-suite:refactor` | Sonnet | Code cleanup without changing logic |
+| `/syntek-dev-suite:syntax` | Haiku | Fix syntax and linting errors |
+| `/syntek-dev-suite:docs` | Haiku | Technical documentation |
 
 ### Infrastructure
 
 | Command | Model | Description |
 |---------|-------|-------------|
-| `/agent:cicd` | Sonnet | CI/CD pipelines, deployments |
-| `/agent:security` | Sonnet | Access control, headers, rate limiting |
-| `/agent:logging` | Sonnet | Logging, Sentry, audit trails |
-| `/agent:git` | Sonnet | Branch management, versioning |
+| `/syntek-dev-suite:cicd` | Sonnet | CI/CD pipelines, deployments |
+| `/syntek-dev-suite:security` | Sonnet | Access control, headers, rate limiting |
+| `/syntek-dev-suite:logging` | Sonnet | Logging, Sentry, audit trails |
+| `/syntek-dev-suite:git` | Sonnet | Branch management, versioning |
 
 ### Specialised
 
 | Command | Model | Description |
 |---------|-------|-------------|
-| `/agent:gdpr` | Sonnet | GDPR compliance, data protection |
-| `/agent:seo` | Sonnet | SEO, meta tags, structured data |
-| `/agent:notifications` | Sonnet | Email, SMS, push notifications |
-| `/agent:export` | Sonnet | PDF, Excel, CSV, JSON exports |
-| `/agent:reporting` | Sonnet | Data queries, report services |
-| `/agent:data` | Sonnet | Data analysis, Python, SQL |
-| `/agent:support-articles` | Sonnet | Help documentation |
+| `/syntek-dev-suite:gdpr` | Sonnet | GDPR compliance, data protection |
+| `/syntek-dev-suite:seo` | Sonnet | SEO, meta tags, structured data |
+| `/syntek-dev-suite:notifications` | Sonnet | Email, SMS, push notifications |
+| `/syntek-dev-suite:export` | Sonnet | PDF, Excel, CSV, JSON exports |
+| `/syntek-dev-suite:reporting` | Sonnet | Data queries, report services |
+| `/syntek-dev-suite:data` | Sonnet | Data analysis, Python, SQL |
+| `/syntek-dev-suite:support-articles` | Sonnet | Help documentation |
 
 ---
 
@@ -326,7 +332,7 @@ All Syntek commands are prefixed with their type for clarity:
 
 | Command | Description |
 |---------|-------------|
-| `/plugin:init` | Initialise Syntek Dev Suite for a project |
+| `/syntek-dev-suite:init` | Initialise Syntek Dev Suite for a project |
 
 ---
 
@@ -336,13 +342,55 @@ The learning system helps agents improve over time based on your feedback.
 
 | Command | Description |
 |---------|-------------|
-| `/learning:feedback good` | Mark the last run as successful |
-| `/learning:feedback bad [comment]` | Mark as needing improvement with optional comment |
-| `/learning:ab-test list` | List active A/B tests |
-| `/learning:ab-test status <agent>` | Show test results for an agent |
-| `/learning:optimise status` | Show optimisation system status |
-| `/learning:optimise analyse <agent>` | Analyse an agent's performance |
-| `/learning:optimise apply <id>` | Apply a pending optimisation |
+| `/syntek-dev-suite:learning-feedback good` | Mark the last run as successful |
+| `/syntek-dev-suite:learning-feedback bad [comment]` | Mark as needing improvement with optional comment |
+| `/syntek-dev-suite:learning-ab-test list` | List active A/B tests |
+| `/syntek-dev-suite:learning-ab-test status <agent>` | Show test results for an agent |
+| `/syntek-dev-suite:learning-optimise status` | Show optimisation system status |
+| `/syntek-dev-suite:learning-optimise analyse <agent>` | Analyse an agent's performance |
+| `/syntek-dev-suite:learning-optimise apply <id>` | Apply a pending optimisation |
+
+---
+
+## Version Management
+
+The version agent manages semantic versioning, changelogs, and markdown headers across your project.
+
+### Version Commands
+
+| Command | Description |
+|---------|-------------|
+| `/syntek-dev-suite:version bump <type>` | Increment version (major, minor, patch) |
+| `/syntek-dev-suite:version update` | Update all version files and documentation |
+| `/syntek-dev-suite:version headers` | Update metadata headers in all .md files |
+| `/syntek-dev-suite:version init` | Initialise version files for a new project |
+| `/syntek-dev-suite:version status` | Show current version and pending changes |
+| `/syntek-dev-suite:version history` | Show version history summary |
+
+### Version Files Managed
+
+| File | Purpose | Audience |
+|------|---------|----------|
+| **Version files** | Semantic version (package.json, etc.) | Build systems |
+| **VERSION-HISTORY.md** | Technical change log with code details | Developers |
+| **CHANGELOG.md** | Brief developer-focused summary | Developers |
+| **RELEASES.md** | User-facing feature highlights | End users |
+
+### Markdown Metadata Headers
+
+All `.md` files include a metadata header maintained by the version agent:
+
+```markdown
+# Document Title
+
+**Last Updated**: DD/MM/YYYY
+**Version**: X.Y.Z
+**Maintained By**: Development Team
+**Language**: British English (en_GB)
+**Timezone**: Europe/London
+
+---
+```
 
 ---
 
@@ -392,10 +440,10 @@ Each agent can run A/B tests on prompt variants to discover what works best for 
 
 ```bash
 # List active A/B tests
-/learning:ab-test list
+/syntek-dev-suite:learning-ab-test list
 
 # Check test status for an agent
-/learning:ab-test status backend
+/syntek-dev-suite:learning-ab-test status backend
 
 # The system automatically:
 # - Randomly assigns variants to runs
@@ -410,10 +458,10 @@ After each agent run, provide feedback to improve future runs:
 
 ```bash
 # If the output was good
-/learning:feedback good
+/syntek-dev-suite:learning-feedback good
 
 # If the output needs improvement
-/learning:feedback bad The output didn't follow the coding style
+/syntek-dev-suite:learning-feedback bad The output didn't follow the coding style
 
 # If you can't evaluate yet
 # (skip feedback - just don't run the command)
@@ -436,22 +484,62 @@ After each agent run, provide feedback to improve future runs:
 
 ---
 
+## Markdown All in One Extension
+
+The Syntek Dev Suite is configured for optimal use with the **Markdown All in One** VS Code extension.
+
+### Key Features
+
+| Feature | Description |
+|---------|-------------|
+| Auto-updating TOCs | Table of Contents stays in sync with headings |
+| Smart Lists | Auto-renumbering and intelligent indentation |
+| Table Formatting | GFM tables auto-align on save |
+| Task Lists | Toggle checkboxes with `Alt+C` |
+| Math Support | Render LaTeX-style math expressions |
+
+### Keyboard Shortcuts
+
+| Shortcut | Action |
+|----------|--------|
+| `Ctrl+B` / `Cmd+B` | Toggle bold |
+| `Ctrl+I` / `Cmd+I` | Toggle italic |
+| `Tab` | Indent list item |
+| `Shift+Tab` | Un-indent list item |
+| `Alt+C` | Toggle task checkbox |
+
+### Table of Contents
+
+TOCs auto-update when you save. To exclude a heading from the TOC:
+
+```markdown
+## Internal Notes <!-- omit in toc -->
+```
+
+**Installation:** When opening a Syntek Dev Suite project in VS Code, you'll be prompted to install recommended extensions.
+
+**Extension ID:** `yzhang.markdown-all-in-one`
+
+For the complete guide, see [docs/GUIDES/MARKDOWN-ALL-IN-ONE.md](docs/GUIDES/MARKDOWN-ALL-IN-ONE.md).
+
+---
+
 ## Best Practices
 
-### 1. Always Start with `/agent:plan`
+### 1. Always Start with `/syntek-dev-suite:plan`
 
 For any non-trivial feature, get a roadmap before coding:
 
 ```bash
-/agent:plan Add password reset functionality
+/syntek-dev-suite:plan Add password reset functionality
 ```
 
-### 2. Use `/agent:qa-tester` Before Merging
+### 2. Use `/syntek-dev-suite:qa-tester` Before Merging
 
 Catch issues early with hostile QA:
 
 ```bash
-/agent:qa-tester Review my changes before PR
+/syntek-dev-suite:qa-tester Review my changes before PR
 ```
 
 ### 3. Keep CLAUDE.md Updated
@@ -470,17 +558,17 @@ Don't paste code into commands. The agent will read files:
 
 ```bash
 # Good
-/agent:backend Fix the UserController
+/syntek-dev-suite:backend Fix the UserController
 
 # Less good
-/agent:backend Fix this code: [pasted code]
+/syntek-dev-suite:backend Fix this code: [pasted code]
 ```
 
 ### 5. Use the Right Model
 
-- **Opus** (complex): `/agent:plan`, `/agent:debug`, `/agent:data`
-- **Sonnet** (balanced): `/agent:backend`, `/agent:frontend`, `/agent:qa-tester`
-- **Haiku** (fast): `/agent:docs`, `/agent:syntax`, `/agent:stories`
+- **Opus** (complex): `/syntek-dev-suite:plan`, `/syntek-dev-suite:debug`, `/syntek-dev-suite:data`
+- **Sonnet** (balanced): `/syntek-dev-suite:backend`, `/syntek-dev-suite:frontend`, `/syntek-dev-suite:qa-tester`
+- **Haiku** (fast): `/syntek-dev-suite:docs`, `/syntek-dev-suite:syntax`, `/syntek-dev-suite:stories`
 
 ### 6. Chain Commands Logically
 
@@ -495,10 +583,10 @@ plan → stories → sprint → backend → frontend → test → qa → review 
 Small, focused commits after each agent interaction:
 
 ```bash
-/agent:backend Create the User model
+/syntek-dev-suite:backend Create the User model
 git commit -m "feat: add User model"
 
-/agent:test-writer Write tests for User model
+/syntek-dev-suite:test-writer Write tests for User model
 git commit -m "test: add User model tests"
 ```
 
@@ -507,8 +595,8 @@ git commit -m "test: add User model tests"
 Help agents improve by providing feedback:
 
 ```bash
-/learning:feedback good   # When output is correct
-/learning:feedback bad    # When output needs improvement
+/syntek-dev-suite:learning-feedback good   # When output is correct
+/syntek-dev-suite:learning-feedback bad    # When output needs improvement
 ```
 
 ---

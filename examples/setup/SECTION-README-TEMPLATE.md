@@ -11,6 +11,7 @@ Every significant folder in a codebase should contain a `README.md` that explain
 - [Section README Template](#section-readme-template)
   - [Overview](#overview)
   - [Table of Contents](#table-of-contents)
+  - [Markdown Extension Compatibility](#markdown-extension-compatibility)
   - [Purpose](#purpose)
   - [Template Structure](#template-structure)
   - [When to Create Section READMEs](#when-to-create-section-readmes)
@@ -26,6 +27,18 @@ Every significant folder in a codebase should contain a `README.md` that explain
     - [Tree Characters](#tree-characters)
     - [Generating Trees Automatically](#generating-trees-automatically)
 
+
+---
+
+## Markdown Extension Compatibility
+
+This template is compatible with the **Markdown All in One** VS Code extension:
+
+- **TOC Auto-Update**: The Table of Contents auto-updates on save
+- **Table Formatting**: GFM tables auto-align on save
+- **Task Lists**: Use `Alt+C` to toggle checkboxes
+
+Install the extension for the best editing experience. See [docs/GUIDES/MARKDOWN-ALL-IN-ONE.md](../../docs/GUIDES/MARKDOWN-ALL-IN-ONE.md) for details.
 
 ---
 

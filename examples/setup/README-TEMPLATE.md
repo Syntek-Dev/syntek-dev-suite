@@ -20,7 +20,20 @@ Standard README.md template for project setup. Provides a consistent structure f
   - [Overview](#overview)
   - [Metadata](#metadata)
   - [Table of Contents](#table-of-contents)
+  - [Markdown Extension Compatibility](#markdown-extension-compatibility)
   - [Template](#template)
+
+---
+
+## Markdown Extension Compatibility
+
+This template is compatible with the **Markdown All in One** VS Code extension:
+
+- **TOC Auto-Update**: The Table of Contents auto-updates on save
+- **Table Formatting**: GFM tables auto-align on save
+- **Task Lists**: Use `Alt+C` to toggle checkboxes
+
+Install the extension for the best editing experience. See [docs/GUIDES/MARKDOWN-ALL-IN-ONE.md](../../docs/GUIDES/MARKDOWN-ALL-IN-ONE.md) for details.
 
 ---
 
