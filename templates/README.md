@@ -12,12 +12,22 @@ Each template is a complete `CLAUDE.md` file with placeholders for project-speci
 
 ## Table of Contents
 
-- [Overview](#overview)
-- [Directory Tree](#directory-tree)
-- [Available Templates](#available-templates)
-- [What Templates Provide](#what-templates-provide)
-- [Usage](#usage)
-- [Related Sections](#related-sections)
+- [Templates](#templates)
+  - [Overview](#overview)
+  - [Table of Contents](#table-of-contents)
+  - [Directory Tree](#directory-tree)
+  - [Available Templates](#available-templates)
+  - [What Templates Provide](#what-templates-provide)
+    - [Stack Overview](#stack-overview)
+    - [Skill Targets](#skill-targets)
+    - [Environment](#environment)
+    - [Development Standards](#development-standards)
+    - [Placeholders](#placeholders)
+  - [Usage](#usage)
+    - [Using /plugin:init (Recommended)](#using-plugininit-recommended)
+    - [Manual Setup](#manual-setup)
+    - [Template Selection Guide](#template-selection-guide)
+  - [Related Sections](#related-sections)
 
 ---
 

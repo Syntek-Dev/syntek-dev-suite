@@ -8,12 +8,24 @@ Every significant folder in a codebase should contain a `README.md` that explain
 
 ## Table of Contents
 
-- [Overview](#overview)
-- [Purpose](#purpose)
-- [Template Structure](#template-structure)
-- [When to Create Section READMEs](#when-to-create-section-readmes)
-- [Examples](#examples)
-- [Tree Generation](#tree-generation)
+- [Section README Template](#section-readme-template)
+  - [Overview](#overview)
+  - [Table of Contents](#table-of-contents)
+  - [Purpose](#purpose)
+  - [Template Structure](#template-structure)
+  - [When to Create Section READMEs](#when-to-create-section-readmes)
+  - [Examples](#examples)
+    - [API Folder README](#api-folder-readme)
+    - [Components Folder README](#components-folder-readme)
+    - [Services Folder README](#services-folder-readme)
+    - [Utils Folder README](#utils-folder-readme)
+    - [Config Folder README](#config-folder-readme)
+    - [Tests Folder README](#tests-folder-readme)
+    - [Docs Folder README](#docs-folder-readme)
+  - [Tree Generation](#tree-generation)
+    - [Tree Characters](#tree-characters)
+    - [Generating Trees Automatically](#generating-trees-automatically)
+
 
 ---
 

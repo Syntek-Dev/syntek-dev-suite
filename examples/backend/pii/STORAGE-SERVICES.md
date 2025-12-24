@@ -28,11 +28,27 @@
 
 ## Table of Contents
 
-- [Overview](#overview)
-- [Laravel (TALL Stack)](#laravel-tall-stack)
-- [Django/Wagtail](#djangowagtail)
-- [React/Next.js](#reactnextjs)
-- [React Native](#react-native)
+- [PII Storage Services](#pii-storage-services)
+  - [Metadata](#metadata)
+  - [Framework Versions Tested](#framework-versions-tested)
+  - [Table of Contents](#table-of-contents)
+  - [Overview](#overview)
+    - [Security Methods](#security-methods)
+  - [Laravel (TALL Stack)](#laravel-tall-stack)
+    - [PII Storage Service Implementation](#pii-storage-service-implementation)
+    - [User Controller Example](#user-controller-example)
+  - [Django/Wagtail](#djangowagtail)
+    - [PII Storage Service Implementation](#pii-storage-service-implementation-1)
+    - [Strawberry GraphQL Mutation](#strawberry-graphql-mutation)
+  - [React/Next.js](#reactnextjs)
+    - [PII Storage Service Implementation](#pii-storage-service-implementation-2)
+    - [API Route Example](#api-route-example)
+  - [React Native](#react-native)
+    - [GraphQL Client Configuration](#graphql-client-configuration)
+    - [Profile Update Hook](#profile-update-hook)
+    - [Profile Retrieval Hook](#profile-retrieval-hook)
+    - [Usage Example](#usage-example)
+
 
 
 ## Overview

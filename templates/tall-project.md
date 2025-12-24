@@ -6,10 +6,39 @@ Use this template to set up a self-contained TALL (Tailwind, Alpine.js, Laravel,
 
 ## Table of Contents
 
-- [Architecture Overview](#architecture-overview)
-- [Project CLAUDE.md](#project-claudemd)
-- [Directory Structure](#directory-structure)
-- [Environment-Specific Command Files](#environment-specific-command-files)
+- [TALL Stack Project Template (All-in-One)](#tall-stack-project-template-all-in-one)
+  - [Table of Contents](#table-of-contents)
+  - [Architecture Overview](#architecture-overview)
+  - [Project CLAUDE.md](#project-claudemd)
+  - [Code Conventions](#code-conventions)
+    - [Livewire Components](#livewire-components)
+    - [Blade Templates](#blade-templates)
+    - [Alpine.js](#alpinejs)
+    - [Testing (Pest)](#testing-pest)
+  - [Database Schema](#database-schema)
+  - [API Endpoints](#api-endpoints)
+  - [Commands](#commands)
+    - [.claude/commands/dev.md](#claudecommandsdevmd)
+    - [.claude/commands/test.md](#claudecommandstestmd)
+    - [.claude/commands/staging.md](#claudecommandsstagingmd)
+    - [.claude/commands/production.md](#claudecommandsproductionmd)
+    - [.claude/commands/build.md](#claudecommandsbuildmd)
+    - [.claude/commands/migrate.md](#claudecommandsmigratemd)
+    - [.claude/commands/make-component.md](#claudecommandsmake-componentmd)
+  - [Directory Structure](#directory-structure)
+  - [Environment-Specific Command Files](#environment-specific-command-files)
+    - [Required Root-Level Scripts](#required-root-level-scripts)
+    - [dev.sh](#devsh)
+    - [test.sh](#testsh)
+    - [staging.sh](#stagingsh)
+    - [production.sh](#productionsh)
+    - [DDEV Custom Commands](#ddev-custom-commands)
+      - [.ddev/commands/host/dev](#ddevcommandshostdev)
+      - [.ddev/commands/host/test](#ddevcommandshosttest)
+      - [.ddev/commands/host/staging](#ddevcommandshoststaging)
+      - [.ddev/commands/host/production](#ddevcommandshostproduction)
+    - [Command File Permissions](#command-file-permissions)
+
 
 ---
 

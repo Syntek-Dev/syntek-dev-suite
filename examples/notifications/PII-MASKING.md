@@ -26,12 +26,20 @@
 
 ## Table of Contents
 
-- [Metadata](#metadata)
-- [Framework Versions Tested](#framework-versions-tested)
-- [Overview](#overview)
-- [Laravel (TALL Stack)](#laravel-tall-stack)
-- [Django/Wagtail](#djangowagtail)
-- [Node.js/TypeScript (React Native)](#nodejstypescript-react-native)
+- [PII Masking for Notifications](#pii-masking-for-notifications)
+  - [Metadata](#metadata)
+  - [Framework Versions Tested](#framework-versions-tested)
+  - [Table of Contents](#table-of-contents)
+  - [Overview](#overview)
+  - [Laravel (TALL Stack)](#laravel-tall-stack)
+    - [Usage in Blade Template](#usage-in-blade-template)
+    - [Usage in Notification Class](#usage-in-notification-class)
+  - [Django/Wagtail](#djangowagtail)
+    - [Template Filters](#template-filters)
+    - [Usage in Django Template](#usage-in-django-template)
+    - [Usage in Notification Service](#usage-in-notification-service)
+  - [Node.js/TypeScript (React Native)](#nodejstypescript-react-native)
+    - [Usage in React Native](#usage-in-react-native)
 
 ## Overview
 

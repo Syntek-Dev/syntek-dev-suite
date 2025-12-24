@@ -9,11 +9,13 @@ Data is committed to Git so the entire team benefits from learned improvements.
 
 ## Table of Contents
 
-- [Overview](#overview)
-- [Directory Structure](#directory-structure)
-- [How It Works](#how-it-works)
-- [Commands](#commands)
-- [Configuration](#configuration)
+- [Self-Learning Metrics](#self-learning-metrics)
+  - [Overview](#overview)
+  - [Table of Contents](#table-of-contents)
+  - [Directory Structure](#directory-structure)
+  - [How It Works](#how-it-works)
+  - [Commands](#commands)
+  - [Configuration](#configuration)
 
 ---
 

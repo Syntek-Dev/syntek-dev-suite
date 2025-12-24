@@ -8,11 +8,21 @@ SEO implementation examples for server-rendered and client-side applications.
 
 ## Table of Contents
 
-- [Overview](#overview)
-- [TALL Stack (Laravel 12)](#tall-stack-laravel-12)
-- [Django/Wagtail Stack](#djangowagtail-stack)
-- [React/Next.js Stack](#reactnextjs-stack)
-- [React Native Stack](#react-native-stack)
+- [SEO Examples](#seo-examples)
+  - [Overview](#overview)
+  - [Table of Contents](#table-of-contents)
+  - [TALL Stack (Laravel 12)](#tall-stack-laravel-12)
+    - [Meta Tag Service](#meta-tag-service)
+    - [Sitemap Generation](#sitemap-generation)
+  - [Django/Wagtail Stack](#djangowagtail-stack)
+    - [SEO Mixin](#seo-mixin)
+    - [Wagtail SEO Panel](#wagtail-seo-panel)
+  - [React/Next.js Stack](#reactnextjs-stack)
+    - [Metadata API](#metadata-api)
+    - [Sitemap Generation](#sitemap-generation-1)
+  - [React Native Stack](#react-native-stack)
+    - [App Store Optimisation](#app-store-optimisation)
+    - [Deep Linking for SEO](#deep-linking-for-seo)
 
 ## TALL Stack (Laravel 12)
 

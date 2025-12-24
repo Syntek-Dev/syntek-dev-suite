@@ -16,9 +16,11 @@ Standard README.md template for project setup. Provides a consistent structure f
 
 ## Table of Contents
 
-- [Overview](#overview)
-- [Metadata](#metadata)
-- [Template](#template)
+- [README Template](#readme-template)
+  - [Overview](#overview)
+  - [Metadata](#metadata)
+  - [Table of Contents](#table-of-contents)
+  - [Template](#template)
 
 ---
 

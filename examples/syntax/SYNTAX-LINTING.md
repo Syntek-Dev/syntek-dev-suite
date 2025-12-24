@@ -8,11 +8,23 @@ Linting and code style configurations for consistent code quality across all sta
 
 ## Table of Contents
 
-- [Overview](#overview)
-- [TALL Stack (Laravel 12)](#tall-stack-laravel-12)
-- [Django/Wagtail Stack](#djangowagtail-stack)
-- [React/Next.js Stack](#reactnextjs-stack)
-- [React Native Stack](#react-native-stack)
+- [Syntax \& Linting Examples](#syntax--linting-examples)
+  - [Overview](#overview)
+  - [Table of Contents](#table-of-contents)
+  - [TALL Stack (Laravel 12)](#tall-stack-laravel-12)
+    - [Laravel Pint](#laravel-pint)
+    - [PHPStan](#phpstan)
+  - [Django/Wagtail Stack](#djangowagtail-stack)
+    - [Ruff Configuration](#ruff-configuration)
+    - [Mypy Configuration](#mypy-configuration)
+  - [React/Next.js Stack](#reactnextjs-stack)
+    - [ESLint Configuration](#eslint-configuration)
+    - [Prettier Configuration](#prettier-configuration)
+    - [TypeScript Configuration](#typescript-configuration)
+  - [React Native Stack](#react-native-stack)
+    - [ESLint Configuration](#eslint-configuration-1)
+    - [TypeScript Configuration](#typescript-configuration-1)
+
 
 ## TALL Stack (Laravel 12)
 

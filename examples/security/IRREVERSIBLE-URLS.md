@@ -24,15 +24,28 @@ Irreversible URL patterns prevent enumeration attacks on resources. Sequential I
 
 ## Table of Contents
 
-- [Overview](#overview)
-- [Metadata](#metadata)
-- [URL Obfuscation Strategies](#url-obfuscation-strategies)
-- [TALL Stack (Laravel 12.x / PHP 8.4)](#tall-stack-laravel-12x--php-84)
-- [Hashids Service - Laravel](#hashids-service---laravel)
-- [Single-Use Token Service - Laravel](#single-use-token-service---laravel)
-- [Route Examples - Laravel](#route-examples---laravel)
-- [Django/Wagtail Stack (Django 6.x / Python 3.14)](#djangowagtail-stack-django-6x--python-314)
-- [Hashids Service - NestJS](#hashids-service---nestjs)
+- [Irreversible URLs (UUIDs, Hashids, Single-Use Tokens)](#irreversible-urls-uuids-hashids-single-use-tokens)
+  - [Overview](#overview)
+  - [Metadata](#metadata)
+  - [Table of Contents](#table-of-contents)
+  - [URL Obfuscation Strategies](#url-obfuscation-strategies)
+  - [TALL Stack (Laravel 12.x / PHP 8.4)](#tall-stack-laravel-12x--php-84)
+    - [UUID Trait - Laravel](#uuid-trait---laravel)
+    - [app/Traits/HasPublicUuid.php](#apptraitshaspublicuuidphp)
+    - [Usage in Model](#usage-in-model)
+  - [Hashids Service - Laravel](#hashids-service---laravel)
+    - [app/Services/HashidService.php](#appserviceshashidservicephp)
+    - [app/Http/Middleware/DecodeHashid.php](#apphttpmiddlewaredecodehashidphp)
+  - [Single-Use Token Service - Laravel](#single-use-token-service---laravel)
+    - [app/Services/SingleUseTokenService.php](#appservicessingleusetokenservicephp)
+  - [Route Examples - Laravel](#route-examples---laravel)
+    - [routes/web.php](#routeswebphp)
+  - [Django/Wagtail Stack (Django 6.x / Python 3.14)](#djangowagtail-stack-django-6x--python-314)
+    - [UUID Mixin - Django](#uuid-mixin---django)
+    - [mixins/uuid\_mixin.py](#mixinsuuid_mixinpy)
+  - [Hashids Service - NestJS](#hashids-service---nestjs)
+    - [src/common/services/hashid.service.ts](#srccommonserviceshashidservicets)
+    - [src/common/pipes/hashid.pipe.ts](#srccommonpipeshashidpipets)
 
 ## URL Obfuscation Strategies
 

@@ -6,7 +6,7 @@ This folder contains Python utility tools that agents use to gather information 
 
 All tools are executable Python scripts that can be run directly from the command line.
 
-**Version:** 1.0.0
+**Version:** 1.1.0
 
 ---
 
@@ -33,6 +33,7 @@ All tools are executable Python scripts that can be run directly from the comman
 plugins/
 ├── README.md           # This file
 ├── ab-test-tool.py     # A/B testing for prompt variants
+├── chrome-tool.py      # Cross-platform Chrome detection and configuration
 ├── db-tool.py          # Database type and ORM detection
 ├── ddev-tool.py        # DDEV project status and configuration
 ├── docker-tool.py      # Docker containers, compose, images
@@ -54,6 +55,7 @@ plugins/
 
 | Tool | Command | Description |
 |------|---------|-------------|
+| `chrome-tool.py` | `./plugins/chrome-tool.py detect` | Cross-platform Chrome detection and configuration |
 | `ddev-tool.py` | `./plugins/ddev-tool.py status` | Check DDEV container status and configuration |
 | `docker-tool.py` | `./plugins/docker-tool.py status` | Check Docker containers, compose, images, networks |
 | `env-tool.py` | `./plugins/env-tool.py find` | Discover and validate environment files |
@@ -106,12 +108,14 @@ Agents use these tools automatically to gather context:
 
 | Agent | Tools Used |
 |-------|------------|
-| **Setup Agent** | `project-tool.py`, `env-tool.py`, `docker-tool.py`, `ddev-tool.py` |
+| **Setup Agent** | `project-tool.py`, `env-tool.py`, `docker-tool.py`, `ddev-tool.py`, `chrome-tool.py` |
 | **CI/CD Agent** | `git-tool.py`, `docker-tool.py`, `ddev-tool.py` |
 | **Database Agent** | `db-tool.py`, `env-tool.py` |
 | **Backend Agent** | `project-tool.py`, `db-tool.py`, `env-tool.py` |
 | **Logging Agent** | `log-tool.py`, `project-tool.py` |
-| **Debugger Agent** | `log-tool.py`, `env-tool.py` |
+| **Debugger Agent** | `log-tool.py`, `env-tool.py`, `chrome-tool.py` |
+| **QA Tester Agent** | `project-tool.py`, `chrome-tool.py` |
+| **Test Writer Agent** | `project-tool.py`, `chrome-tool.py` |
 
 ### JSON Output
 

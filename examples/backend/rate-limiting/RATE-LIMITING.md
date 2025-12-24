@@ -28,10 +28,29 @@
 
 ## Table of Contents
 
-- [Overview](#overview)
-- [TALL Stack (Laravel)](#tall-stack-laravel)
-- [Django/Wagtail](#djangowagtail)
-- [Node.js/TypeScript (NestJS GraphQL)](#nodejstypescript-nestjs-graphql)
+- [Rate Limiting for PII Endpoints](#rate-limiting-for-pii-endpoints)
+  - [Metadata](#metadata)
+  - [Framework Versions Tested](#framework-versions-tested)
+  - [Table of Contents](#table-of-contents)
+  - [Overview](#overview)
+  - [TALL Stack (Laravel)](#tall-stack-laravel)
+    - [Installation](#installation)
+    - [Rate Limiter Configuration](#rate-limiter-configuration)
+    - [Route Configuration](#route-configuration)
+    - [Custom Middleware (Optional)](#custom-middleware-optional)
+    - [Controller Example](#controller-example)
+  - [Django/Wagtail](#djangowagtail)
+    - [Installation](#installation-1)
+    - [Settings Configuration](#settings-configuration)
+    - [Rate Limit Decorator](#rate-limit-decorator)
+    - [GraphQL Schema Example (Strawberry)](#graphql-schema-example-strawberry)
+    - [REST API Example (Django REST Framework)](#rest-api-example-django-rest-framework)
+    - [Middleware (Optional)](#middleware-optional)
+  - [Node.js/TypeScript (NestJS GraphQL)](#nodejstypescript-nestjs-graphql)
+    - [PII Throttle Guard](#pii-throttle-guard)
+    - [Module Configuration](#module-configuration)
+    - [Usage](#usage)
+
 
 ## Overview
 

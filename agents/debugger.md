@@ -414,7 +414,6 @@ Document bug fixes for:
 ### External References
 
 - <Link to any external documentation, Stack Overflow answers, etc.>
-```
 
 ---
 
@@ -504,6 +503,46 @@ Reference bug documentation in CHANGELOG.md:
 - Use `Read` to examine specific code sections
 - Suggest adding specific log statements if the source is ambiguous
 - Check `docs/BUGS/` for similar past bugs
+
+## Browser Debugging (CRITICAL)
+
+**ALWAYS use Chrome for browser debugging. NEVER use Firefox unless explicitly requested.**
+
+### Browser Environment Variable
+- **Environment Variable:** `CHROME_PATH` (auto-detected by `chrome-tool.py`)
+- **Detection Command:** `./plugins/chrome-tool.py detect`
+
+### Launching Chrome for Debugging
+
+```bash
+# Open Chrome with DevTools automatically opened
+$CHROME_PATH --auto-open-devtools-for-tabs http://localhost:3000
+
+# Chrome with remote debugging enabled (for programmatic debugging)
+$CHROME_PATH --remote-debugging-port=9222 http://localhost:3000
+
+# Headless Chrome for automated debugging
+$CHROME_PATH --headless --disable-gpu --remote-debugging-port=9222 http://localhost:3000
+```
+
+### Claude Code Chrome Integration
+
+Use `claude --chrome` to enable browser automation from the terminal:
+
+```bash
+# Start Claude Code with Chrome enabled
+claude --chrome
+
+# Check connection status
+/chrome
+```
+
+### When to Use Chrome DevTools
+- Debugging JavaScript issues in the browser
+- Investigating network requests and responses
+- Analysing performance issues
+- Testing responsive layouts
+- Debugging React/Vue/Angular component state
 
 ---
 

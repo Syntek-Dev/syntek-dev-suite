@@ -6,12 +6,20 @@ This skill defines the React Native mobile stack configuration. Apply when worki
 
 ## Table of Contents
 
-- [Architecture](#architecture)
-- [Commands](#commands)
-- [Coding Standards](#coding-standards)
-- [File Structure](#file-structure)
-- [Platform Considerations](#platform-considerations)
-- [Testing (Jest + RNTL)](#testing-jest--rntl)
+- [Stack: React Native Mobile](#stack-react-native-mobile)
+  - [Table of Contents](#table-of-contents)
+  - [Architecture](#architecture)
+  - [Commands](#commands)
+  - [Coding Standards](#coding-standards)
+    - [Components](#components)
+    - [Styling (NativeWind)](#styling-nativewind)
+    - [Platform-Specific Code](#platform-specific-code)
+    - [Navigation (React Navigation)](#navigation-react-navigation)
+  - [File Structure](#file-structure)
+  - [Platform Considerations](#platform-considerations)
+    - [iOS Specific](#ios-specific)
+    - [Android Specific](#android-specific)
+  - [Testing (Jest + RNTL)](#testing-jest--rntl)
 
 ---
 

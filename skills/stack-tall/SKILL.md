@@ -6,10 +6,16 @@ This skill defines the TALL stack configuration. Apply when working on Laravel/D
 
 ## Table of Contents
 
-- [Architecture](#architecture)
-- [Commands](#commands)
-- [Coding Standards](#coding-standards)
-- [File Structure](#file-structure)
+- [Stack: TALL (Laravel + DDEV)](#stack-tall-laravel--ddev)
+  - [Table of Contents](#table-of-contents)
+  - [Architecture](#architecture)
+  - [Commands](#commands)
+  - [Coding Standards](#coding-standards)
+    - [Livewire](#livewire)
+    - [Blade Templates](#blade-templates)
+    - [Alpine.js](#alpinejs)
+    - [Testing (Pest)](#testing-pest)
+  - [File Structure](#file-structure)
 
 ---
 

@@ -21,13 +21,19 @@ chmod +x dev.sh test.sh staging.sh production.sh
 
 ## Table of Contents
 
-- [Overview](#overview)
-- [Metadata](#metadata)
-- [dev.sh](#devsh)
-- [test.sh](#testsh)
-- [staging.sh](#stagingsh)
-- [production.sh](#productionsh)
-- [Shared Library Scripts](#shared-library-scripts)
+- [Environment Shell Scripts](#environment-shell-scripts)
+  - [Overview](#overview)
+  - [Metadata](#metadata)
+  - [Table of Contents](#table-of-contents)
+  - [dev.sh](#devsh)
+  - [test.sh](#testsh)
+  - [staging.sh](#stagingsh)
+  - [production.sh](#productionsh)
+  - [Shared Library Scripts](#shared-library-scripts)
+    - [dev.sh (Shared Lib)](#devsh-shared-lib)
+    - [test.sh (Shared Lib)](#testsh-shared-lib)
+    - [staging.sh (Shared Lib)](#stagingsh-shared-lib)
+    - [production.sh (Shared Lib)](#productionsh-shared-lib)
 
 ---
 

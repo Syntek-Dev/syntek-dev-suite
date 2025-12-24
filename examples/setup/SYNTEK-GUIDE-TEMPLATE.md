@@ -8,17 +8,56 @@
 
 ## Table of Contents
 
-- [Quick Start](#quick-start)
-- [Complete Development Workflow](#complete-development-workflow)
-- [Command Types](#command-types)
-- [Agent Commands](#agent-commands)
-- [Plugin Commands](#plugin-commands)
-- [Learning Commands](#learning-commands)
-- [Skills Reference](#skills-reference)
-- [Self-Learning and A/B Testing](#self-learning-and-ab-testing)
-- [Best Practices](#best-practices)
-- [Environment Commands](#environment-commands)
-- [Getting Help](#getting-help)
+- [Syntek Dev Suite - Plugin Usage Guide](#syntek-dev-suite---plugin-usage-guide)
+  - [Table of Contents](#table-of-contents)
+  - [Quick Start](#quick-start)
+    - [Basic Usage](#basic-usage)
+  - [Complete Development Workflow](#complete-development-workflow)
+    - [Phase 1: Repository Setup](#phase-1-repository-setup)
+    - [Phase 2: User Stories and Sprint Planning](#phase-2-user-stories-and-sprint-planning)
+    - [Phase 3: Planning the User Story](#phase-3-planning-the-user-story)
+    - [Phase 4: Test-Driven Development](#phase-4-test-driven-development)
+    - [Phase 5: Implementation](#phase-5-implementation)
+    - [Phase 6: Quality Assurance](#phase-6-quality-assurance)
+    - [Phase 7: Review and Refactoring](#phase-7-review-and-refactoring)
+    - [Phase 8: Completion and PR](#phase-8-completion-and-pr)
+    - [Workflow Summary](#workflow-summary)
+  - [Command Types](#command-types)
+  - [Agent Commands](#agent-commands)
+    - [Planning \& Architecture](#planning--architecture)
+    - [Development](#development)
+    - [Quality \& Testing](#quality--testing)
+    - [Refactoring \& Maintenance](#refactoring--maintenance)
+    - [Infrastructure](#infrastructure)
+    - [Specialised](#specialised)
+  - [Plugin Commands](#plugin-commands)
+  - [Learning Commands](#learning-commands)
+  - [Skills Reference](#skills-reference)
+    - [Stack Skills](#stack-skills)
+    - [Global Skill](#global-skill)
+  - [Self-Learning and A/B Testing](#self-learning-and-ab-testing)
+    - [How It Works](#how-it-works)
+    - [A/B Testing](#ab-testing)
+    - [Giving Feedback](#giving-feedback)
+    - [Project-Specific Learning](#project-specific-learning)
+    - [Learning Best Practices](#learning-best-practices)
+  - [Best Practices](#best-practices)
+    - [1. Always Start with `/agent:plan`](#1-always-start-with-agentplan)
+    - [2. Use `/agent:qa-tester` Before Merging](#2-use-agentqa-tester-before-merging)
+    - [3. Keep CLAUDE.md Updated](#3-keep-claudemd-updated)
+    - [4. Let Agents Read Files](#4-let-agents-read-files)
+    - [5. Use the Right Model](#5-use-the-right-model)
+    - [6. Chain Commands Logically](#6-chain-commands-logically)
+    - [7. Commit After Each Step](#7-commit-after-each-step)
+    - [8. Give Feedback](#8-give-feedback)
+  - [Environment Commands](#environment-commands)
+  - [Browser Configuration](#browser-configuration)
+    - [Browser Binary Path](#browser-binary-path)
+    - [Launching Chrome](#launching-chrome)
+    - [Claude Code Chrome Integration](#claude-code-chrome-integration)
+    - [E2E Test Configuration](#e2e-test-configuration)
+  - [Getting Help](#getting-help)
+
 
 ---
 
@@ -331,6 +370,7 @@ The `global-workflow` skill is always loaded and provides:
 - Currency: GBP (£)
 - Git commit message standards
 - Documentation formatting rules
+- Browser configuration (Chrome/Chrome Beta)
 
 ---
 
@@ -483,6 +523,68 @@ Each project has environment-specific scripts:
 | `./test.sh` | Run tests | Test suite with test database |
 | `./staging.sh` | Staging build | Build + cache for staging |
 | `./production.sh` | Production build | Build + optimise for production |
+
+---
+
+## Browser Configuration
+
+**CRITICAL:** Always use Chrome for testing, debugging, and E2E tests. Never use Firefox unless explicitly requested.
+
+### Browser Environment Variable
+
+| Variable | Purpose | Detection |
+|----------|---------|-----------|
+| `CHROME_PATH` | Primary Chrome binary path | `./plugins/chrome-tool.py detect` |
+
+```bash
+# Detect Chrome and generate .env.chrome
+./plugins/chrome-tool.py write
+```
+
+### Launching Chrome
+
+```bash
+# Standard Chrome for manual testing
+$CHROME_PATH http://localhost:3000
+
+# Chrome with DevTools for debugging
+$CHROME_PATH --auto-open-devtools-for-tabs http://localhost:3000
+
+# Chrome with specific viewport for responsive testing
+$CHROME_PATH --window-size=375,812 http://localhost:3000  # iPhone X
+$CHROME_PATH --window-size=768,1024 http://localhost:3000  # iPad
+
+# Headless Chrome for automated tests
+$CHROME_PATH --headless --disable-gpu --no-sandbox http://localhost:3000
+
+# Chrome with remote debugging enabled
+$CHROME_PATH --remote-debugging-port=9222 http://localhost:3000
+```
+
+### Claude Code Chrome Integration
+
+Use `claude --chrome` to enable browser automation from the terminal:
+
+```bash
+# Start Claude Code with Chrome enabled
+claude --chrome
+
+# Check connection status
+/chrome
+
+# Enable Chrome by default
+# Run /chrome and select "Enable by default"
+```
+
+### E2E Test Configuration
+
+| Framework | Chrome Configuration |
+|-----------|---------------------|
+| Playwright | `channel: 'chrome'` or `executablePath: process.env.CHROME_PATH` |
+| Cypress | `browser: 'chrome'` in config or `--browser chrome` CLI flag |
+| Puppeteer | `executablePath: process.env.PUPPETEER_EXECUTABLE_PATH` |
+| Selenium | `options.binary_location = os.environ.get('CHROME_PATH')` |
+| Laravel Dusk | Uses `DUSK_CHROME_BINARY` env var automatically |
 
 ---
 

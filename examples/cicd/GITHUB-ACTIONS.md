@@ -23,13 +23,21 @@ This document provides comprehensive examples for:
 
 ## Table of Contents
 
-- [Overview](#overview)
-- [Metadata](#metadata)
-- [Standard CI Pipeline](#standard-ci-pipeline)
-- [Staging Deployment](#staging-deployment)
-- [Production Deployment](#production-deployment)
-- [DDEV CI Workflow](#ddev-ci-workflow)
-- [Required Secrets](#required-secrets)
+- [GitHub Actions Workflows](#github-actions-workflows)
+  - [Overview](#overview)
+  - [Metadata](#metadata)
+  - [Table of Contents](#table-of-contents)
+  - [Standard CI Pipeline](#standard-ci-pipeline)
+    - [.github/workflows/ci.yml](#githubworkflowsciyml)
+  - [Staging Deployment](#staging-deployment)
+    - [.github/workflows/deploy-staging.yml](#githubworkflowsdeploy-stagingyml)
+  - [Production Deployment](#production-deployment)
+    - [.github/workflows/deploy-production.yml](#githubworkflowsdeploy-productionyml)
+  - [DDEV CI Workflow](#ddev-ci-workflow)
+    - [.github/workflows/ci-ddev.yml](#githubworkflowsci-ddevyml)
+  - [Required Secrets](#required-secrets)
+    - [GitHub Repository Secrets](#github-repository-secrets)
+    - [GitHub Environment Variables](#github-environment-variables)
 
 
 ## Standard CI Pipeline

@@ -20,12 +20,16 @@
 
 ## Table of Contents
 
-- [Basic Model and Migration](#basic-model-and-migration)
-- [Model with Foreign Keys](#model-with-foreign-keys)
-- [PII Model (GDPR Compliant)](#pii-model-gdpr-compliant)
-- [Role and Permission Models](#role-and-permission-models)
-- [Running Migrations](#running-migrations)
-- [Data Migration Example](#data-migration-example)
+- [Django Migrations](#django-migrations)
+  - [Metadata](#metadata)
+  - [Framework Versions Tested](#framework-versions-tested)
+  - [Table of Contents](#table-of-contents)
+  - [Basic Model and Migration](#basic-model-and-migration)
+  - [Model with Foreign Keys](#model-with-foreign-keys)
+  - [PII Model (GDPR Compliant)](#pii-model-gdpr-compliant)
+  - [Role and Permission Models](#role-and-permission-models)
+  - [Running Migrations](#running-migrations)
+  - [Data Migration Example](#data-migration-example)
 
 
 ## Basic Model and Migration

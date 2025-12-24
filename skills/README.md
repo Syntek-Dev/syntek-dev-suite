@@ -12,12 +12,20 @@ Each skill is a `SKILL.md` file within a named folder that provides detailed gui
 
 ## Table of Contents
 
-- [Overview](#overview)
-- [Directory Tree](#directory-tree)
-- [Available Skills](#available-skills)
-- [How Skills Work](#how-skills-work)
-- [Usage](#usage)
-- [Related Sections](#related-sections)
+- [Skills](#skills)
+  - [Overview](#overview)
+  - [Table of Contents](#table-of-contents)
+  - [Directory Tree](#directory-tree)
+  - [Available Skills](#available-skills)
+    - [Stack Skills](#stack-skills)
+    - [Global Skill](#global-skill)
+  - [How Skills Work](#how-skills-work)
+    - [Skill Loading Example](#skill-loading-example)
+  - [Usage](#usage)
+    - [Setting the Skill Target](#setting-the-skill-target)
+    - [Available Skill Targets](#available-skill-targets)
+    - [Creating a Custom Skill](#creating-a-custom-skill)
+  - [Related Sections](#related-sections)
 
 ---
 

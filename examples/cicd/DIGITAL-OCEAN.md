@@ -17,12 +17,23 @@ Digital Ocean deployment configurations for GitHub Actions. Includes App Platfor
 
 ## Table of Contents
 
-- [Overview](#overview)
-- [Metadata](#metadata)
-- [App Platform Configuration](#app-platform-configuration)
-- [Droplet Deployment (SSH)](#droplet-deployment-ssh)
-- [Kubernetes (DOKS) Deployment](#kubernetes-doks-deployment)
-- [Required Secrets](#required-secrets)
+- [Digital Ocean Deployment Configuration](#digital-ocean-deployment-configuration)
+  - [Overview](#overview)
+  - [Metadata](#metadata)
+  - [Table of Contents](#table-of-contents)
+  - [App Platform Configuration](#app-platform-configuration)
+    - [.do/app.yaml](#doappyaml)
+    - [.github/workflows/deploy-do-app.yml](#githubworkflowsdeploy-do-appyml)
+  - [Droplet Deployment (SSH)](#droplet-deployment-ssh)
+    - [.github/workflows/deploy-droplet.yml](#githubworkflowsdeploy-dropletyml)
+    - [.github/workflows/deploy-droplet-docker.yml](#githubworkflowsdeploy-droplet-dockeryml)
+  - [Kubernetes (DOKS) Deployment](#kubernetes-doks-deployment)
+    - [.github/workflows/deploy-doks.yml](#githubworkflowsdeploy-doksyml)
+    - [k8s/deployment.yaml](#k8sdeploymentyaml)
+  - [Required Secrets](#required-secrets)
+    - [GitHub Repository Secrets](#github-repository-secrets)
+    - [GitHub Environment Variables](#github-environment-variables)
+
 
 
 ## App Platform Configuration

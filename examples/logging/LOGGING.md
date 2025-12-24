@@ -17,12 +17,28 @@ Comprehensive logging examples for application monitoring, debugging, and audit 
 
 ## Table of Contents
 
-- [Overview](#overview)
-- [Technology Stacks](#technology-stacks)
-- [TALL Stack (Laravel 12)](#tall-stack-laravel-12)
-- [Django/Wagtail Stack](#djangowagtail-stack)
-- [React/Next.js Stack](#reactnextjs-stack)
-- [React Native Stack](#react-native-stack)
+- [Logging Examples](#logging-examples)
+  - [Overview](#overview)
+  - [Technology Stacks](#technology-stacks)
+  - [Table of Contents](#table-of-contents)
+  - [TALL Stack (Laravel 12)](#tall-stack-laravel-12)
+    - [Laravel Configuration](#laravel-configuration)
+    - [Custom Log Channels](#custom-log-channels)
+    - [Contextual Logging](#contextual-logging)
+    - [Log Viewer](#log-viewer)
+  - [Django/Wagtail Stack](#djangowagtail-stack)
+    - [Django Configuration](#django-configuration)
+    - [Custom Handlers](#custom-handlers)
+    - [Structured Logging](#structured-logging)
+  - [React/Next.js Stack](#reactnextjs-stack)
+    - [Server-Side Logging](#server-side-logging)
+    - [Client-Side Logging](#client-side-logging)
+    - [API Route Logging](#api-route-logging)
+  - [React Native Stack](#react-native-stack)
+    - [Development Logging](#development-logging)
+    - [Production Logging](#production-logging)
+    - [Crash Reporting](#crash-reporting)
+
 
 
 ## TALL Stack (Laravel 12)

@@ -21,12 +21,16 @@
 
 ## Table of Contents
 
-- [Basic Schema](#basic-schema)
-- [Schema with Relations](#schema-with-relations)
-- [PII Schema (GDPR Compliant)](#pii-schema-gdpr-compliant)
-- [Role-Based Access Control Schema](#role-based-access-control-schema)
-- [Running Migrations](#running-migrations)
-- [Seed Script](#seed-script)
+- [Prisma Migrations](#prisma-migrations)
+  - [Metadata](#metadata)
+  - [Framework Versions Tested](#framework-versions-tested)
+  - [Table of Contents](#table-of-contents)
+  - [Basic Schema](#basic-schema)
+  - [Schema with Relations](#schema-with-relations)
+  - [PII Schema (GDPR Compliant)](#pii-schema-gdpr-compliant)
+  - [Role-Based Access Control Schema](#role-based-access-control-schema)
+  - [Running Migrations](#running-migrations)
+  - [Seed Script](#seed-script)
 
 
 ## Basic Schema

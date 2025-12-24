@@ -4,6 +4,35 @@
 
 QA testing examples covering functional, integration, security, and accessibility testing across all technology stacks.
 
+## Table of Contents
+
+- [QA Testing Examples](#qa-testing-examples)
+  - [Overview](#overview)
+  - [Table of Contents](#table-of-contents)
+  - [Test Categories](#test-categories)
+  - [Browser Configuration for QA Testing (CRITICAL)](#browser-configuration-for-qa-testing-critical)
+    - [Browser Environment Variable](#browser-environment-variable)
+    - [Launching Chrome for QA Testing](#launching-chrome-for-qa-testing)
+    - [Claude Code Chrome Integration](#claude-code-chrome-integration)
+    - [QA Testing Browser Matrix](#qa-testing-browser-matrix)
+  - [TALL Stack (Laravel 12)](#tall-stack-laravel-12)
+    - [Laravel Functional Testing](#laravel-functional-testing)
+    - [Laravel API Testing](#laravel-api-testing)
+    - [Laravel Security Testing](#laravel-security-testing)
+  - [Django/Wagtail Stack](#djangowagtail-stack)
+    - [Django Functional Testing](#django-functional-testing)
+    - [Django API Testing](#django-api-testing)
+    - [Django Security Testing](#django-security-testing)
+  - [React/Next.js Stack](#reactnextjs-stack)
+    - [Next.js Component Testing](#nextjs-component-testing)
+    - [Next.js Integration Testing](#nextjs-integration-testing)
+    - [Next.js Accessibility Testing](#nextjs-accessibility-testing)
+  - [React Native Stack](#react-native-stack)
+    - [Device Testing](#device-testing)
+    - [RN Integration Testing](#rn-integration-testing)
+    - [RN Accessibility Testing](#rn-accessibility-testing)
+
+
 ## Test Categories
 
 | Category | Purpose | Tools |
@@ -16,14 +45,62 @@ QA testing examples covering functional, integration, security, and accessibilit
 
 ---
 
-## Table of Contents
+## Browser Configuration for QA Testing (CRITICAL)
 
-- [Overview](#overview)
-- [Test Categories](#test-categories)
-- [TALL Stack (Laravel 12)](#tall-stack-laravel-12)
-- [Django/Wagtail Stack](#djangowagtail-stack)
-- [React/Next.js Stack](#reactnextjs-stack)
-- [React Native Stack](#react-native-stack)
+**ALWAYS use Chrome for browser-based QA testing. NEVER use Firefox unless explicitly requested.**
+
+### Browser Environment Variable
+- **Environment Variable:** `CHROME_PATH` (auto-detected by `chrome-tool.py`)
+- **Detection Command:** `./plugins/chrome-tool.py detect`
+
+### Launching Chrome for QA Testing
+
+```bash
+# Standard Chrome for manual testing
+$CHROME_PATH http://localhost:3000
+
+# Chrome with DevTools for debugging issues
+$CHROME_PATH --auto-open-devtools-for-tabs http://localhost:3000
+
+# Chrome with specific viewport for responsive testing
+$CHROME_PATH --window-size=375,812 http://localhost:3000  # iPhone X
+$CHROME_PATH --window-size=768,1024 http://localhost:3000  # iPad
+$CHROME_PATH --window-size=1920,1080 http://localhost:3000  # Desktop
+
+# Headless Chrome for automated QA checks
+$CHROME_PATH --headless --disable-gpu --screenshot http://localhost:3000
+
+# Chrome with Lighthouse for accessibility/performance auditing
+$CHROME_PATH --remote-debugging-port=9222 http://localhost:3000
+```
+
+### Claude Code Chrome Integration
+
+Use `claude --chrome` to enable browser automation for QA testing:
+
+```bash
+# Start Claude Code with Chrome enabled
+claude --chrome
+
+# Check connection status
+/chrome
+
+# QA testing example
+Open localhost:3000, try the login form with invalid data, check error messages appear correctly.
+```
+
+### QA Testing Browser Matrix
+
+| Test Type | Primary Browser | DevTools Tab |
+|-----------|-----------------|--------------|
+| Functional | Chrome | Elements, Console |
+| Responsive | Chrome | Device Mode (Toggle device toolbar) |
+| Performance | Chrome | Performance, Network |
+| Accessibility | Chrome | Lighthouse (Accessibility audit) |
+| Network | Chrome | Network (throttling, offline) |
+| Security | Chrome | Security, Application |
+
+---
 
 ## TALL Stack (Laravel 12)
 

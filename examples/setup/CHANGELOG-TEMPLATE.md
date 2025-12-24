@@ -16,10 +16,13 @@ Standard changelog template following the [Keep a Changelog](https://keepachange
 
 ## Table of Contents
 
-- [Overview](#overview)
-- [Metadata](#metadata)
-- [Initial Changelog Template](#initial-changelog-template)
-- [Changelog Update Rules](#changelog-update-rules)
+- [Changelog Template](#changelog-template)
+  - [Overview](#overview)
+  - [Metadata](#metadata)
+  - [Table of Contents](#table-of-contents)
+  - [Initial Changelog Template](#initial-changelog-template)
+  - [Changelog Update Rules](#changelog-update-rules)
+    - [Example Entry](#example-entry)
 
 ---
 

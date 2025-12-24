@@ -6,11 +6,17 @@ This skill defines the React web stack configuration. Apply when working on Reac
 
 ## Table of Contents
 
-- [Architecture](#architecture)
-- [Commands](#commands)
-- [Coding Standards](#coding-standards)
-- [File Structure](#file-structure)
-- [Testing (Vitest + RTL)](#testing-vitest--rtl)
+- [Stack: React Web (Docker)](#stack-react-web-docker)
+  - [Table of Contents](#table-of-contents)
+  - [Architecture](#architecture)
+  - [Commands](#commands)
+  - [Coding Standards](#coding-standards)
+    - [Components](#components)
+    - [State Management](#state-management)
+    - [Styling (Tailwind)](#styling-tailwind)
+    - [Hooks](#hooks)
+  - [File Structure](#file-structure)
+  - [Testing (Vitest + RTL)](#testing-vitest--rtl)
 
 ---
 

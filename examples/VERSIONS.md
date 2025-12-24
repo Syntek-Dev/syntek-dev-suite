@@ -4,7 +4,7 @@
 
 This file tracks the framework and language versions used in our code examples. Agents should reference this file and compare against project versions before providing code examples.
 
-**Last Updated:** 20/12/2025
+**Last Updated:** 24/12/2025
 
 ## Supported Stacks
 
@@ -22,14 +22,30 @@ This project supports four primary stacks plus a shared UI library. Agents shoul
 
 ## Table of Contents
 
-- [Overview](#overview)
-- [Supported Stacks](#supported-stacks)
-- [Current Versions Used in Examples](#current-versions-used-in-examples)
-- [Tailwind CSS Version Detection](#tailwind-css-version-detection)
-- [How Agents Should Use This File](#how-agents-should-use-this-file)
-- [Version Checking Workflow](#version-checking-workflow)
-- [Update Policy](#update-policy)
-- [Sources](#sources)
+- [Framework Versions](#framework-versions)
+  - [Overview](#overview)
+  - [Supported Stacks](#supported-stacks)
+  - [Table of Contents](#table-of-contents)
+  - [Current Versions Used in Examples](#current-versions-used-in-examples)
+    - [Languages](#languages)
+    - [Backend Frameworks](#backend-frameworks)
+    - [Frontend Frameworks](#frontend-frameworks)
+    - [CSS/Styling](#cssstyling)
+    - [Databases](#databases)
+    - [ORMs and Query Builders](#orms-and-query-builders)
+  - [Tailwind CSS Version Detection](#tailwind-css-version-detection)
+    - [Tailwind 4.x (Current Default)](#tailwind-4x-current-default)
+    - [Tailwind v3 (Legacy)](#tailwind-v3-legacy)
+    - [Version Detection Workflow](#version-detection-workflow)
+  - [How Agents Should Use This File](#how-agents-should-use-this-file)
+    - [1. Read Project Version Files](#1-read-project-version-files)
+    - [2. Detect Tailwind Version](#2-detect-tailwind-version)
+    - [3. Search Online for Latest Versions](#3-search-online-for-latest-versions)
+    - [4. Compare and Report](#4-compare-and-report)
+    - [5. Adapt Examples](#5-adapt-examples)
+  - [Version Checking Workflow](#version-checking-workflow)
+  - [Update Policy](#update-policy)
+  - [Sources](#sources)
 
 ---
 

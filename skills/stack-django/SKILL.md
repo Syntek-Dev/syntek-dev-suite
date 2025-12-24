@@ -6,11 +6,17 @@ This skill defines the Django/Wagtail stack configuration. Apply when working on
 
 ## Table of Contents
 
-- [Architecture](#architecture)
-- [Commands](#commands)
-- [Coding Standards](#coding-standards)
-- [File Structure](#file-structure)
-- [Testing (pytest)](#testing-pytest)
+- [Stack: Django \& Wagtail (Docker)](#stack-django--wagtail-docker)
+  - [Table of Contents](#table-of-contents)
+  - [Architecture](#architecture)
+  - [Commands](#commands)
+  - [Coding Standards](#coding-standards)
+    - [Django](#django)
+    - [Wagtail](#wagtail)
+    - [Templates](#templates)
+    - [Type Hinting](#type-hinting)
+  - [File Structure](#file-structure)
+  - [Testing (pytest)](#testing-pytest)
 
 ---
 

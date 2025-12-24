@@ -20,12 +20,33 @@ Frontend components for masking Personally Identifiable Information (PII) in use
 
 ## Table of Contents
 
-- [Overview](#overview)
-- [Metadata](#metadata)
-- [TALL Stack - Laravel/Livewire/Alpine.js](#tall-stack---laravellivewirealpinejs)
-- [Django/Wagtail Stack](#djangowagtail-stack)
-- [React/Next.js Stack](#reactnextjs-stack)
-- [PII Masking - React Native](#pii-masking---react-native)
+- [Frontend PII Masking Components](#frontend-pii-masking-components)
+  - [Overview](#overview)
+  - [Metadata](#metadata)
+  - [Table of Contents](#table-of-contents)
+  - [TALL Stack - Laravel/Livewire/Alpine.js](#tall-stack---laravellivewirealpinejs)
+    - [Blade Components](#blade-components)
+    - [resources/views/components/masked-email.blade.php](#resourcesviewscomponentsmasked-emailbladephp)
+    - [resources/views/components/masked-phone.blade.php](#resourcesviewscomponentsmasked-phonebladephp)
+    - [Livewire Component](#livewire-component)
+      - [app/Livewire/MaskedPiiField.php](#applivewiremaskedpiifieldphp)
+      - [resources/views/livewire/masked-pii-field.blade.php](#resourcesviewslivewiremasked-pii-fieldbladephp)
+    - [Alpine.js Masking Directive](#alpinejs-masking-directive)
+      - [resources/js/alpine/pii-mask.js](#resourcesjsalpinepii-maskjs)
+  - [Django/Wagtail Stack](#djangowagtail-stack)
+    - [Django Template Tags](#django-template-tags)
+      - [app/templatetags/pii\_filters.py](#apptemplatetagspii_filterspy)
+    - [Jinja2 Filters](#jinja2-filters)
+      - [app/jinja2.py](#appjinja2py)
+    - [Django View Helpers](#django-view-helpers)
+      - [app/utils/pii\_helpers.py](#apputilspii_helperspy)
+      - [templates/pii/masked\_field.html](#templatespiimasked_fieldhtml)
+  - [React/Next.js Stack](#reactnextjs-stack)
+    - [PII Masking Hook](#pii-masking-hook)
+  - [PII Masking - React Native](#pii-masking---react-native)
+    - [src/components/MaskedText.tsx](#srccomponentsmaskedtexttsx)
+
+
 
 ---
 

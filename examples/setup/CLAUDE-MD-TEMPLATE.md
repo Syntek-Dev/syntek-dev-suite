@@ -16,10 +16,13 @@ Template for the `.claude/CLAUDE.md` file that provides project context for Clau
 
 ## Table of Contents
 
-- [Overview](#overview)
-- [Metadata](#metadata)
-- [Template](#template)
-- [Settings File Template](#settings-file-template)
+- [CLAUDE.md Template](#claudemd-template)
+  - [Overview](#overview)
+  - [Metadata](#metadata)
+  - [Table of Contents](#table-of-contents)
+  - [Template](#template)
+  - [Settings File Template](#settings-file-template)
+    - [.claude/settings.local.json](#claudesettingslocaljson)
 
 ---
 
@@ -35,6 +38,7 @@ Template for the `.claude/CLAUDE.md` file that provides project context for Clau
 - **Container:** [e.g., DDEV, Docker, Docker Compose]
 - **Locale:** [e.g., en_GB]
 - **Timezone:** [e.g., Europe/London]
+- **Browser:** [e.g., Google Chrome, Chrome Beta for debugging]
 
 ## Project Structure
 \`\`\`

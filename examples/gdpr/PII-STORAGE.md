@@ -29,12 +29,26 @@
 
 ## Table of Contents
 
-- [Overview](#overview)
-- [Hashing vs Encryption Decision](#hashing-vs-encryption-decision)
-- [Database Schema Examples](#database-schema-examples)
-- [TALL Stack (Laravel/PHP/MariaDB)](#tall-stack-laravelphpmariadb)
-- [Django/Wagtail (Python/PostgreSQL)](#djangowagtail-pythonpostgresql)
-- [React/Next.js (TypeScript/Prisma)](#reactnextjs-typescriptprisma)
+- [PII Storage Service](#pii-storage-service)
+  - [Metadata](#metadata)
+  - [Framework Versions Tested](#framework-versions-tested)
+  - [Table of Contents](#table-of-contents)
+  - [Overview](#overview)
+  - [Hashing vs Encryption Decision](#hashing-vs-encryption-decision)
+  - [Database Schema Examples](#database-schema-examples)
+    - [MariaDB Schema](#mariadb-schema)
+    - [PostgreSQL Schema](#postgresql-schema)
+  - [TALL Stack (Laravel/PHP/MariaDB)](#tall-stack-laravelphpmariadb)
+    - [Service Class](#service-class)
+    - [Model Example](#model-example)
+    - [Migration Example](#migration-example)
+  - [Django/Wagtail (Python/PostgreSQL)](#djangowagtail-pythonpostgresql)
+    - [Service Class](#service-class-1)
+    - [Model Example](#model-example-1)
+    - [Migration Example](#migration-example-1)
+    - [Required Settings](#required-settings)
+  - [React/Next.js (TypeScript/Prisma)](#reactnextjs-typescriptprisma)
+    - [Required Environment Variables](#required-environment-variables)
 
 
 ## Overview

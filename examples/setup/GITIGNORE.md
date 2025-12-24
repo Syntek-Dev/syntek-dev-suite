@@ -16,11 +16,13 @@ Standard ignore file templates for different project types. These templates cove
 
 ## Table of Contents
 
-- [Overview](#overview)
-- [Metadata](#metadata)
-- [Universal .gitignore](#universal-gitignore)
-- [.dockerignore](#dockerignore)
-- [.gitattributes](#gitattributes)
+- [.gitignore Templates](#gitignore-templates)
+  - [Overview](#overview)
+  - [Metadata](#metadata)
+  - [Table of Contents](#table-of-contents)
+  - [Universal .gitignore](#universal-gitignore)
+  - [.dockerignore](#dockerignore)
+  - [.gitattributes](#gitattributes)
 
 ---
 

@@ -319,7 +319,19 @@ Let me set up your project. I need a few details:
    python /home/sam-dev/claude-dev-team/plugins/docker-tool.py status
    python /home/sam-dev/claude-dev-team/plugins/ddev-tool.py status
    python /home/sam-dev/claude-dev-team/plugins/env-tool.py find
+   python /home/sam-dev/claude-dev-team/plugins/chrome-tool.py detect
    ```
+
+5. **Detect and configure Chrome** for browser testing:
+   ```bash
+   # Detect Chrome installation
+   python /home/sam-dev/claude-dev-team/plugins/chrome-tool.py detect
+
+   # Generate Chrome environment file
+   python /home/sam-dev/claude-dev-team/plugins/chrome-tool.py write
+   ```
+
+   The chrome-tool.py detects Chrome across Linux, macOS, and Windows, generating environment variables for testing frameworks.
 
 ---
 
@@ -715,6 +727,32 @@ Key environment file requirements:
 - Separate database per environment (e.g., `project_dev`, `project_staging`, `project_production`)
 - Appropriate debug settings per environment
 - Environment-specific external service keys (sandbox for dev, production for live)
+- **Browser configuration** - Chrome path detected via `chrome-tool.py`
+
+### Browser Environment Variables
+
+**CRITICAL:** Run Chrome detection and include browser variables in all environment files:
+
+```bash
+# Detect Chrome and generate .env.chrome
+python /home/sam-dev/claude-dev-team/plugins/chrome-tool.py write
+
+# Append to environment files
+cat .env.chrome >> .env.dev.example
+cat .env.chrome >> .env.test.example
+```
+
+Or manually add the detected Chrome path:
+```bash
+# Browser Configuration (auto-detected)
+CHROME_PATH=/usr/bin/google-chrome
+CHROME_BINARY=/usr/bin/google-chrome
+DUSK_CHROME_BINARY=/usr/bin/google-chrome
+PUPPETEER_EXECUTABLE_PATH=/usr/bin/google-chrome
+PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/google-chrome
+```
+
+**Note:** Use `${CHROME_PATH}` as the primary variable; other variables are aliases for framework compatibility.
 
 ### Create Local Development Environment Files
 ```bash

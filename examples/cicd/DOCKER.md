@@ -20,11 +20,27 @@ Docker configuration templates for containerised applications. Includes multi-st
 
 ## Table of Contents
 
-- [Overview](#overview)
-- [Metadata](#metadata)
-- [TALL Stack (Laravel/PHP)](#tall-stack-laravelphp)
-- [Django/Wagtail Stack](#djangowagtail-stack)
-- [Docker Compose with Multiple Services](#docker-compose-with-multiple-services)
+- [Docker Configuration](#docker-configuration)
+  - [Overview](#overview)
+  - [Metadata](#metadata)
+  - [Table of Contents](#table-of-contents)
+  - [TALL Stack (Laravel/PHP)](#tall-stack-laravelphp)
+    - [Laravel Dockerfile](#laravel-dockerfile)
+    - [docker/php/opcache.ini](#dockerphpopcacheini)
+    - [docker/php/laravel.ini](#dockerphplaravelini)
+    - [docker/nginx/laravel.conf](#dockernginxlaravelconf)
+    - [docker/supervisor/supervisord.conf](#dockersupervisorsupervisordconf)
+    - [Laravel Docker Compose](#laravel-docker-compose)
+    - [docker/mariadb/my.cnf](#dockermariadbmycnf)
+  - [Django/Wagtail Stack](#djangowagtail-stack)
+    - [Django Dockerfile](#django-dockerfile)
+    - [requirements-prod.txt](#requirements-prodtxt)
+    - [Django Docker Compose](#django-docker-compose)
+    - [docker/postgres/postgresql.conf](#dockerpostgrespostgresqlconf)
+  - [Docker Compose with Multiple Services](#docker-compose-with-multiple-services)
+    - [docker-compose.yml (Full Stack)](#docker-composeyml-full-stack)
+    - [.dockerignore](#dockerignore)
+
 
 
 ## TALL Stack (Laravel/PHP)

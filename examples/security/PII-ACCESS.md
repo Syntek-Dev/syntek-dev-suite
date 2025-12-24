@@ -26,13 +26,28 @@ Database-level protection for Personally Identifiable Information (PII). Include
 
 ## Table of Contents
 
-- [Overview](#overview)
-- [Metadata](#metadata)
-- [PII Table Schema](#pii-table-schema)
-- [TALL Stack - Laravel PII Access](#tall-stack---laravel-pii-access)
-- [PII Audit Command - Laravel](#pii-audit-command---laravel)
-- [PII Permissions Matrix](#pii-permissions-matrix)
-- [PII Verification Checklist](#pii-verification-checklist)
+- [PII Database Protection \& Access Control](#pii-database-protection--access-control)
+  - [Overview](#overview)
+  - [Metadata](#metadata)
+  - [Table of Contents](#table-of-contents)
+  - [PII Table Schema](#pii-table-schema)
+    - [MySQL/MariaDB](#mysqlmariadb)
+  - [TALL Stack - Laravel PII Access](#tall-stack---laravel-pii-access)
+  - [PII Access Service - Laravel](#pii-access-service---laravel)
+    - [app/Services/PiiAccessService.php](#appservicespiiaccessservicephp)
+  - [PII Audit Command - Laravel](#pii-audit-command---laravel)
+    - [app/Console/Commands/AuditPiiHandling.php](#appconsolecommandsauditpiihandlingphp)
+  - [PII Permissions Matrix](#pii-permissions-matrix)
+  - [PII Verification Checklist](#pii-verification-checklist)
+    - [Database Schema Verification](#database-schema-verification)
+    - [Code Verification Patterns](#code-verification-patterns)
+      - [Correct: Hash Before Lookup](#correct-hash-before-lookup)
+      - [Incorrect: Plaintext Lookup](#incorrect-plaintext-lookup)
+      - [Correct: Encrypt Before Storage](#correct-encrypt-before-storage)
+      - [Incorrect: Plaintext Storage](#incorrect-plaintext-storage)
+    - [PII Verification During Code Review](#pii-verification-during-code-review)
+    - [Verify PII Permissions](#verify-pii-permissions)
+
 
 ## PII Table Schema
 

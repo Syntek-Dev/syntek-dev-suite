@@ -6,14 +6,18 @@ This skill defines shared library configuration for React Web and React Native p
 
 ## Table of Contents
 
-- [Architecture](#architecture)
-- [Commands](#commands)
-- [Critical Rules](#critical-rules)
-- [Package.json Configuration](#packagejson-configuration)
-- [Versioning (Semantic Versioning)](#versioning-semantic-versioning)
-- [Development Workflow](#development-workflow)
-- [File Structure](#file-structure)
-- [Testing](#testing)
+- [Stack: Shared NPM Package](#stack-shared-npm-package)
+  - [Table of Contents](#table-of-contents)
+  - [Architecture](#architecture)
+  - [Commands](#commands)
+  - [Critical Rules](#critical-rules)
+    - [Platform Agnostic Code](#platform-agnostic-code)
+    - [Styling for Shared UI](#styling-for-shared-ui)
+  - [Package.json Configuration](#packagejson-configuration)
+  - [Versioning (Semantic Versioning)](#versioning-semantic-versioning)
+  - [Development Workflow](#development-workflow)
+  - [File Structure](#file-structure)
+  - [Testing](#testing)
 
 ---
 

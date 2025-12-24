@@ -22,13 +22,17 @@
 
 ## Table of Contents
 
-- [Basic Entity](#basic-entity)
-- [Entity with Relations](#entity-with-relations)
-- [PII Entity (GDPR Compliant)](#pii-entity-gdpr-compliant)
-- [Role-Based Access Control Entities](#role-based-access-control-entities)
-- [Migration File Example](#migration-file-example)
-- [Running Migrations](#running-migrations)
-- [Data Source Configuration](#data-source-configuration)
+- [TypeORM Migrations](#typeorm-migrations)
+  - [Metadata](#metadata)
+  - [Framework Versions Tested](#framework-versions-tested)
+  - [Table of Contents](#table-of-contents)
+  - [Basic Entity](#basic-entity)
+  - [Entity with Relations](#entity-with-relations)
+  - [PII Entity (GDPR Compliant)](#pii-entity-gdpr-compliant)
+  - [Role-Based Access Control Entities](#role-based-access-control-entities)
+  - [Migration File Example](#migration-file-example)
+  - [Running Migrations](#running-migrations)
+  - [Data Source Configuration](#data-source-configuration)
 
 
 ## Basic Entity

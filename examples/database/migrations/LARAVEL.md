@@ -20,11 +20,15 @@
 
 ## Table of Contents
 
-- [Basic Migration](#basic-migration)
-- [Migration with Foreign Keys](#migration-with-foreign-keys)
-- [Migration with PII Table (GDPR Compliant)](#migration-with-pii-table-gdpr-compliant)
-- [Migration with Pivot Table](#migration-with-pivot-table)
-- [Running Migrations](#running-migrations)
+- [Laravel Migrations](#laravel-migrations)
+  - [Metadata](#metadata)
+  - [Framework Versions Tested](#framework-versions-tested)
+  - [Table of Contents](#table-of-contents)
+  - [Basic Migration](#basic-migration)
+  - [Migration with Foreign Keys](#migration-with-foreign-keys)
+  - [Migration with PII Table (GDPR Compliant)](#migration-with-pii-table-gdpr-compliant)
+  - [Migration with Pivot Table](#migration-with-pivot-table)
+  - [Running Migrations](#running-migrations)
 
 
 ## Basic Migration

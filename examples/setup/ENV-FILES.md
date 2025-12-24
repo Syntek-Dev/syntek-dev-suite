@@ -18,12 +18,29 @@ Environment file templates for different deployment environments. Each project s
 
 ## Table of Contents
 
-- [Overview](#overview)
-- [Metadata](#metadata)
-- [Development Environment](#development-environment)
-- [Test Environment](#test-environment)
-- [Staging Environment](#staging-environment)
-- [Production Environment](#production-environment)
+- [Environment File Templates](#environment-file-templates)
+  - [Overview](#overview)
+  - [Metadata](#metadata)
+  - [Table of Contents](#table-of-contents)
+  - [Development Environment](#development-environment)
+    - [.env.dev.example](#envdevexample)
+  - [Test Environment](#test-environment)
+    - [.env.test.example](#envtestexample)
+  - [Staging Environment](#staging-environment)
+    - [.env.staging.example](#envstagingexample)
+  - [Production Environment](#production-environment)
+    - [.env.production.example](#envproductionexample)
+  - [Browser Environment Variables](#browser-environment-variables)
+    - [Browser Binary Paths](#browser-binary-paths)
+    - [Framework-Specific Variables](#framework-specific-variables)
+      - [Laravel Dusk](#laravel-dusk)
+      - [Playwright](#playwright)
+      - [Cypress](#cypress)
+      - [Puppeteer](#puppeteer)
+      - [Selenium (Python)](#selenium-python)
+    - [CI/CD Environment Variables](#cicd-environment-variables)
+    - [Example GitHub Actions Configuration](#example-github-actions-configuration)
+
 
 ---
 
@@ -64,6 +81,15 @@ MAIL_PASSWORD=null
 LOG_CHANNEL=stack
 LOG_LEVEL=debug
 
+# Browser (for E2E tests and debugging)
+# CRITICAL: Always use Chrome - paths auto-detected by ./plugins/chrome-tool.py
+# Run: ./plugins/chrome-tool.py write
+CHROME_PATH=  # Auto-detected, fill in after running chrome-tool.py
+BROWSER_BINARY=${CHROME_PATH}
+DUSK_CHROME_BINARY=${CHROME_PATH}
+CHROME_BINARY=${CHROME_PATH}
+PUPPETEER_EXECUTABLE_PATH=${CHROME_PATH}
+
 # External Services (use test/sandbox keys)
 # STRIPE_KEY=
 # AWS_ACCESS_KEY_ID=
@@ -95,6 +121,16 @@ CACHE_DRIVER=array
 SESSION_DRIVER=array
 QUEUE_CONNECTION=sync
 MAIL_MAILER=array
+
+# Browser (for E2E tests)
+# CRITICAL: Always use Chrome - paths auto-detected by ./plugins/chrome-tool.py
+CHROME_PATH=  # Auto-detected, fill in after running chrome-tool.py
+BROWSER_BINARY=${CHROME_PATH}
+DUSK_CHROME_BINARY=${CHROME_PATH}
+CHROME_BINARY=${CHROME_PATH}
+PUPPETEER_EXECUTABLE_PATH=${CHROME_PATH}
+# For headless testing in CI
+CHROME_HEADLESS=true
 ```
 
 ---
@@ -197,4 +233,97 @@ LOG_LEVEL=warning
 # AWS_SECRET_ACCESS_KEY=
 # AWS_DEFAULT_REGION=us-east-1
 # SENTRY_DSN=
+```
+
+---
+
+## Browser Environment Variables
+
+**CRITICAL:** Always use Chrome for testing, debugging, and E2E tests. Never use Firefox unless explicitly requested.
+
+### Chrome Detection
+
+Use the `chrome-tool.py` plugin to auto-detect Chrome on any platform:
+
+```bash
+# Detect Chrome installation
+./plugins/chrome-tool.py detect
+
+# Generate .env.chrome with all browser variables
+./plugins/chrome-tool.py write
+```
+
+### Browser Binary Paths
+
+| Variable | Purpose | Auto-Detection |
+|----------|---------|----------------|
+| `CHROME_PATH` | **Primary** Chrome binary path | Auto-detected by `chrome-tool.py` |
+| `BROWSER_BINARY` | General browser binary | `${CHROME_PATH}` |
+| `CHROME_BINARY` | Chrome binary for Selenium | `${CHROME_PATH}` |
+| `DUSK_CHROME_BINARY` | Laravel Dusk Chrome binary | `${CHROME_PATH}` |
+| `PUPPETEER_EXECUTABLE_PATH` | Puppeteer Chrome binary | `${CHROME_PATH}` |
+| `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH` | Playwright Chrome binary | `${CHROME_PATH}` |
+| `CHROME_HEADLESS` | Enable headless mode | `true` (CI) / `false` (local) |
+
+### Framework-Specific Variables
+
+#### Laravel Dusk
+```env
+# Uses CHROME_PATH automatically via alias
+DUSK_CHROME_BINARY=${CHROME_PATH}
+```
+
+#### Playwright
+```env
+# Playwright uses channel configuration in playwright.config.ts
+# Or use environment variable in config:
+PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=${CHROME_PATH}
+```
+
+#### Cypress
+```env
+# Cypress uses config or CLI flags
+# Run with: npx cypress run --browser $CHROME_PATH
+```
+
+#### Puppeteer
+```env
+PUPPETEER_EXECUTABLE_PATH=${CHROME_PATH}
+PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+```
+
+#### Selenium (Python)
+```env
+# Python code reads CHROME_PATH:
+# options.binary_location = os.environ.get('CHROME_PATH')
+CHROME_PATH=  # Auto-detected
+```
+
+### CI/CD Environment Variables
+
+For CI/CD pipelines (GitHub Actions, GitLab CI, etc.):
+
+```env
+# Enable headless mode
+CHROME_HEADLESS=true
+
+# Disable GPU (required for headless)
+CHROME_NO_GPU=true
+
+# Disable sandbox (required for Docker/CI)
+CHROME_NO_SANDBOX=true
+
+# Set display for headless (Linux)
+DISPLAY=:99
+```
+
+### Example GitHub Actions Configuration
+
+```yaml
+env:
+  CHROME_PATH: /usr/bin/google-chrome
+  CHROME_BINARY: /usr/bin/google-chrome
+  DUSK_CHROME_BINARY: /usr/bin/google-chrome
+  PUPPETEER_EXECUTABLE_PATH: /usr/bin/google-chrome
+  CHROME_HEADLESS: true
 ```

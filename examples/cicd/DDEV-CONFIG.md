@@ -20,12 +20,26 @@ DDEV configuration templates for local development. DDEV provides consistent dev
 
 ## Table of Contents
 
-- [Overview](#overview)
-- [Metadata](#metadata)
-- [Basic DDEV Configuration](#basic-ddev-configuration)
-- [DDEV with Redis](#ddev-with-redis)
-- [DDEV Custom Commands](#ddev-custom-commands)
-- [DDEV for Different Project Types](#ddev-for-different-project-types)
+- [DDEV Configuration](#ddev-configuration)
+  - [Overview](#overview)
+  - [Metadata](#metadata)
+  - [Table of Contents](#table-of-contents)
+  - [Basic DDEV Configuration](#basic-ddev-configuration)
+    - [.ddev/config.yaml (Laravel)](#ddevconfigyaml-laravel)
+    - [.ddev/config.yaml (WordPress)](#ddevconfigyaml-wordpress)
+  - [DDEV with Redis](#ddev-with-redis)
+    - [.ddev/docker-compose.redis.yaml](#ddevdocker-composeredisyaml)
+    - [.ddev/docker-compose.mailpit.yaml](#ddevdocker-composemailpityaml)
+  - [DDEV Custom Commands](#ddev-custom-commands)
+    - [.ddev/commands/host/deploy-staging](#ddevcommandshostdeploy-staging)
+    - [.ddev/commands/host/fresh](#ddevcommandshostfresh)
+    - [.ddev/commands/host/test](#ddevcommandshosttest)
+    - [.ddev/commands/host/lint](#ddevcommandshostlint)
+  - [DDEV for Different Project Types](#ddev-for-different-project-types)
+    - [Django Project](#django-project)
+    - [React/Node Project](#reactnode-project)
+    - [Drupal Project](#drupal-project)
+
 
 ## Basic DDEV Configuration
 

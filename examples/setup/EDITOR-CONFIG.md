@@ -16,13 +16,21 @@ Editor and linter configuration files for consistent code formatting across diff
 
 ## Table of Contents
 
-- [Overview](#overview)
-- [Metadata](#metadata)
-- [EditorConfig](#editorconfig)
-- [Prettier](#prettier)
-- [ESLint](#eslint)
-- [Node Version](#node-version)
-- [Python Configuration](#python-configuration)
+- [Editor Configuration Templates](#editor-configuration-templates)
+  - [Overview](#overview)
+  - [Metadata](#metadata)
+  - [Table of Contents](#table-of-contents)
+  - [EditorConfig](#editorconfig)
+    - [.editorconfig](#editorconfig-1)
+  - [Prettier](#prettier)
+    - [.prettierrc](#prettierrc)
+    - [.prettierignore](#prettierignore)
+  - [ESLint](#eslint)
+    - [.eslintignore](#eslintignore)
+  - [Node Version](#node-version)
+    - [.nvmrc](#nvmrc)
+  - [Python Configuration](#python-configuration)
+    - [.flake8](#flake8)
 
 ---
 

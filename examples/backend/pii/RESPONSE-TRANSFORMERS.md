@@ -25,10 +25,17 @@
 
 ## Table of Contents
 
-- [Overview](#overview)
-- [Laravel (TALL Stack)](#laravel-tall-stack)
-- [Django/Wagtail (Strawberry GraphQL)](#djangowagtail-strawberry-graphql)
-- [Node.js/TypeScript (NestJS GraphQL)](#nodejstypescript-nestjs-graphql)
+- [PII Response Transformers](#pii-response-transformers)
+  - [Metadata](#metadata)
+  - [Framework Versions Tested](#framework-versions-tested)
+  - [Table of Contents](#table-of-contents)
+  - [Overview](#overview)
+  - [Laravel (TALL Stack)](#laravel-tall-stack)
+    - [API Resources](#api-resources)
+    - [Alternative: Conditional Attributes](#alternative-conditional-attributes)
+    - [Usage Example](#usage-example)
+  - [Django/Wagtail (Strawberry GraphQL)](#djangowagtail-strawberry-graphql)
+  - [Node.js/TypeScript (NestJS GraphQL)](#nodejstypescript-nestjs-graphql)
 
 
 ## Overview

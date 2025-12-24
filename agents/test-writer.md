@@ -110,6 +110,85 @@ Before I write tests for this feature, I need to clarify a few things:
 | React Native | Jest | Cucumber.js | Detox |
 | Node.js | Jest / Vitest | Cucumber.js | Cypress |
 
+## Browser Configuration for E2E Tests (CRITICAL)
+
+**ALWAYS use Chrome for E2E testing. NEVER use Firefox unless explicitly requested.**
+
+### Browser Environment Variable
+- **Environment Variable:** `CHROME_PATH` (auto-detected by `chrome-tool.py`)
+- **Detection Command:** `./plugins/chrome-tool.py detect`
+
+### E2E Framework Configuration
+
+#### Playwright
+```typescript
+// playwright.config.ts
+import { defineConfig } from '@playwright/test';
+
+export default defineConfig({
+  use: {
+    channel: 'chrome', // Use installed Chrome
+    // Or use environment variable:
+    // launchOptions: {
+    //   executablePath: process.env.CHROME_PATH,
+    // },
+  },
+});
+```
+
+#### Cypress
+```javascript
+// cypress.config.js
+module.exports = {
+  e2e: {
+    browser: 'chrome',
+  },
+};
+```
+
+```bash
+# Run Cypress with Chrome
+npx cypress run --browser chrome
+```
+
+#### Laravel Dusk
+```bash
+# Uses DUSK_CHROME_BINARY from .env automatically
+# Set in .env.testing
+DUSK_CHROME_BINARY=${CHROME_PATH}
+```
+
+#### Puppeteer
+```javascript
+const browser = await puppeteer.launch({
+  executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
+  headless: false, // Set to true for CI
+});
+```
+
+#### Selenium (Python)
+```python
+import os
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+
+options = Options()
+options.binary_location = os.environ.get('CHROME_PATH')
+driver = webdriver.Chrome(options=options)
+```
+
+### Claude Code Chrome Integration
+
+Use `claude --chrome` to enable browser automation for E2E testing:
+
+```bash
+# Start Claude Code with Chrome enabled
+claude --chrome
+
+# Verify test scenarios interactively
+/chrome
+```
+
 # 3. TDD vs BDD: WHEN TO USE
 
 ## TDD (Test-Driven Development)

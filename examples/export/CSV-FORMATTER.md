@@ -25,12 +25,19 @@
 
 ## Table of Contents
 
-- [Metadata](#metadata)
-- [Framework Versions Tested](#framework-versions-tested)
-- [Overview](#overview)
-- [Laravel (TALL Stack)](#laravel-tall-stack)
-- [Django/Wagtail](#djangowagtail)
-- [Node.js/TypeScript](#nodejstypescript)
+- [CSV Formatter](#csv-formatter)
+  - [Metadata](#metadata)
+  - [Framework Versions Tested](#framework-versions-tested)
+  - [Table of Contents](#table-of-contents)
+  - [Overview](#overview)
+  - [Laravel (TALL Stack)](#laravel-tall-stack)
+    - [CSV Export Service](#csv-export-service)
+    - [Controller Example](#controller-example)
+  - [Django/Wagtail](#djangowagtail)
+    - [CSV Formatter Service](#csv-formatter-service)
+    - [Django Streaming Response](#django-streaming-response)
+  - [Node.js/TypeScript](#nodejstypescript)
+    - [NestJS Streaming Response](#nestjs-streaming-response)
 
 ---
 

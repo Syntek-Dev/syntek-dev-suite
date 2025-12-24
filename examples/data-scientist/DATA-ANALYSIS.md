@@ -6,10 +6,22 @@ Data analysis, visualisation, and reporting examples for all technology stacks.
 
 ## Table of Contents
 
-- [TALL Stack (Laravel 12)](#tall-stack-laravel-12)
-- [Django/Wagtail Stack](#djangowagtail-stack)
-- [React/Next.js Stack](#reactnextjs-stack)
-- [React Native Stack](#react-native-stack)
+- [Data Analysis Examples](#data-analysis-examples)
+  - [Overview](#overview)
+  - [Table of Contents](#table-of-contents)
+  - [TALL Stack (Laravel 12)](#tall-stack-laravel-12)
+    - [Analytics Service](#analytics-service)
+    - [Dashboard Component (Livewire)](#dashboard-component-livewire)
+  - [Django/Wagtail Stack](#djangowagtail-stack)
+    - [Analytics with Pandas](#analytics-with-pandas)
+    - [GraphQL Analytics](#graphql-analytics)
+  - [React/Next.js Stack](#reactnextjs-stack)
+    - [Analytics Dashboard](#analytics-dashboard)
+    - [Chart Component](#chart-component)
+  - [React Native Stack](#react-native-stack)
+    - [Analytics Screen](#analytics-screen)
+    - [Analytics Hook](#analytics-hook)
+
 
 ---
 

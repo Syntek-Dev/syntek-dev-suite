@@ -16,11 +16,18 @@ Data anonymisation patterns for GDPR compliance including pseudonymisation, data
 
 ## Table of Contents
 
-- [Overview](#overview)
-- [Metadata](#metadata)
-- [Anonymisation Strategies](#anonymisation-strategies)
-- [Cookie Consent Implementation](#cookie-consent-implementation)
-- [Breach Notification Template](#breach-notification-template)
+- [Data Anonymisation](#data-anonymisation)
+  - [Overview](#overview)
+  - [Metadata](#metadata)
+  - [Table of Contents](#table-of-contents)
+  - [Anonymisation Strategies](#anonymisation-strategies)
+    - [Pseudonymisation SQL Example](#pseudonymisation-sql-example)
+  - [Cookie Consent Implementation](#cookie-consent-implementation)
+    - [JavaScript Cookie Consent Manager](#javascript-cookie-consent-manager)
+    - [Cookie Banner HTML](#cookie-banner-html)
+  - [Breach Notification Template](#breach-notification-template)
+    - [72-Hour Breach Notification Procedure](#72-hour-breach-notification-procedure)
+    - [Breach Detection Logging](#breach-detection-logging)
 
 
 ## Anonymisation Strategies

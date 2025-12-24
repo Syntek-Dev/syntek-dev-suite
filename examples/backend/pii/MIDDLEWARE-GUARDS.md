@@ -25,10 +25,19 @@
 
 ## Table of Contents
 
-- [Overview](#overview)
-- [Laravel (TALL Stack)](#laravel-tall-stack)
-- [Django/Wagtail (Strawberry GraphQL)](#djangowagtail-strawberry-graphql)
-- [Node.js/TypeScript (NestJS GraphQL)](#nodejstypescript-nestjs-graphql)
+- [PII Middleware and Guards](#pii-middleware-and-guards)
+  - [Metadata](#metadata)
+  - [Framework Versions Tested](#framework-versions-tested)
+  - [Table of Contents](#table-of-contents)
+  - [Overview](#overview)
+  - [Laravel (TALL Stack)](#laravel-tall-stack)
+    - [HTTP Middleware](#http-middleware)
+    - [Route Protection](#route-protection)
+    - [Middleware Registration](#middleware-registration)
+  - [Django/Wagtail (Strawberry GraphQL)](#djangowagtail-strawberry-graphql)
+    - [Usage](#usage)
+  - [Node.js/TypeScript (NestJS GraphQL)](#nodejstypescript-nestjs-graphql)
+    - [Usage](#usage-1)
 
 
 ## Overview

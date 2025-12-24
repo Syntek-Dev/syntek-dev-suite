@@ -25,12 +25,21 @@
 
 ## Table of Contents
 
-- [Metadata](#metadata)
-- [Framework Versions Tested](#framework-versions-tested)
-- [Overview](#overview)
-- [Laravel (TALL Stack)](#laravel-tall-stack)
-- [Django/Wagtail](#djangowagtail)
-- [Node.js/TypeScript (NestJS)](#nodejstypescript-nestjs)
+- [Report Services](#report-services)
+  - [Metadata](#metadata)
+  - [Framework Versions Tested](#framework-versions-tested)
+  - [Table of Contents](#table-of-contents)
+  - [Overview](#overview)
+  - [Laravel (TALL Stack)](#laravel-tall-stack)
+    - [Report Generation Service](#report-generation-service)
+    - [Report Filters DTO](#report-filters-dto)
+    - [Sales Report Example](#sales-report-example)
+  - [Django/Wagtail](#djangowagtail)
+    - [Report Service Base Class](#report-service-base-class)
+    - [Report Filters Dataclass](#report-filters-dataclass)
+    - [Sales Report Example](#sales-report-example-1)
+  - [Node.js/TypeScript (NestJS)](#nodejstypescript-nestjs)
+    - [Report Filters DTO](#report-filters-dto-1)
 
 ---
 

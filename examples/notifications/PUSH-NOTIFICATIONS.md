@@ -23,11 +23,20 @@ Comprehensive push notification implementation examples for all four major stack
 
 ## Table of Contents
 
-- [Overview](#overview)
-- [Metadata](#metadata)
-- [Directory Structure](#directory-structure)
-- [Push Configuration - React Native](#push-configuration---react-native)
-- [Notification Handler - React Native](#notification-handler---react-native)
+- [Push Notifications](#push-notifications)
+  - [Overview](#overview)
+  - [Metadata](#metadata)
+  - [Table of Contents](#table-of-contents)
+  - [Directory Structure](#directory-structure)
+    - [Laravel Directory Structure](#laravel-directory-structure)
+    - [Django Directory Structure](#django-directory-structure)
+    - [Next.js Directory Structure](#nextjs-directory-structure)
+    - [React Native Directory Structure](#react-native-directory-structure)
+  - [Push Configuration - React Native](#push-configuration---react-native)
+    - [src/notifications/config/pushConfig.ts](#srcnotificationsconfigpushconfigts)
+  - [Notification Handler - React Native](#notification-handler---react-native)
+    - [src/notifications/handlers/notificationHandler.ts](#srcnotificationshandlersnotificationhandlerts)
+
 
 ## Directory Structure
 

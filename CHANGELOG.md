@@ -14,6 +14,31 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.1.0] - 24/12/2025
+
+### Added
+- Cross-platform Chrome detection with `chrome-tool.py` plugin
+- Claude Code Chrome integration documentation in CLAUDE.md
+- Browser configuration via environment variables (`CHROME_PATH`, `DUSK_CHROME_BINARY`, etc.)
+- Chrome-based E2E testing examples for Playwright, Cypress, Puppeteer, Selenium, and Laravel Dusk
+- Live debugging capabilities using Claude in Chrome extension
+- Browser automation documentation for web app testing
+
+### Changed
+- Updated debugger agent with Chrome-based debugging workflow
+- Updated QA tester agent with browser-based testing capabilities
+- Updated test writer agent with Chrome E2E test examples
+- Updated setup agent to run `chrome-tool.py` during initialisation
+- Enhanced all example documentation with Table of Contents
+- Improved global workflow skill with browser configuration patterns
+- Updated all stack skills with Chrome testing patterns
+- Refreshed all project templates with browser environment setup
+
+### Fixed
+- Standardised documentation structure across 78 files
+
+---
+
 ## [1.0.0] - 21/12/2025
 
 ### Added
@@ -197,6 +222,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Initial design documents
 - Technology stack decisions
 - [[Unreleased]](#)
+- [[1.1.0] - 24/12/2025](#)
 - [[1.0.0] - 21/12/2025](#)
 - [[0.9.0] - 15/12/2025](#)
 - [[0.8.0] - 01/12/2025](#)

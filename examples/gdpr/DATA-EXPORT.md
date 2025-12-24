@@ -27,13 +27,28 @@ Implementation patterns for GDPR data subject rights including Right to Access (
 
 ## Table of Contents
 
-- [Overview](#overview)
-- [Metadata](#metadata)
-- [Data Subject Rights](#data-subject-rights)
-- [TALL Stack (Laravel 12.x)](#tall-stack-laravel-12x)
-- [Django/Wagtail (Django 6.x)](#djangowagtail-django-6x)
-- [Consent Management - Laravel](#consent-management---laravel)
-- [Audit Trail Requirements](#audit-trail-requirements)
+- [GDPR Data Export (DSAR)](#gdpr-data-export-dsar)
+  - [Overview](#overview)
+  - [Metadata](#metadata)
+  - [Table of Contents](#table-of-contents)
+  - [Data Subject Rights](#data-subject-rights)
+  - [TALL Stack (Laravel 12.x)](#tall-stack-laravel-12x)
+    - [GDPR Controller](#gdpr-controller)
+      - [app/Http/Controllers/GdprController.php](#apphttpcontrollersgdprcontrollerphp)
+    - [Data Export Service](#data-export-service)
+      - [app/Services/GdprDataExportService.php](#appservicesgdprdataexportservicephp)
+    - [Consent Management](#consent-management)
+      - [app/Models/UserConsent.php](#appmodelsuserconsentphp)
+  - [Django/Wagtail (Django 6.x)](#djangowagtail-django-6x)
+    - [GDPR Views](#gdpr-views)
+      - [apps/gdpr/views.py](#appsgdprviewspy)
+    - [Data Export Service](#data-export-service-1)
+      - [apps/gdpr/services/gdpr\_export.py](#appsgdprservicesgdpr_exportpy)
+  - [Consent Management - Laravel](#consent-management---laravel)
+    - [app/Models/UserConsent.php](#appmodelsuserconsentphp-1)
+  - [Audit Trail Requirements](#audit-trail-requirements)
+    - [Audit Log Migration](#audit-log-migration)
+
 
 
 ## Data Subject Rights

@@ -15,11 +15,37 @@ This directory contains minimal, versioned code examples for common patterns acr
 
 ## Table of Contents
 
-- [Overview](#overview)
-- [Directory Structure](#directory-structure)
-- [How to Use These Examples](#how-to-use-these-examples)
-- [Version Information](#version-information)
-- [Examples by Domain](#examples-by-domain)
+- [Code Examples](#code-examples)
+  - [Overview](#overview)
+  - [Table of Contents](#table-of-contents)
+  - [Directory Structure](#directory-structure)
+  - [How to Use These Examples](#how-to-use-these-examples)
+    - [For Agents](#for-agents)
+    - [For Developers](#for-developers)
+  - [Version Information](#version-information)
+  - [Examples by Domain](#examples-by-domain)
+    - [Setup](#setup)
+    - [Backend](#backend)
+    - [Database](#database)
+    - [Authentication](#authentication)
+    - [Security](#security)
+    - [CI/CD](#cicd)
+    - [Frontend](#frontend)
+    - [GDPR](#gdpr)
+    - [Notifications](#notifications)
+    - [Export](#export)
+    - [Reporting](#reporting)
+    - [Logging](#logging)
+    - [Git](#git)
+    - [Debugger](#debugger)
+    - [Test Writer](#test-writer)
+    - [Code Reviewer](#code-reviewer)
+    - [QA Tester](#qa-tester)
+    - [Refactor](#refactor)
+    - [SEO](#seo)
+    - [Syntax](#syntax)
+    - [Data Scientist](#data-scientist)
+
 
 ---
 

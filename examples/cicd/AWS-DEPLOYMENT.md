@@ -19,12 +19,22 @@ All examples follow best practices for security, caching, and performance in the
 
 ## Table of Contents
 
-- [Overview](#overview)
-- [Metadata](#metadata)
-- [ECS Deployment](#ecs-deployment)
-- [S3 + CloudFront (Static Sites)](#s3--cloudfront-static-sites)
-- [Lambda Deployment](#lambda-deployment)
-- [Required AWS Secrets](#required-aws-secrets)
+- [AWS Deployment Configuration](#aws-deployment-configuration)
+  - [Overview](#overview)
+  - [Metadata](#metadata)
+  - [Table of Contents](#table-of-contents)
+  - [ECS Deployment](#ecs-deployment)
+    - [.github/workflows/deploy-ecs.yml](#githubworkflowsdeploy-ecsyml)
+    - [Dockerfile for ECS](#dockerfile-for-ecs)
+  - [S3 + CloudFront (Static Sites)](#s3--cloudfront-static-sites)
+    - [.github/workflows/deploy-s3.yml](#githubworkflowsdeploy-s3yml)
+  - [Lambda Deployment](#lambda-deployment)
+    - [.github/workflows/deploy-lambda.yml](#githubworkflowsdeploy-lambdayml)
+  - [Required AWS Secrets](#required-aws-secrets)
+    - [GitHub Repository Secrets](#github-repository-secrets)
+    - [GitHub Environment Variables](#github-environment-variables)
+    - [Required IAM Permissions](#required-iam-permissions)
+
 
 ## ECS Deployment
 

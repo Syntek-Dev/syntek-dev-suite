@@ -17,12 +17,33 @@ Comprehensive debugging configurations and techniques for all supported technolo
 
 ## Table of Contents
 
-- [Overview](#overview)
-- [Technology Stacks](#technology-stacks)
-- [TALL Stack (Laravel 12)](#tall-stack-laravel-12)
-- [Django/Wagtail Stack](#djangowagtail-stack)
-- [React/Next.js Stack](#reactnextjs-stack)
-- [React Native Stack](#react-native-stack)
+- [Debugging Examples](#debugging-examples)
+  - [Overview](#overview)
+  - [Technology Stacks](#technology-stacks)
+  - [Table of Contents](#table-of-contents)
+  - [TALL Stack (Laravel 12)](#tall-stack-laravel-12)
+    - [Xdebug Configuration](#xdebug-configuration)
+    - [Laravel Telescope](#laravel-telescope)
+    - [Query Debugging](#query-debugging)
+  - [Django/Wagtail Stack](#djangowagtail-stack)
+    - [Django Debug Toolbar](#django-debug-toolbar)
+    - [pdb and ipdb](#pdb-and-ipdb)
+    - [Django Query Debugging](#django-query-debugging)
+  - [Browser Debugging Configuration (CRITICAL)](#browser-debugging-configuration-critical)
+    - [Browser Environment Variable](#browser-environment-variable)
+    - [Launching Chrome for Debugging](#launching-chrome-for-debugging)
+    - [Claude Code Chrome Integration](#claude-code-chrome-integration)
+    - [VSCode Chrome Debugging Configuration](#vscode-chrome-debugging-configuration)
+    - [When to Use Chrome DevTools](#when-to-use-chrome-devtools)
+  - [React/Next.js Stack](#reactnextjs-stack)
+    - [React DevTools](#react-devtools)
+    - [Next.js Debugging](#nextjs-debugging)
+    - [VS Code Configuration](#vs-code-configuration)
+  - [React Native Stack](#react-native-stack)
+    - [Flipper Setup](#flipper-setup)
+    - [React Native Debugger](#react-native-debugger)
+    - [Performance Debugging](#performance-debugging)
+
 
 ## TALL Stack (Laravel 12)
 
@@ -581,6 +602,85 @@ def log_slow_queries(queryset: QuerySet, threshold_ms: float = 100) -> QuerySet:
 
 ---
 
+## Browser Debugging Configuration (CRITICAL)
+
+**ALWAYS use Chrome for browser debugging. NEVER use Firefox unless explicitly requested.**
+
+### Browser Environment Variable
+- **Environment Variable:** `CHROME_PATH` (auto-detected by `chrome-tool.py`)
+- **Detection Command:** `./plugins/chrome-tool.py detect`
+
+### Launching Chrome for Debugging
+
+```bash
+# Open Chrome with DevTools automatically opened
+$CHROME_PATH --auto-open-devtools-for-tabs http://localhost:3000
+
+# Chrome with remote debugging enabled (for programmatic debugging)
+$CHROME_PATH --remote-debugging-port=9222 http://localhost:3000
+
+# Headless Chrome for automated debugging
+$CHROME_PATH --headless --disable-gpu --remote-debugging-port=9222 http://localhost:3000
+
+# Chrome with specific DevTools panel open
+$CHROME_PATH --auto-open-devtools-for-tabs --devtools-flags='panel=network' http://localhost:3000
+```
+
+### Claude Code Chrome Integration
+
+Use `claude --chrome` to enable browser automation from the terminal:
+
+```bash
+# Start Claude Code with Chrome enabled
+claude --chrome
+
+# Check connection status
+/chrome
+
+# Live debugging example
+I just updated the login form. Open localhost:3000, check console for errors.
+```
+
+### VSCode Chrome Debugging Configuration
+
+```json
+// .vscode/launch.json - Chrome debugging configuration
+// Note: Use ${env:CHROME_PATH} to reference the environment variable
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch Chrome",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}",
+      "runtimeExecutable": "${env:CHROME_PATH}",
+      "runtimeArgs": [
+        "--remote-debugging-port=9222"
+      ]
+    },
+    {
+      "name": "Attach to Chrome",
+      "type": "chrome",
+      "request": "attach",
+      "port": 9222,
+      "webRoot": "${workspaceFolder}"
+    }
+  ]
+}
+```
+
+### When to Use Chrome DevTools
+- Debugging JavaScript issues in the browser
+- Investigating network requests and responses
+- Analysing performance issues with Performance tab
+- Testing responsive layouts with Device Mode
+- Debugging React/Vue/Angular component state
+- Memory leak investigation with Memory tab
+
+---
+
 ## React/Next.js Stack
 
 ### React DevTools
@@ -632,6 +732,8 @@ export function useDebugValue<T>(label: string, value: T): void {
 
 ### Next.js Debugging
 
+**IMPORTANT:** Use Chrome for client-side debugging.
+
 ```json
 // .vscode/launch.json
 
@@ -651,11 +753,12 @@ export function useDebugValue<T>(label: string, value: T): void {
       }
     },
     {
-      "name": "Next.js: debug client-side",
+      "name": "Next.js: debug client-side (Chrome)",
       "type": "chrome",
       "request": "launch",
       "url": "http://localhost:3000",
       "webRoot": "${workspaceFolder}",
+      "runtimeExecutable": "${env:CHROME_PATH}",
       "sourceMapPathOverrides": {
         "webpack://_N_E/*": "${webRoot}/*"
       }
@@ -670,7 +773,7 @@ export function useDebugValue<T>(label: string, value: T): void {
         "pattern": "started server on .+, url: (https?://.+)",
         "uriFormat": "%s",
         "action": "startDebugging",
-        "name": "Next.js: debug client-side"
+        "name": "Next.js: debug client-side (Chrome)"
       }
     }
   ]

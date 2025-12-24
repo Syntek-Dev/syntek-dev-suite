@@ -27,12 +27,28 @@
 
 ## Table of Contents
 
-- [Overview](#overview)
-- [Schema Design Principles](#schema-design-principles)
-- [Stack 1: TALL Stack (Laravel/MariaDB)](#stack-1-tall-stack-laravelmariadb)
-- [Stack 2: Django/Wagtail (PostgreSQL)](#stack-2-djangowagtail-postgresql)
-- [Stack 3: React/Next.js (Prisma/PostgreSQL)](#stack-3-reactnextjs-prismapostgresql)
-- [User Model with PII Protection](#user-model-with-pii-protection)
+- [PII Table Design](#pii-table-design)
+  - [Metadata](#metadata)
+  - [Framework Versions Tested](#framework-versions-tested)
+  - [Table of Contents](#table-of-contents)
+  - [Overview](#overview)
+  - [Schema Design Principles](#schema-design-principles)
+    - [PII Column Patterns](#pii-column-patterns)
+  - [Stack 1: TALL Stack (Laravel/MariaDB)](#stack-1-tall-stack-laravelmariadb)
+    - [MariaDB Schema](#mariadb-schema)
+    - [Laravel Migration](#laravel-migration)
+    - [Laravel Model](#laravel-model)
+  - [Stack 2: Django/Wagtail (PostgreSQL)](#stack-2-djangowagtail-postgresql)
+    - [PostgreSQL Schema](#postgresql-schema)
+    - [Django Migration](#django-migration)
+    - [Django Model](#django-model)
+  - [Stack 3: React/Next.js (Prisma/PostgreSQL)](#stack-3-reactnextjs-prismapostgresql)
+    - [Prisma Schema](#prisma-schema)
+    - [TypeORM Entity](#typeorm-entity)
+  - [User Model with PII Protection](#user-model-with-pii-protection)
+    - [Laravel](#laravel)
+    - [Django](#django)
+    - [TypeScript](#typescript)
 
 
 ## Overview

@@ -150,6 +150,54 @@ Analyze code and plans with a **hostile, adversarial mindset**. Your job is to b
 - [ ] **Platform Differences:** Does it work on both iOS and Android?
 - [ ] **Deep Links:** Are they validated and handled securely?
 
+## Browser Testing (CRITICAL)
+
+**ALWAYS use Chrome for browser testing. NEVER use Firefox unless explicitly requested.**
+
+### Browser Environment Variable
+
+| Variable | Purpose | Detection |
+|----------|---------|-----------|
+| `CHROME_PATH` | Primary Chrome binary path | `./plugins/chrome-tool.py detect` |
+
+### Launching Chrome for QA Testing
+
+```bash
+# Standard Chrome for manual testing
+$CHROME_PATH http://localhost:3000
+
+# Chrome with DevTools for debugging issues
+$CHROME_PATH --auto-open-devtools-for-tabs http://localhost:3000
+
+# Chrome with specific window size for responsive testing
+$CHROME_PATH --window-size=375,812 http://localhost:3000  # iPhone X
+$CHROME_PATH --window-size=768,1024 http://localhost:3000  # iPad
+
+# Headless Chrome for automated QA checks
+$CHROME_PATH --headless --disable-gpu --screenshot http://localhost:3000
+```
+
+### Claude Code Chrome Integration
+
+Use `claude --chrome` to enable browser automation for QA testing:
+
+```bash
+# Start Claude Code with Chrome enabled
+claude --chrome
+
+# Test local web app
+I just updated the login form. Open localhost:3000, try invalid data, check error messages.
+```
+
+### Cross-Browser Testing Matrix
+
+| Test Type | Primary Browser | Notes |
+|-----------|-----------------|-------|
+| Functional | Chrome | Use DevTools for debugging |
+| Responsive | Chrome | Test multiple viewport sizes |
+| Performance | Chrome | Use Chrome DevTools Performance tab |
+| Accessibility | Chrome | Use Lighthouse in DevTools |
+
 # 3. OUTPUT FORMAT
 
 Structure your report with severity levels:

@@ -1,10 +1,10 @@
 {
   "name": "syntek-dev-suite",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Syntek Developers full-stack AI agent suite for Claude Code",
   "author": {
     "name": "Syntek Developers",
-    "url": "https://syntekdevelopers.com"
+    "url": "https://github.com/Syntek-Studio/syntek-dev-suite"
   },
   "keywords": [
     "claude-code",

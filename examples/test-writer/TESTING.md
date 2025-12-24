@@ -16,15 +16,109 @@ Comprehensive testing examples covering unit, BDD/acceptance, and E2E tests acro
 
 ---
 
+## Browser Configuration for E2E Tests (CRITICAL)
+
+**ALWAYS use Chrome for E2E testing. NEVER use Firefox unless explicitly requested.**
+
+### Browser Environment Variable
+- **Environment Variable:** `CHROME_PATH` (auto-detected by `chrome-tool.py`)
+- **Detection Command:** `./plugins/chrome-tool.py detect`
+
+### Framework-Specific Chrome Configuration
+
+| Framework | Configuration |
+|-----------|---------------|
+| Laravel Dusk | Uses `DUSK_CHROME_BINARY` from `.env` automatically |
+| Playwright | `channel: 'chrome'` or `executablePath: process.env.CHROME_PATH` |
+| Cypress | `browser: 'chrome'` in config or `--browser chrome` CLI flag |
+| Selenium | `options.binary_location = os.environ.get('CHROME_PATH')` |
+| Puppeteer | `executablePath: process.env.PUPPETEER_EXECUTABLE_PATH` |
+
+### Claude Code Chrome Integration
+
+Use `claude --chrome` to enable browser automation for E2E testing:
+
+```bash
+# Start Claude Code with Chrome enabled
+claude --chrome
+
+# Check connection status
+/chrome
+```
+
+---
+
 ## Table of Contents
 
-- [Overview](#overview)
-- [Testing Matrix](#testing-matrix)
-- [TALL Stack (Laravel 12)](#tall-stack-laravel-12)
-- [Django/Wagtail Stack](#djangowagtail-stack)
-- [React/Next.js Stack](#reactnextjs-stack)
-- [React Native Stack](#react-native-stack)
-- [Node.js Stack](#nodejs-stack)
+- [Testing Examples](#testing-examples)
+  - [Overview](#overview)
+  - [Testing Matrix](#testing-matrix)
+  - [Browser Configuration for E2E Tests (CRITICAL)](#browser-configuration-for-e2e-tests-critical)
+    - [Browser Environment Variable](#browser-environment-variable)
+    - [Framework-Specific Chrome Configuration](#framework-specific-chrome-configuration)
+    - [Claude Code Chrome Integration](#claude-code-chrome-integration)
+  - [Table of Contents](#table-of-contents)
+  - [TALL Stack (Laravel 12)](#tall-stack-laravel-12)
+    - [Unit Tests (Pest)](#unit-tests-pest)
+      - [Configuration](#configuration)
+      - [Unit Test Examples](#unit-test-examples)
+      - [Feature Test Examples](#feature-test-examples)
+    - [BDD/Acceptance (Behat)](#bddacceptance-behat)
+      - [Configuration](#configuration-1)
+      - [Feature Files](#feature-files)
+      - [Context Classes](#context-classes)
+    - [E2E (Dusk)](#e2e-dusk)
+      - [Configuration](#configuration-2)
+      - [E2E Test Examples](#e2e-test-examples)
+      - [Page Objects](#page-objects)
+  - [Django/Wagtail Stack](#djangowagtail-stack)
+    - [Unit Tests (Pytest)](#unit-tests-pytest)
+      - [Configuration](#configuration-3)
+      - [Unit Test Examples](#unit-test-examples-1)
+      - [Integration Test Examples](#integration-test-examples)
+    - [BDD/Acceptance (Behave)](#bddacceptance-behave)
+      - [Configuration](#configuration-4)
+      - [Feature Files](#feature-files-1)
+      - [Step Definitions](#step-definitions)
+    - [E2E (Selenium)](#e2e-selenium)
+      - [Configuration](#configuration-5)
+      - [E2E Test Examples](#e2e-test-examples-1)
+      - [Page Objects](#page-objects-1)
+  - [React/Next.js Stack](#reactnextjs-stack)
+    - [Unit Tests (Vitest)](#unit-tests-vitest)
+      - [Configuration](#configuration-6)
+      - [Unit Test Examples](#unit-test-examples-2)
+    - [BDD/Acceptance (Cucumber.js)](#bddacceptance-cucumberjs)
+      - [Configuration](#configuration-7)
+      - [Feature Files](#feature-files-2)
+      - [Step Definitions](#step-definitions-1)
+    - [E2E (Playwright)](#e2e-playwright)
+      - [Configuration](#configuration-8)
+      - [E2E Test Examples](#e2e-test-examples-2)
+      - [Fixtures and Helpers](#fixtures-and-helpers)
+  - [React Native Stack](#react-native-stack)
+    - [Unit Tests (Jest)](#unit-tests-jest)
+      - [Configuration](#configuration-9)
+      - [Unit Test Examples](#unit-test-examples-3)
+    - [BDD/Acceptance (Cucumber.js) {#bddacceptance-cucumberjs-rn}](#bddacceptance-cucumberjs-bddacceptance-cucumberjs-rn)
+      - [Configuration](#configuration-10)
+      - [Feature Files](#feature-files-3)
+      - [Step Definitions](#step-definitions-2)
+    - [E2E (Detox)](#e2e-detox)
+      - [Configuration](#configuration-11)
+      - [E2E Test Examples](#e2e-test-examples-3)
+  - [Node.js Stack](#nodejs-stack)
+    - [Unit Tests (Vitest) {#unit-tests-vitest-node}](#unit-tests-vitest-unit-tests-vitest-node)
+      - [Configuration](#configuration-12)
+      - [Unit Test Examples](#unit-test-examples-4)
+    - [BDD/Acceptance (Cucumber.js) {#bddacceptance-cucumberjs-node}](#bddacceptance-cucumberjs-bddacceptance-cucumberjs-node)
+      - [Feature Files](#feature-files-4)
+      - [Step Definitions](#step-definitions-3)
+    - [E2E (Cypress)](#e2e-cypress)
+      - [Configuration](#configuration-13)
+      - [E2E Test Examples](#e2e-test-examples-4)
+      - [API Testing with Cypress](#api-testing-with-cypress)
+
 
 ## TALL Stack (Laravel 12)
 
@@ -499,6 +593,8 @@ class DatabaseContext implements Context
 
 #### Configuration
 
+**IMPORTANT:** Use Chrome or Chrome Beta. Set `DUSK_CHROME_BINARY` environment variable to specify Chrome Beta.
+
 ```php
 <?php
 // tests/DuskTestCase.php
@@ -533,6 +629,11 @@ abstract class DuskTestCase extends BaseTestCase
             '--disable-dev-shm-usage',
         ]);
 
+        // Use Chrome Beta if DUSK_CHROME_BINARY is set
+        if ($binary = env('DUSK_CHROME_BINARY')) {
+            $options->setBinary($binary);
+        }
+
         return RemoteWebDriver::create(
             'http://localhost:9515',
             DesiredCapabilities::chrome()->setCapability(
@@ -541,6 +642,14 @@ abstract class DuskTestCase extends BaseTestCase
         );
     }
 }
+```
+
+```bash
+# Chrome path is auto-detected and set in .env.chrome
+# Run: ./plugins/chrome-tool.py write
+
+# Or add to .env.testing (uses environment variable)
+DUSK_CHROME_BINARY=${CHROME_PATH}
 ```
 
 #### E2E Test Examples
@@ -1103,9 +1212,12 @@ def step_verify_user_exists(context, email):
 
 #### Configuration
 
+**IMPORTANT:** Use Chrome or Chrome Beta for Selenium tests.
+
 ```python
 # tests/e2e/conftest.py
 
+import os
 import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -1113,11 +1225,15 @@ from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 
+# Chrome binary path (auto-detected via chrome-tool.py)
+CHROME_BINARY = os.environ.get('CHROME_PATH')
+
 
 @pytest.fixture(scope='session')
 def chrome_options():
     """Chrome options for headless testing."""
     options = Options()
+    options.binary_location = CHROME_BINARY  # Use Chrome Beta
     options.add_argument('--headless=new')
     options.add_argument('--no-sandbox')
     options.add_argument('--disable-dev-shm-usage')
@@ -1144,6 +1260,12 @@ def live_server(db):
     yield server.live_server_url
     server._teardown_live_server()
     server._post_teardown()
+```
+
+```bash
+# Chrome path is auto-detected via chrome-tool.py
+# Run: ./plugins/chrome-tool.py write
+# Then source the generated .env.chrome file
 ```
 
 #### E2E Test Examples
@@ -1603,6 +1725,8 @@ Then('I should see validation error {string}', async function (this: CustomWorld
 
 #### Configuration
 
+**IMPORTANT:** Use Chrome for Playwright tests. Set `channel: 'chrome'` to use the installed Chrome browser.
+
 ```typescript
 // playwright.config.ts
 
@@ -1622,23 +1746,32 @@ export default defineConfig({
     baseURL: 'http://localhost:3000',
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
+    // Use installed Chrome browser (CRITICAL)
+    channel: 'chrome',
   },
   projects: [
     {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      name: 'chrome',
+      use: {
+        ...devices['Desktop Chrome'],
+        channel: 'chrome',  // Use installed Chrome
+      },
     },
     {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
-    },
-    {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
+      name: 'chrome-custom',
+      use: {
+        ...devices['Desktop Chrome'],
+        launchOptions: {
+          executablePath: process.env.CHROME_PATH,
+        },
+      },
     },
     {
       name: 'mobile-chrome',
-      use: { ...devices['Pixel 5'] },
+      use: {
+        ...devices['Pixel 5'],
+        channel: 'chrome',
+      },
     },
   ],
   webServer: {
@@ -1647,6 +1780,14 @@ export default defineConfig({
     reuseExistingServer: !process.env.CI,
   },
 });
+```
+
+```bash
+# Run Playwright with Chrome
+npx playwright test --project=chrome
+
+# Run Playwright with Chrome Beta
+npx playwright test --project=chrome-beta
 ```
 
 #### E2E Test Examples
@@ -2408,6 +2549,8 @@ Then('the response should have pagination metadata', function () {
 
 #### Configuration
 
+**IMPORTANT:** Use Chrome for Cypress tests. Configure `browser: 'chrome'` or use the `--browser chrome` CLI flag.
+
 ```typescript
 // cypress.config.ts
 
@@ -2426,6 +2569,8 @@ export default defineConfig({
       runMode: 2,
       openMode: 0,
     },
+    // Use Chrome browser (CRITICAL)
+    browser: 'chrome',
   },
   component: {
     devServer: {
@@ -2434,6 +2579,17 @@ export default defineConfig({
     },
   },
 });
+```
+
+```bash
+# Run Cypress with Chrome (recommended)
+npx cypress run --browser chrome
+
+# Run Cypress with Chrome from environment variable
+npx cypress run --browser $CHROME_PATH
+
+# Open Cypress in Chrome for interactive testing
+npx cypress open --browser chrome
 ```
 
 ```typescript

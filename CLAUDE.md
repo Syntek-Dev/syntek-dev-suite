@@ -35,6 +35,104 @@ All agents MUST read and apply these settings when generating content, code, doc
 - Use metric system where applicable (metres, kilometres, kilograms)
 - Use UK conventions for paper sizes (A4, A5)
 
+### Browser Configuration
+
+**Environment Variables:** Browser paths are configured via environment variables for cross-platform compatibility.
+
+| Variable | Purpose | Fallback |
+|----------|---------|----------|
+| `CHROME_PATH` | Primary Chrome binary path | Auto-detected |
+| `CHROME_BINARY` | Alias for Chrome binary | `$CHROME_PATH` |
+| `DUSK_CHROME_BINARY` | Laravel Dusk Chrome path | `$CHROME_PATH` |
+| `PUPPETEER_EXECUTABLE_PATH` | Puppeteer Chrome path | `$CHROME_PATH` |
+| `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH` | Playwright Chrome path | `$CHROME_PATH` |
+
+**Chrome Detection:** Run `./plugins/chrome-tool.py detect` to auto-detect Chrome on any OS.
+
+```bash
+# Detect Chrome and generate env file
+./plugins/chrome-tool.py write
+
+# Output: Creates .env.chrome with all browser variables
+```
+
+**CRITICAL:** When launching browsers for testing, debugging, or E2E tests, ALWAYS use Chrome via the environment variable. Do NOT use Firefox or other browsers unless explicitly requested.
+
+**Usage Examples:**
+```bash
+# Launch Chrome for manual testing (using env var)
+$CHROME_PATH http://localhost:3000
+
+# Or use the detected command
+google-chrome http://localhost:3000
+
+# Launch Chrome with DevTools for debugging
+$CHROME_PATH --auto-open-devtools-for-tabs http://localhost:3000
+
+# Headless Chrome for automated tests
+$CHROME_PATH --headless --disable-gpu --no-sandbox http://localhost:3000
+
+# Chrome with remote debugging enabled
+$CHROME_PATH --remote-debugging-port=9222 http://localhost:3000
+```
+
+**E2E Test Configuration:**
+| Framework | Chrome Configuration |
+|-----------|---------------------|
+| Playwright | `channel: 'chrome'` or `executablePath: process.env.CHROME_PATH` |
+| Cypress | `browser: 'chrome'` in `cypress.config.js` |
+| Puppeteer | `executablePath: process.env.PUPPETEER_EXECUTABLE_PATH` |
+| Selenium | `ChromeOptions()` with `os.environ.get('CHROME_PATH')` |
+| Laravel Dusk | Uses `DUSK_CHROME_BINARY` env var automatically |
+
+### Claude Code Chrome Integration
+
+Claude Code integrates with the **Claude in Chrome** browser extension for browser automation from the terminal.
+
+**Prerequisites:**
+- Google Chrome browser
+- Claude in Chrome extension (v1.0.36+) from Chrome Web Store
+- Claude Code CLI (v2.0.73+)
+- Paid Claude plan (Pro, Team, or Enterprise)
+
+**Setup:**
+```bash
+# Update Claude Code
+claude update
+
+# Start Claude Code with Chrome enabled
+claude --chrome
+
+# Check connection status
+/chrome
+```
+
+**Enable Chrome by Default:**
+Run `/chrome` and select "Enable by default" to auto-enable Chrome integration on startup.
+
+**Capabilities:**
+- Live debugging (console errors, DOM state)
+- Design verification against mocks
+- Web app testing (form validation, user flows)
+- Authenticated access (Google Docs, Gmail, Notion, etc.)
+- Data extraction from web pages
+- Task automation and session recording
+
+**Example Usage:**
+```bash
+# Test local web app
+I just updated the login form. Open localhost:3000, try invalid data, check error messages.
+
+# Extract data
+Go to the product page and extract name, price, availability as CSV.
+```
+
+**Troubleshooting:**
+| Issue | Solution |
+|-------|----------|
+| Extension not detected | Verify v1.0.36+, restart Chrome, run `/chrome` → "Reconnect" |
+| Browser not responding | Check for modal dialogs, create new tab, restart extension |
+
 ---
 
 ## Plugin Tools
@@ -57,12 +155,13 @@ The `plugins/` directory contains Python utilities that agents can use to gather
 | `quality-tool.py` | Code quality checks and linting | `./plugins/quality-tool.py status` |
 | `ab-test-tool.py` | A/B testing for agent prompt variants | `./plugins/ab-test-tool.py list` |
 | `optimiser-tool.py` | Agent performance analysis and optimisation | `./plugins/optimiser-tool.py status` |
+| `chrome-tool.py` | Cross-platform Chrome detection and configuration | `./plugins/chrome-tool.py detect` |
 
 ### When Agents Should Use Plugins
 
 Agents should run these plugins to gather context before making decisions:
 
-- **Setup Agent:** Run `project-tool.py`, `env-tool.py`, `docker-tool.py`, `ddev-tool.py`
+- **Setup Agent:** Run `project-tool.py`, `env-tool.py`, `docker-tool.py`, `ddev-tool.py`, `chrome-tool.py`
 - **CI/CD Agent:** Run `git-tool.py`, `docker-tool.py`, `ddev-tool.py`
 - **Database Agent:** Run `db-tool.py`, `env-tool.py`
 - **Backend Agent:** Run `project-tool.py`, `db-tool.py`, `env-tool.py`
