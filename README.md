@@ -2,7 +2,7 @@
 
 **Full-Stack AI Agent Suite for Claude Code**
 
-Version: 1.0.0 | Maintained by: Syntek Developers
+Version: 1.1.0 | Maintained by: Syntek Developers
 
 ---
 
