@@ -1,5 +1,13 @@
 # Commands
 
+**Last Updated**: 28/12/2025
+**Version**: 1.3.0
+**Maintained By**: Development Team
+**Language**: British English (en_GB)
+**Timezone**: Europe/London
+
+---
+
 ## Table of Contents
 
 - [Table of Contents](#table-of-contents)
@@ -30,7 +38,7 @@ Commands follow a prefix convention:
 - `/plugin:` - Plugin management commands
 - `/learning:` - Self-learning system commands
 
-**Version:** 1.2.0
+**Version:** 1.3.0
 
 ---
 
@@ -58,6 +66,7 @@ commands/
 ├── logging.md             # /agent:logging - Logging setup
 ├── notifications.md       # /agent:notifications - Notifications
 ├── plan.md                # /agent:plan - System planning
+├── pm-setup.md            # /agent:pm-setup - PM tool setup
 ├── qa-tester.md           # /agent:qa-tester - QA testing
 ├── refactor.md            # /agent:refactor - Code refactoring
 ├── reporting.md           # /agent:reporting - Report services
@@ -69,7 +78,8 @@ commands/
 ├── stories.md             # /agent:stories - User stories
 ├── support-articles.md    # /agent:support-articles - Help docs
 ├── syntax.md              # /agent:syntax - Syntax fixing
-└── test-writer.md         # /agent:test-writer - Test writing
+├── test-writer.md         # /agent:test-writer - Test writing
+└── version.md             # /agent:version - Version management
 ```
 
 ---
@@ -140,6 +150,8 @@ commands/
 | `/agent:reporting`        | `reporting.md`        | Sonnet | Reporting         |
 | `/agent:data`             | `data.md`             | Sonnet | Data analysis     |
 | `/agent:support-articles` | `support-articles.md` | Sonnet | Help docs         |
+| `/agent:pm-setup`         | `pm-setup.md`         | Sonnet | PM tool setup     |
+| `/agent:version`          | `version.md`          | Sonnet | Version management |
 
 ### Learning Commands
 

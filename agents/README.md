@@ -1,5 +1,13 @@
 # Agents
 
+**Last Updated**: 28/12/2025
+**Version**: 1.3.0
+**Maintained By**: Development Team
+**Language**: British English (en_GB)
+**Timezone**: Europe/London
+
+---
+
 ## Table of Contents
 
 - [Table of Contents](#table-of-contents)
@@ -20,11 +28,11 @@
 
 ## Overview
 
-This folder contains the 28 specialised AI agent definitions for the Syntek Dev Suite. Each agent is a markdown file containing instructions, context, and behavioural guidelines that Claude uses when the agent is invoked.
+This folder contains the 30 specialised AI agent definitions for the Syntek Dev Suite. Each agent is a markdown file containing instructions, context, and behavioural guidelines that Claude uses when the agent is invoked.
 
 Agents are invoked via their corresponding command in the `commands/` folder (e.g., `/agent:backend` invokes the backend agent).
 
-**Version:** 1.2.0
+**Version:** 1.3.0
 
 ---
 
@@ -50,6 +58,7 @@ agents/
 ├── notifications.md       # Email, SMS, push notifications
 ├── optimiser.md           # Performance optimisation
 ├── planner.md             # System architect and planner
+├── pm.md                  # PM tool setup and integration
 ├── qa-tester.md           # Quality assurance tester
 ├── refactor.md            # Code refactoring agent
 ├── reporting.md           # Report generation agent
@@ -60,7 +69,8 @@ agents/
 ├── support-articles.md    # Help documentation writer
 ├── syntax.md              # Syntax and linting fixer
 ├── test-writer.md         # TDD test suite writer
-└── user-story.md          # User story generator
+├── user-story.md          # User story generator
+└── version.md             # Version management and changelogs
 ```
 
 ---
@@ -115,15 +125,17 @@ agents/
 
 ### Specialised
 
-| Agent            | File                  | Model  | Description                      |
-| ---------------- | --------------------- | ------ | -------------------------------- |
-| GDPR             | `gdpr.md`             | Sonnet | GDPR compliance, data protection |
-| SEO              | `seo.md`              | Sonnet | SEO, meta tags, structured data  |
-| Notifications    | `notifications.md`    | Sonnet | Email, SMS, push notifications   |
-| Export           | `export.md`           | Sonnet | PDF, Excel, CSV, JSON exports    |
-| Reporting        | `reporting.md`        | Sonnet | Data queries, report services    |
-| Data Scientist   | `data-scientist.md`   | Sonnet | Data analysis, Python, SQL       |
-| Support Articles | `support-articles.md` | Sonnet | Help documentation               |
+| Agent            | File                  | Model  | Description                          |
+| ---------------- | --------------------- | ------ | ------------------------------------ |
+| GDPR             | `gdpr.md`             | Sonnet | GDPR compliance, data protection     |
+| SEO              | `seo.md`              | Sonnet | SEO, meta tags, structured data      |
+| Notifications    | `notifications.md`    | Sonnet | Email, SMS, push notifications       |
+| Export           | `export.md`           | Sonnet | PDF, Excel, CSV, JSON exports        |
+| Reporting        | `reporting.md`        | Sonnet | Data queries, report services        |
+| Data Scientist   | `data-scientist.md`   | Sonnet | Data analysis, Python, SQL           |
+| Support Articles | `support-articles.md` | Sonnet | Help documentation                   |
+| PM               | `pm.md`               | Sonnet | PM tool setup (ClickUp, Jira, etc.)  |
+| Version          | `version.md`          | Sonnet | Version management and changelogs    |
 
 ---
 

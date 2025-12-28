@@ -1,12 +1,20 @@
 # Plugins
 
+**Last Updated**: 28/12/2025
+**Version**: 1.3.0
+**Maintained By**: Development Team
+**Language**: British English (en_GB)
+**Timezone**: Europe/London
+
+---
+
 ## Overview
 
 This folder contains Python utility tools that agents use to gather information about the development environment. These tools return structured JSON output that agents use to make informed decisions.
 
 All tools are executable Python scripts that can be run directly from the command line.
 
-**Version:** 1.2.0
+**Version:** 1.3.0
 
 ---
 
@@ -42,6 +50,7 @@ plugins/
 ├── log-tool.py         # Log file discovery and analysis
 ├── metrics-tool.py     # Self-learning metrics recording
 ├── optimiser-tool.py   # Prompt analysis and optimisation
+├── pm-tool.py          # Project management tool integration
 ├── project-tool.py     # Language, framework, structure detection
 └── quality-tool.py     # Code quality checks and linting
 ```
@@ -67,6 +76,7 @@ plugins/
 | `db-tool.py`      | `./plugins/db-tool.py detect`     | Detect database type and ORM in use               |
 | `git-tool.py`     | `./plugins/git-tool.py status`    | Get Git repository status, branches, remotes      |
 | `log-tool.py`     | `./plugins/log-tool.py find`      | Find and analyse log files                        |
+| `pm-tool.py`      | `./plugins/pm-tool.py detect`     | Detect PM tool integration (ClickUp, Jira, etc.)  |
 | `quality-tool.py` | `./plugins/quality-tool.py check` | Run code quality checks and linting               |
 
 ### Self-Learning System

@@ -1,10 +1,18 @@
 # .claude-plugin
 
+**Last Updated**: 28/12/2025
+**Version**: 1.3.0
+**Maintained By**: Development Team
+**Language**: British English (en_GB)
+**Timezone**: Europe/London
+
+---
+
 ## Overview
 
 This folder contains the Claude Code plugin configuration files that define the Syntek Dev Suite plugin metadata and marketplace registration. These files are read by Claude Code to identify and load the plugin.
 
-**Version:** 1.2.0
+**Version:** 1.3.0
 
 ---
 
