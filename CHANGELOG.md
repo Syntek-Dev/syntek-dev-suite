@@ -1,5 +1,13 @@
 # Changelog
 
+**Last Updated**: 28/12/2025
+**Version**: 1.3.0
+**Maintained By**: Development Team
+**Language**: British English (en_GB)
+**Timezone**: Europe/London
+
+---
+
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
@@ -11,6 +19,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - Nothing yet
+
+---
+
+## [1.3.0] - 28/12/2025
+
+### Added
+- Project Management (PM) Agent for issue tracking and project management integration
+- PM tool plugin (`pm-tool.py`) for detecting ClickUp, Linear, Jira, GitHub Projects, Monday.com, Asana, Trello, Notion, Azure DevOps, and Shortcut
+- PM Agent setup command (`/agent:pm-setup`) for configuring PM tool integration
+- Updated all section README.md files across the repository for improved navigation
+
+### Changed
+- Updated CLAUDE.md with PM tool documentation and agent responsibilities
+- Agent count increased from 29 to 30 specialised agents
+- Plugin count now at 14 tools for comprehensive environment detection
 
 ---
 
