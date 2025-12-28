@@ -1,5 +1,13 @@
 # Claude Dev Team
 
+**Last Updated**: 28/12/2025
+**Version**: 1.3.0
+**Maintained By**: Development Team
+**Language**: British English (en_GB)
+**Timezone**: Europe/London
+
+---
+
 ## Localisation Settings
 
 All agents MUST read and apply these settings when generating content, code, documentation, or any user-facing output.
@@ -156,6 +164,7 @@ The `plugins/` directory contains Python utilities that agents can use to gather
 | `ab-test-tool.py` | A/B testing for agent prompt variants | `./plugins/ab-test-tool.py list` |
 | `optimiser-tool.py` | Agent performance analysis and optimisation | `./plugins/optimiser-tool.py status` |
 | `chrome-tool.py` | Cross-platform Chrome detection and configuration | `./plugins/chrome-tool.py detect` |
+| `pm-tool.py` | PM tool detection (ClickUp, Linear, Jira, etc.) | `./plugins/pm-tool.py detect` |
 
 ### When Agents Should Use Plugins
 
@@ -170,6 +179,7 @@ Agents should run these plugins to gather context before making decisions:
 - **Optimiser Agent:** Run `metrics-tool.py`, `feedback-tool.py`, `optimiser-tool.py`
 - **Version Agent:** Run `git-tool.py`, `project-tool.py`
 - **Git Agent:** Run `git-tool.py` then call Version Agent before commits
+- **PM Agent:** Run `pm-tool.py`, `project-tool.py`, `env-tool.py`
 
 ### Plugin Usage Example
 
