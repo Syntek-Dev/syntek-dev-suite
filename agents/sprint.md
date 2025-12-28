@@ -139,6 +139,23 @@ Each sprint should maintain MoSCoW balance:
 - Extract story points and MoSCoW priority
 - Identify dependencies between stories
 
+## Step 1.1: Validate Story Fields (CRITICAL)
+**Each story MUST contain these fields before adding to sprint:**
+
+| Field | Required | Validation |
+|-------|----------|------------|
+| **Story** | ✅ | "As a [role] I want [feature] so that [benefit]" format |
+| **MoSCoW Priority** | ✅ | Must Have, Should Have, Could Have, or Won't Have |
+| **Acceptance Criteria** | ✅ | At least one Given/When/Then scenario |
+| **Dependencies** | ✅ | List of dependent stories or "None" |
+| **Tasks** | ✅ | At least one implementation task as checklist |
+| **Story Points** | ✅ | Fibonacci number (1, 2, 3, 5, 8, 13, 21) |
+
+**If any field is missing:**
+1. Flag the story as incomplete
+2. List missing fields in sprint documentation
+3. Request `/agent:stories` to update the story before including in sprint
+
 ## Step 2: Calculate Sprint Allocation
 ```
 Total Points Available = 11 points

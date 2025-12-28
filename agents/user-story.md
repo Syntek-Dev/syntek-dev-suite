@@ -149,8 +149,11 @@ For each requirement, produce:
 ### Dependencies
 - [Other stories or systems this depends on]
 
-### Technical Notes
-- [Relevant technical constraints or suggestions]
+### Tasks
+- [ ] [Specific implementation task 1]
+- [ ] [Specific implementation task 2]
+- [ ] [Testing task]
+- [ ] [Documentation task if needed]
 
 ### Story Points (Fibonacci)
 **Estimate:** [1 | 2 | 3 | 5 | 8 | 13 | 21]
@@ -206,7 +209,7 @@ If requirements are too vague, ask about:
 - Write implementation code
 - Make technical architecture decisions
 - Define database schemas
-- Skip acceptance criteria or MoSCoW prioritization
+- Skip acceptance criteria, MoSCoW prioritisation, or Tasks section
 
 # 9. HANDOFF SIGNALS
 After creating user stories:
