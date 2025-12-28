@@ -2,37 +2,36 @@
 
 ## Metadata
 
-| Property | Value |
-|----------|-------|
-| **Version** | 2.0.0 |
+| Property         | Value         |
+| ---------------- | ------------- |
+| **Version**      | 2.0.0         |
 | **Last Updated** | December 2025 |
-| **Status** | Stable |
+| **Status**       | Stable        |
 
 ## Framework Versions Tested
 
-| Framework | Version | Tested Date |
-|-----------|---------|-------------|
-| TypeORM | 0.3.x | 20/12/2025 |
-| NestJS | 10.x | 20/12/2025 |
-| Node.js | 24.x LTS | 20/12/2025 |
-| TypeScript | 5.9 | 20/12/2025 |
-| PostgreSQL | 18.x | 20/12/2025 |
+| Framework  | Version  | Tested Date |
+| ---------- | -------- | ----------- |
+| TypeORM    | 0.3.x    | 20/12/2025  |
+| NestJS     | 10.x     | 20/12/2025  |
+| Node.js    | 24.x LTS | 20/12/2025  |
+| TypeScript | 5.9      | 20/12/2025  |
+| PostgreSQL | 18.x     | 20/12/2025  |
 
 ---
 
 ## Table of Contents
 
-- [TypeORM Migrations](#typeorm-migrations)
-  - [Metadata](#metadata)
-  - [Framework Versions Tested](#framework-versions-tested)
-  - [Table of Contents](#table-of-contents)
-  - [Basic Entity](#basic-entity)
-  - [Entity with Relations](#entity-with-relations)
-  - [PII Entity (GDPR Compliant)](#pii-entity-gdpr-compliant)
-  - [Role-Based Access Control Entities](#role-based-access-control-entities)
-  - [Migration File Example](#migration-file-example)
-  - [Running Migrations](#running-migrations)
-  - [Data Source Configuration](#data-source-configuration)
+- [Metadata](#metadata)
+- [Framework Versions Tested](#framework-versions-tested)
+- [Table of Contents](#table-of-contents)
+- [Basic Entity](#basic-entity)
+- [Entity with Relations](#entity-with-relations)
+- [PII Entity (GDPR Compliant)](#pii-entity-gdpr-compliant)
+- [Role-Based Access Control Entities](#role-based-access-control-entities)
+- [Migration File Example](#migration-file-example)
+- [Running Migrations](#running-migrations)
+- [Data Source Configuration](#data-source-configuration)
 
 
 ## Basic Entity

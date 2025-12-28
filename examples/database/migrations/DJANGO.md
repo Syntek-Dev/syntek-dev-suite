@@ -2,34 +2,33 @@
 
 ## Metadata
 
-| Property | Value |
-|----------|-------|
-| **Version** | 2.0.0 |
+| Property         | Value         |
+| ---------------- | ------------- |
+| **Version**      | 2.0.0         |
 | **Last Updated** | December 2025 |
-| **Status** | Stable |
+| **Status**       | Stable        |
 
 ## Framework Versions Tested
 
-| Framework | Version | Tested Date |
-|-----------|---------|-------------|
-| Django | 6.x | December 2025 |
-| Python | 3.14 | December 2025 |
-| PostgreSQL | 18.x | December 2025 |
+| Framework  | Version | Tested Date   |
+| ---------- | ------- | ------------- |
+| Django     | 6.x     | December 2025 |
+| Python     | 3.14    | December 2025 |
+| PostgreSQL | 18.x    | December 2025 |
 
 ---
 
 ## Table of Contents
 
-- [Django Migrations](#django-migrations)
-  - [Metadata](#metadata)
-  - [Framework Versions Tested](#framework-versions-tested)
-  - [Table of Contents](#table-of-contents)
-  - [Basic Model and Migration](#basic-model-and-migration)
-  - [Model with Foreign Keys](#model-with-foreign-keys)
-  - [PII Model (GDPR Compliant)](#pii-model-gdpr-compliant)
-  - [Role and Permission Models](#role-and-permission-models)
-  - [Running Migrations](#running-migrations)
-  - [Data Migration Example](#data-migration-example)
+- [Metadata](#metadata)
+- [Framework Versions Tested](#framework-versions-tested)
+- [Table of Contents](#table-of-contents)
+- [Basic Model and Migration](#basic-model-and-migration)
+- [Model with Foreign Keys](#model-with-foreign-keys)
+- [PII Model (GDPR Compliant)](#pii-model-gdpr-compliant)
+- [Role and Permission Models](#role-and-permission-models)
+- [Running Migrations](#running-migrations)
+- [Data Migration Example](#data-migration-example)
 
 
 ## Basic Model and Migration

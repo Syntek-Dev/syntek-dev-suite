@@ -1,50 +1,57 @@
 # Multi-Factor Authentication (MFA)
 
+**Last Updated**: 28/12/2025
+**Version**: 1.3.0
+**Maintained By**: Development Team
+**Language**: British English (en_GB)
+**Timezone**: Europe/London
+
+---
+
 ## Overview
 
 Multi-factor authentication implementations including TOTP (Time-based One-Time Password) and SMS/Email OTP. Includes backup code generation for account recovery across all four technology stacks.
 
 ## Metadata
 
-| Property | Value |
-|----------|-------|
-| **Example Version** | 2.0.0 |
-| **Last Updated** | 2025-12 |
-| **TALL Stack** | Laravel 12.x / PHP 8.4 / MariaDB 12.x |
-| **Django Stack** | Django 6.x / Python 3.14 / PostgreSQL 18.x / Strawberry GraphQL |
-| **React Stack** | Next.js 16.x / React 19.x / TypeScript 5.9 / Prisma 6.x |
-| **Mobile Stack** | React Native 0.83.x / TypeScript 5.9 / NativeWind 4.x / Apollo Client |
-| **Dependencies** | pragmarx/google2fa (Laravel), pyotp (Django), otpauth (Node.js) |
+| Property            | Value                                                                 |
+| ------------------- | --------------------------------------------------------------------- |
+| **Example Version** | 2.0.0                                                                 |
+| **Last Updated**    | 2025-12                                                               |
+| **TALL Stack**      | Laravel 12.x / PHP 8.4 / MariaDB 12.x                                 |
+| **Django Stack**    | Django 6.x / Python 3.14 / PostgreSQL 18.x / Strawberry GraphQL       |
+| **React Stack**     | Next.js 16.x / React 19.x / TypeScript 5.9 / Prisma 6.x               |
+| **Mobile Stack**    | React Native 0.83.x / TypeScript 5.9 / NativeWind 4.x / Apollo Client |
+| **Dependencies**    | pragmarx/google2fa (Laravel), pyotp (Django), otpauth (Node.js)       |
 
 ---
 
 ## Table of Contents
 
-- [Multi-Factor Authentication (MFA)](#multi-factor-authentication-mfa)
-  - [Overview](#overview)
-  - [Metadata](#metadata)
-  - [Table of Contents](#table-of-contents)
-  - [TALL Stack - Laravel 12.x](#tall-stack---laravel-12x)
-  - [TOTP Implementation - Laravel](#totp-implementation---laravel)
-    - [app/Http/Controllers/MfaController.php](#apphttpcontrollersmfacontrollerphp)
-  - [SMS/Email OTP Service - Laravel](#smsemail-otp-service---laravel)
-    - [app/Services/OtpService.php](#appservicesotpservicephp)
-  - [Django/Wagtail Stack - Django 6.x](#djangowagtail-stack---django-6x)
-    - [TOTP Implementation - Django](#totp-implementation---django)
-      - [authentication/services/mfa\_service.py](#authenticationservicesmfa_servicepy)
-    - [GraphQL MFA Mutations - Django](#graphql-mfa-mutations---django)
-      - [authentication/graphql/mutations/mfa\_mutations.py](#authenticationgraphqlmutationsmfa_mutationspy)
-  - [React/Next.js Stack - Next.js 16.x](#reactnextjs-stack---nextjs-16x)
-    - [TOTP Implementation - Next.js](#totp-implementation---nextjs)
-      - [lib/auth/mfa-service.ts](#libauthmfa-servicets)
-    - [API Routes - Next.js](#api-routes---nextjs)
-      - [app/api/auth/mfa/enable/route.ts](#appapiauthmfaenableroutets)
-      - [app/api/auth/mfa/verify/route.ts](#appapiauthmfaverifyroutets)
-  - [React Native Stack - React Native 0.83.x](#react-native-stack---react-native-083x)
-    - [TOTP Hook - React Native](#totp-hook---react-native)
-      - [hooks/useMfa.ts](#hooksusemfats)
-    - [MFA Setup Screen - React Native](#mfa-setup-screen---react-native)
-      - [screens/MfaSetupScreen.tsx](#screensmfasetupscreentsx)
+- [Overview](#overview)
+- [Metadata](#metadata)
+- [Table of Contents](#table-of-contents)
+- [TALL Stack - Laravel 12.x](#tall-stack---laravel-12x)
+- [TOTP Implementation - Laravel](#totp-implementation---laravel)
+  - [app/Http/Controllers/MfaController.php](#apphttpcontrollersmfacontrollerphp)
+- [SMS/Email OTP Service - Laravel](#smsemail-otp-service---laravel)
+  - [app/Services/OtpService.php](#appservicesotpservicephp)
+- [Django/Wagtail Stack - Django 6.x](#djangowagtail-stack---django-6x)
+  - [TOTP Implementation - Django](#totp-implementation---django)
+    - [authentication/services/mfa\_service.py](#authenticationservicesmfa_servicepy)
+  - [GraphQL MFA Mutations - Django](#graphql-mfa-mutations---django)
+    - [authentication/graphql/mutations/mfa\_mutations.py](#authenticationgraphqlmutationsmfa_mutationspy)
+- [React/Next.js Stack - Next.js 16.x](#reactnextjs-stack---nextjs-16x)
+  - [TOTP Implementation - Next.js](#totp-implementation---nextjs)
+    - [lib/auth/mfa-service.ts](#libauthmfa-servicets)
+  - [API Routes - Next.js](#api-routes---nextjs)
+    - [app/api/auth/mfa/enable/route.ts](#appapiauthmfaenableroutets)
+    - [app/api/auth/mfa/verify/route.ts](#appapiauthmfaverifyroutets)
+- [React Native Stack - React Native 0.83.x](#react-native-stack---react-native-083x)
+  - [TOTP Hook - React Native](#totp-hook---react-native)
+    - [hooks/useMfa.ts](#hooksusemfats)
+  - [MFA Setup Screen - React Native](#mfa-setup-screen---react-native)
+    - [screens/MfaSetupScreen.tsx](#screensmfasetupscreentsx)
 
 
 ## TALL Stack - Laravel 12.x

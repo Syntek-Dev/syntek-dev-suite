@@ -6,43 +6,42 @@ Comprehensive debugging configurations and techniques for all supported technolo
 
 ## Technology Stacks
 
-| Stack | Version | Primary Debug Tool |
-|-------|---------|-------------------|
-| TALL Stack | Laravel 12.x, PHP 8.4 | Xdebug 3.4, Telescope |
-| Django/Wagtail | Django 6.x, Python 3.14 | Django Debug Toolbar |
-| React/Next.js | Next.js 16.x, Node 24.x | Chrome DevTools |
-| React Native | RN 0.83.x, TS 5.9 | Flipper, React DevTools |
+| Stack          | Version                 | Primary Debug Tool      |
+| -------------- | ----------------------- | ----------------------- |
+| TALL Stack     | Laravel 12.x, PHP 8.4   | Xdebug 3.4, Telescope   |
+| Django/Wagtail | Django 6.x, Python 3.14 | Django Debug Toolbar    |
+| React/Next.js  | Next.js 16.x, Node 24.x | Chrome DevTools         |
+| React Native   | RN 0.83.x, TS 5.9       | Flipper, React DevTools |
 
 ---
 
 ## Table of Contents
 
-- [Debugging Examples](#debugging-examples)
-  - [Overview](#overview)
-  - [Technology Stacks](#technology-stacks)
-  - [Table of Contents](#table-of-contents)
-  - [TALL Stack (Laravel 12)](#tall-stack-laravel-12)
-    - [Xdebug Configuration](#xdebug-configuration)
-    - [Laravel Telescope](#laravel-telescope)
-    - [Query Debugging](#query-debugging)
-  - [Django/Wagtail Stack](#djangowagtail-stack)
-    - [Django Debug Toolbar](#django-debug-toolbar)
-    - [pdb and ipdb](#pdb-and-ipdb)
-    - [Django Query Debugging](#django-query-debugging)
-  - [Browser Debugging Configuration (CRITICAL)](#browser-debugging-configuration-critical)
-    - [Browser Environment Variable](#browser-environment-variable)
-    - [Launching Chrome for Debugging](#launching-chrome-for-debugging)
-    - [Claude Code Chrome Integration](#claude-code-chrome-integration)
-    - [VSCode Chrome Debugging Configuration](#vscode-chrome-debugging-configuration)
-    - [When to Use Chrome DevTools](#when-to-use-chrome-devtools)
-  - [React/Next.js Stack](#reactnextjs-stack)
-    - [React DevTools](#react-devtools)
-    - [Next.js Debugging](#nextjs-debugging)
-    - [VS Code Configuration](#vs-code-configuration)
-  - [React Native Stack](#react-native-stack)
-    - [Flipper Setup](#flipper-setup)
-    - [React Native Debugger](#react-native-debugger)
-    - [Performance Debugging](#performance-debugging)
+- [Overview](#overview)
+- [Technology Stacks](#technology-stacks)
+- [Table of Contents](#table-of-contents)
+- [TALL Stack (Laravel 12)](#tall-stack-laravel-12)
+  - [Xdebug Configuration](#xdebug-configuration)
+  - [Laravel Telescope](#laravel-telescope)
+  - [Query Debugging](#query-debugging)
+- [Django/Wagtail Stack](#djangowagtail-stack)
+  - [Django Debug Toolbar](#django-debug-toolbar)
+  - [pdb and ipdb](#pdb-and-ipdb)
+  - [Django Query Debugging](#django-query-debugging)
+- [Browser Debugging Configuration (CRITICAL)](#browser-debugging-configuration-critical)
+  - [Browser Environment Variable](#browser-environment-variable)
+  - [Launching Chrome for Debugging](#launching-chrome-for-debugging)
+  - [Claude Code Chrome Integration](#claude-code-chrome-integration)
+  - [VSCode Chrome Debugging Configuration](#vscode-chrome-debugging-configuration)
+  - [When to Use Chrome DevTools](#when-to-use-chrome-devtools)
+- [React/Next.js Stack](#reactnextjs-stack)
+  - [React DevTools](#react-devtools)
+  - [Next.js Debugging](#nextjs-debugging)
+  - [VS Code Configuration](#vs-code-configuration)
+- [React Native Stack](#react-native-stack)
+  - [Flipper Setup](#flipper-setup)
+  - [React Native Debugger](#react-native-debugger)
+  - [Performance Debugging](#performance-debugging)
 
 
 ## TALL Stack (Laravel 12)

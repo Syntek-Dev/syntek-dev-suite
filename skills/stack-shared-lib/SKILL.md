@@ -1,48 +1,51 @@
 # Stack: Shared NPM Package
 
-This skill defines shared library configuration for React Web and React Native projects.
+**Last Updated**: 28/12/2025
+**Version**: 1.3.0
+**Maintained By**: Development Team
+**Language**: British English (en_GB)
+**Timezone**: Europe/London
 
 ---
 
 ## Table of Contents
 
-- [Stack: Shared NPM Package](#stack-shared-npm-package)
-  - [Table of Contents](#table-of-contents)
-  - [Architecture](#architecture)
-  - [Commands](#commands)
-  - [Critical Rules](#critical-rules)
-    - [Platform Agnostic Code](#platform-agnostic-code)
-    - [Styling for Shared UI](#styling-for-shared-ui)
-  - [Package.json Configuration](#packagejson-configuration)
-  - [Versioning (Semantic Versioning)](#versioning-semantic-versioning)
-  - [Development Workflow](#development-workflow)
-  - [File Structure](#file-structure)
-  - [Testing](#testing)
+- [Table of Contents](#table-of-contents)
+- [Architecture](#architecture)
+- [Commands](#commands)
+- [Critical Rules](#critical-rules)
+  - [Platform Agnostic Code](#platform-agnostic-code)
+  - [Styling for Shared UI](#styling-for-shared-ui)
+- [Package.json Configuration](#packagejson-configuration)
+- [Versioning (Semantic Versioning)](#versioning-semantic-versioning)
+- [Development Workflow](#development-workflow)
+- [File Structure](#file-structure)
+- [Testing](#testing)
 
 ---
 
 ## Architecture
 
-| Layer | Technology |
-|-------|------------|
-| **Context** | Shared Logic/UI for React (Web) and React Native (Mobile) |
-| **Environment** | Node.js (Host machine or Docker) |
-| **Build Tool** | tsup / Rollup (ESM & CJS output) |
-| **Language** | TypeScript (Strict mode) |
-| **Testing** | Vitest or Jest |
+| Layer           | Technology                                                |
+| --------------- | --------------------------------------------------------- |
+| **Context**     | Shared Logic/UI for React (Web) and React Native (Mobile) |
+| **Environment** | Node.js (Host machine or Docker)                          |
+| **Build Tool**  | tsup / Rollup (ESM & CJS output)                          |
+| **Language**    | TypeScript (Strict mode)                                  |
+| **Testing**     | Vitest or Jest                                            |
 
 ---
 
 ## Commands
 
-| Task | Command |
-|------|---------|
-| Build package | `npm run build` |
-| Watch mode | `npm run watch` |
-| Run tests | `npm test` |
-| Link locally | `npm link` or `yalc push` |
-| Lint | `npm run lint` |
-| Publish | `npm publish` |
+| Task          | Command                   |
+| ------------- | ------------------------- |
+| Build package | `npm run build`           |
+| Watch mode    | `npm run watch`           |
+| Run tests     | `npm test`                |
+| Link locally  | `npm link` or `yalc push` |
+| Lint          | `npm run lint`            |
+| Publish       | `npm publish`             |
 
 ---
 
@@ -52,12 +55,12 @@ This skill defines shared library configuration for React Web and React Native p
 
 **CRITICAL:** Shared code must work on BOTH web and mobile.
 
-| Avoid | Alternative |
-|-------|-------------|
-| `window`, `document` | Platform detection or conditional imports |
-| `fs`, `path` (Node APIs) | Only in build tools, not runtime code |
-| `localStorage` | Abstract to platform-specific adapters |
-| `fetch` (browser-specific) | Use cross-platform HTTP client |
+| Avoid                      | Alternative                               |
+| -------------------------- | ----------------------------------------- |
+| `window`, `document`       | Platform detection or conditional imports |
+| `fs`, `path` (Node APIs)   | Only in build tools, not runtime code     |
+| `localStorage`             | Abstract to platform-specific adapters    |
+| `fetch` (browser-specific) | Use cross-platform HTTP client            |
 
 ```tsx
 // BAD - Will crash on React Native
@@ -119,11 +122,11 @@ interface CardProps {
 
 ## Versioning (Semantic Versioning)
 
-| Version Bump | When to Use |
-|--------------|-------------|
-| **Major** (X.0.0) | Breaking changes |
+| Version Bump      | When to Use                         |
+| ----------------- | ----------------------------------- |
+| **Major** (X.0.0) | Breaking changes                    |
 | **Minor** (0.X.0) | New features (backwards compatible) |
-| **Patch** (0.0.X) | Bug fixes (backwards compatible) |
+| **Patch** (0.0.X) | Bug fixes (backwards compatible)    |
 
 ---
 

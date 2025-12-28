@@ -6,61 +6,60 @@ Signed URLs and token-based access patterns for protecting sensitive routes. The
 
 ## Metadata
 
-| Property | Value |
-|----------|-------|
-| **Example Version** | 2.0.0 |
-| **Last Updated** | 2025-12 |
-| **Laravel** | 12.x |
-| **PHP** | 8.4 |
-| **MariaDB** | 12.x |
-| **Django** | 6.x |
-| **Python** | 3.14 |
-| **PostgreSQL** | 18.x |
-| **Strawberry GraphQL** | Latest |
-| **Next.js** | 16.x |
-| **React** | 19.x |
-| **TypeScript** | 5.9 |
-| **Prisma** | 6.x |
-| **React Native** | 0.83.x |
-| **NativeWind** | v4 |
-| **Stacks** | TALL, Django/Wagtail, React/Next.js, React Native |
+| Property               | Value                                             |
+| ---------------------- | ------------------------------------------------- |
+| **Example Version**    | 2.0.0                                             |
+| **Last Updated**       | 2025-12                                           |
+| **Laravel**            | 12.x                                              |
+| **PHP**                | 8.4                                               |
+| **MariaDB**            | 12.x                                              |
+| **Django**             | 6.x                                               |
+| **Python**             | 3.14                                              |
+| **PostgreSQL**         | 18.x                                              |
+| **Strawberry GraphQL** | Latest                                            |
+| **Next.js**            | 16.x                                              |
+| **React**              | 19.x                                              |
+| **TypeScript**         | 5.9                                               |
+| **Prisma**             | 6.x                                               |
+| **React Native**       | 0.83.x                                            |
+| **NativeWind**         | v4                                                |
+| **Stacks**             | TALL, Django/Wagtail, React/Next.js, React Native |
 
 ---
 
 ## Table of Contents
 
-- [Signed URLs \& Token-Based Access](#signed-urls--token-based-access)
-  - [Overview](#overview)
-  - [Metadata](#metadata)
-  - [Table of Contents](#table-of-contents)
-  - [Signed URLs - Laravel (TALL Stack)](#signed-urls---laravel-tall-stack)
-    - [app/Http/Controllers/SecureRouteController.php](#apphttpcontrollerssecureroutecontrollerphp)
-    - [routes/web.php (Signed Routes)](#routeswebphp-signed-routes)
-  - [Randomised Admin Paths - Laravel](#randomised-admin-paths---laravel)
-    - [config/admin.php](#configadminphp)
-    - [routes/web.php (Admin Routes)](#routeswebphp-admin-routes)
-  - [Token-Based Access - Laravel](#token-based-access---laravel)
-    - [app/Http/Controllers/SecureAccessController.php](#apphttpcontrollerssecureaccesscontrollerphp)
-  - [Signed URLs - Django/Wagtail](#signed-urls---djangowagtail)
-    - [services/signed\_urls.py](#servicessigned_urlspy)
-    - [views/secure\_routes.py](#viewssecure_routespy)
-    - [urls.py](#urlspy)
-  - [Token-Based Access - Django](#token-based-access---django)
-    - [services/token\_access.py](#servicestoken_accesspy)
-    - [views/token\_protected.py](#viewstoken_protectedpy)
-  - [Signed URLs - Next.js](#signed-urls---nextjs)
-    - [lib/signed-urls.ts](#libsigned-urlsts)
-    - [app/api/secure/\[action\]/route.ts](#appapisecureactionroutets)
-    - [middleware.ts](#middlewarets)
-  - [Token-Based Access - Next.js](#token-based-access---nextjs)
-    - [lib/token-access.ts](#libtoken-accessts)
-    - [app/api/token/generate/route.ts](#appapitokengenerateroutets)
-    - [app/api/resource/\[token\]/route.ts](#appapiresourcetokenroutets)
-  - [React Native - Consuming Signed URLs](#react-native---consuming-signed-urls)
-    - [services/signedUrlClient.ts](#servicessignedurlclientts)
-    - [components/SignedUrlHandler.tsx](#componentssignedurlhandlertsx)
-    - [hooks/useAccessToken.ts](#hooksuseaccesstokents)
-    - [Example usage in a screen](#example-usage-in-a-screen)
+- [Overview](#overview)
+- [Metadata](#metadata)
+- [Table of Contents](#table-of-contents)
+- [Signed URLs - Laravel (TALL Stack)](#signed-urls---laravel-tall-stack)
+  - [app/Http/Controllers/SecureRouteController.php](#apphttpcontrollerssecureroutecontrollerphp)
+  - [routes/web.php (Signed Routes)](#routeswebphp-signed-routes)
+- [Randomised Admin Paths - Laravel](#randomised-admin-paths---laravel)
+  - [config/admin.php](#configadminphp)
+  - [routes/web.php (Admin Routes)](#routeswebphp-admin-routes)
+- [Token-Based Access - Laravel](#token-based-access---laravel)
+  - [app/Http/Controllers/SecureAccessController.php](#apphttpcontrollerssecureaccesscontrollerphp)
+- [Signed URLs - Django/Wagtail](#signed-urls---djangowagtail)
+  - [services/signed\_urls.py](#servicessigned_urlspy)
+  - [views/secure\_routes.py](#viewssecure_routespy)
+  - [urls.py](#urlspy)
+- [Token-Based Access - Django](#token-based-access---django)
+  - [services/token\_access.py](#servicestoken_accesspy)
+  - [views/token\_protected.py](#viewstoken_protectedpy)
+- [Signed URLs - Next.js](#signed-urls---nextjs)
+  - [lib/signed-urls.ts](#libsigned-urlsts)
+  - [app/api/secure/\[action\]/route.ts](#appapisecureactionroutets)
+  - [middleware.ts](#middlewarets)
+- [Token-Based Access - Next.js](#token-based-access---nextjs)
+  - [lib/token-access.ts](#libtoken-accessts)
+  - [app/api/token/generate/route.ts](#appapitokengenerateroutets)
+  - [app/api/resource/\[token\]/route.ts](#appapiresourcetokenroutets)
+- [React Native - Consuming Signed URLs](#react-native---consuming-signed-urls)
+  - [services/signedUrlClient.ts](#servicessignedurlclientts)
+  - [components/SignedUrlHandler.tsx](#componentssignedurlhandlertsx)
+  - [hooks/useAccessToken.ts](#hooksuseaccesstokents)
+  - [Example usage in a screen](#example-usage-in-a-screen)
 
 
 ## Signed URLs - Laravel (TALL Stack)

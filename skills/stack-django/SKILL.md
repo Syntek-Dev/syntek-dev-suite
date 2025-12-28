@@ -1,52 +1,55 @@
 # Stack: Django & Wagtail (Docker)
 
-This skill defines the Django/Wagtail stack configuration. Apply when working on Django projects.
+**Last Updated**: 28/12/2025
+**Version**: 1.3.0
+**Maintained By**: Development Team
+**Language**: British English (en_GB)
+**Timezone**: Europe/London
 
 ---
 
 ## Table of Contents
 
-- [Stack: Django \& Wagtail (Docker)](#stack-django--wagtail-docker)
-  - [Table of Contents](#table-of-contents)
-  - [Architecture](#architecture)
-  - [Commands](#commands)
-  - [Coding Standards](#coding-standards)
-    - [Django](#django)
-    - [Wagtail](#wagtail)
-    - [Templates](#templates)
-    - [Type Hinting](#type-hinting)
-  - [File Structure](#file-structure)
-  - [Testing (pytest)](#testing-pytest)
+- [Table of Contents](#table-of-contents)
+- [Architecture](#architecture)
+- [Commands](#commands)
+- [Coding Standards](#coding-standards)
+  - [Django](#django)
+  - [Wagtail](#wagtail)
+  - [Templates](#templates)
+  - [Type Hinting](#type-hinting)
+- [File Structure](#file-structure)
+- [Testing (pytest)](#testing-pytest)
 
 ---
 
 ## Architecture
 
-| Layer | Technology |
-|-------|------------|
-| **Platform** | Raw Docker (Docker Compose) |
-| **Backend** | Python 3.10+, Django 5.x, Wagtail 6.x |
-| **Server** | Gunicorn / Nginx |
-| **Testing** | pytest, pytest-django |
+| Layer        | Technology                            |
+| ------------ | ------------------------------------- |
+| **Platform** | Raw Docker (Docker Compose)           |
+| **Backend**  | Python 3.10+, Django 5.x, Wagtail 6.x |
+| **Server**   | Gunicorn / Nginx                      |
+| **Testing**  | pytest, pytest-django                 |
 
 ---
 
 ## Commands
 
-| Task | Command |
-|------|---------|
-| Start environment | `docker compose up -d` |
-| Stop environment | `docker compose down` |
-| View logs | `docker compose logs -f web` |
-| Django manage | `docker compose exec web python manage.py <command>` |
-| Django shell | `docker compose exec web python manage.py shell` |
-| Run tests | `docker compose exec web pytest` |
-| Run specific test | `docker compose exec web pytest tests/test_file.py -k test_name` |
-| Migrations | `docker compose exec web python manage.py migrate` |
-| Make migrations | `docker compose exec web python manage.py makemigrations` |
-| Create superuser | `docker compose exec web python manage.py createsuperuser` |
-| Collect static | `docker compose exec web python manage.py collectstatic --noinput` |
-| Pip install | `docker compose exec web pip install <package>` |
+| Task              | Command                                                            |
+| ----------------- | ------------------------------------------------------------------ |
+| Start environment | `docker compose up -d`                                             |
+| Stop environment  | `docker compose down`                                              |
+| View logs         | `docker compose logs -f web`                                       |
+| Django manage     | `docker compose exec web python manage.py <command>`               |
+| Django shell      | `docker compose exec web python manage.py shell`                   |
+| Run tests         | `docker compose exec web pytest`                                   |
+| Run specific test | `docker compose exec web pytest tests/test_file.py -k test_name`   |
+| Migrations        | `docker compose exec web python manage.py migrate`                 |
+| Make migrations   | `docker compose exec web python manage.py makemigrations`          |
+| Create superuser  | `docker compose exec web python manage.py createsuperuser`         |
+| Collect static    | `docker compose exec web python manage.py collectstatic --noinput` |
+| Pip install       | `docker compose exec web pip install <package>`                    |
 
 ---
 

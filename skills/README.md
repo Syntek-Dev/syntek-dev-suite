@@ -1,12 +1,20 @@
 # Skills
 
+**Last Updated**: 28/12/2025
+**Version**: 1.3.0
+**Maintained By**: Development Team
+**Language**: British English (en_GB)
+**Timezone**: Europe/London
+
+---
+
 ## Overview
 
 This folder contains stack-specific skills that agents use to apply the correct patterns, conventions, and best practices for each technology stack. Skills are loaded automatically based on the `Skill Target` defined in the project's `CLAUDE.md` file.
 
 Each skill is a `SKILL.md` file within a named folder that provides detailed guidance for agents working with that stack.
 
-**Version:** 1.2.0
+**Version:** 1.3.0
 
 ---
 

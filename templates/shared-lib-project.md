@@ -8,59 +8,58 @@ Use this template to set up a shared NPM package that provides **components, typ
 
 ## Table of Contents
 
-- [Shared Design System \& Components Template](#shared-design-system--components-template)
-  - [Table of Contents](#table-of-contents)
-  - [Architecture Overview](#architecture-overview)
-  - [Template Repository](#template-repository)
-    - [Creating a New Project from Template](#creating-a-new-project-from-template)
-    - [Post-Clone Setup](#post-clone-setup)
-  - [Project CLAUDE.md](#project-claudemd)
-  - [Component Architecture](#component-architecture)
-    - [Separate Web and Mobile Components](#separate-web-and-mobile-components)
-    - [Import Patterns](#import-patterns)
-    - [Platform Differences](#platform-differences)
-  - [Styling](#styling)
-    - [Tailwind CSS v4 + NativeWind v4](#tailwind-css-v4--nativewind-v4)
-  - [Storybook](#storybook)
-    - [Web Storybook](#web-storybook)
-    - [Mobile Storybook](#mobile-storybook)
-  - [Code Conventions](#code-conventions)
-    - [Component Structure](#component-structure)
-    - [Commit Convention](#commit-convention)
-    - [Branch Strategy](#branch-strategy)
-    - [PR Titles](#pr-titles)
-  - [Versioning](#versioning)
-  - [Commands](#commands)
-    - [.claude/commands/dev.md](#claudecommandsdevmd)
-    - [.claude/commands/test.md](#claudecommandstestmd)
-    - [.claude/commands/staging.md](#claudecommandsstagingmd)
-    - [.claude/commands/production.md](#claudecommandsproductionmd)
-    - [.claude/commands/storybook.md](#claudecommandsstorybookmd)
-    - [.claude/commands/build.md](#claudecommandsbuildmd)
-    - [.claude/commands/link.md](#claudecommandslinkmd)
-    - [.claude/commands/lint.md](#claudecommandslintmd)
-    - [.claude/commands/make-token.md](#claudecommandsmake-tokenmd)
-  - [Directory Structure](#directory-structure)
-  - [Environment-Specific Command Files](#environment-specific-command-files)
-    - [Required Root-Level Scripts](#required-root-level-scripts)
-    - [dev.sh](#devsh)
-    - [test.sh](#testsh)
-    - [staging.sh](#stagingsh)
-    - [production.sh](#productionsh)
-    - [Command File Permissions](#command-file-permissions)
-  - [Package.json Configuration](#packagejson-configuration)
-  - [Tokens Structure](#tokens-structure)
-    - [src/tokens/colours.ts](#srctokenscoloursts)
-    - [src/tokens/spacing.ts](#srctokensspacingts)
-    - [src/tokens/typography.ts](#srctokenstypographyts)
-    - [src/tokens/breakpoints.ts](#srctokensbreakpointsts)
-    - [src/tokens/shadows.ts](#srctokensshadowsts)
-    - [src/tokens/borders.ts](#srctokensbordersts)
-    - [src/tokens/index.ts](#srctokensindexts)
-  - [Development Workflow](#development-workflow)
-  - [GitHub Template Repository Updates](#github-template-repository-updates)
-    - [Required Files](#required-files)
-    - [Required in src/tokens/](#required-in-srctokens)
+- [Table of Contents](#table-of-contents)
+- [Architecture Overview](#architecture-overview)
+- [Template Repository](#template-repository)
+  - [Creating a New Project from Template](#creating-a-new-project-from-template)
+  - [Post-Clone Setup](#post-clone-setup)
+- [Project CLAUDE.md](#project-claudemd)
+- [Component Architecture](#component-architecture)
+  - [Separate Web and Mobile Components](#separate-web-and-mobile-components)
+  - [Import Patterns](#import-patterns)
+  - [Platform Differences](#platform-differences)
+- [Styling](#styling)
+  - [Tailwind CSS v4 + NativeWind v4](#tailwind-css-v4--nativewind-v4)
+- [Storybook](#storybook)
+  - [Web Storybook](#web-storybook)
+  - [Mobile Storybook](#mobile-storybook)
+- [Code Conventions](#code-conventions)
+  - [Component Structure](#component-structure)
+  - [Commit Convention](#commit-convention)
+  - [Branch Strategy](#branch-strategy)
+  - [PR Titles](#pr-titles)
+- [Versioning](#versioning)
+- [Commands](#commands)
+  - [.claude/commands/dev.md](#claudecommandsdevmd)
+  - [.claude/commands/test.md](#claudecommandstestmd)
+  - [.claude/commands/staging.md](#claudecommandsstagingmd)
+  - [.claude/commands/production.md](#claudecommandsproductionmd)
+  - [.claude/commands/storybook.md](#claudecommandsstorybookmd)
+  - [.claude/commands/build.md](#claudecommandsbuildmd)
+  - [.claude/commands/link.md](#claudecommandslinkmd)
+  - [.claude/commands/lint.md](#claudecommandslintmd)
+  - [.claude/commands/make-token.md](#claudecommandsmake-tokenmd)
+- [Directory Structure](#directory-structure)
+- [Environment-Specific Command Files](#environment-specific-command-files)
+  - [Required Root-Level Scripts](#required-root-level-scripts)
+  - [dev.sh](#devsh)
+  - [test.sh](#testsh)
+  - [staging.sh](#stagingsh)
+  - [production.sh](#productionsh)
+  - [Command File Permissions](#command-file-permissions)
+- [Package.json Configuration](#packagejson-configuration)
+- [Tokens Structure](#tokens-structure)
+  - [src/tokens/colours.ts](#srctokenscoloursts)
+  - [src/tokens/spacing.ts](#srctokensspacingts)
+  - [src/tokens/typography.ts](#srctokenstypographyts)
+  - [src/tokens/breakpoints.ts](#srctokensbreakpointsts)
+  - [src/tokens/shadows.ts](#srctokensshadowsts)
+  - [src/tokens/borders.ts](#srctokensbordersts)
+  - [src/tokens/index.ts](#srctokensindexts)
+- [Development Workflow](#development-workflow)
+- [GitHub Template Repository Updates](#github-template-repository-updates)
+  - [Required Files](#required-files)
+  - [Required in src/tokens/](#required-in-srctokens)
 
 
 ---
@@ -147,16 +146,16 @@ Create this file at `.claude/CLAUDE.md` in the project root:
 
 ## Stack Overview
 
-| Component | Technology |
-|-----------|------------|
-| **Type** | Shared Design System (NPM Package) |
-| **Purpose** | Components, typography, fonts, colours for web and mobile |
-| **Language** | TypeScript 5.x (Strict mode) |
-| **Build Tool** | tsup (ESM & CJS output) |
-| **Styling** | Tailwind CSS v4 + NativeWind v4 |
-| **Storybook** | Storybook 8.x (web + mobile) |
-| **Testing** | Vitest |
-| **Environment** | Node.js (NO Docker) |
+| Component       | Technology                                                |
+| --------------- | --------------------------------------------------------- |
+| **Type**        | Shared Design System (NPM Package)                        |
+| **Purpose**     | Components, typography, fonts, colours for web and mobile |
+| **Language**    | TypeScript 5.x (Strict mode)                              |
+| **Build Tool**  | tsup (ESM & CJS output)                                   |
+| **Styling**     | Tailwind CSS v4 + NativeWind v4                           |
+| **Storybook**   | Storybook 8.x (web + mobile)                              |
+| **Testing**     | Vitest                                                    |
+| **Environment** | Node.js (NO Docker)                                       |
 
 ---
 
@@ -169,9 +168,9 @@ Create this file at `.claude/CLAUDE.md` in the project root:
 
 ## Consumer Projects
 
-| Project | Stack | Usage |
-|---------|-------|-------|
-| React Web | `stack-react` | `import { Button } from '@scope/ui'` |
+| Project             | Stack          | Usage                                                         |
+| ------------------- | -------------- | ------------------------------------------------------------- |
+| React Web           | `stack-react`  | `import { Button } from '@scope/ui'`                          |
 | React Native Mobile | `stack-mobile` | `import { Mobile } from '@scope/ui'` then `<Mobile.Button />` |
 
 Both consumers use the same design tokens to maintain visual consistency.
@@ -180,21 +179,21 @@ Both consumers use the same design tokens to maintain visual consistency.
 
 ## Key Locations
 
-| Directory | Purpose |
-|-----------|---------|
-| `src/index.ts` | Main exports |
-| `src/web/components/` | React Web components (onClick, button) |
-| `src/mobile/components/` | React Native components (onPress, Pressable) |
-| `src/tokens/` | Shared design tokens (colours, spacing, typography) |
-| `src/tokens/colours.ts` | Brand colour palette |
-| `src/tokens/spacing.ts` | Spacing scale (4, 8, 12, 16, etc.) |
-| `src/tokens/typography.ts` | Font sizes, weights, line heights |
-| `src/tokens/breakpoints.ts` | Responsive breakpoints |
-| `src/tokens/shadows.ts` | Shadow definitions |
-| `src/tailwind.css` | Tailwind v4 styles |
-| `.storybook-web/` | Web Storybook configuration |
-| `.storybook-mobile/` | Mobile Storybook configuration |
-| `dist/` | Built output (gitignored) |
+| Directory                   | Purpose                                             |
+| --------------------------- | --------------------------------------------------- |
+| `src/index.ts`              | Main exports                                        |
+| `src/web/components/`       | React Web components (onClick, button)              |
+| `src/mobile/components/`    | React Native components (onPress, Pressable)        |
+| `src/tokens/`               | Shared design tokens (colours, spacing, typography) |
+| `src/tokens/colours.ts`     | Brand colour palette                                |
+| `src/tokens/spacing.ts`     | Spacing scale (4, 8, 12, 16, etc.)                  |
+| `src/tokens/typography.ts`  | Font sizes, weights, line heights                   |
+| `src/tokens/breakpoints.ts` | Responsive breakpoints                              |
+| `src/tokens/shadows.ts`     | Shadow definitions                                  |
+| `src/tailwind.css`          | Tailwind v4 styles                                  |
+| `.storybook-web/`           | Web Storybook configuration                         |
+| `.storybook-mobile/`        | Mobile Storybook configuration                      |
+| `dist/`                     | Built output (gitignored)                           |
 
 ---
 
@@ -274,12 +273,12 @@ import { Mobile } from '@scope/ui';
 
 ### Platform Differences
 
-| Feature | Web | Mobile |
-|---------|-----|--------|
-| Event handler | `onClick` | `onPress` |
-| Button element | `<button>` | `<Pressable>` |
-| Hover states | `:hover` CSS | Not available |
-| Text wrapper | Optional | Required `<Text>` |
+| Feature        | Web          | Mobile            |
+| -------------- | ------------ | ----------------- |
+| Event handler  | `onClick`    | `onPress`         |
+| Button element | `<button>`   | `<Pressable>`     |
+| Hover states   | `:hover` CSS | Not available     |
+| Text wrapper   | Optional     | Required `<Text>` |
 
 ---
 
@@ -369,11 +368,11 @@ Format: `user-story-number/feature-name`
 
 ## Versioning
 
-| Version Bump | When to Use |
-|--------------|-------------|
+| Version Bump      | When to Use                        |
+| ----------------- | ---------------------------------- |
 | **Major** (X.0.0) | Breaking changes to component APIs |
-| **Minor** (0.X.0) | New components or features |
-| **Patch** (0.0.X) | Bug fixes, style tweaks |
+| **Minor** (0.X.0) | New components or features         |
+| **Patch** (0.0.X) | Bug fixes, style tweaks            |
 ```
 
 ---
@@ -841,12 +840,12 @@ $ARGUMENTS
 
 ### Required Root-Level Scripts
 
-| File | Purpose | Environment |
-|------|---------|-------------|
-| `dev.sh` | Start development with watch mode | Development |
-| `test.sh` | Run test suite | Testing |
-| `staging.sh` | Build and publish prerelease version | Staging |
-| `production.sh` | Build and publish production version | Production |
+| File            | Purpose                              | Environment |
+| --------------- | ------------------------------------ | ----------- |
+| `dev.sh`        | Start development with watch mode    | Development |
+| `test.sh`       | Run test suite                       | Testing     |
+| `staging.sh`    | Build and publish prerelease version | Staging     |
+| `production.sh` | Build and publish production version | Production  |
 
 ### dev.sh
 
@@ -1249,28 +1248,28 @@ When the `Syntek-Studio/ui_design_template` repo is updated, ensure the followin
 
 ### Required Files
 
-| File | Purpose |
-|------|---------|
-| `.claude/CLAUDE.md` | Project context for Claude Code |
-| `.claude/settings.local.json` | Claude Code settings |
-| `.claude/commands/dev.md` | Development command |
-| `.claude/commands/storybook.md` | Storybook command |
-| `.claude/commands/test.md` | Test command |
-| `.claude/commands/build.md` | Build command |
-| `.claude/commands/link.md` | Link command |
-| `.claude/commands/version.md` | Version command |
-| `.claude/commands/lint.md` | Lint command |
-| `.claude/commands/make-component.md` | Component generator |
-| `.claude/commands/make-token.md` | Token generator |
+| File                                 | Purpose                         |
+| ------------------------------------ | ------------------------------- |
+| `.claude/CLAUDE.md`                  | Project context for Claude Code |
+| `.claude/settings.local.json`        | Claude Code settings            |
+| `.claude/commands/dev.md`            | Development command             |
+| `.claude/commands/storybook.md`      | Storybook command               |
+| `.claude/commands/test.md`           | Test command                    |
+| `.claude/commands/build.md`          | Build command                   |
+| `.claude/commands/link.md`           | Link command                    |
+| `.claude/commands/version.md`        | Version command                 |
+| `.claude/commands/lint.md`           | Lint command                    |
+| `.claude/commands/make-component.md` | Component generator             |
+| `.claude/commands/make-token.md`     | Token generator                 |
 
 ### Required in src/tokens/
 
-| File | Purpose |
-|------|---------|
-| `src/tokens/index.ts` | Token exports |
-| `src/tokens/colours.ts` | Brand colour palette |
-| `src/tokens/spacing.ts` | Spacing scale |
-| `src/tokens/typography.ts` | Font sizes, weights, line heights |
-| `src/tokens/breakpoints.ts` | Responsive breakpoints |
-| `src/tokens/shadows.ts` | Shadow definitions |
-| `src/tokens/borders.ts` | Border radii, widths |
+| File                        | Purpose                           |
+| --------------------------- | --------------------------------- |
+| `src/tokens/index.ts`       | Token exports                     |
+| `src/tokens/colours.ts`     | Brand colour palette              |
+| `src/tokens/spacing.ts`     | Spacing scale                     |
+| `src/tokens/typography.ts`  | Font sizes, weights, line heights |
+| `src/tokens/breakpoints.ts` | Responsive breakpoints            |
+| `src/tokens/shadows.ts`     | Shadow definitions                |
+| `src/tokens/borders.ts`     | Border radii, widths              |

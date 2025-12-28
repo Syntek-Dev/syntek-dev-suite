@@ -8,45 +8,44 @@ Database-level protection for Personally Identifiable Information (PII). Include
 
 ## Metadata
 
-| Property | Value |
-|----------|-------|
-| **Example Version** | 2.0.0 |
-| **Last Updated** | 2025-12 |
-| **Laravel** | 12.x |
-| **Django** | 6.x |
-| **Next.js** | 16.x |
-| **React Native** | 0.83.x |
-| **PHP** | 8.4 |
-| **Python** | 3.14 |
-| **Node.js** | 24.x |
-| **TypeScript** | 5.9 |
-| **Stacks** | TALL, Django/Wagtail, React/Next.js, React Native |
+| Property            | Value                                             |
+| ------------------- | ------------------------------------------------- |
+| **Example Version** | 2.0.0                                             |
+| **Last Updated**    | 2025-12                                           |
+| **Laravel**         | 12.x                                              |
+| **Django**          | 6.x                                               |
+| **Next.js**         | 16.x                                              |
+| **React Native**    | 0.83.x                                            |
+| **PHP**             | 8.4                                               |
+| **Python**          | 3.14                                              |
+| **Node.js**         | 24.x                                              |
+| **TypeScript**      | 5.9                                               |
+| **Stacks**          | TALL, Django/Wagtail, React/Next.js, React Native |
 
 ---
 
 ## Table of Contents
 
-- [PII Database Protection \& Access Control](#pii-database-protection--access-control)
-  - [Overview](#overview)
-  - [Metadata](#metadata)
-  - [Table of Contents](#table-of-contents)
-  - [PII Table Schema](#pii-table-schema)
-    - [MySQL/MariaDB](#mysqlmariadb)
-  - [TALL Stack - Laravel PII Access](#tall-stack---laravel-pii-access)
-  - [PII Access Service - Laravel](#pii-access-service---laravel)
-    - [app/Services/PiiAccessService.php](#appservicespiiaccessservicephp)
-  - [PII Audit Command - Laravel](#pii-audit-command---laravel)
-    - [app/Console/Commands/AuditPiiHandling.php](#appconsolecommandsauditpiihandlingphp)
-  - [PII Permissions Matrix](#pii-permissions-matrix)
-  - [PII Verification Checklist](#pii-verification-checklist)
-    - [Database Schema Verification](#database-schema-verification)
-    - [Code Verification Patterns](#code-verification-patterns)
-      - [Correct: Hash Before Lookup](#correct-hash-before-lookup)
-      - [Incorrect: Plaintext Lookup](#incorrect-plaintext-lookup)
-      - [Correct: Encrypt Before Storage](#correct-encrypt-before-storage)
-      - [Incorrect: Plaintext Storage](#incorrect-plaintext-storage)
-    - [PII Verification During Code Review](#pii-verification-during-code-review)
-    - [Verify PII Permissions](#verify-pii-permissions)
+- [Overview](#overview)
+- [Metadata](#metadata)
+- [Table of Contents](#table-of-contents)
+- [PII Table Schema](#pii-table-schema)
+  - [MySQL/MariaDB](#mysqlmariadb)
+- [TALL Stack - Laravel PII Access](#tall-stack---laravel-pii-access)
+- [PII Access Service - Laravel](#pii-access-service---laravel)
+  - [app/Services/PiiAccessService.php](#appservicespiiaccessservicephp)
+- [PII Audit Command - Laravel](#pii-audit-command---laravel)
+  - [app/Console/Commands/AuditPiiHandling.php](#appconsolecommandsauditpiihandlingphp)
+- [PII Permissions Matrix](#pii-permissions-matrix)
+- [PII Verification Checklist](#pii-verification-checklist)
+  - [Database Schema Verification](#database-schema-verification)
+  - [Code Verification Patterns](#code-verification-patterns)
+    - [Correct: Hash Before Lookup](#correct-hash-before-lookup)
+    - [Incorrect: Plaintext Lookup](#incorrect-plaintext-lookup)
+    - [Correct: Encrypt Before Storage](#correct-encrypt-before-storage)
+    - [Incorrect: Plaintext Storage](#incorrect-plaintext-storage)
+  - [PII Verification During Code Review](#pii-verification-during-code-review)
+  - [Verify PII Permissions](#verify-pii-permissions)
 
 
 ## PII Table Schema
@@ -445,13 +444,13 @@ class AuditPiiHandling extends Command
 
 ## PII Permissions Matrix
 
-| Permission | Can View | Can Export | Can Delete | Typical Roles |
-|------------|----------|------------|------------|---------------|
-| `pii.access` | Own PII | No | No | All users |
-| `pii.access.others` | Others' PII | No | No | Support |
-| `pii.export` | All PII | Yes | No | Admin, DPO |
-| `pii.delete` | All PII | Yes | Yes | Admin, DPO |
-| `pii.audit` | Access logs | Logs only | No | Security, DPO |
+| Permission          | Can View    | Can Export | Can Delete | Typical Roles |
+| ------------------- | ----------- | ---------- | ---------- | ------------- |
+| `pii.access`        | Own PII     | No         | No         | All users     |
+| `pii.access.others` | Others' PII | No         | No         | Support       |
+| `pii.export`        | All PII     | Yes        | No         | Admin, DPO    |
+| `pii.delete`        | All PII     | Yes        | Yes        | Admin, DPO    |
+| `pii.audit`         | Access logs | Logs only  | No         | Security, DPO |
 
 ---
 
@@ -503,14 +502,14 @@ $user->email = $email;  // BAD if storing in DB as plaintext
 
 ### PII Verification During Code Review
 
-| Pattern | Status | Action Required |
-|---------|--------|-----------------|
-| `->email = $value` directly to User model | Warning | Verify PII service is used |
-| `User::where('email', $value)` | Critical | Must use hash lookup |
-| `logger()->info(['email' => $user->email])` | Critical | PII in logs |
-| `return response()->json($user)` | Warning | Check hidden fields |
-| `Crypt::encryptString($pii)` | Good | Correct pattern |
-| `hash_hmac('sha256', $value, $key)` | Good | Correct pattern |
+| Pattern                                     | Status   | Action Required            |
+| ------------------------------------------- | -------- | -------------------------- |
+| `->email = $value` directly to User model   | Warning  | Verify PII service is used |
+| `User::where('email', $value)`              | Critical | Must use hash lookup       |
+| `logger()->info(['email' => $user->email])` | Critical | PII in logs                |
+| `return response()->json($user)`            | Warning  | Check hidden fields        |
+| `Crypt::encryptString($pii)`                | Good     | Correct pattern            |
+| `hash_hmac('sha256', $value, $key)`         | Good     | Correct pattern            |
 
 ### Verify PII Permissions
 

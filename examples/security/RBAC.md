@@ -6,68 +6,67 @@ Role-Based Access Control (RBAC) patterns for managing user permissions. Include
 
 ## Metadata
 
-| Property | Value |
-|----------|-------|
-| **Example Version** | 2.0.0 |
-| **Last Updated** | 2025-12 |
-| **TALL Stack** | Laravel 12.x / PHP 8.4 / MariaDB 12.x |
-| **Django/Wagtail** | Django 6.x / Python 3.14 / PostgreSQL 18.x / Strawberry GraphQL |
-| **React/Next.js** | Next.js 16.x / React 19.x / TypeScript 5.9 / Prisma 6.x |
-| **React Native** | React Native 0.83.x / TypeScript 5.9 / NativeWind 4.x |
-| **Stacks** | TALL, Django/Wagtail, Next.js, React Native |
+| Property            | Value                                                           |
+| ------------------- | --------------------------------------------------------------- |
+| **Example Version** | 2.0.0                                                           |
+| **Last Updated**    | 2025-12                                                         |
+| **TALL Stack**      | Laravel 12.x / PHP 8.4 / MariaDB 12.x                           |
+| **Django/Wagtail**  | Django 6.x / Python 3.14 / PostgreSQL 18.x / Strawberry GraphQL |
+| **React/Next.js**   | Next.js 16.x / React 19.x / TypeScript 5.9 / Prisma 6.x         |
+| **React Native**    | React Native 0.83.x / TypeScript 5.9 / NativeWind 4.x           |
+| **Stacks**          | TALL, Django/Wagtail, Next.js, React Native                     |
 
 ---
 
 ## Table of Contents
 
-- [Role-Based Access Control (RBAC)](#role-based-access-control-rbac)
-  - [Overview](#overview)
-  - [Metadata](#metadata)
-  - [Table of Contents](#table-of-contents)
-  - [Database Schema](#database-schema)
-    - [MySQL/MariaDB](#mysqlmariadb)
-  - [TALL Stack (Laravel) Implementation](#tall-stack-laravel-implementation)
-  - [Permission Service - Laravel](#permission-service---laravel)
-    - [app/Services/PermissionService.php](#appservicespermissionservicephp)
-  - [Authorisation Middleware - Laravel](#authorisation-middleware---laravel)
-    - [app/Http/Middleware/CheckPermission.php](#apphttpmiddlewarecheckpermissionphp)
-    - [app/Http/Middleware/CheckRole.php](#apphttpmiddlewarecheckrolephp)
-  - [Route Protection - Laravel](#route-protection---laravel)
-    - [routes/web.php](#routeswebphp)
-  - [Policy-Based Authorisation - Laravel](#policy-based-authorisation---laravel)
-    - [app/Policies/PostPolicy.php](#apppoliciespostpolicyphp)
-  - [Django/Wagtail Implementation](#djangowagtail-implementation)
-  - [Permission Service - Django](#permission-service---django)
-    - [services/permission\_service.py](#servicespermission_servicepy)
-  - [Permission Decorators - Django](#permission-decorators---django)
-    - [decorators/permission\_required.py](#decoratorspermission_requiredpy)
-    - [views.py - Usage Example](#viewspy---usage-example)
-  - [Strawberry GraphQL Permissions](#strawberry-graphql-permissions)
-    - [graphql/permissions.py](#graphqlpermissionspy)
-    - [graphql/schema.py](#graphqlschemapy)
-  - [React/Next.js Implementation](#reactnextjs-implementation)
-  - [Next.js Middleware for Route Protection](#nextjs-middleware-for-route-protection)
-    - [middleware.ts](#middlewarets)
-  - [Permission Context Provider](#permission-context-provider)
-    - [contexts/PermissionContext.tsx](#contextspermissioncontexttsx)
-  - [Protected Component Wrapper](#protected-component-wrapper)
-    - [components/PermissionGuard.tsx](#componentspermissionguardtsx)
-    - [components/Example.tsx - Usage](#componentsexampletsx---usage)
-  - [Server-Side Permission Checks](#server-side-permission-checks)
-    - [lib/permissions.ts](#libpermissionsts)
-    - [app/api/posts/route.ts - API Route Example](#appapipostsroutets---api-route-example)
-  - [React Native Implementation](#react-native-implementation)
-  - [Permission Context Provider - React Native](#permission-context-provider---react-native)
-    - [contexts/PermissionContext.tsx](#contextspermissioncontexttsx-1)
-  - [usePermission Hook](#usepermission-hook)
-    - [hooks/usePermission.ts](#hooksusepermissionts)
-  - [Screen Guards](#screen-guards)
-    - [components/PermissionGuard.tsx](#componentspermissionguardtsx-1)
-    - [screens/ExampleScreen.tsx - Usage](#screensexamplescreentsx---usage)
-  - [Navigation Guards](#navigation-guards)
-    - [navigation/ProtectedNavigator.tsx](#navigationprotectednavigatortsx)
-    - [navigation/useProtectedNavigation.ts](#navigationuseprotectednavigationts)
-    - [screens/UnauthorisedScreen.tsx](#screensunauthorisedscreentsx)
+- [Overview](#overview)
+- [Metadata](#metadata)
+- [Table of Contents](#table-of-contents)
+- [Database Schema](#database-schema)
+  - [MySQL/MariaDB](#mysqlmariadb)
+- [TALL Stack (Laravel) Implementation](#tall-stack-laravel-implementation)
+- [Permission Service - Laravel](#permission-service---laravel)
+  - [app/Services/PermissionService.php](#appservicespermissionservicephp)
+- [Authorisation Middleware - Laravel](#authorisation-middleware---laravel)
+  - [app/Http/Middleware/CheckPermission.php](#apphttpmiddlewarecheckpermissionphp)
+  - [app/Http/Middleware/CheckRole.php](#apphttpmiddlewarecheckrolephp)
+- [Route Protection - Laravel](#route-protection---laravel)
+  - [routes/web.php](#routeswebphp)
+- [Policy-Based Authorisation - Laravel](#policy-based-authorisation---laravel)
+  - [app/Policies/PostPolicy.php](#apppoliciespostpolicyphp)
+- [Django/Wagtail Implementation](#djangowagtail-implementation)
+- [Permission Service - Django](#permission-service---django)
+  - [services/permission\_service.py](#servicespermission_servicepy)
+- [Permission Decorators - Django](#permission-decorators---django)
+  - [decorators/permission\_required.py](#decoratorspermission_requiredpy)
+  - [views.py - Usage Example](#viewspy---usage-example)
+- [Strawberry GraphQL Permissions](#strawberry-graphql-permissions)
+  - [graphql/permissions.py](#graphqlpermissionspy)
+  - [graphql/schema.py](#graphqlschemapy)
+- [React/Next.js Implementation](#reactnextjs-implementation)
+- [Next.js Middleware for Route Protection](#nextjs-middleware-for-route-protection)
+  - [middleware.ts](#middlewarets)
+- [Permission Context Provider](#permission-context-provider)
+  - [contexts/PermissionContext.tsx](#contextspermissioncontexttsx)
+- [Protected Component Wrapper](#protected-component-wrapper)
+  - [components/PermissionGuard.tsx](#componentspermissionguardtsx)
+  - [components/Example.tsx - Usage](#componentsexampletsx---usage)
+- [Server-Side Permission Checks](#server-side-permission-checks)
+  - [lib/permissions.ts](#libpermissionsts)
+  - [app/api/posts/route.ts - API Route Example](#appapipostsroutets---api-route-example)
+- [React Native Implementation](#react-native-implementation)
+- [Permission Context Provider - React Native](#permission-context-provider---react-native)
+  - [contexts/PermissionContext.tsx](#contextspermissioncontexttsx-1)
+- [usePermission Hook](#usepermission-hook)
+  - [hooks/usePermission.ts](#hooksusepermissionts)
+- [Screen Guards](#screen-guards)
+  - [components/PermissionGuard.tsx](#componentspermissionguardtsx-1)
+  - [screens/ExampleScreen.tsx - Usage](#screensexamplescreentsx---usage)
+- [Navigation Guards](#navigation-guards)
+  - [navigation/ProtectedNavigator.tsx](#navigationprotectednavigatortsx)
+  - [navigation/useProtectedNavigation.ts](#navigationuseprotectednavigationts)
+  - [screens/UnauthorisedScreen.tsx](#screensunauthorisedscreentsx)
 
 
 ## Database Schema

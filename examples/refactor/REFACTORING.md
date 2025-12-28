@@ -6,62 +6,61 @@ Common refactoring patterns with before/after examples for improving code qualit
 
 ## Refactoring Patterns
 
-| Pattern | Purpose | When to Use |
-|---------|---------|-------------|
-| Extract Method/Function | Reduce duplication | Repeated code blocks |
-| Extract Service/Hook | Separate concerns | Business logic in controllers/components |
-| Replace Conditional | Simplify branching | Complex if/switch statements |
-| Introduce DTO/Type | Type safety | Passing multiple related values |
-| Composition | Improve reusability | Large monolithic components |
+| Pattern                 | Purpose             | When to Use                              |
+| ----------------------- | ------------------- | ---------------------------------------- |
+| Extract Method/Function | Reduce duplication  | Repeated code blocks                     |
+| Extract Service/Hook    | Separate concerns   | Business logic in controllers/components |
+| Replace Conditional     | Simplify branching  | Complex if/switch statements             |
+| Introduce DTO/Type      | Type safety         | Passing multiple related values          |
+| Composition             | Improve reusability | Large monolithic components              |
 
 ---
 
 ## Table of Contents
 
-- [Refactoring Examples](#refactoring-examples)
-  - [Overview](#overview)
-  - [Refactoring Patterns](#refactoring-patterns)
-  - [Table of Contents](#table-of-contents)
-  - [TALL Stack (Laravel 12)](#tall-stack-laravel-12)
-    - [Laravel Extract Service](#laravel-extract-service)
-      - [Before](#before)
-      - [After](#after)
-    - [Laravel Polymorphism](#laravel-polymorphism)
-      - [Before](#before-1)
-      - [After](#after-1)
-    - [Laravel DTO](#laravel-dto)
-      - [Before](#before-2)
-      - [After](#after-2)
-  - [Django/Wagtail Stack](#djangowagtail-stack)
-    - [Django Extract Service](#django-extract-service)
-      - [Before](#before-3)
-      - [After](#after-3)
-    - [Django Strategy](#django-strategy)
-      - [Before](#before-4)
-      - [After](#after-4)
-    - [Django Dataclass](#django-dataclass)
-      - [Before](#before-5)
-      - [After](#after-5)
-  - [React/Next.js Stack](#reactnextjs-stack)
-    - [Extract Custom Hook](#extract-custom-hook)
-      - [Before](#before-6)
-      - [After](#after-6)
-    - [Component Composition](#component-composition)
-      - [Before](#before-7)
-      - [After](#after-7)
-    - [State Machine Refactor](#state-machine-refactor)
-      - [Before](#before-8)
-      - [After](#after-8)
-  - [React Native Stack](#react-native-stack)
-    - [RN Extract Hook](#rn-extract-hook)
-      - [Before](#before-9)
-      - [After](#after-9)
-    - [RN Performance](#rn-performance)
-      - [Before](#before-10)
-      - [After](#after-10)
-    - [Platform-Specific](#platform-specific)
-      - [Before](#before-11)
-      - [After](#after-11)
+- [Overview](#overview)
+- [Refactoring Patterns](#refactoring-patterns)
+- [Table of Contents](#table-of-contents)
+- [TALL Stack (Laravel 12)](#tall-stack-laravel-12)
+  - [Laravel Extract Service](#laravel-extract-service)
+    - [Before](#before)
+    - [After](#after)
+  - [Laravel Polymorphism](#laravel-polymorphism)
+    - [Before](#before-1)
+    - [After](#after-1)
+  - [Laravel DTO](#laravel-dto)
+    - [Before](#before-2)
+    - [After](#after-2)
+- [Django/Wagtail Stack](#djangowagtail-stack)
+  - [Django Extract Service](#django-extract-service)
+    - [Before](#before-3)
+    - [After](#after-3)
+  - [Django Strategy](#django-strategy)
+    - [Before](#before-4)
+    - [After](#after-4)
+  - [Django Dataclass](#django-dataclass)
+    - [Before](#before-5)
+    - [After](#after-5)
+- [React/Next.js Stack](#reactnextjs-stack)
+  - [Extract Custom Hook](#extract-custom-hook)
+    - [Before](#before-6)
+    - [After](#after-6)
+  - [Component Composition](#component-composition)
+    - [Before](#before-7)
+    - [After](#after-7)
+  - [State Machine Refactor](#state-machine-refactor)
+    - [Before](#before-8)
+    - [After](#after-8)
+- [React Native Stack](#react-native-stack)
+  - [RN Extract Hook](#rn-extract-hook)
+    - [Before](#before-9)
+    - [After](#after-9)
+  - [RN Performance](#rn-performance)
+    - [Before](#before-10)
+    - [After](#after-10)
+  - [Platform-Specific](#platform-specific)
+    - [Before](#before-11)
+    - [After](#after-11)
 
 
 ## TALL Stack (Laravel 12)

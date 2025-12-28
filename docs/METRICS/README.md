@@ -1,5 +1,13 @@
 # Self-Learning Metrics
 
+**Last Updated**: 28/12/2025
+**Version**: 1.3.0
+**Maintained By**: Development Team
+**Language**: British English (en_GB)
+**Timezone**: Europe/London
+
+---
+
 ## Overview
 
 This folder contains agent performance metrics, user feedback, and prompt optimisations.
@@ -9,13 +17,12 @@ Data is committed to Git so the entire team benefits from learned improvements.
 
 ## Table of Contents
 
-- [Self-Learning Metrics](#self-learning-metrics)
-  - [Overview](#overview)
-  - [Table of Contents](#table-of-contents)
-  - [Directory Structure](#directory-structure)
-  - [How It Works](#how-it-works)
-  - [Commands](#commands)
-  - [Configuration](#configuration)
+- [Overview](#overview)
+- [Table of Contents](#table-of-contents)
+- [Directory Structure](#directory-structure)
+- [How It Works](#how-it-works)
+- [Commands](#commands)
+- [Configuration](#configuration)
 
 ---
 
@@ -54,12 +61,12 @@ docs/METRICS/
 
 ## Commands
 
-| Command | Purpose |
-|---------|---------|
-| `/learning:feedback good\|bad [comment]` | Rate the last agent response |
-| `/learning:metrics [agent]` | View performance metrics |
-| `/learning:ab-test create\|status\|conclude` | Manage A/B tests |
-| `/learning:optimise review\|apply\|reject` | Review and apply improvements |
+| Command                                      | Purpose                       |
+| -------------------------------------------- | ----------------------------- |
+| `/learning:feedback good\|bad [comment]`     | Rate the last agent response  |
+| `/learning:metrics [agent]`                  | View performance metrics      |
+| `/learning:ab-test create\|status\|conclude` | Manage A/B tests              |
+| `/learning:optimise review\|apply\|reject`   | Review and apply improvements |
 
 ---
 
@@ -67,12 +74,12 @@ docs/METRICS/
 
 Edit `config.json` to customise behaviour:
 
-| Setting | Default | Description |
-|---------|---------|-------------|
-| `enabled` | `true` | Enable/disable the entire learning system |
-| `feedback_required` | `true` | Always prompt for feedback after agent runs |
-| `auto_optimisation_enabled` | `true` | Automatically apply high-confidence improvements |
-| `min_runs_for_analysis` | `50` | Minimum runs before analysing an agent |
-| `retention_days` | `90` | How long to keep run records |
+| Setting                     | Default | Description                                      |
+| --------------------------- | ------- | ------------------------------------------------ |
+| `enabled`                   | `true`  | Enable/disable the entire learning system        |
+| `feedback_required`         | `true`  | Always prompt for feedback after agent runs      |
+| `auto_optimisation_enabled` | `true`  | Automatically apply high-confidence improvements |
+| `min_runs_for_analysis`     | `50`    | Minimum runs before analysing an agent           |
+| `retention_days`            | `90`    | How long to keep run records                     |
 
 To disable auto-optimisation for a project, set `auto_optimisation_enabled: false` in config.json or answer "No" when prompted during `/plugin:init` or `/agent:setup`.

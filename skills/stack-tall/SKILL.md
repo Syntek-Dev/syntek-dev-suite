@@ -1,32 +1,35 @@
 # Stack: TALL (Laravel + DDEV)
 
-This skill defines the TALL stack configuration. Apply when working on Laravel/DDEV projects.
+**Last Updated**: 28/12/2025
+**Version**: 1.3.0
+**Maintained By**: Development Team
+**Language**: British English (en_GB)
+**Timezone**: Europe/London
 
 ---
 
 ## Table of Contents
 
-- [Stack: TALL (Laravel + DDEV)](#stack-tall-laravel--ddev)
-  - [Table of Contents](#table-of-contents)
-  - [Architecture](#architecture)
-  - [Commands](#commands)
-  - [Coding Standards](#coding-standards)
-    - [Livewire](#livewire)
-    - [Blade Templates](#blade-templates)
-    - [Alpine.js](#alpinejs)
-    - [Testing (Pest)](#testing-pest)
-  - [File Structure](#file-structure)
+- [Table of Contents](#table-of-contents)
+- [Architecture](#architecture)
+- [Commands](#commands)
+- [Coding Standards](#coding-standards)
+  - [Livewire](#livewire)
+  - [Blade Templates](#blade-templates)
+  - [Alpine.js](#alpinejs)
+  - [Testing (Pest)](#testing-pest)
+- [File Structure](#file-structure)
 
 ---
 
 ## Architecture
 
-| Layer | Technology |
-|-------|------------|
-| **Platform** | DDEV (Docker abstraction) |
-| **Backend** | Laravel 11.x, Livewire 3 |
+| Layer        | Technology                   |
+| ------------ | ---------------------------- |
+| **Platform** | DDEV (Docker abstraction)    |
+| **Backend**  | Laravel 11.x, Livewire 3     |
 | **Frontend** | TailwindCSS, Alpine.js, Vite |
-| **Testing** | Pest PHP |
+| **Testing**  | Pest PHP                     |
 
 ---
 
@@ -34,20 +37,20 @@ This skill defines the TALL stack configuration. Apply when working on Laravel/D
 
 **CRITICAL:** Never use raw `docker` commands. Always use DDEV wrappers.
 
-| Task | Command |
-|------|---------|
-| Start environment | `ddev start` |
-| Stop environment | `ddev stop` |
-| Artisan commands | `ddev artisan <command>` |
-| Composer | `ddev composer <command>` |
-| NPM | `ddev exec npm <command>` |
-| Run tests | `ddev exec php artisan test` |
+| Task              | Command                                        |
+| ----------------- | ---------------------------------------------- |
+| Start environment | `ddev start`                                   |
+| Stop environment  | `ddev stop`                                    |
+| Artisan commands  | `ddev artisan <command>`                       |
+| Composer          | `ddev composer <command>`                      |
+| NPM               | `ddev exec npm <command>`                      |
+| Run tests         | `ddev exec php artisan test`                   |
 | Run specific test | `ddev exec php artisan test --filter=TestName` |
-| Database import | `ddev import-db < dump.sql` |
-| Database export | `ddev export-db > dump.sql` |
-| Migrations | `ddev artisan migrate` |
-| Fresh migrate | `ddev artisan migrate:fresh --seed` |
-| Tinker | `ddev artisan tinker` |
+| Database import   | `ddev import-db < dump.sql`                    |
+| Database export   | `ddev export-db > dump.sql`                    |
+| Migrations        | `ddev artisan migrate`                         |
+| Fresh migrate     | `ddev artisan migrate:fresh --seed`            |
+| Tinker            | `ddev artisan tinker`                          |
 
 ---
 

@@ -1,7 +1,7 @@
 # Markdown Metadata Headers Guide
 
-**Last Updated**: 24/12/2025
-**Version**: 1.2.0
+**Last Updated**: 28/12/2025
+**Version**: 1.3.0
 **Maintained By**: Development Team
 **Language**: British English (en_GB)
 **Timezone**: Europe/London
@@ -10,12 +10,28 @@
 
 ## Table of Contents
 
+- [Table of Contents](#table-of-contents)
 - [Overview](#overview)
 - [Header Format](#header-format)
 - [Field Descriptions](#field-descriptions)
 - [Placement Rules](#placement-rules)
+  - [Correct Placement](#correct-placement)
+  - [Example: Correct](#example-correct)
+  - [Example: Incorrect](#example-incorrect)
 - [Update Workflow](#update-workflow)
+  - [When Version Agent Updates Headers](#when-version-agent-updates-headers)
+  - [What Gets Updated](#what-gets-updated)
+  - [Manual Updates](#manual-updates)
 - [Examples](#examples)
+  - [README.md](#readmemd)
+  - [API Documentation](#api-documentation)
+  - [Contributing Guide](#contributing-guide)
+  - [Nested Documentation](#nested-documentation)
+- [Files to Skip](#files-to-skip)
+- [Adding Headers to Existing Files](#adding-headers-to-existing-files)
+- [Customising the Maintained By Field](#customising-the-maintained-by-field)
+- [Validation](#validation)
+
 
 ---
 
@@ -53,13 +69,13 @@ The Version Agent automatically updates these headers during version bumps.
 
 ## Field Descriptions
 
-| Field | Format | Description |
-|-------|--------|-------------|
-| **Last Updated** | DD/MM/YYYY | Date the file content was last modified |
-| **Version** | X.Y.Z | Project version when file was last updated |
-| **Maintained By** | Text | Team or individual responsible for the document |
-| **Language** | en_GB | Language and locale for the document |
-| **Timezone** | Europe/London | Default timezone for dates/times in the document |
+| Field             | Format        | Description                                      |
+| ----------------- | ------------- | ------------------------------------------------ |
+| **Last Updated**  | DD/MM/YYYY    | Date the file content was last modified          |
+| **Version**       | X.Y.Z         | Project version when file was last updated       |
+| **Maintained By** | Text          | Team or individual responsible for the document  |
+| **Language**      | en_GB         | Language and locale for the document             |
+| **Timezone**      | Europe/London | Default timezone for dates/times in the document |
 
 ---
 
@@ -78,8 +94,8 @@ The header must appear:
 ```markdown
 # API Documentation
 
-**Last Updated**: 24/12/2025
-**Version**: 1.2.0
+**Last Updated**: 28/12/2025
+**Version**: 1.3.0
 **Maintained By**: Development Team
 **Language**: British English (en_GB)
 **Timezone**: Europe/London
@@ -104,8 +120,8 @@ The header must appear:
 
 ## Table of Contents        <!-- WRONG: TOC before header -->
 
-**Last Updated**: 24/12/2025
-**Version**: 1.2.0
+**Last Updated**: 28/12/2025
+**Version**: 1.3.0
 ...
 ```
 
@@ -116,8 +132,8 @@ The header must appear:
 
 This document describes...
 
-**Last Updated**: 24/12/2025
-**Version**: 1.2.0
+**Last Updated**: 28/12/2025
+**Version**: 1.3.0
 ...
 ```
 
@@ -144,11 +160,11 @@ The Version Agent updates **both** the `Version` and `Last Updated` fields whene
 
 ### What Gets Updated
 
-| Command | Version Field | Last Updated Field |
-|---------|---------------|-------------------|
-| `/version bump` | ✅ New version | ✅ Current date |
-| `/version headers` | ✅ Current version | ✅ Current date |
-| `/version init` | ✅ Current version | ✅ Current date |
+| Command            | Version Field     | Last Updated Field |
+| ------------------ | ----------------- | ------------------ |
+| `/version bump`    | ✅ New version     | ✅ Current date     |
+| `/version headers` | ✅ Current version | ✅ Current date     |
+| `/version init`    | ✅ Current version | ✅ Current date     |
 
 ### Manual Updates
 
@@ -165,8 +181,8 @@ If you manually edit a markdown file without running a version command:
 ```markdown
 # Project Name
 
-**Last Updated**: 24/12/2025
-**Version**: 2.1.0
+**Last Updated**: 28/12/2025
+**Version**: 1.3.0
 **Maintained By**: Development Team
 **Language**: British English (en_GB)
 **Timezone**: Europe/London
@@ -191,8 +207,8 @@ This project provides...
 ```markdown
 # API Reference
 
-**Last Updated**: 24/12/2025
-**Version**: 2.1.0
+**Last Updated**: 28/12/2025
+**Version**: 1.3.0
 **Maintained By**: Backend Team
 **Language**: British English (en_GB)
 **Timezone**: Europe/London
@@ -217,8 +233,8 @@ All API requests require...
 ```markdown
 # Contributing Guide
 
-**Last Updated**: 24/12/2025
-**Version**: 2.1.0
+**Last Updated**: 28/12/2025
+**Version**: 1.3.0
 **Maintained By**: Development Team
 **Language**: British English (en_GB)
 **Timezone**: Europe/London
@@ -243,8 +259,8 @@ Thank you for considering contributing...
 ```markdown
 # Database Schema
 
-**Last Updated**: 24/12/2025
-**Version**: 2.1.0
+**Last Updated**: 28/12/2025
+**Version**: 1.3.0
 **Maintained By**: Database Team
 **Language**: British English (en_GB)
 **Timezone**: Europe/London
@@ -299,14 +315,14 @@ When initialising version management on an existing project:
 
 For large projects, you can customise the "Maintained By" field:
 
-| Document Type | Maintained By |
-|---------------|---------------|
-| README.md | Development Team |
-| API docs | Backend Team |
-| Frontend docs | Frontend Team |
-| Database docs | Database Team |
-| DevOps docs | Platform Team |
-| Security docs | Security Team |
+| Document Type | Maintained By    |
+| ------------- | ---------------- |
+| README.md     | Development Team |
+| API docs      | Backend Team     |
+| Frontend docs | Frontend Team    |
+| Database docs | Database Team    |
+| DevOps docs   | Platform Team    |
+| Security docs | Security Team    |
 
 Update this field manually when creating new documentation.
 

@@ -6,54 +6,53 @@ Reusable email template architecture with shared header, footer, and styling com
 
 ## Metadata
 
-| Property | Value |
-|----------|-------|
-| **Example Version** | 2.0.0 |
-| **Last Updated** | 2025-12 |
-| **Laravel** | 12.x |
-| **PHP** | 8.4 |
-| **Django** | 6.x |
-| **Python** | 3.14 |
-| **Next.js** | 16.x |
-| **React** | 19.x |
-| **React Native** | N/A (emails sent from backend) |
-| **Stacks** | TALL, Django/Wagtail, React/Next.js, React Native |
+| Property            | Value                                             |
+| ------------------- | ------------------------------------------------- |
+| **Example Version** | 2.0.0                                             |
+| **Last Updated**    | 2025-12                                           |
+| **Laravel**         | 12.x                                              |
+| **PHP**             | 8.4                                               |
+| **Django**          | 6.x                                               |
+| **Python**          | 3.14                                              |
+| **Next.js**         | 16.x                                              |
+| **React**           | 19.x                                              |
+| **React Native**    | N/A (emails sent from backend)                    |
+| **Stacks**          | TALL, Django/Wagtail, React/Next.js, React Native |
 
 ---
 
 ## Table of Contents
 
-- [Email Templates](#email-templates)
-  - [Overview](#overview)
-  - [Metadata](#metadata)
-  - [Table of Contents](#table-of-contents)
-  - [Template Structure](#template-structure)
-    - [Laravel (TALL Stack)](#laravel-tall-stack)
-    - [Django/Wagtail](#djangowagtail)
-    - [React/Next.js](#reactnextjs)
-    - [React Native](#react-native)
-  - [TALL Stack (Laravel 12.x / PHP 8.4)](#tall-stack-laravel-12x--php-84)
-  - [Base Layout - Laravel](#base-layout---laravel)
-    - [resources/views/emails/layouts/base.blade.php](#resourcesviewsemailslayoutsbasebladephp)
-  - [Shared Header - Laravel](#shared-header---laravel)
-    - [resources/views/emails/components/header.blade.php](#resourcesviewsemailscomponentsheaderbladephp)
-  - [Shared Footer - Laravel](#shared-footer---laravel)
-    - [resources/views/emails/components/footer.blade.php](#resourcesviewsemailscomponentsfooterbladephp)
-  - [Shared Styles - Laravel](#shared-styles---laravel)
-    - [resources/views/emails/components/styles.blade.php](#resourcesviewsemailscomponentsstylesbladephp)
-  - [Partials - Laravel](#partials---laravel)
-    - [resources/views/emails/partials/button.blade.php](#resourcesviewsemailspartialsbuttonbladephp)
-    - [resources/views/emails/partials/card.blade.php](#resourcesviewsemailspartialscardbladephp)
-    - [resources/views/emails/partials/alert.blade.php](#resourcesviewsemailspartialsalertbladephp)
-  - [Example Notifications - Laravel](#example-notifications---laravel)
-    - [resources/views/emails/notifications/welcome.blade.php](#resourcesviewsemailsnotificationswelcomebladephp)
-    - [resources/views/emails/notifications/password-reset.blade.php](#resourcesviewsemailsnotificationspassword-resetbladephp)
-    - [resources/views/emails/notifications/order-confirmation.blade.php](#resourcesviewsemailsnotificationsorder-confirmationbladephp)
-  - [Mailable Class - Laravel](#mailable-class---laravel)
-    - [app/Mail/WelcomeEmail.php](#appmailwelcomeemailphp)
-  - [Brand Configuration - Laravel](#brand-configuration---laravel)
-    - [templates/emails/layouts/base.html](#templatesemailslayoutsbasehtml)
-    - [config/brand.php](#configbrandphp)
+- [Overview](#overview)
+- [Metadata](#metadata)
+- [Table of Contents](#table-of-contents)
+- [Template Structure](#template-structure)
+  - [Laravel (TALL Stack)](#laravel-tall-stack)
+  - [Django/Wagtail](#djangowagtail)
+  - [React/Next.js](#reactnextjs)
+  - [React Native](#react-native)
+- [TALL Stack (Laravel 12.x / PHP 8.4)](#tall-stack-laravel-12x--php-84)
+- [Base Layout - Laravel](#base-layout---laravel)
+  - [resources/views/emails/layouts/base.blade.php](#resourcesviewsemailslayoutsbasebladephp)
+- [Shared Header - Laravel](#shared-header---laravel)
+  - [resources/views/emails/components/header.blade.php](#resourcesviewsemailscomponentsheaderbladephp)
+- [Shared Footer - Laravel](#shared-footer---laravel)
+  - [resources/views/emails/components/footer.blade.php](#resourcesviewsemailscomponentsfooterbladephp)
+- [Shared Styles - Laravel](#shared-styles---laravel)
+  - [resources/views/emails/components/styles.blade.php](#resourcesviewsemailscomponentsstylesbladephp)
+- [Partials - Laravel](#partials---laravel)
+  - [resources/views/emails/partials/button.blade.php](#resourcesviewsemailspartialsbuttonbladephp)
+  - [resources/views/emails/partials/card.blade.php](#resourcesviewsemailspartialscardbladephp)
+  - [resources/views/emails/partials/alert.blade.php](#resourcesviewsemailspartialsalertbladephp)
+- [Example Notifications - Laravel](#example-notifications---laravel)
+  - [resources/views/emails/notifications/welcome.blade.php](#resourcesviewsemailsnotificationswelcomebladephp)
+  - [resources/views/emails/notifications/password-reset.blade.php](#resourcesviewsemailsnotificationspassword-resetbladephp)
+  - [resources/views/emails/notifications/order-confirmation.blade.php](#resourcesviewsemailsnotificationsorder-confirmationbladephp)
+- [Mailable Class - Laravel](#mailable-class---laravel)
+  - [app/Mail/WelcomeEmail.php](#appmailwelcomeemailphp)
+- [Brand Configuration - Laravel](#brand-configuration---laravel)
+  - [templates/emails/layouts/base.html](#templatesemailslayoutsbasehtml)
+  - [config/brand.php](#configbrandphp)
 
 
 ## Template Structure

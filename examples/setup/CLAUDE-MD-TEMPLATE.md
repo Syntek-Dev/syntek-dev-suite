@@ -6,23 +6,22 @@ Template for the `.claude/CLAUDE.md` file that provides project context for Clau
 
 ## Metadata
 
-| Property | Value |
-|----------|-------|
-| **Example Version** | 1.0.0 |
-| **Last Updated** | 2025-01 |
-| **Stacks** | All (TALL, Django, React, Mobile, Shared-Lib) |
+| Property            | Value                                         |
+| ------------------- | --------------------------------------------- |
+| **Example Version** | 1.0.0                                         |
+| **Last Updated**    | 2025-01                                       |
+| **Stacks**          | All (TALL, Django, React, Mobile, Shared-Lib) |
 
 ---
 
 ## Table of Contents
 
-- [CLAUDE.md Template](#claudemd-template)
-  - [Overview](#overview)
-  - [Metadata](#metadata)
-  - [Table of Contents](#table-of-contents)
-  - [Template](#template)
-  - [Settings File Template](#settings-file-template)
-    - [.claude/settings.local.json](#claudesettingslocaljson)
+- [Overview](#overview)
+- [Metadata](#metadata)
+- [Table of Contents](#table-of-contents)
+- [Template](#template)
+- [Settings File Template](#settings-file-template)
+  - [.claude/settings.local.json](#claudesettingslocaljson)
 
 ---
 

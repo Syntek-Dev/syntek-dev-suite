@@ -8,63 +8,66 @@
 
 ## Table of Contents
 
-- [Syntek Dev Suite - Plugin Usage Guide](#syntek-dev-suite---plugin-usage-guide)
-  - [Table of Contents](#table-of-contents)
-  - [Quick Start](#quick-start)
-    - [Basic Usage](#basic-usage)
-  - [Complete Development Workflow](#complete-development-workflow)
-    - [Phase 1: Repository Setup](#phase-1-repository-setup)
-    - [Phase 2: User Stories and Sprint Planning](#phase-2-user-stories-and-sprint-planning)
-    - [Phase 3: Planning the User Story](#phase-3-planning-the-user-story)
-    - [Phase 4: Test-Driven Development](#phase-4-test-driven-development)
-    - [Phase 5: Implementation](#phase-5-implementation)
-    - [Phase 6: Quality Assurance](#phase-6-quality-assurance)
-    - [Phase 7: Review and Refactoring](#phase-7-review-and-refactoring)
-    - [Phase 8: Completion and PR](#phase-8-completion-and-pr)
-    - [Workflow Summary](#workflow-summary)
-  - [Command Reference](#command-reference)
-  - [Agent Commands](#agent-commands)
-    - [Planning \& Architecture](#planning--architecture)
-    - [Development](#development)
-    - [Quality \& Testing](#quality--testing)
-    - [Refactoring \& Maintenance](#refactoring--maintenance)
-    - [Infrastructure](#infrastructure)
-    - [Specialised](#specialised)
-  - [Plugin Commands](#plugin-commands)
-  - [Learning Commands](#learning-commands)
-  - [Version Management](#version-management)
-    - [Version Commands](#version-commands)
-    - [Version Files Managed](#version-files-managed)
-    - [Markdown Metadata Headers](#markdown-metadata-headers)
-  - [Skills Reference](#skills-reference)
-    - [Stack Skills](#stack-skills)
-    - [Global Skill](#global-skill)
-  - [Self-Learning and A/B Testing](#self-learning-and-ab-testing)
-    - [How It Works](#how-it-works)
-    - [A/B Testing](#ab-testing)
-    - [Giving Feedback](#giving-feedback)
-    - [Project-Specific Learning](#project-specific-learning)
-    - [Learning Best Practices](#learning-best-practices)
-  - [Markdown All in One Extension](#markdown-all-in-one-extension)
-    - [Key Features](#key-features)
-    - [Keyboard Shortcuts](#keyboard-shortcuts)
-    - [Table of Contents](#table-of-contents-1)
-  - [Best Practices](#best-practices)
-    - [1. Always Start with `/syntek-dev-suite:plan`](#1-always-start-with-syntek-dev-suiteplan)
-    - [2. Use `/syntek-dev-suite:qa-tester` Before Merging](#2-use-syntek-dev-suiteqa-tester-before-merging)
-    - [3. Keep CLAUDE.md Updated](#3-keep-claudemd-updated)
-    - [4. Let Agents Read Files](#4-let-agents-read-files)
-    - [5. Use the Right Model](#5-use-the-right-model)
-    - [6. Chain Commands Logically](#6-chain-commands-logically)
-    - [7. Commit After Each Step](#7-commit-after-each-step)
-    - [8. Give Feedback](#8-give-feedback)
-  - [Environment Commands](#environment-commands)
-  - [Browser Configuration](#browser-configuration)
-    - [Browser Environment Variable](#browser-environment-variable)
-    - [Launching Chrome](#launching-chrome)
-    - [Claude Code Chrome Integration](#claude-code-chrome-integration)
-    - [E2E Test Configuration](#e2e-test-configuration)
-  - [Getting Help](#getting-help)
+- [Table of Contents](#table-of-contents)
+- [Quick Start](#quick-start)
+  - [Basic Usage](#basic-usage)
+- [Complete Development Workflow](#complete-development-workflow)
+  - [Phase 1: Project Initialisation](#phase-1-project-initialisation)
+  - [Phase 2: Project Planning](#phase-2-project-planning)
+  - [Phase 3: User Stories and Sprint Planning](#phase-3-user-stories-and-sprint-planning)
+  - [Phase 4: Pre-Development Review](#phase-4-pre-development-review)
+  - [Phase 5: PM Tool Integration (Optional)](#phase-5-pm-tool-integration-optional)
+  - [Phase 6: Git Setup](#phase-6-git-setup)
+  - [Phase 7: User Story Implementation](#phase-7-user-story-implementation)
+  - [Phase 8: Coding](#phase-8-coding)
+  - [Phase 9: Quality Assurance](#phase-9-quality-assurance)
+  - [Phase 10: Final Verification](#phase-10-final-verification)
+  - [Phase 11: Commit and Document](#phase-11-commit-and-document)
+  - [Phase 12: PR to Testing](#phase-12-pr-to-testing)
+  - [Workflow Summary](#workflow-summary)
+- [Command Reference](#command-reference)
+- [Agent Commands](#agent-commands)
+  - [Planning \& Architecture](#planning--architecture)
+  - [Development](#development)
+  - [Quality \& Testing](#quality--testing)
+  - [Refactoring \& Maintenance](#refactoring--maintenance)
+  - [Infrastructure](#infrastructure)
+  - [Specialised](#specialised)
+- [Plugin Commands](#plugin-commands)
+- [Learning Commands](#learning-commands)
+- [Version Management](#version-management)
+  - [Version Commands](#version-commands)
+  - [Version Files Managed](#version-files-managed)
+  - [Markdown Metadata Headers](#markdown-metadata-headers)
+- [Skills Reference](#skills-reference)
+  - [Stack Skills](#stack-skills)
+  - [Global Skill](#global-skill)
+- [Self-Learning and A/B Testing](#self-learning-and-ab-testing)
+  - [How It Works](#how-it-works)
+  - [A/B Testing](#ab-testing)
+  - [Giving Feedback](#giving-feedback)
+  - [Project-Specific Learning](#project-specific-learning)
+  - [Learning Best Practices](#learning-best-practices)
+- [Markdown All in One Extension](#markdown-all-in-one-extension)
+  - [Key Features](#key-features)
+  - [Keyboard Shortcuts](#keyboard-shortcuts)
+  - [Table of Contents](#table-of-contents-1)
+- [Best Practices](#best-practices)
+  - [1. Always Start with `/syntek-dev-suite:plan`](#1-always-start-with-syntek-dev-suiteplan)
+  - [2. Use `/syntek-dev-suite:qa-tester` Before Merging](#2-use-syntek-dev-suiteqa-tester-before-merging)
+  - [3. Keep CLAUDE.md Updated](#3-keep-claudemd-updated)
+  - [4. Let Agents Read Files](#4-let-agents-read-files)
+  - [5. Use the Right Model](#5-use-the-right-model)
+  - [6. Chain Commands Logically](#6-chain-commands-logically)
+  - [7. Commit After Each Step](#7-commit-after-each-step)
+  - [8. Give Feedback](#8-give-feedback)
+- [Environment Commands](#environment-commands)
+- [Browser Configuration](#browser-configuration)
+  - [Browser Environment Variable](#browser-environment-variable)
+  - [Launching Chrome](#launching-chrome)
+  - [Claude Code Chrome Integration](#claude-code-chrome-integration)
+  - [E2E Test Configuration](#e2e-test-configuration)
+- [Getting Help](#getting-help)
 
 
 ---
@@ -99,160 +102,246 @@ The Syntek Dev Suite provides specialised AI agents for full-stack development. 
 
 ## Complete Development Workflow
 
-This section walks through a complete development cycle from repository setup to PR submission.
+This section walks through a complete development cycle from project setup to PR submission.
 
-### Phase 1: Repository Setup
+> **Note:** All commands use the `/syntek-dev-suite:` prefix.
+
+### Phase 1: Project Initialisation
 
 ```bash
-# 1. Clone or create your repository
-git clone git@github.com:your-org/your-project.git
-cd your-project
-
-# 2. Initialise the plugin for your project
+# 1. Initialise Claude Code to work with Syntek Dev Suite
 /syntek-dev-suite:init
 
-# 3. Edit .claude/CLAUDE.md with your project details
-# Replace all [Insert...] placeholders
+# 2. Set up all project files using the setup agent
+/syntek-dev-suite:setup
 
-# 4. Create core Git branches
-/syntek-dev-suite:git Create main, develop, staging, and production branches with appropriate protection rules
-git commit -m "chore: initialise project structure"
+# 3. Set up dot files (.gitignore, .editorconfig, etc.)
+/syntek-dev-suite:setup .files
+
+# 4. Commit initialisation work
+/syntek-dev-suite:git
 ```
 
-### Phase 2: User Stories and Sprint Planning
+### Phase 2: Project Planning
 
 ```bash
-# 1. Generate user stories from requirements
-/syntek-dev-suite:stories Based on this PRD, create user stories for user authentication feature
-git commit -m "docs: add user authentication stories"
+# 5. Plan the project architecture
+/syntek-dev-suite:plan X project that will [describe what the project does]
+# Example: /syntek-dev-suite:plan E-commerce project that will allow users to browse products and checkout
 
-# 2. Organise stories into sprints
-/syntek-dev-suite:sprint Organise the authentication stories into Sprint 1, prioritising login and registration
-git commit -m "docs: plan Sprint 1 with authentication stories"
-
-# 3. Create a branch for the first user story
-git checkout -b feature/US-001-user-login
+# 6. Commit the plan
+/syntek-dev-suite:git
 ```
 
-### Phase 3: Planning the User Story
+### Phase 3: User Stories and Sprint Planning
 
 ```bash
-# 1. Plan the implementation
-/syntek-dev-suite:plan Plan the implementation for US-001: User Login with email/password
-git commit -m "docs: add implementation plan for US-001"
+# 7. Generate user stories from the plan
+/syntek-dev-suite:stories
+
+# 8. Commit user stories
+/syntek-dev-suite:git
+
+# 9. Organise user stories into sprints
+/syntek-dev-suite:sprint
+
+# 10. Commit sprints
+/syntek-dev-suite:git
 ```
 
-### Phase 4: Test-Driven Development
+### Phase 4: Pre-Development Review
 
 ```bash
-# 1. Write tests first (TDD)
-/syntek-dev-suite:test-writer Write tests for the LoginController and AuthService
-git commit -m "test: add login controller and auth service tests"
+# 11. Review all setup before coding begins
+/syntek-dev-suite:review
+# Reviews: init, plan, .files, stories, and sprints
 
-# 2. Generate documentation for the feature
-/syntek-dev-suite:docs Document the authentication API endpoints
-git commit -m "docs: add authentication API documentation"
+# 12. Commit any review changes
+/syntek-dev-suite:git
 ```
 
-### Phase 5: Implementation
+### Phase 5: PM Tool Integration (Optional)
 
 ```bash
-# 1. Implement backend code
-/syntek-dev-suite:backend Implement the LoginController to pass the tests
-git commit -m "feat: implement login controller"
+# 13. Link with project management software
+/syntek-dev-suite:pm-setup
+# Creates integration with ClickUp, Linear, Jira, etc.
+# Sets up git workflow to sync user stories and sprints
 
-/syntek-dev-suite:backend Implement the AuthService for password validation
-git commit -m "feat: implement auth service"
-
-# 2. Implement frontend code
-/syntek-dev-suite:frontend Create the login form component
-git commit -m "feat: add login form component"
-
-/syntek-dev-suite:frontend Add form validation and error handling
-git commit -m "feat: add login form validation"
-
-# 3. Add logging
-/syntek-dev-suite:logging Add audit logging for login attempts
-git commit -m "feat: add login audit logging"
-
-# 4. Fix any syntax or linting issues
-/syntek-dev-suite:syntax Fix linting errors in the auth module
-git commit -m "style: fix linting errors in auth module"
+# 14. Commit PM setup
+/syntek-dev-suite:git
 ```
 
-### Phase 6: Quality Assurance
+### Phase 6: Git Branch Setup
 
 ```bash
-# 1. Run QA testing
-/syntek-dev-suite:qa-tester Review the login implementation for security and edge cases
-git commit -m "fix: address QA feedback on login security"
+# 15. Push setup to main and create branches
+/syntek-dev-suite:git
+# Pushes to main branch
+# Creates staging, dev, and testing branches from main via PR
 
-# 2. Perform manual tests and document results
-# Edit docs/QA/MANUAL-TESTS.md with test results
-git commit -m "docs: add manual test results for login"
-
-# 3. Fix any bugs discovered
-/syntek-dev-suite:debug Fix the session timeout issue discovered in testing
-git commit -m "fix: correct session timeout handling"
+# 16. Create user story branch from dev
+/syntek-dev-suite:git
+# Creates us001/name branch for the first user story from dev branch
 ```
 
-### Phase 7: Review and Refactoring
+### Phase 7: User Story Planning
 
 ```bash
-# 1. Code review
-/syntek-dev-suite:review Review the authentication module for SOLID principles and security
-git commit -m "refactor: apply code review suggestions"
+# 17. Plan the specific user story
+/syntek-dev-suite:plan user story X
+# Example: /syntek-dev-suite:plan user story 1
 
-# 2. Refactor if needed
-/syntek-dev-suite:refactor Extract password validation logic into separate service
-git commit -m "refactor: extract password validation service"
-
-# 3. Update documentation
-/syntek-dev-suite:docs Update the auth documentation with the new service structure
-git commit -m "docs: update auth documentation"
-
-# 4. Generate support articles if user-facing
-/syntek-dev-suite:support-articles Write help article for "How to log in to your account"
-git commit -m "docs: add login help article"
+# 18. Commit the user story plan
+/syntek-dev-suite:git
 ```
 
-### Phase 8: Completion and PR
+### Phase 8: Test-Driven Development
 
 ```bash
-# 1. Mark the story as complete
-/syntek-dev-suite:completion Mark US-001 as complete with implementation notes
-git commit -m "docs: mark US-001 as complete"
+# 19. Write TDD/BDD tests (tests should fail initially)
+/syntek-dev-suite:test-writer
+# Writes tests scoped ONLY to the user story
+# Creates minimal code stubs to ensure tests fail
 
-# 2. Push and create PR
-git push -u origin feature/US-001-user-login
+# 20. Commit tests
+/syntek-dev-suite:git
+```
 
-# Create the pull request
-gh pr create --title "feat: US-001 User Login" --body "## Summary
-- Implements email/password login
-- Adds session management
-- Includes audit logging
+### Phase 9: Coding
 
-## Test Plan
-- [x] Unit tests pass
-- [x] Integration tests pass
-- [x] Manual QA completed
+```bash
+# 21. Implement the user story using relevant agents
+# Commit after EACH piece of work for proper version control
 
-## Stories
-- Closes US-001"
+/syntek-dev-suite:backend    # For API, database, server logic
+/syntek-dev-suite:git        # Commit backend work
+
+/syntek-dev-suite:frontend   # For UI components, styling
+/syntek-dev-suite:git        # Commit frontend work
+
+/syntek-dev-suite:database   # For migrations, schemas
+/syntek-dev-suite:git        # Commit database work
+
+/syntek-dev-suite:data       # For data analysis, Python/SQL
+/syntek-dev-suite:git        # Commit data work
+
+# Use whichever agents are relevant to the user story
+# Goal: Pass tests and satisfy acceptance criteria
+# IMPORTANT: Always commit after each agent completes their work
+```
+
+### Phase 10: Quality Assurance
+
+```bash
+# 22. Run QA to ensure tests pass
+/syntek-dev-suite:qa-tester
+/syntek-dev-suite:git        # Commit QA fixes
+
+# 23. Generate bug report and fix issues
+/syntek-dev-suite:debug
+/syntek-dev-suite:git        # Commit bug fixes
+
+# 24. Review the code
+/syntek-dev-suite:review
+/syntek-dev-suite:git        # Commit review changes
+
+# 25. Refactor if needed
+/syntek-dev-suite:refactor
+/syntek-dev-suite:git        # Commit refactoring
+
+# 26. Fix syntax and linting issues
+/syntek-dev-suite:syntax
+/syntek-dev-suite:git        # Commit syntax fixes
+
+# 27. Security audit
+/syntek-dev-suite:security
+/syntek-dev-suite:git        # Commit security fixes
+```
+
+### Phase 11: Final Verification
+
+```bash
+# 28. Final QA check - ensure tests still pass
+/syntek-dev-suite:qa-tester
+/syntek-dev-suite:git        # Commit any final QA fixes
+
+# 29. Final checks cycle (commit after each if changes made)
+/syntek-dev-suite:debug      # Final bug check
+/syntek-dev-suite:git
+
+/syntek-dev-suite:review     # Final code review
+/syntek-dev-suite:git
+
+/syntek-dev-suite:refactor   # Final refactoring pass
+/syntek-dev-suite:git
+
+/syntek-dev-suite:syntax     # Final syntax check
+/syntek-dev-suite:git
+
+/syntek-dev-suite:security   # Final security check
+/syntek-dev-suite:git
+```
+
+### Phase 12: Documentation
+
+```bash
+# 30. Write documentation
+/syntek-dev-suite:docs
+/syntek-dev-suite:git        # Commit documentation
+
+# 31. Update version files
+/syntek-dev-suite:version
+/syntek-dev-suite:git        # Commit version updates
+```
+
+### Phase 13: Completion and PR
+
+```bash
+# 32. Mark work as complete
+/syntek-dev-suite:completion
+/syntek-dev-suite:git        # Commit completion status
+
+# 33. Create PR to testing branch for review
+/syntek-dev-suite:git
+# Creates PR from user story branch to testing for review
 ```
 
 ### Workflow Summary
 
 ```
-Repository Setup → User Stories → Sprint Planning → Create Branch
-       ↓
-   Planning → Tests (TDD) → Documentation → Implementation
-       ↓
-   Logging → Syntax Check → QA Testing → Manual Tests
-       ↓
-   Bug Fixes → Debugging → Code Review → Refactoring
-       ↓
-   Documentation Update → Support Articles → Completion → PR
+SETUP PHASE
+───────────────────────────────────────────────────────────
+init → setup → setup .files → git
+plan project → git
+stories → git → sprint → git
+review → git
+
+PM & GIT SETUP
+───────────────────────────────────────────────────────────
+pm-setup → git
+git (main + branches) → git (user story branch)
+
+USER STORY PLANNING
+───────────────────────────────────────────────────────────
+plan user story → git
+test-writer → git
+
+IMPLEMENTATION (commit after each agent)
+───────────────────────────────────────────────────────────
+backend → git → frontend → git → database → git → data → git
+
+QUALITY ASSURANCE (commit after each step)
+───────────────────────────────────────────────────────────
+qa-tester → git → debug → git → review → git → refactor → git → syntax → git → security → git
+
+FINAL VERIFICATION (commit after each step)
+───────────────────────────────────────────────────────────
+qa-tester → git → debug → git → review → git → refactor → git → syntax → git → security → git
+
+DOCUMENTATION & COMPLETION
+───────────────────────────────────────────────────────────
+docs → git → version → git → completion → git → git (PR to testing)
 ```
 
 ---
@@ -271,67 +360,67 @@ All Syntek Dev Suite commands use the `/syntek-dev-suite:` prefix:
 
 ### Planning & Architecture
 
-| Command | Model | Description |
-|---------|-------|-------------|
-| `/syntek-dev-suite:plan` | Opus | Create architectural plans, break down features |
-| `/syntek-dev-suite:stories` | Haiku | Generate user stories from requirements |
-| `/syntek-dev-suite:sprint` | Sonnet | Organise stories into balanced sprints |
-| `/syntek-dev-suite:completion` | Sonnet | Track story and sprint completion |
+| Command                        | Model  | Description                                     |
+| ------------------------------ | ------ | ----------------------------------------------- |
+| `/syntek-dev-suite:plan`       | Opus   | Create architectural plans, break down features |
+| `/syntek-dev-suite:stories`    | Haiku  | Generate user stories from requirements         |
+| `/syntek-dev-suite:sprint`     | Sonnet | Organise stories into balanced sprints          |
+| `/syntek-dev-suite:completion` | Sonnet | Track story and sprint completion               |
 
 ### Development
 
-| Command | Model | Description |
-|---------|-------|-------------|
-| `/syntek-dev-suite:setup` | Sonnet | Project initialisation and configuration |
-| `/syntek-dev-suite:backend` | Sonnet | Backend development, APIs, database |
-| `/syntek-dev-suite:frontend` | Sonnet | UI/UX, components, accessibility |
+| Command                      | Model  | Description                               |
+| ---------------------------- | ------ | ----------------------------------------- |
+| `/syntek-dev-suite:setup`    | Sonnet | Project initialisation and configuration  |
+| `/syntek-dev-suite:backend`  | Sonnet | Backend development, APIs, database       |
+| `/syntek-dev-suite:frontend` | Sonnet | UI/UX, components, accessibility          |
 | `/syntek-dev-suite:database` | Sonnet | Database design, migrations, optimisation |
-| `/syntek-dev-suite:auth` | Sonnet | Authentication, MFA, session management |
+| `/syntek-dev-suite:auth`     | Sonnet | Authentication, MFA, session management   |
 
 ### Quality & Testing
 
-| Command | Model | Description |
-|---------|-------|-------------|
-| `/syntek-dev-suite:test-writer` | Sonnet | TDD test suites and stubs |
-| `/syntek-dev-suite:qa-tester` | Sonnet | Hostile QA, security, edge cases |
-| `/syntek-dev-suite:review` | Sonnet | Code review, SOLID, security |
-| `/syntek-dev-suite:debug` | Opus | Root cause analysis, debugging |
+| Command                         | Model  | Description                      |
+| ------------------------------- | ------ | -------------------------------- |
+| `/syntek-dev-suite:test-writer` | Sonnet | TDD test suites and stubs        |
+| `/syntek-dev-suite:qa-tester`   | Sonnet | Hostile QA, security, edge cases |
+| `/syntek-dev-suite:review`      | Sonnet | Code review, SOLID, security     |
+| `/syntek-dev-suite:debug`       | Opus   | Root cause analysis, debugging   |
 
 ### Refactoring & Maintenance
 
-| Command | Model | Description |
-|---------|-------|-------------|
+| Command                      | Model  | Description                         |
+| ---------------------------- | ------ | ----------------------------------- |
 | `/syntek-dev-suite:refactor` | Sonnet | Code cleanup without changing logic |
-| `/syntek-dev-suite:syntax` | Haiku | Fix syntax and linting errors |
-| `/syntek-dev-suite:docs` | Haiku | Technical documentation |
+| `/syntek-dev-suite:syntax`   | Haiku  | Fix syntax and linting errors       |
+| `/syntek-dev-suite:docs`     | Haiku  | Technical documentation             |
 
 ### Infrastructure
 
-| Command | Model | Description |
-|---------|-------|-------------|
-| `/syntek-dev-suite:cicd` | Sonnet | CI/CD pipelines, deployments |
+| Command                      | Model  | Description                            |
+| ---------------------------- | ------ | -------------------------------------- |
+| `/syntek-dev-suite:cicd`     | Sonnet | CI/CD pipelines, deployments           |
 | `/syntek-dev-suite:security` | Sonnet | Access control, headers, rate limiting |
-| `/syntek-dev-suite:logging` | Sonnet | Logging, Sentry, audit trails |
-| `/syntek-dev-suite:git` | Sonnet | Branch management, versioning |
+| `/syntek-dev-suite:logging`  | Sonnet | Logging, Sentry, audit trails          |
+| `/syntek-dev-suite:git`      | Sonnet | Branch management, versioning          |
 
 ### Specialised
 
-| Command | Model | Description |
-|---------|-------|-------------|
-| `/syntek-dev-suite:gdpr` | Sonnet | GDPR compliance, data protection |
-| `/syntek-dev-suite:seo` | Sonnet | SEO, meta tags, structured data |
-| `/syntek-dev-suite:notifications` | Sonnet | Email, SMS, push notifications |
-| `/syntek-dev-suite:export` | Sonnet | PDF, Excel, CSV, JSON exports |
-| `/syntek-dev-suite:reporting` | Sonnet | Data queries, report services |
-| `/syntek-dev-suite:data` | Sonnet | Data analysis, Python, SQL |
-| `/syntek-dev-suite:support-articles` | Sonnet | Help documentation |
+| Command                              | Model  | Description                      |
+| ------------------------------------ | ------ | -------------------------------- |
+| `/syntek-dev-suite:gdpr`             | Sonnet | GDPR compliance, data protection |
+| `/syntek-dev-suite:seo`              | Sonnet | SEO, meta tags, structured data  |
+| `/syntek-dev-suite:notifications`    | Sonnet | Email, SMS, push notifications   |
+| `/syntek-dev-suite:export`           | Sonnet | PDF, Excel, CSV, JSON exports    |
+| `/syntek-dev-suite:reporting`        | Sonnet | Data queries, report services    |
+| `/syntek-dev-suite:data`             | Sonnet | Data analysis, Python, SQL       |
+| `/syntek-dev-suite:support-articles` | Sonnet | Help documentation               |
 
 ---
 
 ## Plugin Commands
 
-| Command | Description |
-|---------|-------------|
+| Command                  | Description                               |
+| ------------------------ | ----------------------------------------- |
 | `/syntek-dev-suite:init` | Initialise Syntek Dev Suite for a project |
 
 ---
@@ -340,15 +429,15 @@ All Syntek Dev Suite commands use the `/syntek-dev-suite:` prefix:
 
 The learning system helps agents improve over time based on your feedback.
 
-| Command | Description |
-|---------|-------------|
-| `/syntek-dev-suite:learning-feedback good` | Mark the last run as successful |
-| `/syntek-dev-suite:learning-feedback bad [comment]` | Mark as needing improvement with optional comment |
-| `/syntek-dev-suite:learning-ab-test list` | List active A/B tests |
-| `/syntek-dev-suite:learning-ab-test status <agent>` | Show test results for an agent |
-| `/syntek-dev-suite:learning-optimise status` | Show optimisation system status |
-| `/syntek-dev-suite:learning-optimise analyse <agent>` | Analyse an agent's performance |
-| `/syntek-dev-suite:learning-optimise apply <id>` | Apply a pending optimisation |
+| Command                                               | Description                                       |
+| ----------------------------------------------------- | ------------------------------------------------- |
+| `/syntek-dev-suite:learning-feedback good`            | Mark the last run as successful                   |
+| `/syntek-dev-suite:learning-feedback bad [comment]`   | Mark as needing improvement with optional comment |
+| `/syntek-dev-suite:learning-ab-test list`             | List active A/B tests                             |
+| `/syntek-dev-suite:learning-ab-test status <agent>`   | Show test results for an agent                    |
+| `/syntek-dev-suite:learning-optimise status`          | Show optimisation system status                   |
+| `/syntek-dev-suite:learning-optimise analyse <agent>` | Analyse an agent's performance                    |
+| `/syntek-dev-suite:learning-optimise apply <id>`      | Apply a pending optimisation                      |
 
 ---
 
@@ -358,23 +447,23 @@ The version agent manages semantic versioning, changelogs, and markdown headers 
 
 ### Version Commands
 
-| Command | Description |
-|---------|-------------|
-| `/syntek-dev-suite:version bump <type>` | Increment version (major, minor, patch) |
-| `/syntek-dev-suite:version update` | Update all version files and documentation |
-| `/syntek-dev-suite:version headers` | Update metadata headers in all .md files |
-| `/syntek-dev-suite:version init` | Initialise version files for a new project |
-| `/syntek-dev-suite:version status` | Show current version and pending changes |
-| `/syntek-dev-suite:version history` | Show version history summary |
+| Command                                 | Description                                |
+| --------------------------------------- | ------------------------------------------ |
+| `/syntek-dev-suite:version bump <type>` | Increment version (major, minor, patch)    |
+| `/syntek-dev-suite:version update`      | Update all version files and documentation |
+| `/syntek-dev-suite:version headers`     | Update metadata headers in all .md files   |
+| `/syntek-dev-suite:version init`        | Initialise version files for a new project |
+| `/syntek-dev-suite:version status`      | Show current version and pending changes   |
+| `/syntek-dev-suite:version history`     | Show version history summary               |
 
 ### Version Files Managed
 
-| File | Purpose | Audience |
-|------|---------|----------|
-| **Version files** | Semantic version (package.json, etc.) | Build systems |
-| **VERSION-HISTORY.md** | Technical change log with code details | Developers |
-| **CHANGELOG.md** | Brief developer-focused summary | Developers |
-| **RELEASES.md** | User-facing feature highlights | End users |
+| File                   | Purpose                                | Audience      |
+| ---------------------- | -------------------------------------- | ------------- |
+| **Version files**      | Semantic version (package.json, etc.)  | Build systems |
+| **VERSION-HISTORY.md** | Technical change log with code details | Developers    |
+| **CHANGELOG.md**       | Brief developer-focused summary        | Developers    |
+| **RELEASES.md**        | User-facing feature highlights         | End users     |
 
 ### Markdown Metadata Headers
 
@@ -400,13 +489,13 @@ Skills are loaded automatically based on your project's `Skill Target` in `CLAUD
 
 ### Stack Skills
 
-| Skill | Target | Applied To |
-|-------|--------|------------|
-| `stack-tall` | TALL Stack | Laravel, Livewire, Alpine, Tailwind |
-| `stack-django` | Django Stack | Django, Wagtail, PostgreSQL, GraphQL |
-| `stack-react` | React Stack | React, Next.js, TypeScript, Tailwind |
-| `stack-mobile` | Mobile Stack | React Native, Expo, NativeWind |
-| `stack-shared-lib` | Shared Library | NPM packages for web/mobile |
+| Skill              | Target         | Applied To                           |
+| ------------------ | -------------- | ------------------------------------ |
+| `stack-tall`       | TALL Stack     | Laravel, Livewire, Alpine, Tailwind  |
+| `stack-django`     | Django Stack   | Django, Wagtail, PostgreSQL, GraphQL |
+| `stack-react`      | React Stack    | React, Next.js, TypeScript, Tailwind |
+| `stack-mobile`     | Mobile Stack   | React Native, Expo, NativeWind       |
+| `stack-shared-lib` | Shared Library | NPM packages for web/mobile          |
 
 ### Global Skill
 
@@ -490,23 +579,23 @@ The Syntek Dev Suite is configured for optimal use with the **Markdown All in On
 
 ### Key Features
 
-| Feature | Description |
-|---------|-------------|
+| Feature            | Description                                   |
+| ------------------ | --------------------------------------------- |
 | Auto-updating TOCs | Table of Contents stays in sync with headings |
-| Smart Lists | Auto-renumbering and intelligent indentation |
-| Table Formatting | GFM tables auto-align on save |
-| Task Lists | Toggle checkboxes with `Alt+C` |
-| Math Support | Render LaTeX-style math expressions |
+| Smart Lists        | Auto-renumbering and intelligent indentation  |
+| Table Formatting   | GFM tables auto-align on save                 |
+| Task Lists         | Toggle checkboxes with `Alt+C`                |
+| Math Support       | Render LaTeX-style math expressions           |
 
 ### Keyboard Shortcuts
 
-| Shortcut | Action |
-|----------|--------|
-| `Ctrl+B` / `Cmd+B` | Toggle bold |
-| `Ctrl+I` / `Cmd+I` | Toggle italic |
-| `Tab` | Indent list item |
-| `Shift+Tab` | Un-indent list item |
-| `Alt+C` | Toggle task checkbox |
+| Shortcut           | Action               |
+| ------------------ | -------------------- |
+| `Ctrl+B` / `Cmd+B` | Toggle bold          |
+| `Ctrl+I` / `Cmd+I` | Toggle italic        |
+| `Tab`              | Indent list item     |
+| `Shift+Tab`        | Un-indent list item  |
+| `Alt+C`            | Toggle task checkbox |
 
 ### Table of Contents
 
@@ -605,12 +694,12 @@ Help agents improve by providing feedback:
 
 Each project has environment-specific scripts:
 
-| Script | Purpose | Command |
-|--------|---------|---------|
-| `./dev.sh` | Start development | `ddev start` or `docker-compose up` |
-| `./test.sh` | Run tests | Test suite with test database |
-| `./staging.sh` | Staging build | Build + cache for staging |
-| `./production.sh` | Production build | Build + optimise for production |
+| Script            | Purpose           | Command                             |
+| ----------------- | ----------------- | ----------------------------------- |
+| `./dev.sh`        | Start development | `ddev start` or `docker-compose up` |
+| `./test.sh`       | Run tests         | Test suite with test database       |
+| `./staging.sh`    | Staging build     | Build + cache for staging           |
+| `./production.sh` | Production build  | Build + optimise for production     |
 
 ---
 
@@ -620,8 +709,8 @@ Each project has environment-specific scripts:
 
 ### Browser Environment Variable
 
-| Variable | Purpose | Detection |
-|----------|---------|-----------|
+| Variable      | Purpose                    | Detection                         |
+| ------------- | -------------------------- | --------------------------------- |
 | `CHROME_PATH` | Primary Chrome binary path | `./plugins/chrome-tool.py detect` |
 
 ```bash
@@ -666,13 +755,13 @@ claude --chrome
 
 ### E2E Test Configuration
 
-| Framework | Chrome Configuration |
-|-----------|---------------------|
-| Playwright | `channel: 'chrome'` or `executablePath: process.env.CHROME_PATH` |
-| Cypress | `browser: 'chrome'` in config or `--browser chrome` CLI flag |
-| Puppeteer | `executablePath: process.env.PUPPETEER_EXECUTABLE_PATH` |
-| Selenium | `options.binary_location = os.environ.get('CHROME_PATH')` |
-| Laravel Dusk | Uses `DUSK_CHROME_BINARY` env var automatically |
+| Framework    | Chrome Configuration                                             |
+| ------------ | ---------------------------------------------------------------- |
+| Playwright   | `channel: 'chrome'` or `executablePath: process.env.CHROME_PATH` |
+| Cypress      | `browser: 'chrome'` in config or `--browser chrome` CLI flag     |
+| Puppeteer    | `executablePath: process.env.PUPPETEER_EXECUTABLE_PATH`          |
+| Selenium     | `options.binary_location = os.environ.get('CHROME_PATH')`        |
+| Laravel Dusk | Uses `DUSK_CHROME_BINARY` env var automatically                  |
 
 ---
 

@@ -1,7 +1,7 @@
 # Version Agent Git Integration
 
-**Last Updated**: 24/12/2025
-**Version**: 1.2.0
+**Last Updated**: 28/12/2025
+**Version**: 1.3.0
 **Maintained By**: Development Team
 **Language**: British English (en_GB)
 **Timezone**: Europe/London
@@ -10,12 +10,27 @@
 
 ## Table of Contents
 
+- [Table of Contents](#table-of-contents)
 - [Overview](#overview)
 - [Integration Flow](#integration-flow)
 - [Git Agent Responsibilities](#git-agent-responsibilities)
+  - [Version Increment Decision Rules](#version-increment-decision-rules)
 - [Version Agent Responsibilities](#version-agent-responsibilities)
+  - [What Version Agent Does NOT Do](#what-version-agent-does-not-do)
 - [Commit Workflow](#commit-workflow)
+  - [Step-by-Step Process](#step-by-step-process)
 - [Examples](#examples)
+  - [Example 1: Feature Commit](#example-1-feature-commit)
+  - [Example 2: Bug Fix Commit](#example-2-bug-fix-commit)
+  - [Example 3: Breaking Change Commit](#example-3-breaking-change-commit)
+- [Configuration](#configuration)
+  - [Automatic Version Bumping](#automatic-version-bumping)
+  - [Skip Version Bump](#skip-version-bump)
+- [Troubleshooting](#troubleshooting)
+  - [Version Files Out of Sync](#version-files-out-of-sync)
+  - [Missing Version History Entry](#missing-version-history-entry)
+  - [Headers Not Updating](#headers-not-updating)
+
 
 ---
 
@@ -71,24 +86,24 @@ The Git Agent and Version Agent work together to ensure that every commit includ
 
 The Git Agent (`/git`) handles:
 
-| Task | Description |
-|------|-------------|
-| **Analyse changes** | Review staged files to understand the scope |
+| Task                    | Description                                       |
+| ----------------------- | ------------------------------------------------- |
+| **Analyse changes**     | Review staged files to understand the scope       |
 | **Determine increment** | Decide if MAJOR, MINOR, or PATCH based on changes |
-| **Call Version Agent** | Delegate version updates to `/version bump` |
-| **Create commit** | Write commit message with version info |
-| **Create PRs** | Handle pull request creation |
-| **Branch management** | Create, merge, and manage branches |
+| **Call Version Agent**  | Delegate version updates to `/version bump`       |
+| **Create commit**       | Write commit message with version info            |
+| **Create PRs**          | Handle pull request creation                      |
+| **Branch management**   | Create, merge, and manage branches                |
 
 ### Version Increment Decision Rules
 
-| Change Type | Increment | Examples |
-|-------------|-----------|----------|
-| Breaking changes | MAJOR | API removed, schema incompatible |
-| New features | MINOR | New endpoint, new UI component |
-| Bug fixes | PATCH | Fix crash, correct calculation |
-| Documentation only | PATCH | README update, comment changes |
-| Dependencies | PATCH (usually) | Unless breaking changes |
+| Change Type        | Increment       | Examples                         |
+| ------------------ | --------------- | -------------------------------- |
+| Breaking changes   | MAJOR           | API removed, schema incompatible |
+| New features       | MINOR           | New endpoint, new UI component   |
+| Bug fixes          | PATCH           | Fix crash, correct calculation   |
+| Documentation only | PATCH           | README update, comment changes   |
+| Dependencies       | PATCH (usually) | Unless breaking changes          |
 
 ---
 
@@ -96,14 +111,14 @@ The Git Agent (`/git`) handles:
 
 The Version Agent (`/version`) handles:
 
-| Task | Description |
-|------|-------------|
-| **Update version files** | package.json, composer.json, etc. |
-| **Update VERSION-HISTORY.md** | Technical changelog with file details |
-| **Update CHANGELOG.md** | Developer summary in Keep a Changelog format |
-| **Update RELEASES.md** | User-facing release notes |
-| **Update .md headers** | Version and Last Updated in all markdown |
-| **Stage changes** | Git add all modified version files |
+| Task                          | Description                                  |
+| ----------------------------- | -------------------------------------------- |
+| **Update version files**      | package.json, composer.json, etc.            |
+| **Update VERSION-HISTORY.md** | Technical changelog with file details        |
+| **Update CHANGELOG.md**       | Developer summary in Keep a Changelog format |
+| **Update RELEASES.md**        | User-facing release notes                    |
+| **Update .md headers**        | Version and Last Updated in all markdown     |
+| **Stage changes**             | Git add all modified version files           |
 
 ### What Version Agent Does NOT Do
 

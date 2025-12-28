@@ -6,11 +6,11 @@ Environment-specific shell scripts for managing development, testing, staging, a
 
 ## Metadata
 
-| Property | Value |
-|----------|-------|
-| **Example Version** | 1.0.0 |
-| **Last Updated** | 2025-01 |
-| **Stacks** | All (TALL, Django, React, Mobile, Shared-Lib) |
+| Property            | Value                                         |
+| ------------------- | --------------------------------------------- |
+| **Example Version** | 1.0.0                                         |
+| **Last Updated**    | 2025-01                                       |
+| **Stacks**          | All (TALL, Django, React, Mobile, Shared-Lib) |
 
 **CRITICAL:** All shell scripts MUST be executable:
 ```bash
@@ -21,19 +21,18 @@ chmod +x dev.sh test.sh staging.sh production.sh
 
 ## Table of Contents
 
-- [Environment Shell Scripts](#environment-shell-scripts)
-  - [Overview](#overview)
-  - [Metadata](#metadata)
-  - [Table of Contents](#table-of-contents)
-  - [dev.sh](#devsh)
-  - [test.sh](#testsh)
-  - [staging.sh](#stagingsh)
-  - [production.sh](#productionsh)
-  - [Shared Library Scripts](#shared-library-scripts)
-    - [dev.sh (Shared Lib)](#devsh-shared-lib)
-    - [test.sh (Shared Lib)](#testsh-shared-lib)
-    - [staging.sh (Shared Lib)](#stagingsh-shared-lib)
-    - [production.sh (Shared Lib)](#productionsh-shared-lib)
+- [Overview](#overview)
+- [Metadata](#metadata)
+- [Table of Contents](#table-of-contents)
+- [dev.sh](#devsh)
+- [test.sh](#testsh)
+- [staging.sh](#stagingsh)
+- [production.sh](#productionsh)
+- [Shared Library Scripts](#shared-library-scripts)
+  - [dev.sh (Shared Lib)](#devsh-shared-lib)
+  - [test.sh (Shared Lib)](#testsh-shared-lib)
+  - [staging.sh (Shared Lib)](#stagingsh-shared-lib)
+  - [production.sh (Shared Lib)](#productionsh-shared-lib)
 
 ---
 

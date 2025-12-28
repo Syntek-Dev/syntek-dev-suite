@@ -8,42 +8,41 @@ Use this template to set up a React Native mobile app that consumes a GraphQL AP
 
 ## Table of Contents
 
-- [React Native Mobile App Template](#react-native-mobile-app-template)
-  - [Table of Contents](#table-of-contents)
-  - [Architecture Overview](#architecture-overview)
-  - [Template Repository](#template-repository)
-    - [Creating a New Project from Template](#creating-a-new-project-from-template)
-    - [Post-Clone Setup](#post-clone-setup)
-  - [Project CLAUDE.md](#project-claudemd)
-  - [GraphQL Integration](#graphql-integration)
-    - [Apollo Client Setup](#apollo-client-setup)
-  - [Shared Library Usage](#shared-library-usage)
-  - [Code Conventions](#code-conventions)
-    - [Components](#components)
-    - [Styling](#styling)
-  - [Platform Considerations](#platform-considerations)
-    - [iOS Specific](#ios-specific)
-    - [Android Specific](#android-specific)
-  - [Commands](#commands)
-    - [.claude/commands/dev.md](#claudecommandsdevmd)
-    - [.claude/commands/test.md](#claudecommandstestmd)
-    - [.claude/commands/staging.md](#claudecommandsstagingmd)
-    - [.claude/commands/production.md](#claudecommandsproductionmd)
-    - [.claude/commands/codegen.md](#claudecommandscodegenmd)
-    - [.claude/commands/build-ios.md](#claudecommandsbuild-iosmd)
-    - [.claude/commands/build-android.md](#claudecommandsbuild-androidmd)
-    - [.claude/commands/link-shared.md](#claudecommandslink-sharedmd)
-  - [Directory Structure](#directory-structure)
-  - [Environment-Specific Command Files](#environment-specific-command-files)
-    - [Required Root-Level Scripts](#required-root-level-scripts)
-    - [dev.sh](#devsh)
-    - [test.sh](#testsh)
-    - [staging.sh](#stagingsh)
-    - [production.sh](#productionsh)
-    - [Command File Permissions](#command-file-permissions)
-  - [GraphQL Code Generator Configuration](#graphql-code-generator-configuration)
-  - [Environment Variables](#environment-variables)
-  - [Package Dependencies](#package-dependencies)
+- [Table of Contents](#table-of-contents)
+- [Architecture Overview](#architecture-overview)
+- [Template Repository](#template-repository)
+  - [Creating a New Project from Template](#creating-a-new-project-from-template)
+  - [Post-Clone Setup](#post-clone-setup)
+- [Project CLAUDE.md](#project-claudemd)
+- [GraphQL Integration](#graphql-integration)
+  - [Apollo Client Setup](#apollo-client-setup)
+- [Shared Library Usage](#shared-library-usage)
+- [Code Conventions](#code-conventions)
+  - [Components](#components)
+  - [Styling](#styling)
+- [Platform Considerations](#platform-considerations)
+  - [iOS Specific](#ios-specific)
+  - [Android Specific](#android-specific)
+- [Commands](#commands)
+  - [.claude/commands/dev.md](#claudecommandsdevmd)
+  - [.claude/commands/test.md](#claudecommandstestmd)
+  - [.claude/commands/staging.md](#claudecommandsstagingmd)
+  - [.claude/commands/production.md](#claudecommandsproductionmd)
+  - [.claude/commands/codegen.md](#claudecommandscodegenmd)
+  - [.claude/commands/build-ios.md](#claudecommandsbuild-iosmd)
+  - [.claude/commands/build-android.md](#claudecommandsbuild-androidmd)
+  - [.claude/commands/link-shared.md](#claudecommandslink-sharedmd)
+- [Directory Structure](#directory-structure)
+- [Environment-Specific Command Files](#environment-specific-command-files)
+  - [Required Root-Level Scripts](#required-root-level-scripts)
+  - [dev.sh](#devsh)
+  - [test.sh](#testsh)
+  - [staging.sh](#stagingsh)
+  - [production.sh](#productionsh)
+  - [Command File Permissions](#command-file-permissions)
+- [GraphQL Code Generator Configuration](#graphql-code-generator-configuration)
+- [Environment Variables](#environment-variables)
+- [Package Dependencies](#package-dependencies)
 
 
 ---
@@ -136,17 +135,17 @@ Create this file at `.claude/CLAUDE.md` or `CLAUDE.md` in the project root:
 
 ## Stack Overview
 
-| Component | Technology |
-|-----------|------------|
-| **Type** | React Native Mobile (GraphQL Consumer) |
-| **Language** | TypeScript 5.x |
-| **Framework** | React Native / Expo |
-| **Styling** | NativeWind + shared-lib design tokens |
-| **GraphQL Client** | Apollo Client |
-| **Code Generation** | GraphQL Code Generator |
-| **Navigation** | React Navigation |
-| **Testing** | Jest, React Native Testing Library |
-| **Platform** | Native / Simulator (NO Docker) |
+| Component           | Technology                             |
+| ------------------- | -------------------------------------- |
+| **Type**            | React Native Mobile (GraphQL Consumer) |
+| **Language**        | TypeScript 5.x                         |
+| **Framework**       | React Native / Expo                    |
+| **Styling**         | NativeWind + shared-lib design tokens  |
+| **GraphQL Client**  | Apollo Client                          |
+| **Code Generation** | GraphQL Code Generator                 |
+| **Navigation**      | React Navigation                       |
+| **Testing**         | Jest, React Native Testing Library     |
+| **Platform**        | Native / Simulator (NO Docker)         |
 
 **CRITICAL:** Do NOT use Docker commands for this stack. Mobile runs natively.
 
@@ -170,33 +169,33 @@ This mobile app:
 
 ## Environment
 
-| Setting | Value |
-|---------|-------|
-| **Bundle ID (iOS)** | com.samdev.[projectname] |
-| **Package Name (Android)** | com.samdev.[projectname] |
-| **Backend API (Dev)** | http://localhost:8000/graphql/ |
-| **Backend API (Staging)** | https://staging-api.[domain]/graphql/ |
-| **Backend API (Production)** | https://api.[domain]/graphql/ |
-| **Locale** | en_GB |
-| **Timezone** | Europe/London |
-| **Currency** | GBP (£) |
+| Setting                      | Value                                 |
+| ---------------------------- | ------------------------------------- |
+| **Bundle ID (iOS)**          | com.samdev.[projectname]              |
+| **Package Name (Android)**   | com.samdev.[projectname]              |
+| **Backend API (Dev)**        | http://localhost:8000/graphql/        |
+| **Backend API (Staging)**    | https://staging-api.[domain]/graphql/ |
+| **Backend API (Production)** | https://api.[domain]/graphql/         |
+| **Locale**                   | en_GB                                 |
+| **Timezone**                 | Europe/London                         |
+| **Currency**                 | GBP (£)                               |
 
 ---
 
 ## Key Locations
 
-| Directory | Purpose |
-|-----------|---------|
-| `src/screens/` | Screen components |
-| `src/components/` | App-specific components |
-| `src/navigation/` | Navigation configuration |
-| `src/graphql/` | GraphQL queries, mutations, fragments |
-| `src/graphql/generated/` | Auto-generated types and hooks |
-| `src/hooks/` | Custom React hooks |
-| `src/services/` | Non-GraphQL services |
-| `src/utils/` | Utility functions |
-| `ios/` | iOS native project |
-| `android/` | Android native project |
+| Directory                | Purpose                               |
+| ------------------------ | ------------------------------------- |
+| `src/screens/`           | Screen components                     |
+| `src/components/`        | App-specific components               |
+| `src/navigation/`        | Navigation configuration              |
+| `src/graphql/`           | GraphQL queries, mutations, fragments |
+| `src/graphql/generated/` | Auto-generated types and hooks        |
+| `src/hooks/`             | Custom React hooks                    |
+| `src/services/`          | Non-GraphQL services                  |
+| `src/utils/`             | Utility functions                     |
+| `ios/`                   | iOS native project                    |
+| `android/`               | Android native project                |
 
 ---
 
@@ -715,12 +714,12 @@ $ARGUMENTS
 
 ### Required Root-Level Scripts
 
-| File | Purpose | Environment |
-|------|---------|-------------|
-| `dev.sh` | Start development environment | Development |
-| `test.sh` | Run test suite | Testing |
-| `staging.sh` | Build for staging | Staging |
-| `production.sh` | Build for production | Production |
+| File            | Purpose                       | Environment |
+| --------------- | ----------------------------- | ----------- |
+| `dev.sh`        | Start development environment | Development |
+| `test.sh`       | Run test suite                | Testing     |
+| `staging.sh`    | Build for staging             | Staging     |
+| `production.sh` | Build for production          | Production  |
 
 ### dev.sh
 

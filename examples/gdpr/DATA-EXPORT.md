@@ -6,60 +6,59 @@ Implementation patterns for GDPR data subject rights including Right to Access (
 
 ## Metadata
 
-| Property | Value |
-|----------|-------|
-| **Example Version** | 2.0.0 |
-| **Last Updated** | 2025-12 |
-| **Laravel** | 12.x |
-| **PHP** | 8.4 |
-| **MariaDB** | 12.x |
-| **Django** | 6.x |
-| **Python** | 3.14 |
-| **PostgreSQL** | 18.x |
-| **Next.js** | 16.x |
-| **Node.js** | 24.x |
-| **TypeScript** | 5.9 |
-| **Prisma** | 6.x |
-| **React Native** | 0.83.x |
-| **Stacks** | TALL, Django/Wagtail, React/Next.js, React Native |
+| Property            | Value                                             |
+| ------------------- | ------------------------------------------------- |
+| **Example Version** | 2.0.0                                             |
+| **Last Updated**    | 2025-12                                           |
+| **Laravel**         | 12.x                                              |
+| **PHP**             | 8.4                                               |
+| **MariaDB**         | 12.x                                              |
+| **Django**          | 6.x                                               |
+| **Python**          | 3.14                                              |
+| **PostgreSQL**      | 18.x                                              |
+| **Next.js**         | 16.x                                              |
+| **Node.js**         | 24.x                                              |
+| **TypeScript**      | 5.9                                               |
+| **Prisma**          | 6.x                                               |
+| **React Native**    | 0.83.x                                            |
+| **Stacks**          | TALL, Django/Wagtail, React/Next.js, React Native |
 
 ---
 
 ## Table of Contents
 
-- [GDPR Data Export (DSAR)](#gdpr-data-export-dsar)
-  - [Overview](#overview)
-  - [Metadata](#metadata)
-  - [Table of Contents](#table-of-contents)
-  - [Data Subject Rights](#data-subject-rights)
-  - [TALL Stack (Laravel 12.x)](#tall-stack-laravel-12x)
-    - [GDPR Controller](#gdpr-controller)
-      - [app/Http/Controllers/GdprController.php](#apphttpcontrollersgdprcontrollerphp)
-    - [Data Export Service](#data-export-service)
-      - [app/Services/GdprDataExportService.php](#appservicesgdprdataexportservicephp)
-    - [Consent Management](#consent-management)
-      - [app/Models/UserConsent.php](#appmodelsuserconsentphp)
-  - [Django/Wagtail (Django 6.x)](#djangowagtail-django-6x)
-    - [GDPR Views](#gdpr-views)
-      - [apps/gdpr/views.py](#appsgdprviewspy)
-    - [Data Export Service](#data-export-service-1)
-      - [apps/gdpr/services/gdpr\_export.py](#appsgdprservicesgdpr_exportpy)
-  - [Consent Management - Laravel](#consent-management---laravel)
-    - [app/Models/UserConsent.php](#appmodelsuserconsentphp-1)
-  - [Audit Trail Requirements](#audit-trail-requirements)
-    - [Audit Log Migration](#audit-log-migration)
+- [Overview](#overview)
+- [Metadata](#metadata)
+- [Table of Contents](#table-of-contents)
+- [Data Subject Rights](#data-subject-rights)
+- [TALL Stack (Laravel 12.x)](#tall-stack-laravel-12x)
+  - [GDPR Controller](#gdpr-controller)
+    - [app/Http/Controllers/GdprController.php](#apphttpcontrollersgdprcontrollerphp)
+  - [Data Export Service](#data-export-service)
+    - [app/Services/GdprDataExportService.php](#appservicesgdprdataexportservicephp)
+  - [Consent Management](#consent-management)
+    - [app/Models/UserConsent.php](#appmodelsuserconsentphp)
+- [Django/Wagtail (Django 6.x)](#djangowagtail-django-6x)
+  - [GDPR Views](#gdpr-views)
+    - [apps/gdpr/views.py](#appsgdprviewspy)
+  - [Data Export Service](#data-export-service-1)
+    - [apps/gdpr/services/gdpr\_export.py](#appsgdprservicesgdpr_exportpy)
+- [Consent Management - Laravel](#consent-management---laravel)
+  - [app/Models/UserConsent.php](#appmodelsuserconsentphp-1)
+- [Audit Trail Requirements](#audit-trail-requirements)
+  - [Audit Log Migration](#audit-log-migration)
 
 
 
 ## Data Subject Rights
 
-| Right | Article | Implementation |
-|-------|---------|----------------|
-| Access | 15 | Data export endpoint |
-| Rectification | 16 | Profile update endpoints |
-| Erasure | 17 | Account deletion with anonymisation |
-| Portability | 20 | Machine-readable export (JSON/CSV) |
-| Object | 21 | Marketing opt-out preferences |
+| Right         | Article | Implementation                      |
+| ------------- | ------- | ----------------------------------- |
+| Access        | 15      | Data export endpoint                |
+| Rectification | 16      | Profile update endpoints            |
+| Erasure       | 17      | Account deletion with anonymisation |
+| Portability   | 20      | Machine-readable export (JSON/CSV)  |
+| Object        | 21      | Marketing opt-out preferences       |
 
 ---
 

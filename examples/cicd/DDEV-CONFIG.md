@@ -6,39 +6,38 @@ DDEV configuration templates for local development. DDEV provides consistent dev
 
 ## Metadata
 
-| Property | Value |
-|----------|-------|
-| **Example Version** | 2.0.0 |
-| **Last Updated** | 2025-12 |
-| **DDEV** | 1.23.x |
-| **PHP** | 8.4 |
-| **Laravel** | 12.x |
-| **MariaDB** | 12.x |
-| **Stacks** | TALL (Laravel), WordPress, Drupal |
+| Property            | Value                             |
+| ------------------- | --------------------------------- |
+| **Example Version** | 2.0.0                             |
+| **Last Updated**    | 2025-12                           |
+| **DDEV**            | 1.23.x                            |
+| **PHP**             | 8.4                               |
+| **Laravel**         | 12.x                              |
+| **MariaDB**         | 12.x                              |
+| **Stacks**          | TALL (Laravel), WordPress, Drupal |
 
 ---
 
 ## Table of Contents
 
-- [DDEV Configuration](#ddev-configuration)
-  - [Overview](#overview)
-  - [Metadata](#metadata)
-  - [Table of Contents](#table-of-contents)
-  - [Basic DDEV Configuration](#basic-ddev-configuration)
-    - [.ddev/config.yaml (Laravel)](#ddevconfigyaml-laravel)
-    - [.ddev/config.yaml (WordPress)](#ddevconfigyaml-wordpress)
-  - [DDEV with Redis](#ddev-with-redis)
-    - [.ddev/docker-compose.redis.yaml](#ddevdocker-composeredisyaml)
-    - [.ddev/docker-compose.mailpit.yaml](#ddevdocker-composemailpityaml)
-  - [DDEV Custom Commands](#ddev-custom-commands)
-    - [.ddev/commands/host/deploy-staging](#ddevcommandshostdeploy-staging)
-    - [.ddev/commands/host/fresh](#ddevcommandshostfresh)
-    - [.ddev/commands/host/test](#ddevcommandshosttest)
-    - [.ddev/commands/host/lint](#ddevcommandshostlint)
-  - [DDEV for Different Project Types](#ddev-for-different-project-types)
-    - [Django Project](#django-project)
-    - [React/Node Project](#reactnode-project)
-    - [Drupal Project](#drupal-project)
+- [Overview](#overview)
+- [Metadata](#metadata)
+- [Table of Contents](#table-of-contents)
+- [Basic DDEV Configuration](#basic-ddev-configuration)
+  - [.ddev/config.yaml (Laravel)](#ddevconfigyaml-laravel)
+  - [.ddev/config.yaml (WordPress)](#ddevconfigyaml-wordpress)
+- [DDEV with Redis](#ddev-with-redis)
+  - [.ddev/docker-compose.redis.yaml](#ddevdocker-composeredisyaml)
+  - [.ddev/docker-compose.mailpit.yaml](#ddevdocker-composemailpityaml)
+- [DDEV Custom Commands](#ddev-custom-commands)
+  - [.ddev/commands/host/deploy-staging](#ddevcommandshostdeploy-staging)
+  - [.ddev/commands/host/fresh](#ddevcommandshostfresh)
+  - [.ddev/commands/host/test](#ddevcommandshosttest)
+  - [.ddev/commands/host/lint](#ddevcommandshostlint)
+- [DDEV for Different Project Types](#ddev-for-different-project-types)
+  - [Django Project](#django-project)
+  - [React/Node Project](#reactnode-project)
+  - [Drupal Project](#drupal-project)
 
 
 ## Basic DDEV Configuration

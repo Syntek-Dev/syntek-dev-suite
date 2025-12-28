@@ -6,31 +6,30 @@ Editor and linter configuration files for consistent code formatting across diff
 
 ## Metadata
 
-| Property | Value |
-|----------|-------|
-| **Example Version** | 1.0.0 |
-| **Last Updated** | 2025-01 |
-| **Stacks** | All (TALL, Django, React, Mobile, Shared-Lib) |
+| Property            | Value                                         |
+| ------------------- | --------------------------------------------- |
+| **Example Version** | 1.0.0                                         |
+| **Last Updated**    | 2025-01                                       |
+| **Stacks**          | All (TALL, Django, React, Mobile, Shared-Lib) |
 
 ---
 
 ## Table of Contents
 
-- [Editor Configuration Templates](#editor-configuration-templates)
-  - [Overview](#overview)
-  - [Metadata](#metadata)
-  - [Table of Contents](#table-of-contents)
-  - [EditorConfig](#editorconfig)
-    - [.editorconfig](#editorconfig-1)
-  - [Prettier](#prettier)
-    - [.prettierrc](#prettierrc)
-    - [.prettierignore](#prettierignore)
-  - [ESLint](#eslint)
-    - [.eslintignore](#eslintignore)
-  - [Node Version](#node-version)
-    - [.nvmrc](#nvmrc)
-  - [Python Configuration](#python-configuration)
-    - [.flake8](#flake8)
+- [Overview](#overview)
+- [Metadata](#metadata)
+- [Table of Contents](#table-of-contents)
+- [EditorConfig](#editorconfig)
+  - [.editorconfig](#editorconfig-1)
+- [Prettier](#prettier)
+  - [.prettierrc](#prettierrc)
+  - [.prettierignore](#prettierignore)
+- [ESLint](#eslint)
+  - [.eslintignore](#eslintignore)
+- [Node Version](#node-version)
+  - [.nvmrc](#nvmrc)
+- [Python Configuration](#python-configuration)
+  - [.flake8](#flake8)
 
 ---
 

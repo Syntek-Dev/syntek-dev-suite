@@ -6,13 +6,13 @@ Comprehensive testing examples covering unit, BDD/acceptance, and E2E tests acro
 
 ## Testing Matrix
 
-| Stack | Unit Tests (TDD) | BDD/Acceptance | E2E |
-|-------|------------------|----------------|-----|
-| TALL (Laravel) | Pest PHP | Behat / Pest Stories | Dusk |
-| Django | pytest / Django TestCase | Behave / pytest-bdd | Selenium |
-| React/Next.js | Jest / Vitest | Cucumber.js / Jest-Cucumber | Cypress / Playwright |
-| React Native | Jest | Cucumber.js | Detox |
-| Node.js | Jest / Vitest | Cucumber.js | Cypress |
+| Stack          | Unit Tests (TDD)         | BDD/Acceptance              | E2E                  |
+| -------------- | ------------------------ | --------------------------- | -------------------- |
+| TALL (Laravel) | Pest PHP                 | Behat / Pest Stories        | Dusk                 |
+| Django         | pytest / Django TestCase | Behave / pytest-bdd         | Selenium             |
+| React/Next.js  | Jest / Vitest            | Cucumber.js / Jest-Cucumber | Cypress / Playwright |
+| React Native   | Jest                     | Cucumber.js                 | Detox                |
+| Node.js        | Jest / Vitest            | Cucumber.js                 | Cypress              |
 
 ---
 
@@ -26,13 +26,13 @@ Comprehensive testing examples covering unit, BDD/acceptance, and E2E tests acro
 
 ### Framework-Specific Chrome Configuration
 
-| Framework | Configuration |
-|-----------|---------------|
-| Laravel Dusk | Uses `DUSK_CHROME_BINARY` from `.env` automatically |
-| Playwright | `channel: 'chrome'` or `executablePath: process.env.CHROME_PATH` |
-| Cypress | `browser: 'chrome'` in config or `--browser chrome` CLI flag |
-| Selenium | `options.binary_location = os.environ.get('CHROME_PATH')` |
-| Puppeteer | `executablePath: process.env.PUPPETEER_EXECUTABLE_PATH` |
+| Framework    | Configuration                                                    |
+| ------------ | ---------------------------------------------------------------- |
+| Laravel Dusk | Uses `DUSK_CHROME_BINARY` from `.env` automatically              |
+| Playwright   | `channel: 'chrome'` or `executablePath: process.env.CHROME_PATH` |
+| Cypress      | `browser: 'chrome'` in config or `--browser chrome` CLI flag     |
+| Selenium     | `options.binary_location = os.environ.get('CHROME_PATH')`        |
+| Puppeteer    | `executablePath: process.env.PUPPETEER_EXECUTABLE_PATH`          |
 
 ### Claude Code Chrome Integration
 
@@ -50,74 +50,73 @@ claude --chrome
 
 ## Table of Contents
 
-- [Testing Examples](#testing-examples)
-  - [Overview](#overview)
-  - [Testing Matrix](#testing-matrix)
-  - [Browser Configuration for E2E Tests (CRITICAL)](#browser-configuration-for-e2e-tests-critical)
-    - [Browser Environment Variable](#browser-environment-variable)
-    - [Framework-Specific Chrome Configuration](#framework-specific-chrome-configuration)
-    - [Claude Code Chrome Integration](#claude-code-chrome-integration)
-  - [Table of Contents](#table-of-contents)
-  - [TALL Stack (Laravel 12)](#tall-stack-laravel-12)
-    - [Unit Tests (Pest)](#unit-tests-pest)
-      - [Configuration](#configuration)
-      - [Unit Test Examples](#unit-test-examples)
-      - [Feature Test Examples](#feature-test-examples)
-    - [BDD/Acceptance (Behat)](#bddacceptance-behat)
-      - [Configuration](#configuration-1)
-      - [Feature Files](#feature-files)
-      - [Context Classes](#context-classes)
-    - [E2E (Dusk)](#e2e-dusk)
-      - [Configuration](#configuration-2)
-      - [E2E Test Examples](#e2e-test-examples)
-      - [Page Objects](#page-objects)
-  - [Django/Wagtail Stack](#djangowagtail-stack)
-    - [Unit Tests (Pytest)](#unit-tests-pytest)
-      - [Configuration](#configuration-3)
-      - [Unit Test Examples](#unit-test-examples-1)
-      - [Integration Test Examples](#integration-test-examples)
-    - [BDD/Acceptance (Behave)](#bddacceptance-behave)
-      - [Configuration](#configuration-4)
-      - [Feature Files](#feature-files-1)
-      - [Step Definitions](#step-definitions)
-    - [E2E (Selenium)](#e2e-selenium)
-      - [Configuration](#configuration-5)
-      - [E2E Test Examples](#e2e-test-examples-1)
-      - [Page Objects](#page-objects-1)
-  - [React/Next.js Stack](#reactnextjs-stack)
-    - [Unit Tests (Vitest)](#unit-tests-vitest)
-      - [Configuration](#configuration-6)
-      - [Unit Test Examples](#unit-test-examples-2)
-    - [BDD/Acceptance (Cucumber.js)](#bddacceptance-cucumberjs)
-      - [Configuration](#configuration-7)
-      - [Feature Files](#feature-files-2)
-      - [Step Definitions](#step-definitions-1)
-    - [E2E (Playwright)](#e2e-playwright)
-      - [Configuration](#configuration-8)
-      - [E2E Test Examples](#e2e-test-examples-2)
-      - [Fixtures and Helpers](#fixtures-and-helpers)
-  - [React Native Stack](#react-native-stack)
-    - [Unit Tests (Jest)](#unit-tests-jest)
-      - [Configuration](#configuration-9)
-      - [Unit Test Examples](#unit-test-examples-3)
-    - [BDD/Acceptance (Cucumber.js) {#bddacceptance-cucumberjs-rn}](#bddacceptance-cucumberjs-bddacceptance-cucumberjs-rn)
-      - [Configuration](#configuration-10)
-      - [Feature Files](#feature-files-3)
-      - [Step Definitions](#step-definitions-2)
-    - [E2E (Detox)](#e2e-detox)
-      - [Configuration](#configuration-11)
-      - [E2E Test Examples](#e2e-test-examples-3)
-  - [Node.js Stack](#nodejs-stack)
-    - [Unit Tests (Vitest) {#unit-tests-vitest-node}](#unit-tests-vitest-unit-tests-vitest-node)
-      - [Configuration](#configuration-12)
-      - [Unit Test Examples](#unit-test-examples-4)
-    - [BDD/Acceptance (Cucumber.js) {#bddacceptance-cucumberjs-node}](#bddacceptance-cucumberjs-bddacceptance-cucumberjs-node)
-      - [Feature Files](#feature-files-4)
-      - [Step Definitions](#step-definitions-3)
-    - [E2E (Cypress)](#e2e-cypress)
-      - [Configuration](#configuration-13)
-      - [E2E Test Examples](#e2e-test-examples-4)
-      - [API Testing with Cypress](#api-testing-with-cypress)
+- [Overview](#overview)
+- [Testing Matrix](#testing-matrix)
+- [Browser Configuration for E2E Tests (CRITICAL)](#browser-configuration-for-e2e-tests-critical)
+  - [Browser Environment Variable](#browser-environment-variable)
+  - [Framework-Specific Chrome Configuration](#framework-specific-chrome-configuration)
+  - [Claude Code Chrome Integration](#claude-code-chrome-integration)
+- [Table of Contents](#table-of-contents)
+- [TALL Stack (Laravel 12)](#tall-stack-laravel-12)
+  - [Unit Tests (Pest)](#unit-tests-pest)
+    - [Configuration](#configuration)
+    - [Unit Test Examples](#unit-test-examples)
+    - [Feature Test Examples](#feature-test-examples)
+  - [BDD/Acceptance (Behat)](#bddacceptance-behat)
+    - [Configuration](#configuration-1)
+    - [Feature Files](#feature-files)
+    - [Context Classes](#context-classes)
+  - [E2E (Dusk)](#e2e-dusk)
+    - [Configuration](#configuration-2)
+    - [E2E Test Examples](#e2e-test-examples)
+    - [Page Objects](#page-objects)
+- [Django/Wagtail Stack](#djangowagtail-stack)
+  - [Unit Tests (Pytest)](#unit-tests-pytest)
+    - [Configuration](#configuration-3)
+    - [Unit Test Examples](#unit-test-examples-1)
+    - [Integration Test Examples](#integration-test-examples)
+  - [BDD/Acceptance (Behave)](#bddacceptance-behave)
+    - [Configuration](#configuration-4)
+    - [Feature Files](#feature-files-1)
+    - [Step Definitions](#step-definitions)
+  - [E2E (Selenium)](#e2e-selenium)
+    - [Configuration](#configuration-5)
+    - [E2E Test Examples](#e2e-test-examples-1)
+    - [Page Objects](#page-objects-1)
+- [React/Next.js Stack](#reactnextjs-stack)
+  - [Unit Tests (Vitest)](#unit-tests-vitest)
+    - [Configuration](#configuration-6)
+    - [Unit Test Examples](#unit-test-examples-2)
+  - [BDD/Acceptance (Cucumber.js)](#bddacceptance-cucumberjs)
+    - [Configuration](#configuration-7)
+    - [Feature Files](#feature-files-2)
+    - [Step Definitions](#step-definitions-1)
+  - [E2E (Playwright)](#e2e-playwright)
+    - [Configuration](#configuration-8)
+    - [E2E Test Examples](#e2e-test-examples-2)
+    - [Fixtures and Helpers](#fixtures-and-helpers)
+- [React Native Stack](#react-native-stack)
+  - [Unit Tests (Jest)](#unit-tests-jest)
+    - [Configuration](#configuration-9)
+    - [Unit Test Examples](#unit-test-examples-3)
+  - [BDD/Acceptance (Cucumber.js) {#bddacceptance-cucumberjs-rn}](#bddacceptance-cucumberjs-bddacceptance-cucumberjs-rn)
+    - [Configuration](#configuration-10)
+    - [Feature Files](#feature-files-3)
+    - [Step Definitions](#step-definitions-2)
+  - [E2E (Detox)](#e2e-detox)
+    - [Configuration](#configuration-11)
+    - [E2E Test Examples](#e2e-test-examples-3)
+- [Node.js Stack](#nodejs-stack)
+  - [Unit Tests (Vitest) {#unit-tests-vitest-node}](#unit-tests-vitest-unit-tests-vitest-node)
+    - [Configuration](#configuration-12)
+    - [Unit Test Examples](#unit-test-examples-4)
+  - [BDD/Acceptance (Cucumber.js) {#bddacceptance-cucumberjs-node}](#bddacceptance-cucumberjs-bddacceptance-cucumberjs-node)
+    - [Feature Files](#feature-files-4)
+    - [Step Definitions](#step-definitions-3)
+  - [E2E (Cypress)](#e2e-cypress)
+    - [Configuration](#configuration-13)
+    - [E2E Test Examples](#e2e-test-examples-4)
+    - [API Testing with Cypress](#api-testing-with-cypress)
 
 
 ## TALL Stack (Laravel 12)

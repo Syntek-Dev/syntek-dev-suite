@@ -1,5 +1,13 @@
 # Markdown All in One Extension Integration Plan
 
+**Last Updated**: 28/12/2025
+**Version**: 1.3.0
+**Maintained By**: Development Team
+**Language**: British English (en_GB)
+**Timezone**: Europe/London
+
+---
+
 ## Overview
 
 This plan outlines the comprehensive integration of VS Code's "Markdown All in One" extension (yzhang.markdown-all-in-one) with the Syntek Dev Suite. The extension provides keyboard shortcuts, automatic table of contents generation, GitHub Flavoured Markdown support, list editing, math support, HTML export, and more. This integration will enhance the markdown documentation workflow for all agents whilst maintaining compatibility for users without the extension.
@@ -8,58 +16,62 @@ This plan outlines the comprehensive integration of VS Code's "Markdown All in O
 
 ## Table of Contents
 
-- [Markdown All in One Extension Integration Plan](#markdown-all-in-one-extension-integration-plan)
-  - [Overview](#overview)
-  - [Table of Contents](#table-of-contents)
-  - [Requirements](#requirements)
-    - [Core Requirements](#core-requirements)
-    - [Non-Functional Requirements](#non-functional-requirements)
-  - [Extension Features Overview](#extension-features-overview)
-    - [Keyboard Shortcuts](#keyboard-shortcuts)
-    - [Table of Contents Management](#table-of-contents-management)
-    - [List Editing](#list-editing)
-    - [GitHub Flavoured Markdown](#github-flavoured-markdown)
-    - [Math Support](#math-support)
-    - [Auto-Completion](#auto-completion)
-    - [HTML Export](#html-export)
-    - [Syntax Decorations](#syntax-decorations)
-  - [Technical Design](#technical-design)
-    - [Current State](#current-state)
-    - [Target State](#target-state)
-    - [Integration Strategy](#integration-strategy)
-    - [Markdown Standards Alignment](#markdown-standards-alignment)
-  - [Implementation Phases](#implementation-phases)
-    - [Phase 1: VS Code Workspace Configuration](#phase-1-vs-code-workspace-configuration)
-    - [Phase 2: Documentation and User Guide](#phase-2-documentation-and-user-guide)
-    - [Phase 3: CLAUDE.md Standards Update](#phase-3-claudemd-standards-update)
-    - [Phase 4: Template Updates](#phase-4-template-updates)
-    - [Phase 5: Agent Skill Updates](#phase-5-agent-skill-updates)
-    - [Phase 6: Testing and Validation](#phase-6-testing-and-validation)
-    - [Phase 7: GitHub Integration (Optional)](#phase-7-github-integration-optional)
-  - [Affected Files](#affected-files)
-    - [Configuration Files](#configuration-files)
-    - [Documentation Files](#documentation-files)
-    - [Template Files](#template-files)
-    - [Agent Skill Files](#agent-skill-files)
-  - [Feature-Specific Configuration](#feature-specific-configuration)
-    - [Table of Contents Settings](#table-of-contents-settings)
-    - [List Formatting Settings](#list-formatting-settings)
-    - [GitHub Flavoured Markdown Settings](#github-flavoured-markdown-settings)
-    - [Export Settings](#export-settings)
-    - [Display and Syntax Settings](#display-and-syntax-settings)
-  - [Agent Integration Guidelines](#agent-integration-guidelines)
-    - [Markdown Generation Best Practices](#markdown-generation-best-practices)
-    - [Table Formatting](#table-formatting)
-    - [Task Lists](#task-lists)
-    - [Code Blocks](#code-blocks)
-    - [Math Expressions](#math-expressions)
-  - [User Workflow Enhancements](#user-workflow-enhancements)
-    - [With Extension Installed](#with-extension-installed)
-    - [Without Extension](#without-extension)
-  - [Risks and Mitigations](#risks-and-mitigations)
-  - [Open Questions](#open-questions)
-  - [Success Criteria](#success-criteria)
-  - [References](#references)
+- [Overview](#overview)
+- [Table of Contents](#table-of-contents)
+- [Requirements](#requirements)
+  - [Core Requirements](#core-requirements)
+  - [Non-Functional Requirements](#non-functional-requirements)
+- [Extension Features Overview](#extension-features-overview)
+  - [Keyboard Shortcuts](#keyboard-shortcuts)
+  - [Table of Contents Management](#table-of-contents-management)
+  - [List Editing](#list-editing)
+  - [GitHub Flavoured Markdown](#github-flavoured-markdown)
+  - [Math Support](#math-support)
+  - [Auto-Completion](#auto-completion)
+  - [HTML Export](#html-export)
+  - [Syntax Decorations](#syntax-decorations)
+- [Technical Design](#technical-design)
+  - [Current State](#current-state)
+  - [Target State](#target-state)
+  - [Integration Strategy](#integration-strategy)
+  - [Markdown Standards Alignment](#markdown-standards-alignment)
+- [Implementation Phases](#implementation-phases)
+  - [Phase 1: VS Code Workspace Configuration](#phase-1-vs-code-workspace-configuration)
+  - [Phase 2: Documentation and User Guide](#phase-2-documentation-and-user-guide)
+  - [Phase 3: CLAUDE.md Standards Update](#phase-3-claudemd-standards-update)
+  - [Phase 5: Agent Skill Updates](#phase-5-agent-skill-updates)
+  - [Phase 6: Testing and Validation](#phase-6-testing-and-validation)
+  - [Phase 7: GitHub Integration (Optional)](#phase-7-github-integration-optional)
+- [Affected Files](#affected-files)
+  - [Configuration Files](#configuration-files)
+  - [Documentation Files](#documentation-files)
+  - [Template Files](#template-files)
+  - [Agent Skill Files](#agent-skill-files)
+- [Feature-Specific Configuration](#feature-specific-configuration)
+  - [Table of Contents Settings](#table-of-contents-settings)
+  - [List Formatting Settings](#list-formatting-settings)
+  - [GitHub Flavoured Markdown Settings](#github-flavoured-markdown-settings)
+  - [Export Settings](#export-settings)
+  - [Display and Syntax Settings](#display-and-syntax-settings)
+- [Agent Integration Guidelines](#agent-integration-guidelines)
+  - [Markdown Generation Best Practices](#markdown-generation-best-practices)
+  - [Table Formatting](#table-formatting)
+  - [Task Lists](#task-lists)
+  - [Code Blocks](#code-blocks)
+  - [Math Expressions](#math-expressions)
+- [User Workflow Enhancements](#user-workflow-enhancements)
+  - [With Extension Installed](#with-extension-installed)
+  - [Without Extension](#without-extension)
+- [Risks and Mitigations](#risks-and-mitigations)
+- [Open Questions](#open-questions)
+- [Success Criteria](#success-criteria)
+  - [Extension Integration](#extension-integration)
+  - [Documentation](#documentation)
+  - [Agent Compatibility](#agent-compatibility)
+  - [User Experience](#user-experience)
+  - [Graceful Degradation](#graceful-degradation)
+  - [Testing](#testing)
+- [References](#references)
 
 ---
 
@@ -88,16 +100,16 @@ This plan outlines the comprehensive integration of VS Code's "Markdown All in O
 
 ### Keyboard Shortcuts
 
-| Shortcut | Function | Agent Impact |
-|----------|----------|--------------|
-| `Ctrl/Cmd + B` | Toggle bold | Agents use `**bold**` syntax |
-| `Ctrl/Cmd + I` | Toggle italic | Agents use `*italic*` syntax |
-| `Alt + S` | Toggle strikethrough | Agents use `~~strikethrough~~` (GFM) |
-| `Ctrl + Shift + ]` | Uplevel heading | No impact (manual editing) |
-| `Ctrl + Shift + [` | Downlevel heading | No impact (manual editing) |
-| `Ctrl/Cmd + M` | Toggle math | Agents can include `$math$` inline |
-| `Alt + C` | Check/uncheck task | Agents generate `- [ ]` / `- [x]` lists |
-| `Ctrl/Cmd + Shift + V` | Preview | No impact (user feature) |
+| Shortcut               | Function             | Agent Impact                            |
+| ---------------------- | -------------------- | --------------------------------------- |
+| `Ctrl/Cmd + B`         | Toggle bold          | Agents use `**bold**` syntax            |
+| `Ctrl/Cmd + I`         | Toggle italic        | Agents use `*italic*` syntax            |
+| `Alt + S`              | Toggle strikethrough | Agents use `~~strikethrough~~` (GFM)    |
+| `Ctrl + Shift + ]`     | Uplevel heading      | No impact (manual editing)              |
+| `Ctrl + Shift + [`     | Downlevel heading    | No impact (manual editing)              |
+| `Ctrl/Cmd + M`         | Toggle math          | Agents can include `$math$` inline      |
+| `Alt + C`              | Check/uncheck task   | Agents generate `- [ ]` / `- [x]` lists |
+| `Ctrl/Cmd + Shift + V` | Preview              | No impact (user feature)                |
 
 **Agent Consideration:** Generate markdown using syntax that shortcuts work with (e.g., `**bold**` not `__bold__`).
 
@@ -233,17 +245,17 @@ The extension enhances the user experience but is not required. All generated ma
 
 **Extension Configuration Aligned with Syntek Standards:**
 
-| Syntek Standard | Extension Setting | Value |
-|-----------------|-------------------|-------|
-| British English spelling | No setting needed | Handled in CLAUDE.md |
-| Unordered list marker | `toc.unorderedList.marker` | `-` |
-| GitHub compatibility | `toc.slugifyMode` | `github` |
-| Task list support | Built-in | Enabled |
-| Table formatting | `tableFormatter.enabled` | `true` |
-| Bold syntax | `bold.indicator` | `**` |
-| Italic syntax | `italic.indicator` | `*` |
-| Auto-update TOC | `toc.updateOnSave` | `true` |
-| Heading levels in TOC | `toc.levels` | `2..6` |
+| Syntek Standard          | Extension Setting          | Value                |
+| ------------------------ | -------------------------- | -------------------- |
+| British English spelling | No setting needed          | Handled in CLAUDE.md |
+| Unordered list marker    | `toc.unorderedList.marker` | `-`                  |
+| GitHub compatibility     | `toc.slugifyMode`          | `github`             |
+| Task list support        | Built-in                   | Enabled              |
+| Table formatting         | `tableFormatter.enabled`   | `true`               |
+| Bold syntax              | `bold.indicator`           | `**`                 |
+| Italic syntax            | `italic.indicator`         | `*`                  |
+| Auto-update TOC          | `toc.updateOnSave`         | `true`               |
+| Heading levels in TOC    | `toc.levels`               | `2..6`               |
 
 ---
 
@@ -303,20 +315,20 @@ The extension enhances the user experience but is not required. All generated ma
 
 **Configuration Rationale:**
 
-| Setting | Value | Reason |
-|---------|-------|--------|
-| `toc.levels` | `"2..6"` | Skip H1 (document title) to avoid redundancy |
-| `toc.marker` | `"-"` | Consistent with Syntek's unordered list style |
-| `toc.updateOnSave` | `true` | Keep TOC in sync automatically |
-| `toc.slugifyMode` | `"github"` | GitHub-compatible anchor links |
-| `list.indentationSize` | `"adaptive"` | Follow document's own style |
-| `orderedList.marker` | `"one"` | Use `1.` for all items (GitHub style) |
-| `orderedList.autoRenumber` | `true` | Fix list numbering automatically |
-| `italic.indicator` | `"*"` | Single asterisk for italic |
-| `bold.indicator` | `"**"` | Double asterisk for bold |
-| `tableFormatter.enabled` | `true` | Auto-format GFM tables |
-| `syntax.decorations` | `true` | Visual enhancements in editor |
-| `formatOnSave` | `true` | Auto-format markdown on save |
+| Setting                    | Value        | Reason                                        |
+| -------------------------- | ------------ | --------------------------------------------- |
+| `toc.levels`               | `"2..6"`     | Skip H1 (document title) to avoid redundancy  |
+| `toc.marker`               | `"-"`        | Consistent with Syntek's unordered list style |
+| `toc.updateOnSave`         | `true`       | Keep TOC in sync automatically                |
+| `toc.slugifyMode`          | `"github"`   | GitHub-compatible anchor links                |
+| `list.indentationSize`     | `"adaptive"` | Follow document's own style                   |
+| `orderedList.marker`       | `"one"`      | Use `1.` for all items (GitHub style)         |
+| `orderedList.autoRenumber` | `true`       | Fix list numbering automatically              |
+| `italic.indicator`         | `"*"`        | Single asterisk for italic                    |
+| `bold.indicator`           | `"**"`       | Double asterisk for bold                      |
+| `tableFormatter.enabled`   | `true`       | Auto-format GFM tables                        |
+| `syntax.decorations`       | `true`       | Visual enhancements in editor                 |
+| `formatOnSave`             | `true`       | Auto-format markdown on save                  |
 
 ---
 
@@ -422,7 +434,7 @@ All markdown files should use GitHub Flavoured Markdown (GFM) syntax:
 **Tables:**
 ```markdown
 | Column 1 | Column 2 |
-|----------|----------|
+| -------- | -------- |
 | Value 1  | Value 2  |
 ```
 
@@ -489,7 +501,7 @@ Brief introduction.
 2. **Table Format:**
 ```markdown
 | Column 1 | Column 2 | Column 3 |
-|----------|----------|----------|
+| -------- | -------- | -------- |
 | Value    | Value    | Value    |
 ```
 
@@ -548,12 +560,12 @@ When generating markdown documentation, follow these standards for compatibility
 
 ### Text Formatting
 
-| Format | Syntax | Example |
-|--------|--------|---------|
-| **Bold** | `**text**` | `**important**` |
-| *Italic* | `*text*` | `*emphasise*` |
+| Format            | Syntax     | Example          |
+| ----------------- | ---------- | ---------------- |
+| **Bold**          | `**text**` | `**important**`  |
+| *Italic*          | `*text*`   | `*emphasise*`    |
 | ~~Strikethrough~~ | `~~text~~` | `~~deprecated~~` |
-| `Inline code` | \`code\` | \`function()\` |
+| `Inline code`     | \`code\`   | \`function()\`   |
 
 ### Lists
 
@@ -594,7 +606,7 @@ Use GitHub Flavoured Markdown table syntax:
 
 \```markdown
 | Column 1 | Column 2 | Column 3 |
-|----------|----------|----------|
+| -------- | -------- | -------- |
 | Value 1  | Value 2  | Value 3  |
 | Value 4  | Value 5  | Value 6  |
 \```
@@ -709,26 +721,26 @@ See [Setup Guide](./docs/SETUP/GUIDE.md) for details.
 
 **Test Cases:**
 
-| Feature | Test Case | Expected Result |
-|---------|-----------|----------------|
-| **TOC** | Create doc with agent, save in VS Code | TOC auto-updates with headings |
-| **TOC** | Add `<!-- omit in toc -->` to heading | Heading excluded from TOC |
-| **TOC** | Change heading text | TOC link text updates on save |
-| **Keyboard** | Select text, press Ctrl+B | Text becomes bold with `**` |
-| **Keyboard** | Select text, press Ctrl+I | Text becomes italic with `*` |
-| **Keyboard** | Select text, press Alt+S | Text gets strikethrough `~~` |
-| **Keyboard** | Cursor on task list, press Alt+C | Checkbox toggles `[ ]` ↔ `[x]` |
-| **Lists** | Press Tab in list item | Item indents correctly |
-| **Lists** | Press Shift+Tab in nested item | Item un-indents |
-| **Lists** | Renumber ordered list items | Auto-renumbering fixes sequence |
-| **Tables** | Create unaligned table, save | Table auto-aligns columns |
-| **Tables** | Add/remove table column | Formatting adjusts automatically |
-| **Math** | Add `$x^2$` inline | Math renders in preview |
-| **Math** | Add `$$` block | Math block renders in preview |
-| **Export** | Run "Print to HTML" | HTML file created with styling |
-| **Completion** | Type `![](` | File path suggestions appear |
-| **No Extension** | Open doc without extension | Manual TOC links work |
-| **No Extension** | View table without extension | Table displays correctly |
+| Feature          | Test Case                              | Expected Result                  |
+| ---------------- | -------------------------------------- | -------------------------------- |
+| **TOC**          | Create doc with agent, save in VS Code | TOC auto-updates with headings   |
+| **TOC**          | Add `<!-- omit in toc -->` to heading  | Heading excluded from TOC        |
+| **TOC**          | Change heading text                    | TOC link text updates on save    |
+| **Keyboard**     | Select text, press Ctrl+B              | Text becomes bold with `**`      |
+| **Keyboard**     | Select text, press Ctrl+I              | Text becomes italic with `*`     |
+| **Keyboard**     | Select text, press Alt+S               | Text gets strikethrough `~~`     |
+| **Keyboard**     | Cursor on task list, press Alt+C       | Checkbox toggles `[ ]` ↔ `[x]`   |
+| **Lists**        | Press Tab in list item                 | Item indents correctly           |
+| **Lists**        | Press Shift+Tab in nested item         | Item un-indents                  |
+| **Lists**        | Renumber ordered list items            | Auto-renumbering fixes sequence  |
+| **Tables**       | Create unaligned table, save           | Table auto-aligns columns        |
+| **Tables**       | Add/remove table column                | Formatting adjusts automatically |
+| **Math**         | Add `$x^2$` inline                     | Math renders in preview          |
+| **Math**         | Add `$$` block                         | Math block renders in preview    |
+| **Export**       | Run "Print to HTML"                    | HTML file created with styling   |
+| **Completion**   | Type `![](`                            | File path suggestions appear     |
+| **No Extension** | Open doc without extension             | Manual TOC links work            |
+| **No Extension** | View table without extension           | Table displays correctly         |
 
 ---
 
@@ -754,34 +766,34 @@ See [Setup Guide](./docs/SETUP/GUIDE.md) for details.
 
 ### Configuration Files
 
-| File | Change Type | Description |
-|------|-------------|-------------|
-| `/.vscode/extensions.json` | **Create** | Recommend Markdown All in One extension |
-| `/.vscode/settings.json` | **Create** | Configure extension settings |
+| File                       | Change Type | Description                             |
+| -------------------------- | ----------- | --------------------------------------- |
+| `/.vscode/extensions.json` | **Create**  | Recommend Markdown All in One extension |
+| `/.vscode/settings.json`   | **Create**  | Configure extension settings            |
 
 ### Documentation Files
 
-| File | Change Type | Description |
-|------|-------------|-------------|
-| `/CLAUDE.md` | **Update** | Add Markdown All in One integration section |
-| `/README.md` | **Update** | Mention extension in documentation section |
-| `/docs/GUIDES/MARKDOWN-ALL-IN-ONE.md` | **Create** | Comprehensive extension feature guide |
-| `/docs/GUIDES/README.md` | **Create/Update** | Index of all guides |
+| File                                  | Change Type       | Description                                 |
+| ------------------------------------- | ----------------- | ------------------------------------------- |
+| `/CLAUDE.md`                          | **Update**        | Add Markdown All in One integration section |
+| `/README.md`                          | **Update**        | Mention extension in documentation section  |
+| `/docs/GUIDES/MARKDOWN-ALL-IN-ONE.md` | **Create**        | Comprehensive extension feature guide       |
+| `/docs/GUIDES/README.md`              | **Create/Update** | Index of all guides                         |
 
 ### Template Files
 
-| File | Change Type | Description |
-|------|-------------|-------------|
-| `/examples/setup/SECTION-README-TEMPLATE.md` | **Update** | Add TOC, use GFM syntax |
-| `/examples/setup/README-TEMPLATE.md` | **Update** | Add TOC, use GFM syntax |
-| `/examples/setup/SYNTEK-GUIDE-TEMPLATE.md` | **Review** | Ensure GFM compatibility |
+| File                                         | Change Type | Description              |
+| -------------------------------------------- | ----------- | ------------------------ |
+| `/examples/setup/SECTION-README-TEMPLATE.md` | **Update**  | Add TOC, use GFM syntax  |
+| `/examples/setup/README-TEMPLATE.md`         | **Update**  | Add TOC, use GFM syntax  |
+| `/examples/setup/SYNTEK-GUIDE-TEMPLATE.md`   | **Review**  | Ensure GFM compatibility |
 
 ### Agent Skill Files
 
-| File | Change Type | Description |
-|------|-------------|-------------|
-| `/skills/global-workflow/SKILL.md` | **Update** | Add markdown generation guidelines |
-| Stack-specific skills | **Review** | Ensure markdown examples use GFM |
+| File                               | Change Type | Description                        |
+| ---------------------------------- | ----------- | ---------------------------------- |
+| `/skills/global-workflow/SKILL.md` | **Update**  | Add markdown generation guidelines |
+| Stack-specific skills              | **Review**  | Ensure markdown examples use GFM   |
 
 ---
 
@@ -889,10 +901,10 @@ When agents generate markdown files, follow these guidelines:
 
 **Agent-Generated Table:**
 ```markdown
-| Column 1      | Column 2      | Column 3      |
-|---------------|---------------|---------------|
-| Value 1       | Value 2       | Value 3       |
-| Longer value  | Short         | Medium length |
+| Column 1     | Column 2 | Column 3      |
+| ------------ | -------- | ------------- |
+| Value 1      | Value 2  | Value 3       |
+| Longer value | Short    | Medium length |
 ```
 
 **Extension Behaviour:** Auto-aligns columns on save
@@ -987,18 +999,18 @@ $$
 
 ## Risks and Mitigations
 
-| Risk | Likelihood | Impact | Mitigation |
-|------|------------|--------|------------|
-| Extension changes behaviour in updates | Low | Medium | Use stable settings, test with extension updates |
-| Users don't install extension | High | Low | Graceful degradation: manual TOC and standard markdown work |
-| Extension conflicts with other extensions | Low | Medium | Test with common markdown extensions, document compatibility |
-| TOC format incompatibility | Low | Low | Use standard markdown lists, extension detects automatically |
-| Users confused by auto-updating TOC | Low | Low | Document behaviour clearly in user guide |
-| Math rendering not available | Medium | Low | Document that math requires extension or GitHub Pages setup |
-| Export feature not used | High | None | Optional feature, no impact if unused |
-| Settings override user preferences | Low | Medium | Use workspace settings (user can override in user settings) |
-| Extension not available on all platforms | Very Low | High | Extension supports Windows, macOS, Linux |
-| GitHub doesn't render advanced features | Medium | Low | Ensure GFM compatibility, document limitations |
+| Risk                                      | Likelihood | Impact | Mitigation                                                   |
+| ----------------------------------------- | ---------- | ------ | ------------------------------------------------------------ |
+| Extension changes behaviour in updates    | Low        | Medium | Use stable settings, test with extension updates             |
+| Users don't install extension             | High       | Low    | Graceful degradation: manual TOC and standard markdown work  |
+| Extension conflicts with other extensions | Low        | Medium | Test with common markdown extensions, document compatibility |
+| TOC format incompatibility                | Low        | Low    | Use standard markdown lists, extension detects automatically |
+| Users confused by auto-updating TOC       | Low        | Low    | Document behaviour clearly in user guide                     |
+| Math rendering not available              | Medium     | Low    | Document that math requires extension or GitHub Pages setup  |
+| Export feature not used                   | High       | None   | Optional feature, no impact if unused                        |
+| Settings override user preferences        | Low        | Medium | Use workspace settings (user can override in user settings)  |
+| Extension not available on all platforms  | Very Low   | High   | Extension supports Windows, macOS, Linux                     |
+| GitHub doesn't render advanced features   | Medium     | Low    | Ensure GFM compatibility, document limitations               |
 
 **Critical Mitigations:**
 

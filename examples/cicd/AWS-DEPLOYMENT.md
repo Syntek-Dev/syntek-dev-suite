@@ -1,5 +1,13 @@
 # AWS Deployment Configuration
 
+**Last Updated**: 28/12/2025
+**Version**: 1.3.0
+**Maintained By**: Development Team
+**Language**: British English (en_GB)
+**Timezone**: Europe/London
+
+---
+
 ## Overview
 
 Comprehensive AWS deployment configurations for GitHub Actions across all supported stacks. Includes ECS (containerised), S3/CloudFront (static), and Lambda (serverless) deployment patterns optimised for production use.

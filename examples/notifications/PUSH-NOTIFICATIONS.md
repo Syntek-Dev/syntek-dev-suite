@@ -6,36 +6,35 @@ Comprehensive push notification implementation examples for all four major stack
 
 ## Metadata
 
-| Property | Value |
-|----------|-------|
-| **Example Version** | 2.0.0 |
-| **Last Updated** | 2025-12 |
-| **Laravel** | 12.x |
-| **PHP** | 8.4 |
-| **Django** | 6.x |
-| **Python** | 3.14 |
-| **Next.js** | 16.x |
-| **React Native** | 0.83.x |
-| **Expo** | 52.x |
-| **Stacks** | TALL, Django, React, Mobile |
+| Property            | Value                       |
+| ------------------- | --------------------------- |
+| **Example Version** | 2.0.0                       |
+| **Last Updated**    | 2025-12                     |
+| **Laravel**         | 12.x                        |
+| **PHP**             | 8.4                         |
+| **Django**          | 6.x                         |
+| **Python**          | 3.14                        |
+| **Next.js**         | 16.x                        |
+| **React Native**    | 0.83.x                      |
+| **Expo**            | 52.x                        |
+| **Stacks**          | TALL, Django, React, Mobile |
 
 ---
 
 ## Table of Contents
 
-- [Push Notifications](#push-notifications)
-  - [Overview](#overview)
-  - [Metadata](#metadata)
-  - [Table of Contents](#table-of-contents)
-  - [Directory Structure](#directory-structure)
-    - [Laravel Directory Structure](#laravel-directory-structure)
-    - [Django Directory Structure](#django-directory-structure)
-    - [Next.js Directory Structure](#nextjs-directory-structure)
-    - [React Native Directory Structure](#react-native-directory-structure)
-  - [Push Configuration - React Native](#push-configuration---react-native)
-    - [src/notifications/config/pushConfig.ts](#srcnotificationsconfigpushconfigts)
-  - [Notification Handler - React Native](#notification-handler---react-native)
-    - [src/notifications/handlers/notificationHandler.ts](#srcnotificationshandlersnotificationhandlerts)
+- [Overview](#overview)
+- [Metadata](#metadata)
+- [Table of Contents](#table-of-contents)
+- [Directory Structure](#directory-structure)
+  - [Laravel Directory Structure](#laravel-directory-structure)
+  - [Django Directory Structure](#django-directory-structure)
+  - [Next.js Directory Structure](#nextjs-directory-structure)
+  - [React Native Directory Structure](#react-native-directory-structure)
+- [Push Configuration - React Native](#push-configuration---react-native)
+  - [src/notifications/config/pushConfig.ts](#srcnotificationsconfigpushconfigts)
+- [Notification Handler - React Native](#notification-handler---react-native)
+  - [src/notifications/handlers/notificationHandler.ts](#srcnotificationshandlersnotificationhandlerts)
 
 
 ## Directory Structure

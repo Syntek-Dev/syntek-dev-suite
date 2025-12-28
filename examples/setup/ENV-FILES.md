@@ -6,11 +6,11 @@ Environment file templates for different deployment environments. Each project s
 
 ## Metadata
 
-| Property | Value |
-|----------|-------|
-| **Example Version** | 1.0.0 |
-| **Last Updated** | 2025-01 |
-| **Stacks** | All (TALL, Django, React, Mobile, Shared-Lib) |
+| Property            | Value                                         |
+| ------------------- | --------------------------------------------- |
+| **Example Version** | 1.0.0                                         |
+| **Last Updated**    | 2025-01                                       |
+| **Stacks**          | All (TALL, Django, React, Mobile, Shared-Lib) |
 
 **CRITICAL:** Never commit actual `.env.*` files. Only commit `.env.*.example` files.
 
@@ -18,28 +18,28 @@ Environment file templates for different deployment environments. Each project s
 
 ## Table of Contents
 
-- [Environment File Templates](#environment-file-templates)
-  - [Overview](#overview)
-  - [Metadata](#metadata)
-  - [Table of Contents](#table-of-contents)
-  - [Development Environment](#development-environment)
-    - [.env.dev.example](#envdevexample)
-  - [Test Environment](#test-environment)
-    - [.env.test.example](#envtestexample)
-  - [Staging Environment](#staging-environment)
-    - [.env.staging.example](#envstagingexample)
-  - [Production Environment](#production-environment)
-    - [.env.production.example](#envproductionexample)
-  - [Browser Environment Variables](#browser-environment-variables)
-    - [Browser Binary Paths](#browser-binary-paths)
-    - [Framework-Specific Variables](#framework-specific-variables)
-      - [Laravel Dusk](#laravel-dusk)
-      - [Playwright](#playwright)
-      - [Cypress](#cypress)
-      - [Puppeteer](#puppeteer)
-      - [Selenium (Python)](#selenium-python)
-    - [CI/CD Environment Variables](#cicd-environment-variables)
-    - [Example GitHub Actions Configuration](#example-github-actions-configuration)
+- [Overview](#overview)
+- [Metadata](#metadata)
+- [Table of Contents](#table-of-contents)
+- [Development Environment](#development-environment)
+  - [.env.dev.example](#envdevexample)
+- [Test Environment](#test-environment)
+  - [.env.test.example](#envtestexample)
+- [Staging Environment](#staging-environment)
+  - [.env.staging.example](#envstagingexample)
+- [Production Environment](#production-environment)
+  - [.env.production.example](#envproductionexample)
+- [Browser Environment Variables](#browser-environment-variables)
+  - [Chrome Detection](#chrome-detection)
+  - [Browser Binary Paths](#browser-binary-paths)
+  - [Framework-Specific Variables](#framework-specific-variables)
+    - [Laravel Dusk](#laravel-dusk)
+    - [Playwright](#playwright)
+    - [Cypress](#cypress)
+    - [Puppeteer](#puppeteer)
+    - [Selenium (Python)](#selenium-python)
+  - [CI/CD Environment Variables](#cicd-environment-variables)
+  - [Example GitHub Actions Configuration](#example-github-actions-configuration)
 
 
 ---
@@ -255,15 +255,15 @@ Use the `chrome-tool.py` plugin to auto-detect Chrome on any platform:
 
 ### Browser Binary Paths
 
-| Variable | Purpose | Auto-Detection |
-|----------|---------|----------------|
-| `CHROME_PATH` | **Primary** Chrome binary path | Auto-detected by `chrome-tool.py` |
-| `BROWSER_BINARY` | General browser binary | `${CHROME_PATH}` |
-| `CHROME_BINARY` | Chrome binary for Selenium | `${CHROME_PATH}` |
-| `DUSK_CHROME_BINARY` | Laravel Dusk Chrome binary | `${CHROME_PATH}` |
-| `PUPPETEER_EXECUTABLE_PATH` | Puppeteer Chrome binary | `${CHROME_PATH}` |
-| `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH` | Playwright Chrome binary | `${CHROME_PATH}` |
-| `CHROME_HEADLESS` | Enable headless mode | `true` (CI) / `false` (local) |
+| Variable                              | Purpose                        | Auto-Detection                    |
+| ------------------------------------- | ------------------------------ | --------------------------------- |
+| `CHROME_PATH`                         | **Primary** Chrome binary path | Auto-detected by `chrome-tool.py` |
+| `BROWSER_BINARY`                      | General browser binary         | `${CHROME_PATH}`                  |
+| `CHROME_BINARY`                       | Chrome binary for Selenium     | `${CHROME_PATH}`                  |
+| `DUSK_CHROME_BINARY`                  | Laravel Dusk Chrome binary     | `${CHROME_PATH}`                  |
+| `PUPPETEER_EXECUTABLE_PATH`           | Puppeteer Chrome binary        | `${CHROME_PATH}`                  |
+| `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH` | Playwright Chrome binary       | `${CHROME_PATH}`                  |
+| `CHROME_HEADLESS`                     | Enable headless mode           | `true` (CI) / `false` (local)     |
 
 ### Framework-Specific Variables
 

@@ -6,11 +6,11 @@ Markdown templates for Privacy Policy and Terms & Conditions. These MUST be stor
 
 ## Metadata
 
-| Property | Value |
-|----------|-------|
-| **Example Version** | 2.0.0 |
-| **Last Updated** | 2025-12 |
-| **Stacks** | TALL (Laravel 12.x), Django 6.x, Next.js 16.x, React Native 0.83.x |
+| Property            | Value                                                              |
+| ------------------- | ------------------------------------------------------------------ |
+| **Example Version** | 2.0.0                                                              |
+| **Last Updated**    | 2025-12                                                            |
+| **Stacks**          | TALL (Laravel 12.x), Django 6.x, Next.js 16.x, React Native 0.83.x |
 
 **CRITICAL:** These templates require legal review before use in production.
 
@@ -18,16 +18,15 @@ Markdown templates for Privacy Policy and Terms & Conditions. These MUST be stor
 
 ## Table of Contents
 
-- [Legal Templates (Privacy Policy \& Terms)](#legal-templates-privacy-policy--terms)
-  - [Overview](#overview)
-  - [Metadata](#metadata)
-  - [Table of Contents](#table-of-contents)
-  - [File Structure](#file-structure)
-  - [Privacy Policy Template](#privacy-policy-template)
-    - [content/legal/privacy-policy.md](#contentlegalprivacy-policymd)
-  - [Terms and Conditions Template](#terms-and-conditions-template)
-    - [content/legal/terms-and-conditions.md](#contentlegalterms-and-conditionsmd)
-  - [Client Review Workflow](#client-review-workflow)
+- [Overview](#overview)
+- [Metadata](#metadata)
+- [Table of Contents](#table-of-contents)
+- [File Structure](#file-structure)
+- [Privacy Policy Template](#privacy-policy-template)
+  - [content/legal/privacy-policy.md](#contentlegalprivacy-policymd)
+- [Terms and Conditions Template](#terms-and-conditions-template)
+  - [content/legal/terms-and-conditions.md](#contentlegalterms-and-conditionsmd)
+- [Client Review Workflow](#client-review-workflow)
 
 
 ## File Structure
@@ -87,12 +86,12 @@ This privacy policy explains how we collect, use, and protect your information.
 
 ## 4. How We Use Your Data
 
-| Purpose | Legal Basis | Retention |
-|---------|-------------|-----------|
-| Account management | Contract | Account lifetime + 30 days |
-| Security & fraud prevention | Legitimate interest | 90 days |
-| Marketing (with consent) | Consent | Until withdrawn |
-| Analytics (anonymised) | Legitimate interest | 2 years |
+| Purpose                     | Legal Basis         | Retention                  |
+| --------------------------- | ------------------- | -------------------------- |
+| Account management          | Contract            | Account lifetime + 30 days |
+| Security & fraud prevention | Legitimate interest | 90 days                    |
+| Marketing (with consent)    | Consent             | Until withdrawn            |
+| Analytics (anonymised)      | Legitimate interest | 2 years                    |
 
 ## 5. Data Sharing
 

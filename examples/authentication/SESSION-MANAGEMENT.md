@@ -1,44 +1,51 @@
 # Session Management
 
+**Last Updated**: 28/12/2025
+**Version**: 1.3.0
+**Maintained By**: Development Team
+**Language**: British English (en_GB)
+**Timezone**: Europe/London
+
+---
+
 ## Overview
 
 Secure session management implementations across all four technology stacks, including session configuration, multi-device logout, rate limiting, and password reset flows. Each implementation follows security best practices for the respective platform.
 
 ## Metadata
 
-| Property | Value |
-|----------|-------|
-| **Example Version** | 2.0.0 |
-| **Last Updated** | 2025-12 |
-| **Stacks** | TALL (Laravel 12.x), Django 6.x, Next.js 16.x, React Native 0.83.x |
-| **Language Standards** | British English |
+| Property               | Value                                                              |
+| ---------------------- | ------------------------------------------------------------------ |
+| **Example Version**    | 2.0.0                                                              |
+| **Last Updated**       | 2025-12                                                            |
+| **Stacks**             | TALL (Laravel 12.x), Django 6.x, Next.js 16.x, React Native 0.83.x |
+| **Language Standards** | British English                                                    |
 
 ---
 
 ## Table of Contents
 
-- [Session Management](#session-management)
-  - [Overview](#overview)
-  - [Metadata](#metadata)
-  - [Table of Contents](#table-of-contents)
-  - [TALL Stack - Laravel 12.x](#tall-stack---laravel-12x)
-    - [Secure Session Configuration - Laravel](#secure-session-configuration---laravel)
-    - [config/session.php](#configsessionphp)
-  - [Session Controller - Laravel](#session-controller---laravel)
-    - [app/Http/Controllers/SessionController.php](#apphttpcontrollerssessioncontrollerphp)
-  - [Rate Limiting Middleware - Laravel](#rate-limiting-middleware---laravel)
-    - [app/Http/Middleware/ThrottleLogins.php](#apphttpmiddlewarethrottleloginsphp)
-  - [Password Reset Controller - Laravel](#password-reset-controller---laravel)
-    - [app/Http/Controllers/PasswordResetController.php](#apphttpcontrollerspasswordresetcontrollerphp)
-  - [Django/Wagtail Stack - Django 6.x](#djangowagtail-stack---django-6x)
-    - [Session Configuration - Django](#session-configuration---django)
-      - [config/settings/base.py](#configsettingsbasepy)
-    - [Session Management Views - Django](#session-management-views---django)
-      - [apps/accounts/views/session\_views.py](#appsaccountsviewssession_viewspy)
-    - [Rate Limiting Middleware - Django](#rate-limiting-middleware---django)
-      - [apps/accounts/middleware/rate\_limit.py](#appsaccountsmiddlewarerate_limitpy)
-    - [Password Reset Views - Django](#password-reset-views---django)
-      - [apps/accounts/views/password\_reset\_views.py](#appsaccountsviewspassword_reset_viewspy)
+- [Overview](#overview)
+- [Metadata](#metadata)
+- [Table of Contents](#table-of-contents)
+- [TALL Stack - Laravel 12.x](#tall-stack---laravel-12x)
+  - [Secure Session Configuration - Laravel](#secure-session-configuration---laravel)
+  - [config/session.php](#configsessionphp)
+- [Session Controller - Laravel](#session-controller---laravel)
+  - [app/Http/Controllers/SessionController.php](#apphttpcontrollerssessioncontrollerphp)
+- [Rate Limiting Middleware - Laravel](#rate-limiting-middleware---laravel)
+  - [app/Http/Middleware/ThrottleLogins.php](#apphttpmiddlewarethrottleloginsphp)
+- [Password Reset Controller - Laravel](#password-reset-controller---laravel)
+  - [app/Http/Controllers/PasswordResetController.php](#apphttpcontrollerspasswordresetcontrollerphp)
+- [Django/Wagtail Stack - Django 6.x](#djangowagtail-stack---django-6x)
+  - [Session Configuration - Django](#session-configuration---django)
+    - [config/settings/base.py](#configsettingsbasepy)
+  - [Session Management Views - Django](#session-management-views---django)
+    - [apps/accounts/views/session\_views.py](#appsaccountsviewssession_viewspy)
+  - [Rate Limiting Middleware - Django](#rate-limiting-middleware---django)
+    - [apps/accounts/middleware/rate\_limit.py](#appsaccountsmiddlewarerate_limitpy)
+  - [Password Reset Views - Django](#password-reset-views---django)
+    - [apps/accounts/views/password\_reset\_views.py](#appsaccountsviewspassword_reset_viewspy)
 
 
 ## TALL Stack - Laravel 12.x

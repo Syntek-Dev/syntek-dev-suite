@@ -1,12 +1,20 @@
 # Templates
 
+**Last Updated**: 28/12/2025
+**Version**: 1.3.0
+**Maintained By**: Development Team
+**Language**: British English (en_GB)
+**Timezone**: Europe/London
+
+---
+
 ## Overview
 
 This folder contains project templates that define the `CLAUDE.md` configuration for different technology stacks. Templates are used by the `/plugin:init` command or can be copied manually to initialise a new project.
 
 Each template is a complete `CLAUDE.md` file with placeholders for project-specific information.
 
-**Version:** 1.2.0
+**Version:** 1.3.0
 
 ---
 

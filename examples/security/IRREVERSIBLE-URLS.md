@@ -6,56 +6,55 @@ Irreversible URL patterns prevent enumeration attacks on resources. Sequential I
 
 ## Metadata
 
-| Property | Value |
-|----------|-------|
-| **Example Version** | 2.0.0 |
-| **Last Updated** | 2025-12 |
-| **Laravel** | 12.x |
-| **PHP** | 8.4 |
-| **Django** | 6.x |
-| **Python** | 3.14 |
-| **Next.js** | 16.x |
-| **Node.js** | 24.x |
-| **TypeScript** | 5.9 |
-| **React Native** | 0.83.x |
-| **Stacks** | TALL, Django/Wagtail, React/Next.js, React Native |
+| Property            | Value                                             |
+| ------------------- | ------------------------------------------------- |
+| **Example Version** | 2.0.0                                             |
+| **Last Updated**    | 2025-12                                           |
+| **Laravel**         | 12.x                                              |
+| **PHP**             | 8.4                                               |
+| **Django**          | 6.x                                               |
+| **Python**          | 3.14                                              |
+| **Next.js**         | 16.x                                              |
+| **Node.js**         | 24.x                                              |
+| **TypeScript**      | 5.9                                               |
+| **React Native**    | 0.83.x                                            |
+| **Stacks**          | TALL, Django/Wagtail, React/Next.js, React Native |
 
 ---
 
 ## Table of Contents
 
-- [Irreversible URLs (UUIDs, Hashids, Single-Use Tokens)](#irreversible-urls-uuids-hashids-single-use-tokens)
-  - [Overview](#overview)
-  - [Metadata](#metadata)
-  - [Table of Contents](#table-of-contents)
-  - [URL Obfuscation Strategies](#url-obfuscation-strategies)
-  - [TALL Stack (Laravel 12.x / PHP 8.4)](#tall-stack-laravel-12x--php-84)
-    - [UUID Trait - Laravel](#uuid-trait---laravel)
-    - [app/Traits/HasPublicUuid.php](#apptraitshaspublicuuidphp)
-    - [Usage in Model](#usage-in-model)
-  - [Hashids Service - Laravel](#hashids-service---laravel)
-    - [app/Services/HashidService.php](#appserviceshashidservicephp)
-    - [app/Http/Middleware/DecodeHashid.php](#apphttpmiddlewaredecodehashidphp)
-  - [Single-Use Token Service - Laravel](#single-use-token-service---laravel)
-    - [app/Services/SingleUseTokenService.php](#appservicessingleusetokenservicephp)
-  - [Route Examples - Laravel](#route-examples---laravel)
-    - [routes/web.php](#routeswebphp)
-  - [Django/Wagtail Stack (Django 6.x / Python 3.14)](#djangowagtail-stack-django-6x--python-314)
-    - [UUID Mixin - Django](#uuid-mixin---django)
-    - [mixins/uuid\_mixin.py](#mixinsuuid_mixinpy)
-  - [Hashids Service - NestJS](#hashids-service---nestjs)
-    - [src/common/services/hashid.service.ts](#srccommonserviceshashidservicets)
-    - [src/common/pipes/hashid.pipe.ts](#srccommonpipeshashidpipets)
+- [Overview](#overview)
+- [Metadata](#metadata)
+- [Table of Contents](#table-of-contents)
+- [URL Obfuscation Strategies](#url-obfuscation-strategies)
+- [TALL Stack (Laravel 12.x / PHP 8.4)](#tall-stack-laravel-12x--php-84)
+  - [UUID Trait - Laravel](#uuid-trait---laravel)
+  - [app/Traits/HasPublicUuid.php](#apptraitshaspublicuuidphp)
+  - [Usage in Model](#usage-in-model)
+- [Hashids Service - Laravel](#hashids-service---laravel)
+  - [app/Services/HashidService.php](#appserviceshashidservicephp)
+  - [app/Http/Middleware/DecodeHashid.php](#apphttpmiddlewaredecodehashidphp)
+- [Single-Use Token Service - Laravel](#single-use-token-service---laravel)
+  - [app/Services/SingleUseTokenService.php](#appservicessingleusetokenservicephp)
+- [Route Examples - Laravel](#route-examples---laravel)
+  - [routes/web.php](#routeswebphp)
+- [Django/Wagtail Stack (Django 6.x / Python 3.14)](#djangowagtail-stack-django-6x--python-314)
+  - [UUID Mixin - Django](#uuid-mixin---django)
+  - [mixins/uuid\_mixin.py](#mixinsuuid_mixinpy)
+- [Hashids Service - NestJS](#hashids-service---nestjs)
+  - [src/common/services/hashid.service.ts](#srccommonserviceshashidservicets)
+  - [src/common/pipes/hashid.pipe.ts](#srccommonpipeshashidpipets)
 
 ## URL Obfuscation Strategies
 
-| Strategy | Use Case | Example |
-|----------|----------|---------|
-| **UUID v4** | Public-facing resource IDs | `/users/550e8400-e29b-41d4-a716-446655440000` |
-| **Hashids** | Short, obfuscated IDs | `/users/jR` (maps to ID 1) |
-| **Signed URLs** | Time-limited access | `/download/file?signature=abc123&expires=1234567890` |
-| **HMAC tokens** | Single-use access | `/verify/a1b2c3d4e5f6...` |
-| **Random slugs** | Human-readable but unpredictable | `/invoice/XK7m9pLq2nR4` |
+| Strategy         | Use Case                         | Example                                              |
+| ---------------- | -------------------------------- | ---------------------------------------------------- |
+| **UUID v4**      | Public-facing resource IDs       | `/users/550e8400-e29b-41d4-a716-446655440000`        |
+| **Hashids**      | Short, obfuscated IDs            | `/users/jR` (maps to ID 1)                           |
+| **Signed URLs**  | Time-limited access              | `/download/file?signature=abc123&expires=1234567890` |
+| **HMAC tokens**  | Single-use access                | `/verify/a1b2c3d4e5f6...`                            |
+| **Random slugs** | Human-readable but unpredictable | `/invoice/XK7m9pLq2nR4`                              |
 
 ---
 

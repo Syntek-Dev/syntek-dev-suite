@@ -6,33 +6,32 @@ Digital Ocean deployment configurations for GitHub Actions. Includes App Platfor
 
 ## Metadata
 
-| Property | Value |
-|----------|-------|
-| **Example Version** | 1.0.0 |
-| **Last Updated** | 2025-01 |
-| **doctl** | Latest |
-| **Stacks** | All (TALL, Django, React, Mobile, Shared-Lib) |
+| Property            | Value                                         |
+| ------------------- | --------------------------------------------- |
+| **Example Version** | 1.0.0                                         |
+| **Last Updated**    | 2025-01                                       |
+| **doctl**           | Latest                                        |
+| **Stacks**          | All (TALL, Django, React, Mobile, Shared-Lib) |
 
 ---
 
 ## Table of Contents
 
-- [Digital Ocean Deployment Configuration](#digital-ocean-deployment-configuration)
-  - [Overview](#overview)
-  - [Metadata](#metadata)
-  - [Table of Contents](#table-of-contents)
-  - [App Platform Configuration](#app-platform-configuration)
-    - [.do/app.yaml](#doappyaml)
-    - [.github/workflows/deploy-do-app.yml](#githubworkflowsdeploy-do-appyml)
-  - [Droplet Deployment (SSH)](#droplet-deployment-ssh)
-    - [.github/workflows/deploy-droplet.yml](#githubworkflowsdeploy-dropletyml)
-    - [.github/workflows/deploy-droplet-docker.yml](#githubworkflowsdeploy-droplet-dockeryml)
-  - [Kubernetes (DOKS) Deployment](#kubernetes-doks-deployment)
-    - [.github/workflows/deploy-doks.yml](#githubworkflowsdeploy-doksyml)
-    - [k8s/deployment.yaml](#k8sdeploymentyaml)
-  - [Required Secrets](#required-secrets)
-    - [GitHub Repository Secrets](#github-repository-secrets)
-    - [GitHub Environment Variables](#github-environment-variables)
+- [Overview](#overview)
+- [Metadata](#metadata)
+- [Table of Contents](#table-of-contents)
+- [App Platform Configuration](#app-platform-configuration)
+  - [.do/app.yaml](#doappyaml)
+  - [.github/workflows/deploy-do-app.yml](#githubworkflowsdeploy-do-appyml)
+- [Droplet Deployment (SSH)](#droplet-deployment-ssh)
+  - [.github/workflows/deploy-droplet.yml](#githubworkflowsdeploy-dropletyml)
+  - [.github/workflows/deploy-droplet-docker.yml](#githubworkflowsdeploy-droplet-dockeryml)
+- [Kubernetes (DOKS) Deployment](#kubernetes-doks-deployment)
+  - [.github/workflows/deploy-doks.yml](#githubworkflowsdeploy-doksyml)
+  - [k8s/deployment.yaml](#k8sdeploymentyaml)
+- [Required Secrets](#required-secrets)
+  - [GitHub Repository Secrets](#github-repository-secrets)
+  - [GitHub Environment Variables](#github-environment-variables)
 
 
 
@@ -421,17 +420,17 @@ spec:
 
 ### GitHub Repository Secrets
 
-| Secret Name | Description | How to Get |
-|-------------|-------------|------------|
-| `DIGITALOCEAN_ACCESS_TOKEN` | DO API token | DO Console > API > Tokens |
-| `DROPLET_SSH_KEY` | SSH private key | Generate with `ssh-keygen` |
-| `DROPLET_HOST` | Droplet IP or hostname | DO Console > Droplets |
-| `DROPLET_USER` | SSH username | Usually `root` or custom user |
+| Secret Name                 | Description            | How to Get                    |
+| --------------------------- | ---------------------- | ----------------------------- |
+| `DIGITALOCEAN_ACCESS_TOKEN` | DO API token           | DO Console > API > Tokens     |
+| `DROPLET_SSH_KEY`           | SSH private key        | Generate with `ssh-keygen`    |
+| `DROPLET_HOST`              | Droplet IP or hostname | DO Console > Droplets         |
+| `DROPLET_USER`              | SSH username           | Usually `root` or custom user |
 
 ### GitHub Environment Variables
 
-| Variable Name | Description | Example |
-|---------------|-------------|---------|
-| `APP_ID` | App Platform app ID | `12345678-1234-1234-1234-123456789012` |
-| `CLUSTER_NAME` | DOKS cluster name | `my-cluster-production` |
-| `REGISTRY_NAME` | Container registry name | `my-registry` |
+| Variable Name   | Description             | Example                                |
+| --------------- | ----------------------- | -------------------------------------- |
+| `APP_ID`        | App Platform app ID     | `12345678-1234-1234-1234-123456789012` |
+| `CLUSTER_NAME`  | DOKS cluster name       | `my-cluster-production`                |
+| `REGISTRY_NAME` | Container registry name | `my-registry`                          |

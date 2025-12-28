@@ -12,32 +12,31 @@ This document provides comprehensive examples for:
 
 ## Metadata
 
-| Property | Value |
-|----------|-------|
-| **Example Version** | 2.0.0 |
-| **Last Updated** | 2025-12 |
-| **GitHub Actions** | v4 actions |
-| **Stacks** | TALL (Laravel 12.x), Django/Wagtail (6.x), Next.js (16.x), React Native (0.83.x) |
+| Property            | Value                                                                            |
+| ------------------- | -------------------------------------------------------------------------------- |
+| **Example Version** | 2.0.0                                                                            |
+| **Last Updated**    | 2025-12                                                                          |
+| **GitHub Actions**  | v4 actions                                                                       |
+| **Stacks**          | TALL (Laravel 12.x), Django/Wagtail (6.x), Next.js (16.x), React Native (0.83.x) |
 
 ---
 
 ## Table of Contents
 
-- [GitHub Actions Workflows](#github-actions-workflows)
-  - [Overview](#overview)
-  - [Metadata](#metadata)
-  - [Table of Contents](#table-of-contents)
-  - [Standard CI Pipeline](#standard-ci-pipeline)
-    - [.github/workflows/ci.yml](#githubworkflowsciyml)
-  - [Staging Deployment](#staging-deployment)
-    - [.github/workflows/deploy-staging.yml](#githubworkflowsdeploy-stagingyml)
-  - [Production Deployment](#production-deployment)
-    - [.github/workflows/deploy-production.yml](#githubworkflowsdeploy-productionyml)
-  - [DDEV CI Workflow](#ddev-ci-workflow)
-    - [.github/workflows/ci-ddev.yml](#githubworkflowsci-ddevyml)
-  - [Required Secrets](#required-secrets)
-    - [GitHub Repository Secrets](#github-repository-secrets)
-    - [GitHub Environment Variables](#github-environment-variables)
+- [Overview](#overview)
+- [Metadata](#metadata)
+- [Table of Contents](#table-of-contents)
+- [Standard CI Pipeline](#standard-ci-pipeline)
+  - [.github/workflows/ci.yml](#githubworkflowsciyml)
+- [Staging Deployment](#staging-deployment)
+  - [.github/workflows/deploy-staging.yml](#githubworkflowsdeploy-stagingyml)
+- [Production Deployment](#production-deployment)
+  - [.github/workflows/deploy-production.yml](#githubworkflowsdeploy-productionyml)
+- [DDEV CI Workflow](#ddev-ci-workflow)
+  - [.github/workflows/ci-ddev.yml](#githubworkflowsci-ddevyml)
+- [Required Secrets](#required-secrets)
+  - [GitHub Repository Secrets](#github-repository-secrets)
+  - [GitHub Environment Variables](#github-environment-variables)
 
 
 ## Standard CI Pipeline
@@ -321,23 +320,23 @@ jobs:
 
 ### GitHub Repository Secrets
 
-| Secret Name | Description | Required For |
-|-------------|-------------|--------------|
-| `CODECOV_TOKEN` | Codecov upload token | Coverage reporting |
-| `AWS_ACCESS_KEY_ID` | AWS access key | AWS deployments |
-| `AWS_SECRET_ACCESS_KEY` | AWS secret key | AWS deployments |
-| `DIGITALOCEAN_ACCESS_TOKEN` | DO API token | DO deployments |
-| `DROPLET_SSH_KEY` | SSH private key | Server deployments |
-| `DROPLET_HOST` | Server hostname | Server deployments |
-| `DROPLET_USER` | SSH username | Server deployments |
+| Secret Name                 | Description          | Required For       |
+| --------------------------- | -------------------- | ------------------ |
+| `CODECOV_TOKEN`             | Codecov upload token | Coverage reporting |
+| `AWS_ACCESS_KEY_ID`         | AWS access key       | AWS deployments    |
+| `AWS_SECRET_ACCESS_KEY`     | AWS secret key       | AWS deployments    |
+| `DIGITALOCEAN_ACCESS_TOKEN` | DO API token         | DO deployments     |
+| `DROPLET_SSH_KEY`           | SSH private key      | Server deployments |
+| `DROPLET_HOST`              | Server hostname      | Server deployments |
+| `DROPLET_USER`              | SSH username         | Server deployments |
 
 ### GitHub Environment Variables
 
-| Variable Name | Description | Environment |
-|---------------|-------------|-------------|
-| `API_URL` | Backend API URL | staging, production |
-| `AWS_REGION` | AWS region | staging, production |
-| `S3_BUCKET` | S3 bucket name | staging, production |
+| Variable Name    | Description         | Environment         |
+| ---------------- | ------------------- | ------------------- |
+| `API_URL`        | Backend API URL     | staging, production |
+| `AWS_REGION`     | AWS region          | staging, production |
+| `S3_BUCKET`      | S3 bucket name      | staging, production |
 | `ECR_REPOSITORY` | ECR repository name | staging, production |
-| `ECS_SERVICE` | ECS service name | staging, production |
-| `ECS_CLUSTER` | ECS cluster name | staging, production |
+| `ECS_SERVICE`    | ECS service name    | staging, production |
+| `ECS_CLUSTER`    | ECS cluster name    | staging, production |

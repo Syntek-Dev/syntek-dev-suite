@@ -1,51 +1,54 @@
 # Stack: React Web (Docker)
 
-This skill defines the React web stack configuration. Apply when working on React web projects.
+**Last Updated**: 28/12/2025
+**Version**: 1.3.0
+**Maintained By**: Development Team
+**Language**: British English (en_GB)
+**Timezone**: Europe/London
 
 ---
 
 ## Table of Contents
 
-- [Stack: React Web (Docker)](#stack-react-web-docker)
-  - [Table of Contents](#table-of-contents)
-  - [Architecture](#architecture)
-  - [Commands](#commands)
-  - [Coding Standards](#coding-standards)
-    - [Components](#components)
-    - [State Management](#state-management)
-    - [Styling (Tailwind)](#styling-tailwind)
-    - [Hooks](#hooks)
-  - [File Structure](#file-structure)
-  - [Testing (Vitest + RTL)](#testing-vitest--rtl)
+- [Table of Contents](#table-of-contents)
+- [Architecture](#architecture)
+- [Commands](#commands)
+- [Coding Standards](#coding-standards)
+  - [Components](#components)
+  - [State Management](#state-management)
+  - [Styling (Tailwind)](#styling-tailwind)
+  - [Hooks](#hooks)
+- [File Structure](#file-structure)
+- [Testing (Vitest + RTL)](#testing-vitest--rtl)
 
 ---
 
 ## Architecture
 
-| Layer | Technology |
-|-------|------------|
-| **Platform** | Raw Docker (Node environment) |
-| **Framework** | React 18+, TypeScript |
-| **Build** | Vite |
-| **Styling** | Tailwind CSS |
-| **Testing** | Vitest, React Testing Library |
+| Layer         | Technology                    |
+| ------------- | ----------------------------- |
+| **Platform**  | Raw Docker (Node environment) |
+| **Framework** | React 18+, TypeScript         |
+| **Build**     | Vite                          |
+| **Styling**   | Tailwind CSS                  |
+| **Testing**   | Vitest, React Testing Library |
 
 ---
 
 ## Commands
 
-| Task | Command |
-|------|---------|
-| Start environment | `docker compose up` |
-| Start (detached) | `docker compose up -d` |
-| Stop environment | `docker compose down` |
-| Install packages | `docker compose run --rm app npm install` |
-| Add package | `docker compose run --rm app npm install <package>` |
-| Run tests | `docker compose run --rm app npm test` |
-| Run tests (watch) | `docker compose run --rm app npm test -- --watch` |
-| Build | `docker compose run --rm app npm run build` |
-| Lint | `docker compose run --rm app npm run lint` |
-| Shell | `docker compose run --rm app /bin/sh` |
+| Task              | Command                                             |
+| ----------------- | --------------------------------------------------- |
+| Start environment | `docker compose up`                                 |
+| Start (detached)  | `docker compose up -d`                              |
+| Stop environment  | `docker compose down`                               |
+| Install packages  | `docker compose run --rm app npm install`           |
+| Add package       | `docker compose run --rm app npm install <package>` |
+| Run tests         | `docker compose run --rm app npm test`              |
+| Run tests (watch) | `docker compose run --rm app npm test -- --watch`   |
+| Build             | `docker compose run --rm app npm run build`         |
+| Lint              | `docker compose run --rm app npm run lint`          |
+| Shell             | `docker compose run --rm app /bin/sh`               |
 
 ---
 
@@ -76,11 +79,11 @@ export function UserCard({ user, onSelect, showBadge = true }: UserCardProps): J
 ```
 
 ### State Management
-| Size | Solution |
-|------|----------|
-| Component-local | `useState`, `useReducer` |
-| Shared (small app) | Context API |
-| Shared (medium app) | Zustand |
+| Size                | Solution                             |
+| ------------------- | ------------------------------------ |
+| Component-local     | `useState`, `useReducer`             |
+| Shared (small app)  | Context API                          |
+| Shared (medium app) | Zustand                              |
 | Complex (large app) | Redux Toolkit (only if truly needed) |
 
 ### Styling (Tailwind)

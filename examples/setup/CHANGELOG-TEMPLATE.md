@@ -6,23 +6,22 @@ Standard changelog template following the [Keep a Changelog](https://keepachange
 
 ## Metadata
 
-| Property | Value |
-|----------|-------|
-| **Example Version** | 1.0.0 |
-| **Last Updated** | 2025-01 |
-| **Stacks** | All (TALL, Django, React, Mobile, Shared-Lib) |
+| Property            | Value                                         |
+| ------------------- | --------------------------------------------- |
+| **Example Version** | 1.0.0                                         |
+| **Last Updated**    | 2025-01                                       |
+| **Stacks**          | All (TALL, Django, React, Mobile, Shared-Lib) |
 
 ---
 
 ## Table of Contents
 
-- [Changelog Template](#changelog-template)
-  - [Overview](#overview)
-  - [Metadata](#metadata)
-  - [Table of Contents](#table-of-contents)
-  - [Initial Changelog Template](#initial-changelog-template)
-  - [Changelog Update Rules](#changelog-update-rules)
-    - [Example Entry](#example-entry)
+- [Overview](#overview)
+- [Metadata](#metadata)
+- [Table of Contents](#table-of-contents)
+- [Initial Changelog Template](#initial-changelog-template)
+- [Changelog Update Rules](#changelog-update-rules)
+  - [Example Entry](#example-entry)
 
 ---
 

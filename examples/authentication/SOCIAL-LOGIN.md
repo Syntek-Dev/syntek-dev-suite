@@ -1,69 +1,76 @@
 # Social Login Authentication
 
+**Last Updated**: 28/12/2025
+**Version**: 1.3.0
+**Maintained By**: Development Team
+**Language**: British English (en_GB)
+**Timezone**: Europe/London
+
+---
+
 ## Overview
 
 Social login authentication implementations for five major providers: Google, Facebook, GitHub, Twitter/X, and Instagram. Each stack uses the recommended authentication library for secure OAuth2/OpenID Connect integration.
 
 ## Metadata
 
-| Property | Value |
-|----------|-------|
-| **Example Version** | 2.0.0 |
-| **Last Updated** | 2025-12 |
-| **TALL Stack** | Laravel 12.x / PHP 8.4 / Socialite |
-| **Django Stack** | Django 6.x / Python 3.14 / Allauth |
-| **React Stack** | Next.js 16.x / React 19.x / NextAuth v5 |
-| **Mobile Stack** | React Native 0.83.x / Expo AuthSession |
-| **Providers** | Google, Facebook, GitHub, Twitter/X, Instagram |
+| Property            | Value                                          |
+| ------------------- | ---------------------------------------------- |
+| **Example Version** | 2.0.0                                          |
+| **Last Updated**    | 2025-12                                        |
+| **TALL Stack**      | Laravel 12.x / PHP 8.4 / Socialite             |
+| **Django Stack**    | Django 6.x / Python 3.14 / Allauth             |
+| **React Stack**     | Next.js 16.x / React 19.x / NextAuth v5        |
+| **Mobile Stack**    | React Native 0.83.x / Expo AuthSession         |
+| **Providers**       | Google, Facebook, GitHub, Twitter/X, Instagram |
 
 ---
 
 ## Table of Contents
 
-- [Social Login Authentication](#social-login-authentication)
-  - [Overview](#overview)
-  - [Metadata](#metadata)
-  - [Table of Contents](#table-of-contents)
-  - [Supported Providers](#supported-providers)
-  - [TALL Stack - Laravel 12.x](#tall-stack---laravel-12x)
-    - [Laravel Socialite Configuration](#laravel-socialite-configuration)
-      - [config/services.php](#configservicesphp)
-      - [.env.example](#envexample)
-    - [Social Login Controller - Laravel](#social-login-controller---laravel)
-      - [app/Http/Controllers/SocialLoginController.php](#apphttpcontrollerssociallogincontrollerphp)
-      - [app/Models/SocialAccount.php](#appmodelssocialaccountphp)
-    - [Blade Components - Laravel](#blade-components---laravel)
-      - [resources/views/components/social-login-buttons.blade.php](#resourcesviewscomponentssocial-login-buttonsbladephp)
-  - [Django/Wagtail Stack - Django 6.x](#djangowagtail-stack---django-6x)
-    - [Django Allauth Configuration](#django-allauth-configuration)
-      - [config/settings/base.py (partial)](#configsettingsbasepy-partial)
-    - [Social Login Views - Django](#social-login-views---django)
-      - [apps/accounts/views/social\_views.py](#appsaccountsviewssocial_viewspy)
-    - [GraphQL Integration - Django](#graphql-integration---django)
-      - [apps/accounts/graphql/mutations/social\_mutations.py](#appsaccountsgraphqlmutationssocial_mutationspy)
-  - [React/Next.js Stack - Next.js 16.x](#reactnextjs-stack---nextjs-16x)
-    - [NextAuth Configuration](#nextauth-configuration)
-      - [lib/auth/auth.config.ts](#libauthauthconfigts)
-      - [auth.ts](#authts)
-    - [Social Login Buttons - Next.js](#social-login-buttons---nextjs)
-      - [components/SocialLoginButtons.tsx](#componentssocialloginbuttonstsx)
-  - [React Native Stack - React Native 0.83.x](#react-native-stack---react-native-083x)
-    - [Social Auth Configuration - React Native](#social-auth-configuration---react-native)
-      - [config/social-auth.config.ts](#configsocial-authconfigts)
-    - [Social Login Hooks - React Native](#social-login-hooks---react-native)
-      - [hooks/useSocialAuth.ts](#hooksusesocialauthts)
-    - [Social Login Screen - React Native](#social-login-screen---react-native)
-      - [screens/SocialLoginScreen.tsx](#screenssocialloginscreentsx)
+- [Overview](#overview)
+- [Metadata](#metadata)
+- [Table of Contents](#table-of-contents)
+- [Supported Providers](#supported-providers)
+- [TALL Stack - Laravel 12.x](#tall-stack---laravel-12x)
+  - [Laravel Socialite Configuration](#laravel-socialite-configuration)
+    - [config/services.php](#configservicesphp)
+    - [.env.example](#envexample)
+  - [Social Login Controller - Laravel](#social-login-controller---laravel)
+    - [app/Http/Controllers/SocialLoginController.php](#apphttpcontrollerssociallogincontrollerphp)
+    - [app/Models/SocialAccount.php](#appmodelssocialaccountphp)
+  - [Blade Components - Laravel](#blade-components---laravel)
+    - [resources/views/components/social-login-buttons.blade.php](#resourcesviewscomponentssocial-login-buttonsbladephp)
+- [Django/Wagtail Stack - Django 6.x](#djangowagtail-stack---django-6x)
+  - [Django Allauth Configuration](#django-allauth-configuration)
+    - [config/settings/base.py (partial)](#configsettingsbasepy-partial)
+  - [Social Login Views - Django](#social-login-views---django)
+    - [apps/accounts/views/social\_views.py](#appsaccountsviewssocial_viewspy)
+  - [GraphQL Integration - Django](#graphql-integration---django)
+    - [apps/accounts/graphql/mutations/social\_mutations.py](#appsaccountsgraphqlmutationssocial_mutationspy)
+- [React/Next.js Stack - Next.js 16.x](#reactnextjs-stack---nextjs-16x)
+  - [NextAuth Configuration](#nextauth-configuration)
+    - [lib/auth/auth.config.ts](#libauthauthconfigts)
+    - [auth.ts](#authts)
+  - [Social Login Buttons - Next.js](#social-login-buttons---nextjs)
+    - [components/SocialLoginButtons.tsx](#componentssocialloginbuttonstsx)
+- [React Native Stack - React Native 0.83.x](#react-native-stack---react-native-083x)
+  - [Social Auth Configuration - React Native](#social-auth-configuration---react-native)
+    - [config/social-auth.config.ts](#configsocial-authconfigts)
+  - [Social Login Hooks - React Native](#social-login-hooks---react-native)
+    - [hooks/useSocialAuth.ts](#hooksusesocialauthts)
+  - [Social Login Screen - React Native](#social-login-screen---react-native)
+    - [screens/SocialLoginScreen.tsx](#screenssocialloginscreentsx)
 
 ## Supported Providers
 
-| Provider | OAuth Version | Scopes Required |
-|----------|---------------|-----------------|
-| Google | OAuth 2.0 / OpenID Connect | `openid email profile` |
-| Facebook | OAuth 2.0 | `email public_profile` |
-| GitHub | OAuth 2.0 | `read:user user:email` |
-| Twitter/X | OAuth 2.0 | `users.read tweet.read offline.access` |
-| Instagram | OAuth 2.0 | `user_profile user_media` |
+| Provider  | OAuth Version              | Scopes Required                        |
+| --------- | -------------------------- | -------------------------------------- |
+| Google    | OAuth 2.0 / OpenID Connect | `openid email profile`                 |
+| Facebook  | OAuth 2.0                  | `email public_profile`                 |
+| GitHub    | OAuth 2.0                  | `read:user user:email`                 |
+| Twitter/X | OAuth 2.0                  | `users.read tweet.read offline.access` |
+| Instagram | OAuth 2.0                  | `user_profile user_media`              |
 
 ---
 

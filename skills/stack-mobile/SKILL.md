@@ -1,37 +1,40 @@
 # Stack: React Native Mobile
 
-This skill defines the React Native mobile stack configuration. Apply when working on mobile projects.
+**Last Updated**: 28/12/2025
+**Version**: 1.3.0
+**Maintained By**: Development Team
+**Language**: British English (en_GB)
+**Timezone**: Europe/London
 
 ---
 
 ## Table of Contents
 
-- [Stack: React Native Mobile](#stack-react-native-mobile)
-  - [Table of Contents](#table-of-contents)
-  - [Architecture](#architecture)
-  - [Commands](#commands)
-  - [Coding Standards](#coding-standards)
-    - [Components](#components)
-    - [Styling (NativeWind)](#styling-nativewind)
-    - [Platform-Specific Code](#platform-specific-code)
-    - [Navigation (React Navigation)](#navigation-react-navigation)
-  - [File Structure](#file-structure)
-  - [Platform Considerations](#platform-considerations)
-    - [iOS Specific](#ios-specific)
-    - [Android Specific](#android-specific)
-  - [Testing (Jest + RNTL)](#testing-jest--rntl)
+- [Table of Contents](#table-of-contents)
+- [Architecture](#architecture)
+- [Commands](#commands)
+- [Coding Standards](#coding-standards)
+  - [Components](#components)
+  - [Styling (NativeWind)](#styling-nativewind)
+  - [Platform-Specific Code](#platform-specific-code)
+  - [Navigation (React Navigation)](#navigation-react-navigation)
+- [File Structure](#file-structure)
+- [Platform Considerations](#platform-considerations)
+  - [iOS Specific](#ios-specific)
+  - [Android Specific](#android-specific)
+- [Testing (Jest + RNTL)](#testing-jest--rntl)
 
 ---
 
 ## Architecture
 
-| Layer | Technology |
-|-------|------------|
-| **Platform** | Native / Simulator (NO Docker) |
-| **Framework** | React Native, Expo (optional), TypeScript |
-| **Styling** | NativeWind (Tailwind for Mobile) |
-| **Navigation** | React Navigation |
-| **Testing** | Jest, React Native Testing Library |
+| Layer          | Technology                                |
+| -------------- | ----------------------------------------- |
+| **Platform**   | Native / Simulator (NO Docker)            |
+| **Framework**  | React Native, Expo (optional), TypeScript |
+| **Styling**    | NativeWind (Tailwind for Mobile)          |
+| **Navigation** | React Navigation                          |
+| **Testing**    | Jest, React Native Testing Library        |
 
 **CRITICAL:** Do NOT suggest Docker commands for this stack. Mobile runs natively.
 
@@ -39,19 +42,19 @@ This skill defines the React Native mobile stack configuration. Apply when worki
 
 ## Commands
 
-| Task | Command |
-|------|---------|
-| Start Metro Bundler | `npm start` |
-| Run on iOS | `npm run ios` |
-| Run on Android | `npm run android` |
-| Install iOS Pods | `cd ios && pod install && cd ..` |
-| Run tests | `npm test` |
-| Run tests (watch) | `npm test -- --watch` |
-| Install packages | `npm install <package>` |
-| Lint | `npm run lint` |
-| Clean build (iOS) | `cd ios && rm -rf build && cd ..` |
+| Task                  | Command                                  |
+| --------------------- | ---------------------------------------- |
+| Start Metro Bundler   | `npm start`                              |
+| Run on iOS            | `npm run ios`                            |
+| Run on Android        | `npm run android`                        |
+| Install iOS Pods      | `cd ios && pod install && cd ..`         |
+| Run tests             | `npm test`                               |
+| Run tests (watch)     | `npm test -- --watch`                    |
+| Install packages      | `npm install <package>`                  |
+| Lint                  | `npm run lint`                           |
+| Clean build (iOS)     | `cd ios && rm -rf build && cd ..`        |
 | Clean build (Android) | `cd android && ./gradlew clean && cd ..` |
-| Reset Metro cache | `npm start -- --reset-cache` |
+| Reset Metro cache     | `npm start -- --reset-cache`             |
 
 ---
 
@@ -89,11 +92,11 @@ export function UserCard({ user, onPress }: UserCardProps): JSX.Element {
 - Test on both iOS and Android for styling differences
 
 ### Platform-Specific Code
-| Pattern | Use Case |
-|---------|----------|
-| `Platform.OS === 'ios'` | Inline conditionals |
-| `Component.ios.tsx` / `Component.android.tsx` | Separate component files |
-| `Platform.select({ ios: {...}, android: {...} })` | Style objects |
+| Pattern                                           | Use Case                 |
+| ------------------------------------------------- | ------------------------ |
+| `Platform.OS === 'ios'`                           | Inline conditionals      |
+| `Component.ios.tsx` / `Component.android.tsx`     | Separate component files |
+| `Platform.select({ ios: {...}, android: {...} })` | Style objects            |
 
 ### Navigation (React Navigation)
 - Use typed navigation with TypeScript

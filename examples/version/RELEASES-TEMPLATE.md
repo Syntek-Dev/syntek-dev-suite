@@ -1,7 +1,7 @@
 # Release Notes Template
 
-**Last Updated**: 24/12/2025
-**Version**: 1.0.0
+**Last Updated**: 28/12/2025
+**Version**: 1.3.0
 **Maintained By**: Development Team
 **Language**: British English (en_GB)
 **Timezone**: Europe/London
@@ -10,10 +10,28 @@
 
 ## Table of Contents
 
+- [Table of Contents](#table-of-contents)
 - [Overview](#overview)
 - [Template](#template)
 - [Writing Guidelines](#writing-guidelines)
+  - [Language Style](#language-style)
+  - [What to Include](#what-to-include)
+  - [Section Guidelines](#section-guidelines)
+    - [What's New](#whats-new)
+    - [Improvements](#improvements)
+    - [Bug Fixes](#bug-fixes)
+    - [Upcoming Features](#upcoming-features)
 - [Examples](#examples)
+  - [Example: Feature-Rich Release](#example-feature-rich-release)
+  - [Example: Bug Fix Release](#example-bug-fix-release)
+  - [Example: Major Release with Breaking Changes](#example-major-release-with-breaking-changes)
+  - [Example: Security Update](#example-security-update)
+- [Formatting Tips](#formatting-tips)
+  - [Use Emoji Sparingly (Optional)](#use-emoji-sparingly-optional)
+  - [Screenshots and GIFs](#screenshots-and-gifs)
+  - [Version Naming](#version-naming)
+- [Best Practices](#best-practices)
+
 
 ---
 
@@ -107,23 +125,23 @@ We're working on exciting new features:
 
 ### Language Style
 
-| Do | Don't |
-|----|-------|
-| Use simple, friendly language | Use technical jargon |
-| Focus on user benefits | Describe implementation details |
-| Write in second person ("You can now...") | Write in passive voice |
-| Use British English spelling | Use American spelling |
-| Be concise and scannable | Write long paragraphs |
+| Do                                        | Don't                           |
+| ----------------------------------------- | ------------------------------- |
+| Use simple, friendly language             | Use technical jargon            |
+| Focus on user benefits                    | Describe implementation details |
+| Write in second person ("You can now...") | Write in passive voice          |
+| Use British English spelling              | Use American spelling           |
+| Be concise and scannable                  | Write long paragraphs           |
 
 ### What to Include
 
-| Include | Exclude |
-|---------|---------|
-| Features users interact with | Internal refactoring |
-| Visible improvements | Code structure changes |
-| Fixed issues users reported | Technical debt fixes |
-| Performance gains users notice | Developer tooling changes |
-| Security fixes (high level) | CVE numbers or technical details |
+| Include                        | Exclude                          |
+| ------------------------------ | -------------------------------- |
+| Features users interact with   | Internal refactoring             |
+| Visible improvements           | Code structure changes           |
+| Fixed issues users reported    | Technical debt fixes             |
+| Performance gains users notice | Developer tooling changes        |
+| Security fixes (high level)    | CVE numbers or technical details |
 
 ### Section Guidelines
 

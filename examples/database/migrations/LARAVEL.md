@@ -2,33 +2,32 @@
 
 ## Metadata
 
-| Property | Value |
-|----------|-------|
-| **Version** | 2.0.0 |
+| Property         | Value   |
+| ---------------- | ------- |
+| **Version**      | 2.0.0   |
 | **Last Updated** | 12/2025 |
-| **Status** | Stable |
+| **Status**       | Stable  |
 
 ## Framework Versions Tested
 
 | Framework | Version | Tested Date |
-|-----------|---------|-------------|
-| Laravel | 12.x | 12/2025 |
-| PHP | 8.4 | 12/2025 |
-| MariaDB | 12.x | 12/2025 |
+| --------- | ------- | ----------- |
+| Laravel   | 12.x    | 12/2025     |
+| PHP       | 8.4     | 12/2025     |
+| MariaDB   | 12.x    | 12/2025     |
 
 ---
 
 ## Table of Contents
 
-- [Laravel Migrations](#laravel-migrations)
-  - [Metadata](#metadata)
-  - [Framework Versions Tested](#framework-versions-tested)
-  - [Table of Contents](#table-of-contents)
-  - [Basic Migration](#basic-migration)
-  - [Migration with Foreign Keys](#migration-with-foreign-keys)
-  - [Migration with PII Table (GDPR Compliant)](#migration-with-pii-table-gdpr-compliant)
-  - [Migration with Pivot Table](#migration-with-pivot-table)
-  - [Running Migrations](#running-migrations)
+- [Metadata](#metadata)
+- [Framework Versions Tested](#framework-versions-tested)
+- [Table of Contents](#table-of-contents)
+- [Basic Migration](#basic-migration)
+- [Migration with Foreign Keys](#migration-with-foreign-keys)
+- [Migration with PII Table (GDPR Compliant)](#migration-with-pii-table-gdpr-compliant)
+- [Migration with Pivot Table](#migration-with-pivot-table)
+- [Running Migrations](#running-migrations)
 
 
 ## Basic Migration

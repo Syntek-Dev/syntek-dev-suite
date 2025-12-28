@@ -1,77 +1,80 @@
 # Global Workflow & Standards
 
-This skill defines project-wide standards. All agents MUST apply these settings.
+**Last Updated**: 28/12/2025
+**Version**: 1.3.0
+**Maintained By**: Development Team
+**Language**: British English (en_GB)
+**Timezone**: Europe/London
 
 ---
 
 ## Table of Contents
 
-- [Global Workflow \& Standards](#global-workflow--standards)
-  - [Table of Contents](#table-of-contents)
-  - [1. Localisation](#1-localisation)
-  - [2. Repository Setup](#2-repository-setup)
-    - [SSH Cloning Requirement](#ssh-cloning-requirement)
-    - [Setting Up SSH](#setting-up-ssh)
-    - [Converting HTTPS to SSH](#converting-https-to-ssh)
-  - [3. Branch Strategy](#3-branch-strategy)
-    - [Required Core Branches](#required-core-branches)
-    - [User Story Branch Naming](#user-story-branch-naming)
-    - [Hotfix Branch Naming](#hotfix-branch-naming)
-    - [Branch Flow](#branch-flow)
-  - [4. Git Protocol](#4-git-protocol)
-    - [Commit Message Template](#commit-message-template)
-    - [Commit Types](#commit-types)
-    - [Commit Rules](#commit-rules)
-  - [5. Pull Request Management](#5-pull-request-management)
-    - [Using GitHub CLI (gh)](#using-github-cli-gh)
-      - [Creating PRs](#creating-prs)
-      - [Reviewing PRs](#reviewing-prs)
-      - [Managing PRs](#managing-prs)
-    - [PR Title Format](#pr-title-format)
-    - [PR Body Template](#pr-body-template)
-    - [Client Acceptance/Rejection (Staging → Main)](#client-acceptancerejection-staging--main)
-      - [Accepting Changes](#accepting-changes)
-      - [Rejecting Changes](#rejecting-changes)
-  - [6. Semantic Versioning](#6-semantic-versioning)
-    - [Version Format](#version-format)
-    - [Pre-Commit Requirements](#pre-commit-requirements)
-  - [7. Documentation Standards](#7-documentation-standards)
-    - [Markdown Generation Guidelines](#markdown-generation-guidelines)
-      - [Table of Contents](#table-of-contents)
-      - [Text Formatting](#text-formatting)
-      - [Lists](#lists)
-      - [Tables](#tables)
-      - [Code Blocks](#code-blocks)
-      - [Headings](#headings)
-      - [Horizontal Rules](#horizontal-rules)
-      - [Best Practices](#best-practices)
-    - [Bug Fix Documentation](#bug-fix-documentation)
-  - [8. Code Comment Standards](#8-code-comment-standards)
-    - [File Headers](#file-headers)
-    - [Docstrings](#docstrings)
-    - [No Pronouns Rule](#no-pronouns-rule)
-  - [9. Self-Learning System](#9-self-learning-system)
-    - [Feedback Collection](#feedback-collection)
-    - [Feedback Criteria](#feedback-criteria)
-    - [Quick Decision Guide](#quick-decision-guide)
-    - [Feedback Commands](#feedback-commands)
-    - [Why Feedback Matters](#why-feedback-matters)
-    - [Agent Responsibilities](#agent-responsibilities)
+- [Table of Contents](#table-of-contents)
+- [1. Localisation](#1-localisation)
+- [2. Repository Setup](#2-repository-setup)
+  - [SSH Cloning Requirement](#ssh-cloning-requirement)
+  - [Setting Up SSH](#setting-up-ssh)
+  - [Converting HTTPS to SSH](#converting-https-to-ssh)
+- [3. Branch Strategy](#3-branch-strategy)
+  - [Required Core Branches](#required-core-branches)
+  - [User Story Branch Naming](#user-story-branch-naming)
+  - [Hotfix Branch Naming](#hotfix-branch-naming)
+  - [Branch Flow](#branch-flow)
+- [4. Git Protocol](#4-git-protocol)
+  - [Commit Message Template](#commit-message-template)
+  - [Commit Types](#commit-types)
+  - [Commit Rules](#commit-rules)
+- [5. Pull Request Management](#5-pull-request-management)
+  - [Using GitHub CLI (gh)](#using-github-cli-gh)
+    - [Creating PRs](#creating-prs)
+    - [Reviewing PRs](#reviewing-prs)
+    - [Managing PRs](#managing-prs)
+  - [PR Title Format](#pr-title-format)
+  - [PR Body Template](#pr-body-template)
+  - [Client Acceptance/Rejection (Staging → Main)](#client-acceptancerejection-staging--main)
+    - [Accepting Changes](#accepting-changes)
+    - [Rejecting Changes](#rejecting-changes)
+- [6. Semantic Versioning](#6-semantic-versioning)
+  - [Version Format](#version-format)
+  - [Pre-Commit Requirements](#pre-commit-requirements)
+- [7. Documentation Standards](#7-documentation-standards)
+  - [Markdown Generation Guidelines](#markdown-generation-guidelines)
+    - [Table of Contents](#table-of-contents-1)
+    - [Text Formatting](#text-formatting)
+    - [Lists](#lists)
+    - [Tables](#tables)
+    - [Code Blocks](#code-blocks)
+    - [Headings](#headings)
+    - [Horizontal Rules](#horizontal-rules)
+    - [Best Practices](#best-practices)
+  - [Bug Fix Documentation](#bug-fix-documentation)
+- [8. Code Comment Standards](#8-code-comment-standards)
+  - [File Headers](#file-headers)
+  - [Docstrings](#docstrings)
+  - [No Pronouns Rule](#no-pronouns-rule)
+- [9. Self-Learning System](#9-self-learning-system)
+  - [Feedback Collection](#feedback-collection)
+  - [Feedback Criteria](#feedback-criteria)
+  - [Quick Decision Guide](#quick-decision-guide)
+  - [Feedback Commands](#feedback-commands)
+  - [Why Feedback Matters](#why-feedback-matters)
+  - [Agent Responsibilities](#agent-responsibilities)
 
 
 ---
 
 ## 1. Localisation
 
-| Setting | Value |
-|---------|-------|
-| **Locale** | British English (en-GB) |
-| **Spelling** | Use 's' not 'z' (*optimise*, *organise*, *behaviour*) |
-| **Vocabulary** | *postcode*, *CV*, *holiday*, *mobile* |
-| **Currency** | GBP (£) with format `£1,234.56` |
-| **Date Format** | DD/MM/YYYY |
-| **Time Format** | 24-hour clock (HH:MM) |
-| **Timezone** | Europe/London |
+| Setting         | Value                                                 |
+| --------------- | ----------------------------------------------------- |
+| **Locale**      | British English (en-GB)                               |
+| **Spelling**    | Use 's' not 'z' (*optimise*, *organise*, *behaviour*) |
+| **Vocabulary**  | *postcode*, *CV*, *holiday*, *mobile*                 |
+| **Currency**    | GBP (£) with format `£1,234.56`                       |
+| **Date Format** | DD/MM/YYYY                                            |
+| **Time Format** | 24-hour clock (HH:MM)                                 |
+| **Timezone**    | Europe/London                                         |
 
 **Code Syntax Exception:** Keep US English for reserved words (CSS `color`, PHP `function`), but use GB English for variable names (`$colourPalette`) and user-facing copy.
 
@@ -134,12 +137,12 @@ git remote set-url origin git@github.com:organisation/repository.git
 
 Every project MUST have these protected branches:
 
-| Branch | Purpose | Protected | Deploy Target |
-|--------|---------|-----------|---------------|
-| `main` or `master` | Production-ready code | Yes | Production |
-| `staging` | Client review and acceptance | Yes | Staging |
-| `dev` | Integration and final testing | Yes | Development |
-| `testing` | QA and automated testing | Yes | Testing |
+| Branch             | Purpose                       | Protected | Deploy Target |
+| ------------------ | ----------------------------- | --------- | ------------- |
+| `main` or `master` | Production-ready code         | Yes       | Production    |
+| `staging`          | Client review and acceptance  | Yes       | Staging       |
+| `dev`              | Integration and final testing | Yes       | Development   |
+| `testing`          | QA and automated testing      | Yes       | Testing       |
 
 ### User Story Branch Naming
 
@@ -177,12 +180,12 @@ hotfix/<issue-number>-<short-description>
 us###/feature → testing → dev → staging → main
 ```
 
-| From | To | Condition | On Rejection |
-|------|-----|-----------|--------------|
-| `us###/feature` | `testing` | Developer tests pass | Fix in feature branch |
-| `testing` | `dev` | QA tests pass | Fix and re-submit |
-| `dev` | `staging` | Integration tests pass | Fix and re-submit |
-| `staging` | `main` | **Client accepts** | Back to `us###/feature` |
+| From            | To        | Condition              | On Rejection            |
+| --------------- | --------- | ---------------------- | ----------------------- |
+| `us###/feature` | `testing` | Developer tests pass   | Fix in feature branch   |
+| `testing`       | `dev`     | QA tests pass          | Fix and re-submit       |
+| `dev`           | `staging` | Integration tests pass | Fix and re-submit       |
+| `staging`       | `main`    | **Client accepts**     | Back to `us###/feature` |
 
 ---
 
@@ -207,15 +210,15 @@ Version: <old-version> → <new-version>
 
 ### Commit Types
 
-| Type | Use For |
-|------|---------|
-| `feat` | New feature |
-| `fix` | Bug fix |
-| `docs` | Documentation only |
-| `style` | Formatting, no logic change |
+| Type       | Use For                             |
+| ---------- | ----------------------------------- |
+| `feat`     | New feature                         |
+| `fix`      | Bug fix                             |
+| `docs`     | Documentation only                  |
+| `style`    | Formatting, no logic change         |
 | `refactor` | Code restructure, no feature change |
-| `test` | Adding/updating tests |
-| `chore` | Build, config, dependencies |
+| `test`     | Adding/updating tests               |
+| `chore`    | Build, config, dependencies         |
 
 ### Commit Rules
 
@@ -319,10 +322,10 @@ gh pr status
 
 ## Commits Included
 
-| Commit | Type | Description |
-|--------|------|-------------|
-| abc123 | feat | Add login form |
-| def456 | fix | Correct validation |
+| Commit | Type | Description        |
+| ------ | ---- | ------------------ |
+| abc123 | feat | Add login form     |
+| def456 | fix  | Correct validation |
 
 ## Test Plan
 
@@ -380,11 +383,11 @@ After rejection:
 MAJOR.MINOR.PATCH
 ```
 
-| Type | When to Increment | Example |
-|------|-------------------|---------|
-| **MAJOR** | Breaking changes | 1.0.0 → 2.0.0 |
+| Type      | When to Increment                   | Example       |
+| --------- | ----------------------------------- | ------------- |
+| **MAJOR** | Breaking changes                    | 1.0.0 → 2.0.0 |
 | **MINOR** | New features (backwards compatible) | 1.0.0 → 1.1.0 |
-| **PATCH** | Bug fixes (backwards compatible) | 1.0.0 → 1.0.1 |
+| **PATCH** | Bug fixes (backwards compatible)    | 1.0.0 → 1.0.1 |
 
 ### Pre-Commit Requirements
 
@@ -399,12 +402,12 @@ MAJOR.MINOR.PATCH
 
 ## 7. Documentation Standards
 
-| Standard | Value |
-|----------|-------|
-| **Format** | Markdown (`*.md`) |
-| **Location** | `docs/` folder |
-| **Filenames** | CAPITALISED with lowercase `.md` extension |
-| **Required** | Table of Contents in all docs |
+| Standard      | Value                                            |
+| ------------- | ------------------------------------------------ |
+| **Format**    | Markdown (`*.md`)                                |
+| **Location**  | `docs/` folder                                   |
+| **Filenames** | CAPITALISED with lowercase `.md` extension       |
+| **Required**  | Table of Contents in all docs                    |
 | **Extension** | Markdown All in One (yzhang.markdown-all-in-one) |
 
 ### Markdown Generation Guidelines
@@ -432,12 +435,12 @@ When generating markdown documentation, follow these standards for compatibility
 
 #### Text Formatting
 
-| Format | Syntax | Example |
-|--------|--------|---------|
-| **Bold** | `**text**` | `**important**` |
-| *Italic* | `*text*` | `*emphasise*` |
+| Format            | Syntax     | Example          |
+| ----------------- | ---------- | ---------------- |
+| **Bold**          | `**text**` | `**important**`  |
+| *Italic*          | `*text*`   | `*emphasise*`    |
 | ~~Strikethrough~~ | `~~text~~` | `~~deprecated~~` |
-| `Inline code` | \`code\` | \`function()\` |
+| `Inline code`     | \`code\`   | \`function()\`   |
 
 #### Lists
 
@@ -478,7 +481,7 @@ Use GitHub Flavoured Markdown table syntax:
 
 ```markdown
 | Column 1 | Column 2 | Column 3 |
-|----------|----------|----------|
+| -------- | -------- | -------- |
 | Value 1  | Value 2  | Value 3  |
 ```
 
@@ -559,11 +562,11 @@ Every public function/method MUST have a docstring with:
 
 **CRITICAL:** Never use pronouns referring to code in comments.
 
-| Do | Don't |
-|-------|----------|
-| `The function validates input` | `It validates the input` |
-| `Returns the user object` | `Returns this` |
-| `The service handles authentication` | `We handle auth here` |
+| Do                                   | Don't                    |
+| ------------------------------------ | ------------------------ |
+| `The function validates input`       | `It validates the input` |
+| `Returns the user object`            | `Returns this`           |
+| `The service handles authentication` | `We handle auth here`    |
 
 ---
 
@@ -577,11 +580,11 @@ After completing tasks, the system prompts for feedback. All agents should be aw
 
 Help users give quick, meaningful feedback with these guidelines:
 
-| Rating | When to Use | Examples |
-|--------|-------------|----------|
+| Rating   | When to Use                 | Examples                                      |
+| -------- | --------------------------- | --------------------------------------------- |
 | **good** | Task completed successfully | Code works, follows patterns, well documented |
-| **bad** | Task needs improvement | Missing requirements, wrong patterns, errors |
-| **skip** | Can't evaluate yet | Need to test more, partial completion |
+| **bad**  | Task needs improvement      | Missing requirements, wrong patterns, errors  |
+| **skip** | Can't evaluate yet          | Need to test more, partial completion         |
 
 ### Quick Decision Guide
 

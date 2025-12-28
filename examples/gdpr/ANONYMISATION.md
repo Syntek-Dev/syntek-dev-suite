@@ -6,40 +6,39 @@ Data anonymisation patterns for GDPR compliance including pseudonymisation, data
 
 ## Metadata
 
-| Property | Value |
-|----------|-------|
-| **Example Version** | 1.0.0 |
-| **Last Updated** | 2025-01 |
-| **Stacks** | All (TALL, Django, React, Mobile) |
+| Property            | Value                             |
+| ------------------- | --------------------------------- |
+| **Example Version** | 1.0.0                             |
+| **Last Updated**    | 2025-01                           |
+| **Stacks**          | All (TALL, Django, React, Mobile) |
 
 ---
 
 ## Table of Contents
 
-- [Data Anonymisation](#data-anonymisation)
-  - [Overview](#overview)
-  - [Metadata](#metadata)
-  - [Table of Contents](#table-of-contents)
-  - [Anonymisation Strategies](#anonymisation-strategies)
-    - [Pseudonymisation SQL Example](#pseudonymisation-sql-example)
-  - [Cookie Consent Implementation](#cookie-consent-implementation)
-    - [JavaScript Cookie Consent Manager](#javascript-cookie-consent-manager)
-    - [Cookie Banner HTML](#cookie-banner-html)
-  - [Breach Notification Template](#breach-notification-template)
-    - [72-Hour Breach Notification Procedure](#72-hour-breach-notification-procedure)
-    - [Breach Detection Logging](#breach-detection-logging)
+- [Overview](#overview)
+- [Metadata](#metadata)
+- [Table of Contents](#table-of-contents)
+- [Anonymisation Strategies](#anonymisation-strategies)
+  - [Pseudonymisation SQL Example](#pseudonymisation-sql-example)
+- [Cookie Consent Implementation](#cookie-consent-implementation)
+  - [JavaScript Cookie Consent Manager](#javascript-cookie-consent-manager)
+  - [Cookie Banner HTML](#cookie-banner-html)
+- [Breach Notification Template](#breach-notification-template)
+  - [72-Hour Breach Notification Procedure](#72-hour-breach-notification-procedure)
+  - [Breach Detection Logging](#breach-detection-logging)
 
 
 ## Anonymisation Strategies
 
-| Data Type | Strategy | Example |
-|-----------|----------|---------|
-| User IDs | Replace with hash | `ANON-a1b2c3d4` |
-| Email | Remove entirely | `null` |
-| Name | Remove entirely | `null` |
-| Transaction IDs | Keep (legal requirement) | `TXN-12345` |
-| IP addresses | Hash | `hash(ip + salt)` |
-| Dates | Generalise | `2025-01` instead of `2025-01-15` |
+| Data Type       | Strategy                 | Example                           |
+| --------------- | ------------------------ | --------------------------------- |
+| User IDs        | Replace with hash        | `ANON-a1b2c3d4`                   |
+| Email           | Remove entirely          | `null`                            |
+| Name            | Remove entirely          | `null`                            |
+| Transaction IDs | Keep (legal requirement) | `TXN-12345`                       |
+| IP addresses    | Hash                     | `hash(ip + salt)`                 |
+| Dates           | Generalise               | `2025-01` instead of `2025-01-15` |
 
 ### Pseudonymisation SQL Example
 

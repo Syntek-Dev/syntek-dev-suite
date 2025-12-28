@@ -6,38 +6,37 @@ Use this template to set up a self-contained TALL (Tailwind, Alpine.js, Laravel,
 
 ## Table of Contents
 
-- [TALL Stack Project Template (All-in-One)](#tall-stack-project-template-all-in-one)
-  - [Table of Contents](#table-of-contents)
-  - [Architecture Overview](#architecture-overview)
-  - [Project CLAUDE.md](#project-claudemd)
-  - [Code Conventions](#code-conventions)
-    - [Livewire Components](#livewire-components)
-    - [Blade Templates](#blade-templates)
-    - [Alpine.js](#alpinejs)
-    - [Testing (Pest)](#testing-pest)
-  - [Database Schema](#database-schema)
-  - [API Endpoints](#api-endpoints)
-  - [Commands](#commands)
-    - [.claude/commands/dev.md](#claudecommandsdevmd)
-    - [.claude/commands/test.md](#claudecommandstestmd)
-    - [.claude/commands/staging.md](#claudecommandsstagingmd)
-    - [.claude/commands/production.md](#claudecommandsproductionmd)
-    - [.claude/commands/build.md](#claudecommandsbuildmd)
-    - [.claude/commands/migrate.md](#claudecommandsmigratemd)
-    - [.claude/commands/make-component.md](#claudecommandsmake-componentmd)
-  - [Directory Structure](#directory-structure)
-  - [Environment-Specific Command Files](#environment-specific-command-files)
-    - [Required Root-Level Scripts](#required-root-level-scripts)
-    - [dev.sh](#devsh)
-    - [test.sh](#testsh)
-    - [staging.sh](#stagingsh)
-    - [production.sh](#productionsh)
-    - [DDEV Custom Commands](#ddev-custom-commands)
-      - [.ddev/commands/host/dev](#ddevcommandshostdev)
-      - [.ddev/commands/host/test](#ddevcommandshosttest)
-      - [.ddev/commands/host/staging](#ddevcommandshoststaging)
-      - [.ddev/commands/host/production](#ddevcommandshostproduction)
-    - [Command File Permissions](#command-file-permissions)
+- [Table of Contents](#table-of-contents)
+- [Architecture Overview](#architecture-overview)
+- [Project CLAUDE.md](#project-claudemd)
+- [Code Conventions](#code-conventions)
+  - [Livewire Components](#livewire-components)
+  - [Blade Templates](#blade-templates)
+  - [Alpine.js](#alpinejs)
+  - [Testing (Pest)](#testing-pest)
+- [Database Schema](#database-schema)
+- [API Endpoints](#api-endpoints)
+- [Commands](#commands)
+  - [.claude/commands/dev.md](#claudecommandsdevmd)
+  - [.claude/commands/test.md](#claudecommandstestmd)
+  - [.claude/commands/staging.md](#claudecommandsstagingmd)
+  - [.claude/commands/production.md](#claudecommandsproductionmd)
+  - [.claude/commands/build.md](#claudecommandsbuildmd)
+  - [.claude/commands/migrate.md](#claudecommandsmigratemd)
+  - [.claude/commands/make-component.md](#claudecommandsmake-componentmd)
+- [Directory Structure](#directory-structure)
+- [Environment-Specific Command Files](#environment-specific-command-files)
+  - [Required Root-Level Scripts](#required-root-level-scripts)
+  - [dev.sh](#devsh)
+  - [test.sh](#testsh)
+  - [staging.sh](#stagingsh)
+  - [production.sh](#productionsh)
+  - [DDEV Custom Commands](#ddev-custom-commands)
+    - [.ddev/commands/host/dev](#ddevcommandshostdev)
+    - [.ddev/commands/host/test](#ddevcommandshosttest)
+    - [.ddev/commands/host/staging](#ddevcommandshoststaging)
+    - [.ddev/commands/host/production](#ddevcommandshostproduction)
+  - [Command File Permissions](#command-file-permissions)
 
 
 ---
@@ -93,17 +92,17 @@ Create this file at `.claude/CLAUDE.md` or `CLAUDE.md` in the project root:
 
 ## Stack Overview
 
-| Component | Technology |
-|-----------|------------|
-| **Type** | TALL Stack (All-in-One) |
+| Component        | Technology                                     |
+| ---------------- | ---------------------------------------------- |
+| **Type**         | TALL Stack (All-in-One)                        |
 | **Architecture** | Self-contained - Backend + Frontend + Database |
-| **Language** | PHP 8.3 |
-| **Framework** | Laravel 11.x |
-| **Frontend** | Livewire 3, Alpine.js, TailwindCSS |
-| **Build Tool** | Vite |
-| **Testing** | Pest PHP |
-| **Container** | DDEV |
-| **Database** | MariaDB 10.11 / MySQL 8 |
+| **Language**     | PHP 8.3                                        |
+| **Framework**    | Laravel 11.x                                   |
+| **Frontend**     | Livewire 3, Alpine.js, TailwindCSS             |
+| **Build Tool**   | Vite                                           |
+| **Testing**      | Pest PHP                                       |
+| **Container**    | DDEV                                           |
+| **Database**     | MariaDB 10.11 / MySQL 8                        |
 
 **Note:** This is NOT a headless API. For headless architecture, use `stack-django` + `stack-react` + `stack-mobile`.
 
@@ -118,36 +117,36 @@ Create this file at `.claude/CLAUDE.md` or `CLAUDE.md` in the project root:
 
 ## Environment
 
-| Setting | Value |
-|---------|-------|
-| **Local URL** | https://[project-name].ddev.site |
-| **Database (Dev)** | [project-name]_dev |
-| **Database (Test)** | [project-name]_test |
-| **Database (Staging)** | [project-name]_staging |
-| **Database (Production)** | [project-name]_production |
-| **Locale** | en_GB |
-| **Timezone** | Europe/London |
-| **Currency** | GBP (£) |
+| Setting                   | Value                            |
+| ------------------------- | -------------------------------- |
+| **Local URL**             | https://[project-name].ddev.site |
+| **Database (Dev)**        | [project-name]_dev               |
+| **Database (Test)**       | [project-name]_test              |
+| **Database (Staging)**    | [project-name]_staging           |
+| **Database (Production)** | [project-name]_production        |
+| **Locale**                | en_GB                            |
+| **Timezone**              | Europe/London                    |
+| **Currency**              | GBP (£)                          |
 
 ---
 
 ## Key Locations
 
-| Directory | Purpose |
-|-----------|---------|
-| `app/Livewire/` | Livewire components |
-| `app/Models/` | Eloquent models |
-| `app/Services/` | Business logic services |
-| `app/Actions/` | Single-purpose action classes |
-| `app/Http/Controllers/` | HTTP controllers (minimal) |
-| `app/Http/Requests/` | Form request validation |
-| `resources/views/components/` | Blade components |
-| `resources/views/livewire/` | Livewire component views |
-| `resources/views/layouts/` | Layout templates |
-| `resources/js/alpine/` | Complex Alpine.js components |
-| `custom-packages/` | Local composer packages |
-| `tests/Feature/` | Feature/integration tests |
-| `tests/Unit/` | Unit tests |
+| Directory                     | Purpose                       |
+| ----------------------------- | ----------------------------- |
+| `app/Livewire/`               | Livewire components           |
+| `app/Models/`                 | Eloquent models               |
+| `app/Services/`               | Business logic services       |
+| `app/Actions/`                | Single-purpose action classes |
+| `app/Http/Controllers/`       | HTTP controllers (minimal)    |
+| `app/Http/Requests/`          | Form request validation       |
+| `resources/views/components/` | Blade components              |
+| `resources/views/livewire/`   | Livewire component views      |
+| `resources/views/layouts/`    | Layout templates              |
+| `resources/js/alpine/`        | Complex Alpine.js components  |
+| `custom-packages/`            | Local composer packages       |
+| `tests/Feature/`              | Feature/integration tests     |
+| `tests/Unit/`                 | Unit tests                    |
 
 ---
 
@@ -521,12 +520,12 @@ $ARGUMENTS
 
 ### Required Root-Level Scripts
 
-| File | Purpose | Environment |
-|------|---------|-------------|
-| `dev.sh` | Start development environment | Development |
-| `test.sh` | Run test suite with test database | Testing |
-| `staging.sh` | Deploy to staging environment | Staging |
-| `production.sh` | Deploy to production environment | Production |
+| File            | Purpose                           | Environment |
+| --------------- | --------------------------------- | ----------- |
+| `dev.sh`        | Start development environment     | Development |
+| `test.sh`       | Run test suite with test database | Testing     |
+| `staging.sh`    | Deploy to staging environment     | Staging     |
+| `production.sh` | Deploy to production environment  | Production  |
 
 ### dev.sh
 

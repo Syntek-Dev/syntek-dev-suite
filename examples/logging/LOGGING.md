@@ -6,38 +6,37 @@ Comprehensive logging examples for application monitoring, debugging, and audit 
 
 ## Technology Stacks
 
-| Stack | Version | Logging Library |
-|-------|---------|-----------------|
-| TALL Stack | Laravel 12.x, PHP 8.4 | Monolog 3.x |
-| Django/Wagtail | Django 6.x, Python 3.14 | structlog 24.x |
-| React/Next.js | Next.js 16.x, Node 24.x | Pino 9.x |
-| React Native | RN 0.83.x, TS 5.9 | react-native-logs 5.x |
+| Stack          | Version                 | Logging Library       |
+| -------------- | ----------------------- | --------------------- |
+| TALL Stack     | Laravel 12.x, PHP 8.4   | Monolog 3.x           |
+| Django/Wagtail | Django 6.x, Python 3.14 | structlog 24.x        |
+| React/Next.js  | Next.js 16.x, Node 24.x | Pino 9.x              |
+| React Native   | RN 0.83.x, TS 5.9       | react-native-logs 5.x |
 
 ---
 
 ## Table of Contents
 
-- [Logging Examples](#logging-examples)
-  - [Overview](#overview)
-  - [Technology Stacks](#technology-stacks)
-  - [Table of Contents](#table-of-contents)
-  - [TALL Stack (Laravel 12)](#tall-stack-laravel-12)
-    - [Laravel Configuration](#laravel-configuration)
-    - [Custom Log Channels](#custom-log-channels)
-    - [Contextual Logging](#contextual-logging)
-    - [Log Viewer](#log-viewer)
-  - [Django/Wagtail Stack](#djangowagtail-stack)
-    - [Django Configuration](#django-configuration)
-    - [Custom Handlers](#custom-handlers)
-    - [Structured Logging](#structured-logging)
-  - [React/Next.js Stack](#reactnextjs-stack)
-    - [Server-Side Logging](#server-side-logging)
-    - [Client-Side Logging](#client-side-logging)
-    - [API Route Logging](#api-route-logging)
-  - [React Native Stack](#react-native-stack)
-    - [Development Logging](#development-logging)
-    - [Production Logging](#production-logging)
-    - [Crash Reporting](#crash-reporting)
+- [Overview](#overview)
+- [Technology Stacks](#technology-stacks)
+- [Table of Contents](#table-of-contents)
+- [TALL Stack (Laravel 12)](#tall-stack-laravel-12)
+  - [Laravel Configuration](#laravel-configuration)
+  - [Custom Log Channels](#custom-log-channels)
+  - [Contextual Logging](#contextual-logging)
+  - [Log Viewer](#log-viewer)
+- [Django/Wagtail Stack](#djangowagtail-stack)
+  - [Django Configuration](#django-configuration)
+  - [Custom Handlers](#custom-handlers)
+  - [Structured Logging](#structured-logging)
+- [React/Next.js Stack](#reactnextjs-stack)
+  - [Server-Side Logging](#server-side-logging)
+  - [Client-Side Logging](#client-side-logging)
+  - [API Route Logging](#api-route-logging)
+- [React Native Stack](#react-native-stack)
+  - [Development Logging](#development-logging)
+  - [Production Logging](#production-logging)
+  - [Crash Reporting](#crash-reporting)
 
 
 

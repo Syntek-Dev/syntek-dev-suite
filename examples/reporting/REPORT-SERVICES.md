@@ -2,44 +2,43 @@
 
 ## Metadata
 
-| Property | Value |
-|----------|-------|
-| **Version** | 2.0.0 |
+| Property         | Value         |
+| ---------------- | ------------- |
+| **Version**      | 2.0.0         |
 | **Last Updated** | December 2025 |
-| **Status** | Stable |
+| **Status**       | Stable        |
 
 ## Framework Versions Tested
 
-| Framework | Version | Tested Date |
-|-----------|---------|-------------|
-| Laravel | 12.x | 20/12/2025 |
-| Django | 6.x | 20/12/2025 |
-| Next.js | 16.x | 20/12/2025 |
-| React Native | 0.83.x | 20/12/2025 |
-| PHP | 8.4 | 20/12/2025 |
-| Python | 3.14 | 20/12/2025 |
-| Node.js | 24.x | 20/12/2025 |
-| TypeScript | 5.9 | 20/12/2025 |
+| Framework    | Version | Tested Date |
+| ------------ | ------- | ----------- |
+| Laravel      | 12.x    | 20/12/2025  |
+| Django       | 6.x     | 20/12/2025  |
+| Next.js      | 16.x    | 20/12/2025  |
+| React Native | 0.83.x  | 20/12/2025  |
+| PHP          | 8.4     | 20/12/2025  |
+| Python       | 3.14    | 20/12/2025  |
+| Node.js      | 24.x    | 20/12/2025  |
+| TypeScript   | 5.9     | 20/12/2025  |
 
 ---
 
 ## Table of Contents
 
-- [Report Services](#report-services)
-  - [Metadata](#metadata)
-  - [Framework Versions Tested](#framework-versions-tested)
-  - [Table of Contents](#table-of-contents)
-  - [Overview](#overview)
-  - [Laravel (TALL Stack)](#laravel-tall-stack)
-    - [Report Generation Service](#report-generation-service)
-    - [Report Filters DTO](#report-filters-dto)
-    - [Sales Report Example](#sales-report-example)
-  - [Django/Wagtail](#djangowagtail)
-    - [Report Service Base Class](#report-service-base-class)
-    - [Report Filters Dataclass](#report-filters-dataclass)
-    - [Sales Report Example](#sales-report-example-1)
-  - [Node.js/TypeScript (NestJS)](#nodejstypescript-nestjs)
-    - [Report Filters DTO](#report-filters-dto-1)
+- [Metadata](#metadata)
+- [Framework Versions Tested](#framework-versions-tested)
+- [Table of Contents](#table-of-contents)
+- [Overview](#overview)
+- [Laravel (TALL Stack)](#laravel-tall-stack)
+  - [Report Generation Service](#report-generation-service)
+  - [Report Filters DTO](#report-filters-dto)
+  - [Sales Report Example](#sales-report-example)
+- [Django/Wagtail](#djangowagtail)
+  - [Report Service Base Class](#report-service-base-class)
+  - [Report Filters Dataclass](#report-filters-dataclass)
+  - [Sales Report Example](#sales-report-example-1)
+- [Node.js/TypeScript (NestJS)](#nodejstypescript-nestjs)
+  - [Report Filters DTO](#report-filters-dto-1)
 
 ---
 

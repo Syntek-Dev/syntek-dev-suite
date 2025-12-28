@@ -1,7 +1,7 @@
 # Version Management Examples
 
-**Last Updated**: 24/12/2025
-**Version**: 1.2.0
+**Last Updated**: 28/12/2025
+**Version**: 1.3.0
 **Maintained By**: Development Team
 **Language**: British English (en_GB)
 **Timezone**: Europe/London
@@ -10,10 +10,14 @@
 
 ## Table of Contents
 
+- [Table of Contents](#table-of-contents)
 - [Overview](#overview)
 - [Directory Tree](#directory-tree)
 - [Files](#files)
 - [Usage](#usage)
+  - [Initialise Version Management](#initialise-version-management)
+  - [Bump Version](#bump-version)
+  - [Update Headers Only](#update-headers-only)
 - [Related Sections](#related-sections)
 
 ---
@@ -45,13 +49,13 @@ version/
 
 ## Files
 
-| File | Purpose |
-|------|---------|
-| `README.md` | This file - folder overview |
-| `VERSION-HISTORY-TEMPLATE.md` | Template and examples for technical changelog |
-| `RELEASES-TEMPLATE.md` | Template and examples for user-facing release notes |
-| `MARKDOWN-HEADERS.md` | Guide for markdown metadata headers |
-| `GIT-INTEGRATION.md` | How Version Agent integrates with Git Agent |
+| File                          | Purpose                                             |
+| ----------------------------- | --------------------------------------------------- |
+| `README.md`                   | This file - folder overview                         |
+| `VERSION-HISTORY-TEMPLATE.md` | Template and examples for technical changelog       |
+| `RELEASES-TEMPLATE.md`        | Template and examples for user-facing release notes |
+| `MARKDOWN-HEADERS.md`         | Guide for markdown metadata headers                 |
+| `GIT-INTEGRATION.md`          | How Version Agent integrates with Git Agent         |
 
 ---
 

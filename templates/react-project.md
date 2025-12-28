@@ -8,35 +8,34 @@ Use this template to set up a React web frontend that consumes a GraphQL API fro
 
 ## Table of Contents
 
-- [React Web Frontend Template](#react-web-frontend-template)
-  - [Table of Contents](#table-of-contents)
-  - [Architecture Overview](#architecture-overview)
-  - [Template Repository](#template-repository)
-    - [Creating a New Project from Template](#creating-a-new-project-from-template)
-    - [Post-Clone Setup](#post-clone-setup)
-  - [Project CLAUDE.md](#project-claudemd)
-  - [GraphQL Integration](#graphql-integration)
-    - [Apollo Client Setup](#apollo-client-setup)
-    - [Code Generation](#code-generation)
-  - [Shared Library Usage](#shared-library-usage)
-  - [Code Conventions](#code-conventions)
-    - [Components](#components)
-    - [Styling](#styling)
-  - [Commands](#commands)
-    - [.claude/commands/dev.md](#claudecommandsdevmd)
-    - [.claude/commands/test.md](#claudecommandstestmd)
-    - [.claude/commands/staging.md](#claudecommandsstagingmd)
-    - [.claude/commands/production.md](#claudecommandsproductionmd)
-    - [.claude/commands/codegen.md](#claudecommandscodegenmd)
-    - [.claude/commands/build.md](#claudecommandsbuildmd)
-    - [.claude/commands/link-shared.md](#claudecommandslink-sharedmd)
-    - [test.sh](#testsh)
-    - [staging.sh](#stagingsh)
-    - [production.sh](#productionsh)
-    - [Command File Permissions](#command-file-permissions)
-  - [GraphQL Code Generator Configuration](#graphql-code-generator-configuration)
-  - [Environment Variables](#environment-variables)
-  - [Package Dependencies](#package-dependencies)
+- [Table of Contents](#table-of-contents)
+- [Architecture Overview](#architecture-overview)
+- [Template Repository](#template-repository)
+  - [Creating a New Project from Template](#creating-a-new-project-from-template)
+  - [Post-Clone Setup](#post-clone-setup)
+- [Project CLAUDE.md](#project-claudemd)
+- [GraphQL Integration](#graphql-integration)
+  - [Apollo Client Setup](#apollo-client-setup)
+  - [Code Generation](#code-generation)
+- [Shared Library Usage](#shared-library-usage)
+- [Code Conventions](#code-conventions)
+  - [Components](#components)
+  - [Styling](#styling)
+- [Commands](#commands)
+  - [.claude/commands/dev.md](#claudecommandsdevmd)
+  - [.claude/commands/test.md](#claudecommandstestmd)
+  - [.claude/commands/staging.md](#claudecommandsstagingmd)
+  - [.claude/commands/production.md](#claudecommandsproductionmd)
+  - [.claude/commands/codegen.md](#claudecommandscodegenmd)
+  - [.claude/commands/build.md](#claudecommandsbuildmd)
+  - [.claude/commands/link-shared.md](#claudecommandslink-sharedmd)
+  - [test.sh](#testsh)
+  - [staging.sh](#stagingsh)
+  - [production.sh](#productionsh)
+  - [Command File Permissions](#command-file-permissions)
+- [GraphQL Code Generator Configuration](#graphql-code-generator-configuration)
+- [Environment Variables](#environment-variables)
+- [Package Dependencies](#package-dependencies)
 
 
 ---
@@ -125,17 +124,17 @@ Create this file at `.claude/CLAUDE.md` or `CLAUDE.md` in the project root:
 
 ## Stack Overview
 
-| Component | Technology |
-|-----------|------------|
-| **Type** | React Web Frontend (GraphQL Consumer) |
-| **Language** | TypeScript 5.x |
-| **Framework** | React 18+ |
-| **Build Tool** | Vite |
-| **Styling** | Tailwind CSS v4 + shared-lib design tokens |
-| **GraphQL Client** | Apollo Client / urql |
-| **Code Generation** | GraphQL Code Generator |
-| **Testing** | Vitest, React Testing Library |
-| **Container** | Docker |
+| Component           | Technology                                 |
+| ------------------- | ------------------------------------------ |
+| **Type**            | React Web Frontend (GraphQL Consumer)      |
+| **Language**        | TypeScript 5.x                             |
+| **Framework**       | React 18+                                  |
+| **Build Tool**      | Vite                                       |
+| **Styling**         | Tailwind CSS v4 + shared-lib design tokens |
+| **GraphQL Client**  | Apollo Client / urql                       |
+| **Code Generation** | GraphQL Code Generator                     |
+| **Testing**         | Vitest, React Testing Library              |
+| **Container**       | Docker                                     |
 
 ---
 
@@ -157,31 +156,31 @@ This frontend:
 
 ## Environment
 
-| Setting | Value |
-|---------|-------|
-| **Local URL** | http://localhost:3000 |
-| **Backend API (Dev)** | http://localhost:8000/graphql/ |
-| **Backend API (Staging)** | https://staging-api.[domain]/graphql/ |
-| **Backend API (Production)** | https://api.[domain]/graphql/ |
-| **Locale** | en_GB |
-| **Timezone** | Europe/London |
-| **Currency** | GBP (£) |
+| Setting                      | Value                                 |
+| ---------------------------- | ------------------------------------- |
+| **Local URL**                | http://localhost:3000                 |
+| **Backend API (Dev)**        | http://localhost:8000/graphql/        |
+| **Backend API (Staging)**    | https://staging-api.[domain]/graphql/ |
+| **Backend API (Production)** | https://api.[domain]/graphql/         |
+| **Locale**                   | en_GB                                 |
+| **Timezone**                 | Europe/London                         |
+| **Currency**                 | GBP (£)                               |
 
 ---
 
 ## Key Locations
 
-| Directory | Purpose |
-|-----------|---------|
-| `src/components/` | App-specific components |
-| `src/pages/` | Route page components |
-| `src/graphql/` | GraphQL queries, mutations, fragments |
-| `src/graphql/generated/` | Auto-generated types and hooks |
-| `src/hooks/` | Custom React hooks |
-| `src/contexts/` | React Context providers |
-| `src/services/` | Non-GraphQL services |
-| `src/utils/` | Utility functions |
-| `src/types/` | Shared TypeScript types |
+| Directory                | Purpose                               |
+| ------------------------ | ------------------------------------- |
+| `src/components/`        | App-specific components               |
+| `src/pages/`             | Route page components                 |
+| `src/graphql/`           | GraphQL queries, mutations, fragments |
+| `src/graphql/generated/` | Auto-generated types and hooks        |
+| `src/hooks/`             | Custom React hooks                    |
+| `src/contexts/`          | React Context providers               |
+| `src/services/`          | Non-GraphQL services                  |
+| `src/utils/`             | Utility functions                     |
+| `src/types/`             | Shared TypeScript types               |
 
 ---
 
@@ -609,12 +608,12 @@ $ARGUMENTS
 
 ### Required Root-Level Scripts
 
-| File | Purpose | Environment |
-|------|---------|-------------|
-| `dev.sh` | Start development environment | Development |
-| `test.sh` | Run test suite | Testing |
-| `staging.sh` | Deploy to staging environment | Staging |
-| `production.sh` | Deploy to production environment | Production |
+| File            | Purpose                          | Environment |
+| --------------- | -------------------------------- | ----------- |
+| `dev.sh`        | Start development environment    | Development |
+| `test.sh`       | Run test suite                   | Testing     |
+| `staging.sh`    | Deploy to staging environment    | Staging     |
+| `production.sh` | Deploy to production environment | Production  |
 
 ### dev.sh
 

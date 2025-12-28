@@ -8,24 +8,23 @@ Every significant folder in a codebase should contain a `README.md` that explain
 
 ## Table of Contents
 
-- [Section README Template](#section-readme-template)
-  - [Overview](#overview)
-  - [Table of Contents](#table-of-contents)
-  - [Markdown Extension Compatibility](#markdown-extension-compatibility)
-  - [Purpose](#purpose)
-  - [Template Structure](#template-structure)
-  - [When to Create Section READMEs](#when-to-create-section-readmes)
-  - [Examples](#examples)
-    - [API Folder README](#api-folder-readme)
-    - [Components Folder README](#components-folder-readme)
-    - [Services Folder README](#services-folder-readme)
-    - [Utils Folder README](#utils-folder-readme)
-    - [Config Folder README](#config-folder-readme)
-    - [Tests Folder README](#tests-folder-readme)
-    - [Docs Folder README](#docs-folder-readme)
-  - [Tree Generation](#tree-generation)
-    - [Tree Characters](#tree-characters)
-    - [Generating Trees Automatically](#generating-trees-automatically)
+- [Overview](#overview)
+- [Table of Contents](#table-of-contents)
+- [Markdown Extension Compatibility](#markdown-extension-compatibility)
+- [Purpose](#purpose)
+- [Template Structure](#template-structure)
+- [When to Create Section READMEs](#when-to-create-section-readmes)
+- [Examples](#examples)
+  - [API Folder README](#api-folder-readme)
+  - [Components Folder README](#components-folder-readme)
+  - [Services Folder README](#services-folder-readme)
+  - [Utils Folder README](#utils-folder-readme)
+  - [Config Folder README](#config-folder-readme)
+  - [Tests Folder README](#tests-folder-readme)
+  - [Docs Folder README](#docs-folder-readme)
+- [Tree Generation](#tree-generation)
+  - [Tree Characters](#tree-characters)
+  - [Generating Trees Automatically](#generating-trees-automatically)
 
 
 ---
@@ -83,11 +82,11 @@ folder-name/
 
 ## Files
 
-| File/Folder | Purpose |
-|-------------|---------|
+| File/Folder  | Purpose                  |
+| ------------ | ------------------------ |
 | `subfolder/` | Description of subfolder |
-| `file3.ext` | Description of file |
-| `file4.ext` | Description of file |
+| `file3.ext`  | Description of file      |
+| `file4.ext`  | Description of file      |
 
 ---
 
@@ -155,11 +154,11 @@ api/
 
 ## Endpoints
 
-| Route File | Base Path | Description |
-|------------|-----------|-------------|
-| `users.ts` | `/api/users` | User CRUD operations |
-| `orders.ts` | `/api/orders` | Order management |
-| `products.ts` | `/api/products` | Product catalogue |
+| Route File    | Base Path       | Description          |
+| ------------- | --------------- | -------------------- |
+| `users.ts`    | `/api/users`    | User CRUD operations |
+| `orders.ts`   | `/api/orders`   | Order management     |
+| `products.ts` | `/api/products` | Product catalogue    |
 
 ---
 
@@ -216,11 +215,11 @@ components/
 
 ## Component Categories
 
-| Category | Purpose | Examples |
-|----------|---------|----------|
-| `ui/` | Base UI elements | Button, Input, Modal |
-| `layout/` | Page structure | Header, Footer, Sidebar |
-| `forms/` | Form components | LoginForm, RegisterForm |
+| Category  | Purpose          | Examples                |
+| --------- | ---------------- | ----------------------- |
+| `ui/`     | Base UI elements | Button, Input, Modal    |
+| `layout/` | Page structure   | Header, Footer, Sidebar |
+| `forms/`  | Form components  | LoginForm, RegisterForm |
 
 ---
 
@@ -270,12 +269,12 @@ services/
 
 ## Service Files
 
-| Service | Responsibility |
-|---------|----------------|
-| `UserService.ts` | User registration, authentication, profile management |
-| `OrderService.ts` | Order creation, status updates, history |
-| `PaymentService.ts` | Payment processing, refunds |
-| `EmailService.ts` | Email sending, template rendering |
+| Service             | Responsibility                                        |
+| ------------------- | ----------------------------------------------------- |
+| `UserService.ts`    | User registration, authentication, profile management |
+| `OrderService.ts`   | Order creation, status updates, history               |
+| `PaymentService.ts` | Payment processing, refunds                           |
+| `EmailService.ts`   | Email sending, template rendering                     |
 
 ---
 
@@ -328,12 +327,12 @@ utils/
 
 ## Utility Files
 
-| File | Contents |
-|------|----------|
-| `date.ts` | Date formatting, parsing, comparison |
-| `string.ts` | String manipulation, slugify, truncate |
-| `validation.ts` | Input validation helpers |
-| `formatters.ts` | Currency, number, phone formatting |
+| File            | Contents                               |
+| --------------- | -------------------------------------- |
+| `date.ts`       | Date formatting, parsing, comparison   |
+| `string.ts`     | String manipulation, slugify, truncate |
+| `validation.ts` | Input validation helpers               |
+| `formatters.ts` | Currency, number, phone formatting     |
 
 ---
 
@@ -373,14 +372,14 @@ config/
 
 ## Configuration Files
 
-| File | Purpose |
-|------|---------|
-| `index.ts` | Exports merged config based on NODE_ENV |
-| `base.ts` | Settings shared across all environments |
-| `development.ts` | Local development settings |
-| `testing.ts` | Test runner settings (test database) |
-| `staging.ts` | Staging environment settings |
-| `production.ts` | Production environment settings |
+| File             | Purpose                                 |
+| ---------------- | --------------------------------------- |
+| `index.ts`       | Exports merged config based on NODE_ENV |
+| `base.ts`        | Settings shared across all environments |
+| `development.ts` | Local development settings              |
+| `testing.ts`     | Test runner settings (test database)    |
+| `staging.ts`     | Staging environment settings            |
+| `production.ts`  | Production environment settings         |
 
 ---
 
@@ -437,12 +436,12 @@ tests/
 
 ## Test Categories
 
-| Category | Purpose | Runner |
-|----------|---------|--------|
-| `unit/` | Isolated function tests | Jest |
-| `integration/` | Service + database tests | Jest |
-| `e2e/` | Full user journey tests | Playwright |
-| `fixtures/` | Test data | - |
+| Category       | Purpose                  | Runner     |
+| -------------- | ------------------------ | ---------- |
+| `unit/`        | Isolated function tests  | Jest       |
+| `integration/` | Service + database tests | Jest       |
+| `e2e/`         | Full user journey tests  | Playwright |
+| `fixtures/`    | Test data                | -          |
 
 ---
 
@@ -509,13 +508,13 @@ docs/
 
 ## Documentation Categories
 
-| Folder | Contents |
-|--------|----------|
-| `API/` | API endpoint reference and authentication |
-| `SETUP/` | Development and production setup guides |
-| `ARCHITECTURE/` | System architecture and design decisions |
-| `DATABASE/` | Schema snapshots and migration history |
-| `GUIDES/` | Contributing, testing, and deployment guides |
+| Folder          | Contents                                     |
+| --------------- | -------------------------------------------- |
+| `API/`          | API endpoint reference and authentication    |
+| `SETUP/`        | Development and production setup guides      |
+| `ARCHITECTURE/` | System architecture and design decisions     |
+| `DATABASE/`     | Schema snapshots and migration history       |
+| `GUIDES/`       | Contributing, testing, and deployment guides |
 
 ---
 
@@ -543,12 +542,12 @@ folder-name/
 
 ### Tree Characters
 
-| Character | Usage |
-|-----------|-------|
-| `├──` | Item with more siblings below |
-| `└──` | Last item in current level |
-| `│` | Vertical line for nested levels |
-| `   ` | Indent (3 spaces) for alignment |
+| Character | Usage                           |
+| --------- | ------------------------------- |
+| `├──`     | Item with more siblings below   |
+| `└──`     | Last item in current level      |
+| `│`       | Vertical line for nested levels |
+| `   `     | Indent (3 spaces) for alignment |
 
 ### Generating Trees Automatically
 

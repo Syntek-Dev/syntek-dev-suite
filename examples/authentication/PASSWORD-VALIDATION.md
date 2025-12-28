@@ -1,5 +1,13 @@
 # Password Validation
 
+**Last Updated**: 28/12/2025
+**Version**: 1.3.0
+**Maintained By**: Development Team
+**Language**: British English (en_GB)
+**Timezone**: Europe/London
+
+---
+
 ## Overview
 
 Strong password validation implementations for secure user authentication. All implementations include:
@@ -9,57 +17,56 @@ Strong password validation implementations for secure user authentication. All i
 
 ## Metadata
 
-| Property | Value |
-|----------|-------|
-| **Example Version** | 2.0.0 |
-| **Last Updated** | 2025-12 |
-| **Laravel** | 12.x |
-| **PHP** | 8.4 |
-| **Django** | 6.x |
-| **Python** | 3.14 |
-| **Node.js** | 24.x |
-| **TypeScript** | 5.9 |
-| **Next.js** | 16.x |
-| **React** | 19.x |
-| **React Native** | 0.83.x |
-| **Tailwind CSS** | 4.x |
-| **NativeWind** | v4 |
-| **Stacks** | TALL, Django/Wagtail, React/Next.js, React Native |
+| Property            | Value                                             |
+| ------------------- | ------------------------------------------------- |
+| **Example Version** | 2.0.0                                             |
+| **Last Updated**    | 2025-12                                           |
+| **Laravel**         | 12.x                                              |
+| **PHP**             | 8.4                                               |
+| **Django**          | 6.x                                               |
+| **Python**          | 3.14                                              |
+| **Node.js**         | 24.x                                              |
+| **TypeScript**      | 5.9                                               |
+| **Next.js**         | 16.x                                              |
+| **React**           | 19.x                                              |
+| **React Native**    | 0.83.x                                            |
+| **Tailwind CSS**    | 4.x                                               |
+| **NativeWind**      | v4                                                |
+| **Stacks**          | TALL, Django/Wagtail, React/Next.js, React Native |
 
 ---
 
 ## Table of Contents
 
-- [Password Validation](#password-validation)
-  - [Overview](#overview)
-  - [Metadata](#metadata)
-  - [Table of Contents](#table-of-contents)
-  - [Password Requirements](#password-requirements)
-  - [Laravel (TALL Stack)](#laravel-tall-stack)
-    - [Validation Rule](#validation-rule)
-      - [app/Rules/StrongPassword.php](#apprulesstrongpasswordphp)
-    - [Livewire Component](#livewire-component)
-      - [app/Livewire/Auth/RegisterForm.php](#applivewireauthregisterformphp)
-      - [resources/views/livewire/auth/register-form.blade.php](#resourcesviewslivewireauthregister-formbladephp)
-  - [Django/Wagtail](#djangowagtail)
-    - [Password Validator](#password-validator)
-      - [validators.py](#validatorspy)
-    - [User Registration Form](#user-registration-form)
-      - [forms.py](#formspy)
-      - [views.py](#viewspy)
-      - [templates/auth/register.html](#templatesauthregisterhtml)
-  - [React/Next.js](#reactnextjs)
-    - [Validation Hook](#validation-hook)
-      - [hooks/usePasswordValidation.ts](#hooksusepasswordvalidationts)
-    - [Password Input Component](#password-input-component)
-      - [components/PasswordInput.tsx](#componentspasswordinputtsx)
-      - [app/register/page.tsx](#appregisterpagetsx)
-  - [React Native](#react-native)
-    - [Validation Service](#validation-service)
-      - [services/passwordValidation.service.ts](#servicespasswordvalidationservicets)
-    - [Password Input Component](#password-input-component-1)
-      - [components/PasswordInput.tsx](#componentspasswordinputtsx-1)
-      - [screens/RegisterScreen.tsx](#screensregisterscreentsx)
+- [Overview](#overview)
+- [Metadata](#metadata)
+- [Table of Contents](#table-of-contents)
+- [Password Requirements](#password-requirements)
+- [Laravel (TALL Stack)](#laravel-tall-stack)
+  - [Validation Rule](#validation-rule)
+    - [app/Rules/StrongPassword.php](#apprulesstrongpasswordphp)
+  - [Livewire Component](#livewire-component)
+    - [app/Livewire/Auth/RegisterForm.php](#applivewireauthregisterformphp)
+    - [resources/views/livewire/auth/register-form.blade.php](#resourcesviewslivewireauthregister-formbladephp)
+- [Django/Wagtail](#djangowagtail)
+  - [Password Validator](#password-validator)
+    - [validators.py](#validatorspy)
+  - [User Registration Form](#user-registration-form)
+    - [forms.py](#formspy)
+    - [views.py](#viewspy)
+    - [templates/auth/register.html](#templatesauthregisterhtml)
+- [React/Next.js](#reactnextjs)
+  - [Validation Hook](#validation-hook)
+    - [hooks/usePasswordValidation.ts](#hooksusepasswordvalidationts)
+  - [Password Input Component](#password-input-component)
+    - [components/PasswordInput.tsx](#componentspasswordinputtsx)
+    - [app/register/page.tsx](#appregisterpagetsx)
+- [React Native](#react-native)
+  - [Validation Service](#validation-service)
+    - [services/passwordValidation.service.ts](#servicespasswordvalidationservicets)
+  - [Password Input Component](#password-input-component-1)
+    - [components/PasswordInput.tsx](#componentspasswordinputtsx-1)
+    - [screens/RegisterScreen.tsx](#screensregisterscreentsx)
 
 
 

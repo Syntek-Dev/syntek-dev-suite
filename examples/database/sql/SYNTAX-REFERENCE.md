@@ -6,49 +6,48 @@ SQL syntax differences between database engines. Use this reference when writing
 
 ## Metadata
 
-| Property | Value |
-|----------|-------|
-| **Example Version** | 1.0.0 |
-| **Last Updated** | 2025-01 |
-| **Engines** | MySQL 8.x, MariaDB 10.11, PostgreSQL 15/16, SQLite 3.x, SQL Server 2022 |
-| **Stacks** | All |
+| Property            | Value                                                                   |
+| ------------------- | ----------------------------------------------------------------------- |
+| **Example Version** | 1.0.0                                                                   |
+| **Last Updated**    | 2025-01                                                                 |
+| **Engines**         | MySQL 8.x, MariaDB 10.11, PostgreSQL 15/16, SQLite 3.x, SQL Server 2022 |
+| **Stacks**          | All                                                                     |
 
 ---
 
 ## Table of Contents
 
-- [SQL Syntax Reference (Cross-Engine)](#sql-syntax-reference-cross-engine)
-  - [Overview](#overview)
-  - [Metadata](#metadata)
-  - [Table of Contents](#table-of-contents)
-  - [Auto-Increment Syntax](#auto-increment-syntax)
-    - [MySQL / MariaDB](#mysql--mariadb)
-    - [PostgreSQL](#postgresql)
-    - [SQLite](#sqlite)
-    - [SQL Server](#sql-server)
-  - [Data Type Mappings](#data-type-mappings)
-    - [Boolean Storage Examples](#boolean-storage-examples)
-  - [String Concatenation](#string-concatenation)
-    - [MySQL / MariaDB](#mysql--mariadb-1)
-    - [PostgreSQL](#postgresql-1)
-    - [SQLite](#sqlite-1)
-    - [SQL Server](#sql-server-1)
-  - [Date/Time Functions](#datetime-functions)
-    - [Current Timestamp](#current-timestamp)
-    - [Date Formatting](#date-formatting)
-    - [Date Arithmetic](#date-arithmetic)
-  - [Pagination Syntax](#pagination-syntax)
-    - [MySQL / MariaDB / PostgreSQL / SQLite](#mysql--mariadb--postgresql--sqlite)
-    - [SQL Server](#sql-server-2)
-  - [JSON Support](#json-support)
-    - [MySQL 5.7+ / MariaDB 10.2+](#mysql-57--mariadb-102)
-    - [PostgreSQL](#postgresql-2)
-    - [SQL Server 2016+](#sql-server-2016)
-  - [Upsert Syntax](#upsert-syntax)
-    - [MySQL / MariaDB](#mysql--mariadb-2)
-    - [PostgreSQL](#postgresql-3)
-    - [SQLite](#sqlite-2)
-    - [SQL Server](#sql-server-3)
+- [Overview](#overview)
+- [Metadata](#metadata)
+- [Table of Contents](#table-of-contents)
+- [Auto-Increment Syntax](#auto-increment-syntax)
+  - [MySQL / MariaDB](#mysql--mariadb)
+  - [PostgreSQL](#postgresql)
+  - [SQLite](#sqlite)
+  - [SQL Server](#sql-server)
+- [Data Type Mappings](#data-type-mappings)
+  - [Boolean Storage Examples](#boolean-storage-examples)
+- [String Concatenation](#string-concatenation)
+  - [MySQL / MariaDB](#mysql--mariadb-1)
+  - [PostgreSQL](#postgresql-1)
+  - [SQLite](#sqlite-1)
+  - [SQL Server](#sql-server-1)
+- [Date/Time Functions](#datetime-functions)
+  - [Current Timestamp](#current-timestamp)
+  - [Date Formatting](#date-formatting)
+  - [Date Arithmetic](#date-arithmetic)
+- [Pagination Syntax](#pagination-syntax)
+  - [MySQL / MariaDB / PostgreSQL / SQLite](#mysql--mariadb--postgresql--sqlite)
+  - [SQL Server](#sql-server-2)
+- [JSON Support](#json-support)
+  - [MySQL 5.7+ / MariaDB 10.2+](#mysql-57--mariadb-102)
+  - [PostgreSQL](#postgresql-2)
+  - [SQL Server 2016+](#sql-server-2016)
+- [Upsert Syntax](#upsert-syntax)
+  - [MySQL / MariaDB](#mysql--mariadb-2)
+  - [PostgreSQL](#postgresql-3)
+  - [SQLite](#sqlite-2)
+  - [SQL Server](#sql-server-3)
 
 
 
@@ -101,16 +100,16 @@ CREATE TABLE users (
 
 ## Data Type Mappings
 
-| Concept | MySQL/MariaDB | PostgreSQL | SQLite | SQL Server |
-|---------|---------------|------------|--------|------------|
-| Boolean | `TINYINT(1)` | `BOOLEAN` | `INTEGER` | `BIT` |
-| UUID | `CHAR(36)` | `UUID` | `TEXT` | `UNIQUEIDENTIFIER` |
-| JSON | `JSON` | `JSONB` | `TEXT` | `NVARCHAR(MAX)` |
-| Large text | `LONGTEXT` | `TEXT` | `TEXT` | `NVARCHAR(MAX)` |
-| Binary | `BLOB` | `BYTEA` | `BLOB` | `VARBINARY(MAX)` |
-| Timestamp | `TIMESTAMP` | `TIMESTAMPTZ` | `TEXT` | `DATETIME2` |
-| Decimal | `DECIMAL(10,2)` | `NUMERIC(10,2)` | `REAL` | `DECIMAL(10,2)` |
-| Big Integer | `BIGINT` | `BIGINT` | `INTEGER` | `BIGINT` |
+| Concept     | MySQL/MariaDB   | PostgreSQL      | SQLite    | SQL Server         |
+| ----------- | --------------- | --------------- | --------- | ------------------ |
+| Boolean     | `TINYINT(1)`    | `BOOLEAN`       | `INTEGER` | `BIT`              |
+| UUID        | `CHAR(36)`      | `UUID`          | `TEXT`    | `UNIQUEIDENTIFIER` |
+| JSON        | `JSON`          | `JSONB`         | `TEXT`    | `NVARCHAR(MAX)`    |
+| Large text  | `LONGTEXT`      | `TEXT`          | `TEXT`    | `NVARCHAR(MAX)`    |
+| Binary      | `BLOB`          | `BYTEA`         | `BLOB`    | `VARBINARY(MAX)`   |
+| Timestamp   | `TIMESTAMP`     | `TIMESTAMPTZ`   | `TEXT`    | `DATETIME2`        |
+| Decimal     | `DECIMAL(10,2)` | `NUMERIC(10,2)` | `REAL`    | `DECIMAL(10,2)`    |
+| Big Integer | `BIGINT`        | `BIGINT`        | `INTEGER` | `BIGINT`           |
 
 ### Boolean Storage Examples
 
@@ -173,12 +172,12 @@ SELECT CONCAT(first_name, ' ', last_name) AS full_name FROM users;
 
 ### Current Timestamp
 
-| Engine | Function |
-|--------|----------|
-| MySQL/MariaDB | `NOW()`, `CURRENT_TIMESTAMP` |
-| PostgreSQL | `NOW()`, `CURRENT_TIMESTAMP` |
-| SQLite | `datetime('now')`, `CURRENT_TIMESTAMP` |
-| SQL Server | `GETDATE()`, `CURRENT_TIMESTAMP` |
+| Engine        | Function                               |
+| ------------- | -------------------------------------- |
+| MySQL/MariaDB | `NOW()`, `CURRENT_TIMESTAMP`           |
+| PostgreSQL    | `NOW()`, `CURRENT_TIMESTAMP`           |
+| SQLite        | `datetime('now')`, `CURRENT_TIMESTAMP` |
+| SQL Server    | `GETDATE()`, `CURRENT_TIMESTAMP`       |
 
 ### Date Formatting
 

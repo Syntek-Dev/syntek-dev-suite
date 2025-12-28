@@ -1,5 +1,13 @@
 # PII Middleware and Guards
 
+**Last Updated**: 28/12/2025
+**Version**: 1.3.0
+**Maintained By**: Development Team
+**Language**: British English (en_GB)
+**Timezone**: Europe/London
+
+---
+
 ## Metadata
 
 | Property | Value |
@@ -25,19 +33,18 @@
 
 ## Table of Contents
 
-- [PII Middleware and Guards](#pii-middleware-and-guards)
-  - [Metadata](#metadata)
-  - [Framework Versions Tested](#framework-versions-tested)
-  - [Table of Contents](#table-of-contents)
-  - [Overview](#overview)
-  - [Laravel (TALL Stack)](#laravel-tall-stack)
-    - [HTTP Middleware](#http-middleware)
-    - [Route Protection](#route-protection)
-    - [Middleware Registration](#middleware-registration)
-  - [Django/Wagtail (Strawberry GraphQL)](#djangowagtail-strawberry-graphql)
-    - [Usage](#usage)
-  - [Node.js/TypeScript (NestJS GraphQL)](#nodejstypescript-nestjs-graphql)
-    - [Usage](#usage-1)
+- [Metadata](#metadata)
+- [Framework Versions Tested](#framework-versions-tested)
+- [Table of Contents](#table-of-contents)
+- [Overview](#overview)
+- [Laravel (TALL Stack)](#laravel-tall-stack)
+  - [HTTP Middleware](#http-middleware)
+  - [Route Protection](#route-protection)
+  - [Middleware Registration](#middleware-registration)
+- [Django/Wagtail (Strawberry GraphQL)](#djangowagtail-strawberry-graphql)
+  - [Usage](#usage)
+- [Node.js/TypeScript (NestJS GraphQL)](#nodejstypescript-nestjs-graphql)
+  - [Usage](#usage-1)
 
 
 ## Overview

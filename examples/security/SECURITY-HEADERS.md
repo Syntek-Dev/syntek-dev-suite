@@ -6,62 +6,61 @@ Security hardening patterns including HTTP security headers, rate limiting, IP a
 
 ## Metadata
 
-| Property | Value |
-|----------|-------|
-| **Example Version** | 2.0.0 |
-| **Last Updated** | 2025-12 |
-| **TALL Stack** | Laravel 12.x / PHP 8.4 / MariaDB 12.x |
-| **Django/Wagtail** | Django 6.x / Python 3.14 / PostgreSQL 18.x |
-| **React/Next.js** | Next.js 16.x / React 19.x / TypeScript 5.9 |
-| **React Native** | React Native 0.83.x |
-| **Stacks** | TALL, Django/Wagtail, React/Next.js, React Native |
+| Property            | Value                                             |
+| ------------------- | ------------------------------------------------- |
+| **Example Version** | 2.0.0                                             |
+| **Last Updated**    | 2025-12                                           |
+| **TALL Stack**      | Laravel 12.x / PHP 8.4 / MariaDB 12.x             |
+| **Django/Wagtail**  | Django 6.x / Python 3.14 / PostgreSQL 18.x        |
+| **React/Next.js**   | Next.js 16.x / React 19.x / TypeScript 5.9        |
+| **React Native**    | React Native 0.83.x                               |
+| **Stacks**          | TALL, Django/Wagtail, React/Next.js, React Native |
 
 ---
 
 ## Table of Contents
 
-- [Security Headers \& Hardening](#security-headers--hardening)
-  - [Overview](#overview)
-  - [Metadata](#metadata)
-  - [Table of Contents](#table-of-contents)
-  - [TALL Stack (Laravel)](#tall-stack-laravel)
-    - [Security Headers Middleware - Laravel](#security-headers-middleware---laravel)
-    - [app/Http/Middleware/SecurityHeaders.php](#apphttpmiddlewaresecurityheadersphp)
-  - [Rate Limiting - Laravel](#rate-limiting---laravel)
-    - [app/Providers/RouteServiceProvider.php](#appprovidersrouteserviceproviderphp)
-    - [routes/web.php (Rate Limited Routes)](#routeswebphp-rate-limited-routes)
-  - [IP Allowlisting - Laravel](#ip-allowlisting---laravel)
-    - [app/Http/Middleware/AdminIpAllowlist.php](#apphttpmiddlewareadminipallowlistphp)
-  - [Audit Logging - Laravel](#audit-logging---laravel)
-    - [app/Services/AuditService.php](#appservicesauditservicephp)
-    - [database/migrations/xxxx\_create\_audit\_logs\_table.php](#databasemigrationsxxxx_create_audit_logs_tablephp)
-  - [Django/Wagtail Stack](#djangowagtail-stack)
-    - [Security Headers Middleware - Django](#security-headers-middleware---django)
-    - [middleware/security\_headers.py](#middlewaresecurity_headerspy)
-  - [Rate Limiting - Django](#rate-limiting---django)
-      - [middleware/rate\_limiting.py](#middlewarerate_limitingpy)
-      - [settings/base.py (Rate Limiting Configuration)](#settingsbasepy-rate-limiting-configuration)
-  - [IP Allowlisting - Django](#ip-allowlisting---django)
-      - [middleware/admin\_ip\_allowlist.py](#middlewareadmin_ip_allowlistpy)
-      - [.env.example](#envexample)
-  - [Audit Logging - Django](#audit-logging---django)
-      - [services/audit\_service.py](#servicesaudit_servicepy)
-      - [apps/audit/models.py](#appsauditmodelspy)
-      - [apps/audit/migrations/0001\_initial.py](#appsauditmigrations0001_initialpy)
-  - [React/Next.js Stack](#reactnextjs-stack)
-    - [Security Headers Configuration - Next.js](#security-headers-configuration---nextjs)
-      - [next.config.js](#nextconfigjs)
-      - [Alternative: Middleware Approach (middleware.ts)](#alternative-middleware-approach-middlewarets)
-  - [Rate Limiting - Next.js](#rate-limiting---nextjs)
-      - [lib/rate-limit.ts](#librate-limitts)
-      - [app/api/auth/login/route.ts (Example Usage)](#appapiauthloginroutets-example-usage)
-      - [package.json (Dependencies)](#packagejson-dependencies)
-  - [Audit Logging - Next.js](#audit-logging---nextjs)
-      - [lib/audit-service.ts](#libaudit-servicets)
-      - [prisma/schema.prisma (Audit Log Model)](#prismaschemaprisma-audit-log-model)
-      - [app/api/example/route.ts (Usage Example)](#appapiexampleroutets-usage-example)
-  - [React Native Stack](#react-native-stack)
-    - [Security Headers Note](#security-headers-note)
+- [Overview](#overview)
+- [Metadata](#metadata)
+- [Table of Contents](#table-of-contents)
+- [TALL Stack (Laravel)](#tall-stack-laravel)
+  - [Security Headers Middleware - Laravel](#security-headers-middleware---laravel)
+  - [app/Http/Middleware/SecurityHeaders.php](#apphttpmiddlewaresecurityheadersphp)
+- [Rate Limiting - Laravel](#rate-limiting---laravel)
+  - [app/Providers/RouteServiceProvider.php](#appprovidersrouteserviceproviderphp)
+  - [routes/web.php (Rate Limited Routes)](#routeswebphp-rate-limited-routes)
+- [IP Allowlisting - Laravel](#ip-allowlisting---laravel)
+  - [app/Http/Middleware/AdminIpAllowlist.php](#apphttpmiddlewareadminipallowlistphp)
+- [Audit Logging - Laravel](#audit-logging---laravel)
+  - [app/Services/AuditService.php](#appservicesauditservicephp)
+  - [database/migrations/xxxx\_create\_audit\_logs\_table.php](#databasemigrationsxxxx_create_audit_logs_tablephp)
+- [Django/Wagtail Stack](#djangowagtail-stack)
+  - [Security Headers Middleware - Django](#security-headers-middleware---django)
+  - [middleware/security\_headers.py](#middlewaresecurity_headerspy)
+- [Rate Limiting - Django](#rate-limiting---django)
+    - [middleware/rate\_limiting.py](#middlewarerate_limitingpy)
+    - [settings/base.py (Rate Limiting Configuration)](#settingsbasepy-rate-limiting-configuration)
+- [IP Allowlisting - Django](#ip-allowlisting---django)
+    - [middleware/admin\_ip\_allowlist.py](#middlewareadmin_ip_allowlistpy)
+    - [.env.example](#envexample)
+- [Audit Logging - Django](#audit-logging---django)
+    - [services/audit\_service.py](#servicesaudit_servicepy)
+    - [apps/audit/models.py](#appsauditmodelspy)
+    - [apps/audit/migrations/0001\_initial.py](#appsauditmigrations0001_initialpy)
+- [React/Next.js Stack](#reactnextjs-stack)
+  - [Security Headers Configuration - Next.js](#security-headers-configuration---nextjs)
+    - [next.config.js](#nextconfigjs)
+    - [Alternative: Middleware Approach (middleware.ts)](#alternative-middleware-approach-middlewarets)
+- [Rate Limiting - Next.js](#rate-limiting---nextjs)
+    - [lib/rate-limit.ts](#librate-limitts)
+    - [app/api/auth/login/route.ts (Example Usage)](#appapiauthloginroutets-example-usage)
+    - [package.json (Dependencies)](#packagejson-dependencies)
+- [Audit Logging - Next.js](#audit-logging---nextjs)
+    - [lib/audit-service.ts](#libaudit-servicets)
+    - [prisma/schema.prisma (Audit Log Model)](#prismaschemaprisma-audit-log-model)
+    - [app/api/example/route.ts (Usage Example)](#appapiexampleroutets-usage-example)
+- [React Native Stack](#react-native-stack)
+  - [Security Headers Note](#security-headers-note)
 
 
 ## TALL Stack (Laravel)

@@ -1,55 +1,62 @@
 # Rate Limiting for PII Endpoints
 
+**Last Updated**: 28/12/2025
+**Version**: 1.3.0
+**Maintained By**: Development Team
+**Language**: British English (en_GB)
+**Timezone**: Europe/London
+
+---
+
 ## Metadata
 
-| Property | Value |
-|----------|-------|
-| **Version** | 2.0.0 |
+| Property         | Value   |
+| ---------------- | ------- |
+| **Version**      | 2.0.0   |
 | **Last Updated** | 2025-12 |
-| **Status** | Stable |
+| **Status**       | Stable  |
 
 ## Framework Versions Tested
 
-| Framework | Version | Tested Date |
-|-----------|---------|-------------|
-| Laravel | 12.x | 20/12/2025 |
-| PHP | 8.4 | 20/12/2025 |
-| MariaDB | 12.x | 20/12/2025 |
-| Django | 6.x | 20/12/2025 |
-| Python | 3.14 | 20/12/2025 |
-| PostgreSQL | 18.x | 20/12/2025 |
-| django-ratelimit | 4.x | 20/12/2025 |
-| Next.js | 16.x | 20/12/2025 |
-| Node.js | 24.x | 20/12/2025 |
-| TypeScript | 5.9 | 20/12/2025 |
-| React Native | 0.83.x | 20/12/2025 |
+| Framework        | Version | Tested Date |
+| ---------------- | ------- | ----------- |
+| Laravel          | 12.x    | 20/12/2025  |
+| PHP              | 8.4     | 20/12/2025  |
+| MariaDB          | 12.x    | 20/12/2025  |
+| Django           | 6.x     | 20/12/2025  |
+| Python           | 3.14    | 20/12/2025  |
+| PostgreSQL       | 18.x    | 20/12/2025  |
+| django-ratelimit | 4.x     | 20/12/2025  |
+| Next.js          | 16.x    | 20/12/2025  |
+| Node.js          | 24.x    | 20/12/2025  |
+| TypeScript       | 5.9     | 20/12/2025  |
+| React Native     | 0.83.x  | 20/12/2025  |
 
 ---
 
 ## Table of Contents
 
-- [Rate Limiting for PII Endpoints](#rate-limiting-for-pii-endpoints)
-  - [Metadata](#metadata)
-  - [Framework Versions Tested](#framework-versions-tested)
-  - [Table of Contents](#table-of-contents)
-  - [Overview](#overview)
-  - [TALL Stack (Laravel)](#tall-stack-laravel)
-    - [Installation](#installation)
-    - [Rate Limiter Configuration](#rate-limiter-configuration)
-    - [Route Configuration](#route-configuration)
-    - [Custom Middleware (Optional)](#custom-middleware-optional)
-    - [Controller Example](#controller-example)
-  - [Django/Wagtail](#djangowagtail)
-    - [Installation](#installation-1)
-    - [Settings Configuration](#settings-configuration)
-    - [Rate Limit Decorator](#rate-limit-decorator)
-    - [GraphQL Schema Example (Strawberry)](#graphql-schema-example-strawberry)
-    - [REST API Example (Django REST Framework)](#rest-api-example-django-rest-framework)
-    - [Middleware (Optional)](#middleware-optional)
-  - [Node.js/TypeScript (NestJS GraphQL)](#nodejstypescript-nestjs-graphql)
-    - [PII Throttle Guard](#pii-throttle-guard)
-    - [Module Configuration](#module-configuration)
-    - [Usage](#usage)
+- [Metadata](#metadata)
+- [Framework Versions Tested](#framework-versions-tested)
+- [Table of Contents](#table-of-contents)
+- [Overview](#overview)
+- [TALL Stack (Laravel)](#tall-stack-laravel)
+  - [Installation](#installation)
+  - [Rate Limiter Configuration](#rate-limiter-configuration)
+  - [Route Configuration](#route-configuration)
+  - [Custom Middleware (Optional)](#custom-middleware-optional)
+  - [Controller Example](#controller-example)
+- [Django/Wagtail](#djangowagtail)
+  - [Installation](#installation-1)
+  - [Settings Configuration](#settings-configuration)
+  - [Rate Limit Decorator](#rate-limit-decorator)
+  - [GraphQL Schema Example (Strawberry)](#graphql-schema-example-strawberry)
+  - [REST API Example (Django REST Framework)](#rest-api-example-django-rest-framework)
+  - [Middleware (Optional)](#middleware-optional)
+- [Node.js/TypeScript (NestJS GraphQL)](#nodejstypescript-nestjs-graphql)
+  - [PII Throttle Guard](#pii-throttle-guard)
+  - [Module Configuration](#module-configuration)
+  - [Usage](#usage)
 
 
 ## Overview

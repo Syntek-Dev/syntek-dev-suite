@@ -6,23 +6,22 @@ Standard ignore file templates for different project types. These templates cove
 
 ## Metadata
 
-| Property | Value |
-|----------|-------|
-| **Example Version** | 1.0.0 |
-| **Last Updated** | 2025-01 |
-| **Stacks** | All (TALL, Django, React, Mobile, Shared-Lib) |
+| Property            | Value                                         |
+| ------------------- | --------------------------------------------- |
+| **Example Version** | 1.0.0                                         |
+| **Last Updated**    | 2025-01                                       |
+| **Stacks**          | All (TALL, Django, React, Mobile, Shared-Lib) |
 
 ---
 
 ## Table of Contents
 
-- [.gitignore Templates](#gitignore-templates)
-  - [Overview](#overview)
-  - [Metadata](#metadata)
-  - [Table of Contents](#table-of-contents)
-  - [Universal .gitignore](#universal-gitignore)
-  - [.dockerignore](#dockerignore)
-  - [.gitattributes](#gitattributes)
+- [Overview](#overview)
+- [Metadata](#metadata)
+- [Table of Contents](#table-of-contents)
+- [Universal .gitignore](#universal-gitignore)
+- [.dockerignore](#dockerignore)
+- [.gitattributes](#gitattributes)
 
 ---
 

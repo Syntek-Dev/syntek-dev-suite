@@ -10,77 +10,76 @@ Integration examples for Postmark and Mailchimp Transactional (formerly Mandrill
 
 ## Metadata
 
-| Property | Value |
-|----------|-------|
-| **Example Version** | 2.0.0 |
-| **Last Updated** | 2025-12 |
-| **Postmark API** | v3 |
-| **Mailchimp Transactional API** | v1.0 |
-| **Laravel** | 12.x |
-| **PHP** | 8.4 |
-| **Django** | 6.x |
-| **Python** | 3.14 |
-| **Next.js** | 16.x |
-| **React** | 19.x |
-| **Stacks** | TALL, Django/Wagtail, React/Next.js, React Native |
+| Property                        | Value                                             |
+| ------------------------------- | ------------------------------------------------- |
+| **Example Version**             | 2.0.0                                             |
+| **Last Updated**                | 2025-12                                           |
+| **Postmark API**                | v3                                                |
+| **Mailchimp Transactional API** | v1.0                                              |
+| **Laravel**                     | 12.x                                              |
+| **PHP**                         | 8.4                                               |
+| **Django**                      | 6.x                                               |
+| **Python**                      | 3.14                                              |
+| **Next.js**                     | 16.x                                              |
+| **React**                       | 19.x                                              |
+| **Stacks**                      | TALL, Django/Wagtail, React/Next.js, React Native |
 
 ---
 
 ## Table of Contents
 
-- [Email Provider Integrations](#email-provider-integrations)
-  - [Overview](#overview)
-  - [Metadata](#metadata)
-  - [Table of Contents](#table-of-contents)
-  - [Provider Comparison](#provider-comparison)
-  - [TALL Stack - Laravel 12.x](#tall-stack---laravel-12x)
-    - [Postmark Configuration - Laravel](#postmark-configuration---laravel)
-      - [config/mail.php (partial)](#configmailphp-partial)
-      - [.env.example](#envexample)
-    - [Postmark Service - Laravel](#postmark-service---laravel)
-      - [app/Services/Email/PostmarkService.php](#appservicesemailpostmarkservicephp)
-    - [Mailchimp Transactional Configuration - Laravel](#mailchimp-transactional-configuration---laravel)
-      - [config/services.php (partial)](#configservicesphp-partial)
-      - [.env.example (addition)](#envexample-addition)
-    - [Mailchimp Transactional Service - Laravel](#mailchimp-transactional-service---laravel)
-      - [app/Services/Email/MailchimpTransactionalService.php](#appservicesemailmailchimptransactionalservicephp)
-    - [Unified Mail Service - Laravel](#unified-mail-service---laravel)
-      - [app/Services/Email/UnifiedMailService.php](#appservicesemailunifiedmailservicephp)
-  - [Django/Wagtail Stack - Django 6.x](#djangowagtail-stack---django-6x)
-    - [Postmark Backend - Django](#postmark-backend---django)
-      - [apps/core/email/postmark\_backend.py](#appscoreemailpostmark_backendpy)
-    - [Mailchimp Transactional Backend - Django](#mailchimp-transactional-backend---django)
-      - [apps/core/email/mailchimp\_backend.py](#appscoreemailmailchimp_backendpy)
-  - [React/Next.js Stack - Next.js 16.x](#reactnextjs-stack---nextjs-16x)
-    - [Postmark API Client - Next.js](#postmark-api-client---nextjs)
-      - [lib/email/postmark-client.ts](#libemailpostmark-clientts)
-    - [Mailchimp Transactional API Client - Next.js](#mailchimp-transactional-api-client---nextjs)
-      - [lib/email/mailchimp-client.ts](#libemailmailchimp-clientts)
-    - [Email Service - Next.js](#email-service---nextjs)
-      - [lib/email/email-service.ts](#libemailemail-servicets)
-    - [API Routes - Next.js](#api-routes---nextjs)
-      - [app/api/email/send/route.ts](#appapiemailsendroutets)
-      - [app/api/webhooks/postmark/route.ts](#appapiwebhookspostmarkroutets)
-  - [React Native Stack](#react-native-stack)
-    - [Email Integration Note - React Native](#email-integration-note---react-native)
-    - [GraphQL Email Mutations - React Native](#graphql-email-mutations---react-native)
-      - [graphql/mutations/email.ts](#graphqlmutationsemailts)
-      - [hooks/useEmail.ts](#hooksuseemailts)
+- [Overview](#overview)
+- [Metadata](#metadata)
+- [Table of Contents](#table-of-contents)
+- [Provider Comparison](#provider-comparison)
+- [TALL Stack - Laravel 12.x](#tall-stack---laravel-12x)
+  - [Postmark Configuration - Laravel](#postmark-configuration---laravel)
+    - [config/mail.php (partial)](#configmailphp-partial)
+    - [.env.example](#envexample)
+  - [Postmark Service - Laravel](#postmark-service---laravel)
+    - [app/Services/Email/PostmarkService.php](#appservicesemailpostmarkservicephp)
+  - [Mailchimp Transactional Configuration - Laravel](#mailchimp-transactional-configuration---laravel)
+    - [config/services.php (partial)](#configservicesphp-partial)
+    - [.env.example (addition)](#envexample-addition)
+  - [Mailchimp Transactional Service - Laravel](#mailchimp-transactional-service---laravel)
+    - [app/Services/Email/MailchimpTransactionalService.php](#appservicesemailmailchimptransactionalservicephp)
+  - [Unified Mail Service - Laravel](#unified-mail-service---laravel)
+    - [app/Services/Email/UnifiedMailService.php](#appservicesemailunifiedmailservicephp)
+- [Django/Wagtail Stack - Django 6.x](#djangowagtail-stack---django-6x)
+  - [Postmark Backend - Django](#postmark-backend---django)
+    - [apps/core/email/postmark\_backend.py](#appscoreemailpostmark_backendpy)
+  - [Mailchimp Transactional Backend - Django](#mailchimp-transactional-backend---django)
+    - [apps/core/email/mailchimp\_backend.py](#appscoreemailmailchimp_backendpy)
+- [React/Next.js Stack - Next.js 16.x](#reactnextjs-stack---nextjs-16x)
+  - [Postmark API Client - Next.js](#postmark-api-client---nextjs)
+    - [lib/email/postmark-client.ts](#libemailpostmark-clientts)
+  - [Mailchimp Transactional API Client - Next.js](#mailchimp-transactional-api-client---nextjs)
+    - [lib/email/mailchimp-client.ts](#libemailmailchimp-clientts)
+  - [Email Service - Next.js](#email-service---nextjs)
+    - [lib/email/email-service.ts](#libemailemail-servicets)
+  - [API Routes - Next.js](#api-routes---nextjs)
+    - [app/api/email/send/route.ts](#appapiemailsendroutets)
+    - [app/api/webhooks/postmark/route.ts](#appapiwebhookspostmarkroutets)
+- [React Native Stack](#react-native-stack)
+  - [Email Integration Note - React Native](#email-integration-note---react-native)
+  - [GraphQL Email Mutations - React Native](#graphql-email-mutations---react-native)
+    - [graphql/mutations/email.ts](#graphqlmutationsemailts)
+    - [hooks/useEmail.ts](#hooksuseemailts)
 
 
 
 ## Provider Comparison
 
-| Feature | Postmark | Mailchimp Transactional |
-|---------|----------|------------------------|
-| **Focus** | Transactional only | Transactional + Marketing |
-| **Deliverability** | 99%+ inbox rate | High deliverability |
-| **Pricing Model** | Per email | Per email |
-| **Free Tier** | 100/month | None (pay as you go) |
-| **Templates** | Server-side templates | Server-side templates |
-| **Webhooks** | Yes (delivery, bounce, open, click) | Yes (all events) |
-| **Analytics** | Detailed per-message | Comprehensive reporting |
-| **Best For** | Critical transactional emails | Multi-channel marketing |
+| Feature            | Postmark                            | Mailchimp Transactional   |
+| ------------------ | ----------------------------------- | ------------------------- |
+| **Focus**          | Transactional only                  | Transactional + Marketing |
+| **Deliverability** | 99%+ inbox rate                     | High deliverability       |
+| **Pricing Model**  | Per email                           | Per email                 |
+| **Free Tier**      | 100/month                           | None (pay as you go)      |
+| **Templates**      | Server-side templates               | Server-side templates     |
+| **Webhooks**       | Yes (delivery, bounce, open, click) | Yes (all events)          |
+| **Analytics**      | Detailed per-message                | Comprehensive reporting   |
+| **Best For**       | Critical transactional emails       | Multi-channel marketing   |
 
 ---
 

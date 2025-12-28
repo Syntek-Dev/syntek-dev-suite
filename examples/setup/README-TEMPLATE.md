@@ -6,22 +6,22 @@ Standard README.md template for project setup. Provides a consistent structure f
 
 ## Metadata
 
-| Property | Value |
-|----------|-------|
-| **Example Version** | 1.0.0 |
-| **Last Updated** | 2025-01 |
-| **Stacks** | All (TALL, Django, React, Mobile, Shared-Lib) |
+| Property            | Value                                         |
+| ------------------- | --------------------------------------------- |
+| **Example Version** | 1.0.0                                         |
+| **Last Updated**    | 2025-01                                       |
+| **Stacks**          | All (TALL, Django, React, Mobile, Shared-Lib) |
 
 ---
 
 ## Table of Contents
 
-- [README Template](#readme-template)
-  - [Overview](#overview)
-  - [Metadata](#metadata)
-  - [Table of Contents](#table-of-contents)
-  - [Markdown Extension Compatibility](#markdown-extension-compatibility)
-  - [Template](#template)
+- [Overview](#overview)
+- [Metadata](#metadata)
+- [Table of Contents](#table-of-contents)
+- [Markdown Extension Compatibility](#markdown-extension-compatibility)
+- [Template](#template)
+
 
 ---
 
@@ -67,15 +67,15 @@ Install the extension for the best editing experience. See [docs/GUIDES/MARKDOWN
 \`\`\`
 
 ## Project Structure
-| Directory | Purpose |
-|-----------|---------|
-| `.claude/` | Claude Code configuration and commands |
-| `docs/` | Project documentation |
-| `docs/TESTS/` | Test specifications and results |
-| `docs/TESTS/MANUAL/` | Manual testing guides |
-| `docs/QA/` | QA reports and test execution logs |
-| `docs/PLANS/` | Implementation plans |
-| `docs/DEVOPS/` | CI/CD and deployment documentation |
+| Directory            | Purpose                                |
+| -------------------- | -------------------------------------- |
+| `.claude/`           | Claude Code configuration and commands |
+| `docs/`              | Project documentation                  |
+| `docs/TESTS/`        | Test specifications and results        |
+| `docs/TESTS/MANUAL/` | Manual testing guides                  |
+| `docs/QA/`           | QA reports and test execution logs     |
+| `docs/PLANS/`        | Implementation plans                   |
+| `docs/DEVOPS/`       | CI/CD and deployment documentation     |
 
 ## Documentation
 - [CLAUDE.md](.claude/CLAUDE.md) - Claude Code project context

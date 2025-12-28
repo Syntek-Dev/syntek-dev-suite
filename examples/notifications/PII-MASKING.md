@@ -2,44 +2,43 @@
 
 ## Metadata
 
-| Property | Value |
-|----------|-------|
-| **Version** | 2.0.0 |
+| Property         | Value         |
+| ---------------- | ------------- |
+| **Version**      | 2.0.0         |
 | **Last Updated** | December 2025 |
-| **Status** | Stable |
+| **Status**       | Stable        |
 
 ## Framework Versions Tested
 
-| Framework | Version | Tested Date |
-|-----------|---------|-------------|
-| Laravel | 12.x | 20/12/2025 |
-| PHP | 8.4 | 20/12/2025 |
-| Django | 6.x | 20/12/2025 |
-| Python | 3.14 | 20/12/2025 |
-| Next.js | 16.x | 20/12/2025 |
-| Node.js | 24.x LTS | 20/12/2025 |
-| TypeScript | 5.9 | 20/12/2025 |
-| React Native | 0.83.x | 20/12/2025 |
-| NativeWind | 4.x | 20/12/2025 |
+| Framework    | Version  | Tested Date |
+| ------------ | -------- | ----------- |
+| Laravel      | 12.x     | 20/12/2025  |
+| PHP          | 8.4      | 20/12/2025  |
+| Django       | 6.x      | 20/12/2025  |
+| Python       | 3.14     | 20/12/2025  |
+| Next.js      | 16.x     | 20/12/2025  |
+| Node.js      | 24.x LTS | 20/12/2025  |
+| TypeScript   | 5.9      | 20/12/2025  |
+| React Native | 0.83.x   | 20/12/2025  |
+| NativeWind   | 4.x      | 20/12/2025  |
 
 ---
 
 ## Table of Contents
 
-- [PII Masking for Notifications](#pii-masking-for-notifications)
-  - [Metadata](#metadata)
-  - [Framework Versions Tested](#framework-versions-tested)
-  - [Table of Contents](#table-of-contents)
-  - [Overview](#overview)
-  - [Laravel (TALL Stack)](#laravel-tall-stack)
-    - [Usage in Blade Template](#usage-in-blade-template)
-    - [Usage in Notification Class](#usage-in-notification-class)
-  - [Django/Wagtail](#djangowagtail)
-    - [Template Filters](#template-filters)
-    - [Usage in Django Template](#usage-in-django-template)
-    - [Usage in Notification Service](#usage-in-notification-service)
-  - [Node.js/TypeScript (React Native)](#nodejstypescript-react-native)
-    - [Usage in React Native](#usage-in-react-native)
+- [Metadata](#metadata)
+- [Framework Versions Tested](#framework-versions-tested)
+- [Table of Contents](#table-of-contents)
+- [Overview](#overview)
+- [Laravel (TALL Stack)](#laravel-tall-stack)
+  - [Usage in Blade Template](#usage-in-blade-template)
+  - [Usage in Notification Class](#usage-in-notification-class)
+- [Django/Wagtail](#djangowagtail)
+  - [Template Filters](#template-filters)
+  - [Usage in Django Template](#usage-in-django-template)
+  - [Usage in Notification Service](#usage-in-notification-service)
+- [Node.js/TypeScript (React Native)](#nodejstypescript-react-native)
+  - [Usage in React Native](#usage-in-react-native)
 
 ## Overview
 

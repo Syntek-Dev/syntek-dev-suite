@@ -2,35 +2,34 @@
 
 ## Metadata
 
-| Property | Value |
-|----------|-------|
-| **Version** | 2.0.0 |
+| Property         | Value   |
+| ---------------- | ------- |
+| **Version**      | 2.0.0   |
 | **Last Updated** | 12/2025 |
-| **Status** | Stable |
+| **Status**       | Stable  |
 
 ## Framework Versions Tested
 
-| Framework | Version | Tested Date |
-|-----------|---------|-------------|
-| Prisma | 6.x | 20/12/2025 |
-| Node.js | 24.x | 20/12/2025 |
-| TypeScript | 5.9 | 20/12/2025 |
-| PostgreSQL | 18.x | 20/12/2025 |
+| Framework  | Version | Tested Date |
+| ---------- | ------- | ----------- |
+| Prisma     | 6.x     | 20/12/2025  |
+| Node.js    | 24.x    | 20/12/2025  |
+| TypeScript | 5.9     | 20/12/2025  |
+| PostgreSQL | 18.x    | 20/12/2025  |
 
 ---
 
 ## Table of Contents
 
-- [Prisma Migrations](#prisma-migrations)
-  - [Metadata](#metadata)
-  - [Framework Versions Tested](#framework-versions-tested)
-  - [Table of Contents](#table-of-contents)
-  - [Basic Schema](#basic-schema)
-  - [Schema with Relations](#schema-with-relations)
-  - [PII Schema (GDPR Compliant)](#pii-schema-gdpr-compliant)
-  - [Role-Based Access Control Schema](#role-based-access-control-schema)
-  - [Running Migrations](#running-migrations)
-  - [Seed Script](#seed-script)
+- [Metadata](#metadata)
+- [Framework Versions Tested](#framework-versions-tested)
+- [Table of Contents](#table-of-contents)
+- [Basic Schema](#basic-schema)
+- [Schema with Relations](#schema-with-relations)
+- [PII Schema (GDPR Compliant)](#pii-schema-gdpr-compliant)
+- [Role-Based Access Control Schema](#role-based-access-control-schema)
+- [Running Migrations](#running-migrations)
+- [Seed Script](#seed-script)
 
 
 ## Basic Schema

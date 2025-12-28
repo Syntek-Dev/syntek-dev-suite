@@ -1,6 +1,12 @@
 # Code Examples
 
-**Version:** 1.2.0
+**Last Updated**: 28/12/2025
+**Version**: 1.3.0
+**Maintained By**: Development Team
+**Language**: British English (en_GB)
+**Timezone**: Europe/London
+
+---
 
 ## Overview
 

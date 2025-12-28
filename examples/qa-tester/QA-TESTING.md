@@ -1,5 +1,13 @@
 # QA Testing Examples
 
+**Last Updated**: 28/12/2025
+**Version**: 1.3.0
+**Maintained By**: Development Team
+**Language**: British English (en_GB)
+**Timezone**: Europe/London
+
+---
+
 ## Overview
 
 QA testing examples covering functional, integration, security, and accessibility testing across all technology stacks.

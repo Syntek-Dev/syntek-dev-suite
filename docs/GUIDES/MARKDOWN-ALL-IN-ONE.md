@@ -1,38 +1,50 @@
 # Markdown All in One Extension Guide
 
-The Syntek Dev Suite is configured for optimal use with the **Markdown All in One** VS Code extension. This guide covers all features and how to use them effectively.
+**Last Updated**: 28/12/2025
+**Version**: 1.3.0
+**Maintained By**: Development Team
+**Language**: British English (en_GB)
+**Timezone**: Europe/London
 
 ---
 
 ## Table of Contents
 
-- [Markdown All in One Extension Guide](#markdown-all-in-one-extension-guide)
-  - [Table of Contents](#table-of-contents)
-  - [Introduction](#introduction)
-  - [Installation](#installation)
-  - [Table of Contents Management](#table-of-contents-management)
-    - [Creating a TOC](#creating-a-toc)
-    - [Auto-Update on Save](#auto-update-on-save)
-    - [Excluding Headings](#excluding-headings)
-    - [TOC Settings](#toc-settings)
-  - [Keyboard Shortcuts](#keyboard-shortcuts)
-    - [Text Formatting](#text-formatting)
-    - [List Management](#list-management)
-    - [Navigation](#navigation)
-  - [List Editing](#list-editing)
-    - [Smart Indentation](#smart-indentation)
-    - [Auto-Renumbering](#auto-renumbering)
-    - [Task Lists](#task-lists)
-  - [Table Formatting](#table-formatting)
-    - [Auto-Alignment](#auto-alignment)
-    - [Table Syntax](#table-syntax)
-  - [Math Support](#math-support)
-    - [Inline Math](#inline-math)
-    - [Block Math](#block-math)
-  - [HTML Export](#html-export)
-  - [Configuration Reference](#configuration-reference)
-  - [Without the Extension](#without-the-extension)
-  - [Troubleshooting](#troubleshooting)
+- [Table of Contents](#table-of-contents)
+- [Introduction](#introduction)
+- [Installation](#installation)
+  - [Automatic (Recommended)](#automatic-recommended)
+  - [Manual Installation](#manual-installation)
+  - [Verify Installation](#verify-installation)
+- [Table of Contents Management](#table-of-contents-management)
+  - [Creating a TOC](#creating-a-toc)
+  - [Auto-Update on Save](#auto-update-on-save)
+  - [Excluding Headings](#excluding-headings)
+  - [TOC Settings](#toc-settings)
+- [Keyboard Shortcuts](#keyboard-shortcuts)
+  - [Text Formatting](#text-formatting)
+  - [List Management](#list-management)
+  - [Navigation](#navigation)
+- [List Editing](#list-editing)
+  - [Smart Indentation](#smart-indentation)
+  - [Auto-Renumbering](#auto-renumbering)
+  - [Task Lists](#task-lists)
+- [Table Formatting](#table-formatting)
+  - [Auto-Alignment](#auto-alignment)
+  - [Table Syntax](#table-syntax)
+- [Math Support](#math-support)
+  - [Inline Math](#inline-math)
+  - [Block Math](#block-math)
+- [HTML Export](#html-export)
+- [Configuration Reference](#configuration-reference)
+- [Without the Extension](#without-the-extension)
+- [Troubleshooting](#troubleshooting)
+  - [TOC Not Updating](#toc-not-updating)
+  - [Keyboard Shortcuts Not Working](#keyboard-shortcuts-not-working)
+  - [Tables Not Formatting](#tables-not-formatting)
+  - [Extension Not Detected](#extension-not-detected)
+  - [Math Not Rendering](#math-not-rendering)
+- [References](#references)
 
 ---
 
@@ -116,12 +128,12 @@ This section won't appear in the TOC.
 
 The workspace is configured with these TOC settings:
 
-| Setting | Value | Effect |
-|---------|-------|--------|
-| `toc.levels` | `2..6` | Include H2-H6 (skip H1 document title) |
-| `toc.unorderedList.marker` | `-` | Use `-` for list items |
-| `toc.updateOnSave` | `true` | Auto-update on save |
-| `toc.slugifyMode` | `github` | GitHub-compatible anchor links |
+| Setting                    | Value    | Effect                                 |
+| -------------------------- | -------- | -------------------------------------- |
+| `toc.levels`               | `2..6`   | Include H2-H6 (skip H1 document title) |
+| `toc.unorderedList.marker` | `-`      | Use `-` for list items                 |
+| `toc.updateOnSave`         | `true`   | Auto-update on save                    |
+| `toc.slugifyMode`          | `github` | GitHub-compatible anchor links         |
 
 ---
 
@@ -129,29 +141,29 @@ The workspace is configured with these TOC settings:
 
 ### Text Formatting
 
-| Shortcut | Action | Result |
-|----------|--------|--------|
-| `Ctrl+B` / `Cmd+B` | Toggle bold | `**text**` |
-| `Ctrl+I` / `Cmd+I` | Toggle italic | `*text*` |
-| `Alt+S` | Toggle strikethrough | `~~text~~` |
-| `Ctrl+M` / `Cmd+M` | Toggle math | `$expression$` |
+| Shortcut           | Action               | Result         |
+| ------------------ | -------------------- | -------------- |
+| `Ctrl+B` / `Cmd+B` | Toggle bold          | `**text**`     |
+| `Ctrl+I` / `Cmd+I` | Toggle italic        | `*text*`       |
+| `Alt+S`            | Toggle strikethrough | `~~text~~`     |
+| `Ctrl+M` / `Cmd+M` | Toggle math          | `$expression$` |
 
 ### List Management
 
-| Shortcut | Action |
-|----------|--------|
-| `Tab` | Indent list item |
-| `Shift+Tab` | Un-indent list item |
-| `Alt+C` | Toggle task checkbox |
-| `Backspace` (at line start) | Remove list marker |
+| Shortcut                    | Action               |
+| --------------------------- | -------------------- |
+| `Tab`                       | Indent list item     |
+| `Shift+Tab`                 | Un-indent list item  |
+| `Alt+C`                     | Toggle task checkbox |
+| `Backspace` (at line start) | Remove list marker   |
 
 ### Navigation
 
-| Shortcut | Action |
-|----------|--------|
-| `Ctrl+Shift+]` | Increase heading level (H2 → H3) |
-| `Ctrl+Shift+[` | Decrease heading level (H3 → H2) |
-| `Ctrl+Shift+V` / `Cmd+Shift+V` | Open preview |
+| Shortcut                       | Action                           |
+| ------------------------------ | -------------------------------- |
+| `Ctrl+Shift+]`                 | Increase heading level (H2 → H3) |
+| `Ctrl+Shift+[`                 | Decrease heading level (H3 → H2) |
+| `Ctrl+Shift+V` / `Cmd+Shift+V` | Open preview                     |
 
 ---
 
@@ -205,18 +217,18 @@ The extension automatically aligns GFM table columns when you save:
 
 **Before save:**
 ```markdown
-| Name | Description | Status |
-|---|---|---|
-| Item 1 | Short | Active |
+| Name           | Description                    | Status  |
+| -------------- | ------------------------------ | ------- |
+| Item 1         | Short                          | Active  |
 | Long Item Name | A much longer description here | Pending |
 ```
 
 **After save:**
 ```markdown
-| Name           | Description                      | Status  |
-|----------------|----------------------------------|---------|
-| Item 1         | Short                            | Active  |
-| Long Item Name | A much longer description here   | Pending |
+| Name           | Description                    | Status  |
+| -------------- | ------------------------------ | ------- |
+| Item 1         | Short                          | Active  |
+| Long Item Name | A much longer description here | Pending |
 ```
 
 ### Table Syntax
@@ -225,8 +237,8 @@ Use standard GFM table syntax:
 
 ```markdown
 | Left Aligned | Centre Aligned | Right Aligned |
-|:-------------|:--------------:|--------------:|
-| Value        | Value          | Value         |
+| :----------- | :------------: | ------------: |
+| Value        |     Value      |         Value |
 ```
 
 Alignment indicators:
@@ -318,14 +330,14 @@ These settings are shared across the team via Git.
 
 If you don't have the extension installed, everything still works:
 
-| Feature | With Extension | Without Extension |
-|---------|---------------|-------------------|
-| TOC | Auto-updates on save | Manual updates needed |
-| Formatting | Keyboard shortcuts | Type syntax manually |
-| Lists | Smart indentation | Manual indentation |
-| Tables | Auto-alignment | Manual alignment |
-| Tasks | Toggle with Alt+C | Edit `[ ]` manually |
-| Preview | Enhanced preview | Standard VS Code preview |
+| Feature    | With Extension       | Without Extension        |
+| ---------- | -------------------- | ------------------------ |
+| TOC        | Auto-updates on save | Manual updates needed    |
+| Formatting | Keyboard shortcuts   | Type syntax manually     |
+| Lists      | Smart indentation    | Manual indentation       |
+| Tables     | Auto-alignment       | Manual alignment         |
+| Tasks      | Toggle with Alt+C    | Edit `[ ]` manually      |
+| Preview    | Enhanced preview     | Standard VS Code preview |
 
 Agent-generated markdown is valid CommonMark/GFM and renders correctly everywhere.
 

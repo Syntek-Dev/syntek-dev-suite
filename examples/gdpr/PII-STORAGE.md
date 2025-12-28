@@ -2,53 +2,52 @@
 
 ## Metadata
 
-| Property | Value |
-|----------|-------|
-| **Version** | 2.0.0 |
+| Property         | Value         |
+| ---------------- | ------------- |
+| **Version**      | 2.0.0         |
 | **Last Updated** | December 2025 |
-| **Status** | Stable |
+| **Status**       | Stable        |
 
 ## Framework Versions Tested
 
-| Framework | Version | Tested Date |
-|-----------|---------|-------------|
-| Laravel | 12.x | 20/12/2025 |
-| Django | 6.x | 20/12/2025 |
-| Next.js | 16.x | 20/12/2025 |
-| React Native | 0.83.x | 20/12/2025 |
-| Prisma | 6.x | 20/12/2025 |
-| cryptography (Python) | 43.x | 20/12/2025 |
-| PHP | 8.4 | 20/12/2025 |
-| Python | 3.14 | 20/12/2025 |
-| Node.js | 24 LTS | 20/12/2025 |
-| TypeScript | 5.9 | 20/12/2025 |
-| MariaDB | 12.x | 20/12/2025 |
-| PostgreSQL | 18.x | 20/12/2025 |
+| Framework             | Version | Tested Date |
+| --------------------- | ------- | ----------- |
+| Laravel               | 12.x    | 20/12/2025  |
+| Django                | 6.x     | 20/12/2025  |
+| Next.js               | 16.x    | 20/12/2025  |
+| React Native          | 0.83.x  | 20/12/2025  |
+| Prisma                | 6.x     | 20/12/2025  |
+| cryptography (Python) | 43.x    | 20/12/2025  |
+| PHP                   | 8.4     | 20/12/2025  |
+| Python                | 3.14    | 20/12/2025  |
+| Node.js               | 24 LTS  | 20/12/2025  |
+| TypeScript            | 5.9     | 20/12/2025  |
+| MariaDB               | 12.x    | 20/12/2025  |
+| PostgreSQL            | 18.x    | 20/12/2025  |
 
 ---
 
 ## Table of Contents
 
-- [PII Storage Service](#pii-storage-service)
-  - [Metadata](#metadata)
-  - [Framework Versions Tested](#framework-versions-tested)
-  - [Table of Contents](#table-of-contents)
-  - [Overview](#overview)
-  - [Hashing vs Encryption Decision](#hashing-vs-encryption-decision)
-  - [Database Schema Examples](#database-schema-examples)
-    - [MariaDB Schema](#mariadb-schema)
-    - [PostgreSQL Schema](#postgresql-schema)
-  - [TALL Stack (Laravel/PHP/MariaDB)](#tall-stack-laravelphpmariadb)
-    - [Service Class](#service-class)
-    - [Model Example](#model-example)
-    - [Migration Example](#migration-example)
-  - [Django/Wagtail (Python/PostgreSQL)](#djangowagtail-pythonpostgresql)
-    - [Service Class](#service-class-1)
-    - [Model Example](#model-example-1)
-    - [Migration Example](#migration-example-1)
-    - [Required Settings](#required-settings)
-  - [React/Next.js (TypeScript/Prisma)](#reactnextjs-typescriptprisma)
-    - [Required Environment Variables](#required-environment-variables)
+- [Metadata](#metadata)
+- [Framework Versions Tested](#framework-versions-tested)
+- [Table of Contents](#table-of-contents)
+- [Overview](#overview)
+- [Hashing vs Encryption Decision](#hashing-vs-encryption-decision)
+- [Database Schema Examples](#database-schema-examples)
+  - [MariaDB Schema](#mariadb-schema)
+  - [PostgreSQL Schema](#postgresql-schema)
+- [TALL Stack (Laravel/PHP/MariaDB)](#tall-stack-laravelphpmariadb)
+  - [Service Class](#service-class)
+  - [Model Example](#model-example)
+  - [Migration Example](#migration-example)
+- [Django/Wagtail (Python/PostgreSQL)](#djangowagtail-pythonpostgresql)
+  - [Service Class](#service-class-1)
+  - [Model Example](#model-example-1)
+  - [Migration Example](#migration-example-1)
+  - [Required Settings](#required-settings)
+- [React/Next.js (TypeScript/Prisma)](#reactnextjs-typescriptprisma)
+  - [Required Environment Variables](#required-environment-variables)
 
 
 ## Overview
@@ -59,12 +58,12 @@ PII storage services handle secure storage of personally identifiable informatio
 
 ## Hashing vs Encryption Decision
 
-| Use Case | Method | Example |
-|----------|--------|---------|
-| Authentication (passwords) | **Hashing** (Argon2id/bcrypt) | Never reversible |
-| Lookup/matching (email search) | **Hashing** (HMAC-SHA256) | `email_hash` column |
-| Display to authorised users | **Encryption** (AES-256) | `email_encrypted` column |
-| Financial/legal records | **Encryption** (AES-256-GCM) | `ssn_encrypted` column |
+| Use Case                       | Method                        | Example                  |
+| ------------------------------ | ----------------------------- | ------------------------ |
+| Authentication (passwords)     | **Hashing** (Argon2id/bcrypt) | Never reversible         |
+| Lookup/matching (email search) | **Hashing** (HMAC-SHA256)     | `email_hash` column      |
+| Display to authorised users    | **Encryption** (AES-256)      | `email_encrypted` column |
+| Financial/legal records        | **Encryption** (AES-256-GCM)  | `ssn_encrypted` column   |
 
 ---
 

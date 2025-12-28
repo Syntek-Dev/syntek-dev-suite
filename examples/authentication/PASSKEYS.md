@@ -1,59 +1,66 @@
 # Passkey Authentication (WebAuthn)
 
+**Last Updated**: 28/12/2025
+**Version**: 1.3.0
+**Maintained By**: Development Team
+**Language**: British English (en_GB)
+**Timezone**: Europe/London
+
+---
+
 ## Overview
 
 Passkey authentication using WebAuthn for passwordless login. Passkeys use public-key cryptography to provide phishing-resistant authentication that is both more secure and more convenient than passwords.
 
 ## Metadata
 
-| Property | Value |
-|----------|-------|
-| **Example Version** | 2.0.0 |
-| **Last Updated** | 2025-12 |
-| **TALL Stack** | Laravel 12.x / PHP 8.4 / webauthn-lib |
-| **Django Stack** | Django 6.x / Python 3.14 / py-webauthn |
-| **React Stack** | Next.js 16.x / React 19.x / @simplewebauthn |
-| **Mobile Stack** | React Native 0.83.x / react-native-passkeys |
-| **Protocol** | WebAuthn Level 3 / FIDO2 |
+| Property            | Value                                       |
+| ------------------- | ------------------------------------------- |
+| **Example Version** | 2.0.0                                       |
+| **Last Updated**    | 2025-12                                     |
+| **TALL Stack**      | Laravel 12.x / PHP 8.4 / webauthn-lib       |
+| **Django Stack**    | Django 6.x / Python 3.14 / py-webauthn      |
+| **React Stack**     | Next.js 16.x / React 19.x / @simplewebauthn |
+| **Mobile Stack**    | React Native 0.83.x / react-native-passkeys |
+| **Protocol**        | WebAuthn Level 3 / FIDO2                    |
 
 ---
 
 ## Table of Contents
 
-- [Passkey Authentication (WebAuthn)](#passkey-authentication-webauthn)
-  - [Overview](#overview)
-  - [Metadata](#metadata)
-  - [Table of Contents](#table-of-contents)
-  - [WebAuthn Flow](#webauthn-flow)
-    - [Registration (Creating a Passkey)](#registration-creating-a-passkey)
-    - [Authentication (Using a Passkey)](#authentication-using-a-passkey)
-  - [TALL Stack - Laravel 12.x](#tall-stack---laravel-12x)
-    - [Passkey Model - Laravel](#passkey-model---laravel)
-      - [app/Models/Passkey.php](#appmodelspasskeyphp)
-      - [database/migrations/xxxx\_create\_passkeys\_table.php](#databasemigrationsxxxx_create_passkeys_tablephp)
-    - [Passkey Controller - Laravel](#passkey-controller---laravel)
-      - [app/Http/Controllers/PasskeyController.php](#apphttpcontrollerspasskeycontrollerphp)
-    - [Blade Components - Laravel](#blade-components---laravel)
-      - [resources/views/components/passkey-login.blade.php](#resourcesviewscomponentspasskey-loginbladephp)
-  - [Django/Wagtail Stack - Django 6.x](#djangowagtail-stack---django-6x)
-    - [Passkey Model - Django](#passkey-model---django)
-      - [apps/accounts/models/passkey.py](#appsaccountsmodelspasskeypy)
-    - [Passkey Views - Django](#passkey-views---django)
-      - [apps/accounts/views/passkey\_views.py](#appsaccountsviewspasskey_viewspy)
-  - [React/Next.js Stack - Next.js 16.x](#reactnextjs-stack---nextjs-16x)
-    - [Passkey Service - Next.js](#passkey-service---nextjs)
-      - [lib/auth/passkey-service.ts](#libauthpasskey-servicets)
-    - [Passkey Hooks - Next.js](#passkey-hooks---nextjs)
-      - [hooks/usePasskey.ts](#hooksusepasskeyts)
-    - [Passkey Components - Next.js](#passkey-components---nextjs)
-      - [components/PasskeyLogin.tsx](#componentspasskeylogintsx)
-  - [React Native Stack - React Native 0.83.x](#react-native-stack---react-native-083x)
-    - [Passkey Service - React Native](#passkey-service---react-native)
-      - [services/passkey.service.ts](#servicespasskeyservicets)
-    - [Passkey Hooks - React Native](#passkey-hooks---react-native)
-      - [hooks/usePasskey.ts](#hooksusepasskeyts-1)
-    - [Passkey Screen - React Native](#passkey-screen---react-native)
-      - [screens/PasskeyLoginScreen.tsx](#screenspasskeyloginscreentsx)
+- [Overview](#overview)
+- [Metadata](#metadata)
+- [Table of Contents](#table-of-contents)
+- [WebAuthn Flow](#webauthn-flow)
+  - [Registration (Creating a Passkey)](#registration-creating-a-passkey)
+  - [Authentication (Using a Passkey)](#authentication-using-a-passkey)
+- [TALL Stack - Laravel 12.x](#tall-stack---laravel-12x)
+  - [Passkey Model - Laravel](#passkey-model---laravel)
+    - [app/Models/Passkey.php](#appmodelspasskeyphp)
+    - [database/migrations/xxxx\_create\_passkeys\_table.php](#databasemigrationsxxxx_create_passkeys_tablephp)
+  - [Passkey Controller - Laravel](#passkey-controller---laravel)
+    - [app/Http/Controllers/PasskeyController.php](#apphttpcontrollerspasskeycontrollerphp)
+  - [Blade Components - Laravel](#blade-components---laravel)
+    - [resources/views/components/passkey-login.blade.php](#resourcesviewscomponentspasskey-loginbladephp)
+- [Django/Wagtail Stack - Django 6.x](#djangowagtail-stack---django-6x)
+  - [Passkey Model - Django](#passkey-model---django)
+    - [apps/accounts/models/passkey.py](#appsaccountsmodelspasskeypy)
+  - [Passkey Views - Django](#passkey-views---django)
+    - [apps/accounts/views/passkey\_views.py](#appsaccountsviewspasskey_viewspy)
+- [React/Next.js Stack - Next.js 16.x](#reactnextjs-stack---nextjs-16x)
+  - [Passkey Service - Next.js](#passkey-service---nextjs)
+    - [lib/auth/passkey-service.ts](#libauthpasskey-servicets)
+  - [Passkey Hooks - Next.js](#passkey-hooks---nextjs)
+    - [hooks/usePasskey.ts](#hooksusepasskeyts)
+  - [Passkey Components - Next.js](#passkey-components---nextjs)
+    - [components/PasskeyLogin.tsx](#componentspasskeylogintsx)
+- [React Native Stack - React Native 0.83.x](#react-native-stack---react-native-083x)
+  - [Passkey Service - React Native](#passkey-service---react-native)
+    - [services/passkey.service.ts](#servicespasskeyservicets)
+  - [Passkey Hooks - React Native](#passkey-hooks---react-native)
+    - [hooks/usePasskey.ts](#hooksusepasskeyts-1)
+  - [Passkey Screen - React Native](#passkey-screen---react-native)
+    - [screens/PasskeyLoginScreen.tsx](#screenspasskeyloginscreentsx)
 
 ## WebAuthn Flow
 

@@ -8,38 +8,37 @@ Docker configuration templates for containerised applications. Includes multi-st
 
 ## Metadata
 
-| Property | Value |
-|----------|-------|
-| **Example Version** | 2.0.0 |
-| **Last Updated** | 2025-12 |
-| **Docker** | 27.x |
-| **Docker Compose** | 3.8+ |
-| **Stacks** | TALL (Laravel 12/PHP 8.4), Django 6/Python 3.14, Next.js 16/Node 24 |
+| Property            | Value                                                               |
+| ------------------- | ------------------------------------------------------------------- |
+| **Example Version** | 2.0.0                                                               |
+| **Last Updated**    | 2025-12                                                             |
+| **Docker**          | 27.x                                                                |
+| **Docker Compose**  | 3.8+                                                                |
+| **Stacks**          | TALL (Laravel 12/PHP 8.4), Django 6/Python 3.14, Next.js 16/Node 24 |
 
 ---
 
 ## Table of Contents
 
-- [Docker Configuration](#docker-configuration)
-  - [Overview](#overview)
-  - [Metadata](#metadata)
-  - [Table of Contents](#table-of-contents)
-  - [TALL Stack (Laravel/PHP)](#tall-stack-laravelphp)
-    - [Laravel Dockerfile](#laravel-dockerfile)
-    - [docker/php/opcache.ini](#dockerphpopcacheini)
-    - [docker/php/laravel.ini](#dockerphplaravelini)
-    - [docker/nginx/laravel.conf](#dockernginxlaravelconf)
-    - [docker/supervisor/supervisord.conf](#dockersupervisorsupervisordconf)
-    - [Laravel Docker Compose](#laravel-docker-compose)
-    - [docker/mariadb/my.cnf](#dockermariadbmycnf)
-  - [Django/Wagtail Stack](#djangowagtail-stack)
-    - [Django Dockerfile](#django-dockerfile)
-    - [requirements-prod.txt](#requirements-prodtxt)
-    - [Django Docker Compose](#django-docker-compose)
-    - [docker/postgres/postgresql.conf](#dockerpostgrespostgresqlconf)
-  - [Docker Compose with Multiple Services](#docker-compose-with-multiple-services)
-    - [docker-compose.yml (Full Stack)](#docker-composeyml-full-stack)
-    - [.dockerignore](#dockerignore)
+- [Overview](#overview)
+- [Metadata](#metadata)
+- [Table of Contents](#table-of-contents)
+- [TALL Stack (Laravel/PHP)](#tall-stack-laravelphp)
+  - [Laravel Dockerfile](#laravel-dockerfile)
+  - [docker/php/opcache.ini](#dockerphpopcacheini)
+  - [docker/php/laravel.ini](#dockerphplaravelini)
+  - [docker/nginx/laravel.conf](#dockernginxlaravelconf)
+  - [docker/supervisor/supervisord.conf](#dockersupervisorsupervisordconf)
+  - [Laravel Docker Compose](#laravel-docker-compose)
+  - [docker/mariadb/my.cnf](#dockermariadbmycnf)
+- [Django/Wagtail Stack](#djangowagtail-stack)
+  - [Django Dockerfile](#django-dockerfile)
+  - [requirements-prod.txt](#requirements-prodtxt)
+  - [Django Docker Compose](#django-docker-compose)
+  - [docker/postgres/postgresql.conf](#dockerpostgrespostgresqlconf)
+- [Docker Compose with Multiple Services](#docker-compose-with-multiple-services)
+  - [docker-compose.yml (Full Stack)](#docker-composeyml-full-stack)
+  - [.dockerignore](#dockerignore)
 
 
 

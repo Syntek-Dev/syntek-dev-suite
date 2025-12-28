@@ -6,41 +6,40 @@ Standardised Git workflows and automation for consistent version control across 
 
 ## Table of Contents
 
-- [Git Workflows Examples](#git-workflows-examples)
-  - [Overview](#overview)
-  - [Table of Contents](#table-of-contents)
-  - [Core Branches](#core-branches)
-  - [Branch Naming Conventions](#branch-naming-conventions)
-    - [User Story Branches](#user-story-branches)
-  - [Branch Flow](#branch-flow)
-    - [Standard Flow (User Story → Production)](#standard-flow-user-story--production)
-    - [Flow Rules](#flow-rules)
-  - [Commit Message Standards](#commit-message-standards)
-  - [Pull Request Templates](#pull-request-templates)
-    - [PR Title Format](#pr-title-format)
-    - [User Story → Testing](#user-story--testing)
-    - [Testing → Dev](#testing--dev)
-    - [Dev → Staging](#dev--staging)
-    - [Staging → Main (Client Accepted)](#staging--main-client-accepted)
-  - [Git Hooks](#git-hooks)
-    - [Pre-commit Hooks](#pre-commit-hooks)
-    - [Commit Message Hooks](#commit-message-hooks)
-  - [TALL Stack (Laravel 12)](#tall-stack-laravel-12)
-  - [Django/Wagtail Stack](#djangowagtail-stack)
-  - [React/Next.js Stack](#reactnextjs-stack)
-  - [React Native Stack](#react-native-stack)
+- [Overview](#overview)
+- [Table of Contents](#table-of-contents)
+- [Core Branches](#core-branches)
+- [Branch Naming Conventions](#branch-naming-conventions)
+  - [User Story Branches](#user-story-branches)
+- [Branch Flow](#branch-flow)
+  - [Standard Flow (User Story → Production)](#standard-flow-user-story--production)
+  - [Flow Rules](#flow-rules)
+- [Commit Message Standards](#commit-message-standards)
+- [Pull Request Templates](#pull-request-templates)
+  - [PR Title Format](#pr-title-format)
+  - [User Story → Testing](#user-story--testing)
+  - [Testing → Dev](#testing--dev)
+  - [Dev → Staging](#dev--staging)
+  - [Staging → Main (Client Accepted)](#staging--main-client-accepted)
+- [Git Hooks](#git-hooks)
+  - [Pre-commit Hooks](#pre-commit-hooks)
+  - [Commit Message Hooks](#commit-message-hooks)
+- [TALL Stack (Laravel 12)](#tall-stack-laravel-12)
+- [Django/Wagtail Stack](#djangowagtail-stack)
+- [React/Next.js Stack](#reactnextjs-stack)
+- [React Native Stack](#react-native-stack)
 
 
 ## Core Branches
 
 Every project MUST have these protected branches:
 
-| Branch | Purpose | Protected | Deploy Target |
-|--------|---------|-----------|---------------|
-| `main` or `master` | Production-ready code | Yes | Production |
-| `staging` | Client review and acceptance | Yes | Staging |
-| `dev` | Integration and final testing | Yes | Development |
-| `testing` | QA and automated testing | Yes | Testing |
+| Branch             | Purpose                       | Protected | Deploy Target |
+| ------------------ | ----------------------------- | --------- | ------------- |
+| `main` or `master` | Production-ready code         | Yes       | Production    |
+| `staging`          | Client review and acceptance  | Yes       | Staging       |
+| `dev`              | Integration and final testing | Yes       | Development   |
+| `testing`          | QA and automated testing      | Yes       | Testing       |
 
 ## Branch Naming Conventions
 
@@ -52,10 +51,10 @@ All feature work uses user story branches:
 us<number>/<short-description>
 ```
 
-| Type | Pattern | Example |
-|------|---------|---------|
-| User Story | `us<number>/<description>` | `us001/user-authentication` |
-| Hotfix | `hotfix/<issue-number>-<description>` | `hotfix/123-login-crash` |
+| Type       | Pattern                               | Example                     |
+| ---------- | ------------------------------------- | --------------------------- |
+| User Story | `us<number>/<description>`            | `us001/user-authentication` |
+| Hotfix     | `hotfix/<issue-number>-<description>` | `hotfix/123-login-crash`    |
 
 **Rules:**
 - User story number is zero-padded to 3 digits (us001, us042, us100)
@@ -81,12 +80,12 @@ main/master
 
 ### Flow Rules
 
-| From | To | Condition | Action on Rejection |
-|------|-----|-----------|---------------------|
-| `us###/feature` | `testing` | Developer tests pass | Fix in feature branch, re-submit |
-| `testing` | `dev` | QA tests pass | Create new PR from testing |
-| `dev` | `staging` | Integration tests pass | Create new PR from dev |
-| `staging` | `main` | **Client accepts** | If rejected → back to `us###/feature` |
+| From            | To        | Condition              | Action on Rejection                   |
+| --------------- | --------- | ---------------------- | ------------------------------------- |
+| `us###/feature` | `testing` | Developer tests pass   | Fix in feature branch, re-submit      |
+| `testing`       | `dev`     | QA tests pass          | Create new PR from testing            |
+| `dev`           | `staging` | Integration tests pass | Create new PR from dev                |
+| `staging`       | `main`    | **Client accepts**     | If rejected → back to `us###/feature` |
 
 ## Commit Message Standards
 
