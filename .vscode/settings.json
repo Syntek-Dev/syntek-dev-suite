@@ -18,7 +18,7 @@
   "markdown.extension.tableFormatter.enabled": true,
 
   // Markdown All in One - Syntax Decorations
-  "markdown.extension.syntax.decorations": true,
+  "markdown.extension.theming.decoration.renderCodeSpan": true,
   "markdown.extension.syntax.plainTheme": false,
 
   // Markdown All in One - Completion
