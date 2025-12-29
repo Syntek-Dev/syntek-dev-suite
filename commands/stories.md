@@ -3,7 +3,7 @@ description: "[Agent] Generate user stories from requirements"
 usage: /agent:stories
 ---
 
-Spawn the `dev-team:user-story` agent (model: haiku) to create user stories.
+Spawn the `syntek-dev-suite:user-story` agent (model: haiku) to create user stories.
 
 The agent is an Agile Product Owner who outputs:
 - **Title:** Short and descriptive

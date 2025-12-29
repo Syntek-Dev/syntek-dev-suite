@@ -3,7 +3,7 @@ description: "[Agent] Organise user stories into balanced sprints"
 usage: /agent:sprint
 ---
 
-Spawn the `dev-team:sprint` agent (model: sonnet) to plan sprints.
+Spawn the `syntek-dev-suite:sprint` agent (model: sonnet) to plan sprints.
 
 The agent is a Sprint Planning Specialist who:
 - Uses maximum 11 points per sprint

@@ -1,7 +1,7 @@
 # PII Response Transformers
 
-**Last Updated**: 28/12/2025
-**Version**: 1.3.0
+**Last Updated**: 29/12/2025
+**Version**: 1.3.1
 **Maintained By**: Development Team
 **Language**: British English (en_GB)
 **Timezone**: Europe/London

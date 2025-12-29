@@ -3,7 +3,7 @@ description: "[Agent] Create an architectural plan"
 usage: /agent:plan
 ---
 
-Spawn the `dev-team:planner` agent (model: sonnet) to plan architecture.
+Spawn the `syntek-dev-suite:planner` agent (model: sonnet) to plan architecture.
 
 The agent is a System Architect who:
 - Reads `CLAUDE.md` to understand the stack

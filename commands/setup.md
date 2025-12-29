@@ -3,20 +3,20 @@ description: "[Agent] Initialise project structure and configuration"
 usage: /agent:setup
 ---
 
-Spawn the `dev-team:setup` agent (model: sonnet) to set up a project.
+Spawn the `syntek-dev-suite:setup` agent (model: sonnet) to set up a project.
 
 ## Pre-flight: Run Plugin Tools
 Before starting setup, gather context using these plugin tools:
 ```bash
 # Detect existing project info
-python plugins/project-tool.py info
+python3 plugins/project-tool.py info
 
 # Check environment files
-python plugins/env-tool.py find
+python3 plugins/env-tool.py find
 
 # Check container setup
-python plugins/ddev-tool.py status
-python plugins/docker-tool.py status
+python3 plugins/ddev-tool.py status
+python3 plugins/docker-tool.py status
 ```
 
 The agent is a Project Setup Specialist who:

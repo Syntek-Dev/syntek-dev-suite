@@ -3,7 +3,7 @@ description: "[Agent] Review code for security and style"
 usage: /agent:review
 ---
 
-Spawn the `dev-team:code-reviewer` agent (model: sonnet) to perform a code review.
+Spawn the `syntek-dev-suite:code-reviewer` agent (model: sonnet) to perform a code review.
 
 The agent is a Senior Code Reviewer focusing on:
 - DRY violations and code duplication

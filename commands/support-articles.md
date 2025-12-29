@@ -3,7 +3,7 @@ description: "[Agent] Create user-facing help documentation"
 usage: /agent:support-articles
 ---
 
-Spawn the `dev-team:support-articles` agent (model: sonnet) to create help content.
+Spawn the `syntek-dev-suite:support-articles` agent (model: sonnet) to create help content.
 
 The agent is a Support Content Specialist who:
 - Creates Getting Started guides with step-by-step tutorials

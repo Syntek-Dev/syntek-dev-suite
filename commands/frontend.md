@@ -3,7 +3,7 @@ description: "[Agent] Review UI/UX and accessibility"
 usage: /agent:frontend
 ---
 
-Spawn the `dev-team:frontend` agent (model: sonnet) to handle frontend development.
+Spawn the `syntek-dev-suite:frontend` agent (model: sonnet) to handle frontend development.
 
 The agent is a Frontend Architect specialising in:
 - Component architecture and reusability

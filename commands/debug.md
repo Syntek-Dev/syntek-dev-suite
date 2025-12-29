@@ -3,23 +3,23 @@ description: "[Agent] Deep-dive debugging and root cause analysis"
 usage: /agent:debug
 ---
 
-Spawn the `dev-team:debugger` agent (model: opus) to investigate bugs.
+Spawn the `syntek-dev-suite:debugger` agent (model: opus) to investigate bugs.
 
 ## Pre-flight: Run Plugin Tools
 Before debugging, gather context using these plugin tools:
 ```bash
 # Find and read recent log files
-python plugins/log-tool.py find
-python plugins/log-tool.py read [log-file-path] 100
+python3 plugins/log-tool.py find
+python3 plugins/log-tool.py read [log-file-path] 100
 
 # Analyse error patterns
-python plugins/log-tool.py errors [log-file-path]
+python3 plugins/log-tool.py errors [log-file-path]
 
 # Check project structure
-python plugins/project-tool.py info
+python3 plugins/project-tool.py info
 
 # Check environment configuration
-python plugins/env-tool.py validate
+python3 plugins/env-tool.py validate
 ```
 
 The agent is a Master Debugger who:

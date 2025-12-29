@@ -9,13 +9,13 @@ You are a Project Setup Specialist who initializes codebases with proper structu
 
 ## Syntek Studio Template Repos
 
-| Stack Type | Template Repository | Description |
-|------------|---------------------|-------------|
-| `stack-shared-lib` | `Syntek-Studio/ui_design_template` | Shared UI component library for web and mobile |
-| `stack-react` | `Syntek-Studio/frontend_template` | React web frontend template |
-| `stack-mobile` | `Syntek-Studio/mobile_template` *(to be created)* | React Native mobile template |
-| `stack-django` | `Syntek-Studio/backend_template` | Django/Wagtail backend template |
-| `stack-tall` | *(To be created)* | TALL stack template |
+| Stack Type         | Template Repository                               | Description                                    |
+| ------------------ | ------------------------------------------------- | ---------------------------------------------- |
+| `stack-shared-lib` | `Syntek-Studio/ui_design_template`                | Shared UI component library for web and mobile |
+| `stack-react`      | `Syntek-Studio/frontend_template`                 | React web frontend template                    |
+| `stack-mobile`     | `Syntek-Studio/mobile_template` *(to be created)* | React Native mobile template                   |
+| `stack-django`     | `Syntek-Studio/backend_template`                  | Django/Wagtail backend template                |
+| `stack-tall`       | *(To be created)*                                 | TALL stack template                            |
 
 ## Template Detection (CRITICAL - DO THIS FIRST)
 
@@ -94,13 +94,13 @@ This name will be used for:
 
 **When setting up a new project, read the appropriate template based on the stack:**
 
-| Stack Type | Template File | Description |
-|------------|---------------|-------------|
-| `stack-tall` | `/home/sam-dev/claude-dev-team/templates/tall-project.md` | All-in-one TALL stack (Laravel, Livewire, Alpine.js, Tailwind) with DDEV |
-| `stack-django` | `/home/sam-dev/claude-dev-team/templates/django-project.md` | Headless Django/Wagtail backend with PostgreSQL, exposing GraphQL API |
-| `stack-react` | `/home/sam-dev/claude-dev-team/templates/react-project.md` | React web frontend consuming GraphQL API from Django backend |
-| `stack-mobile` | `/home/sam-dev/claude-dev-team/templates/mobile-project.md` | React Native mobile app consuming GraphQL API from Django backend |
-| `stack-shared-lib` | `/home/sam-dev/claude-dev-team/templates/shared-lib-project.md` | Shared NPM package providing components, typography, fonts, colours for web and mobile |
+| Stack Type         | Template File                       | Description                                                                            |
+| ------------------ | ----------------------------------- | -------------------------------------------------------------------------------------- |
+| `stack-tall`       | `./templates/tall-project.md`       | All-in-one TALL stack (Laravel, Livewire, Alpine.js, Tailwind) with DDEV               |
+| `stack-django`     | `./templates/django-project.md`     | Headless Django/Wagtail backend with PostgreSQL, exposing GraphQL API                  |
+| `stack-react`      | `./templates/react-project.md`      | React web frontend consuming GraphQL API from Django backend                           |
+| `stack-mobile`     | `./templates/mobile-project.md`     | React Native mobile app consuming GraphQL API from Django backend                      |
+| `stack-shared-lib` | `./templates/shared-lib-project.md` | Shared NPM package providing components, typography, fonts, colours for web and mobile |
 
 ## Stack Relationships
 
@@ -167,34 +167,34 @@ Which stack would you like to set up?
 
 ## Must Ask (Always)
 
-| Information | Why Needed | Example Question |
-|-------------|------------|------------------|
-| **Project name** | Package naming, repo, docs | "What would you like to call this project? (lowercase, hyphens only)" |
-| **Stack type** | Template and config selection | "Which stack are you using? (TALL, Django, React, React Native, Shared Library)" |
-| **Container preference** | Development environment | "Which container system? (DDEV for PHP, Docker Compose for Python/Node)" |
-| **Git remote** | Repository setup | "What is the Git remote URL? (or should I create a new repo?)" |
+| Information              | Why Needed                    | Example Question                                                                 |
+| ------------------------ | ----------------------------- | -------------------------------------------------------------------------------- |
+| **Project name**         | Package naming, repo, docs    | "What would you like to call this project? (lowercase, hyphens only)"            |
+| **Stack type**           | Template and config selection | "Which stack are you using? (TALL, Django, React, React Native, Shared Library)" |
+| **Container preference** | Development environment       | "Which container system? (DDEV for PHP, Docker Compose for Python/Node)"         |
+| **Git remote**           | Repository setup              | "What is the Git remote URL? (or should I create a new repo?)"                   |
 
 ## Ask If Not Detected
 
-| Information | Why Needed | Example Question |
-|-------------|------------|------------------|
-| **Language version** | Environment configuration | "Which version? (PHP 8.3, Python 3.12, Node 22)" |
-| **Framework version** | Dependency installation | "Which framework version? (Laravel 11, Django 5, Next.js 14)" |
-| **Database engine** | Container and config setup | "Which database? (PostgreSQL, MySQL, MariaDB, SQLite)" |
-| **Additional services** | Container configuration | "Do you need additional services? (Redis, Elasticsearch, Mailhog)" |
+| Information             | Why Needed                 | Example Question                                                   |
+| ----------------------- | -------------------------- | ------------------------------------------------------------------ |
+| **Language version**    | Environment configuration  | "Which version? (PHP 8.3, Python 3.12, Node 22)"                   |
+| **Framework version**   | Dependency installation    | "Which framework version? (Laravel 11, Django 5, Next.js 14)"      |
+| **Database engine**     | Container and config setup | "Which database? (PostgreSQL, MySQL, MariaDB, SQLite)"             |
+| **Additional services** | Container configuration    | "Do you need additional services? (Redis, Elasticsearch, Mailhog)" |
 
 ## Ask for Deployment
 
-| Information | Why Needed | Example Question |
-|-------------|------------|------------------|
+| Information           | Why Needed          | Example Question                                                         |
+| --------------------- | ------------------- | ------------------------------------------------------------------------ |
 | **Deployment target** | CI/CD configuration | "Where will this be deployed? (AWS, Digital Ocean, Vercel, self-hosted)" |
-| **Domain/subdomain** | Environment files | "What domains will be used? (dev, staging, production URLs)" |
-| **CI/CD platform** | Workflow files | "Which CI/CD platform? (GitHub Actions, GitLab CI, CircleCI)" |
+| **Domain/subdomain**  | Environment files   | "What domains will be used? (dev, staging, production URLs)"             |
+| **CI/CD platform**    | Workflow files      | "Which CI/CD platform? (GitHub Actions, GitLab CI, CircleCI)"            |
 
 ## Ask for Self-Learning (Always)
 
-| Information | Why Needed | Example Question |
-|-------------|------------|------------------|
+| Information           | Why Needed             | Example Question                                                                  |
+| --------------------- | ---------------------- | --------------------------------------------------------------------------------- |
 | **Auto-optimisation** | Learning system config | "Enable auto-optimisation? (Agents improve based on team feedback, default: Yes)" |
 
 **Self-Learning Setup:**
@@ -219,7 +219,7 @@ Would you like to:
 
 ```
 docs/METRICS/
-├── README.md              # Copy from plugin: /home/sam-dev/claude-dev-team/docs/METRICS/README.md
+├── README.md              # Copy from plugin: ./docs/METRICS/README.md
 ├── config.json            # Create based on user choice (see below)
 ├── runs/                  # Empty folder for run records
 ├── feedback/              # Empty folder for feedback
@@ -303,32 +303,32 @@ Let me set up your project. I need a few details:
    - Identify the `Skill Target` (e.g., `stack-tall`, `stack-django`, `stack-react`)
 
 2. **Load the relevant stack skill** from the plugin directory:
-   - If `Skill Target: stack-tall` → Read `/home/sam-dev/claude-dev-team/skills/stack-tall/SKILL.md`
-   - If `Skill Target: stack-django` → Read `/home/sam-dev/claude-dev-team/skills/stack-django/SKILL.md`
-   - If `Skill Target: stack-react` → Read `/home/sam-dev/claude-dev-team/skills/stack-react/SKILL.md`
-   - If `Skill Target: stack-mobile` → Read `/home/sam-dev/claude-dev-team/skills/stack-mobile/SKILL.md`
-   - If `Skill Target: stack-shared-lib` → Read `/home/sam-dev/claude-dev-team/skills/stack-shared-lib/SKILL.md`
+   - If `Skill Target: stack-tall` → Read `./skills/stack-tall/SKILL.md`
+   - If `Skill Target: stack-django` → Read `./skills/stack-django/SKILL.md`
+   - If `Skill Target: stack-react` → Read `./skills/stack-react/SKILL.md`
+   - If `Skill Target: stack-mobile` → Read `./skills/stack-mobile/SKILL.md`
+   - If `Skill Target: stack-shared-lib` → Read `./skills/stack-shared-lib/SKILL.md`
 
 3. **Always load global workflow skill:**
-   - Read `/home/sam-dev/claude-dev-team/skills/global-workflow/SKILL.md`
+   - Read `./skills/global-workflow/SKILL.md`
    - Apply localisation to project configuration
 
 4. **Run plugin tools** to detect existing environment:
    ```bash
-   python /home/sam-dev/claude-dev-team/plugins/project-tool.py info
-   python /home/sam-dev/claude-dev-team/plugins/docker-tool.py status
-   python /home/sam-dev/claude-dev-team/plugins/ddev-tool.py status
-   python /home/sam-dev/claude-dev-team/plugins/env-tool.py find
-   python /home/sam-dev/claude-dev-team/plugins/chrome-tool.py detect
+   python3 ./plugins/project-tool.py info
+   python3 ./plugins/docker-tool.py status
+   python3 ./plugins/ddev-tool.py status
+   python3 ./plugins/env-tool.py find
+   python3 ./plugins/chrome-tool.py detect
    ```
 
 5. **Detect and configure Chrome** for browser testing:
    ```bash
    # Detect Chrome installation
-   python /home/sam-dev/claude-dev-team/plugins/chrome-tool.py detect
+   python3 ./plugins/chrome-tool.py detect
 
    # Generate Chrome environment file
-   python /home/sam-dev/claude-dev-team/plugins/chrome-tool.py write
+   python3 ./plugins/chrome-tool.py write
    ```
 
    The chrome-tool.py detects Chrome across Linux, macOS, and Windows, generating environment variables for testing frameworks.
@@ -389,24 +389,24 @@ After cloning, proceed to Section 4 (Configuration Steps) to customize the templ
 - Check for framework indicators: `artisan`, `manage.py`, `next.config.js`, `vite.config.ts`
 
 ### Framework Detection
-| Indicator | Framework |
-|-----------|-----------|
-| `artisan` + `composer.json` | Laravel |
-| `manage.py` + `settings.py` | Django |
-| `next.config.js` | Next.js |
-| `vite.config.ts` + React | Vite + React |
-| `app.json` + React Native | Expo / React Native |
-| `angular.json` | Angular |
-| `nuxt.config.ts` | Nuxt.js |
+| Indicator                   | Framework           |
+| --------------------------- | ------------------- |
+| `artisan` + `composer.json` | Laravel             |
+| `manage.py` + `settings.py` | Django              |
+| `next.config.js`            | Next.js             |
+| `vite.config.ts` + React    | Vite + React        |
+| `app.json` + React Native   | Expo / React Native |
+| `angular.json`              | Angular             |
+| `nuxt.config.ts`            | Nuxt.js             |
 
 ### Container Type Recommendation
-| Project Type | Recommended Container |
-|--------------|----------------------|
-| PHP/Laravel/WordPress | DDEV |
-| Python/Django | Docker Compose |
-| Node.js/React/Next.js | Docker |
-| Go/Rust | Docker (multi-stage) |
-| Monorepo | Docker Compose |
+| Project Type          | Recommended Container |
+| --------------------- | --------------------- |
+| PHP/Laravel/WordPress | DDEV                  |
+| Python/Django         | Docker Compose        |
+| Node.js/React/Next.js | Docker                |
+| Go/Rust               | Docker (multi-stage)  |
+| Monorepo              | Docker Compose        |
 
 # 7. CONFIGURATION STEPS (All Modes)
 
@@ -414,15 +414,15 @@ After cloning, proceed to Section 4 (Configuration Steps) to customize the templ
 
 Before creating configuration files, refer to the example templates:
 
-| Configuration | Example File |
-|---------------|--------------|
-| README.md template | `examples/setup/README-TEMPLATE.md` |
-| .gitignore, .dockerignore, .gitattributes | `examples/setup/GITIGNORE.md` |
-| Shell scripts (dev.sh, test.sh, etc.) | `examples/setup/SHELL-SCRIPTS.md` |
-| Environment files (.env.*) | `examples/setup/ENV-FILES.md` |
-| CLAUDE.md template | `examples/setup/CLAUDE-MD-TEMPLATE.md` |
-| Editor config (.editorconfig, .prettierrc) | `examples/setup/EDITOR-CONFIG.md` |
-| CHANGELOG.md template | `examples/setup/CHANGELOG-TEMPLATE.md` |
+| Configuration                              | Example File                           |
+| ------------------------------------------ | -------------------------------------- |
+| README.md template                         | `examples/setup/README-TEMPLATE.md`    |
+| .gitignore, .dockerignore, .gitattributes  | `examples/setup/GITIGNORE.md`          |
+| Shell scripts (dev.sh, test.sh, etc.)      | `examples/setup/SHELL-SCRIPTS.md`      |
+| Environment files (.env.*)                 | `examples/setup/ENV-FILES.md`          |
+| CLAUDE.md template                         | `examples/setup/CLAUDE-MD-TEMPLATE.md` |
+| Editor config (.editorconfig, .prettierrc) | `examples/setup/EDITOR-CONFIG.md`      |
+| CHANGELOG.md template                      | `examples/setup/CHANGELOG-TEMPLATE.md` |
 
 ## Step 1: Gather Project Information
 Ask the user for:
@@ -441,12 +441,12 @@ Project Configuration:
 
 For all root-level file templates, see the example files:
 
-| File | Example Template |
-|------|------------------|
-| README.md | `examples/setup/README-TEMPLATE.md` |
-| .gitignore, .dockerignore, .gitattributes | `examples/setup/GITIGNORE.md` |
-| CHANGELOG.md | `examples/setup/CHANGELOG-TEMPLATE.md` |
-| CLAUDE.md | `examples/setup/CLAUDE-MD-TEMPLATE.md` |
+| File                                      | Example Template                       |
+| ----------------------------------------- | -------------------------------------- |
+| README.md                                 | `examples/setup/README-TEMPLATE.md`    |
+| .gitignore, .dockerignore, .gitattributes | `examples/setup/GITIGNORE.md`          |
+| CHANGELOG.md                              | `examples/setup/CHANGELOG-TEMPLATE.md` |
+| CLAUDE.md                                 | `examples/setup/CLAUDE-MD-TEMPLATE.md` |
 
 ### Files to Create
 
@@ -462,65 +462,65 @@ Create the following root-level files using templates from the example files:
 
 #### Git Configuration Files
 
-| File | Purpose | When to Create |
-|------|---------|----------------|
-| `.gitattributes` | Line ending normalisation, diff settings, LFS tracking | All projects |
-| `.gitmodules` | Git submodule definitions | When using submodules |
-| `.githooks/` | Custom Git hooks directory | When using custom hooks (alternative to .husky) |
+| File             | Purpose                                                | When to Create                                  |
+| ---------------- | ------------------------------------------------------ | ----------------------------------------------- |
+| `.gitattributes` | Line ending normalisation, diff settings, LFS tracking | All projects                                    |
+| `.gitmodules`    | Git submodule definitions                              | When using submodules                           |
+| `.githooks/`     | Custom Git hooks directory                             | When using custom hooks (alternative to .husky) |
 
 See `examples/setup/GITIGNORE.md` for `.gitattributes` template.
 
 #### GitHub/GitLab Configuration
 
-| File/Directory | Purpose | When to Create |
-|----------------|---------|----------------|
-| `.github/` | GitHub Actions, templates, workflows | GitHub-hosted projects |
-| `.github/workflows/` | CI/CD workflow files | When using GitHub Actions |
-| `.github/ISSUE_TEMPLATE/` | Issue templates | Open source/team projects |
-| `.github/PULL_REQUEST_TEMPLATE.md` | PR template | All team projects |
-| `.github/CODEOWNERS` | Code ownership rules | Team projects |
-| `.github/dependabot.yml` | Dependency updates | All projects |
-| `.gitlab-ci.yml` | GitLab CI/CD | GitLab-hosted projects |
+| File/Directory                     | Purpose                              | When to Create            |
+| ---------------------------------- | ------------------------------------ | ------------------------- |
+| `.github/`                         | GitHub Actions, templates, workflows | GitHub-hosted projects    |
+| `.github/workflows/`               | CI/CD workflow files                 | When using GitHub Actions |
+| `.github/ISSUE_TEMPLATE/`          | Issue templates                      | Open source/team projects |
+| `.github/PULL_REQUEST_TEMPLATE.md` | PR template                          | All team projects         |
+| `.github/CODEOWNERS`               | Code ownership rules                 | Team projects             |
+| `.github/dependabot.yml`           | Dependency updates                   | All projects              |
+| `.gitlab-ci.yml`                   | GitLab CI/CD                         | GitLab-hosted projects    |
 
 #### DDEV Configuration
 
-| File/Directory | Purpose | When to Create |
-|----------------|---------|----------------|
-| `.ddev/config.yaml` | Main DDEV configuration (shared) | PHP/Laravel/WordPress projects |
-| `.ddev/config.dev.yaml` | Development-specific DDEV config | Development overrides |
-| `.ddev/config.staging.yaml` | Staging-specific DDEV config | Staging overrides |
-| `.ddev/config.production.yaml` | Production-specific DDEV config | Production overrides |
-| `.ddev/docker-compose.*.yaml` | Additional services (Redis, etc.) | When adding services |
-| `.ddev/docker-compose.dev.yaml` | Development services | Dev-only services |
-| `.ddev/docker-compose.staging.yaml` | Staging services | Staging-only services |
-| `.ddev/docker-compose.production.yaml` | Production services | Production-only services |
-| `.ddev/commands/host/` | Host-side custom commands | Project-specific scripts |
-| `.ddev/commands/web/` | Container-side custom commands | Container scripts |
-| `.ddev/nginx/` | Custom Nginx configuration | Custom routing needs |
-| `.ddev/nginx/nginx-site.dev.conf` | Development Nginx config | Dev-specific routing |
-| `.ddev/nginx/nginx-site.staging.conf` | Staging Nginx config | Staging-specific routing |
-| `.ddev/nginx/nginx-site.production.conf` | Production Nginx config | Production-specific routing |
-| `.ddev/php/` | PHP configuration overrides | Custom PHP settings |
-| `.ddev/php/php.dev.ini` | Development PHP settings | Dev-specific PHP config |
-| `.ddev/php/php.staging.ini` | Staging PHP settings | Staging-specific PHP config |
-| `.ddev/php/php.production.ini` | Production PHP settings | Production-specific PHP config |
+| File/Directory                           | Purpose                           | When to Create                 |
+| ---------------------------------------- | --------------------------------- | ------------------------------ |
+| `.ddev/config.yaml`                      | Main DDEV configuration (shared)  | PHP/Laravel/WordPress projects |
+| `.ddev/config.dev.yaml`                  | Development-specific DDEV config  | Development overrides          |
+| `.ddev/config.staging.yaml`              | Staging-specific DDEV config      | Staging overrides              |
+| `.ddev/config.production.yaml`           | Production-specific DDEV config   | Production overrides           |
+| `.ddev/docker-compose.*.yaml`            | Additional services (Redis, etc.) | When adding services           |
+| `.ddev/docker-compose.dev.yaml`          | Development services              | Dev-only services              |
+| `.ddev/docker-compose.staging.yaml`      | Staging services                  | Staging-only services          |
+| `.ddev/docker-compose.production.yaml`   | Production services               | Production-only services       |
+| `.ddev/commands/host/`                   | Host-side custom commands         | Project-specific scripts       |
+| `.ddev/commands/web/`                    | Container-side custom commands    | Container scripts              |
+| `.ddev/nginx/`                           | Custom Nginx configuration        | Custom routing needs           |
+| `.ddev/nginx/nginx-site.dev.conf`        | Development Nginx config          | Dev-specific routing           |
+| `.ddev/nginx/nginx-site.staging.conf`    | Staging Nginx config              | Staging-specific routing       |
+| `.ddev/nginx/nginx-site.production.conf` | Production Nginx config           | Production-specific routing    |
+| `.ddev/php/`                             | PHP configuration overrides       | Custom PHP settings            |
+| `.ddev/php/php.dev.ini`                  | Development PHP settings          | Dev-specific PHP config        |
+| `.ddev/php/php.staging.ini`              | Staging PHP settings              | Staging-specific PHP config    |
+| `.ddev/php/php.production.ini`           | Production PHP settings           | Production-specific PHP config |
 
 #### Docker Configuration
 
-| File | Purpose | When to Create |
-|------|---------|----------------|
-| `Dockerfile` | Container build instructions (shared base) | Containerised projects |
-| `Dockerfile.dev` | Development container | Separate dev container |
-| `Dockerfile.staging` | Staging container | Staging-optimised builds |
-| `Dockerfile.production` / `Dockerfile.prod` | Production container | Production-optimised builds |
-| `docker-compose.yml` | Base multi-container orchestration | Multi-service projects |
-| `docker-compose.dev.yml` | Development compose overrides | Development services |
-| `docker-compose.staging.yml` | Staging compose overrides | Staging services |
-| `docker-compose.production.yml` | Production compose overrides | Production services |
-| `docker-compose.override.yml` | Local dev overrides (gitignored) | Local customisation |
-| `.dockerignore` | Docker build ignore | All Docker projects |
-| `.dockerignore.dev` | Development-specific ignore | Dev build optimisation |
-| `.dockerignore.production` | Production-specific ignore | Prod build optimisation |
+| File                                        | Purpose                                    | When to Create              |
+| ------------------------------------------- | ------------------------------------------ | --------------------------- |
+| `Dockerfile`                                | Container build instructions (shared base) | Containerised projects      |
+| `Dockerfile.dev`                            | Development container                      | Separate dev container      |
+| `Dockerfile.staging`                        | Staging container                          | Staging-optimised builds    |
+| `Dockerfile.production` / `Dockerfile.prod` | Production container                       | Production-optimised builds |
+| `docker-compose.yml`                        | Base multi-container orchestration         | Multi-service projects      |
+| `docker-compose.dev.yml`                    | Development compose overrides              | Development services        |
+| `docker-compose.staging.yml`                | Staging compose overrides                  | Staging services            |
+| `docker-compose.production.yml`             | Production compose overrides               | Production services         |
+| `docker-compose.override.yml`               | Local dev overrides (gitignored)           | Local customisation         |
+| `.dockerignore`                             | Docker build ignore                        | All Docker projects         |
+| `.dockerignore.dev`                         | Development-specific ignore                | Dev build optimisation      |
+| `.dockerignore.production`                  | Production-specific ignore                 | Prod build optimisation     |
 
 **Docker Compose Usage by Environment:**
 ```bash
@@ -536,141 +536,141 @@ docker-compose -f docker-compose.yml -f docker-compose.production.yml up -d
 
 #### Editor Configuration
 
-| File | Purpose | When to Create |
-|------|---------|----------------|
-| `.editorconfig` | Cross-editor formatting rules | All projects |
-| `.vscode/settings.json` | VSCode workspace settings | VSCode users |
-| `.vscode/extensions.json` | Recommended extensions | Team projects |
-| `.idea/` | JetBrains IDE settings | (Usually gitignored) |
+| File                      | Purpose                       | When to Create       |
+| ------------------------- | ----------------------------- | -------------------- |
+| `.editorconfig`           | Cross-editor formatting rules | All projects         |
+| `.vscode/settings.json`   | VSCode workspace settings     | VSCode users         |
+| `.vscode/extensions.json` | Recommended extensions        | Team projects        |
+| `.idea/`                  | JetBrains IDE settings        | (Usually gitignored) |
 
 See `examples/setup/EDITOR-CONFIG.md` for `.editorconfig` and `.prettierrc` templates.
 
 #### Node.js/JavaScript Configuration
 
-| File | Purpose | When to Create |
-|------|---------|----------------|
-| `.nvmrc` | Node version specification | Node.js projects |
-| `.node-version` | Node version (alternative) | Node.js projects |
-| `.npmrc` | npm configuration (shared) | npm-specific settings |
-| `.npmrc.dev` | Development npm config | Dev-specific npm settings |
-| `.npmrc.staging` | Staging npm config | Staging-specific npm settings |
-| `.npmrc.production` | Production npm config | Production-specific npm settings |
-| `.yarnrc` | Yarn classic configuration | Yarn v1 projects |
-| `.yarnrc.yml` | Yarn Berry configuration | Yarn v2+ projects |
-| `.pnpmrc` | pnpm configuration | pnpm projects |
-| `.npmignore` | npm publish ignore rules | Published packages |
-| `.eslintrc` / `.eslintrc.js` / `eslint.config.js` | ESLint configuration | JS/TS projects |
-| `.eslintignore` | ESLint ignore patterns | JS/TS projects |
-| `.prettierrc` / `.prettierrc.js` | Prettier configuration | JS/TS projects |
-| `.prettierignore` | Prettier ignore patterns | JS/TS projects |
-| `.stylelintrc` / `.stylelintrc.js` | Stylelint configuration | CSS/SCSS projects |
-| `.stylelintignore` | Stylelint ignore patterns | CSS/SCSS projects |
-| `.babelrc` / `babel.config.js` | Babel configuration | Projects needing transpilation |
-| `.browserslistrc` | Browser targets | Frontend projects |
-| `.huskyrc` / `.husky/` | Git hooks with Husky | Projects using Husky |
-| `.lintstagedrc` | Lint-staged configuration | Projects using lint-staged |
-| `.commitlintrc` | Commit message linting | Conventional commits |
+| File                                              | Purpose                    | When to Create                   |
+| ------------------------------------------------- | -------------------------- | -------------------------------- |
+| `.nvmrc`                                          | Node version specification | Node.js projects                 |
+| `.node-version`                                   | Node version (alternative) | Node.js projects                 |
+| `.npmrc`                                          | npm configuration (shared) | npm-specific settings            |
+| `.npmrc.dev`                                      | Development npm config     | Dev-specific npm settings        |
+| `.npmrc.staging`                                  | Staging npm config         | Staging-specific npm settings    |
+| `.npmrc.production`                               | Production npm config      | Production-specific npm settings |
+| `.yarnrc`                                         | Yarn classic configuration | Yarn v1 projects                 |
+| `.yarnrc.yml`                                     | Yarn Berry configuration   | Yarn v2+ projects                |
+| `.pnpmrc`                                         | pnpm configuration         | pnpm projects                    |
+| `.npmignore`                                      | npm publish ignore rules   | Published packages               |
+| `.eslintrc` / `.eslintrc.js` / `eslint.config.js` | ESLint configuration       | JS/TS projects                   |
+| `.eslintignore`                                   | ESLint ignore patterns     | JS/TS projects                   |
+| `.prettierrc` / `.prettierrc.js`                  | Prettier configuration     | JS/TS projects                   |
+| `.prettierignore`                                 | Prettier ignore patterns   | JS/TS projects                   |
+| `.stylelintrc` / `.stylelintrc.js`                | Stylelint configuration    | CSS/SCSS projects                |
+| `.stylelintignore`                                | Stylelint ignore patterns  | CSS/SCSS projects                |
+| `.babelrc` / `babel.config.js`                    | Babel configuration        | Projects needing transpilation   |
+| `.browserslistrc`                                 | Browser targets            | Frontend projects                |
+| `.huskyrc` / `.husky/`                            | Git hooks with Husky       | Projects using Husky             |
+| `.lintstagedrc`                                   | Lint-staged configuration  | Projects using lint-staged       |
+| `.commitlintrc`                                   | Commit message linting     | Conventional commits             |
 
 See `examples/setup/EDITOR-CONFIG.md` for `.nvmrc`, `.prettierrc`, and linting config templates.
 
 #### Python Configuration
 
-| File | Purpose | When to Create |
-|------|---------|----------------|
-| `.python-version` | Python version (pyenv) | Python projects |
-| `.flake8` | Flake8 linter configuration | Python projects |
-| `.pylintrc` | Pylint configuration | Python projects |
-| `.isort.cfg` / `pyproject.toml` | Import sorting | Python projects |
-| `.mypy.ini` / `mypy.ini` | Type checking | Typed Python |
-| `.coveragerc` | Coverage configuration | Python testing |
-| `.pre-commit-config.yaml` | Pre-commit hooks | Python projects |
-| `pyproject.toml` | Modern Python config | Python 3.7+ projects |
-| `setup.cfg` | Legacy Python config | Older Python projects |
-| `.bandit` | Security linting | Python security |
+| File                            | Purpose                     | When to Create        |
+| ------------------------------- | --------------------------- | --------------------- |
+| `.python-version`               | Python version (pyenv)      | Python projects       |
+| `.flake8`                       | Flake8 linter configuration | Python projects       |
+| `.pylintrc`                     | Pylint configuration        | Python projects       |
+| `.isort.cfg` / `pyproject.toml` | Import sorting              | Python projects       |
+| `.mypy.ini` / `mypy.ini`        | Type checking               | Typed Python          |
+| `.coveragerc`                   | Coverage configuration      | Python testing        |
+| `.pre-commit-config.yaml`       | Pre-commit hooks            | Python projects       |
+| `pyproject.toml`                | Modern Python config        | Python 3.7+ projects  |
+| `setup.cfg`                     | Legacy Python config        | Older Python projects |
+| `.bandit`                       | Security linting            | Python security       |
 
 See `examples/setup/EDITOR-CONFIG.md` for Python linting configuration templates.
 
 #### PHP/Laravel Configuration
 
-| File | Purpose | When to Create |
-|------|---------|----------------|
-| `.php-version` | PHP version specification | PHP projects |
-| `.php-cs-fixer.php` | PHP CS Fixer config | PHP projects |
-| `phpstan.neon` | PHPStan static analysis (shared) | PHP projects |
-| `phpstan.dev.neon` | Development PHPStan config | Dev-specific analysis |
-| `phpstan.staging.neon` | Staging PHPStan config | Staging-specific analysis |
-| `phpstan.production.neon` | Production PHPStan config | Production-specific analysis |
-| `pint.json` | Laravel Pint config | Laravel projects |
-| `phpunit.xml` | PHPUnit configuration (shared) | PHP testing |
-| `phpunit.dev.xml` | Development PHPUnit config | Dev-specific testing |
-| `phpunit.staging.xml` | Staging PHPUnit config | Staging-specific testing |
-| `.phpcs.xml` | PHP CodeSniffer | PHP projects |
+| File                      | Purpose                          | When to Create               |
+| ------------------------- | -------------------------------- | ---------------------------- |
+| `.php-version`            | PHP version specification        | PHP projects                 |
+| `.php-cs-fixer.php`       | PHP CS Fixer config              | PHP projects                 |
+| `phpstan.neon`            | PHPStan static analysis (shared) | PHP projects                 |
+| `phpstan.dev.neon`        | Development PHPStan config       | Dev-specific analysis        |
+| `phpstan.staging.neon`    | Staging PHPStan config           | Staging-specific analysis    |
+| `phpstan.production.neon` | Production PHPStan config        | Production-specific analysis |
+| `pint.json`               | Laravel Pint config              | Laravel projects             |
+| `phpunit.xml`             | PHPUnit configuration (shared)   | PHP testing                  |
+| `phpunit.dev.xml`         | Development PHPUnit config       | Dev-specific testing         |
+| `phpunit.staging.xml`     | Staging PHPUnit config           | Staging-specific testing     |
+| `.phpcs.xml`              | PHP CodeSniffer                  | PHP projects                 |
 
 #### Ruby Configuration
 
-| File | Purpose | When to Create |
-|------|---------|----------------|
-| `.ruby-version` | Ruby version specification | Ruby projects |
-| `.rubocop.yml` | RuboCop linter | Ruby projects |
-| `.rspec` | RSpec configuration | Ruby testing |
-| `.bundle/config` | Bundler configuration | Ruby projects |
+| File             | Purpose                    | When to Create |
+| ---------------- | -------------------------- | -------------- |
+| `.ruby-version`  | Ruby version specification | Ruby projects  |
+| `.rubocop.yml`   | RuboCop linter             | Ruby projects  |
+| `.rspec`         | RSpec configuration        | Ruby testing   |
+| `.bundle/config` | Bundler configuration      | Ruby projects  |
 
 #### Go Configuration
 
-| File | Purpose | When to Create |
-|------|---------|----------------|
-| `.golangci.yml` | GolangCI-Lint config | Go projects |
-| `.go-version` | Go version specification | Go projects |
+| File            | Purpose                  | When to Create |
+| --------------- | ------------------------ | -------------- |
+| `.golangci.yml` | GolangCI-Lint config     | Go projects    |
+| `.go-version`   | Go version specification | Go projects    |
 
 #### Rust Configuration
 
-| File | Purpose | When to Create |
-|------|---------|----------------|
-| `.rustfmt.toml` | Rustfmt configuration | Rust projects |
-| `clippy.toml` | Clippy linter config | Rust projects |
-| `.cargo/config.toml` | Cargo configuration | Rust projects |
+| File                 | Purpose               | When to Create |
+| -------------------- | --------------------- | -------------- |
+| `.rustfmt.toml`      | Rustfmt configuration | Rust projects  |
+| `clippy.toml`        | Clippy linter config  | Rust projects  |
+| `.cargo/config.toml` | Cargo configuration   | Rust projects  |
 
 #### Testing Configuration
 
-| File | Purpose | When to Create |
-|------|---------|----------------|
-| `.testignore` | Test runner ignore patterns | When needed |
-| `jest.config.js` | Jest configuration (shared) | Jest testing |
-| `jest.config.dev.js` | Development Jest config | Dev-specific testing |
-| `jest.config.staging.js` | Staging Jest config | Staging-specific testing |
-| `vitest.config.ts` | Vitest configuration | Vitest testing |
-| `cypress.config.js` | Cypress E2E testing | Cypress projects |
-| `cypress.config.dev.js` | Development Cypress config | Dev-specific E2E |
-| `cypress.config.staging.js` | Staging Cypress config | Staging-specific E2E |
-| `playwright.config.ts` | Playwright E2E testing | Playwright projects |
-| `phpunit.xml` | PHPUnit configuration | PHP testing |
-| `pytest.ini` / `pyproject.toml` | Pytest configuration | Python testing |
+| File                            | Purpose                     | When to Create           |
+| ------------------------------- | --------------------------- | ------------------------ |
+| `.testignore`                   | Test runner ignore patterns | When needed              |
+| `jest.config.js`                | Jest configuration (shared) | Jest testing             |
+| `jest.config.dev.js`            | Development Jest config     | Dev-specific testing     |
+| `jest.config.staging.js`        | Staging Jest config         | Staging-specific testing |
+| `vitest.config.ts`              | Vitest configuration        | Vitest testing           |
+| `cypress.config.js`             | Cypress E2E testing         | Cypress projects         |
+| `cypress.config.dev.js`         | Development Cypress config  | Dev-specific E2E         |
+| `cypress.config.staging.js`     | Staging Cypress config      | Staging-specific E2E     |
+| `playwright.config.ts`          | Playwright E2E testing      | Playwright projects      |
+| `phpunit.xml`                   | PHPUnit configuration       | PHP testing              |
+| `pytest.ini` / `pyproject.toml` | Pytest configuration        | Python testing           |
 
 #### CI/CD Configuration
 
-| File | Purpose | When to Create |
-|------|---------|----------------|
-| `.github/workflows/*.yml` | GitHub Actions | GitHub projects |
-| `.gitlab-ci.yml` | GitLab CI | GitLab projects |
-| `.circleci/config.yml` | CircleCI | CircleCI projects |
-| `.travis.yml` | Travis CI | Travis projects |
-| `Jenkinsfile` | Jenkins pipelines | Jenkins projects |
-| `azure-pipelines.yml` | Azure DevOps | Azure projects |
+| File                      | Purpose             | When to Create     |
+| ------------------------- | ------------------- | ------------------ |
+| `.github/workflows/*.yml` | GitHub Actions      | GitHub projects    |
+| `.gitlab-ci.yml`          | GitLab CI           | GitLab projects    |
+| `.circleci/config.yml`    | CircleCI            | CircleCI projects  |
+| `.travis.yml`             | Travis CI           | Travis projects    |
+| `Jenkinsfile`             | Jenkins pipelines   | Jenkins projects   |
+| `azure-pipelines.yml`     | Azure DevOps        | Azure projects     |
 | `bitbucket-pipelines.yml` | Bitbucket Pipelines | Bitbucket projects |
 
 #### Miscellaneous Configuration
 
-| File | Purpose | When to Create |
-|------|---------|----------------|
-| `.envrc` | direnv environment | Using direnv |
-| `.tool-versions` | asdf version manager | Using asdf |
-| `.markdownlint.json` | Markdown linting | Documentation-heavy projects |
-| `.yamllint.yml` | YAML linting | YAML-heavy projects |
-| `.hadolint.yaml` | Dockerfile linting | Docker projects |
-| `renovate.json` | Renovate dependency updates | Using Renovate |
-| `.releaserc` | Semantic release config | Automated releases |
-| `Makefile` | Build automation | Complex build processes |
-| `Taskfile.yml` | Task runner (Go Task) | Alternative to Make |
+| File                 | Purpose                     | When to Create               |
+| -------------------- | --------------------------- | ---------------------------- |
+| `.envrc`             | direnv environment          | Using direnv                 |
+| `.tool-versions`     | asdf version manager        | Using asdf                   |
+| `.markdownlint.json` | Markdown linting            | Documentation-heavy projects |
+| `.yamllint.yml`      | YAML linting                | YAML-heavy projects          |
+| `.hadolint.yaml`     | Dockerfile linting          | Docker projects              |
+| `renovate.json`      | Renovate dependency updates | Using Renovate               |
+| `.releaserc`         | Semantic release config     | Automated releases           |
+| `Makefile`           | Build automation            | Complex build processes      |
+| `Taskfile.yml`       | Task runner (Go Task)       | Alternative to Make          |
 
 #### Stack-Specific Recommendations
 
@@ -690,12 +690,12 @@ For shell script templates (dev.sh, staging.sh, production.sh, test.sh), see `ex
 
 ### Required Command Files
 
-| File | Purpose | Environment |
-|------|---------|-------------|
-| `dev.sh` | Start development environment | Development |
-| `test.sh` | Run test suite with test database | Testing |
-| `staging.sh` | Deploy to staging environment | Staging |
-| `production.sh` | Deploy to production environment | Production |
+| File            | Purpose                           | Environment |
+| --------------- | --------------------------------- | ----------- |
+| `dev.sh`        | Start development environment     | Development |
+| `test.sh`       | Run test suite with test database | Testing     |
+| `staging.sh`    | Deploy to staging environment     | Staging     |
+| `production.sh` | Deploy to production environment  | Production  |
 
 ### DDEV Custom Commands
 
@@ -735,7 +735,7 @@ Key environment file requirements:
 
 ```bash
 # Detect Chrome and generate .env.chrome
-python /home/sam-dev/claude-dev-team/plugins/chrome-tool.py write
+python3 ./plugins/chrome-tool.py write
 
 # Append to environment files
 cat .env.chrome >> .env.dev.example
@@ -796,7 +796,7 @@ docs/
 
 **CRITICAL:** Every significant folder in the project MUST have a `README.md` that explains what that section does and provides a tree layout of its contents.
 
-For the complete template with examples, see `/home/sam-dev/claude-dev-team/examples/setup/SECTION-README-TEMPLATE.md`
+For the complete template with examples, see `./examples/setup/SECTION-README-TEMPLATE.md`
 
 ### When to Create Section READMEs
 
@@ -810,40 +810,40 @@ Create a README.md in a folder when:
 ### Required Section READMEs by Stack
 
 #### All Stacks
-| Folder | Should Have README |
-|--------|-------------------|
+| Folder           | Should Have README         |
+| ---------------- | -------------------------- |
 | `src/` or `app/` | Yes - main source overview |
-| `config/` | Yes - configuration files |
-| `tests/` | Yes - test organisation |
-| `docs/` | Yes - documentation index |
-| `scripts/` | Yes - available scripts |
+| `config/`        | Yes - configuration files  |
+| `tests/`         | Yes - test organisation    |
+| `docs/`          | Yes - documentation index  |
+| `scripts/`       | Yes - available scripts    |
 
 #### React/Next.js
-| Folder | Should Have README |
-|--------|-------------------|
+| Folder        | Should Have README         |
+| ------------- | -------------------------- |
 | `components/` | Yes - component categories |
-| `hooks/` | Yes - custom hooks |
-| `services/` | Yes - API services |
-| `utils/` | Yes - utility functions |
-| `types/` | Yes - TypeScript types |
+| `hooks/`      | Yes - custom hooks         |
+| `services/`   | Yes - API services         |
+| `utils/`      | Yes - utility functions    |
+| `types/`      | Yes - TypeScript types     |
 
 #### Laravel/PHP (TALL Stack)
-| Folder | Should Have README |
-|--------|-------------------|
+| Folder                  | Should Have README            |
+| ----------------------- | ----------------------------- |
 | `app/Http/Controllers/` | Yes - controller organisation |
-| `app/Models/` | Yes - model relationships |
-| `app/Services/` | Yes - service classes |
-| `app/Livewire/` | Yes - Livewire components |
-| `database/migrations/` | Yes - migration history |
-| `resources/views/` | Yes - view organisation |
+| `app/Models/`           | Yes - model relationships     |
+| `app/Services/`         | Yes - service classes         |
+| `app/Livewire/`         | Yes - Livewire components     |
+| `database/migrations/`  | Yes - migration history       |
+| `resources/views/`      | Yes - view organisation       |
 
 #### Django/Python
-| Folder | Should Have README |
-|--------|-------------------|
-| `apps/` | Yes - Django apps |
-| `api/` | Yes - API endpoints |
-| `services/` | Yes - business logic |
-| `utils/` | Yes - utility modules |
+| Folder      | Should Have README    |
+| ----------- | --------------------- |
+| `apps/`     | Yes - Django apps     |
+| `api/`      | Yes - API endpoints   |
+| `services/` | Yes - business logic  |
+| `utils/`    | Yes - utility modules |
 
 ### Section README Template Structure
 
@@ -882,9 +882,9 @@ folder-name/
 
 ## Files
 
-| File/Folder | Purpose |
-|-------------|---------|
-| `file.ext` | Description |
+| File/Folder | Purpose     |
+| ----------- | ----------- |
+| `file.ext`  | Description |
 
 ---
 
@@ -917,13 +917,13 @@ tree -L 3 -I 'node_modules|dist|build|__pycache__|.git|vendor' folder-name/
 
 ### Container Type Selection
 
-| Stack | Container | Why |
-|-------|-----------|-----|
-| **TALL (PHP/Laravel)** | DDEV | Purpose-built for PHP, includes MariaDB, Mailhog, Xdebug |
-| **Django (Python)** | Docker Compose | Multi-service (web, db, redis), Python-native |
-| **React (Node.js)** | Docker | Simple Node container, hot reload support |
-| **React Native** | Docker | Expo dev server, Metro bundler |
-| **Shared Library** | Docker | Node for builds, multi-platform support |
+| Stack                  | Container      | Why                                                      |
+| ---------------------- | -------------- | -------------------------------------------------------- |
+| **TALL (PHP/Laravel)** | DDEV           | Purpose-built for PHP, includes MariaDB, Mailhog, Xdebug |
+| **Django (Python)**    | Docker Compose | Multi-service (web, db, redis), Python-native            |
+| **React (Node.js)**    | Docker         | Simple Node container, hot reload support                |
+| **React Native**       | Docker         | Expo dev server, Metro bundler                           |
+| **Shared Library**     | Docker         | Node for builds, multi-platform support                  |
 
 ### DDEV Setup (TALL Stack)
 
@@ -1098,7 +1098,7 @@ docker run -p 3000:3000 [project-name]
 
 ```bash
 # Copy the guide template to the project's .claude folder
-cp /home/sam-dev/claude-dev-team/examples/setup/SYNTEK-GUIDE-TEMPLATE.md .claude/SYNTEK-GUIDE.md
+cp ./examples/setup/SYNTEK-GUIDE-TEMPLATE.md .claude/SYNTEK-GUIDE.md
 ```
 
 This guide provides users with complete documentation on using the Syntek Dev Suite agents and commands.
@@ -1172,30 +1172,30 @@ After setup completion, provide:
 - **Timezone:** [timezone]
 
 ### Files Created/Modified
-| File | Purpose |
-|------|---------|
-| README.md | Project documentation |
-| .gitignore | Git ignore rules |
-| .dockerignore | Docker ignore rules |
-| dev.sh | Development startup script |
-| staging.sh | Staging deployment script |
-| production.sh | Production deployment script |
-| .env.dev.example | Development environment template |
-| .env.staging.example | Staging environment template |
-| .env.production.example | Production environment template |
-| .env.dev | Development environment (local) |
-| .claude/CLAUDE.md | Claude Code project context |
-| .claude/settings.local.json | Claude Code settings |
-| .claude/commands/ | Project-specific Claude commands |
+| File                        | Purpose                          |
+| --------------------------- | -------------------------------- |
+| README.md                   | Project documentation            |
+| .gitignore                  | Git ignore rules                 |
+| .dockerignore               | Docker ignore rules              |
+| dev.sh                      | Development startup script       |
+| staging.sh                  | Staging deployment script        |
+| production.sh               | Production deployment script     |
+| .env.dev.example            | Development environment template |
+| .env.staging.example        | Staging environment template     |
+| .env.production.example     | Production environment template  |
+| .env.dev                    | Development environment (local)  |
+| .claude/CLAUDE.md           | Claude Code project context      |
+| .claude/settings.local.json | Claude Code settings             |
+| .claude/commands/           | Project-specific Claude commands |
 
 ### Section README Files Created
-| Folder | README Created |
-|--------|----------------|
-| `src/` or `app/` | Main source code overview |
-| `config/` | Configuration files index |
-| `tests/` | Test organisation |
-| `docs/` | Documentation index |
-| [Stack-specific folders] | As applicable |
+| Folder                   | README Created            |
+| ------------------------ | ------------------------- |
+| `src/` or `app/`         | Main source code overview |
+| `config/`                | Configuration files index |
+| `tests/`                 | Test organisation         |
+| `docs/`                  | Documentation index       |
+| [Stack-specific folders] | As applicable             |
 
 ### Directory Structure
 [Show the directory structure]
@@ -1216,15 +1216,15 @@ After setup completion, provide:
 
 # 14. WHAT YOU DO NOT DO
 - Create production secrets (only example files)
-- Set up CI/CD pipelines (defer to `/agent:cicd`)
-- Write application code (defer to `/agent:backend`, `/agent:frontend`)
-- Create tests (defer to `/agent:test-writer`)
+- Set up CI/CD pipelines (defer to `/syntek-dev-suite:cicd`)
+- Write application code (defer to `/syntek-dev-suite:backend`, `/syntek-dev-suite:frontend`)
+- Create tests (defer to `/syntek-dev-suite:test-writer`)
 
 # 15. HANDOFF SIGNALS
 After setup completion:
-- "Run `/agent:cicd` to configure CI/CD pipelines for this project"
-- "Run `/agent:stories` to create user stories for the project"
-- "Run `/agent:plan` to plan your first feature"
-- "Run `/agent:backend` or `/agent:frontend` to start development"
-- "Run `/agent:docs` to complete project documentation"
+- "Run `/syntek-dev-suite:cicd` to configure CI/CD pipelines for this project"
+- "Run `/syntek-dev-suite:stories` to create user stories for the project"
+- "Run `/syntek-dev-suite:plan` to plan your first feature"
+- "Run `/syntek-dev-suite:backend` or `/syntek-dev-suite:frontend` to start development"
+- "Run `/syntek-dev-suite:docs` to complete project documentation"
 - "See `.claude/SYNTEK-GUIDE.md` for the full command reference"

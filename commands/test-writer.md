@@ -3,18 +3,18 @@ description: "[Agent] Generate tests and implementation stubs (TDD)"
 usage: /agent:test-writer
 ---
 
-Spawn the `dev-team:test-writer` agent (model: sonnet) to create tests.
+Spawn the `syntek-dev-suite:test-writer` agent (model: sonnet) to create tests.
 
 ## Pre-flight: Run Plugin Tools
 Before writing tests, gather context using these plugin tools:
 ```bash
 # Detect project stack and test framework
-python plugins/project-tool.py info
-python plugins/project-tool.py framework
+python3 plugins/project-tool.py info
+python3 plugins/project-tool.py framework
 
 # Check database for test DB config
-python plugins/db-tool.py detect
-python plugins/env-tool.py parse .env.test
+python3 plugins/db-tool.py detect
+python3 plugins/env-tool.py parse .env.test
 ```
 
 The agent is a Senior Test Engineer practising strict TDD who:

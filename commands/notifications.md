@@ -3,7 +3,7 @@ description: "[Agent] Implement notification systems with custom branding"
 usage: /agent:notifications
 ---
 
-Spawn the `dev-team:notifications` agent (model: sonnet) to set up notifications.
+Spawn the `syntek-dev-suite:notifications` agent (model: sonnet) to set up notifications.
 
 The agent is a Notifications Specialist who:
 - Sets up multi-channel notifications (email, SMS, push, in-app)

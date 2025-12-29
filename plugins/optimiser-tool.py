@@ -22,15 +22,16 @@ def get_metrics_dir() -> Path:
 
 def get_plugin_dir() -> Path:
     """Get the plugin directory (where agents are stored)."""
+    cwd = Path(os.getcwd())
     possible_paths = [
         Path(os.environ.get("CLAUDE_PLUGIN_DIR", "")),
-        Path.home() / "claude-dev-team",
-        Path.home() / ".claude" / "plugins" / "claude-dev-team",
+        cwd,  # Current working directory (syntek-dev-suite)
+        Path(__file__).parent.parent,  # Parent of plugins directory
     ]
     for path in possible_paths:
         if path.exists() and (path / "agents").exists():
             return path
-    return Path.home() / "claude-dev-team"
+    return cwd
 
 
 def ensure_directories():

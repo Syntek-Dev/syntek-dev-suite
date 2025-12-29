@@ -3,7 +3,7 @@ description: "[Agent] Implement SEO optimisation and structured data"
 usage: /agent:seo
 ---
 
-Spawn the `dev-team:seo` agent (model: sonnet) to implement SEO.
+Spawn the `syntek-dev-suite:seo` agent (model: sonnet) to implement SEO.
 
 The agent is an SEO Specialist who:
 - Implements essential meta tags (title, description, canonical)

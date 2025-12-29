@@ -1,7 +1,7 @@
 # Syntek Dev Suite
 
-**Last Updated**: 28/12/2025
-**Version**: 1.3.0
+**Last Updated**: 29/12/2025
+**Version**: 1.3.1
 **Maintained By**: Development Team
 **Language**: British English (en_GB)
 **Timezone**: Europe/London
@@ -87,7 +87,7 @@ Add to your global settings file `~/.claude/settings.json`:
 ```json
 {
   "plugins": [
-    "/path/to/claude-dev-team"
+    "syntek-dev-suite@syntek-marketplace"
   ]
 }
 ```
@@ -99,7 +99,7 @@ Add to your project's `.claude/settings.local.json`:
 ```json
 {
   "plugins": [
-    "/path/to/claude-dev-team"
+    "syntek-dev-suite@syntek-marketplace"
   ]
 }
 ```
@@ -444,39 +444,44 @@ cd ~/my-new-project
 
 2. **Copy the correct template:**
 
+First, clone or download the plugin repository:
+```bash
+git clone https://github.com/Syntek-Studio/syntek-dev-suite.git ~/.syntek-dev-suite
+```
+
 **For TALL Stack (Laravel + Livewire + Alpine + Tailwind):**
 ```bash
 mkdir -p .claude
-cp /path/to/claude-dev-team/templates/tall-project.md ./.claude/CLAUDE.md
-cp /path/to/claude-dev-team/examples/setup/SYNTEK-GUIDE-TEMPLATE.md ./.claude/SYNTEK-GUIDE.md
+cp ~/.syntek-dev-suite/templates/tall-project.md ./.claude/CLAUDE.md
+cp ~/.syntek-dev-suite/examples/setup/SYNTEK-GUIDE-TEMPLATE.md ./.claude/SYNTEK-GUIDE.md
 ```
 
 **For Django/Wagtail:**
 ```bash
 mkdir -p .claude
-cp /path/to/claude-dev-team/templates/django-project.md ./.claude/CLAUDE.md
-cp /path/to/claude-dev-team/examples/setup/SYNTEK-GUIDE-TEMPLATE.md ./.claude/SYNTEK-GUIDE.md
+cp ~/.syntek-dev-suite/templates/django-project.md ./.claude/CLAUDE.md
+cp ~/.syntek-dev-suite/examples/setup/SYNTEK-GUIDE-TEMPLATE.md ./.claude/SYNTEK-GUIDE.md
 ```
 
 **For React Web (SPA):**
 ```bash
 mkdir -p .claude
-cp /path/to/claude-dev-team/templates/react-project.md ./.claude/CLAUDE.md
-cp /path/to/claude-dev-team/examples/setup/SYNTEK-GUIDE-TEMPLATE.md ./.claude/SYNTEK-GUIDE.md
+cp ~/.syntek-dev-suite/templates/react-project.md ./.claude/CLAUDE.md
+cp ~/.syntek-dev-suite/examples/setup/SYNTEK-GUIDE-TEMPLATE.md ./.claude/SYNTEK-GUIDE.md
 ```
 
 **For React Native Mobile:**
 ```bash
 mkdir -p .claude
-cp /path/to/claude-dev-team/templates/mobile-project.md ./.claude/CLAUDE.md
-cp /path/to/claude-dev-team/examples/setup/SYNTEK-GUIDE-TEMPLATE.md ./.claude/SYNTEK-GUIDE.md
+cp ~/.syntek-dev-suite/templates/mobile-project.md ./.claude/CLAUDE.md
+cp ~/.syntek-dev-suite/examples/setup/SYNTEK-GUIDE-TEMPLATE.md ./.claude/SYNTEK-GUIDE.md
 ```
 
 **For Shared NPM Package:**
 ```bash
 mkdir -p .claude
-cp /path/to/claude-dev-team/templates/shared-lib-project.md ./.claude/CLAUDE.md
-cp /path/to/claude-dev-team/examples/setup/SYNTEK-GUIDE-TEMPLATE.md ./.claude/SYNTEK-GUIDE.md
+cp ~/.syntek-dev-suite/templates/shared-lib-project.md ./.claude/CLAUDE.md
+cp ~/.syntek-dev-suite/examples/setup/SYNTEK-GUIDE-TEMPLATE.md ./.claude/SYNTEK-GUIDE.md
 ```
 
 3. **Edit CLAUDE.md:**
@@ -752,7 +757,7 @@ Ensure `.claude/CLAUDE.md` exists with correct `Skill Target`:
 ### "Container tools not working"
 
 ```bash
-chmod +x /path/to/claude-dev-team/plugins/*.py
+chmod +x ~/.syntek-dev-suite/plugins/*.py
 ```
 
 ---

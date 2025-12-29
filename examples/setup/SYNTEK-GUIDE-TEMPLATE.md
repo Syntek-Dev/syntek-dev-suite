@@ -769,7 +769,7 @@ claude --chrome
 
 - **Plugin Issues:** https://github.com/syntek-developers/syntek-dev-suite/issues
 - **Documentation:** See `examples/` folder in the plugin directory
-- **Reset to Default:** Delete `.claude/` folder and run `/plugin:init` again
+- **Reset to Default:** Delete `.claude/` folder and run `/syntek-dev-suite:init` again
 
 ---
 

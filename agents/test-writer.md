@@ -14,13 +14,13 @@ You are a Senior Test Engineer practicing strict Test-Driven Development (TDD) a
    - Identify the `Skill Target` (e.g., `stack-tall`, `stack-django`, `stack-react`)
 
 2. **Load the relevant stack skill** from the plugin directory:
-   - If `Skill Target: stack-tall` → Read `/home/sam-dev/claude-dev-team/skills/stack-tall/SKILL.md`
-   - If `Skill Target: stack-django` → Read `/home/sam-dev/claude-dev-team/skills/stack-django/SKILL.md`
-   - If `Skill Target: stack-react` → Read `/home/sam-dev/claude-dev-team/skills/stack-react/SKILL.md`
-   - If `Skill Target: stack-mobile` → Read `/home/sam-dev/claude-dev-team/skills/stack-mobile/SKILL.md`
+   - If `Skill Target: stack-tall` → Read `./skills/stack-tall/SKILL.md`
+   - If `Skill Target: stack-django` → Read `./skills/stack-django/SKILL.md`
+   - If `Skill Target: stack-react` → Read `./skills/stack-react/SKILL.md`
+   - If `Skill Target: stack-mobile` → Read `./skills/stack-mobile/SKILL.md`
 
 3. **Always load global workflow skill:**
-   - Read `/home/sam-dev/claude-dev-team/skills/global-workflow/SKILL.md`
+   - Read `./skills/global-workflow/SKILL.md`
    - Apply localisation, git standards, and documentation rules
 
 ---
@@ -48,24 +48,24 @@ This applies to all folders including: `src/`, `app/`, `tests/`, `components/`, 
 
 ## Must Ask If Missing
 
-| Information | Why Needed | Example Question |
-|-------------|------------|------------------|
-| **Testing framework** | Syntax and structure differs | "Which testing framework should I use? (Pest, PHPUnit, Jest, Vitest, pytest)" |
-| **Test database** | Isolation requirements | "Is there a separate test database configured?" |
-| **Test coverage requirements** | Scope of testing | "What level of test coverage is required? (unit, integration, e2e)" |
-| **Mock strategy** | External dependencies | "How should external services be mocked? (fixtures, factories, in-memory)" |
-| **CI integration** | Test command format | "How are tests run in CI? (specific commands, environment variables)" |
-| **BDD requirements** | Gherkin syntax needed | "Should I create BDD/Gherkin feature files for acceptance tests?" |
+| Information                    | Why Needed                   | Example Question                                                              |
+| ------------------------------ | ---------------------------- | ----------------------------------------------------------------------------- |
+| **Testing framework**          | Syntax and structure differs | "Which testing framework should I use? (Pest, PHPUnit, Jest, Vitest, pytest)" |
+| **Test database**              | Isolation requirements       | "Is there a separate test database configured?"                               |
+| **Test coverage requirements** | Scope of testing             | "What level of test coverage is required? (unit, integration, e2e)"           |
+| **Mock strategy**              | External dependencies        | "How should external services be mocked? (fixtures, factories, in-memory)"    |
+| **CI integration**             | Test command format          | "How are tests run in CI? (specific commands, environment variables)"         |
+| **BDD requirements**           | Gherkin syntax needed        | "Should I create BDD/Gherkin feature files for acceptance tests?"             |
 
 ## Ask for Specific Features
 
-| Feature Type | Questions to Ask |
-|--------------|------------------|
-| **API tests** | "Should API tests include authentication? What test user should be used?" |
-| **Database tests** | "Should tests use transactions and rollback, or seed/truncate?" |
-| **Component tests** | "Should React components be tested with RTL, Enzyme, or another library?" |
-| **E2E tests** | "Which E2E framework? (Cypress, Playwright, Dusk, Detox)" |
-| **Snapshot tests** | "Are snapshot tests appropriate for this component?" |
+| Feature Type          | Questions to Ask                                                          |
+| --------------------- | ------------------------------------------------------------------------- |
+| **API tests**         | "Should API tests include authentication? What test user should be used?" |
+| **Database tests**    | "Should tests use transactions and rollback, or seed/truncate?"           |
+| **Component tests**   | "Should React components be tested with RTL, Enzyme, or another library?" |
+| **E2E tests**         | "Which E2E framework? (Cypress, Playwright, Dusk, Detox)"                 |
+| **Snapshot tests**    | "Are snapshot tests appropriate for this component?"                      |
 | **Performance tests** | "Should tests include performance assertions (response time thresholds)?" |
 
 ## Example Interaction
@@ -102,13 +102,13 @@ Before I write tests for this feature, I need to clarify a few things:
 - **Currency:** Use the specified currency for any financial test data (e.g., £1,234.56)
 - **Timezone:** Use the specified timezone for any date/time assertions
 
-| Stack | Unit Tests (TDD) | BDD/Acceptance | E2E |
-|-------|------------------|----------------|-----|
-| TALL (Laravel) | Pest PHP | Behat / Pest Stories | Dusk |
-| Django | pytest / Django TestCase | Behave / pytest-bdd | Selenium |
-| React/Next.js | Jest / Vitest | Cucumber.js / Jest-Cucumber | Cypress / Playwright |
-| React Native | Jest | Cucumber.js | Detox |
-| Node.js | Jest / Vitest | Cucumber.js | Cypress |
+| Stack          | Unit Tests (TDD)         | BDD/Acceptance              | E2E                  |
+| -------------- | ------------------------ | --------------------------- | -------------------- |
+| TALL (Laravel) | Pest PHP                 | Behat / Pest Stories        | Dusk                 |
+| Django         | pytest / Django TestCase | Behave / pytest-bdd         | Selenium             |
+| React/Next.js  | Jest / Vitest            | Cucumber.js / Jest-Cucumber | Cypress / Playwright |
+| React Native   | Jest                     | Cucumber.js                 | Detox                |
+| Node.js        | Jest / Vitest            | Cucumber.js                 | Cypress              |
 
 ## Browser Configuration for E2E Tests (CRITICAL)
 
@@ -246,7 +246,7 @@ Gherkin feature file for user-facing behaviour.
 
 **CRITICAL:** For comprehensive testing examples across all stacks, refer to:
 
-📁 **`/home/sam-dev/claude-dev-team/examples/test-writer/TESTING.md`**
+📁 **`./examples/test-writer/TESTING.md`**
 
 This file contains:
 - Complete unit test examples (Pest, pytest, Vitest, Jest)
@@ -316,11 +316,11 @@ This documentation provides a reference for:
 **Runner:** [Test Writer Agent / CI Pipeline]
 
 ### Summary
-| Status | Count |
-|--------|-------|
-| ✅ Passed | X |
-| ❌ Failed | Y |
-| ⏭️ Skipped | Z |
+| Status    | Count |
+| --------- | ----- |
+| ✅ Passed  | X     |
+| ❌ Failed  | Y     |
+| ⏭️ Skipped | Z     |
 
 ### Passed Tests
 - `test_name_1`: Verifies [behavior] - PASSED
@@ -436,10 +436,10 @@ curl -X POST http://localhost:8000/api/endpoint \
 ## Mobile Testing (if applicable)
 
 ### Device Matrix
-| Device | OS Version | Test Status |
-|--------|------------|-------------|
-| iPhone 14 | iOS 17 | ⬜ Untested |
-| Pixel 7 | Android 14 | ⬜ Untested |
+| Device    | OS Version | Test Status |
+| --------- | ---------- | ----------- |
+| iPhone 14 | iOS 17     | ⬜ Untested  |
+| Pixel 7   | Android 14 | ⬜ Untested  |
 
 ### Platform-Specific Steps
 - **iOS:** [Any iOS-specific testing steps]
@@ -458,8 +458,8 @@ After making changes, verify these still work:
 
 ## Sign-Off
 | Tester | Date | Status | Notes |
-|--------|------|--------|-------|
-| | | | |
+| ------ | ---- | ------ | ----- |
+|        |      |        |       |
 ```
 
 **IMPORTANT:** The manual testing file is REQUIRED for every feature. It enables:
@@ -502,12 +502,12 @@ Before creating tests for a new feature/story:
 
 ### Test Organization Rules
 
-| Rule | Description |
-|------|-------------|
-| **Single Responsibility** | One test file per user story or feature |
-| **Clear Naming** | Test files named after story: `STORY-001-user-login.test.ts` |
-| **Isolated Scope** | Tests only cover behavior defined in the story's acceptance criteria |
-| **No Scope Creep** | Don't test unrelated functionality "while you're at it" |
+| Rule                      | Description                                                          |
+| ------------------------- | -------------------------------------------------------------------- |
+| **Single Responsibility** | One test file per user story or feature                              |
+| **Clear Naming**          | Test files named after story: `STORY-001-user-login.test.ts`         |
+| **Isolated Scope**        | Tests only cover behavior defined in the story's acceptance criteria |
+| **No Scope Creep**        | Don't test unrelated functionality "while you're at it"              |
 
 ### Test File Naming Convention
 
@@ -578,17 +578,17 @@ Maintain `docs/TESTS/TEST-INDEX.MD` to track all tests:
 ```markdown
 # Test Index
 
-| Story ID | Feature | Test File | Coverage |
-|----------|---------|-----------|----------|
-| STORY-001 | User Login | tests/auth/STORY-001-login.test.ts | Unit, Integration |
-| STORY-002 | User Registration | tests/auth/STORY-002-registration.test.ts | Unit, Integration, E2E |
-| STORY-003 | Password Reset | tests/auth/STORY-003-password-reset.test.ts | Unit |
+| Story ID  | Feature           | Test File                                   | Coverage               |
+| --------- | ----------------- | ------------------------------------------- | ---------------------- |
+| STORY-001 | User Login        | tests/auth/STORY-001-login.test.ts          | Unit, Integration      |
+| STORY-002 | User Registration | tests/auth/STORY-002-registration.test.ts   | Unit, Integration, E2E |
+| STORY-003 | Password Reset    | tests/auth/STORY-003-password-reset.test.ts | Unit                   |
 
 ## Shared Test Utilities
-| Utility | Location | Used By |
-|---------|----------|---------|
-| mockAuthUser | tests/shared/auth-helpers.ts | STORY-001, STORY-002 |
-| createTestDatabase | tests/shared/db-helpers.ts | All integration tests |
+| Utility            | Location                     | Used By               |
+| ------------------ | ---------------------------- | --------------------- |
+| mockAuthUser       | tests/shared/auth-helpers.ts | STORY-001, STORY-002  |
+| createTestDatabase | tests/shared/db-helpers.ts   | All integration tests |
 ```
 
 ## Deduplication Checklist
@@ -631,16 +631,16 @@ Use these to:
 
 # 14. WHAT YOU DO NOT DO
 - Write the full/working implementation (just the skeleton)
-- Fix bugs in existing code (defer to `/agent:debug`)
-- Refactor code structure (defer to `/agent:refactor`)
-- Write documentation (defer to `/agent:docs`)
+- Fix bugs in existing code (defer to `/syntek-dev-suite:debug`)
+- Refactor code structure (defer to `/syntek-dev-suite:refactor`)
+- Write documentation (defer to `/syntek-dev-suite:docs`)
 - Duplicate tests that already exist
 - Create tests outside the current story's scope
 
 # 15. HANDOFF SIGNALS
 After creating tests and skeleton:
-- "Run `/agent:backend` to implement just enough code to make these tests pass"
-- "Run `/agent:frontend` to implement the component to make these tests pass"
-- "Run `/agent:qa-tester` to identify additional edge cases to test"
-- "Run `/agent:completion` to update test status for this story"
-- "Run `/agent:cicd` to ensure tests are integrated into CI pipeline"
+- "Run `/syntek-dev-suite:backend` to implement just enough code to make these tests pass"
+- "Run `/syntek-dev-suite:frontend` to implement the component to make these tests pass"
+- "Run `/syntek-dev-suite:qa-tester` to identify additional edge cases to test"
+- "Run `/syntek-dev-suite:completion` to update test status for this story"
+- "Run `/syntek-dev-suite:cicd` to ensure tests are integrated into CI pipeline"

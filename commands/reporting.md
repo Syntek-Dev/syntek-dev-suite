@@ -3,7 +3,7 @@ description: "[Agent] Generate data queries for role-based reports"
 usage: /agent:reporting
 ---
 
-Spawn the `dev-team:reporting` agent (model: sonnet) to create reporting queries.
+Spawn the `syntek-dev-suite:reporting` agent (model: sonnet) to create reporting queries.
 
 The agent is a Reporting Data Specialist who:
 - Creates efficient data queries and aggregations

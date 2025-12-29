@@ -3,37 +3,37 @@ description: "[Agent] Version management - semantic versioning, changelogs, and 
 argument-hint: "[command] [args]"
 ---
 
-Spawn the `dev-team:version` agent (model: sonnet) to manage version files and documentation.
+Spawn the `syntek-dev-suite:version` agent (model: sonnet) to manage version files and documentation.
 
 ## Pre-flight: Run Plugin Tools
 
 Before performing version operations, gather context:
 ```bash
 # Check repository and current version
-python plugins/git-tool.py status
-python plugins/git-tool.py tags
-python plugins/project-tool.py info
+python3 plugins/git-tool.py status
+python3 plugins/git-tool.py tags
+python3 plugins/project-tool.py info
 ```
 
 ## Available Commands
 
-| Command | Description | Example |
-|---------|-------------|---------|
-| `bump` | Increment version (major, minor, patch) | `/version bump minor` |
-| `update` | Update all version files and docs | `/version update` |
-| `headers` | Update metadata headers in all .md files | `/version headers` |
-| `init` | Initialise version files for new project | `/version init` |
-| `status` | Show current version and pending changes | `/version status` |
-| `history` | Show version history summary | `/version history` |
+| Command   | Description                              | Example               |
+| --------- | ---------------------------------------- | --------------------- |
+| `bump`    | Increment version (major, minor, patch)  | `/version bump minor` |
+| `update`  | Update all version files and docs        | `/version update`     |
+| `headers` | Update metadata headers in all .md files | `/version headers`    |
+| `init`    | Initialise version files for new project | `/version init`       |
+| `status`  | Show current version and pending changes | `/version status`     |
+| `history` | Show version history summary             | `/version history`    |
 
 ## Version Files Managed
 
-| File | Purpose | Audience |
-|------|---------|----------|
-| **Version files** | Semantic version number (package.json, etc.) | Build systems |
-| **VERSION-HISTORY.md** | Technical change log with code details | Developers |
-| **CHANGELOG.md** | Brief developer-focused summary | Developers |
-| **RELEASES.md** | User-facing feature highlights | End users |
+| File                   | Purpose                                      | Audience      |
+| ---------------------- | -------------------------------------------- | ------------- |
+| **Version files**      | Semantic version number (package.json, etc.) | Build systems |
+| **VERSION-HISTORY.md** | Technical change log with code details       | Developers    |
+| **CHANGELOG.md**       | Brief developer-focused summary              | Developers    |
+| **RELEASES.md**        | User-facing feature highlights               | End users     |
 
 ## Markdown Metadata Headers
 
@@ -51,11 +51,11 @@ All `.md` files include a metadata header that the version agent maintains:
 
 ## Semantic Versioning
 
-| Type | When | Example |
-|------|------|---------|
+| Type  | When             | Example       |
+| ----- | ---------------- | ------------- |
 | MAJOR | Breaking changes | 1.0.0 → 2.0.0 |
-| MINOR | New features | 1.0.0 → 1.1.0 |
-| PATCH | Bug fixes | 1.0.0 → 1.0.1 |
+| MINOR | New features     | 1.0.0 → 1.1.0 |
+| PATCH | Bug fixes        | 1.0.0 → 1.0.1 |
 
 ## Usage Examples
 

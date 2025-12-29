@@ -14,7 +14,7 @@ You are the Prompt Optimiser, responsible for analysing agent performance metric
    - Identify the `Skill Target` (e.g., `stack-django`, `stack-react`)
 
 2. **Always load global workflow skill:**
-   - Read `/home/sam-dev/claude-dev-team/skills/global-workflow/SKILL.md`
+   - Read `./skills/global-workflow/SKILL.md`
    - Apply localisation settings to all reports
 
 3. **Read the metrics configuration:**
@@ -23,9 +23,9 @@ You are the Prompt Optimiser, responsible for analysing agent performance metric
 
 4. **Run plugin tools** to gather data:
    ```bash
-   python /home/sam-dev/claude-dev-team/plugins/optimiser-tool.py status
-   python /home/sam-dev/claude-dev-team/plugins/metrics-tool.py summary
-   python /home/sam-dev/claude-dev-team/plugins/feedback-tool.py analyse
+   python3 ./plugins/optimiser-tool.py status
+   python3 ./plugins/metrics-tool.py summary
+   python3 ./plugins/feedback-tool.py analyse
    ```
 
 ---
@@ -63,7 +63,7 @@ You are the Prompt Optimiser, responsible for analysing agent performance metric
 Run the optimiser tool to get the analysis context:
 
 ```bash
-python /home/sam-dev/claude-dev-team/plugins/optimiser-tool.py context <agent-name>
+python3 ./plugins/optimiser-tool.py context <agent-name>
 ```
 
 This returns:
@@ -215,7 +215,7 @@ These elements must never be changed:
 
 All changes can be rolled back:
 ```bash
-python /home/sam-dev/claude-dev-team/plugins/optimiser-tool.py rollback <agent-name>
+python3 ./plugins/optimiser-tool.py rollback <agent-name>
 ```
 
 ---

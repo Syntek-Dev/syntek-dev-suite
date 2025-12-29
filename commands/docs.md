@@ -3,7 +3,7 @@ description: "[Agent] Write developer documentation and docstrings"
 usage: /agent:docs
 ---
 
-Spawn the `dev-team:doc-writer` agent (model: haiku) to create documentation.
+Spawn the `syntek-dev-suite:doc-writer` agent (model: haiku) to create documentation.
 
 The agent is a Technical Documentation Specialist who:
 - Creates READMEs with proper structure and ToC

@@ -1,7 +1,7 @@
 # Agents
 
-**Last Updated**: 28/12/2025
-**Version**: 1.3.0
+**Last Updated**: 29/12/2025
+**Version**: 1.3.1
 **Maintained By**: Development Team
 **Language**: British English (en_GB)
 **Timezone**: Europe/London
@@ -30,7 +30,7 @@
 
 This folder contains the 30 specialised AI agent definitions for the Syntek Dev Suite. Each agent is a markdown file containing instructions, context, and behavioural guidelines that Claude uses when the agent is invoked.
 
-Agents are invoked via their corresponding command in the `commands/` folder (e.g., `/agent:backend` invokes the backend agent).
+Agents are invoked via their corresponding command in the `commands/` folder (e.g., `/syntek-dev-suite:backend` invokes the backend agent).
 
 **Version:** 1.3.0
 
@@ -125,17 +125,17 @@ agents/
 
 ### Specialised
 
-| Agent            | File                  | Model  | Description                          |
-| ---------------- | --------------------- | ------ | ------------------------------------ |
-| GDPR             | `gdpr.md`             | Sonnet | GDPR compliance, data protection     |
-| SEO              | `seo.md`              | Sonnet | SEO, meta tags, structured data      |
-| Notifications    | `notifications.md`    | Sonnet | Email, SMS, push notifications       |
-| Export           | `export.md`           | Sonnet | PDF, Excel, CSV, JSON exports        |
-| Reporting        | `reporting.md`        | Sonnet | Data queries, report services        |
-| Data Scientist   | `data-scientist.md`   | Sonnet | Data analysis, Python, SQL           |
-| Support Articles | `support-articles.md` | Sonnet | Help documentation                   |
-| PM               | `pm.md`               | Sonnet | PM tool setup (ClickUp, Jira, etc.)  |
-| Version          | `version.md`          | Sonnet | Version management and changelogs    |
+| Agent            | File                  | Model  | Description                         |
+| ---------------- | --------------------- | ------ | ----------------------------------- |
+| GDPR             | `gdpr.md`             | Sonnet | GDPR compliance, data protection    |
+| SEO              | `seo.md`              | Sonnet | SEO, meta tags, structured data     |
+| Notifications    | `notifications.md`    | Sonnet | Email, SMS, push notifications      |
+| Export           | `export.md`           | Sonnet | PDF, Excel, CSV, JSON exports       |
+| Reporting        | `reporting.md`        | Sonnet | Data queries, report services       |
+| Data Scientist   | `data-scientist.md`   | Sonnet | Data analysis, Python, SQL          |
+| Support Articles | `support-articles.md` | Sonnet | Help documentation                  |
+| PM               | `pm.md`               | Sonnet | PM tool setup (ClickUp, Jira, etc.) |
+| Version          | `version.md`          | Sonnet | Version management and changelogs   |
 
 ---
 
@@ -145,18 +145,18 @@ Agents are invoked through their corresponding command:
 
 ```bash
 # Invoke the backend agent
-/agent:backend Create the User model and API endpoints
+/syntek-dev-suite:backend Create the User model and API endpoints
 
 # Invoke the planner agent
-/agent:plan Design a user dashboard feature
+/syntek-dev-suite:plan Design a user dashboard feature
 
 # Invoke the QA tester agent
-/agent:qa-tester Review the authentication flow
+/syntek-dev-suite:qa-tester Review the authentication flow
 ```
 
 ### How Agents Work
 
-1. User invokes a command (e.g., `/agent:backend`)
+1. User invokes a command (e.g., `/syntek-dev-suite:backend`)
 2. Claude reads the command file from `commands/backend.md`
 3. Command spawns the agent using `agents/backend.md`
 4. Agent reads the project's `.claude/CLAUDE.md` for stack context

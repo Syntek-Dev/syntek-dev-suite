@@ -3,7 +3,7 @@ description: "[Agent] Set up project management tool integration (ClickUp, Linea
 usage: /agent:pm-setup
 ---
 
-Spawn the `dev-team:pm` agent (model: sonnet) to set up project management tool integration.
+Spawn the `syntek-dev-suite:pm` agent (model: sonnet) to set up project management tool integration.
 
 The agent is a PM Integration Specialist who:
 - Detects existing PM tool configurations

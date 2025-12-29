@@ -22,16 +22,16 @@ This command initialises the Syntek Dev Suite plugin for your project.
 Before initialisation, gather project context:
 ```bash
 # Detect existing project info
-python plugins/project-tool.py info
-python plugins/project-tool.py framework
-python plugins/project-tool.py container
+python3 plugins/project-tool.py info
+python3 plugins/project-tool.py framework
+python3 plugins/project-tool.py container
 
 # Check for existing .claude folder
 ls -la .claude/ 2>/dev/null || echo "No .claude folder found"
 
 # Check for existing containers
-python plugins/ddev-tool.py status
-python plugins/docker-tool.py status
+python3 plugins/ddev-tool.py status
+python3 plugins/docker-tool.py status
 ```
 
 ## Initialisation Process
@@ -89,12 +89,12 @@ Create the following structure:
 
 ### Step 4: Copy Template Files
 
-Based on detected stack, copy from:
-- `/home/sam-dev/claude-dev-team/templates/tall-project.md` → `.claude/CLAUDE.md`
-- `/home/sam-dev/claude-dev-team/templates/django-project.md` → `.claude/CLAUDE.md`
-- `/home/sam-dev/claude-dev-team/templates/react-project.md` → `.claude/CLAUDE.md`
-- `/home/sam-dev/claude-dev-team/templates/mobile-project.md` → `.claude/CLAUDE.md`
-- `/home/sam-dev/claude-dev-team/templates/shared-lib-project.md` → `.claude/CLAUDE.md`
+Based on detected stack, copy from the plugin's templates directory:
+- `templates/tall-project.md` → `.claude/CLAUDE.md`
+- `templates/django-project.md` → `.claude/CLAUDE.md`
+- `templates/react-project.md` → `.claude/CLAUDE.md`
+- `templates/mobile-project.md` → `.claude/CLAUDE.md`
+- `templates/shared-lib-project.md` → `.claude/CLAUDE.md`
 
 ### Step 5: Create Plugin Usage Guide
 

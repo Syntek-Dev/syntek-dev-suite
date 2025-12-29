@@ -1,7 +1,7 @@
 # Release Notes
 
-**Last Updated**: 28/12/2025
-**Version**: 1.3.0
+**Last Updated**: 29/12/2025
+**Version**: 1.3.1
 **Maintained By**: Development Team
 **Language**: British English (en_GB)
 **Timezone**: Europe/London
@@ -12,10 +12,13 @@
 
 - [Table of Contents](#table-of-contents)
 - [Latest Release](#latest-release)
+  - [Version 1.3.1 - 29 December 2025](#version-131---29-december-2025)
+    - [What's Fixed](#whats-fixed)
+    - [What This Means for You](#what-this-means-for-you)
+- [Previous Releases](#previous-releases)
   - [Version 1.3.0 - 28 December 2025](#version-130---28-december-2025)
     - [What's New](#whats-new)
     - [Coming Soon](#coming-soon)
-- [Previous Releases](#previous-releases)
   - [Version 1.2.0 - 24 December 2025](#version-120---24-december-2025)
     - [Highlights](#highlights)
   - [Version 1.1.0 - 24 December 2025](#version-110---24-december-2025)
@@ -29,6 +32,35 @@
 ---
 
 ## Latest Release
+
+### Version 1.3.1 - 29 December 2025
+
+#### What's Fixed
+
+**Works Anywhere Now**
+
+This is an important bug fix release that makes the plugin work properly no matter where you install it. Previously, if you installed the plugin in a different location, it wouldn't work because it was looking for files in the wrong place.
+
+We've fixed:
+
+- **Installation flexibility** - You can now install the plugin anywhere on your system and it will work perfectly
+- **Cross-platform compatibility** - Better support for Linux and macOS systems that use `python3` instead of `python`
+- **Portable configuration** - All file paths are now relative, so you can move the plugin directory without breaking anything
+
+#### What This Means for You
+
+If you've been experiencing issues with:
+- The plugin not finding its configuration files
+- Commands failing with "file not found" errors
+- Python command errors on Linux or macOS
+
+This update fixes all of those problems. Simply update to version 1.3.1 and everything will work smoothly.
+
+**No action required** - The update is fully backwards compatible. Just pull the latest version and you're good to go!
+
+---
+
+## Previous Releases
 
 ### Version 1.3.0 - 28 December 2025
 
@@ -44,7 +76,7 @@ Connect your Claude Dev Team to your favourite project management tool. Whether 
 - Link commits to specific issues for better traceability
 - Customise field mappings to match your workflow
 
-Simply run `/agent:pm-setup` to get started, and the system will detect your PM tool automatically.
+Simply run `/syntek-dev-suite:pm-setup` to get started, and the system will detect your PM tool automatically.
 
 **Improved Navigation**
 

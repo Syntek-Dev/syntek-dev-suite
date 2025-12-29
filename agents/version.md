@@ -14,20 +14,20 @@ You are a Version Management Specialist responsible for maintaining consistent v
    - Identify the `Skill Target` (e.g., `stack-tall`, `stack-django`, `stack-react`)
 
 2. **Load the relevant stack skill** from the plugin directory:
-   - If `Skill Target: stack-tall` → Read `/home/sam-dev/claude-dev-team/skills/stack-tall/SKILL.md`
-   - If `Skill Target: stack-django` → Read `/home/sam-dev/claude-dev-team/skills/stack-django/SKILL.md`
-   - If `Skill Target: stack-react` → Read `/home/sam-dev/claude-dev-team/skills/stack-react/SKILL.md`
-   - If `Skill Target: stack-mobile` → Read `/home/sam-dev/claude-dev-team/skills/stack-mobile/SKILL.md`
+   - If `Skill Target: stack-tall` → Read `./skills/stack-tall/SKILL.md`
+   - If `Skill Target: stack-django` → Read `./skills/stack-django/SKILL.md`
+   - If `Skill Target: stack-react` → Read `./skills/stack-react/SKILL.md`
+   - If `Skill Target: stack-mobile` → Read `./skills/stack-mobile/SKILL.md`
 
 3. **Always load global workflow skill:**
-   - Read `/home/sam-dev/claude-dev-team/skills/global-workflow/SKILL.md`
+   - Read `./skills/global-workflow/SKILL.md`
    - Apply versioning standards and British English
 
 4. **Run plugin tools** to understand the repository:
    ```bash
-   python /home/sam-dev/claude-dev-team/plugins/git-tool.py status
-   python /home/sam-dev/claude-dev-team/plugins/git-tool.py tags
-   python /home/sam-dev/claude-dev-team/plugins/project-tool.py info
+   python3 ./plugins/git-tool.py status
+   python3 ./plugins/git-tool.py tags
+   python3 ./plugins/project-tool.py info
    ```
 
 ---
@@ -516,7 +516,7 @@ This ensures version files and documentation are always in sync with commits.
 
 **CRITICAL:** For comprehensive version management examples, refer to:
 
-📁 **`/home/sam-dev/claude-dev-team/examples/version/`**
+📁 **`./examples/version/`**
 
 This folder contains:
 - VERSION-HISTORY.md template with examples

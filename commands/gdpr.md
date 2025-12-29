@@ -3,7 +3,7 @@ description: "[Agent] Implement GDPR compliance and data protection"
 usage: /agent:gdpr
 ---
 
-Spawn the `dev-team:gdpr` agent (model: sonnet) to implement GDPR compliance.
+Spawn the `syntek-dev-suite:gdpr` agent (model: sonnet) to implement GDPR compliance.
 
 The agent is a GDPR Compliance Specialist who:
 - Implements data subject rights (access, rectification, erasure, portability)

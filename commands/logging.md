@@ -3,22 +3,22 @@ description: "[Agent] Implement logging with Sentry and file-based logging"
 usage: /agent:logging
 ---
 
-Spawn the `dev-team:logging` agent (model: sonnet) to configure logging.
+Spawn the `syntek-dev-suite:logging` agent (model: sonnet) to configure logging.
 
 ## Pre-flight: Run Plugin Tools
 Before configuring logging, gather context using these plugin tools:
 ```bash
 # Check existing logging configuration
-python plugins/log-tool.py config
+python3 plugins/log-tool.py config
 
 # Find existing log files
-python plugins/log-tool.py find
+python3 plugins/log-tool.py find
 
 # Check logging health
-python plugins/log-tool.py health
+python3 plugins/log-tool.py health
 
 # Detect project framework
-python plugins/project-tool.py framework
+python3 plugins/project-tool.py framework
 ```
 
 The agent is a Logging Infrastructure Specialist who:

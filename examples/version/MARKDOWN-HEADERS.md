@@ -1,7 +1,7 @@
 # Markdown Metadata Headers Guide
 
-**Last Updated**: 28/12/2025
-**Version**: 1.3.0
+**Last Updated**: 29/12/2025
+**Version**: 1.3.1
 **Maintained By**: Development Team
 **Language**: British English (en_GB)
 **Timezone**: Europe/London
@@ -94,8 +94,8 @@ The header must appear:
 ```markdown
 # API Documentation
 
-**Last Updated**: 28/12/2025
-**Version**: 1.3.0
+**Last Updated**: 29/12/2025
+**Version**: 1.3.1
 **Maintained By**: Development Team
 **Language**: British English (en_GB)
 **Timezone**: Europe/London
@@ -120,8 +120,8 @@ The header must appear:
 
 ## Table of Contents        <!-- WRONG: TOC before header -->
 
-**Last Updated**: 28/12/2025
-**Version**: 1.3.0
+**Last Updated**: 29/12/2025
+**Version**: 1.3.1
 ...
 ```
 
@@ -132,8 +132,8 @@ The header must appear:
 
 This document describes...
 
-**Last Updated**: 28/12/2025
-**Version**: 1.3.0
+**Last Updated**: 29/12/2025
+**Version**: 1.3.1
 ...
 ```
 
@@ -181,8 +181,8 @@ If you manually edit a markdown file without running a version command:
 ```markdown
 # Project Name
 
-**Last Updated**: 28/12/2025
-**Version**: 1.3.0
+**Last Updated**: 29/12/2025
+**Version**: 1.3.1
 **Maintained By**: Development Team
 **Language**: British English (en_GB)
 **Timezone**: Europe/London
@@ -207,8 +207,8 @@ This project provides...
 ```markdown
 # API Reference
 
-**Last Updated**: 28/12/2025
-**Version**: 1.3.0
+**Last Updated**: 29/12/2025
+**Version**: 1.3.1
 **Maintained By**: Backend Team
 **Language**: British English (en_GB)
 **Timezone**: Europe/London
@@ -233,8 +233,8 @@ All API requests require...
 ```markdown
 # Contributing Guide
 
-**Last Updated**: 28/12/2025
-**Version**: 1.3.0
+**Last Updated**: 29/12/2025
+**Version**: 1.3.1
 **Maintained By**: Development Team
 **Language**: British English (en_GB)
 **Timezone**: Europe/London
@@ -259,8 +259,8 @@ Thank you for considering contributing...
 ```markdown
 # Database Schema
 
-**Last Updated**: 28/12/2025
-**Version**: 1.3.0
+**Last Updated**: 29/12/2025
+**Version**: 1.3.1
 **Maintained By**: Database Team
 **Language**: British English (en_GB)
 **Timezone**: Europe/London

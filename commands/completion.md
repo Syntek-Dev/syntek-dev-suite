@@ -3,7 +3,7 @@ description: "[Agent] Mark user stories and sprints as complete"
 usage: /agent:completion
 ---
 
-Spawn the `dev-team:completion` agent (model: sonnet) to track completion.
+Spawn the `syntek-dev-suite:completion` agent (model: sonnet) to track completion.
 
 The agent is a Completion Tracking Specialist who:
 - Detects current repository type (Backend, Frontend, Mobile)

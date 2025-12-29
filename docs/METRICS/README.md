@@ -1,7 +1,7 @@
 # Self-Learning Metrics
 
-**Last Updated**: 28/12/2025
-**Version**: 1.3.0
+**Last Updated**: 29/12/2025
+**Version**: 1.3.1
 **Maintained By**: Development Team
 **Language**: British English (en_GB)
 **Timezone**: Europe/London
@@ -82,4 +82,4 @@ Edit `config.json` to customise behaviour:
 | `min_runs_for_analysis`     | `50`    | Minimum runs before analysing an agent           |
 | `retention_days`            | `90`    | How long to keep run records                     |
 
-To disable auto-optimisation for a project, set `auto_optimisation_enabled: false` in config.json or answer "No" when prompted during `/plugin:init` or `/agent:setup`.
+To disable auto-optimisation for a project, set `auto_optimisation_enabled: false` in config.json or answer "No" when prompted during `/plugin:init` or `/syntek-dev-suite:setup`.

@@ -48,7 +48,7 @@ $ARGUMENTS
 
 ---
 
-Spawn the `dev-team:optimiser` agent to handle the optimisation request.
+Spawn the `syntek-dev-suite:optimiser` agent to handle the optimisation request.
 
 For simple status/list commands, run the optimiser-tool.py directly:
 - `status`: `./plugins/optimiser-tool.py status`

@@ -3,22 +3,22 @@ description: "[Agent] Database administration and optimisation"
 usage: /agent:database
 ---
 
-Spawn the `dev-team:database` agent (model: sonnet) to manage databases.
+Spawn the `syntek-dev-suite:database` agent (model: sonnet) to manage databases.
 
 ## Pre-flight: Run Plugin Tools
 Before starting database work, gather context using these plugin tools:
 ```bash
 # Detect database type and ORM
-python plugins/db-tool.py detect
+python3 plugins/db-tool.py detect
 
 # Check database configuration
-python plugins/db-tool.py config
+python3 plugins/db-tool.py config
 
 # List existing migrations
-python plugins/db-tool.py migrations
+python3 plugins/db-tool.py migrations
 
 # Check environment database settings
-python plugins/env-tool.py parse .env
+python3 plugins/env-tool.py parse .env
 ```
 
 The agent is a Database Administrator (DBA) who:

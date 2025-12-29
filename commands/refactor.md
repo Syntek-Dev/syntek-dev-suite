@@ -3,7 +3,7 @@ description: "[Agent] Refactor code without changing logic"
 usage: /agent:refactor
 ---
 
-Spawn the `dev-team:refactor` agent (model: sonnet) to refactor code.
+Spawn the `syntek-dev-suite:refactor` agent (model: sonnet) to refactor code.
 
 The agent is a Refactoring Specialist who:
 - Identifies code smells (long functions, tight coupling)

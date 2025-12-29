@@ -37,7 +37,7 @@
       },
       "execution": {
         "type": "command",
-        "command": "/home/sam-dev/claude-dev-team/plugins/ddev-tool.py"
+        "command": "python3 ./plugins/ddev-tool.py"
       }
     },
     {
@@ -50,7 +50,7 @@
       },
       "execution": {
         "type": "command",
-        "command": "/home/sam-dev/claude-dev-team/plugins/docker-tool.py"
+        "command": "python3 ./plugins/docker-tool.py"
       }
     },
     {
@@ -69,7 +69,7 @@
       },
       "execution": {
         "type": "command",
-        "command": "/home/sam-dev/claude-dev-team/plugins/git-tool.py ${command:-status}"
+        "command": "python3 ./plugins/git-tool.py ${command:-status}"
       }
     },
     {
@@ -92,7 +92,7 @@
       },
       "execution": {
         "type": "command",
-        "command": "/home/sam-dev/claude-dev-team/plugins/env-tool.py ${command:-find} ${file:-}"
+        "command": "python3 ./plugins/env-tool.py ${command:-find} ${file:-}"
       }
     },
     {
@@ -111,7 +111,7 @@
       },
       "execution": {
         "type": "command",
-        "command": "/home/sam-dev/claude-dev-team/plugins/db-tool.py ${command:-detect}"
+        "command": "python3 ./plugins/db-tool.py ${command:-detect}"
       }
     },
     {
@@ -130,7 +130,7 @@
       },
       "execution": {
         "type": "command",
-        "command": "/home/sam-dev/claude-dev-team/plugins/project-tool.py ${command:-info}"
+        "command": "python3 ./plugins/project-tool.py ${command:-info}"
       }
     },
     {
@@ -153,7 +153,7 @@
       },
       "execution": {
         "type": "command",
-        "command": "/home/sam-dev/claude-dev-team/plugins/log-tool.py ${command:-find} ${file:-}"
+        "command": "python3 ./plugins/log-tool.py ${command:-find} ${file:-}"
       }
     },
     {
@@ -176,7 +176,7 @@
       },
       "execution": {
         "type": "command",
-        "command": "/home/sam-dev/claude-dev-team/plugins/metrics-tool.py ${command:-status} ${agent:-}"
+        "command": "python3 ./plugins/metrics-tool.py ${command:-status} ${agent:-}"
       }
     },
     {
@@ -200,7 +200,7 @@
       },
       "execution": {
         "type": "command",
-        "command": "/home/sam-dev/claude-dev-team/plugins/feedback-tool.py ${command:-status} ${rating:-}"
+        "command": "python3 ./plugins/feedback-tool.py ${command:-status} ${rating:-}"
       }
     },
     {
@@ -219,7 +219,7 @@
       },
       "execution": {
         "type": "command",
-        "command": "/home/sam-dev/claude-dev-team/plugins/quality-tool.py ${command:-status}"
+        "command": "python3 ./plugins/quality-tool.py ${command:-status}"
       }
     },
     {
@@ -242,7 +242,7 @@
       },
       "execution": {
         "type": "command",
-        "command": "/home/sam-dev/claude-dev-team/plugins/ab-test-tool.py ${command:-list} ${agent:-}"
+        "command": "python3 ./plugins/ab-test-tool.py ${command:-list} ${agent:-}"
       }
     },
     {
@@ -269,7 +269,7 @@
       },
       "execution": {
         "type": "command",
-        "command": "/home/sam-dev/claude-dev-team/plugins/optimiser-tool.py ${command:-status} ${agent:-} ${proposal_id:-}"
+        "command": "python3 ./plugins/optimiser-tool.py ${command:-status} ${agent:-} ${proposal_id:-}"
       }
     }
   ]

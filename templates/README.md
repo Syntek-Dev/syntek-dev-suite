@@ -1,7 +1,7 @@
 # Templates
 
-**Last Updated**: 28/12/2025
-**Version**: 1.3.0
+**Last Updated**: 29/12/2025
+**Version**: 1.3.1
 **Maintained By**: Development Team
 **Language**: British English (en_GB)
 **Timezone**: Europe/London
@@ -10,7 +10,7 @@
 
 ## Overview
 
-This folder contains project templates that define the `CLAUDE.md` configuration for different technology stacks. Templates are used by the `/plugin:init` command or can be copied manually to initialise a new project.
+This folder contains project templates that define the `CLAUDE.md` configuration for different technology stacks. Templates are used by the `/syntek-dev-suite:init` command or can be copied manually to initialise a new project.
 
 Each template is a complete `CLAUDE.md` file with placeholders for project-specific information.
 
@@ -31,7 +31,7 @@ Each template is a complete `CLAUDE.md` file with placeholders for project-speci
   - [Development Standards](#development-standards)
   - [Placeholders](#placeholders)
 - [Usage](#usage)
-  - [Using /plugin:init (Recommended)](#using-plugininit-recommended)
+  - [Using /syntek-dev-suite:init (Recommended)](#using-plugininit-recommended)
   - [Manual Setup](#manual-setup)
   - [Template Selection Guide](#template-selection-guide)
 - [Related Sections](#related-sections)
@@ -105,14 +105,14 @@ Templates contain placeholders that need to be replaced:
 
 ## Usage
 
-### Using /plugin:init (Recommended)
+### Using /syntek-dev-suite:init (Recommended)
 
 ```bash
 # Navigate to your project
 cd ~/my-project
 
 # Run init command
-/plugin:init
+/syntek-dev-suite:init
 ```
 
 The init command will:
@@ -131,27 +131,33 @@ mkdir -p .claude
 
 2. **Copy the appropriate template:**
 
+First, clone the plugin repository if you haven't already:
+```bash
+git clone https://github.com/Syntek-Studio/syntek-dev-suite.git ~/.syntek-dev-suite
+```
+
+Then copy the appropriate template:
 ```bash
 # For TALL Stack
-cp /path/to/claude-dev-team/templates/tall-project.md ./.claude/CLAUDE.md
+cp ~/.syntek-dev-suite/templates/tall-project.md ./.claude/CLAUDE.md
 
 # For Django
-cp /path/to/claude-dev-team/templates/django-project.md ./.claude/CLAUDE.md
+cp ~/.syntek-dev-suite/templates/django-project.md ./.claude/CLAUDE.md
 
 # For React
-cp /path/to/claude-dev-team/templates/react-project.md ./.claude/CLAUDE.md
+cp ~/.syntek-dev-suite/templates/react-project.md ./.claude/CLAUDE.md
 
 # For Mobile
-cp /path/to/claude-dev-team/templates/mobile-project.md ./.claude/CLAUDE.md
+cp ~/.syntek-dev-suite/templates/mobile-project.md ./.claude/CLAUDE.md
 
 # For Shared Library
-cp /path/to/claude-dev-team/templates/shared-lib-project.md ./.claude/CLAUDE.md
+cp ~/.syntek-dev-suite/templates/shared-lib-project.md ./.claude/CLAUDE.md
 ```
 
 3. **Copy the Syntek Guide:**
 
 ```bash
-cp /path/to/claude-dev-team/examples/setup/SYNTEK-GUIDE-TEMPLATE.md ./.claude/SYNTEK-GUIDE.md
+cp ~/.syntek-dev-suite/examples/setup/SYNTEK-GUIDE-TEMPLATE.md ./.claude/SYNTEK-GUIDE.md
 ```
 
 4. **Edit the template:**

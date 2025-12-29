@@ -3,7 +3,7 @@ description: "[Agent] Implement secure authentication with MFA"
 usage: /agent:auth
 ---
 
-Spawn the `dev-team:authentication` agent (model: sonnet) to implement auth.
+Spawn the `syntek-dev-suite:authentication` agent (model: sonnet) to implement auth.
 
 The agent is an Authentication Security Specialist who:
 - Implements strong password validation rules

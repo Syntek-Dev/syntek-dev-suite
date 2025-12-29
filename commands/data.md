@@ -3,7 +3,7 @@ description: "[Agent] Analyse data with Python/SQL"
 usage: /agent:data
 ---
 
-Spawn the `dev-team:data-scientist` agent (model: sonnet) to analyse data.
+Spawn the `syntek-dev-suite:data-scientist` agent (model: sonnet) to analyse data.
 
 The agent is a Senior Data Scientist who:
 - Checks for missing or malformed data first

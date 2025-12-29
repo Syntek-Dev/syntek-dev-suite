@@ -1,7 +1,7 @@
 # Version History
 
-**Last Updated**: 28/12/2025
-**Version**: 1.3.0
+**Last Updated**: 29/12/2025
+**Version**: 1.3.1
 **Maintained By**: Development Team
 **Language**: British English (en_GB)
 **Timezone**: Europe/London
@@ -11,6 +11,7 @@
 ## Table of Contents
 
 - [Unreleased](#unreleased)
+- [1.3.1 - 29/12/2025](#131---29122025)
 - [1.3.0 - 28/12/2025](#130---28122025)
 - [1.2.0 - 24/12/2025](#120---24122025)
 - [1.1.0 - 24/12/2025](#110---24122025)
@@ -22,6 +23,108 @@
 
 ### Technical Changes
 - Nothing yet
+
+---
+
+## [1.3.1] - 29/12/2025
+
+### Summary
+Critical bug fix release addressing path portability issues that prevented the plugin from working when installed in different locations. All hardcoded paths have been replaced with dynamic path detection, and Python command compatibility has been improved for cross-platform support.
+
+### Bug Fixes
+
+#### Path Portability
+
+**Problem:** The plugin used hardcoded paths (`/home/sam-dev/claude-dev-team`) that prevented it from working when installed in different locations.
+
+**Solution:** Replaced all hardcoded paths with dynamic path detection using `os.getcwd()` and `Path(__file__).parent.parent`.
+
+| Issue | Fix | Benefit |
+|-------|-----|---------|
+| Plugin tools referenced absolute paths | Use `Path(__file__).parent.parent` for plugin directory | Works from any installation location |
+| Agent files referenced `/home/sam-dev/claude-dev-team` | Use relative paths (`./skills/`, `./plugins/`, `./examples/`) | Portable across different systems |
+| Config file used absolute paths | Use relative paths (`./plugins/`) | Configuration remains valid across installations |
+| Documentation contained hardcoded paths | Reference GitHub repository URL | Users can find the project regardless of local path |
+
+#### Python Command Compatibility
+
+**Problem:** Commands used `python` which may not exist on systems where only `python3` is available (common on Linux/macOS).
+
+**Solution:** Changed all Python command invocations to use `python3` explicitly.
+
+| Change | Reason |
+|--------|--------|
+| `python` → `python3` in config.json | Ensures compatibility with systems that only have `python3` |
+| `python` → `python3` in all agent files | Consistent command usage across all agents |
+| `python` → `python3` in command files | Works on Linux, macOS, and Windows with Python 3 alias |
+
+### Files Changed
+
+| File | Changes |
+|------|---------|
+| `plugins/ab-test-tool.py` | Replaced `os.getcwd()` path assumptions with `Path(__file__).parent.parent` for metrics directory |
+| `plugins/optimiser-tool.py` | Replaced `os.getcwd()` path assumptions with `Path(__file__).parent.parent` for metrics directory |
+| `config.json` | Updated all `python` commands to `python3`, changed absolute paths to relative (`./plugins/`) |
+| `agents/*.md` (30+ files) | Updated skill references from `/home/sam-dev/claude-dev-team` to `./skills/`, `./plugins/`, `./examples/` |
+| `commands/*.md` (30+ files) | Updated plugin tool commands to use `python3` |
+| `README.md` | Replaced hardcoded path references with GitHub repository URL |
+| `templates/README.md` | Updated documentation to reference GitHub repository |
+| `commands/init.md` | Updated init documentation with portable path examples |
+| `.claude-plugin/README.md` | Added installation path guidance and GitHub repository link |
+
+### Technical Details
+
+**Dynamic Path Detection Pattern:**
+```python
+# Old (hardcoded)
+metrics_dir = "/home/sam-dev/claude-dev-team/docs/METRICS"
+
+# New (dynamic)
+from pathlib import Path
+plugin_root = Path(__file__).parent.parent
+metrics_dir = plugin_root / "docs" / "METRICS"
+```
+
+**Relative Path Pattern:**
+```markdown
+# Old (absolute)
+Read `/home/sam-dev/claude-dev-team/skills/stack-tall/SKILL.md`
+
+# New (relative)
+Read `./skills/stack-tall/SKILL.md`
+```
+
+**Python Command Pattern:**
+```bash
+# Old
+python ./plugins/git-tool.py status
+
+# New
+python3 ./plugins/git-tool.py status
+```
+
+### Configuration Changes
+
+| File | Key | Change |
+|------|-----|--------|
+| `config.json` | `tools.*.command` | Changed `python` to `python3` for all plugin tool commands |
+| `config.json` | `tools.*.command` | Changed `/home/sam-dev/claude-dev-team/plugins/` to `./plugins/` |
+
+### Testing Notes
+
+This release has been tested with:
+- Installation in different directory paths
+- Python 3.10, 3.11, 3.12 on Linux
+- Both `python` and `python3` command availability scenarios
+- Relative path resolution from plugin root directory
+
+### Migration Notes
+
+**For Existing Users:**
+No migration required. The changes are backwards compatible and will automatically work with your existing installation.
+
+**For New Users:**
+The plugin now works correctly regardless of installation location. Simply clone the repository to any directory and the plugin will function properly.
 
 ---
 

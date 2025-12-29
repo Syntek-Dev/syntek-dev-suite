@@ -2,42 +2,41 @@
 
 ## Table of Contents
 
-- [Self-Learning System Guide](#self-learning-system-guide)
-  - [Table of Contents](#table-of-contents)
-  - [Overview](#overview)
-  - [How It Works](#how-it-works)
-  - [Getting Started](#getting-started)
-    - [Setup (Automatic)](#setup-automatic)
-    - [Manual Setup](#manual-setup)
-  - [Giving Feedback](#giving-feedback)
-    - [After Every Agent Run](#after-every-agent-run)
-    - [Quick Decision Guide](#quick-decision-guide)
-    - [Adding Comments](#adding-comments)
-    - [Feedback Commands](#feedback-commands)
-  - [Viewing Metrics](#viewing-metrics)
-    - [Check System Status](#check-system-status)
-    - [View Agent Performance](#view-agent-performance)
-    - [Query Specific Data](#query-specific-data)
-  - [A/B Testing](#ab-testing)
-    - [Creating a Test](#creating-a-test)
-    - [Checking Test Status](#checking-test-status)
-    - [Concluding a Test](#concluding-a-test)
-  - [Optimisation](#optimisation)
-    - [Analysing an Agent](#analysing-an-agent)
-    - [Reviewing Proposals](#reviewing-proposals)
-    - [Applying or Rejecting](#applying-or-rejecting)
-    - [Rolling Back](#rolling-back)
-  - [Configuration](#configuration)
-    - [Config File Location](#config-file-location)
-    - [Options](#options)
-    - [Safety Thresholds](#safety-thresholds)
-  - [Troubleshooting](#troubleshooting)
-    - [Feedback Not Being Recorded](#feedback-not-being-recorded)
-    - [Optimisation Not Finding Issues](#optimisation-not-finding-issues)
-    - [Rollback Not Working](#rollback-not-working)
-    - [Data Not Syncing Across Team](#data-not-syncing-across-team)
-  - [Best Practices](#best-practices)
-  - [Commands Reference](#commands-reference)
+- [Table of Contents](#table-of-contents)
+- [Overview](#overview)
+- [How It Works](#how-it-works)
+- [Getting Started](#getting-started)
+  - [Setup (Automatic)](#setup-automatic)
+  - [Manual Setup](#manual-setup)
+- [Giving Feedback](#giving-feedback)
+  - [After Every Agent Run](#after-every-agent-run)
+  - [Quick Decision Guide](#quick-decision-guide)
+  - [Adding Comments](#adding-comments)
+  - [Feedback Commands](#feedback-commands)
+- [Viewing Metrics](#viewing-metrics)
+  - [Check System Status](#check-system-status)
+  - [View Agent Performance](#view-agent-performance)
+  - [Query Specific Data](#query-specific-data)
+- [A/B Testing](#ab-testing)
+  - [Creating a Test](#creating-a-test)
+  - [Checking Test Status](#checking-test-status)
+  - [Concluding a Test](#concluding-a-test)
+- [Optimisation](#optimisation)
+  - [Analysing an Agent](#analysing-an-agent)
+  - [Reviewing Proposals](#reviewing-proposals)
+  - [Applying or Rejecting](#applying-or-rejecting)
+  - [Rolling Back](#rolling-back)
+- [Configuration](#configuration)
+  - [Config File Location](#config-file-location)
+  - [Options](#options)
+  - [Safety Thresholds](#safety-thresholds)
+- [Troubleshooting](#troubleshooting)
+  - [Feedback Not Being Recorded](#feedback-not-being-recorded)
+  - [Optimisation Not Finding Issues](#optimisation-not-finding-issues)
+  - [Rollback Not Working](#rollback-not-working)
+  - [Data Not Syncing Across Team](#data-not-syncing-across-team)
+- [Best Practices](#best-practices)
+- [Commands Reference](#commands-reference)
 
 
 ---
@@ -147,11 +146,11 @@ How was this response?
 
 ### Quick Decision Guide
 
-| Rate | When |
-|------|------|
+| Rate     | When                                          |
+| -------- | --------------------------------------------- |
 | **good** | Code works, follows patterns, well documented |
-| **bad** | Missing requirements, wrong patterns, errors |
-| **skip** | Can't evaluate yet, need to test more |
+| **bad**  | Missing requirements, wrong patterns, errors  |
+| **skip** | Can't evaluate yet, need to test more         |
 
 ### Adding Comments
 
@@ -165,12 +164,12 @@ For "bad" ratings, add a comment to help the optimiser:
 
 ### Feedback Commands
 
-| Command | Description |
-|---------|-------------|
-| `/learning:feedback good` | Quick positive rating |
-| `/learning:feedback bad` | Quick negative rating |
+| Command                            | Description               |
+| ---------------------------------- | ------------------------- |
+| `/learning:feedback good`          | Quick positive rating     |
+| `/learning:feedback bad`           | Quick negative rating     |
 | `/learning:feedback bad <comment>` | Negative with explanation |
-| `/learning:feedback skip` | Skip this rating |
+| `/learning:feedback skip`          | Skip this rating          |
 
 ---
 
@@ -310,15 +309,15 @@ This restores the previous version from backup.
 
 ### Options
 
-| Setting | Default | Description |
-|---------|---------|-------------|
-| `enabled` | `true` | Enable/disable entire system |
-| `feedback_prompt_enabled` | `true` | Show feedback prompt after runs |
-| `feedback_required` | `true` | Always prompt for feedback |
-| `ab_testing_enabled` | `true` | Allow A/B testing |
-| `auto_optimisation_enabled` | `true` | Auto-apply high-confidence improvements |
-| `min_runs_for_analysis` | `50` | Minimum runs before analysing |
-| `retention_days` | `90` | How long to keep run data |
+| Setting                     | Default | Description                             |
+| --------------------------- | ------- | --------------------------------------- |
+| `enabled`                   | `true`  | Enable/disable entire system            |
+| `feedback_prompt_enabled`   | `true`  | Show feedback prompt after runs         |
+| `feedback_required`         | `true`  | Always prompt for feedback              |
+| `ab_testing_enabled`        | `true`  | Allow A/B testing                       |
+| `auto_optimisation_enabled` | `true`  | Auto-apply high-confidence improvements |
+| `min_runs_for_analysis`     | `50`    | Minimum runs before analysing           |
+| `retention_days`            | `90`    | How long to keep run data               |
 
 ### Safety Thresholds
 
@@ -396,16 +395,16 @@ Ensure `docs/METRICS/` is:
 
 ## Commands Reference
 
-| Command | Purpose |
-|---------|---------|
-| `/learning:feedback good\|bad\|skip [comment]` | Rate last response |
-| `/learning:metrics [agent] [--days N]` | View metrics |
-| `/learning:ab-test list` | List active tests |
-| `/learning:ab-test status <agent>` | Check test results |
-| `/learning:ab-test conclude <agent> [winner]` | End a test |
-| `/learning:optimise status` | System status |
-| `/learning:optimise analyse <agent>` | Analyse an agent |
-| `/learning:optimise list` | List proposals |
-| `/learning:optimise apply <id>` | Apply a proposal |
-| `/learning:optimise reject <id> [reason]` | Reject a proposal |
-| `/learning:optimise rollback <agent>` | Restore previous version |
+| Command                                        | Purpose                  |
+| ---------------------------------------------- | ------------------------ |
+| `/learning:feedback good\|bad\|skip [comment]` | Rate last response       |
+| `/learning:metrics [agent] [--days N]`         | View metrics             |
+| `/learning:ab-test list`                       | List active tests        |
+| `/learning:ab-test status <agent>`             | Check test results       |
+| `/learning:ab-test conclude <agent> [winner]`  | End a test               |
+| `/learning:optimise status`                    | System status            |
+| `/learning:optimise analyse <agent>`           | Analyse an agent         |
+| `/learning:optimise list`                      | List proposals           |
+| `/learning:optimise apply <id>`                | Apply a proposal         |
+| `/learning:optimise reject <id> [reason]`      | Reject a proposal        |
+| `/learning:optimise rollback <agent>`          | Restore previous version |

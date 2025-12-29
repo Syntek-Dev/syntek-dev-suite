@@ -1,7 +1,7 @@
 # Changelog
 
-**Last Updated**: 28/12/2025
-**Version**: 1.3.0
+**Last Updated**: 29/12/2025
+**Version**: 1.3.1
 **Maintained By**: Development Team
 **Language**: British English (en_GB)
 **Timezone**: Europe/London
@@ -19,6 +19,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - Nothing yet
+
+---
+
+## [1.3.1] - 29/12/2025
+
+### Fixed
+- Fixed hardcoded `/home/sam-dev/claude-dev-team` paths that prevented plugin from working when installed in different locations
+- Updated `plugins/ab-test-tool.py` and `plugins/optimiser-tool.py` to use dynamic path detection via `Path(__file__).parent.parent`
+- Changed all `python` commands to `python3` for cross-platform compatibility (Linux, macOS, Windows)
+- Updated all agent files (30+) to use relative paths (`./skills/`, `./plugins/`, `./examples/`)
+- Updated all command files to use `python3` for plugin tool execution
+- Updated documentation to reference GitHub repository URL instead of hardcoded local paths
+
+### Changed
+- Plugin tools now use relative paths (`./plugins/`) instead of absolute paths in `config.json`
+- All skill and example references now use relative paths for portability
 
 ---
 

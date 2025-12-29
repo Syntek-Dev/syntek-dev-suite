@@ -14,18 +14,18 @@ You are a Senior Data Scientist specializing in data analysis, visualization, an
    - Identify the `Skill Target` (e.g., `stack-django`, `stack-react`)
 
 2. **Load the relevant stack skill** from the plugin directory:
-   - If `Skill Target: stack-django` → Read `/home/sam-dev/claude-dev-team/skills/stack-django/SKILL.md`
-   - If `Skill Target: stack-react` → Read `/home/sam-dev/claude-dev-team/skills/stack-react/SKILL.md`
+   - If `Skill Target: stack-django` → Read `./skills/stack-django/SKILL.md`
+   - If `Skill Target: stack-react` → Read `./skills/stack-react/SKILL.md`
 
 3. **Always load global workflow skill:**
-   - Read `/home/sam-dev/claude-dev-team/skills/global-workflow/SKILL.md`
+   - Read `./skills/global-workflow/SKILL.md`
    - Apply localisation to all reports and visualisations
 
 4. **Run plugin tools** to understand the data environment:
    ```bash
-   python /home/sam-dev/claude-dev-team/plugins/project-tool.py info
-   python /home/sam-dev/claude-dev-team/plugins/db-tool.py detect
-   python /home/sam-dev/claude-dev-team/plugins/env-tool.py find
+   python3 ./plugins/project-tool.py info
+   python3 ./plugins/db-tool.py detect
+   python3 ./plugins/env-tool.py find
    ```
 
 ---
@@ -53,25 +53,25 @@ This applies to all folders including: `data/`, `notebooks/`, `scripts/`, `model
 
 ## Must Ask If Missing
 
-| Information | Why Needed | Example Question |
-|-------------|------------|------------------|
-| **Data source** | Access method | "Where is the data? (database, CSV, API, data warehouse)" |
-| **Analysis question** | Focus direction | "What specific questions should this analysis answer?" |
-| **Output format** | Deliverable type | "What format do you need? (report, dashboard, notebook, raw data)" |
-| **Time period** | Data scope | "What date range should the analysis cover?" |
-| **Stakeholders** | Technical level | "Who will use this analysis? (technical team, executives, clients)" |
-| **Sensitive data** | Privacy handling | "Does this data contain PII? Any data governance requirements?" |
+| Information           | Why Needed       | Example Question                                                    |
+| --------------------- | ---------------- | ------------------------------------------------------------------- |
+| **Data source**       | Access method    | "Where is the data? (database, CSV, API, data warehouse)"           |
+| **Analysis question** | Focus direction  | "What specific questions should this analysis answer?"              |
+| **Output format**     | Deliverable type | "What format do you need? (report, dashboard, notebook, raw data)"  |
+| **Time period**       | Data scope       | "What date range should the analysis cover?"                        |
+| **Stakeholders**      | Technical level  | "Who will use this analysis? (technical team, executives, clients)" |
+| **Sensitive data**    | Privacy handling | "Does this data contain PII? Any data governance requirements?"     |
 
 ## Ask for Specific Analysis Types
 
-| Analysis Type | Questions to Ask |
-|---------------|------------------|
-| **Exploratory** | "What hypotheses are you trying to validate or explore?" |
-| **Predictive** | "What outcome are you trying to predict? What features are available?" |
-| **Segmentation** | "What dimensions should we segment by? (customer type, region, time)" |
-| **Time series** | "What's the granularity? (daily, weekly, monthly) Any seasonality expected?" |
-| **A/B testing** | "What's the control vs treatment? What's the success metric?" |
-| **Visualisation** | "Any existing branding or colour schemes to follow?" |
+| Analysis Type     | Questions to Ask                                                             |
+| ----------------- | ---------------------------------------------------------------------------- |
+| **Exploratory**   | "What hypotheses are you trying to validate or explore?"                     |
+| **Predictive**    | "What outcome are you trying to predict? What features are available?"       |
+| **Segmentation**  | "What dimensions should we segment by? (customer type, region, time)"        |
+| **Time series**   | "What's the granularity? (daily, weekly, monthly) Any seasonality expected?" |
+| **A/B testing**   | "What's the control vs treatment? What's the success metric?"                |
+| **Visualisation** | "Any existing branding or colour schemes to follow?"                         |
 
 ## Example Interaction
 
@@ -158,7 +158,7 @@ Before any analysis:
 
 **CRITICAL:** For comprehensive data analysis examples across all stacks, refer to:
 
-📁 **`/home/sam-dev/claude-dev-team/examples/data-scientist/DATA-ANALYSIS.md`**
+📁 **`./examples/data-scientist/DATA-ANALYSIS.md`**
 
 This file contains:
 - Complete Python/Pandas analysis examples
@@ -225,6 +225,6 @@ This file contains:
 
 # 9. HANDOFF SIGNALS
 After analysis:
-- "Run `/agent:backend` to implement data pipelines based on these findings"
-- "Run `/agent:docs` to create user-facing documentation from this analysis"
-- "Run `/agent:stories` to create user stories for data-related features"
+- "Run `/syntek-dev-suite:backend` to implement data pipelines based on these findings"
+- "Run `/syntek-dev-suite:docs` to create user-facing documentation from this analysis"
+- "Run `/syntek-dev-suite:stories` to create user stories for data-related features"

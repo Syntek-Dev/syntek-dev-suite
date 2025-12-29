@@ -3,32 +3,32 @@ description: "[Agent] Git workflow management - branches, commits, PRs, and vers
 usage: /agent:git [command] [args]
 ---
 
-Spawn the `dev-team:git` agent (model: sonnet) to manage git workflow.
+Spawn the `syntek-dev-suite:git` agent (model: sonnet) to manage git workflow.
 
 ## Pre-flight: Run Plugin Tools
 
 Before performing git operations, gather context using these plugin tools:
 ```bash
 # Check repository status
-python plugins/git-tool.py status
-python plugins/git-tool.py branches --all
-python plugins/git-tool.py tags
-python plugins/git-tool.py host
-python plugins/git-tool.py commits 10
+python3 plugins/git-tool.py status
+python3 plugins/git-tool.py branches --all
+python3 plugins/git-tool.py tags
+python3 plugins/git-tool.py host
+python3 plugins/git-tool.py commits 10
 ```
 
 ## Available Commands
 
-| Command | Description | Example |
-|---------|-------------|---------|
-| `init` | Initialise branch structure (main, staging, dev, testing) | `/git init` |
-| `branch` | Create a user story branch | `/git branch us001 user-login` |
-| `commit` | Create commit with version and changelog update | `/git commit` |
-| `pr` | Create pull request to target branch | `/git pr testing` |
-| `status` | Show branch status and pending PRs | `/git status` |
-| `version` | Show/update version (major, minor, patch) | `/git version minor` |
-| `changelog` | Update changelog for current changes | `/git changelog` |
-| `flow` | Show the branch flow diagram | `/git flow` |
+| Command     | Description                                               | Example                        |
+| ----------- | --------------------------------------------------------- | ------------------------------ |
+| `init`      | Initialise branch structure (main, staging, dev, testing) | `/git init`                    |
+| `branch`    | Create a user story branch                                | `/git branch us001 user-login` |
+| `commit`    | Create commit with version and changelog update           | `/git commit`                  |
+| `pr`        | Create pull request to target branch                      | `/git pr testing`              |
+| `status`    | Show branch status and pending PRs                        | `/git status`                  |
+| `version`   | Show/update version (major, minor, patch)                 | `/git version minor`           |
+| `changelog` | Update changelog for current changes                      | `/git changelog`               |
+| `flow`      | Show the branch flow diagram                              | `/git flow`                    |
 
 ## Branch Strategy
 
@@ -38,13 +38,13 @@ The agent manages a structured branch flow:
 us###/feature → testing → dev → staging → main
 ```
 
-| Branch | Purpose | Deploy Target |
-|--------|---------|---------------|
-| `main` | Production-ready code | Production |
-| `staging` | Client review/acceptance | Staging |
-| `dev` | Integration testing | Development |
-| `testing` | QA verification | Testing |
-| `us###/name` | Feature work | Local |
+| Branch       | Purpose                  | Deploy Target |
+| ------------ | ------------------------ | ------------- |
+| `main`       | Production-ready code    | Production    |
+| `staging`    | Client review/acceptance | Staging       |
+| `dev`        | Integration testing      | Development   |
+| `testing`    | QA verification          | Testing       |
+| `us###/name` | Feature work             | Local         |
 
 ## User Story Branch Naming
 
@@ -78,12 +78,12 @@ Version: <old> → <new>
 
 ## Pull Request Flow
 
-| From | To | Condition |
-|------|-----|-----------|
-| `us###/feature` | `testing` | Developer tests pass |
-| `testing` | `dev` | QA tests pass |
-| `dev` | `staging` | Integration tests pass |
-| `staging` | `main` | **Client accepts** |
+| From            | To        | Condition              |
+| --------------- | --------- | ---------------------- |
+| `us###/feature` | `testing` | Developer tests pass   |
+| `testing`       | `dev`     | QA tests pass          |
+| `dev`           | `staging` | Integration tests pass |
+| `staging`       | `main`    | **Client accepts**     |
 
 ### On Client Rejection
 
@@ -103,11 +103,11 @@ Before every commit, the agent:
 
 ### Version Increment Rules
 
-| Type | When | Example |
-|------|------|---------|
+| Type  | When             | Example       |
+| ----- | ---------------- | ------------- |
 | MAJOR | Breaking changes | 1.0.0 → 2.0.0 |
-| MINOR | New features | 1.0.0 → 1.1.0 |
-| PATCH | Bug fixes | 1.0.0 → 1.0.1 |
+| MINOR | New features     | 1.0.0 → 1.1.0 |
+| PATCH | Bug fixes        | 1.0.0 → 1.0.1 |
 
 ## Usage Examples
 
