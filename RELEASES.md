@@ -1,7 +1,7 @@
 # Release Notes
 
-**Last Updated**: 29/12/2025
-**Version**: 1.3.1
+**Last Updated**: 09/01/2026
+**Version**: 1.4.0
 **Maintained By**: Development Team
 **Language**: British English (en_GB)
 **Timezone**: Europe/London
@@ -12,20 +12,13 @@
 
 - [Table of Contents](#table-of-contents)
 - [Latest Release](#latest-release)
-  - [Version 1.3.1 - 29 December 2025](#version-131---29-december-2025)
-    - [What's Fixed](#whats-fixed)
-    - [What This Means for You](#what-this-means-for-you)
+  - [Version 1.4.0 - 09 January 2026](#version-140---09-january-2026)
 - [Previous Releases](#previous-releases)
+  - [Version 1.3.1 - 29 December 2025](#version-131---29-december-2025)
   - [Version 1.3.0 - 28 December 2025](#version-130---28-december-2025)
-    - [What's New](#whats-new)
-    - [Coming Soon](#coming-soon)
   - [Version 1.2.0 - 24 December 2025](#version-120---24-december-2025)
-    - [Highlights](#highlights)
   - [Version 1.1.0 - 24 December 2025](#version-110---24-december-2025)
-    - [Highlights](#highlights-1)
   - [Version 1.0.0 - 21 December 2025](#version-100---21-december-2025)
-    - [Highlights](#highlights-2)
-    - [What Users Are Saying](#what-users-are-saying)
 - [Need Help?](#need-help)
 
 
@@ -33,34 +26,58 @@
 
 ## Latest Release
 
+### Version 1.4.0 - 09 January 2026
+
+#### What's New
+
+**Portable Plugin Tools**
+
+Your projects are now fully self-contained! When you initialise a new project with `/init`, all the Python plugin tools are automatically copied into your project's `.claude/plugins/` folder.
+
+This means:
+
+- **Work anywhere** - Your project works even without the Syntek Dev Suite installed globally
+- **Share with your team** - Everyone gets the same plugin versions, no setup required
+- **Customise freely** - Modify plugins for project-specific needs without affecting other projects
+- **Version stability** - Your project keeps working even if the main plugin updates
+
+#### How It Works
+
+When you run `/init`, the system now:
+
+1. Creates the `.claude/plugins/` directory in your project
+2. Copies all 14 Python plugin tools
+3. Makes them executable automatically
+
+Your project's `CLAUDE.md` will include full documentation on how to use these plugins.
+
+#### For Existing Projects
+
+Want to add plugin tools to an existing project? Simply run:
+
+```bash
+mkdir -p .claude/plugins/
+cp /path/to/syntek-dev-suite/plugins/*.py .claude/plugins/
+chmod +x .claude/plugins/*.py
+```
+
+---
+
+## Previous Releases
+
 ### Version 1.3.1 - 29 December 2025
 
 #### What's Fixed
 
 **Works Anywhere Now**
 
-This is an important bug fix release that makes the plugin work properly no matter where you install it. Previously, if you installed the plugin in a different location, it wouldn't work because it was looking for files in the wrong place.
+This bug fix release makes the plugin work properly no matter where you install it. All hardcoded paths have been replaced with dynamic detection.
 
-We've fixed:
-
-- **Installation flexibility** - You can now install the plugin anywhere on your system and it will work perfectly
-- **Cross-platform compatibility** - Better support for Linux and macOS systems that use `python3` instead of `python`
-- **Portable configuration** - All file paths are now relative, so you can move the plugin directory without breaking anything
-
-#### What This Means for You
-
-If you've been experiencing issues with:
-- The plugin not finding its configuration files
-- Commands failing with "file not found" errors
-- Python command errors on Linux or macOS
-
-This update fixes all of those problems. Simply update to version 1.3.1 and everything will work smoothly.
-
-**No action required** - The update is fully backwards compatible. Just pull the latest version and you're good to go!
+- **Installation flexibility** - Install the plugin anywhere on your system
+- **Cross-platform compatibility** - Better support for Linux and macOS
+- **Portable configuration** - All file paths are now relative
 
 ---
-
-## Previous Releases
 
 ### Version 1.3.0 - 28 December 2025
 

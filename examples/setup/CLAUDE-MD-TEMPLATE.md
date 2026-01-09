@@ -45,16 +45,62 @@ Template for the `.claude/CLAUDE.md` file that provides project context for Clau
 ├── .claude/              # Claude Code configuration
 │   ├── CLAUDE.md         # This file
 │   ├── settings.local.json
+│   ├── plugins/          # Python plugin tools
+│   │   └── *.py
 │   └── commands/         # Custom Claude commands
 ├── docs/                 # Documentation
 │   ├── TESTS/           # Test specifications
 │   ├── QA/              # QA reports
 │   ├── PLANS/           # Implementation plans
-│   └── DEVOPS/          # DevOps documentation
+│   ├── DEVOPS/          # DevOps documentation
+│   └── METRICS/         # Self-learning system data
 ├── src/                  # Source code (or app/, lib/, etc.)
 ├── tests/                # Test files
 └── [framework-specific directories]
 \`\`\`
+
+## Plugin Tools
+
+All agents should use the Python plugin tools in `.claude/plugins/` to gather context:
+
+\`\`\`bash
+# Project and framework detection
+python3 .claude/plugins/project-tool.py info
+python3 .claude/plugins/project-tool.py framework
+
+# Database configuration
+python3 .claude/plugins/db-tool.py detect
+
+# Environment files
+python3 .claude/plugins/env-tool.py find
+
+# Git status
+python3 .claude/plugins/git-tool.py status
+
+# Container status (DDEV or Docker)
+python3 .claude/plugins/ddev-tool.py status
+python3 .claude/plugins/docker-tool.py status
+
+# Log files
+python3 .claude/plugins/log-tool.py find
+\`\`\`
+
+### Available Plugins
+
+| Plugin | Purpose |
+|--------|---------|
+| `project-tool.py` | Language, framework, and structure detection |
+| `db-tool.py` | Database type and ORM detection |
+| `env-tool.py` | Environment file discovery and validation |
+| `git-tool.py` | Git repository status, branches, remotes |
+| `ddev-tool.py` | DDEV project status and configuration |
+| `docker-tool.py` | Docker containers, compose, images, networks |
+| `log-tool.py` | Log file discovery and analysis |
+| `metrics-tool.py` | Self-learning metrics recording and querying |
+| `feedback-tool.py` | User feedback collection and analysis |
+| `quality-tool.py` | Code quality checks and linting |
+| `chrome-tool.py` | Cross-platform Chrome detection |
+| `pm-tool.py` | PM tool detection (ClickUp, Linear, Jira, etc.) |
 
 ## Development Commands
 \`\`\`bash

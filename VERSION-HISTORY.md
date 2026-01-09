@@ -1,7 +1,7 @@
 # Version History
 
-**Last Updated**: 29/12/2025
-**Version**: 1.3.1
+**Last Updated**: 09/01/2026
+**Version**: 1.4.0
 **Maintained By**: Development Team
 **Language**: British English (en_GB)
 **Timezone**: Europe/London
@@ -11,6 +11,7 @@
 ## Table of Contents
 
 - [Unreleased](#unreleased)
+- [1.4.0 - 09/01/2026](#140---09012026)
 - [1.3.1 - 29/12/2025](#131---29122025)
 - [1.3.0 - 28/12/2025](#130---28122025)
 - [1.2.0 - 24/12/2025](#120---24122025)
@@ -22,7 +23,116 @@
 ## [Unreleased]
 
 ### Technical Changes
+
 - Nothing yet
+
+---
+
+## [1.4.0] - 09/01/2026
+
+### Summary
+
+Feature release adding plugin copy functionality to the `/init` command. Projects initialised with Syntek Dev Suite now receive a local copy of all Python plugin tools, making projects portable and self-contained.
+
+### Files Changed
+
+| File | Changes |
+|------|---------|
+| `commands/init.md` | Added Step 3.5 for plugin copying, updated folder structure, fixed pre-flight paths |
+| `examples/setup/CLAUDE-MD-TEMPLATE.md` | Added Plugin Tools section with usage examples and plugin table |
+| `VERSION` | Bumped from 1.3.1 to 1.4.0 |
+| `CHANGELOG.md` | Added 1.4.0 release notes |
+| `VERSION-HISTORY.md` | Added 1.4.0 technical details |
+| `RELEASES.md` | Added 1.4.0 user-facing notes |
+
+### New Features
+
+#### Plugin Copy on Init
+
+The `/init` command now copies all Python plugins to the target project:
+
+```bash
+# New Step 3.5 in init process
+mkdir -p .claude/plugins/
+cp /path/to/syntek-dev-suite/plugins/*.py .claude/plugins/
+chmod +x .claude/plugins/*.py
+```
+
+**Benefits:**
+
+- Projects are self-contained and portable
+- Works without syntek-dev-suite being installed
+- Allows project-specific plugin customisation
+- Version stability - project keeps its plugin versions
+
+#### CLAUDE.md Template Updates
+
+The CLAUDE.md template now includes:
+
+1. **Updated folder structure** with `.claude/plugins/` directory
+2. **Plugin Tools section** with usage examples
+3. **Available Plugins table** listing all 12 plugins
+
+**New template sections:**
+
+- Plugin Tools section with bash usage examples
+- Available Plugins table with all 12 plugins listed
+- Updated folder structure showing `.claude/plugins/` directory
+
+### Technical Details
+
+**Init Process Changes:**
+
+| Step | Previous                | New                                               |
+|------|-------------------------|---------------------------------------------------|
+| 3    | Create folder structure | Create folder structure (now includes `plugins/`) |
+| 3.5  | N/A                     | Copy plugin tools and make executable             |
+| 4    | Copy templates          | Copy templates (unchanged)                        |
+
+**Pre-flight Path Correction:**
+
+The pre-flight commands now correctly reference the source syntek-dev-suite path:
+
+```bash
+# Old (incorrect - target path before init)
+python3 .claude/plugins/project-tool.py info
+
+# New (correct - source path during init)
+python3 /path/to/syntek-dev-suite/plugins/project-tool.py info
+```
+
+**Plugins Included:**
+
+All 14 Python plugins are copied:
+
+- `project-tool.py` - Project and framework detection
+- `db-tool.py` - Database detection
+- `env-tool.py` - Environment file management
+- `git-tool.py` - Git repository status
+- `ddev-tool.py` - DDEV container status
+- `docker-tool.py` - Docker container status
+- `log-tool.py` - Log file discovery
+- `metrics-tool.py` - Self-learning metrics
+- `feedback-tool.py` - User feedback collection
+- `quality-tool.py` - Code quality checks
+- `chrome-tool.py` - Chrome browser detection
+- `pm-tool.py` - PM tool detection
+- `ab-test-tool.py` - A/B testing management
+- `optimiser-tool.py` - Prompt optimisation
+
+### Migration Notes
+
+**For Existing Projects:**
+Run the plugin copy commands manually to add plugins to existing projects:
+
+```bash
+mkdir -p .claude/plugins/
+cp /path/to/syntek-dev-suite/plugins/*.py .claude/plugins/
+chmod +x .claude/plugins/*.py
+```
+
+**For New Projects:**
+Simply run `/init` and plugins will be copied automatically.
 
 ---
 

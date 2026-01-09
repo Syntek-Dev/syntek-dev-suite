@@ -1,7 +1,7 @@
 # Changelog
 
-**Last Updated**: 29/12/2025
-**Version**: 1.3.1
+**Last Updated**: 09/01/2026
+**Version**: 1.4.0
 **Maintained By**: Development Team
 **Language**: British English (en_GB)
 **Timezone**: Europe/London
@@ -18,7 +18,31 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+
 - Nothing yet
+
+---
+
+## [1.4.0] - 09/01/2026
+
+### Added
+
+- Plugin copy functionality in `/init` command - copies `syntek-dev-suite/plugins/*.py` to `.claude/plugins/` during project initialisation
+- New Step 3.5 in init process for explicit plugin tool copying with `chmod +x` to make them executable
+- Plugin Tools section in CLAUDE.md template with full plugin documentation and usage examples
+- `.claude/plugins/` folder to standard project structure
+
+### Changed
+
+- Updated `commands/init.md` with plugin folder structure and copy instructions
+- Updated `examples/setup/CLAUDE-MD-TEMPLATE.md` with Plugin Tools section and available plugins table
+- Pre-flight commands now reference source syntek-dev-suite path correctly
+- Added note clarifying plugins are available at `.claude/plugins/` after initialisation
+
+### Documentation
+
+- Added complete list of 12 available plugins with descriptions to CLAUDE.md template
+- Added example bash commands for plugin usage in project CLAUDE.md files
 
 ---
 

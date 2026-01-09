@@ -1,7 +1,7 @@
 # Syntek Dev Suite
 
-**Last Updated**: 29/12/2025
-**Version**: 1.3.1
+**Last Updated**: 09/01/2026
+**Version**: 1.4.0
 **Maintained By**: Development Team
 **Language**: British English (en_GB)
 **Timezone**: Europe/London

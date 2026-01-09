@@ -14,25 +14,29 @@ This command initialises the Syntek Dev Suite plugin for your project.
    - `CLAUDE.md` - Project context file from the appropriate template
    - `settings.local.json` - Claude Code settings
    - `SYNTEK-GUIDE.md` - Complete plugin usage guide
+   - `plugins/*.py` - add the custom plugins from `syntek-dev-suite/plugins/*.py` and allow them to be executable using `chmod +x .claude/plugins/*.py`.
 3. **Sets up container configuration** (Docker or DDEV based on stack)
 4. **Creates environment files** from templates
 
 ## Pre-flight: Run Plugin Tools
 
-Before initialisation, gather project context:
+Before initialisation, gather project context using the syntek-dev-suite plugins:
+
 ```bash
-# Detect existing project info
-python3 plugins/project-tool.py info
-python3 plugins/project-tool.py framework
-python3 plugins/project-tool.py container
+# Detect existing project info (run from syntek-dev-suite directory)
+python3 /path/to/syntek-dev-suite/plugins/project-tool.py info
+python3 /path/to/syntek-dev-suite/plugins/project-tool.py framework
+python3 /path/to/syntek-dev-suite/plugins/project-tool.py container
 
 # Check for existing .claude folder
 ls -la .claude/ 2>/dev/null || echo "No .claude folder found"
 
 # Check for existing containers
-python3 plugins/ddev-tool.py status
-python3 plugins/docker-tool.py status
+python3 /path/to/syntek-dev-suite/plugins/ddev-tool.py status
+python3 /path/to/syntek-dev-suite/plugins/docker-tool.py status
 ```
+
+> **Note:** After initialisation, the plugins will be available at `.claude/plugins/` within your project.
 
 ## Initialisation Process
 
@@ -80,12 +84,35 @@ Create the following structure:
 ├── CLAUDE.md              # Project context (from template)
 ├── settings.local.json    # Claude Code settings
 ├── SYNTEK-GUIDE.md        # Plugin usage guide
+├── plugins/               # Custom Python plugins (copied from syntek-dev-suite)
+│   └── *.py
 └── commands/              # Project-specific commands
     ├── dev.md
     ├── test.md
     ├── staging.md
     └── production.md
 ```
+
+### Step 3.5: Copy Plugin Tools
+
+Copy the Python plugin tools from the syntek-dev-suite to the project:
+
+```bash
+# Create plugins directory
+mkdir -p .claude/plugins/
+
+# Copy all Python plugins from syntek-dev-suite
+cp /path/to/syntek-dev-suite/plugins/*.py .claude/plugins/
+
+# Make them executable
+chmod +x .claude/plugins/*.py
+```
+
+This gives the project its own copy of the tools for:
+
+- Project-specific customisation if needed
+- Portability (project works even without syntek-dev-suite installed)
+- Version stability
 
 ### Step 4: Copy Template Files
 
@@ -104,13 +131,13 @@ Create `.claude/SYNTEK-GUIDE.md` with the complete plugin documentation (see exa
 
 Based on the stack, set up containers:
 
-| Stack | Container | Action |
-|-------|-----------|--------|
-| TALL | DDEV | Create `.ddev/config.yaml` |
-| Django | Docker Compose | Create `docker-compose.yml` |
-| React | Docker | Create `Dockerfile` |
-| Mobile | Docker | Create `Dockerfile` |
-| Shared Library | Docker | Create `Dockerfile` |
+| Stack          | Container      | Action                      |
+| -------------- | -------------- | --------------------------- |
+| TALL           | DDEV           | Create `.ddev/config.yaml`  |
+| Django         | Docker Compose | Create `docker-compose.yml` |
+| React          | Docker         | Create `Dockerfile`         |
+| Mobile         | Docker         | Create `Dockerfile`         |
+| Shared Library | Docker         | Create `Dockerfile`         |
 
 Ask user:
 ```
@@ -206,13 +233,14 @@ After initialisation, output:
 - **Database:** [database-type]
 
 ### Files Created
-| File | Purpose |
-|------|---------|
-| `.claude/CLAUDE.md` | Project context for Claude agents |
-| `.claude/settings.local.json` | Claude Code settings |
-| `.claude/SYNTEK-GUIDE.md` | Plugin usage guide |
-| `.claude/commands/` | Project-specific commands |
-| `docs/METRICS/` | Self-learning system data |
+| File                          | Purpose                           |
+| ----------------------------- | --------------------------------- |
+| `.claude/CLAUDE.md`           | Project context for Claude agents |
+| `.claude/settings.local.json` | Claude Code settings              |
+| `.claude/SYNTEK-GUIDE.md`     | Plugin usage guide                |
+| `.claude/commands/`           | Project-specific commands         |
+| `.claude/plugins/*.py`        | Custom agent plugins              |
+| `docs/METRICS/`               | Self-learning system data         |
 
 ### Next Steps
 1. Review and customise `.claude/CLAUDE.md`
@@ -221,8 +249,8 @@ After initialisation, output:
 4. See `.claude/SYNTEK-GUIDE.md` for full command reference
 
 ### Quick Reference
-- **Agents:** `/agent:backend`, `/agent:frontend`, `/agent:plan`, etc.
-- **Templates:** `/template:tall`, `/template:django`, etc.
+- **Agents:** `/syntek-dev-suite:backend`, `/syntek-dev-suite:frontend`, `/syntek-dev-suite:plan`, etc.
+- **Templates:** `/syntek-dev-suite:tall`, `/syntek-dev-suite:django`, etc.
 - **Skills:** Loaded automatically based on stack
 ```
 
