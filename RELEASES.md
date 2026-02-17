@@ -1,7 +1,7 @@
 # Release Notes
 
-**Last Updated**: 09/01/2026
-**Version**: 1.4.0
+**Last Updated**: 17/02/2026
+**Version**: 1.5.0
 **Maintained By**: Development Team
 **Language**: British English (en_GB)
 **Timezone**: Europe/London
@@ -12,8 +12,9 @@
 
 - [Table of Contents](#table-of-contents)
 - [Latest Release](#latest-release)
-  - [Version 1.4.0 - 09 January 2026](#version-140---09-january-2026)
+  - [Version 1.5.0 - 17 February 2026](#version-150---17-february-2026)
 - [Previous Releases](#previous-releases)
+  - [Version 1.4.0 - 09 January 2026](#version-140---09-january-2026)
   - [Version 1.3.1 - 29 December 2025](#version-131---29-december-2025)
   - [Version 1.3.0 - 28 December 2025](#version-130---28-december-2025)
   - [Version 1.2.0 - 24 December 2025](#version-120---24-december-2025)
@@ -25,6 +26,35 @@
 ---
 
 ## Latest Release
+
+### Version 1.5.0 - 17 February 2026
+
+#### What's New
+
+**Coding Principles Built Into Every Project**
+
+Every new project you create with Syntek Dev Suite now ships with a built-in coding principles reference. When you run `/init`, the `CODING-PRINCIPLES.md` file is automatically included — giving your whole team a shared set of proven guidelines from day one.
+
+The document covers:
+
+- **Rob Pike's 5 Rules of Programming** - Timeless wisdom from one of Unix's creators, covering simplicity, performance thinking, and the importance of good data structures
+- **Linus Torvalds' Coding Rules** - Battle-tested guidelines on function size, naming clarity, and why comments should explain *why* not *what*
+
+These principles are also embedded into all project templates, so `CLAUDE.md` files in new projects include a Coding Principles section pointing developers to the reference document.
+
+#### Why This Matters
+
+Having a shared set of coding principles helps teams:
+
+- Write simpler, more maintainable code
+- Avoid premature optimisation
+- Keep functions focused and readable
+- Name things clearly and consistently
+- Write comments that add real value
+
+---
+
+## Previous Releases
 
 ### Version 1.4.0 - 09 January 2026
 

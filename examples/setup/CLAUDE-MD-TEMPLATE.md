@@ -39,6 +39,21 @@ Template for the `.claude/CLAUDE.md` file that provides project context for Clau
 - **Timezone:** [e.g., Europe/London]
 - **Browser:** [e.g., Google Chrome, Chrome Beta for debugging]
 
+## Coding Principles
+
+All code in this project follows Rob Pike's 5 Rules of Programming and Linus Torvalds' Coding Rules.
+
+**Core rules:**
+- Measure before optimising — no speed hacks without profiling
+- Simple algorithms and simple data structures over fancy ones
+- Data structures dominate: get the data model right and the logic becomes obvious
+- Short, focused functions that do one thing
+- Eliminate special cases rather than patching them with `if` statements
+- Make it work first, then make it better
+- Favour stability and readability over cleverness
+
+See `.claude/CODING-PRINCIPLES.md` for the full rules.
+
 ## Project Structure
 \`\`\`
 [project root]/

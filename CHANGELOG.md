@@ -1,7 +1,7 @@
 # Changelog
 
-**Last Updated**: 09/01/2026
-**Version**: 1.4.0
+**Last Updated**: 17/02/2026
+**Version**: 1.5.0
 **Maintained By**: Development Team
 **Language**: British English (en_GB)
 **Timezone**: Europe/London
@@ -20,6 +20,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Nothing yet
+
+---
+
+## [1.5.0] - 17/02/2026
+
+### Added
+
+- Coding principles reference document (`examples/setup/CODING-PRINCIPLES.md`) featuring Rob Pike's 5 Rules of Programming and Linus Torvalds' 6 coding rules
+- Coding Principles section to all project templates (TALL, Django, React, Mobile, Shared Library) embedded CLAUDE.md content
+- Coding Principles section to base CLAUDE.md template (`examples/setup/CLAUDE-MD-TEMPLATE.md`)
+- Step in `/init` command to copy `CODING-PRINCIPLES.md` to new projects during initialisation
+- Updated folder structure and output summary in `commands/init.md` to reflect CODING-PRINCIPLES inclusion
 
 ---
 

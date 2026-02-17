@@ -1,7 +1,7 @@
 # Version History
 
-**Last Updated**: 09/01/2026
-**Version**: 1.4.0
+**Last Updated**: 17/02/2026
+**Version**: 1.5.0
 **Maintained By**: Development Team
 **Language**: British English (en_GB)
 **Timezone**: Europe/London
@@ -11,6 +11,7 @@
 ## Table of Contents
 
 - [Unreleased](#unreleased)
+- [1.5.0 - 17/02/2026](#150---17022026)
 - [1.4.0 - 09/01/2026](#140---09012026)
 - [1.3.1 - 29/12/2025](#131---29122025)
 - [1.3.0 - 28/12/2025](#130---28122025)
@@ -25,6 +26,48 @@
 ### Technical Changes
 
 - Nothing yet
+
+---
+
+## [1.5.0] - 17/02/2026
+
+### Summary
+
+Feature release adding coding principles to the init workflow and all project templates. New projects initialised with `/init` now include `CODING-PRINCIPLES.md`, providing Rob Pike's 5 Rules of Programming and Linus Torvalds' 6 coding rules as a reference for all developers.
+
+### Files Changed
+
+| File | Changes |
+|------|---------|
+| `examples/setup/CODING-PRINCIPLES.md` | New file: full reference document with Rob Pike's 5 rules and Linus Torvalds' 6 coding rules |
+| `commands/init.md` | Added step to copy `CODING-PRINCIPLES.md` during init; updated folder structure and output summary |
+| `examples/setup/CLAUDE-MD-TEMPLATE.md` | Added Coding Principles section to base CLAUDE.md template |
+| `templates/tall-project.md` | Added Coding Principles section to embedded CLAUDE.md content |
+| `templates/django-project.md` | Added Coding Principles section to embedded CLAUDE.md content |
+| `templates/react-project.md` | Added Coding Principles section to embedded CLAUDE.md content |
+| `templates/mobile-project.md` | Added Coding Principles section to embedded CLAUDE.md content |
+| `templates/shared-lib-project.md` | Added Coding Principles section to embedded CLAUDE.md content |
+| `VERSION` | Bumped from 1.4.0 to 1.5.0 |
+| `CHANGELOG.md` | Added 1.5.0 release notes |
+| `VERSION-HISTORY.md` | Added 1.5.0 technical details |
+| `RELEASES.md` | Added 1.5.0 user-facing notes |
+
+### New Features
+
+#### Coding Principles Reference Document
+
+A new `examples/setup/CODING-PRINCIPLES.md` document has been added containing:
+
+- **Rob Pike's 5 Rules of Programming** - Foundational rules on simplicity, performance optimisation, and data structures
+- **Linus Torvalds' Coding Rules** - Practical style, naming, function complexity, and commenting guidelines
+
+#### Project Template Integration
+
+All five project templates now include a Coding Principles section in their embedded `CLAUDE.md` content. This ensures that every new project scaffolded with Syntek Dev Suite carries the coding principles forward automatically.
+
+#### Init Command Update
+
+The `/init` command now copies `CODING-PRINCIPLES.md` to new projects during initialisation, placing it alongside the other setup examples for immediate developer reference.
 
 ---
 

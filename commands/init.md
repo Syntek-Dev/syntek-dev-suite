@@ -82,6 +82,7 @@ Create the following structure:
 ```
 .claude/
 ├── CLAUDE.md              # Project context (from template)
+├── CODING-PRINCIPLES.md   # Rob Pike + Linus Torvalds coding rules
 ├── settings.local.json    # Claude Code settings
 ├── SYNTEK-GUIDE.md        # Plugin usage guide
 ├── plugins/               # Custom Python plugins (copied from syntek-dev-suite)
@@ -122,6 +123,15 @@ Based on detected stack, copy from the plugin's templates directory:
 - `templates/react-project.md` → `.claude/CLAUDE.md`
 - `templates/mobile-project.md` → `.claude/CLAUDE.md`
 - `templates/shared-lib-project.md` → `.claude/CLAUDE.md`
+
+Also copy the coding principles reference file:
+- `examples/setup/CODING-PRINCIPLES.md` → `.claude/CODING-PRINCIPLES.md`
+
+```bash
+cp /path/to/syntek-dev-suite/examples/setup/CODING-PRINCIPLES.md .claude/CODING-PRINCIPLES.md
+```
+
+This file contains the full Rob Pike 5 Rules and Linus Torvalds coding rules referenced from the project `CLAUDE.md`.
 
 ### Step 5: Create Plugin Usage Guide
 
@@ -235,12 +245,13 @@ After initialisation, output:
 ### Files Created
 | File                          | Purpose                           |
 | ----------------------------- | --------------------------------- |
-| `.claude/CLAUDE.md`           | Project context for Claude agents |
-| `.claude/settings.local.json` | Claude Code settings              |
-| `.claude/SYNTEK-GUIDE.md`     | Plugin usage guide                |
-| `.claude/commands/`           | Project-specific commands         |
-| `.claude/plugins/*.py`        | Custom agent plugins              |
-| `docs/METRICS/`               | Self-learning system data         |
+| `.claude/CLAUDE.md`              | Project context for Claude agents  |
+| `.claude/CODING-PRINCIPLES.md`   | Rob Pike + Linus Torvalds rules    |
+| `.claude/settings.local.json`    | Claude Code settings               |
+| `.claude/SYNTEK-GUIDE.md`        | Plugin usage guide                 |
+| `.claude/commands/`              | Project-specific commands          |
+| `.claude/plugins/*.py`           | Custom agent plugins               |
+| `docs/METRICS/`                  | Self-learning system data          |
 
 ### Next Steps
 1. Review and customise `.claude/CLAUDE.md`
