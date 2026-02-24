@@ -18,25 +18,39 @@ This command initialises the Syntek Dev Suite plugin for your project.
 3. **Sets up container configuration** (Docker or DDEV based on stack)
 4. **Creates environment files** from templates
 
+## Step 0: Locate Plugin Directory
+
+Before anything else, locate the syntek-dev-suite installation directory dynamically using the Glob tool. Do **not** assume a fixed path — the plugin may be installed anywhere on the device.
+
+Search for `plugins/project-tool.py` using Glob in this order:
+1. `~/.claude/plugins/syntek-dev-suite/plugins/project-tool.py`
+2. `~/.claude/plugins/**/plugins/project-tool.py`
+3. `~/Repos/**/syntek-dev-suite/plugins/project-tool.py`
+4. `~/**/syntek-dev-suite/plugins/project-tool.py`
+
+Once found, derive `SYNTEK_DIR` as the directory **two levels above** `project-tool.py` — that is, the syntek-dev-suite root containing `plugins/`, `examples/`, `templates/`, and `config.json`.
+
+Use `SYNTEK_DIR` as the base for **all** plugin commands and file copies throughout this workflow.
+
 ## Pre-flight: Run Plugin Tools
 
-Before initialisation, gather project context using the syntek-dev-suite plugins:
+Gather project context using the discovered plugin path:
 
 ```bash
-# Detect existing project info (run from syntek-dev-suite directory)
-python3 /path/to/syntek-dev-suite/plugins/project-tool.py info
-python3 /path/to/syntek-dev-suite/plugins/project-tool.py framework
-python3 /path/to/syntek-dev-suite/plugins/project-tool.py container
+# Detect existing project info
+python3 $SYNTEK_DIR/plugins/project-tool.py info
+python3 $SYNTEK_DIR/plugins/project-tool.py framework
+python3 $SYNTEK_DIR/plugins/project-tool.py container
 
 # Check for existing .claude folder
 ls -la .claude/ 2>/dev/null || echo "No .claude folder found"
 
 # Check for existing containers
-python3 /path/to/syntek-dev-suite/plugins/ddev-tool.py status
-python3 /path/to/syntek-dev-suite/plugins/docker-tool.py status
+python3 $SYNTEK_DIR/plugins/ddev-tool.py status
+python3 $SYNTEK_DIR/plugins/docker-tool.py status
 ```
 
-> **Note:** After initialisation, the plugins will be available at `.claude/plugins/` within your project.
+> **Note:** After initialisation, the plugins will be available at `.claude/plugins/` within your project. All subsequent agent commands use `.claude/plugins/` — only this init step needs `SYNTEK_DIR`.
 
 ## Initialisation Process
 
@@ -99,14 +113,14 @@ Create the following structure:
 
 ### Step 3.5: Copy Plugin Tools
 
-Copy the Python plugin tools from the syntek-dev-suite to the project:
+Copy the Python plugin tools from the syntek-dev-suite to the project using the `SYNTEK_DIR` discovered in Step 0:
 
 ```bash
 # Create plugins directory
 mkdir -p .claude/plugins/
 
 # Copy all Python plugins from syntek-dev-suite
-cp /path/to/syntek-dev-suite/plugins/*.py .claude/plugins/
+cp $SYNTEK_DIR/plugins/*.py .claude/plugins/
 
 # Make them executable
 chmod +x .claude/plugins/*.py
@@ -120,31 +134,31 @@ This gives the project its own copy of the tools for:
 
 ### Step 4: Copy Template Files
 
-Based on detected stack, copy from the plugin's templates directory:
-- `templates/tall-project.md` → `.claude/CLAUDE.md`
-- `templates/django-project.md` → `.claude/CLAUDE.md`
-- `templates/react-project.md` → `.claude/CLAUDE.md`
-- `templates/mobile-project.md` → `.claude/CLAUDE.md`
-- `templates/shared-lib-project.md` → `.claude/CLAUDE.md`
+Based on detected stack, copy from the plugin's templates directory using `SYNTEK_DIR`:
+- `$SYNTEK_DIR/templates/tall-project.md` → `.claude/CLAUDE.md`
+- `$SYNTEK_DIR/templates/django-project.md` → `.claude/CLAUDE.md`
+- `$SYNTEK_DIR/templates/react-project.md` → `.claude/CLAUDE.md`
+- `$SYNTEK_DIR/templates/mobile-project.md` → `.claude/CLAUDE.md`
+- `$SYNTEK_DIR/templates/shared-lib-project.md` → `.claude/CLAUDE.md`
 
-Also copy the four required reference files:
+Also copy the four required reference files using `SYNTEK_DIR`:
 - `examples/setup/CODING-PRINCIPLES.md` → `.claude/CODING-PRINCIPLES.md`
 - `examples/setup/TESTING.md` → `.claude/TESTING.md`
 - `examples/setup/SECURITY.md` → `.claude/SECURITY.md`
 - `examples/setup/DEVELOPMENT.md` → `.claude/DEVELOPMENT.md`
 
 ```bash
-cp /path/to/syntek-dev-suite/examples/setup/CODING-PRINCIPLES.md .claude/CODING-PRINCIPLES.md
-cp /path/to/syntek-dev-suite/examples/setup/TESTING.md .claude/TESTING.md
-cp /path/to/syntek-dev-suite/examples/setup/SECURITY.md .claude/SECURITY.md
-cp /path/to/syntek-dev-suite/examples/setup/DEVELOPMENT.md .claude/DEVELOPMENT.md
+cp $SYNTEK_DIR/examples/setup/CODING-PRINCIPLES.md .claude/CODING-PRINCIPLES.md
+cp $SYNTEK_DIR/examples/setup/TESTING.md .claude/TESTING.md
+cp $SYNTEK_DIR/examples/setup/SECURITY.md .claude/SECURITY.md
+cp $SYNTEK_DIR/examples/setup/DEVELOPMENT.md .claude/DEVELOPMENT.md
 ```
 
 These files contain the project standards for coding principles, testing, security, and development workflow. Every project CLAUDE.md must reference all four files.
 
 ### Step 5: Create Plugin Usage Guide
 
-Create `.claude/SYNTEK-GUIDE.md` with the complete plugin documentation (see examples/setup/SYNTEK-GUIDE-TEMPLATE.md).
+Create `.claude/SYNTEK-GUIDE.md` with the complete plugin documentation (source: `$SYNTEK_DIR/examples/setup/SYNTEK-GUIDE-TEMPLATE.md`).
 
 ### Step 6: Container Setup
 
