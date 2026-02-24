@@ -54,6 +54,17 @@ All code in this project follows Rob Pike's 5 Rules of Programming and Linus Tor
 
 See `.claude/CODING-PRINCIPLES.md` for the full rules.
 
+## Required Reference Documents
+
+All agents MUST read these documents before writing code, tests, or performing reviews:
+
+| Document | Purpose |
+|----------|---------|
+| `.claude/CODING-PRINCIPLES.md` | Coding standards, naming conventions, error handling, git workflow |
+| `.claude/TESTING.md` | Testing patterns, tooling, and requirements for this stack |
+| `.claude/SECURITY.md` | Security requirements, OWASP mitigations, and deployment checklist |
+| `.claude/DEVELOPMENT.md` | Development workflow, environment setup, and common tasks |
+
 ## Project Structure
 \`\`\`
 [project root]/

@@ -1,7 +1,7 @@
 # Release Notes
 
-**Last Updated**: 17/02/2026
-**Version**: 1.5.0
+**Last Updated**: 24/02/2026
+**Version**: 1.6.0
 **Maintained By**: Development Team
 **Language**: British English (en_GB)
 **Timezone**: Europe/London
@@ -12,8 +12,9 @@
 
 - [Table of Contents](#table-of-contents)
 - [Latest Release](#latest-release)
-  - [Version 1.5.0 - 17 February 2026](#version-150---17-february-2026)
+  - [Version 1.6.0 - 24 February 2026](#version-160---24-february-2026)
 - [Previous Releases](#previous-releases)
+  - [Version 1.5.0 - 17 February 2026](#version-150---17-february-2026)
   - [Version 1.4.0 - 09 January 2026](#version-140---09-january-2026)
   - [Version 1.3.1 - 29 December 2025](#version-131---29-december-2025)
   - [Version 1.3.0 - 28 December 2025](#version-130---28-december-2025)
@@ -26,6 +27,51 @@
 ---
 
 ## Latest Release
+
+### Version 1.6.0 - 24 February 2026
+
+#### What's New
+
+**Every New Project Now Comes With a Full Playbook**
+
+When you initialise a new project with `/init`, you now get four ready-to-use reference guides in your `.claude/` folder — not just one. Every agent working on your project will read these before writing a single line of code.
+
+The four guides are:
+
+- **Coding Principles** — Proven rules from Rob Pike and Linus Torvalds, plus practical conventions for naming, error handling, logging, and code review
+- **Testing Guide** — How to test your specific stack, which tools to use, TDD workflow, and what test coverage is expected
+- **Security Guide** — OWASP-aligned security patterns, how to handle secrets, authentication best practices, and a pre-deployment security checklist
+- **Development Workflow** — How to get a project running locally, container commands, branching workflow, and everyday development tasks
+
+These guides work across all five supported stacks: TALL (Laravel), Django, React/Next.js, React Native, and Shared Libraries.
+
+#### Why This Matters
+
+Previously, agents had general knowledge of best practices but no project-specific reference to check against. Now every project ships with a shared baseline that agents and developers alike can refer to.
+
+This means:
+
+- **Consistent security** — Security patterns are documented and enforced from day one
+- **Consistent testing** — Everyone knows which tools to use and what coverage is expected
+- **Faster onboarding** — New developers (and new agents) have a single place to get up to speed
+- **Fewer surprises** — Common decisions are already made and documented
+
+#### Expanded Coding Principles
+
+The Coding Principles guide has been significantly expanded. It now covers:
+
+- How to handle errors properly (no silent failures)
+- Language-specific naming conventions (PHP, Python, TypeScript)
+- Security-minded coding habits
+- When to add dependencies (and when not to)
+- Git commit and branch conventions
+- DRY, KISS, and YAGNI in practice
+- What to log and what not to log
+- A pre-PR code review checklist
+
+---
+
+## Previous Releases
 
 ### Version 1.5.0 - 17 February 2026
 

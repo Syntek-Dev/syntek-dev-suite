@@ -1,7 +1,7 @@
 # Version History
 
-**Last Updated**: 17/02/2026
-**Version**: 1.5.0
+**Last Updated**: 24/02/2026
+**Version**: 1.6.0
 **Maintained By**: Development Team
 **Language**: British English (en_GB)
 **Timezone**: Europe/London
@@ -11,6 +11,7 @@
 ## Table of Contents
 
 - [Unreleased](#unreleased)
+- [1.6.0 - 24/02/2026](#160---24022026)
 - [1.5.0 - 17/02/2026](#150---17022026)
 - [1.4.0 - 09/01/2026](#140---09012026)
 - [1.3.1 - 29/12/2025](#131---29122025)
@@ -26,6 +27,130 @@
 ### Technical Changes
 
 - Nothing yet
+
+---
+
+## [1.6.0] - 24/02/2026
+
+### Summary
+
+Feature release adding three new reference documents — Testing, Security, and Development guides — plus a Required Reference Documents section to `CLAUDE.md` and templates. The `CODING-PRINCIPLES.md` has been substantially expanded, and the `/init` command now copies all four reference files into new projects automatically.
+
+### Files Added
+
+| File | Changes |
+|------|---------|
+| `examples/setup/TESTING.md` | New file: full testing guide for all 5 stacks (TALL, Django, React, Mobile, Shared Library) covering tooling, directory structure, TDD methodology, mock patterns, and test requirements |
+| `examples/setup/SECURITY.md` | New file: web application security guide covering OWASP Top 10 mitigations, secrets management, authentication and authorisation patterns, input validation, CSRF, CORS, and stack-specific security practices |
+| `examples/setup/DEVELOPMENT.md` | New file: development workflow guide covering environment setup, container commands (DDEV/Docker), branching workflow, environment variables, debugging, and common development tasks across all stacks |
+
+### Files Changed
+
+| File | Changes |
+|------|---------|
+| `examples/setup/CODING-PRINCIPLES.md` | Expanded from slim overview to full guide; added error handling section, naming conventions (per language), security coding principles, dependency management rules, git workflow conventions, DRY/KISS/YAGNI rules, logging standards, and a code review checklist |
+| `examples/setup/CLAUDE-MD-TEMPLATE.md` | Added Required Reference Documents section listing all 4 files agents must read; ensures new projects carry the reference table in their `CLAUDE.md` |
+| `commands/init.md` | Updated Step 3.5 (copy setup examples) to also copy `TESTING.md`, `SECURITY.md`, and `DEVELOPMENT.md` into `.claude/`; updated folder structure and output summary to reflect 4 reference files |
+| `CLAUDE.md` | Added Required Reference Documents section at top with table listing all 4 reference files and their purposes |
+| `VERSION` | Bumped from 1.5.0 to 1.6.0 |
+| `CHANGELOG.md` | Added 1.6.0 release notes |
+| `VERSION-HISTORY.md` | Added 1.6.0 technical details (this file) |
+| `RELEASES.md` | Added 1.6.0 user-facing notes |
+
+### New Features
+
+#### Testing Guide (`examples/setup/TESTING.md`)
+
+Comprehensive testing reference covering all five supported stacks:
+
+- **Stack-specific tooling tables** — PHPUnit/Pest, pytest, Jest/Vitest, Detox per stack
+- **Directory structure conventions** — Where to place unit, integration, and E2E tests
+- **TDD methodology** — Red-Green-Refactor workflow with examples
+- **Mock and stub patterns** — Per-stack examples (Mockery, unittest.mock, Jest mocks, MSW)
+- **Test requirements** — Minimum coverage expectations, CI gate requirements
+- **Test naming conventions** — `test_*`, `it_*`, `describe/it` per framework
+
+#### Security Guide (`examples/setup/SECURITY.md`)
+
+Web application security reference aligned with OWASP Top 10:
+
+- **Secrets management** — Never commit secrets, use `.env`, vault patterns, rotation
+- **Authentication and authorisation** — Token storage, session management, role checks
+- **Input validation and sanitisation** — Per-stack injection prevention examples
+- **CSRF protection** — Token patterns for TALL (Livewire), Django, and React (axios)
+- **CORS configuration** — Allowed origins, headers, preflight handling
+- **SQL injection prevention** — ORM usage, parameterised queries, raw query avoidance
+- **XSS prevention** — Template escaping, CSP headers, DOMPurify usage
+- **Stack-specific patterns** — Laravel middleware, Django security settings, Next.js headers
+- **Dependency security** — `npm audit`, `pip-audit`, `composer audit` workflows
+- **Deployment security checklist** — Pre-go-live security gates
+
+#### Development Workflow Guide (`examples/setup/DEVELOPMENT.md`)
+
+Day-to-day development reference for all stacks:
+
+- **Prerequisites** — Required tools per stack with version guidance
+- **Getting started** — Clone, env setup, container start, migration run
+- **Container commands** — DDEV and Docker Compose cheat sheet
+- **Branching workflow** — `us###/feature` → testing → dev → staging → main
+- **Environment variables** — Required vars per stack, `.env` copy patterns
+- **Debugging** — Stack-specific debug tips (Telescope, Django Debug Toolbar, React DevTools)
+- **Database operations** — Migration, seeding, and reset commands
+- **Common development tasks** — Frequently needed commands per stack
+
+#### Expanded Coding Principles
+
+`CODING-PRINCIPLES.md` expanded from ~80 lines to a comprehensive guide:
+
+| Section Added | Content |
+|---------------|---------|
+| Error handling | Never swallow exceptions, always log with context, use typed exceptions |
+| Naming conventions | Per-language rules (PHP PascalCase/camelCase, Python snake_case, TypeScript camelCase) |
+| Security principles | Input validation, no secrets in code, principle of least privilege |
+| Dependency management | Pin versions, audit regularly, minimise dependencies |
+| Git conventions | Conventional Commits format, branch naming, commit scope |
+| DRY/KISS/YAGNI | Practical guidelines with anti-pattern examples |
+| Logging standards | Log levels, structured logging, what to log and what not to log |
+| Code review checklist | Pre-PR checklist agents and developers must verify |
+
+#### Required Reference Documents in CLAUDE.md
+
+A new section at the top of the root `CLAUDE.md` and in `CLAUDE-MD-TEMPLATE.md` instructs all agents to read the four reference files before writing code:
+
+```markdown
+| Document | Purpose |
+|----------|---------|
+| CODING-PRINCIPLES.md | Coding standards, naming conventions, error handling |
+| TESTING.md           | Testing patterns, tooling, TDD methodology           |
+| SECURITY.md          | Security requirements, OWASP mitigations             |
+| DEVELOPMENT.md       | Development workflow, environment setup              |
+```
+
+### Init Command Changes
+
+Step 3.5 of the `/init` process now copies all four reference documents:
+
+| Previous (1.5.0) | New (1.6.0) |
+|-----------------|------------|
+| Copy `CODING-PRINCIPLES.md` only | Copy `CODING-PRINCIPLES.md`, `TESTING.md`, `SECURITY.md`, `DEVELOPMENT.md` |
+| 1 reference file in `.claude/` | 4 reference files in `.claude/` |
+
+### Version Header Updates
+
+The following files had their metadata headers updated to 1.6.0:
+
+- `CLAUDE.md`
+- `CHANGELOG.md`
+- `VERSION-HISTORY.md`
+- `RELEASES.md`
+- `examples/setup/CODING-PRINCIPLES.md`
+- `examples/setup/TESTING.md`
+- `examples/setup/SECURITY.md`
+- `examples/setup/DEVELOPMENT.md`
+
+Files intentionally NOT updated (no standard version header):
+- `commands/init.md`
+- `examples/setup/CLAUDE-MD-TEMPLATE.md`
 
 ---
 

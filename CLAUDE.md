@@ -1,10 +1,25 @@
 # Claude Dev Team
 
-**Last Updated**: 09/01/2026
-**Version**: 1.4.0
+**Last Updated**: 24/02/2026
+**Version**: 1.6.0
 **Maintained By**: Development Team
 **Language**: British English (en_GB)
 **Timezone**: Europe/London
+
+---
+
+## Required Reference Documents
+
+All agents MUST read the following documents before writing code, tests, or reviews for any project initialised with Syntek Dev Suite. These files are copied to `.claude/` in every project by `/init`.
+
+| Document | Purpose |
+|----------|---------|
+| `CODING-PRINCIPLES.md` | Coding standards, naming conventions, error handling, logging, git workflow |
+| `TESTING.md` | Testing patterns, tooling, TDD methodology, and test requirements |
+| `SECURITY.md` | Security requirements, OWASP mitigations, secrets management, deployment checklist |
+| `DEVELOPMENT.md` | Development workflow, environment setup, container commands, and common tasks |
+
+Templates for these files live in `examples/setup/` and are automatically copied to new projects by the `/init` command.
 
 ---
 

@@ -1,7 +1,7 @@
 # Changelog
 
-**Last Updated**: 17/02/2026
-**Version**: 1.5.0
+**Last Updated**: 24/02/2026
+**Version**: 1.6.0
 **Maintained By**: Development Team
 **Language**: British English (en_GB)
 **Timezone**: Europe/London
@@ -20,6 +20,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Nothing yet
+
+---
+
+## [1.6.0] - 24/02/2026
+
+### Added
+
+- Testing guide (`examples/setup/TESTING.md`) with full coverage for all 5 stacks (TALL, Django, React, Mobile, Shared Library), including tooling, directory structure, TDD methodology, and test requirements
+- Security guide (`examples/setup/SECURITY.md`) covering OWASP mitigations, secrets management, authentication patterns, and stack-specific security practices
+- Development workflow guide (`examples/setup/DEVELOPMENT.md`) with environment setup, container commands, branching workflow, and common development tasks for all stacks
+- Required Reference Documents section to root `CLAUDE.md` listing all 4 reference files agents must read before working on any project
+- Required Reference Documents section to `examples/setup/CLAUDE-MD-TEMPLATE.md` so new projects include the reference table in their `CLAUDE.md`
+
+### Changed
+
+- Expanded `examples/setup/CODING-PRINCIPLES.md` from a slim overview to a full guide covering error handling, naming conventions, security principles, dependency management, git workflow, DRY rules, logging standards, and a code review checklist
+- Updated `commands/init.md` to copy `TESTING.md`, `SECURITY.md`, and `DEVELOPMENT.md` into `.claude/` alongside `CODING-PRINCIPLES.md` during project initialisation
 
 ---
 

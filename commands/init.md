@@ -83,6 +83,9 @@ Create the following structure:
 .claude/
 ├── CLAUDE.md              # Project context (from template)
 ├── CODING-PRINCIPLES.md   # Rob Pike + Linus Torvalds coding rules
+├── TESTING.md             # Testing guide for this project's stack
+├── SECURITY.md            # Security patterns and compliance checklist
+├── DEVELOPMENT.md         # Development workflow and common tasks
 ├── settings.local.json    # Claude Code settings
 ├── SYNTEK-GUIDE.md        # Plugin usage guide
 ├── plugins/               # Custom Python plugins (copied from syntek-dev-suite)
@@ -124,14 +127,20 @@ Based on detected stack, copy from the plugin's templates directory:
 - `templates/mobile-project.md` → `.claude/CLAUDE.md`
 - `templates/shared-lib-project.md` → `.claude/CLAUDE.md`
 
-Also copy the coding principles reference file:
+Also copy the four required reference files:
 - `examples/setup/CODING-PRINCIPLES.md` → `.claude/CODING-PRINCIPLES.md`
+- `examples/setup/TESTING.md` → `.claude/TESTING.md`
+- `examples/setup/SECURITY.md` → `.claude/SECURITY.md`
+- `examples/setup/DEVELOPMENT.md` → `.claude/DEVELOPMENT.md`
 
 ```bash
 cp /path/to/syntek-dev-suite/examples/setup/CODING-PRINCIPLES.md .claude/CODING-PRINCIPLES.md
+cp /path/to/syntek-dev-suite/examples/setup/TESTING.md .claude/TESTING.md
+cp /path/to/syntek-dev-suite/examples/setup/SECURITY.md .claude/SECURITY.md
+cp /path/to/syntek-dev-suite/examples/setup/DEVELOPMENT.md .claude/DEVELOPMENT.md
 ```
 
-This file contains the full Rob Pike 5 Rules and Linus Torvalds coding rules referenced from the project `CLAUDE.md`.
+These files contain the project standards for coding principles, testing, security, and development workflow. Every project CLAUDE.md must reference all four files.
 
 ### Step 5: Create Plugin Usage Guide
 
@@ -247,6 +256,9 @@ After initialisation, output:
 | ----------------------------- | --------------------------------- |
 | `.claude/CLAUDE.md`              | Project context for Claude agents  |
 | `.claude/CODING-PRINCIPLES.md`   | Rob Pike + Linus Torvalds rules    |
+| `.claude/TESTING.md`             | Testing guide for this stack       |
+| `.claude/SECURITY.md`            | Security patterns and checklist    |
+| `.claude/DEVELOPMENT.md`         | Development workflow and tasks     |
 | `.claude/settings.local.json`    | Claude Code settings               |
 | `.claude/SYNTEK-GUIDE.md`        | Plugin usage guide                 |
 | `.claude/commands/`              | Project-specific commands          |
