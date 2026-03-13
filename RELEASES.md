@@ -1,7 +1,7 @@
 # Release Notes
 
-**Last Updated**: 24/02/2026
-**Version**: 1.6.0
+**Last Updated**: 13/03/2026
+**Version**: 1.7.0
 **Maintained By**: Development Team
 **Language**: British English (en_GB)
 **Timezone**: Europe/London
@@ -12,8 +12,9 @@
 
 - [Table of Contents](#table-of-contents)
 - [Latest Release](#latest-release)
-  - [Version 1.6.0 - 24 February 2026](#version-160---24-february-2026)
+  - [Version 1.7.0 - 13 March 2026](#version-170---13-march-2026)
 - [Previous Releases](#previous-releases)
+  - [Version 1.6.0 - 24 February 2026](#version-160---24-february-2026)
   - [Version 1.5.0 - 17 February 2026](#version-150---17-february-2026)
   - [Version 1.4.0 - 09 January 2026](#version-140---09-january-2026)
   - [Version 1.3.1 - 29 December 2025](#version-131---29-december-2025)
@@ -27,6 +28,50 @@
 ---
 
 ## Latest Release
+
+### Version 1.7.0 - 13 March 2026
+
+#### What's New
+
+**Your SEO Agent Now Knows About AI Search**
+
+Version 1.7.0 adds a comprehensive SEO & AI Discoverability Checklist to every project initialised with Syntek Dev Suite. The checklist covers everything from setting up `robots.txt` and meta tags through to Generative Engine Optimisation (GEO) — making your site visible to both traditional search engines and AI-powered tools like ChatGPT, Claude, and Perplexity.
+
+#### The New SEO Checklist
+
+Every project now includes `SEO-CHECKLIST.md` in its `.claude/` folder. The checklist is structured in three tiers:
+
+**Beginner** — The essentials every site needs:
+- `robots.txt` with AI crawler permissions (GPTBot, ClaudeBot, PerplexityBot)
+- XML sitemaps, canonical URLs, and meta descriptions
+- Open Graph and Twitter Card tags for social sharing
+- `llms.txt` — a new file that tells AI agents what your site is about
+
+**Intermediate** — Building on the basics:
+- JSON-LD structured data (Organisation, Article, Breadcrumbs)
+- Core Web Vitals performance targets
+- FAQ sections and question-format headings for AI readability
+- "Last updated" timestamps so AI tools know your content is current
+
+**Advanced** — For maximum visibility in AI search:
+- Generative Engine Optimisation (GEO) strategies
+- Direct answer boxes and entity disambiguation
+- Structured citation-ready content
+- Monitoring for AI overview appearances
+
+#### AI Discoverability (What Is llms.txt?)
+
+As AI tools like ChatGPT and Perplexity increasingly answer questions directly from web content, standard SEO is no longer enough. The `llms.txt` file — placed at your site root — is a plain Markdown summary that tells AI agents what your site does, who it is for, and which pages are most useful. Think of it like `robots.txt`, but for AI.
+
+The SEO agent will now help you create both `llms.txt` and `llms-full.txt` as part of its standard implementation.
+
+#### The SEO Agent Now Audits First
+
+Before implementing anything, the SEO agent reads your project's `SEO-CHECKLIST.md` and audits which items are already in place. You will get a clear picture of what is done, what is missing, and what to prioritise — instead of starting from scratch every time.
+
+---
+
+## Previous Releases
 
 ### Version 1.6.0 - 24 February 2026
 

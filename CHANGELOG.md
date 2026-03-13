@@ -1,7 +1,7 @@
 # Changelog
 
-**Last Updated**: 24/02/2026
-**Version**: 1.6.0
+**Last Updated**: 13/03/2026
+**Version**: 1.7.0
 **Maintained By**: Development Team
 **Language**: British English (en_GB)
 **Timezone**: Europe/London
@@ -20,6 +20,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Nothing yet
+
+---
+
+## [1.7.0] - 13/03/2026
+
+### Added
+
+- SEO & AI discoverability checklist (`examples/setup/SEO-CHECKLIST.md`) covering Beginner, Intermediate, and Advanced tiers for both traditional search engine optimisation and Generative Engine Optimisation (GEO), including `llms.txt`, AI crawler permissions, and BLUF content strategy
+- `llms.txt` and `llms-full.txt` guidance to the SEO agent for AI agent discoverability
+- AI Discoverability (GEO) section to `agents/seo.md` explaining GEO strategies, BLUF content, question-format headings, and server-side rendering requirements
+- `SEO-CHECKLIST.md` to the required reference files copied by `/init` — every new project now includes the SEO checklist in `.claude/`
+- SEO audit step to `agents/seo.md` — the SEO agent now reads `.claude/SEO-CHECKLIST.md` before every implementation
+
+### Changed
+
+- Updated `agents/seo.md` description and introduction to include AI discoverability alongside traditional SEO
+- Updated `commands/seo.md` to describe the checklist-first audit approach and GEO capabilities
+- Updated `commands/init.md` to copy `SEO-CHECKLIST.md` into `.claude/` and reference five required files instead of four
+- Updated root `CLAUDE.md` Required Reference Documents table to include `SEO-CHECKLIST.md` with a note on SEO practices and the SEO agent
 
 ---
 

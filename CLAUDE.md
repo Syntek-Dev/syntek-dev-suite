@@ -1,7 +1,7 @@
 # Claude Dev Team
 
-**Last Updated**: 24/02/2026
-**Version**: 1.6.0
+**Last Updated**: 13/03/2026
+**Version**: 1.7.0
 **Maintained By**: Development Team
 **Language**: British English (en_GB)
 **Timezone**: Europe/London

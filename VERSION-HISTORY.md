@@ -1,7 +1,7 @@
 # Version History
 
-**Last Updated**: 24/02/2026
-**Version**: 1.6.0
+**Last Updated**: 13/03/2026
+**Version**: 1.7.0
 **Maintained By**: Development Team
 **Language**: British English (en_GB)
 **Timezone**: Europe/London
@@ -11,6 +11,7 @@
 ## Table of Contents
 
 - [Unreleased](#unreleased)
+- [1.7.0 - 13/03/2026](#170---13032026)
 - [1.6.0 - 24/02/2026](#160---24022026)
 - [1.5.0 - 17/02/2026](#150---17022026)
 - [1.4.0 - 09/01/2026](#140---09012026)
@@ -27,6 +28,118 @@
 ### Technical Changes
 
 - Nothing yet
+
+---
+
+## [1.7.0] - 13/03/2026
+
+### Summary
+
+Feature release adding a comprehensive SEO & AI Discoverability Checklist covering Beginner through Advanced tiers, including Generative Engine Optimisation (GEO), `llms.txt` creation, AI crawler permissions, and BLUF content strategy. The SEO agent is updated to audit projects against this checklist before implementation, and the `/init` command now copies the checklist to every new project's `.claude/` directory.
+
+### Files Added
+
+| File | Changes |
+|------|---------|
+| `examples/setup/SEO-CHECKLIST.md` | New file: full SEO and AI discoverability checklist covering Beginner (essential meta, robots.txt, llms.txt, sitemaps), Intermediate (structured data, performance, analytics), and Advanced (GEO, Core Web Vitals, multi-language, content quality) tiers |
+
+### Files Changed
+
+| File | Changes |
+|------|---------|
+| `agents/seo.md` | Added Step 2 to load `.claude/SEO-CHECKLIST.md` as audit baseline before implementation; added `llms.txt` / `llms-full.txt` to additional SEO files section; added AI Discoverability (GEO) section; updated description and introduction to reference AI discoverability; renumbered subsequent context-loading steps |
+| `commands/seo.md` | Added checklist-first audit step; added `llms.txt` / `llms-full.txt` creation and GEO capabilities to the agent's feature list; updated description to include AI discoverability |
+| `commands/init.md` | Added `SEO-CHECKLIST.md` to `.claude/` folder structure; added copy step `cp $SYNTEK_DIR/examples/setup/SEO-CHECKLIST.md .claude/SEO-CHECKLIST.md`; updated copy comment from "four" to "five" required reference files; added row to output summary table |
+| `CLAUDE.md` | Added `SEO-CHECKLIST.md` to Required Reference Documents table; added SEO Practices callout block referencing the checklist and `examples/seo/SEO.md` |
+| `VERSION` | Bumped from 1.6.0 to 1.7.0 |
+| `CHANGELOG.md` | Added 1.7.0 release notes |
+| `VERSION-HISTORY.md` | Added 1.7.0 technical details (this file) |
+| `RELEASES.md` | Added 1.7.0 user-facing release notes |
+
+### New Features
+
+#### SEO & AI Discoverability Checklist (`examples/setup/SEO-CHECKLIST.md`)
+
+A structured checklist covering three tiers of SEO and AI discoverability work:
+
+**Beginner — Search Engine SEO**
+- Essential root files: `robots.txt`, `sitemap.xml`, `favicon.ico`
+- Meta tags: `<title>`, `<meta description>`, canonical URL
+- Open Graph and Twitter Card tags
+- Google Search Console verification
+
+**Beginner — AI Discoverability**
+- `llms.txt` — Markdown content summary for LLM agents, placed at site root
+- `llms-full.txt` — Extended content version for AI agents
+- AI crawler permissions in `robots.txt` (GPTBot, ClaudeBot, PerplexityBot, Google-Extended)
+- BLUF content strategy — direct answers in the first paragraph
+
+**Intermediate — Search Engine SEO**
+- Structured data (JSON-LD): `WebSite`, `Organization`, `BreadcrumbList`, `Article`
+- XML sitemaps with image and video extensions
+- Core Web Vitals baseline (LCP < 2.5s, CLS < 0.1, INP < 200ms)
+- `humans.txt` and `security.txt`
+
+**Intermediate — AI Discoverability**
+- Question-format headings and FAQ sections
+- Comparison tables for decision content
+- "Last updated" timestamps on content pages
+- Server-side rendering — no critical content behind JavaScript
+
+**Advanced — Search Engine SEO**
+- International SEO: `hreflang` tags, geotargeting
+- Advanced schema: `FAQPage`, `HowTo`, `Product`, `Review`, `Event`
+- Video SEO with structured data
+- Log file analysis and crawl budget optimisation
+
+**Advanced — AI Discoverability (GEO)**
+- Direct answer boxes and entity disambiguation
+- Structured citation-ready content
+- Knowledge graph entity creation
+- Conversational keyword and prompt-style content targeting
+- AI overview monitoring
+
+#### Root Files Quick Reference
+
+The checklist includes a quick reference table of all expected root files with their purpose:
+
+| File | Purpose |
+|------|---------|
+| `robots.txt` | Crawler permissions including AI bots |
+| `sitemap.xml` | Page index for search engines |
+| `llms.txt` | Content summary for LLM agents |
+| `llms-full.txt` | Extended content for AI agents |
+| `humans.txt` | Team and technology credits |
+| `security.txt` | Security contact information |
+| `favicon.ico` | Browser tab icon |
+
+#### SEO Agent Checklist-First Workflow
+
+The SEO agent's context-loading sequence now includes reading the checklist as Step 2 (before loading stack skills), making it the audit baseline for every implementation:
+
+```
+1. Load CLAUDE.md and identify Skill Target
+2. Read .claude/SEO-CHECKLIST.md → use as audit baseline
+3. Load relevant stack skill (stack-tall, stack-django, stack-react)
+4. Load global workflow skill
+5. Run plugin tools
+```
+
+#### Init Command Changes
+
+| Previous (1.6.0) | New (1.7.0) |
+|-----------------|------------|
+| Copy 4 reference files to `.claude/` | Copy 5 reference files to `.claude/` |
+| CODING-PRINCIPLES, TESTING, SECURITY, DEVELOPMENT | + SEO-CHECKLIST |
+
+### Version Header Updates
+
+The following files had their metadata headers updated to 1.7.0:
+
+- `CLAUDE.md`
+- `CHANGELOG.md`
+- `VERSION-HISTORY.md`
+- `RELEASES.md`
 
 ---
 
