@@ -18,8 +18,11 @@ All agents MUST read the following documents before writing code, tests, or revi
 | `TESTING.md` | Testing patterns, tooling, TDD methodology, and test requirements |
 | `SECURITY.md` | Security requirements, OWASP mitigations, secrets management, deployment checklist |
 | `DEVELOPMENT.md` | Development workflow, environment setup, container commands, and common tasks |
+| `SEO-CHECKLIST.md` | SEO & AI discoverability checklist — Beginner through Advanced (including GEO and llms.txt) |
 
 Templates for these files live in `examples/setup/` and are automatically copied to new projects by the `/init` command.
+
+> **SEO Practices:** The `SEO-CHECKLIST.md` file is the definitive reference for all SEO and AI discoverability work. The SEO agent (`/syntek-dev-suite:seo`) reads this checklist before every implementation. See `examples/seo/SEO.md` for framework-specific code examples.
 
 ---
 
