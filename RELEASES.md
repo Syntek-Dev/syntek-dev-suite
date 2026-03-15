@@ -1,7 +1,7 @@
 # Release Notes
 
-**Last Updated**: 13/03/2026
-**Version**: 1.7.0
+**Last Updated**: 15/03/2026
+**Version**: 1.8.0
 **Maintained By**: Development Team
 **Language**: British English (en_GB)
 **Timezone**: Europe/London
@@ -12,8 +12,9 @@
 
 - [Table of Contents](#table-of-contents)
 - [Latest Release](#latest-release)
-  - [Version 1.7.0 - 13 March 2026](#version-170---13-march-2026)
+  - [Version 1.8.0 - 15 March 2026](#version-180---15-march-2026)
 - [Previous Releases](#previous-releases)
+  - [Version 1.7.0 - 13 March 2026](#version-170---13-march-2026)
   - [Version 1.6.0 - 24 February 2026](#version-160---24-february-2026)
   - [Version 1.5.0 - 17 February 2026](#version-150---17-february-2026)
   - [Version 1.4.0 - 09 January 2026](#version-140---09-january-2026)
@@ -28,6 +29,96 @@
 ---
 
 ## Latest Release
+
+### Version 1.8.0 - 15 March 2026
+
+#### What's New
+
+**Five New Reference Guides for Every Agent and Developer**
+
+Version 1.8.0 adds five new technical reference documents to Syntek Dev Suite. These join the existing set of guides that agents read before working on your project, giving them deeper knowledge of accessibility standards, API design conventions, architecture patterns, data structure choices, and performance optimisation.
+
+Every new project initialised with `/init` will include these guides in its `.claude/` folder.
+
+#### The Five New Guides
+
+**Accessibility Guide**
+
+A complete WCAG 2.2 reference that covers what you need to do — and why — to make your application accessible. Topics include:
+
+- ARIA roles and how to use them correctly
+- Keyboard navigation and focus management
+- Colour contrast requirements with specific ratios
+- Screen reader support for dynamic content
+- Stack-specific patterns for Blade, Django templates, React, and React Native
+
+**API Design Guide**
+
+Clear, consistent rules for designing APIs that are predictable and easy to consume. Topics include:
+
+- RESTful URL structure and naming conventions
+- HTTP methods, status codes, and idempotency rules
+- Standardised error response format
+- Authentication header patterns
+- Pagination and rate limiting conventions
+- GraphQL naming and error handling
+
+**Architecture Patterns Guide**
+
+Practical guidance on structuring larger applications. Topics include:
+
+- Layered architecture with clear dependency rules
+- Domain-Driven Design (DDD) — bounded contexts, aggregates, value objects
+- CQRS — separating reads and writes for complex domains
+- Event-driven patterns and domain events
+- Repository and service layer design
+- Hexagonal architecture (ports and adapters)
+
+**Data Structures Guide**
+
+When to use which data structure, and how to handle data consistently at boundaries. Topics include:
+
+- Choosing between arrays, maps, sets, and queues
+- DTO patterns per stack (PHP typed classes, Python dataclasses, TypeScript interfaces)
+- Value objects and immutable data
+- JSON serialisation conventions and camelCase vs snake_case boundaries
+- Collection handling — filtering, sorting, pagination
+
+**Performance Guide**
+
+Practical performance techniques with specific targets to hit. Topics include:
+
+- Caching strategies — in-memory, HTTP headers, query caching
+- Preventing N+1 queries with eager loading (`with()`, `select_related`, Prisma `include`)
+- Database indexing — what to index and what not to
+- Core Web Vitals targets: LCP < 2.5s, CLS < 0.1, INP < 200ms
+- Asset optimisation — WebP/AVIF images, code splitting, tree shaking
+- Stack-specific tips — Laravel Octane, Django caching, Next.js ISR, React Native FlashList
+
+#### Why This Matters
+
+Previously, agents relied on general knowledge to make decisions about accessibility, APIs, architecture, data handling, and performance. Now they have project-specific references that reflect your team's agreed conventions — the same ones every developer on the project works to.
+
+This means:
+
+- **Consistent APIs** — Every endpoint follows the same structure and error format
+- **Accessible interfaces** — WCAG 2.2 compliance built in from the start
+- **Maintainable architecture** — Agreed patterns for layers, domains, and service boundaries
+- **Fewer performance surprises** — N+1 queries caught early, caching applied consistently
+- **Shared data conventions** — DTOs and type patterns that work across the team
+
+#### Expanded Existing Guides
+
+The four existing reference guides have also been substantially expanded:
+
+- **Coding Principles** — Additional sections with practical examples
+- **Development Workflow** — Database configuration conventions and environment-specific settings structure
+- **Security** — Additional OWASP patterns and per-stack security guidance
+- **Testing** — Additional test patterns and tooling coverage
+
+---
+
+## Previous Releases
 
 ### Version 1.7.0 - 13 March 2026
 

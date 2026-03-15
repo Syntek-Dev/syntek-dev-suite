@@ -1,7 +1,7 @@
 # Development Workflow
 
-**Last Updated**: 24/02/2026
-**Version**: 1.6.0
+**Last Updated**: 15/03/2026
+**Version**: 1.8.0
 **Maintained By**: Development Team
 **Language**: British English (en_GB)
 **Timezone**: Europe/London
@@ -20,6 +20,8 @@
   - [Shared Library Stack](#shared-library-stack)
 - [Daily Development Workflow](#daily-development-workflow)
 - [Environment Files](#environment-files)
+- [Database Configuration](#database-configuration)
+- [Environment-Specific Settings Files](#environment-specific-settings-files)
 - [Running Tests](#running-tests)
 - [Code Quality](#code-quality)
 - [Git Workflow](#git-workflow)
@@ -249,6 +251,95 @@ Each environment requires a separate configuration file. **Never commit real cre
 | `DB_DATABASE` | `projectname_dev` | `projectname_test` | `projectname_production` |
 | `LOG_LEVEL` | `debug` | `warning` | `error` |
 | `MAIL_MAILER` | `log` | `array` | SMTP provider |
+
+---
+
+## Database Configuration
+
+### Environment-Specific Databases
+
+**CRITICAL:** Every project MUST have separate databases for each environment:
+
+| Environment | Database Suffix | Purpose |
+|-------------|-----------------|---------|
+| Development | `_dev` | Local development work |
+| Testing | `_test` | Automated and manual tests |
+| Staging | `_staging` | Pre-production testing |
+| Production | `_production` | Live data |
+
+### Test Database Isolation
+
+**CRITICAL:** All tests MUST use a dedicated test database that is:
+- Separate from the development database
+- Automatically created/migrated before test runs
+- Cleared or reset between test suites
+- Never used for manual development
+
+Configuration example:
+```
+# .env.dev
+DB_DATABASE=myapp_dev
+
+# .env.test
+DB_DATABASE=myapp_test
+
+# .env.staging
+DB_DATABASE=myapp_staging
+
+# .env.production
+DB_DATABASE=myapp_production
+```
+
+---
+
+## Environment-Specific Settings Files
+
+**CRITICAL:** All projects MUST have environment-specific settings files using the appropriate naming convention for the language/framework.
+
+### Python/Django/Wagtail
+```
+config/
+├── settings/
+│   ├── __init__.py
+│   ├── base.py          # Shared settings
+│   ├── development.py   # Development settings
+│   ├── testing.py       # Test settings (uses test database)
+│   ├── staging.py       # Staging settings
+│   └── production.py    # Production settings
+```
+
+### PHP/Laravel
+```
+config/
+├── app.php              # Base config (reads from env)
+├── database.php         # Database config
+└── environments/        # Optional environment overrides
+    ├── development.php
+    ├── testing.php
+    ├── staging.php
+    └── production.php
+```
+
+### Node.js/TypeScript
+```
+config/
+├── index.ts             # Config loader
+├── base.ts              # Shared settings
+├── development.ts       # Development settings
+├── testing.ts           # Test settings
+├── staging.ts           # Staging settings
+└── production.ts        # Production settings
+```
+
+### React Native/Expo
+```
+config/
+├── index.ts             # Config loader
+├── base.ts              # Shared settings
+├── development.ts       # Development settings
+├── staging.ts           # Staging settings
+└── production.ts        # Production settings
+```
 
 ---
 

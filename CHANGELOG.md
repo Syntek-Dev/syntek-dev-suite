@@ -1,7 +1,7 @@
 # Changelog
 
-**Last Updated**: 13/03/2026
-**Version**: 1.7.0
+**Last Updated**: 15/03/2026
+**Version**: 1.8.0
 **Maintained By**: Development Team
 **Language**: British English (en_GB)
 **Timezone**: Europe/London
@@ -20,6 +20,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Nothing yet
+
+---
+
+## [1.8.0] - 15/03/2026
+
+### Added
+
+- Accessibility reference document (`examples/setup/ACCESSIBILITY.md`) covering WCAG 2.2 compliance, ARIA roles and attributes, keyboard navigation, colour contrast, screen reader support, focus management, and stack-specific accessibility patterns across all five supported stacks
+- API Design reference document (`examples/setup/API-DESIGN.md`) covering RESTful conventions, URL structure, versioning strategies, request/response patterns, authentication headers, error response formats, pagination, rate limiting, and GraphQL design principles
+- Architecture Patterns reference document (`examples/setup/ARCHITECTURE-PATTERNS.md`) covering layered architecture, Domain-Driven Design (DDD), CQRS, event-driven patterns, repository pattern, service layer design, and hexagonal architecture across all stacks
+- Data Structures reference document (`examples/setup/DATA-STRUCTURES.md`) covering standard data structure selection, serialisation formats, DTO patterns, value objects, collection handling, and stack-specific type conventions (PHP arrays, Python dataclasses, TypeScript interfaces)
+- Performance reference document (`examples/setup/PERFORMANCE.md`) covering caching strategies (in-memory, HTTP, database query), N+1 query prevention, lazy vs eager loading, database indexing, asset optimisation, Core Web Vitals targets, and stack-specific performance patterns
+- All five new reference documents registered in the Required Reference Documents section of `CLAUDE.md` and `examples/setup/CLAUDE-MD-TEMPLATE.md`
+
+### Changed
+
+- Expanded `examples/setup/CODING-PRINCIPLES.md` with additional sections
+- Enhanced `examples/setup/DEVELOPMENT.md` with database configuration and environment-specific settings guidance
+- Updated `examples/setup/TESTING.md` with additional testing patterns and coverage
+- Updated `examples/setup/SECURITY.md` with expanded security patterns
 
 ---
 

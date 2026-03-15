@@ -8,8 +8,8 @@ Template for the `.claude/CLAUDE.md` file that provides project context for Clau
 
 | Property            | Value                                         |
 | ------------------- | --------------------------------------------- |
-| **Example Version** | 1.0.0                                         |
-| **Last Updated**    | 2025-01                                       |
+| **Example Version** | 1.7.0                                         |
+| **Last Updated**    | 15/03/2026                                    |
 | **Stacks**          | All (TALL, Django, React, Mobile, Shared-Lib) |
 
 ---
@@ -41,16 +41,17 @@ Template for the `.claude/CLAUDE.md` file that provides project context for Clau
 
 ## Coding Principles
 
-All code in this project follows Rob Pike's 5 Rules of Programming and Linus Torvalds' Coding Rules.
+All code in this project follows the principles in `.claude/CODING-PRINCIPLES.md`, organised in layers:
 
-**Core rules:**
-- Measure before optimising — no speed hacks without profiling
-- Simple algorithms and simple data structures over fancy ones
-- Data structures dominate: get the data model right and the logic becomes obvious
-- Short, focused functions that do one thing
-- Eliminate special cases rather than patching them with `if` statements
-- Make it work first, then make it better
-- Favour stability and readability over cleverness
+- **Low-level coding instincts:** Rob Pike's 5 Rules and Linus Torvalds' Coding Rules — measure before optimising, simple data structures over fancy algorithms, data models drive logic, short focused functions, eliminate special cases, favour stability over cleverness
+- **Class and module design:** SOLID Principles and GRASP Patterns — single responsibility, dependency inversion, information expert, high cohesion, low coupling
+- **Quality check:** CUPID Properties — composable, Unix philosophy, predictable, idiomatic, domain-based
+- **System boundaries and naming:** Domain-Driven Design — ubiquitous language, bounded contexts, aggregates, domain events, anti-corruption layers
+- **Package and monorepo architecture:** Package Principles — reuse-release equivalence, common closure, acyclic dependencies, stable dependencies
+- **Deployment and composition:** The Unix Philosophy and The Twelve-Factor App — do one thing well, config in environment, stateless processes, dev/prod parity
+- **Everyday decisions:** DRY (Rule of Three), KISS, YAGNI, and Kent Beck's Four Rules of Simple Design — passes tests, reveals intention, no duplication, fewest elements
+
+Additional practical sections cover the 750-line file limit, error handling, naming conventions, testing requirements, comments and documentation, security, dependencies, git workflow, logging, and a code review checklist.
 
 See `.claude/CODING-PRINCIPLES.md` for the full rules.
 
@@ -60,10 +61,16 @@ All agents MUST read these documents before writing code, tests, or performing r
 
 | Document | Purpose |
 |----------|---------|
-| `.claude/CODING-PRINCIPLES.md` | Coding standards, naming conventions, error handling, git workflow |
-| `.claude/TESTING.md` | Testing patterns, tooling, and requirements for this stack |
-| `.claude/SECURITY.md` | Security requirements, OWASP mitigations, and deployment checklist |
+| `.claude/CODING-PRINCIPLES.md` | Software design principles (SOLID, CUPID, GRASP, DDD, Unix Philosophy, Twelve-Factor), coding instincts (Pike, Torvalds), everyday rules (DRY, KISS, YAGNI, Beck's Four Rules), naming conventions, error handling, logging, git workflow, and code review checklist |
+| `.claude/TESTING.md` | Testing matrix per layer (Python/Django, TypeScript/React, React Native, GraphQL), database isolation, migration testing, factories, property-based testing, coverage thresholds, mocking philosophy, snapshot testing, boundary testing, accessibility testing, performance testing, flaky test policy, and CI integration |
+| `.claude/SECURITY.md` | Secrets management, authentication (argon2id/scrypt/bcrypt hierarchy), cryptography standards (approved and banned algorithms), transport security, API and GraphQL security, file upload and browser storage policies, container security, OWASP Top 10:2025 mitigations, supply chain security, data classification, security logging, and incident response |
+| `.claude/ACCESSIBILITY.md` | WCAG 2.2 AA compliance, semantic HTML, ARIA patterns, keyboard navigation, focus management, forms, colour contrast, images and media, motion, React component patterns, React Native mobile accessibility, server-rendered accessibility (Django/Laravel), testing, and checklist |
+| `.claude/API-DESIGN.md` | REST conventions (URL structure, HTTP methods, status codes, pagination, filtering), GraphQL conventions (schema, queries, mutations, error unions), error response format, authentication and authorisation, rate limiting, versioning, webhooks, API documentation, and client-side consumption patterns |
+| `.claude/ARCHITECTURE-PATTERNS.md` | Service layer, middleware and request pipeline, frontend state management, routing conventions, background job patterns, email and notification patterns, file processing pipelines, and project structure (Django, Laravel, React) |
+| `.claude/DATA-STRUCTURES.md` | Fundamental structures, domain modelling (value objects, aggregates, enums), database schema design (PostgreSQL and MariaDB/MySQL), normalisation, indexes, migrations, soft deletes, multi-tenancy, anti-patterns, and refactoring guidance |
+| `.claude/PERFORMANCE.md` | Database query optimisation (N+1, EXPLAIN, indexing), caching (hierarchy, application, HTTP, invalidation), frontend performance (bundle size, code splitting, rendering strategy, React patterns), image optimisation, background jobs and queues, connection pooling, mobile performance, monitoring, load testing, and checklist |
 | `.claude/DEVELOPMENT.md` | Development workflow, environment setup, and common tasks |
+| `.claude/SEO-CHECKLIST.md` | SEO & AI discoverability checklist — Beginner through Advanced (including GEO and llms.txt) |
 
 ## Project Structure
 \`\`\`

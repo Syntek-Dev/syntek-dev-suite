@@ -1,7 +1,7 @@
 # Version History
 
-**Last Updated**: 13/03/2026
-**Version**: 1.7.0
+**Last Updated**: 15/03/2026
+**Version**: 1.8.0
 **Maintained By**: Development Team
 **Language**: British English (en_GB)
 **Timezone**: Europe/London
@@ -11,6 +11,7 @@
 ## Table of Contents
 
 - [Unreleased](#unreleased)
+- [1.8.0 - 15/03/2026](#180---15032026)
 - [1.7.0 - 13/03/2026](#170---13032026)
 - [1.6.0 - 24/02/2026](#160---24022026)
 - [1.5.0 - 17/02/2026](#150---17022026)
@@ -28,6 +29,125 @@
 ### Technical Changes
 
 - Nothing yet
+
+---
+
+## [1.8.0] - 15/03/2026
+
+### Summary
+
+Feature release adding five new reference documents to `examples/setup/` — Accessibility, API Design, Architecture Patterns, Data Structures, and Performance. These documents are registered in the Required Reference Documents section of `CLAUDE.md` and `CLAUDE-MD-TEMPLATE.md`, and are intended to be copied into new projects by the `/init` command. Existing reference documents (CODING-PRINCIPLES, DEVELOPMENT, SECURITY, TESTING) have been substantially expanded with additional content.
+
+### Files Added
+
+| File | Changes |
+|------|---------|
+| `examples/setup/ACCESSIBILITY.md` | New file: WCAG 2.2 compliance guide covering ARIA roles, keyboard navigation, colour contrast ratios, screen reader support, focus management, and stack-specific accessibility patterns (TALL/Blade, Django/templates, React, React Native) |
+| `examples/setup/API-DESIGN.md` | New file: API design reference covering RESTful URL conventions, HTTP method semantics, versioning strategies, request/response patterns, authentication headers, standardised error response format, pagination, rate limiting, and GraphQL design principles |
+| `examples/setup/ARCHITECTURE-PATTERNS.md` | New file: Architecture patterns guide covering layered architecture, Domain-Driven Design (DDD) with bounded contexts, CQRS, event-driven patterns, repository pattern, service layer design, and hexagonal architecture with per-stack implementation notes |
+| `examples/setup/DATA-STRUCTURES.md` | New file: Data structures reference covering standard structure selection, serialisation formats (JSON, MessagePack), DTO patterns, value objects, collection handling, and stack-specific type conventions (PHP typed arrays, Python dataclasses/TypedDict, TypeScript interfaces) |
+| `examples/setup/PERFORMANCE.md` | New file: Performance guide covering caching strategies (in-memory, HTTP cache headers, database query caching), N+1 query prevention via eager loading, lazy vs eager loading trade-offs, database indexing conventions, asset optimisation, Core Web Vitals targets (LCP < 2.5s, CLS < 0.1, INP < 200ms), and stack-specific performance patterns |
+
+### Files Changed
+
+| File | Changes |
+|------|---------|
+| `CLAUDE.md` | Added all five new reference documents to the Required Reference Documents table; updated version header to 1.8.0 |
+| `examples/setup/CLAUDE-MD-TEMPLATE.md` | Added all five new reference documents to the Required Reference Documents section |
+| `examples/setup/CODING-PRINCIPLES.md` | Expanded with additional coding principle sections; updated version header to 1.8.0 |
+| `examples/setup/DEVELOPMENT.md` | Added database configuration conventions and environment-specific settings file structure; updated version header to 1.8.0 |
+| `examples/setup/SECURITY.md` | Expanded with additional security patterns and per-stack guidance; updated version header to 1.8.0 |
+| `examples/setup/TESTING.md` | Expanded with additional test patterns and tooling coverage; updated version header to 1.8.0 |
+| `VERSION` | Bumped from 1.7.0 to 1.8.0 |
+| `.claude-plugin/plugin.json` | Version bumped from 1.7.0 to 1.8.0 |
+| `CHANGELOG.md` | Added 1.8.0 release notes |
+| `VERSION-HISTORY.md` | Added 1.8.0 technical details (this file) |
+| `RELEASES.md` | Added 1.8.0 user-facing release notes |
+
+### New Reference Documents
+
+#### Accessibility (`examples/setup/ACCESSIBILITY.md`)
+
+A comprehensive WCAG 2.2 accessibility reference providing:
+
+- **WCAG 2.2 Principles** — Perceivable, Operable, Understandable, Robust (POUR) with level targets (A, AA, AAA)
+- **ARIA Roles and Attributes** — Landmark roles, widget roles, live regions, and correct attribute usage
+- **Keyboard Navigation** — Focus order, keyboard traps, skip links, focus indicators
+- **Colour Contrast** — Minimum contrast ratios (4.5:1 normal text, 3:1 large text/UI), tools for checking compliance
+- **Screen Reader Support** — Alt text, form labels, heading hierarchy, announcements for dynamic content
+- **Focus Management** — Programmatic focus for modals, drawers, route changes
+- **Stack-Specific Patterns** — Blade/TALL, Django templates, React (`aria-*` props, `useRef`), React Native (`accessible`, `accessibilityLabel`)
+
+#### API Design (`examples/setup/API-DESIGN.md`)
+
+A RESTful and GraphQL API design reference providing:
+
+- **URL Conventions** — Plural nouns, kebab-case, versioning prefix (`/api/v1/`), nested resources
+- **HTTP Method Semantics** — GET, POST, PUT, PATCH, DELETE with idempotency notes
+- **Response Status Codes** — Standard codes per operation type
+- **Request/Response Patterns** — Consistent JSON envelope format, field naming (snake_case vs camelCase)
+- **Authentication** — Bearer tokens, API key headers, refresh token patterns
+- **Error Response Format** — Standardised error envelope (`error.code`, `error.message`, `error.details`)
+- **Pagination** — Cursor-based and offset-based patterns with metadata
+- **Rate Limiting** — Headers (`X-RateLimit-Limit`, `X-RateLimit-Remaining`, `Retry-After`)
+- **GraphQL Design** — Query/mutation naming, input types, error handling, N+1 prevention via DataLoader
+
+#### Architecture Patterns (`examples/setup/ARCHITECTURE-PATTERNS.md`)
+
+An architectural guidance reference providing:
+
+- **Layered Architecture** — Presentation, Application, Domain, Infrastructure layers with dependency rules
+- **Domain-Driven Design (DDD)** — Bounded contexts, aggregates, entities, value objects, domain events, repositories
+- **CQRS** — Command and Query separation, command handlers, query handlers, event sourcing introduction
+- **Event-Driven Patterns** — Domain events, integration events, event bus, pub/sub patterns
+- **Repository Pattern** — Interface contracts, concrete implementations, unit-of-work
+- **Service Layer** — Application services vs domain services, orchestration vs domain logic
+- **Hexagonal Architecture** — Ports and adapters, inbound/outbound ports, dependency inversion
+
+#### Data Structures (`examples/setup/DATA-STRUCTURES.md`)
+
+A data structure selection and usage reference providing:
+
+- **Structure Selection Guide** — When to use arrays/lists, maps/dicts, sets, queues, stacks, trees
+- **Serialisation Formats** — JSON conventions, camelCase vs snake_case boundaries, date serialisation (ISO 8601)
+- **DTO Patterns** — Data Transfer Object conventions per stack (PHP typed classes, Python dataclasses, TypeScript interfaces)
+- **Value Objects** — Immutable value types, equality by value, validation in constructor
+- **Collection Handling** — Pagination cursors, filtering, sorting conventions
+- **Stack-Specific Types** — PHP typed arrays and enums, Python TypedDict and dataclasses, TypeScript discriminated unions and generics
+
+#### Performance (`examples/setup/PERFORMANCE.md`)
+
+A performance optimisation reference providing:
+
+- **Caching Strategies** — In-memory caching (Redis/Memcached), HTTP cache headers (`Cache-Control`, `ETag`), query result caching, fragment caching
+- **N+1 Prevention** — Eager loading patterns per stack (Laravel `with()`, Django `select_related`/`prefetch_related`, Prisma `include`)
+- **Lazy vs Eager Loading Trade-offs** — When each is appropriate, memory vs query count
+- **Database Indexing** — Composite indexes, covering indexes, partial indexes, when not to index
+- **Asset Optimisation** — Image formats (WebP, AVIF), lazy loading, code splitting, tree shaking
+- **Core Web Vitals Targets** — LCP < 2.5s, CLS < 0.1, INP < 200ms with measurement tools
+- **Stack-Specific Patterns** — Laravel Octane, Django caching framework, Next.js ISR/SSG, React Native Hermes and FlashList
+
+### Version Header Updates
+
+The following files had their metadata headers updated to 1.8.0:
+
+- `CLAUDE.md`
+- `CHANGELOG.md`
+- `VERSION-HISTORY.md`
+- `RELEASES.md`
+- `examples/setup/CODING-PRINCIPLES.md`
+- `examples/setup/DEVELOPMENT.md`
+- `examples/setup/SECURITY.md`
+- `examples/setup/TESTING.md`
+- `examples/setup/ACCESSIBILITY.md`
+- `examples/setup/API-DESIGN.md`
+- `examples/setup/ARCHITECTURE-PATTERNS.md`
+- `examples/setup/DATA-STRUCTURES.md`
+- `examples/setup/PERFORMANCE.md`
+
+Files intentionally NOT updated (no standard version header):
+- `examples/setup/CLAUDE-MD-TEMPLATE.md`
+- `commands/init.md`
 
 ---
 
