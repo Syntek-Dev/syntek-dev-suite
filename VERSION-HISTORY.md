@@ -1,7 +1,7 @@
 # Version History
 
 **Last Updated**: 15/03/2026
-**Version**: 1.8.0
+**Version**: 1.9.0
 **Maintained By**: Development Team
 **Language**: British English (en_GB)
 **Timezone**: Europe/London
@@ -11,6 +11,7 @@
 ## Table of Contents
 
 - [Unreleased](#unreleased)
+- [1.9.0 - 15/03/2026](#190---15032026)
 - [1.8.0 - 15/03/2026](#180---15032026)
 - [1.7.0 - 13/03/2026](#170---13032026)
 - [1.6.0 - 24/02/2026](#160---24022026)
@@ -29,6 +30,51 @@
 ### Technical Changes
 
 - Nothing yet
+
+---
+
+## [1.9.0] - 15/03/2026
+
+### Summary
+
+Feature release ensuring all agents explicitly load their relevant `.claude/*.md` reference documents before working, and expanding the `/init` command and setup agent to copy all ten reference documents (previously only five were copied).
+
+### Files Changed
+
+| File | Changes |
+|------|---------|
+| `agents/authentication.md` | Added step 2: load CODING-PRINCIPLES, SECURITY, DATA-STRUCTURES from `.claude/` |
+| `agents/backend.md` | Added step 2: load CODING-PRINCIPLES, API-DESIGN, ARCHITECTURE-PATTERNS, DATA-STRUCTURES, SECURITY, PERFORMANCE from `.claude/` |
+| `agents/cicd.md` | Added step 2: load CODING-PRINCIPLES, SECURITY, DEVELOPMENT from `.claude/` |
+| `agents/code-reviewer.md` | Added step 2: load CODING-PRINCIPLES, SECURITY, TESTING, ACCESSIBILITY, API-DESIGN, ARCHITECTURE-PATTERNS, PERFORMANCE from `.claude/` |
+| `agents/completion.md` | Added step 2: load CODING-PRINCIPLES from `.claude/` |
+| `agents/data-scientist.md` | Added step 2: load CODING-PRINCIPLES, DATA-STRUCTURES, PERFORMANCE from `.claude/` |
+| `agents/database.md` | Added step 2: load CODING-PRINCIPLES, DATA-STRUCTURES, PERFORMANCE, SECURITY, DEVELOPMENT from `.claude/` |
+| `agents/debugger.md` | Added step 2: load CODING-PRINCIPLES, ARCHITECTURE-PATTERNS, DATA-STRUCTURES from `.claude/` |
+| `agents/doc-writer.md` | Added step 2: load CODING-PRINCIPLES, DEVELOPMENT from `.claude/` |
+| `agents/export.md` | Added step 2: load CODING-PRINCIPLES, SECURITY, DATA-STRUCTURES from `.claude/` |
+| `agents/frontend.md` | Added step 2: load CODING-PRINCIPLES, ACCESSIBILITY, PERFORMANCE, ARCHITECTURE-PATTERNS, SECURITY from `.claude/` |
+| `agents/gdpr.md` | Added step 2: load CODING-PRINCIPLES, SECURITY, DATA-STRUCTURES from `.claude/` |
+| `agents/git.md` | Added step 2: load CODING-PRINCIPLES, DEVELOPMENT from `.claude/` |
+| `agents/logging.md` | Added step 2: load CODING-PRINCIPLES, SECURITY, ARCHITECTURE-PATTERNS from `.claude/` |
+| `agents/notifications.md` | Added step 2: load CODING-PRINCIPLES, SECURITY, ARCHITECTURE-PATTERNS from `.claude/` |
+| `agents/optimiser.md` | Added step 2: load CODING-PRINCIPLES from `.claude/` |
+| `agents/planner.md` | Added step 2: load CODING-PRINCIPLES, ARCHITECTURE-PATTERNS, API-DESIGN, DATA-STRUCTURES from `.claude/` |
+| `agents/pm.md` | Added step 2: load CODING-PRINCIPLES, DEVELOPMENT from `.claude/` |
+| `agents/qa-tester.md` | Added step 2: load CODING-PRINCIPLES, TESTING, ACCESSIBILITY, SECURITY, PERFORMANCE from `.claude/` |
+| `agents/refactor.md` | Added step 2: load CODING-PRINCIPLES, ARCHITECTURE-PATTERNS, DATA-STRUCTURES, PERFORMANCE from `.claude/` |
+| `agents/reporting.md` | Added step 2: load CODING-PRINCIPLES, DATA-STRUCTURES, API-DESIGN, SECURITY from `.claude/` |
+| `agents/security.md` | Added step 2: load CODING-PRINCIPLES, SECURITY, DATA-STRUCTURES from `.claude/` |
+| `agents/seo.md` | Added step 2: load CODING-PRINCIPLES; existing SEO-CHECKLIST step renumbered to step 3 |
+| `agents/sprint.md` | Added step 2: load CODING-PRINCIPLES from `.claude/` |
+| `agents/support-articles.md` | Added step 2: load CODING-PRINCIPLES, ACCESSIBILITY from `.claude/` |
+| `agents/syntax.md` | Added step 2: load CODING-PRINCIPLES from `.claude/` |
+| `agents/test-writer.md` | Added step 2: load CODING-PRINCIPLES, TESTING, ACCESSIBILITY, SECURITY from `.claude/` |
+| `agents/user-story.md` | Added step 2: load CODING-PRINCIPLES from `.claude/` |
+| `agents/version.md` | Added step 2: load CODING-PRINCIPLES, DEVELOPMENT from `.claude/` |
+| `commands/init.md` | `.claude/` tree expanded to all 10 files; copy commands for ACCESSIBILITY, API-DESIGN, ARCHITECTURE-PATTERNS, DATA-STRUCTURES, PERFORMANCE added; output table updated |
+| `agents/setup.md` | Copy commands for all 10 reference docs added; output table updated with all 10 files |
+| `examples/setup/CLAUDE-MD-TEMPLATE.md` | `.claude/` project structure updated to list all 10 reference files |
 
 ---
 

@@ -1,7 +1,7 @@
 # Release Notes
 
 **Last Updated**: 15/03/2026
-**Version**: 1.8.0
+**Version**: 1.9.0
 **Maintained By**: Development Team
 **Language**: British English (en_GB)
 **Timezone**: Europe/London
@@ -12,8 +12,9 @@
 
 - [Table of Contents](#table-of-contents)
 - [Latest Release](#latest-release)
-  - [Version 1.8.0 - 15 March 2026](#version-180---15-march-2026)
+  - [Version 1.9.0 - 15 March 2026](#version-190---15-march-2026)
 - [Previous Releases](#previous-releases)
+  - [Version 1.8.0 - 15 March 2026](#version-180---15-march-2026)
   - [Version 1.7.0 - 13 March 2026](#version-170---13-march-2026)
   - [Version 1.6.0 - 24 February 2026](#version-160---24-february-2026)
   - [Version 1.5.0 - 17 February 2026](#version-150---17-february-2026)
@@ -29,6 +30,59 @@
 ---
 
 ## Latest Release
+
+### Version 1.9.0 - 15 March 2026
+
+#### What's New
+
+**Agents Now Read Your Project's Reference Guides Before Working**
+
+Version 1.9.0 ensures every agent explicitly reads the reference documents that are relevant to its work before it starts. Previously, agents relied on CLAUDE.md mentioning these files — now each agent proactively loads them.
+
+This means the backend agent reads your API design guide, security standards, and performance guide before writing a line of code. The frontend agent reads your accessibility guide and performance targets. The code reviewer reads everything relevant to the code it's about to assess. Every agent, every time.
+
+#### What Changed
+
+**All 29 agents updated**
+
+Each agent's startup sequence now includes a dedicated step to load the reference documents most relevant to its work. For example:
+
+- **Backend agent** loads: Coding Principles, API Design, Architecture Patterns, Data Structures, Security, Performance
+- **Frontend agent** loads: Coding Principles, Accessibility, Performance, Architecture Patterns, Security
+- **Test writer** loads: Coding Principles, Testing, Accessibility, Security
+- **Security agent** loads: Coding Principles, Security, Data Structures
+- And so on for all 29 agents
+
+**`/init` now copies all ten reference documents**
+
+The initialisation command previously only copied five of the ten reference documents to your project's `.claude/` folder. It now copies all ten:
+
+1. `CODING-PRINCIPLES.md`
+2. `TESTING.md`
+3. `SECURITY.md`
+4. `ACCESSIBILITY.md` *(newly added)*
+5. `API-DESIGN.md` *(newly added)*
+6. `ARCHITECTURE-PATTERNS.md` *(newly added)*
+7. `DATA-STRUCTURES.md` *(newly added)*
+8. `PERFORMANCE.md` *(newly added)*
+9. `DEVELOPMENT.md`
+10. `SEO-CHECKLIST.md`
+
+**Upgrading existing projects**
+
+If your project was initialised before v1.9.0, copy the five new files manually:
+
+```bash
+cp $SYNTEK_DIR/examples/setup/ACCESSIBILITY.md .claude/ACCESSIBILITY.md
+cp $SYNTEK_DIR/examples/setup/API-DESIGN.md .claude/API-DESIGN.md
+cp $SYNTEK_DIR/examples/setup/ARCHITECTURE-PATTERNS.md .claude/ARCHITECTURE-PATTERNS.md
+cp $SYNTEK_DIR/examples/setup/DATA-STRUCTURES.md .claude/DATA-STRUCTURES.md
+cp $SYNTEK_DIR/examples/setup/PERFORMANCE.md .claude/PERFORMANCE.md
+```
+
+---
+
+## Previous Releases
 
 ### Version 1.8.0 - 15 March 2026
 

@@ -13,13 +13,20 @@ You are a Lead QA Analyst (The "Breaker") with a mission to find what others mis
    - Check for `CLAUDE.md` or `.claude/CLAUDE.md` in the project root
    - Identify the `Skill Target` (e.g., `stack-tall`, `stack-django`, `stack-react`)
 
-2. **Load the relevant stack skill** to understand testing patterns:
+2. **Load reference documents** from the project's `.claude/` directory:
+   - Read `.claude/CODING-PRINCIPLES.md` — coding standards, principles, and naming conventions
+   - Read `.claude/TESTING.md` — testing matrix, coverage thresholds, and CI integration
+   - Read `.claude/ACCESSIBILITY.md` — WCAG 2.2 AA compliance and ARIA patterns
+   - Read `.claude/SECURITY.md` — security requirements, OWASP Top 10, and cryptography standards
+   - Read `.claude/PERFORMANCE.md` — query optimisation, caching strategy, and frontend performance
+
+3. **Load the relevant stack skill** to understand testing patterns:
    - If `Skill Target: stack-tall` → Read `./skills/stack-tall/SKILL.md`
    - If `Skill Target: stack-django` → Read `./skills/stack-django/SKILL.md`
    - If `Skill Target: stack-react` → Read `./skills/stack-react/SKILL.md`
    - If `Skill Target: stack-mobile` → Read `./skills/stack-mobile/SKILL.md`
 
-3. **Always load global workflow skill:**
+4. **Always load global workflow skill:**
    - Read `./skills/global-workflow/SKILL.md`
    - Apply localisation rules to all QA reports
 

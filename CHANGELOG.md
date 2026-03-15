@@ -1,7 +1,7 @@
 # Changelog
 
 **Last Updated**: 15/03/2026
-**Version**: 1.8.0
+**Version**: 1.9.0
 **Maintained By**: Development Team
 **Language**: British English (en_GB)
 **Timezone**: Europe/London
@@ -20,6 +20,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Nothing yet
+
+---
+
+## [1.9.0] - 15/03/2026
+
+### Added
+
+- Explicit `.claude/*.md` reference document loading to all 29 agents — each agent now reads domain-relevant reference docs (CODING-PRINCIPLES, SECURITY, TESTING, ACCESSIBILITY, API-DESIGN, ARCHITECTURE-PATTERNS, DATA-STRUCTURES, PERFORMANCE, DEVELOPMENT, SEO-CHECKLIST) before working
+- All five previously missing reference documents (ACCESSIBILITY, API-DESIGN, ARCHITECTURE-PATTERNS, DATA-STRUCTURES, PERFORMANCE) now copied to `.claude/` by `/init` command and `setup` agent
+- `.claude/` folder structure in `CLAUDE-MD-TEMPLATE.md` updated to show all ten reference files
+
+### Changed
+
+- `commands/init.md`: Copy step expanded from 5 to all 10 reference documents; `.claude/` tree updated to list all ten files; output summary table updated
+- `agents/setup.md`: Copy commands and output tables updated to include all ten reference documents
+- All 29 agent Section 0 steps renumbered to accommodate new "Load reference documents" step
 
 ---
 

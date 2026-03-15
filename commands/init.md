@@ -95,17 +95,22 @@ Create the following structure:
 
 ```
 .claude/
-├── CLAUDE.md              # Project context (from template)
-├── CODING-PRINCIPLES.md   # Rob Pike + Linus Torvalds coding rules
-├── TESTING.md             # Testing guide for this project's stack
-├── SECURITY.md            # Security patterns and compliance checklist
-├── DEVELOPMENT.md         # Development workflow and common tasks
-├── SEO-CHECKLIST.md       # SEO & AI discoverability checklist (Beginner → Advanced)
-├── settings.local.json    # Claude Code settings
-├── SYNTEK-GUIDE.md        # Plugin usage guide
-├── plugins/               # Custom Python plugins (copied from syntek-dev-suite)
+├── CLAUDE.md                  # Project context (from template)
+├── CODING-PRINCIPLES.md       # Rob Pike + Linus Torvalds coding rules
+├── TESTING.md                 # Testing guide for this project's stack
+├── SECURITY.md                # Security patterns and compliance checklist
+├── ACCESSIBILITY.md           # WCAG 2.2 AA compliance and ARIA patterns
+├── API-DESIGN.md              # REST and GraphQL API conventions
+├── ARCHITECTURE-PATTERNS.md   # Service layer, middleware, and project structure
+├── DATA-STRUCTURES.md         # Domain modelling and database schema design
+├── PERFORMANCE.md             # Query optimisation, caching, and frontend performance
+├── DEVELOPMENT.md             # Development workflow and common tasks
+├── SEO-CHECKLIST.md           # SEO & AI discoverability checklist (Beginner → Advanced)
+├── settings.local.json        # Claude Code settings
+├── SYNTEK-GUIDE.md            # Plugin usage guide
+├── plugins/                   # Custom Python plugins (copied from syntek-dev-suite)
 │   └── *.py
-└── commands/              # Project-specific commands
+└── commands/                  # Project-specific commands
     ├── dev.md
     ├── test.md
     ├── staging.md
@@ -142,10 +147,15 @@ Based on detected stack, copy from the plugin's templates directory using `SYNTE
 - `$SYNTEK_DIR/templates/mobile-project.md` → `.claude/CLAUDE.md`
 - `$SYNTEK_DIR/templates/shared-lib-project.md` → `.claude/CLAUDE.md`
 
-Also copy the required reference files using `SYNTEK_DIR`:
+Also copy all required reference files using `SYNTEK_DIR`:
 - `examples/setup/CODING-PRINCIPLES.md` → `.claude/CODING-PRINCIPLES.md`
 - `examples/setup/TESTING.md` → `.claude/TESTING.md`
 - `examples/setup/SECURITY.md` → `.claude/SECURITY.md`
+- `examples/setup/ACCESSIBILITY.md` → `.claude/ACCESSIBILITY.md`
+- `examples/setup/API-DESIGN.md` → `.claude/API-DESIGN.md`
+- `examples/setup/ARCHITECTURE-PATTERNS.md` → `.claude/ARCHITECTURE-PATTERNS.md`
+- `examples/setup/DATA-STRUCTURES.md` → `.claude/DATA-STRUCTURES.md`
+- `examples/setup/PERFORMANCE.md` → `.claude/PERFORMANCE.md`
 - `examples/setup/DEVELOPMENT.md` → `.claude/DEVELOPMENT.md`
 - `examples/setup/SEO-CHECKLIST.md` → `.claude/SEO-CHECKLIST.md`
 
@@ -153,11 +163,16 @@ Also copy the required reference files using `SYNTEK_DIR`:
 cp $SYNTEK_DIR/examples/setup/CODING-PRINCIPLES.md .claude/CODING-PRINCIPLES.md
 cp $SYNTEK_DIR/examples/setup/TESTING.md .claude/TESTING.md
 cp $SYNTEK_DIR/examples/setup/SECURITY.md .claude/SECURITY.md
+cp $SYNTEK_DIR/examples/setup/ACCESSIBILITY.md .claude/ACCESSIBILITY.md
+cp $SYNTEK_DIR/examples/setup/API-DESIGN.md .claude/API-DESIGN.md
+cp $SYNTEK_DIR/examples/setup/ARCHITECTURE-PATTERNS.md .claude/ARCHITECTURE-PATTERNS.md
+cp $SYNTEK_DIR/examples/setup/DATA-STRUCTURES.md .claude/DATA-STRUCTURES.md
+cp $SYNTEK_DIR/examples/setup/PERFORMANCE.md .claude/PERFORMANCE.md
 cp $SYNTEK_DIR/examples/setup/DEVELOPMENT.md .claude/DEVELOPMENT.md
 cp $SYNTEK_DIR/examples/setup/SEO-CHECKLIST.md .claude/SEO-CHECKLIST.md
 ```
 
-These files contain the project standards for coding principles, testing, security, development workflow, and SEO/AI discoverability. Every project CLAUDE.md must reference all five files.
+These files contain the full project standards that all agents read before working. Every project `.claude/CLAUDE.md` must reference all ten files.
 
 ### Step 5: Create Plugin Usage Guide
 
@@ -272,11 +287,16 @@ After initialisation, output:
 | File                          | Purpose                           |
 | ----------------------------- | --------------------------------- |
 | `.claude/CLAUDE.md`              | Project context for Claude agents  |
-| `.claude/CODING-PRINCIPLES.md`   | Rob Pike + Linus Torvalds rules    |
-| `.claude/TESTING.md`             | Testing guide for this stack       |
-| `.claude/SECURITY.md`            | Security patterns and checklist    |
-| `.claude/DEVELOPMENT.md`         | Development workflow and tasks     |
-| `.claude/SEO-CHECKLIST.md`       | SEO & AI discoverability checklist |
+| `.claude/CODING-PRINCIPLES.md`     | Rob Pike + Linus Torvalds rules        |
+| `.claude/TESTING.md`               | Testing guide for this stack           |
+| `.claude/SECURITY.md`              | Security patterns and checklist        |
+| `.claude/ACCESSIBILITY.md`         | WCAG 2.2 AA and ARIA patterns          |
+| `.claude/API-DESIGN.md`            | REST and GraphQL conventions           |
+| `.claude/ARCHITECTURE-PATTERNS.md` | Service layer and project structure    |
+| `.claude/DATA-STRUCTURES.md`       | Domain modelling and schema design     |
+| `.claude/PERFORMANCE.md`           | Query optimisation and caching         |
+| `.claude/DEVELOPMENT.md`           | Development workflow and tasks         |
+| `.claude/SEO-CHECKLIST.md`         | SEO & AI discoverability checklist     |
 | `.claude/settings.local.json`    | Claude Code settings               |
 | `.claude/SYNTEK-GUIDE.md`        | Plugin usage guide                 |
 | `.claude/commands/`              | Project-specific commands          |

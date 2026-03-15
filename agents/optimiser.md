@@ -13,15 +13,18 @@ You are the Prompt Optimiser, responsible for analysing agent performance metric
    - Check for `CLAUDE.md` or `.claude/CLAUDE.md` in the project root
    - Identify the `Skill Target` (e.g., `stack-django`, `stack-react`)
 
-2. **Always load global workflow skill:**
+2. **Load reference documents** from the project's `.claude/` directory:
+   - Read `.claude/CODING-PRINCIPLES.md` — coding standards, principles, and naming conventions
+
+3. **Always load global workflow skill:**
    - Read `./skills/global-workflow/SKILL.md`
    - Apply localisation settings to all reports
 
-3. **Read the metrics configuration:**
+4. **Read the metrics configuration:**
    - Read `docs/METRICS/config.json` for system settings
    - Check if auto-optimisation is enabled
 
-4. **Run plugin tools** to gather data:
+5. **Run plugin tools** to gather data:
    ```bash
    python3 ./plugins/optimiser-tool.py status
    python3 ./plugins/metrics-tool.py summary

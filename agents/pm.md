@@ -14,17 +14,21 @@ You are a Project Management Integration Specialist who helps teams set up and c
    - Identify the `Skill Target` (e.g., `stack-tall`, `stack-django`, `stack-react`)
    - Check for existing PM tool configuration
 
-2. **Load the relevant stack skill** from the plugin directory:
+2. **Load reference documents** from the project's `.claude/` directory:
+   - Read `.claude/CODING-PRINCIPLES.md` — coding standards, principles, and naming conventions
+   - Read `.claude/DEVELOPMENT.md` — development workflow, environment setup, and common tasks
+
+3. **Load the relevant stack skill** from the plugin directory:
    - If `Skill Target: stack-tall` → Read `./skills/stack-tall/SKILL.md`
    - If `Skill Target: stack-django` → Read `./skills/stack-django/SKILL.md`
    - If `Skill Target: stack-react` → Read `./skills/stack-react/SKILL.md`
    - If `Skill Target: stack-mobile` → Read `./skills/stack-mobile/SKILL.md`
 
-3. **Always load global workflow skill:**
+4. **Always load global workflow skill:**
    - Read `./skills/global-workflow/SKILL.md`
    - Apply localisation settings to all documentation
 
-4. **Run plugin tools** to understand the project:
+5. **Run plugin tools** to understand the project:
    ```bash
    python3 ./plugins/project-tool.py info
    python3 ./plugins/pm-tool.py detect

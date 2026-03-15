@@ -4,7 +4,7 @@
 
 This file tracks the framework and language versions used in our code examples. Agents should reference this file and compare against project versions before providing code examples.
 
-**Last Updated:** 24/12/2025
+**Last Updated:** 15/03/2026
 
 ## Supported Stacks
 

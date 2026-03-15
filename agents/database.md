@@ -13,16 +13,23 @@ You are a Database Administrator (DBA) Specialist focused on database design, op
    - Check for `CLAUDE.md` or `.claude/CLAUDE.md` in the project root
    - Identify the `Skill Target` (e.g., `stack-tall`, `stack-django`, `stack-react`)
 
-2. **Load the relevant stack skill** from the plugin directory:
+2. **Load reference documents** from the project's `.claude/` directory:
+   - Read `.claude/CODING-PRINCIPLES.md` — coding standards, principles, and naming conventions
+   - Read `.claude/DATA-STRUCTURES.md` — domain modelling, database schema design, and migrations
+   - Read `.claude/PERFORMANCE.md` — query optimisation, caching strategy, and frontend performance
+   - Read `.claude/SECURITY.md` — security requirements, OWASP Top 10, and cryptography standards
+   - Read `.claude/DEVELOPMENT.md` — development workflow, environment setup, and common tasks
+
+3. **Load the relevant stack skill** from the plugin directory:
    - If `Skill Target: stack-tall` → Read `./skills/stack-tall/SKILL.md`
    - If `Skill Target: stack-django` → Read `./skills/stack-django/SKILL.md`
    - If `Skill Target: stack-react` → Read `./skills/stack-react/SKILL.md`
 
-3. **Always load global workflow skill:**
+4. **Always load global workflow skill:**
    - Read `./skills/global-workflow/SKILL.md`
    - Apply localisation to database documentation
 
-4. **Run plugin tools** to detect database environment:
+5. **Run plugin tools** to detect database environment:
    ```bash
    python3 ./plugins/project-tool.py info
    python3 ./plugins/db-tool.py detect

@@ -8,7 +8,7 @@ Template for the `.claude/CLAUDE.md` file that provides project context for Clau
 
 | Property            | Value                                         |
 | ------------------- | --------------------------------------------- |
-| **Example Version** | 1.7.0                                         |
+| **Example Version** | 1.9.0                                         |
 | **Last Updated**    | 15/03/2026                                    |
 | **Stacks**          | All (TALL, Django, React, Mobile, Shared-Lib) |
 
@@ -75,12 +75,22 @@ All agents MUST read these documents before writing code, tests, or performing r
 ## Project Structure
 \`\`\`
 [project root]/
-├── .claude/              # Claude Code configuration
-│   ├── CLAUDE.md         # This file
+├── .claude/                      # Claude Code configuration
+│   ├── CLAUDE.md                 # This file
+│   ├── CODING-PRINCIPLES.md      # Coding standards and principles
+│   ├── TESTING.md                # Testing guide for this stack
+│   ├── SECURITY.md               # Security patterns and compliance
+│   ├── ACCESSIBILITY.md          # WCAG 2.2 AA and ARIA patterns
+│   ├── API-DESIGN.md             # REST and GraphQL conventions
+│   ├── ARCHITECTURE-PATTERNS.md  # Service layer and project structure
+│   ├── DATA-STRUCTURES.md        # Domain modelling and schema design
+│   ├── PERFORMANCE.md            # Query optimisation and caching
+│   ├── DEVELOPMENT.md            # Development workflow and tasks
+│   ├── SEO-CHECKLIST.md          # SEO & AI discoverability checklist
 │   ├── settings.local.json
-│   ├── plugins/          # Python plugin tools
+│   ├── plugins/                  # Python plugin tools
 │   │   └── *.py
-│   └── commands/         # Custom Claude commands
+│   └── commands/                 # Custom Claude commands
 ├── docs/                 # Documentation
 │   ├── TESTS/           # Test specifications
 │   ├── QA/              # QA reports

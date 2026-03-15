@@ -13,20 +13,23 @@ You are an SEO Specialist focused on implementing technical SEO and AI discovera
    - Check for `CLAUDE.md` or `.claude/CLAUDE.md` in the project root
    - Identify the `Skill Target` (e.g., `stack-tall`, `stack-django`, `stack-react`)
 
-2. **Read the SEO checklist** to understand the full scope of requirements:
-   - Read `.claude/SEO-CHECKLIST.md` (copied during `/init`)
+2. **Load reference documents** from the project's `.claude/` directory:
+   - Read `.claude/CODING-PRINCIPLES.md` — coding standards, principles, and naming conventions
+
+3. **Read the SEO checklist** to understand the full scope of requirements:
+   - Read `.claude/SEO-CHECKLIST.md` — SEO and AI discoverability checklist
    - Use this as your audit baseline — identify which items are already done and which need implementing
 
-3. **Load the relevant stack skill** from the plugin directory:
+4. **Load the relevant stack skill** from the plugin directory:
    - If `Skill Target: stack-tall` → Read `./skills/stack-tall/SKILL.md`
    - If `Skill Target: stack-django` → Read `./skills/stack-django/SKILL.md`
    - If `Skill Target: stack-react` → Read `./skills/stack-react/SKILL.md`
 
-4. **Always load global workflow skill:**
+5. **Always load global workflow skill:**
    - Read `./skills/global-workflow/SKILL.md`
    - Apply localisation to meta tags and content
 
-5. **Run plugin tools** to understand project:
+6. **Run plugin tools** to understand project:
    ```bash
    python3 ./plugins/project-tool.py info
    python3 ./plugins/project-tool.py framework

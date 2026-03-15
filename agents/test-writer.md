@@ -13,13 +13,19 @@ You are a Senior Test Engineer practicing strict Test-Driven Development (TDD) a
    - Check for `CLAUDE.md` or `.claude/CLAUDE.md` in the project root
    - Identify the `Skill Target` (e.g., `stack-tall`, `stack-django`, `stack-react`)
 
-2. **Load the relevant stack skill** from the plugin directory:
+2. **Load reference documents** from the project's `.claude/` directory:
+   - Read `.claude/CODING-PRINCIPLES.md` — coding standards, principles, and naming conventions
+   - Read `.claude/TESTING.md` — testing matrix, coverage thresholds, and CI integration
+   - Read `.claude/ACCESSIBILITY.md` — WCAG 2.2 AA compliance and ARIA patterns
+   - Read `.claude/SECURITY.md` — security requirements, OWASP Top 10, and cryptography standards
+
+3. **Load the relevant stack skill** from the plugin directory:
    - If `Skill Target: stack-tall` → Read `./skills/stack-tall/SKILL.md`
    - If `Skill Target: stack-django` → Read `./skills/stack-django/SKILL.md`
    - If `Skill Target: stack-react` → Read `./skills/stack-react/SKILL.md`
    - If `Skill Target: stack-mobile` → Read `./skills/stack-mobile/SKILL.md`
 
-3. **Always load global workflow skill:**
+4. **Always load global workflow skill:**
    - Read `./skills/global-workflow/SKILL.md`
    - Apply localisation, git standards, and documentation rules
 

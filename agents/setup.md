@@ -1092,16 +1092,28 @@ docker build -t [project-name] .
 docker run -p 3000:3000 [project-name]
 ```
 
-### Copy Syntek Guide to Project
+### Copy Reference Documents and Syntek Guide to Project
 
-**CRITICAL:** After container setup, copy the Syntek Dev Suite guide to the project:
+**CRITICAL:** After container setup, copy all required reference documents and the Syntek Dev Suite guide to the project:
 
 ```bash
+# Copy all required reference documents to the project's .claude folder
+cp ./examples/setup/CODING-PRINCIPLES.md .claude/CODING-PRINCIPLES.md
+cp ./examples/setup/TESTING.md .claude/TESTING.md
+cp ./examples/setup/SECURITY.md .claude/SECURITY.md
+cp ./examples/setup/ACCESSIBILITY.md .claude/ACCESSIBILITY.md
+cp ./examples/setup/API-DESIGN.md .claude/API-DESIGN.md
+cp ./examples/setup/ARCHITECTURE-PATTERNS.md .claude/ARCHITECTURE-PATTERNS.md
+cp ./examples/setup/DATA-STRUCTURES.md .claude/DATA-STRUCTURES.md
+cp ./examples/setup/PERFORMANCE.md .claude/PERFORMANCE.md
+cp ./examples/setup/DEVELOPMENT.md .claude/DEVELOPMENT.md
+cp ./examples/setup/SEO-CHECKLIST.md .claude/SEO-CHECKLIST.md
+
 # Copy the guide template to the project's .claude folder
 cp ./examples/setup/SYNTEK-GUIDE-TEMPLATE.md .claude/SYNTEK-GUIDE.md
 ```
 
-This guide provides users with complete documentation on using the Syntek Dev Suite agents and commands.
+These reference documents are read by agents when working in this project. All ten files MUST be present in `.claude/` for agents to function correctly.
 
 For additional container configuration examples, see `examples/setup/ENV-FILES.md` and `examples/cicd/DOCKER.md`.
 
@@ -1184,9 +1196,19 @@ After setup completion, provide:
 | .env.staging.example        | Staging environment template     |
 | .env.production.example     | Production environment template  |
 | .env.dev                    | Development environment (local)  |
-| .claude/CLAUDE.md           | Claude Code project context      |
-| .claude/settings.local.json | Claude Code settings             |
-| .claude/commands/           | Project-specific Claude commands |
+| .claude/CLAUDE.md                | Claude Code project context          |
+| .claude/CODING-PRINCIPLES.md     | Coding standards and principles      |
+| .claude/TESTING.md               | Testing guide for this stack         |
+| .claude/SECURITY.md              | Security patterns and checklist      |
+| .claude/ACCESSIBILITY.md         | WCAG 2.2 AA and ARIA patterns        |
+| .claude/API-DESIGN.md            | REST and GraphQL conventions         |
+| .claude/ARCHITECTURE-PATTERNS.md | Service layer and project structure  |
+| .claude/DATA-STRUCTURES.md       | Domain modelling and schema design   |
+| .claude/PERFORMANCE.md           | Query optimisation and caching       |
+| .claude/DEVELOPMENT.md           | Development workflow and tasks       |
+| .claude/SEO-CHECKLIST.md         | SEO & AI discoverability checklist   |
+| .claude/settings.local.json      | Claude Code settings                 |
+| .claude/commands/                | Project-specific Claude commands     |
 
 ### Section README Files Created
 | Folder                   | README Created            |

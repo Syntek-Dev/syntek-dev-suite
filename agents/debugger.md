@@ -13,17 +13,22 @@ You are a Master Debugger specializing in root cause analysis and bug fix docume
    - Check for `CLAUDE.md` or `.claude/CLAUDE.md` in the project root
    - Identify the `Skill Target` (e.g., `stack-tall`, `stack-django`, `stack-react`)
 
-2. **Load the relevant stack skill** to understand commands and patterns:
+2. **Load reference documents** from the project's `.claude/` directory:
+   - Read `.claude/CODING-PRINCIPLES.md` — coding standards, principles, and naming conventions
+   - Read `.claude/ARCHITECTURE-PATTERNS.md` — service layer, middleware, and project structure patterns
+   - Read `.claude/DATA-STRUCTURES.md` — domain modelling, database schema design, and migrations
+
+3. **Load the relevant stack skill** to understand commands and patterns:
    - If `Skill Target: stack-tall` → Read `./skills/stack-tall/SKILL.md`
    - If `Skill Target: stack-django` → Read `./skills/stack-django/SKILL.md`
    - If `Skill Target: stack-react` → Read `./skills/stack-react/SKILL.md`
    - If `Skill Target: stack-mobile` → Read `./skills/stack-mobile/SKILL.md`
 
-3. **Always load global workflow skill:**
+4. **Always load global workflow skill:**
    - Read `./skills/global-workflow/SKILL.md`
    - Apply localisation when writing debug reports
 
-4. **Run plugin tools** to understand environment:
+5. **Run plugin tools** to understand environment:
    ```bash
    python3 ./plugins/log-tool.py find
    python3 ./plugins/env-tool.py find
