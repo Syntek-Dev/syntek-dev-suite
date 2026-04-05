@@ -15,6 +15,7 @@
 - [Authentication and Authorisation](#authentication-and-authorisation)
 - [Input Validation and Sanitisation](#input-validation-and-sanitisation)
 - [Database Security](#database-security)
+  - [Row Level Security (RLS)](#row-level-security-rls)
 - [Cryptography and Encryption Standards](#cryptography-and-encryption-standards)
 - [Transport Security](#transport-security)
 - [API Security](#api-security)
@@ -139,6 +140,29 @@ Assume all external input is hostile until proven otherwise. This includes:
 - Encrypt sensitive columns at rest (PII, payment data, health records) using column-level encryption. See [Cryptography and Encryption Standards](#cryptography-and-encryption-standards) for approved algorithms.
 - Never log raw SQL queries in production — they may contain sensitive parameter values.
 - Run `EXPLAIN` on slow queries before adding indexes. Do not add indexes speculatively.
+
+### Row Level Security (RLS)
+
+**CRITICAL:** Row Level Security is mandatory on every table that stores user-scoped or tenant-scoped data, regardless of stack. RLS enforces row isolation inside the database engine, so that a misconfigured application query cannot expose rows belonging to another user or tenant.
+
+| Engine | RLS Support | Requirement |
+|--------|------------|-------------|
+| PostgreSQL | Native | `ENABLE ROW LEVEL SECURITY` + `FORCE ROW LEVEL SECURITY` + `CREATE POLICY` on every user/tenant-scoped table |
+| Supabase | Native (PostgreSQL) | PostgreSQL RLS using `auth.uid()` |
+| SQL Server | Native | `CREATE SECURITY POLICY` with filter and block predicates |
+| MySQL / MariaDB | None | Application-enforced ORM global scopes on every user/tenant-scoped model (compensating control) |
+| SQLite | None | Application-enforced parameterised `WHERE user_id = ?` on every query (compensating control) |
+
+**Rules:**
+
+- Apply RLS in the same migration that creates the table. Never defer it.
+- Always set `FORCE ROW LEVEL SECURITY` on PostgreSQL tables — without it the table owner (typically the migration role) bypasses all policies.
+- PostgreSQL `UPDATE` policies must include both `USING` (which rows can be updated) and `WITH CHECK` (which values may be written). Missing `WITH CHECK` allows a row to be moved outside the current session's scope.
+- Application middleware must set session variables (`app.current_user_id`, `app.current_tenant_id`) using `SET LOCAL` inside a transaction before any query executes.
+- Admin or service-role bypass policies must be intentional, documented, and restricted to trusted roles only. Never expose the Supabase `service_role` key to client code.
+- For MySQL/MariaDB/SQLite, every Eloquent model, Django manager, or TypeORM repository on a user-scoped or tenant-scoped table must apply a global scope. A model without this scope on a scoped table is a security finding.
+
+📁 **See:** `examples/database/rls/RLS.md` for complete RLS patterns across all supported databases and frameworks.
 
 ---
 
@@ -780,6 +804,9 @@ Before deploying or merging any change to staging or production:
 - [ ] All new endpoints have authentication and authorisation
 - [ ] All user-controlled inputs are validated before use
 - [ ] All database queries use parameterised statements or the ORM
+- [ ] Row Level Security is enabled on all user-scoped and tenant-scoped tables (`ENABLE ROW LEVEL SECURITY` + `FORCE ROW LEVEL SECURITY` on PostgreSQL)
+- [ ] RLS session context middleware is registered and runs after authentication middleware
+- [ ] MySQL/MariaDB/SQLite models on scoped tables have application-level global scopes applied
 - [ ] No `dangerouslySetInnerHTML` without sanitisation (React)
 - [ ] No `$guarded = []` on Eloquent models (Laravel)
 - [ ] Debug mode is disabled in staging and production

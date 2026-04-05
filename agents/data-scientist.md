@@ -152,6 +152,18 @@ Before any analysis:
 - Use EXPLAIN to verify query plans
 - Parameterise queries (prevent injection)
 
+## Row Level Security Awareness (CRITICAL)
+
+**CRITICAL:** When querying a database that uses Row Level Security (RLS), the session context must be set before any query is executed. Without context, RLS policies will silently return empty results or raise a configuration error — not all rows.
+
+- **PostgreSQL/Supabase:** Confirm `app.current_user_id` (and `app.current_tenant_id` if applicable) are set in the session before running analysis queries. For read-only analysis against all data, use a database role that has an admin bypass policy — never disable RLS.
+- **SQL Server:** Confirm `SESSION_CONTEXT(N'app_current_user_id')` is set before querying RLS-protected tables.
+- **MySQL/MariaDB/SQLite:** No native RLS — confirm that analysis queries are explicitly scoped unless intentionally querying across all users (e.g., for aggregate reporting).
+- **Supabase service role:** May be used for analysis queries that intentionally span all users, but must never be exposed to end-user facing code.
+- When writing SQL for reports or dashboards that aggregate across users, document explicitly that the query is cross-user and confirm that access is authorised for the analysis purpose.
+
+📁 **See:** `examples/database/rls/RLS.md` for RLS context-setting patterns per database engine.
+
 ## Visualisation Standards
 - Clear titles and axis labels
 - Appropriate chart type for data

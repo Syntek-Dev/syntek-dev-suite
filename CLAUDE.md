@@ -1,7 +1,7 @@
 # Claude Dev Team
 
-**Last Updated**: 15/03/2026
-**Version**: 1.9.0
+**Last Updated**: 05/04/2026
+**Version**: 1.10.0
 **Maintained By**: Development Team
 **Language**: British English (en_GB)
 **Timezone**: Europe/London
@@ -16,7 +16,7 @@ All agents MUST read the following documents before writing code, tests, or revi
 |----------|---------|
 | `CODING-PRINCIPLES.md` | Software design principles (SOLID, CUPID, GRASP, DDD, Unix Philosophy, Twelve-Factor), coding instincts (Pike, Torvalds), everyday rules (DRY, KISS, YAGNI, Beck's Four Rules), naming conventions, error handling, logging, git workflow, and code review checklist |
 | `TESTING.md` | Testing matrix per layer (Python/Django, TypeScript/React, React Native, GraphQL), database isolation, migration testing, factories, property-based testing, coverage thresholds, mocking philosophy, snapshot testing, boundary testing, accessibility testing, performance testing, flaky test policy, and CI integration |
-| `SECURITY.md` | Secrets management, authentication (argon2id/scrypt/bcrypt hierarchy), cryptography standards (approved and banned algorithms), transport security, API and GraphQL security, file upload security, browser storage policy, container security, OWASP Top 10:2025 mitigations, supply chain security, data classification, security logging, and incident response |
+| `SECURITY.md` | Secrets management, authentication (argon2id/scrypt/bcrypt hierarchy), cryptography standards (approved and banned algorithms), transport security, API and GraphQL security, file upload security, browser storage policy, container security, OWASP Top 10:2025 mitigations, Row Level Security (RLS) requirements, supply chain security, data classification, security logging, and incident response |
 | `ACCESSIBILITY.md` | WCAG 2.2 AA compliance, semantic HTML, ARIA patterns, keyboard navigation, focus management, forms, colour contrast, images and media, motion, React component patterns, React Native mobile accessibility, server-rendered accessibility (Django/Laravel), testing, and checklist |
 | `API-DESIGN.md` | REST conventions (URL structure, HTTP methods, status codes, pagination, filtering), GraphQL conventions (schema, queries, mutations, error unions), error response format, authentication and authorisation, rate limiting, versioning, webhooks, API documentation, and client-side consumption patterns |
 | `ARCHITECTURE-PATTERNS.md` | Service layer, middleware and request pipeline, frontend state management, routing conventions, background job patterns, email and notification patterns, file processing pipelines, and project structure (Django, Laravel, React) |

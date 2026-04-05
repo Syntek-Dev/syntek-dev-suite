@@ -1,7 +1,7 @@
 # Version History
 
-**Last Updated**: 15/03/2026
-**Version**: 1.9.0
+**Last Updated**: 05/04/2026
+**Version**: 1.10.0
 **Maintained By**: Development Team
 **Language**: British English (en_GB)
 **Timezone**: Europe/London
@@ -11,6 +11,7 @@
 ## Table of Contents
 
 - [Unreleased](#unreleased)
+- [1.10.0 - 05/04/2026](#1100---05042026)
 - [1.9.0 - 15/03/2026](#190---15032026)
 - [1.8.0 - 15/03/2026](#180---15032026)
 - [1.7.0 - 13/03/2026](#170---13032026)
@@ -30,6 +31,33 @@
 ### Technical Changes
 
 - Nothing yet
+
+---
+
+## [1.10.0] - 05/04/2026
+
+### Summary
+
+Minor release adding Row Level Security (RLS) documentation and requirements across the database, backend, data scientist, and security reference areas. No breaking changes; all existing agent behaviour and commands remain unchanged.
+
+### Files Changed
+
+| File | Changes |
+|------|---------|
+| `examples/database/rls/RLS.md` | New file — comprehensive RLS guide covering PostgreSQL policy design, role separation, `ENABLE ROW LEVEL SECURITY`, `FORCE ROW LEVEL SECURITY`, `BYPASSRLS`, per-table policy patterns, and multi-tenant isolation |
+| `agents/database.md` | Added RLS requirements: agents must check for RLS on multi-tenant tables, verify policies exist before schema approval, and document bypass roles |
+| `agents/backend.md` | Added RLS requirements: backend agents must confirm application roles do not use `BYPASSRLS` and that service accounts have minimum required privileges |
+| `agents/data-scientist.md` | Added RLS requirements: data scientist agents must confirm queries respect RLS policies and avoid superuser connections in analysis scripts |
+| `examples/setup/SECURITY.md` | Added Row Level Security section covering multi-tenant isolation patterns, policy auditing, common pitfalls (leaking policies, `BYPASSRLS` misuse), and testing approach |
+| `CLAUDE.md` | Added RLS reference to database and security guidance |
+
+### Performance Notes
+
+- No performance impact; documentation-only changes to agent files
+
+### Security Notes
+
+- RLS policies, when implemented as documented, prevent horizontal privilege escalation in multi-tenant PostgreSQL databases
 
 ---
 

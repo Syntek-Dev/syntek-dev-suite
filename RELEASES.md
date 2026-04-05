@@ -1,7 +1,7 @@
 # Release Notes
 
-**Last Updated**: 15/03/2026
-**Version**: 1.9.0
+**Last Updated**: 05/04/2026
+**Version**: 1.10.0
 **Maintained By**: Development Team
 **Language**: British English (en_GB)
 **Timezone**: Europe/London
@@ -12,8 +12,9 @@
 
 - [Table of Contents](#table-of-contents)
 - [Latest Release](#latest-release)
-  - [Version 1.9.0 - 15 March 2026](#version-190---15-march-2026)
+  - [Version 1.10.0 - 05 April 2026](#version-1100---05-april-2026)
 - [Previous Releases](#previous-releases)
+  - [Version 1.9.0 - 15 March 2026](#version-190---15-march-2026)
   - [Version 1.8.0 - 15 March 2026](#version-180---15-march-2026)
   - [Version 1.7.0 - 13 March 2026](#version-170---13-march-2026)
   - [Version 1.6.0 - 24 February 2026](#version-160---24-february-2026)
@@ -31,58 +32,50 @@
 
 ## Latest Release
 
-### Version 1.9.0 - 15 March 2026
+### Version 1.10.0 - 05 April 2026
 
 #### What's New
 
-**Agents Now Read Your Project's Reference Guides Before Working**
+**Row Level Security Documentation and Requirements**
 
-Version 1.9.0 ensures every agent explicitly reads the reference documents that are relevant to its work before it starts. Previously, agents relied on CLAUDE.md mentioning these files — now each agent proactively loads them.
+Version 1.10.0 adds comprehensive Row Level Security (RLS) documentation for PostgreSQL, along with updated requirements across the database, backend, data scientist, and security agents. This ensures that every agent working on a multi-tenant or data-sensitive project understands RLS policies and applies them consistently.
 
-This means the backend agent reads your API design guide, security standards, and performance guide before writing a line of code. The frontend agent reads your accessibility guide and performance targets. The code reviewer reads everything relevant to the code it's about to assess. Every agent, every time.
+**New RLS Guide**
 
-#### What Changed
+A new guide (`examples/database/rls/RLS.md`) covers everything you need to implement RLS correctly:
 
-**All 29 agents updated**
+- How to enable and force RLS on tables (`ENABLE ROW LEVEL SECURITY`, `FORCE ROW LEVEL SECURITY`)
+- Designing per-table policies for SELECT, INSERT, UPDATE, and DELETE
+- Role separation — keeping application roles and superuser roles distinct
+- Multi-tenant isolation patterns using `current_setting()` and `app.current_tenant_id`
+- Understanding `BYPASSRLS` and why application roles must never hold it
+- Auditing and testing your policies to confirm they enforce isolation
 
-Each agent's startup sequence now includes a dedicated step to load the reference documents most relevant to its work. For example:
+**Updated Agent Requirements**
 
-- **Backend agent** loads: Coding Principles, API Design, Architecture Patterns, Data Structures, Security, Performance
-- **Frontend agent** loads: Coding Principles, Accessibility, Performance, Architecture Patterns, Security
-- **Test writer** loads: Coding Principles, Testing, Accessibility, Security
-- **Security agent** loads: Coding Principles, Security, Data Structures
-- And so on for all 29 agents
+Three agents have been updated with explicit RLS requirements:
 
-**`/init` now copies all ten reference documents**
+- **Database agent** — must verify RLS is enabled on all multi-tenant tables and that policies exist before approving schema changes
+- **Backend agent** — must confirm application roles do not carry `BYPASSRLS` and that service accounts hold minimum required privileges
+- **Data scientist agent** — must confirm queries respect RLS policies and that analysis scripts do not connect as a superuser
 
-The initialisation command previously only copied five of the ten reference documents to your project's `.claude/` folder. It now copies all ten:
+**Updated Security Reference**
 
-1. `CODING-PRINCIPLES.md`
-2. `TESTING.md`
-3. `SECURITY.md`
-4. `ACCESSIBILITY.md` *(newly added)*
-5. `API-DESIGN.md` *(newly added)*
-6. `ARCHITECTURE-PATTERNS.md` *(newly added)*
-7. `DATA-STRUCTURES.md` *(newly added)*
-8. `PERFORMANCE.md` *(newly added)*
-9. `DEVELOPMENT.md`
-10. `SEO-CHECKLIST.md`
-
-**Upgrading existing projects**
-
-If your project was initialised before v1.9.0, copy the five new files manually:
-
-```bash
-cp $SYNTEK_DIR/examples/setup/ACCESSIBILITY.md .claude/ACCESSIBILITY.md
-cp $SYNTEK_DIR/examples/setup/API-DESIGN.md .claude/API-DESIGN.md
-cp $SYNTEK_DIR/examples/setup/ARCHITECTURE-PATTERNS.md .claude/ARCHITECTURE-PATTERNS.md
-cp $SYNTEK_DIR/examples/setup/DATA-STRUCTURES.md .claude/DATA-STRUCTURES.md
-cp $SYNTEK_DIR/examples/setup/PERFORMANCE.md .claude/PERFORMANCE.md
-```
+`examples/setup/SECURITY.md` now includes a dedicated Row Level Security section covering multi-tenant isolation patterns, policy auditing, common pitfalls, and a testing approach for verifying enforcement.
 
 ---
 
 ## Previous Releases
+
+### Version 1.9.0 - 15 March 2026
+
+#### Highlights
+
+- All 29 agents now explicitly load their relevant reference documents before working
+- `/init` copies all ten reference documents to `.claude/` (previously only five were copied)
+- Every agent's startup sequence includes a dedicated step to load domain-relevant guides (Coding Principles, Security, Accessibility, API Design, Architecture Patterns, Data Structures, Performance, Testing, Development, SEO Checklist)
+
+---
 
 ### Version 1.8.0 - 15 March 2026
 

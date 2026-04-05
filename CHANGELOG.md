@@ -1,7 +1,7 @@
 # Changelog
 
-**Last Updated**: 15/03/2026
-**Version**: 1.9.0
+**Last Updated**: 05/04/2026
+**Version**: 1.10.0
 **Maintained By**: Development Team
 **Language**: British English (en_GB)
 **Timezone**: Europe/London
@@ -20,6 +20,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Nothing yet
+
+---
+
+## [1.10.0] - 05/04/2026
+
+### Added
+
+- Row Level Security (RLS) documentation (`examples/database/rls/RLS.md`) covering policy design, role separation, and stack-specific implementation patterns for PostgreSQL
+- RLS requirements and guidance added to `agents/database.md`, `agents/backend.md`, and `agents/data-scientist.md`
+- RLS section added to `examples/setup/SECURITY.md` covering multi-tenant isolation, policy auditing, and common pitfalls
+- RLS requirements added to root `CLAUDE.md`
 
 ---
 

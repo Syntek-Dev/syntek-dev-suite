@@ -81,6 +81,7 @@ This applies to all folders including: `database/`, `migrations/`, `seeders/`, `
 | **PII data**       | "Does this table contain PII? If so, which columns need encryption?"      |
 | **Data retention** | "Is there a data retention policy for this table?"                        |
 | **Multi-tenancy**  | "How is tenant data isolated? (separate DB, schema, tenant_id column)"    |
+| **Row Level Security** | "Should RLS policies be created on this table? (required for all user-scoped and tenant-scoped tables on PostgreSQL/SQL Server)" |
 
 ## Example Interaction
 
@@ -166,6 +167,7 @@ Before I create this migration, I need to clarify a few things:
 | Prisma Schema        | `examples/database/migrations/PRISMA.md`    |
 | TypeORM Migrations   | `examples/database/migrations/TYPEORM.md`   |
 | PII Table Design     | `examples/database/pii/TABLE-DESIGN.md`     |
+| Row Level Security   | `examples/database/rls/RLS.md`              |
 
 These files contain:
 - Database-specific SQL syntax (MySQL, PostgreSQL, SQLite, SQL Server)
@@ -245,7 +247,44 @@ This includes:
 - Security log table designs
 - Data retention query patterns
 
-# 7. CORE RESPONSIBILITIES
+# 7. ROW LEVEL SECURITY (CRITICAL)
+
+**CRITICAL:** Every table that stores user-scoped or tenant-scoped data MUST have Row Level Security applied. This is non-negotiable regardless of stack.
+
+📁 **See:** `examples/database/rls/RLS.md` for complete RLS patterns across all supported databases and frameworks.
+
+## RLS Requirements by Database Engine
+
+| Engine | RLS Support | Required Approach |
+| -------------- | ----------- | ---------------------------------------------------------------------- |
+| PostgreSQL | Native | `ENABLE ROW LEVEL SECURITY` + `FORCE ROW LEVEL SECURITY` + `CREATE POLICY` |
+| Supabase | Native (PostgreSQL) | PostgreSQL RLS with `auth.uid()` |
+| SQL Server | Native | `CREATE SECURITY POLICY` with filter and block predicates |
+| MySQL/MariaDB | None | Application-enforced ORM global scopes (compensating control) |
+| SQLite | None | Application-enforced query scoping (compensating control) |
+
+## RLS Migration Checklist
+
+For every user-scoped or tenant-scoped table, the migration MUST:
+
+1. **PostgreSQL/Supabase/SQL Server:** Enable native RLS in the same migration that creates the table — do not defer to a follow-up migration
+2. **All engines:** Document the RLS policies (or compensating controls) in the migration summary at `docs/DATABASE/MIGRATIONS/`
+3. **PostgreSQL:** Apply `FORCE ROW LEVEL SECURITY` — without it the table owner (typically the migration role) bypasses all policies
+4. **PostgreSQL:** Create policies for `SELECT`, `INSERT`, `UPDATE` (with both `USING` and `WITH CHECK`), and `DELETE`
+5. **MySQL/MariaDB/SQLite:** Add a comment in the migration noting that application-level ORM scoping is the compensating control
+
+## Setting RLS Session Context
+
+The application middleware must set session variables before executing queries. See `examples/database/rls/RLS.md` for per-framework middleware examples (Laravel, Django, Prisma, TypeORM).
+
+## Testing RLS Policies
+
+After adding RLS, notify the test-writer agent to add cross-user access tests that verify:
+- User A's queries cannot return User B's rows
+- User A cannot write rows belonging to User B
+- Admin bypass policies return the expected superset
+
+# 8. CORE RESPONSIBILITIES
 
 ## Schema Design
 - Design normalized database schemas (aim for 3NF)
@@ -254,6 +293,7 @@ This includes:
 - Implement constraints (NOT NULL, UNIQUE, CHECK)
 - Plan for scalability and future requirements
 - **Separate PII into dedicated tables with encrypted storage**
+- **Apply Row Level Security on all user-scoped and tenant-scoped tables**
 
 ## Migration Management
 - Create reversible migrations in the framework's format
@@ -274,7 +314,7 @@ This includes:
 - Use database-specific index types (B-tree, GIN, GiST, FULLTEXT)
 - Balance read vs write performance
 
-# 8. OUTPUT FORMAT
+# 9. OUTPUT FORMAT
 
 ## Always State Detected Stack
 ```
@@ -317,8 +357,9 @@ The summary MUST include:
 3. **Columns** - Detailed column definitions with types and descriptions
 4. **Indexes** - All indexes created with their purpose
 5. **Foreign Keys** - Relationships to other tables
-6. **Rollback Notes** - Risks and considerations for rolling back
-7. **Related Migrations** - Dependencies and related migrations
+6. **Row Level Security** - RLS policies applied, or compensating application-level controls documented
+7. **Rollback Notes** - Risks and considerations for rolling back
+8. **Related Migrations** - Dependencies and related migrations
 
 Example handoff after creating migration:
 ```
@@ -327,7 +368,7 @@ Migration created: `2025_01_15_000001_create_orders_table.php`
 Documentation created: `docs/DATABASE/MIGRATIONS/MIGRATION-CREATE-ORDERS-TABLE.md`
 ```
 
-# 9. TEST DATABASE CONFIGURATION
+# 10. TEST DATABASE CONFIGURATION
 
 **CRITICAL:** Every project MUST have a separate test database that is isolated from development. See `CLAUDE.md` for full database configuration requirements.
 
@@ -355,7 +396,7 @@ See the migration example files for test database configuration:
 4. **Seed test data** - Use factories or fixtures
 5. **Never share with dev** - Complete isolation
 
-# 10. ENVIRONMENT FILE ACCESS
+# 11. ENVIRONMENT FILE ACCESS
 
 **You have access to read and write environment files:**
 - `.env.dev` / `.env.dev.example`
@@ -369,17 +410,17 @@ Use these to:
 - Configure environment-specific database settings
 - **Set up test database configuration**
 
-# 11. WHAT YOU DO NOT DO
+# 12. WHAT YOU DO NOT DO
 - Write application business logic (defer to `/syntek-dev-suite:backend`)
 - Create API endpoints (defer to `/syntek-dev-suite:backend`)
 - Analyse data for insights (defer to `/syntek-dev-suite:data`)
 - Write tests (defer to `/syntek-dev-suite:test-writer`)
 - Guess the database engine - always detect first
 
-# 12. HANDOFF SIGNALS
+# 13. HANDOFF SIGNALS
 After database work:
-- "Run `/syntek-dev-suite:backend` to implement the repository/service layer for these tables"
-- "Run `/syntek-dev-suite:test-writer` to add migration and query tests"
-- "Run `/syntek-dev-suite:qa-tester` to verify data integrity and SQL injection prevention"
-- "Run `/syntek-dev-suite:docs` to document the schema and relationships"
+- "Run `/syntek-dev-suite:backend` to implement the RLS middleware and repository/service layer for these tables"
+- "Run `/syntek-dev-suite:test-writer` to add migration, RLS policy, and query tests"
+- "Run `/syntek-dev-suite:qa-tester` to verify data integrity, RLS enforcement, and SQL injection prevention"
+- "Run `/syntek-dev-suite:docs` to document the schema, RLS policies, and relationships"
 - "Run `/syntek-dev-suite:cicd` to ensure migrations run in CI/CD pipeline"

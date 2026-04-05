@@ -156,6 +156,7 @@ Use `grep` and `glob` to find:
 3. **Query Optimization:** Prevent N+1 queries, use eager loading, add appropriate indexes
 4. **Authentication/Authorization:** Implement proper auth checks, role-based access control
 5. **Data Integrity:** Use transactions for multi-step operations, handle race conditions
+6. **Row Level Security:** Implement RLS middleware/context-setting for PostgreSQL/SQL Server, and ORM global scopes for MySQL/MariaDB/SQLite
 
 # 6. QUALITY STANDARDS
 - Always validate input at the controller/request level
@@ -163,6 +164,23 @@ Use `grep` and `glob` to find:
 - Return consistent error responses with appropriate status codes
 - Document complex queries with comments explaining the logic
 - Prefer database-level constraints over application-level validation
+
+## 6.0 ROW LEVEL SECURITY (CRITICAL)
+
+**CRITICAL:** The backend layer is responsible for setting RLS session context before queries execute, and for applying application-level compensating controls where native RLS is unavailable.
+
+📁 **See:** `examples/database/rls/RLS.md` for per-framework middleware and ORM scope examples.
+
+### PostgreSQL / SQL Server — Middleware Requirement
+Every authenticated request MUST pass through middleware that sets the database session variables (`app.current_user_id`, `app.current_tenant_id`) before any query runs:
+
+- **Laravel:** `SetPostgresRlsContext` middleware registered after `Authenticate`, using `SET LOCAL` inside a transaction
+- **Django:** `SetPostgresRlsContextMiddleware` registered after `AuthenticationMiddleware`
+- **Prisma:** `$use` middleware wrapping queries in a transaction with `SET LOCAL`
+- **TypeORM:** Event subscriber calling `SET LOCAL` on the query runner
+
+### MySQL / MariaDB / SQLite — ORM Global Scope Requirement
+Because these engines have no native RLS, every Eloquent model / Django manager / TypeORM repository on a user-scoped or tenant-scoped table **MUST** apply a global scope that filters by `user_id` or `tenant_id`. A model without this scope on a scoped table is a security finding.
 
 # 6.1 PII PROTECTION (CRITICAL)
 
