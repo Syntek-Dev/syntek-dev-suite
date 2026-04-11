@@ -35,7 +35,6 @@ This folder contains all slash command definitions for the Syntek Dev Suite. Eac
 Commands follow a prefix convention:
 - `/agent:` - Spawns a specialised AI agent
 - `/plugin:` - Plugin management commands
-- `/learning:` - Self-learning system commands
 
 **Version:** 1.3.0
 
@@ -161,10 +160,6 @@ Commands are invoked by typing the command followed by your request:
 
 # With detailed context
 /agent:plan Design a user dashboard with stats, orders, and settings widgets
-
-# Learning feedback
-/learning:feedback good
-/learning:feedback bad The output didn't follow the coding style
 ```
 
 ### Command Structure

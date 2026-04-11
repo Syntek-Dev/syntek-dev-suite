@@ -56,7 +56,6 @@ agents/
 ├── git.md                 # Git workflow and branching
 ├── logging.md             # Logging and audit trails
 ├── notifications.md       # Email, SMS, push notifications
-├── optimiser.md           # Performance optimisation
 ├── planner.md             # System architect and planner
 ├── pm.md                  # PM tool setup and integration
 ├── qa-tester.md           # Quality assurance tester
@@ -112,7 +111,6 @@ agents/
 | Refactor   | `refactor.md`   | Sonnet | Code cleanup without changing logic |
 | Syntax     | `syntax.md`     | Haiku  | Fix syntax and linting errors       |
 | Doc Writer | `doc-writer.md` | Haiku  | Technical documentation             |
-| Optimiser  | `optimiser.md`  | Sonnet | Performance optimisation            |
 
 ### Infrastructure
 
