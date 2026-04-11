@@ -1,7 +1,7 @@
 # Release Notes
 
-**Last Updated**: 05/04/2026
-**Version**: 1.10.0
+**Last Updated**: 11/04/2026
+**Version**: 1.11.0
 **Maintained By**: Development Team
 **Language**: British English (en_GB)
 **Timezone**: Europe/London
@@ -12,8 +12,9 @@
 
 - [Table of Contents](#table-of-contents)
 - [Latest Release](#latest-release)
-  - [Version 1.10.0 - 05 April 2026](#version-1100---05-april-2026)
+  - [Version 1.11.0 - 11 April 2026](#version-1110---11-april-2026)
 - [Previous Releases](#previous-releases)
+  - [Version 1.10.0 - 05 April 2026](#version-1100---05-april-2026)
   - [Version 1.9.0 - 15 March 2026](#version-190---15-march-2026)
   - [Version 1.8.0 - 15 March 2026](#version-180---15-march-2026)
   - [Version 1.7.0 - 13 March 2026](#version-170---13-march-2026)
@@ -31,6 +32,37 @@
 ---
 
 ## Latest Release
+
+### Version 1.11.0 - 11 April 2026
+
+#### What's New
+
+**Multi-Layer Project Scaffolding System**
+
+Version 1.11.0 introduces `/syntek-dev-suite:scaffold` — a new command that generates a standardised three-layer workflow structure for any syntek-dev-suite project, whether brand new or already established.
+
+The scaffolding creates:
+- **Layer 1** — An updated `.claude/CLAUDE.md` with routing logic, MCP server registration, model selection rules (Haiku/Sonnet/Opus by task type), and the GAPS.md protocol
+- **Layer 2** — `CONTEXT.md` in every significant folder, explaining purpose, contents, and constraints
+- **Layer 3** — Three top-level domains (`code/`, `how-to/`, `project-management/`) each with `docs/`, `src/`, and `workflows/` sub-folders containing 14 numbered workflow directories
+
+Each workflow folder contains `CONTEXT.md` (what, when, what it produces), `STEPS.md` (ordered steps referencing syntek-dev-suite agents), and `CHECKLIST.md` (completion criteria and definition of done).
+
+**GAPS.md Protocol**
+
+Any workflow folder missing `STEPS.md` or `CHECKLIST.md` is logged in `/GAPS.md` at the project root. Claude never silently generates missing files — it logs the gap and proceeds using `CONTEXT.md` alone.
+
+**Integrated with `/init`**
+
+The `/init` command now offers to run `/syntek-dev-suite:scaffold new` as Step 10, immediately after project initialisation.
+
+#### Upgrade Notes
+
+No breaking changes. All existing agents, commands, skills, and plugins are unchanged. The scaffold is purely additive.
+
+---
+
+## Previous Releases
 
 ### Version 1.10.0 - 05 April 2026
 

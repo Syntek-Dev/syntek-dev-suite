@@ -1,7 +1,7 @@
 # Version History
 
-**Last Updated**: 05/04/2026
-**Version**: 1.10.0
+**Last Updated**: 11/04/2026
+**Version**: 1.11.0
 **Maintained By**: Development Team
 **Language**: British English (en_GB)
 **Timezone**: Europe/London
@@ -11,6 +11,7 @@
 ## Table of Contents
 
 - [Unreleased](#unreleased)
+- [1.11.0 - 11/04/2026](#1110---11042026)
 - [1.10.0 - 05/04/2026](#1100---05042026)
 - [1.9.0 - 15/03/2026](#190---15032026)
 - [1.8.0 - 15/03/2026](#180---15032026)
@@ -31,6 +32,44 @@
 ### Technical Changes
 
 - Nothing yet
+
+---
+
+## [1.11.0] - 11/04/2026
+
+### Summary
+
+Feature release adding the multi-layer project scaffolding system. Introduces `/syntek-dev-suite:scaffold` command and agent, 22 template files in `examples/scaffold/`, and Step 10 to `/init`. No breaking changes; all existing agents, commands, skills, and plugins are unchanged.
+
+### Files Changed
+
+| File | Changes |
+|------|---------|
+| `commands/scaffold.md` | New command — `new` and `migrate` modes, prerequisites, usage examples |
+| `agents/scaffold.md` | New agent — 9-step execution flow reading templates from `examples/scaffold/`, backing up `.claude/CLAUDE.md`, generating all domain/workflow files, and producing `GAPS.md` |
+| `examples/scaffold/SCAFFOLD-SYSTEM.md` | New — authoritative system reference for the scaffold agent |
+| `examples/scaffold/CLAUDE-MD-ROUTING-TEMPLATE.md` | New — routing overlay template with layer routing, MCP servers, model selection (Haiku/Sonnet/Opus), GAPS.md rule, routing rule |
+| `examples/scaffold/DOMAIN-CONTEXT-TEMPLATE.md` | New — template for domain-level CONTEXT.md files |
+| `examples/scaffold/LAYER-CONTEXT-TEMPLATE.md` | New — template for sub-folder CONTEXT.md files |
+| `examples/scaffold/WORKFLOW-CONTEXT-TEMPLATE.md` | New — template for numbered workflow CONTEXT.md files |
+| `examples/scaffold/WORKFLOW-STEPS-TEMPLATE.md` | New — generic fallback STEPS.md (triggers GAPS.md entry when used) |
+| `examples/scaffold/WORKFLOW-CHECKLIST-TEMPLATE.md` | New — generic checklist template for all workflows |
+| `examples/scaffold/GAPS-TEMPLATE.md` | New — GAPS.md starting structure |
+| `examples/scaffold/code-01-new-feature-STEPS.md` | New — plan → stories → sprint → backend → frontend → tests → review → git |
+| `examples/scaffold/code-02-tdd-cycle-STEPS.md` | New — test-writer (failing) → implement → test-writer (coverage) → review → git |
+| `examples/scaffold/code-03-security-hardening-STEPS.md` | New — security → qa-tester → OWASP checklist → audit record → git |
+| `examples/scaffold/code-04-api-design-STEPS.md` | New — plan → contract tests → backend → security → docs → review → git |
+| `examples/scaffold/code-05-database-migration-STEPS.md` | New — database agent → review → apply → migration tests → review → git |
+| `examples/scaffold/how-to-01-setup-STEPS.md` | New — init → setup agent → verify environment → configure env vars |
+| `examples/scaffold/how-to-02-git-workflow-STEPS.md` | New — branch strategy, commit format, PR flow, pre-commit hooks |
+| `examples/scaffold/how-to-03-versioning-STEPS.md` | New — version bump rules, version agent, CHANGELOG review, tag |
+| `examples/scaffold/pm-01-architecture-decision-STEPS.md` | New — plan agent → ADR document → review → commit |
+| `examples/scaffold/pm-02-sprint-planning-STEPS.md` | New — sprint agent → MoSCoW balance → sprint document → commit |
+| `examples/scaffold/pm-03-story-writing-STEPS.md` | New — stories agent → review → number and save → stakeholder approval |
+| `examples/scaffold/pm-04-bug-report-STEPS.md` | New — qa-tester → debugger → bug record → fix → regression test → review → git |
+| `examples/scaffold/pm-05-code-review-STEPS.md` | New — review agent → address findings → human sign-off → merge |
+| `examples/scaffold/pm-06-security-audit-STEPS.md` | New — security → qa-tester → dependency audit → OWASP checklist → audit report → git |
+| `commands/init.md` | Step 10 added — offer to run `/syntek-dev-suite:scaffold new` after initialisation |
 
 ---
 

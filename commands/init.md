@@ -315,6 +315,33 @@ After initialisation, output:
 - **Skills:** Loaded automatically based on stack
 ```
 
+### Step 10: Offer Workflow Scaffolding
+
+After displaying the Step 9 summary, ask the user:
+
+```
+Would you like to scaffold the three-layer workflow structure now?
+
+This adds:
+- `code/`, `how-to/`, and `project-management/` domain folders
+- Numbered workflow folders with CONTEXT.md, STEPS.md, and CHECKLIST.md
+- An updated `.claude/CLAUDE.md` with routing logic, MCP server registration, and model selection rules
+- `GAPS.md` at the project root for any missing workflow files
+
+1. **Yes** → Run `/syntek-dev-suite:scaffold new`
+2. **No**  → Skip (run `/syntek-dev-suite:scaffold` manually later)
+```
+
+If the user selects **Yes**, spawn the scaffold agent:
+
+```
+/syntek-dev-suite:scaffold new
+```
+
+The scaffold agent reads the `.claude/CLAUDE.md` just created by init to extract the project name and stack — no additional input is needed.
+
+---
+
 ## User's Request
 
 $ARGUMENTS

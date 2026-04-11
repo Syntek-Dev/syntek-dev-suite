@@ -1,7 +1,7 @@
 # Changelog
 
-**Last Updated**: 05/04/2026
-**Version**: 1.10.0
+**Last Updated**: 11/04/2026
+**Version**: 1.11.0
 **Maintained By**: Development Team
 **Language**: British English (en_GB)
 **Timezone**: Europe/London
@@ -20,6 +20,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Nothing yet
+
+---
+
+## [1.11.0] - 11/04/2026
+
+### Added
+
+- Multi-layer project scaffolding system (`/syntek-dev-suite:scaffold`) generating a standardised three-layer structure for new and existing projects
+- `commands/scaffold.md` — new slash command supporting `new` and `migrate` modes
+- `agents/scaffold.md` — scaffold agent that reads templates, backs up `.claude/CLAUDE.md`, generates all domain folders, workflow folders, and `GAPS.md`
+- `examples/scaffold/` — 22 template files: 8 core structural templates and 14 per-workflow STEPS templates across all three domains
+- `CLAUDE-MD-ROUTING-TEMPLATE.md` — routing overlay template including layer routing table, MCP server registration, model selection rules (Haiku/Sonnet/Opus by task type, no version numbers), GAPS.md rule, and routing rule
+- `GAPS.md` protocol — any workflow folder missing `STEPS.md` or `CHECKLIST.md` is logged at the project root; Claude never silently generates missing files
+- Step 10 added to `/syntek-dev-suite:init` — offers to run `/syntek-dev-suite:scaffold new` immediately after initialisation
+
+### Architecture Note
+
+Agents are retained. The scaffold system is additive — workflow `STEPS.md` files reference agents by `/syntek-dev-suite:` command name, so workflows invoke existing agents rather than replacing them.
 
 ---
 
