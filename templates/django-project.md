@@ -586,14 +586,6 @@ $ARGUMENTS
 │   ├── BUGS/
 │   ├── DEVOPS/
 │   ├── GUIDES/
-│   ├── METRICS/               # Self-learning system data
-│   │   ├── README.md
-│   │   ├── config.json
-│   │   ├── runs/
-│   │   ├── feedback/
-│   │   ├── aggregates/
-│   │   ├── variants/
-│   │   └── optimisations/
 │   ├── PLANS/
 │   ├── QA/
 │   ├── STORIES/

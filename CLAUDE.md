@@ -1,7 +1,7 @@
 # Claude Dev Team
 
 **Last Updated**: 11/04/2026
-**Version**: 1.11.0
+**Version**: 1.12.0
 **Maintained By**: Development Team
 **Language**: British English (en_GB)
 **Timezone**: Europe/London
@@ -183,11 +183,7 @@ The `plugins/` directory contains Python utilities that agents can use to gather
 | `db-tool.py` | Database type and ORM detection | `./plugins/db-tool.py detect` |
 | `project-tool.py` | Language, framework, and structure detection | `./plugins/project-tool.py info` |
 | `log-tool.py` | Log file discovery and analysis | `./plugins/log-tool.py find` |
-| `metrics-tool.py` | Self-learning metrics recording and querying | `./plugins/metrics-tool.py status` |
-| `feedback-tool.py` | User feedback collection and analysis | `./plugins/feedback-tool.py status` |
 | `quality-tool.py` | Code quality checks and linting | `./plugins/quality-tool.py status` |
-| `ab-test-tool.py` | A/B testing for agent prompt variants | `./plugins/ab-test-tool.py list` |
-| `optimiser-tool.py` | Agent performance analysis and optimisation | `./plugins/optimiser-tool.py status` |
 | `chrome-tool.py` | Cross-platform Chrome detection and configuration | `./plugins/chrome-tool.py detect` |
 | `pm-tool.py` | PM tool detection (ClickUp, Linear, Jira, etc.) | `./plugins/pm-tool.py detect` |
 
@@ -201,7 +197,6 @@ Agents should run these plugins to gather context before making decisions:
 - **Backend Agent:** Run `project-tool.py`, `db-tool.py`, `env-tool.py`
 - **Logging Agent:** Run `log-tool.py`, `project-tool.py`
 - **Debugger Agent:** Run `log-tool.py`, `env-tool.py`
-- **Optimiser Agent:** Run `metrics-tool.py`, `feedback-tool.py`, `optimiser-tool.py`
 - **Version Agent:** Run `git-tool.py`, `project-tool.py`
 - **Git Agent:** Run `git-tool.py` then call Version Agent before commits
 - **PM Agent:** Run `pm-tool.py`, `project-tool.py`, `env-tool.py`
@@ -265,7 +260,6 @@ docs/
 ├── PLANS/
 ├── DEVOPS/
 ├── DATABASE/
-├── METRICS/
 └── README.md
 ```
 
@@ -314,25 +308,6 @@ The Version Agent (`/version`) manages all version-related files. Every project 
 4. Use imperative mood ("Add feature" not "Added feature")
 5. Keep entries concise but descriptive
 6. **Date format:** DD/MM/YYYY (per localisation settings)
-
----
-
-## Self-Learning System
-
-The plugin includes a self-learning system that improves agent performance based on user feedback. Learning data is stored in `docs/METRICS/` and committed to Git for team-wide improvements. Configuration is in `docs/METRICS/config.json`.
-
-| Command | Description |
-|---------|-------------|
-| `/learning:feedback good` | Mark the last run as successful |
-| `/learning:feedback bad` | Mark the last run as needing improvement |
-| `/learning:feedback skip` | Skip feedback for this run |
-| `/learning:ab-test list` | List active A/B tests |
-| `/learning:ab-test status <agent>` | Show test results for an agent |
-| `/learning:optimise status` | Show optimisation system status |
-| `/learning:optimise analyse <agent>` | Analyse an agent's performance |
-| `/learning:optimise apply <id>` | Apply a pending optimisation |
-
-See `docs/METRICS/README.md` for the full system documentation, folder structure, configuration options, and feedback criteria.
 
 ---
 

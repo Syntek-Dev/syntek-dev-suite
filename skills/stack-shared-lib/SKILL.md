@@ -175,13 +175,6 @@ packages/shared/
 ├── tsconfig.json
 └── tsup.config.ts          # Or rollup.config.js
 
-docs/
-└── METRICS/            # Self-learning system (see global-workflow skill)
-    ├── README.md
-    ├── config.json
-    ├── runs/
-    ├── feedback/
-    └── optimisations/
 ```
 
 ---

@@ -115,11 +115,4 @@ tests/
 ├── Feature/            # Integration tests
 └── Unit/               # Unit tests
 
-docs/
-└── METRICS/            # Self-learning system (see global-workflow skill)
-    ├── README.md
-    ├── config.json
-    ├── runs/
-    ├── feedback/
-    └── optimisations/
 ```

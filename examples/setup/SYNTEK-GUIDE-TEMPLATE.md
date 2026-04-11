@@ -34,7 +34,6 @@
   - [Infrastructure](#infrastructure)
   - [Specialised](#specialised)
 - [Plugin Commands](#plugin-commands)
-- [Learning Commands](#learning-commands)
 - [Version Management](#version-management)
   - [Version Commands](#version-commands)
   - [Version Files Managed](#version-files-managed)
@@ -42,12 +41,6 @@
 - [Skills Reference](#skills-reference)
   - [Stack Skills](#stack-skills)
   - [Global Skill](#global-skill)
-- [Self-Learning and A/B Testing](#self-learning-and-ab-testing)
-  - [How It Works](#how-it-works)
-  - [A/B Testing](#ab-testing)
-  - [Giving Feedback](#giving-feedback)
-  - [Project-Specific Learning](#project-specific-learning)
-  - [Learning Best Practices](#learning-best-practices)
 - [Markdown All in One Extension](#markdown-all-in-one-extension)
   - [Key Features](#key-features)
   - [Keyboard Shortcuts](#keyboard-shortcuts)
@@ -60,7 +53,6 @@
   - [5. Use the Right Model](#5-use-the-right-model)
   - [6. Chain Commands Logically](#6-chain-commands-logically)
   - [7. Commit After Each Step](#7-commit-after-each-step)
-  - [8. Give Feedback](#8-give-feedback)
 - [Environment Commands](#environment-commands)
 - [Browser Configuration](#browser-configuration)
   - [Browser Environment Variable](#browser-environment-variable)
@@ -93,9 +85,6 @@ The Syntek Dev Suite provides specialised AI agents for full-stack development. 
 
 # Review code
 /syntek-dev-suite:qa-tester Review the auth implementation
-
-# Give feedback to improve the agent
-/syntek-dev-suite:learning-feedback good
 ```
 
 ---
@@ -425,22 +414,6 @@ All Syntek Dev Suite commands use the `/syntek-dev-suite:` prefix:
 
 ---
 
-## Learning Commands
-
-The learning system helps agents improve over time based on your feedback.
-
-| Command                                               | Description                                       |
-| ----------------------------------------------------- | ------------------------------------------------- |
-| `/syntek-dev-suite:learning-feedback good`            | Mark the last run as successful                   |
-| `/syntek-dev-suite:learning-feedback bad [comment]`   | Mark as needing improvement with optional comment |
-| `/syntek-dev-suite:learning-ab-test list`             | List active A/B tests                             |
-| `/syntek-dev-suite:learning-ab-test status <agent>`   | Show test results for an agent                    |
-| `/syntek-dev-suite:learning-optimise status`          | Show optimisation system status                   |
-| `/syntek-dev-suite:learning-optimise analyse <agent>` | Analyse an agent's performance                    |
-| `/syntek-dev-suite:learning-optimise apply <id>`      | Apply a pending optimisation                      |
-
----
-
 ## Version Management
 
 The version agent manages semantic versioning, changelogs, and markdown headers across your project.
@@ -508,68 +481,6 @@ The `global-workflow` skill is always loaded and provides:
 - Git commit message standards
 - Documentation formatting rules
 - Browser configuration (Chrome/Chrome Beta)
-
----
-
-## Self-Learning and A/B Testing
-
-The plugin includes a self-learning system that improves agent performance based on your feedback. Each project develops its own optimised prompts over time.
-
-### How It Works
-
-1. **Feedback Collection** - After each agent run, rate the output
-2. **Metrics Recording** - Run duration, outcomes, and errors are tracked
-3. **Pattern Analysis** - The system identifies what works and what doesn't
-4. **A/B Testing** - Prompt variants are tested to find the best approach
-5. **Prompt Optimisation** - Winning prompts are applied automatically
-
-### A/B Testing
-
-Each agent can run A/B tests on prompt variants to discover what works best for your specific project:
-
-```bash
-# List active A/B tests
-/syntek-dev-suite:learning-ab-test list
-
-# Check test status for an agent
-/syntek-dev-suite:learning-ab-test status backend
-
-# The system automatically:
-# - Randomly assigns variants to runs
-# - Tracks success/failure rates
-# - Identifies statistically significant winners
-# - Applies winning prompts automatically
-```
-
-### Giving Feedback
-
-After each agent run, provide feedback to improve future runs:
-
-```bash
-# If the output was good
-/syntek-dev-suite:learning-feedback good
-
-# If the output needs improvement
-/syntek-dev-suite:learning-feedback bad The output didn't follow the coding style
-
-# If you can't evaluate yet
-# (skip feedback - just don't run the command)
-```
-
-### Project-Specific Learning
-
-- All feedback and metrics are stored in your project's `docs/METRICS/` folder
-- Data is committed to Git, so the whole team benefits from improvements
-- Each project develops its own optimised prompts over time
-- No external API calls - learning uses Claude Code CLI directly
-- The more feedback you provide, the better the agents become for your project
-
-### Learning Best Practices
-
-1. **Be consistent** - Always provide feedback after significant agent runs
-2. **Be specific** - When marking as "bad", explain what was wrong
-3. **Trust the process** - Improvements take time and multiple data points
-4. **Check A/B tests** - Review test status periodically to see improvements
 
 ---
 
@@ -677,15 +588,6 @@ git commit -m "feat: add User model"
 
 /syntek-dev-suite:test-writer Write tests for User model
 git commit -m "test: add User model tests"
-```
-
-### 8. Give Feedback
-
-Help agents improve by providing feedback:
-
-```bash
-/syntek-dev-suite:learning-feedback good   # When output is correct
-/syntek-dev-suite:learning-feedback bad    # When output needs improvement
 ```
 
 ---

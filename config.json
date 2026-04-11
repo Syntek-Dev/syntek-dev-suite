@@ -16,10 +16,6 @@
         "hooks": [
           {
             "type": "command",
-            "command": "echo ''; echo '---'; echo 'How was this response?'; echo '  /learning:feedback good  - Worked well'; echo '  /learning:feedback bad   - Needs improvement'; echo '---'"
-          },
-          {
-            "type": "command",
             "command": "notify-send 'Claude Agent' 'Task Completed' || osascript -e 'display notification \"Task Completed\" with title \"Claude Agent\"'"
           }
         ]
@@ -157,53 +153,6 @@
       }
     },
     {
-      "name": "metrics_status",
-      "description": "Records and queries agent performance metrics for the self-learning system.",
-      "input_schema": {
-        "type": "object",
-        "properties": {
-          "command": {
-            "type": "string",
-            "description": "Subcommand: status, record, query, summary, aggregate, last",
-            "enum": ["status", "record", "query", "summary", "aggregate", "last"]
-          },
-          "agent": {
-            "type": "string",
-            "description": "Agent name (for record, query, summary)"
-          }
-        },
-        "required": []
-      },
-      "execution": {
-        "type": "command",
-        "command": "python3 ./plugins/metrics-tool.py ${command:-status} ${agent:-}"
-      }
-    },
-    {
-      "name": "feedback_status",
-      "description": "Records and queries user feedback for agent runs.",
-      "input_schema": {
-        "type": "object",
-        "properties": {
-          "command": {
-            "type": "string",
-            "description": "Subcommand: status, record, query, analyse, prompt",
-            "enum": ["status", "record", "query", "analyse", "prompt"]
-          },
-          "rating": {
-            "type": "string",
-            "description": "Feedback rating: good, bad, skip",
-            "enum": ["good", "bad", "skip"]
-          }
-        },
-        "required": []
-      },
-      "execution": {
-        "type": "command",
-        "command": "python3 ./plugins/feedback-tool.py ${command:-status} ${rating:-}"
-      }
-    },
-    {
       "name": "quality_check",
       "description": "Runs linters and measures code quality metrics.",
       "input_schema": {
@@ -220,56 +169,6 @@
       "execution": {
         "type": "command",
         "command": "python3 ./plugins/quality-tool.py ${command:-status}"
-      }
-    },
-    {
-      "name": "ab_test",
-      "description": "Manages A/B tests for agent prompt variants.",
-      "input_schema": {
-        "type": "object",
-        "properties": {
-          "command": {
-            "type": "string",
-            "description": "Subcommand: list, status, select, conclude, update",
-            "enum": ["list", "status", "select", "conclude", "update"]
-          },
-          "agent": {
-            "type": "string",
-            "description": "Agent name"
-          }
-        },
-        "required": []
-      },
-      "execution": {
-        "type": "command",
-        "command": "python3 ./plugins/ab-test-tool.py ${command:-list} ${agent:-}"
-      }
-    },
-    {
-      "name": "optimiser_status",
-      "description": "Analyses agent performance and manages prompt optimisation proposals.",
-      "input_schema": {
-        "type": "object",
-        "properties": {
-          "command": {
-            "type": "string",
-            "description": "Subcommand: status, analyse, context, list, get, apply, reject, rollback",
-            "enum": ["status", "analyse", "context", "list", "get", "apply", "reject", "rollback"]
-          },
-          "agent": {
-            "type": "string",
-            "description": "Agent name (for analyse, rollback)"
-          },
-          "proposal_id": {
-            "type": "string",
-            "description": "Proposal ID (for get, apply, reject)"
-          }
-        },
-        "required": []
-      },
-      "execution": {
-        "type": "command",
-        "command": "python3 ./plugins/optimiser-tool.py ${command:-status} ${agent:-} ${proposal_id:-}"
       }
     }
   ]

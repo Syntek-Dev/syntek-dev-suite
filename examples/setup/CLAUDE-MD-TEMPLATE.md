@@ -95,8 +95,7 @@ All agents MUST read these documents before writing code, tests, or performing r
 │   ├── TESTS/           # Test specifications
 │   ├── QA/              # QA reports
 │   ├── PLANS/           # Implementation plans
-│   ├── DEVOPS/          # DevOps documentation
-│   └── METRICS/         # Self-learning system data
+│   └── DEVOPS/          # DevOps documentation
 ├── src/                  # Source code (or app/, lib/, etc.)
 ├── tests/                # Test files
 └── [framework-specific directories]
@@ -139,8 +138,6 @@ python3 .claude/plugins/log-tool.py find
 | `ddev-tool.py` | DDEV project status and configuration |
 | `docker-tool.py` | Docker containers, compose, images, networks |
 | `log-tool.py` | Log file discovery and analysis |
-| `metrics-tool.py` | Self-learning metrics recording and querying |
-| `feedback-tool.py` | User feedback collection and analysis |
 | `quality-tool.py` | Code quality checks and linting |
 | `chrome-tool.py` | Cross-platform Chrome detection |
 | `pm-tool.py` | PM tool detection (ClickUp, Linear, Jira, etc.) |

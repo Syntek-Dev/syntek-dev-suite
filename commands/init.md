@@ -206,71 +206,7 @@ Create environment file templates:
 - `.env.staging.example`
 - `.env.production.example`
 
-### Step 8: Self-Learning Setup
-
-Create the `docs/METRICS/` folder structure for the self-learning system:
-
-```
-docs/METRICS/
-├── README.md              # Folder documentation
-├── config.json            # System configuration
-├── runs/                  # Agent run records
-├── feedback/              # User feedback
-├── aggregates/            # Daily/weekly summaries
-│   ├── daily/
-│   └── weekly/
-├── variants/              # A/B test prompt variants
-├── optimisations/         # LLM-generated improvements
-│   ├── pending/
-│   ├── applied/
-│   └── rejected/
-└── templates/             # Analysis prompt templates
-```
-
-**Ask the user about auto-optimisation:**
-
-```
-This project will use the self-learning system to improve agent performance.
-
-Auto-optimisation is ENABLED by default. This means:
-- Agent prompts improve based on team feedback
-- All developers contribute to improvements
-- High-confidence changes are applied automatically
-
-Would you like to:
-1. **Keep enabled** (recommended) - Agents improve automatically
-2. **Disable auto-apply** - Review all improvements manually
-3. **Disable learning** - No metrics or feedback collection
-```
-
-**Create `docs/METRICS/config.json` based on response:**
-
-Option 1 (default):
-```json
-{
-  "enabled": true,
-  "auto_optimisation_enabled": true,
-  "min_runs_for_analysis": 50
-}
-```
-
-Option 2:
-```json
-{
-  "enabled": true,
-  "auto_optimisation_enabled": false,
-  "min_runs_for_analysis": 50
-}
-```
-
-Option 3:
-```json
-{
-  "enabled": false
-}
-```
-
-### Step 9: Output Summary
+### Step 8: Output Summary
 
 After initialisation, output:
 
@@ -301,7 +237,6 @@ After initialisation, output:
 | `.claude/SYNTEK-GUIDE.md`        | Plugin usage guide                 |
 | `.claude/commands/`              | Project-specific commands          |
 | `.claude/plugins/*.py`           | Custom agent plugins               |
-| `docs/METRICS/`                  | Self-learning system data          |
 
 ### Next Steps
 1. Review and customise `.claude/CLAUDE.md`
@@ -315,9 +250,9 @@ After initialisation, output:
 - **Skills:** Loaded automatically based on stack
 ```
 
-### Step 10: Offer Workflow Scaffolding
+### Step 9: Offer Workflow Scaffolding
 
-After displaying the Step 9 summary, ask the user:
+After displaying the Step 8 summary, ask the user:
 
 ```
 Would you like to scaffold the three-layer workflow structure now?

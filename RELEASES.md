@@ -1,7 +1,7 @@
 # Release Notes
 
 **Last Updated**: 11/04/2026
-**Version**: 1.11.0
+**Version**: 1.12.0
 **Maintained By**: Development Team
 **Language**: British English (en_GB)
 **Timezone**: Europe/London
@@ -12,8 +12,9 @@
 
 - [Table of Contents](#table-of-contents)
 - [Latest Release](#latest-release)
-  - [Version 1.11.0 - 11 April 2026](#version-1110---11-april-2026)
+  - [Version 1.12.0 - 11 April 2026](#version-1120---11-april-2026)
 - [Previous Releases](#previous-releases)
+  - [Version 1.11.0 - 11 April 2026](#version-1110---11-april-2026)
   - [Version 1.10.0 - 05 April 2026](#version-1100---05-april-2026)
   - [Version 1.9.0 - 15 March 2026](#version-190---15-march-2026)
   - [Version 1.8.0 - 15 March 2026](#version-180---15-march-2026)
@@ -32,6 +33,28 @@
 ---
 
 ## Latest Release
+
+### Version 1.12.0 - 11 April 2026
+
+#### What's New
+
+**Self-Learning System Removed**
+
+Version 1.12.0 removes the metrics, feedback collection, A/B testing, and optimiser system. The system was not providing value in practice and added unnecessary complexity to project initialisation and plugin maintenance.
+
+**What was removed:**
+- `plugins/metrics-tool.py`, `feedback-tool.py`, `ab-test-tool.py`, `optimiser-tool.py`
+- `agents/optimiser.md`
+- `commands/learning-feedback.md`, `commands/learning-ab-test.md`, `commands/learning-optimise.md`
+- `docs/METRICS/` directory and `docs/GUIDES/SELF-LEARNING.MD`
+- Self-learning setup step from `/init`
+- All references across skills, templates, and documentation
+
+**Upgrade notes:** No action required. Existing `docs/METRICS/` folders in initialised projects can be deleted manually. No functionality is lost from the core agent and scaffolding workflows.
+
+---
+
+## Previous Releases
 
 ### Version 1.11.0 - 11 April 2026
 

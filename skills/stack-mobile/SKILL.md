@@ -132,13 +132,6 @@ src/
 │   └── formatters.ts
 └── App.tsx
 
-docs/
-└── METRICS/            # Self-learning system (see global-workflow skill)
-    ├── README.md
-    ├── config.json
-    ├── runs/
-    ├── feedback/
-    └── optimisations/
 ```
 
 ---

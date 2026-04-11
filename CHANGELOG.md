@@ -1,7 +1,7 @@
 # Changelog
 
 **Last Updated**: 11/04/2026
-**Version**: 1.11.0
+**Version**: 1.12.0
 **Maintained By**: Development Team
 **Language**: British English (en_GB)
 **Timezone**: Europe/London
@@ -20,6 +20,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Nothing yet
+
+---
+
+## [1.12.0] - 11/04/2026
+
+### Removed
+
+- Self-learning metrics and A/B testing system removed — `plugins/metrics-tool.py`, `plugins/feedback-tool.py`, `plugins/ab-test-tool.py`, `plugins/optimiser-tool.py`
+- `agents/optimiser.md` — optimiser agent removed
+- `commands/learning-feedback.md`, `commands/learning-ab-test.md`, `commands/learning-optimise.md` — three learning commands removed
+- `docs/METRICS/` directory and all contents removed
+- `docs/GUIDES/SELF-LEARNING.MD` removed
+- Step 8 (self-learning setup) removed from `/init` command
+- Self-learning section removed from `skills/global-workflow/SKILL.md`, all stack skills, all templates, `CLAUDE.md`, `README.md`, `examples/setup/SYNTEK-GUIDE-TEMPLATE.md`, and `examples/setup/CLAUDE-MD-TEMPLATE.md`
+- Four tool definitions removed from `config.json`: `metrics_status`, `feedback_status`, `ab_test`, `optimiser_status`
 
 ---
 

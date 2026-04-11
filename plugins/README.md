@@ -26,7 +26,6 @@ All tools are executable Python scripts that can be run directly from the comman
 - [Tools](#tools)
   - [Environment Detection](#environment-detection)
   - [Project Analysis](#project-analysis)
-  - [Self-Learning System](#self-learning-system)
 - [Usage](#usage)
   - [Direct Execution](#direct-execution)
   - [Agent Usage](#agent-usage)
@@ -39,17 +38,13 @@ All tools are executable Python scripts that can be run directly from the comman
 ```
 plugins/
 ├── README.md           # This file
-├── ab-test-tool.py     # A/B testing for prompt variants
 ├── chrome-tool.py      # Cross-platform Chrome detection and configuration
 ├── db-tool.py          # Database type and ORM detection
 ├── ddev-tool.py        # DDEV project status and configuration
 ├── docker-tool.py      # Docker containers, compose, images
 ├── env-tool.py         # Environment file discovery and validation
-├── feedback-tool.py    # User feedback collection
 ├── git-tool.py         # Git repository status, branches, remotes
 ├── log-tool.py         # Log file discovery and analysis
-├── metrics-tool.py     # Self-learning metrics recording
-├── optimiser-tool.py   # Prompt analysis and optimisation
 ├── pm-tool.py          # Project management tool integration
 ├── project-tool.py     # Language, framework, structure detection
 └── quality-tool.py     # Code quality checks and linting
@@ -78,15 +73,6 @@ plugins/
 | `log-tool.py`     | `./plugins/log-tool.py find`      | Find and analyse log files                        |
 | `pm-tool.py`      | `./plugins/pm-tool.py detect`     | Detect PM tool integration (ClickUp, Jira, etc.)  |
 | `quality-tool.py` | `./plugins/quality-tool.py check` | Run code quality checks and linting               |
-
-### Self-Learning System
-
-| Tool                | Command                               | Description                          |
-| ------------------- | ------------------------------------- | ------------------------------------ |
-| `metrics-tool.py`   | `./plugins/metrics-tool.py record`    | Record agent run metrics             |
-| `feedback-tool.py`  | `./plugins/feedback-tool.py submit`   | Submit user feedback on agent output |
-| `ab-test-tool.py`   | `./plugins/ab-test-tool.py list`      | Manage A/B tests for prompt variants |
-| `optimiser-tool.py` | `./plugins/optimiser-tool.py analyse` | Analyse and optimise agent prompts   |
 
 ---
 

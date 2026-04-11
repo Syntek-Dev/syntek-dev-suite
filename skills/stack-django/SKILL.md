@@ -119,13 +119,6 @@ project/
 │   ├── conftest.py         # pytest fixtures
 │   ├── test_models.py
 │   └── test_services.py
-├── docs/
-│   └── METRICS/            # Self-learning system (see global-workflow skill)
-│       ├── README.md
-│       ├── config.json
-│       ├── runs/
-│       ├── feedback/
-│       └── optimisations/
 ├── manage.py
 ├── docker-compose.yml
 └── requirements.txt

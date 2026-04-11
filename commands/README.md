@@ -22,7 +22,6 @@
     - [Refactoring \& Maintenance](#refactoring--maintenance)
     - [Infrastructure](#infrastructure)
     - [Specialised](#specialised)
-  - [Learning Commands](#learning-commands)
 - [Usage](#usage)
   - [Command Structure](#command-structure)
 - [Related Sections](#related-sections)
@@ -60,9 +59,6 @@ commands/
 ├── gdpr.md                # /agent:gdpr - GDPR compliance
 ├── git.md                 # /agent:git - Git workflows
 ├── init.md                # /plugin:init - Project initialisation
-├── learning-ab-test.md    # /learning:ab-test - A/B testing
-├── learning-feedback.md   # /learning:feedback - User feedback
-├── learning-optimise.md   # /learning:optimise - Prompt optimisation
 ├── logging.md             # /agent:logging - Logging setup
 ├── notifications.md       # /agent:notifications - Notifications
 ├── plan.md                # /agent:plan - System planning
@@ -152,14 +148,6 @@ commands/
 | `/agent:support-articles` | `support-articles.md` | Sonnet | Help docs         |
 | `/agent:pm-setup`         | `pm-setup.md`         | Sonnet | PM tool setup     |
 | `/agent:version`          | `version.md`          | Sonnet | Version management |
-
-### Learning Commands
-
-| Command              | File                   | Description                     |
-| -------------------- | ---------------------- | ------------------------------- |
-| `/learning:feedback` | `learning-feedback.md` | Submit feedback on agent output |
-| `/learning:ab-test`  | `learning-ab-test.md`  | Manage A/B tests for prompts    |
-| `/learning:optimise` | `learning-optimise.md` | Analyse and optimise prompts    |
 
 ---
 

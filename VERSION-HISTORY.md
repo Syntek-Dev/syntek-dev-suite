@@ -1,7 +1,7 @@
 # Version History
 
 **Last Updated**: 11/04/2026
-**Version**: 1.11.0
+**Version**: 1.12.0
 **Maintained By**: Development Team
 **Language**: British English (en_GB)
 **Timezone**: Europe/London
@@ -11,6 +11,7 @@
 ## Table of Contents
 
 - [Unreleased](#unreleased)
+- [1.12.0 - 11/04/2026](#1120---11042026)
 - [1.11.0 - 11/04/2026](#1110---11042026)
 - [1.10.0 - 05/04/2026](#1100---05042026)
 - [1.9.0 - 15/03/2026](#190---15032026)
@@ -32,6 +33,41 @@
 ### Technical Changes
 
 - Nothing yet
+
+---
+
+## [1.12.0] - 11/04/2026
+
+### Summary
+
+Removal release. Deletes the self-learning metrics and A/B testing system which was not providing value. No breaking changes to core agent, scaffold, or command functionality.
+
+### Files Changed
+
+| File | Changes |
+|------|---------|
+| `plugins/metrics-tool.py` | Deleted |
+| `plugins/feedback-tool.py` | Deleted |
+| `plugins/ab-test-tool.py` | Deleted |
+| `plugins/optimiser-tool.py` | Deleted |
+| `agents/optimiser.md` | Deleted |
+| `commands/learning-feedback.md` | Deleted |
+| `commands/learning-ab-test.md` | Deleted |
+| `commands/learning-optimise.md` | Deleted |
+| `docs/METRICS/` | Deleted (whole directory) |
+| `docs/GUIDES/SELF-LEARNING.MD` | Deleted |
+| `config.json` | Removed `metrics_status`, `feedback_status`, `ab_test`, `optimiser_status` tool definitions |
+| `CLAUDE.md` | Removed plugin table rows and self-learning section |
+| `commands/init.md` | Removed Step 8 (self-learning setup); renumbered subsequent steps |
+| `agents/setup.md` | Removed `docs/METRICS/` folder creation |
+| `commands/README.md` | Removed learning command entries |
+| `plugins/README.md` | Removed four tool entries |
+| `skills/global-workflow/SKILL.md` | Removed Section 9 (Self-Learning System) |
+| `skills/stack-*.md` (5 files) | Removed `docs/METRICS/` from folder structures |
+| `templates/*.md` (5 files) | Removed `METRICS/` from docs folder structures |
+| `examples/setup/CLAUDE-MD-TEMPLATE.md` | Removed METRICS folder and plugin rows |
+| `examples/setup/SYNTEK-GUIDE-TEMPLATE.md` | Removed learning commands and self-learning section |
+| `README.md` | Removed self-learning section and command table rows |
 
 ---
 

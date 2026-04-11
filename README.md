@@ -48,17 +48,11 @@
     - [Infrastructure](#infrastructure)
     - [Specialised](#specialised)
   - [Plugin Commands](#plugin-commands)
-  - [Learning Commands](#learning-commands)
   - [Version Management](#version-management)
 - [Skills System](#skills-system)
   - [How Skills Work](#how-skills-work)
   - [Available Skills](#available-skills)
 - [Templates](#templates)
-- [Self-Learning System](#self-learning-system)
-  - [How It Works](#how-it-works)
-  - [A/B Testing](#ab-testing)
-  - [Giving Feedback](#giving-feedback)
-  - [Project-Specific Learning](#project-specific-learning)
 - [Markdown All in One Extension](#markdown-all-in-one-extension)
   - [Key Features](#key-features-1)
   - [Installation](#installation-1)
@@ -137,7 +131,6 @@ Syntek Dev Suite is a comprehensive plugin for Claude Code that provides special
 - **Container Support** - DDEV for PHP, Docker for everything else
 - **Code Examples** - 60+ versioned examples for common patterns
 - **British English** - Localised for UK spelling, date formats, and currency
-- **Self-Learning System** - Project-specific prompt improvements via A/B testing
 
 ---
 
@@ -565,17 +558,6 @@ All Syntek Dev Suite commands use the `/syntek-dev-suite:` prefix:
 | ------------------------ | ----------------------------------------- |
 | `/syntek-dev-suite:init` | Initialise Syntek Dev Suite for a project |
 
-### Learning Commands
-
-| Command                                               | Description                     |
-| ----------------------------------------------------- | ------------------------------- |
-| `/syntek-dev-suite:learning-feedback good`            | Mark the last run as successful |
-| `/syntek-dev-suite:learning-feedback bad [comment]`   | Mark as needing improvement     |
-| `/syntek-dev-suite:learning-ab-test list`             | List active A/B tests           |
-| `/syntek-dev-suite:learning-ab-test status <agent>`   | Show test results for an agent  |
-| `/syntek-dev-suite:learning-optimise status`          | Show optimisation system status |
-| `/syntek-dev-suite:learning-optimise analyse <agent>` | Analyse an agent's performance  |
-
 ### Version Management
 
 | Command                                 | Description                                |
@@ -620,57 +602,6 @@ Skills provide stack-specific knowledge that agents use automatically.
 | React      | `templates/react-project.md`      | Docker         |
 | Mobile     | `templates/mobile-project.md`     | Docker         |
 | Shared Lib | `templates/shared-lib-project.md` | Docker         |
-
----
-
-## Self-Learning System
-
-The plugin includes a self-learning system that improves agent performance based on your feedback. Learning data is stored per-project in `docs/METRICS/` and committed to Git.
-
-### How It Works
-
-1. **Feedback Collection** - After each agent run, rate the output
-2. **Metrics Recording** - Run duration, outcomes, and errors are tracked
-3. **Pattern Analysis** - The system identifies what works and what doesn't
-4. **Prompt Optimisation** - Agent prompts are improved based on feedback
-5. **A/B Testing** - Prompt variants are tested to find the best approach
-
-### A/B Testing
-
-Each agent can run A/B tests on prompt variants to discover what works best for your specific project:
-
-```bash
-# List active A/B tests
-/syntek-dev-suite:learning-ab-test list
-
-# Check test status for an agent
-/syntek-dev-suite:learning-ab-test status backend
-
-# The system automatically:
-# - Randomly assigns variants to runs
-# - Tracks success/failure rates
-# - Identifies statistically significant winners
-# - Applies winning prompts automatically
-```
-
-### Giving Feedback
-
-After each agent run:
-
-```bash
-# If the output was good
-/syntek-dev-suite:learning-feedback good
-
-# If the output needs improvement
-/syntek-dev-suite:learning-feedback bad The output didn't follow the coding style
-```
-
-### Project-Specific Learning
-
-- All feedback and metrics are stored in your project's `docs/METRICS/` folder
-- Data is committed to Git, so the whole team benefits from improvements
-- Each project develops its own optimised prompts over time
-- No external API calls - learning uses Claude Code CLI directly
 
 ---
 
@@ -768,8 +699,7 @@ chmod +x ~/.syntek-dev-suite/plugins/*.py
 2. **Use `/syntek-dev-suite:qa-tester` before merging** - Catch issues early
 3. **Keep CLAUDE.md updated** - Add new dependencies and constraints
 4. **Let agents read files** - Don't paste code, reference files
-5. **Give feedback** - Use `/syntek-dev-suite:learning-feedback` to improve agents over time
-6. **Commit regularly** - Small, focused commits after each step
+5. **Commit regularly** - Small, focused commits after each step
 
 ---
 
