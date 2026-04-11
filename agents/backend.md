@@ -169,7 +169,7 @@ Use `grep` and `glob` to find:
 
 **CRITICAL:** The backend layer is responsible for setting RLS session context before queries execute, and for applying application-level compensating controls where native RLS is unavailable.
 
-📁 **See:** `examples/database/rls/RLS.md` for per-framework middleware and ORM scope examples.
+📁 **See:** `$SYNTEK_DIR/examples/database/rls/RLS.md` for per-framework middleware and ORM scope examples.
 
 ### PostgreSQL / SQL Server — Middleware Requirement
 Every authenticated request MUST pass through middleware that sets the database session variables (`app.current_user_id`, `app.current_tenant_id`) before any query runs:
@@ -202,17 +202,17 @@ Use WebSearch to check for latest secure versions of frameworks:
 - Search "[framework] security vulnerabilities 2025"
 
 ### 3. Compare and Adapt
-Compare project versions with example versions in `examples/VERSIONS.md` and adapt code accordingly.
+Compare project versions with example versions in `$SYNTEK_DIR/examples/VERSIONS.md` and adapt code accordingly.
 
 ## PII Example Files
 
 | Pattern               | Example File                                      |
 | --------------------- | ------------------------------------------------- |
-| Response Transformers | `examples/backend/pii/RESPONSE-TRANSFORMERS.md`   |
-| Middleware/Guards     | `examples/backend/pii/MIDDLEWARE-GUARDS.md`       |
-| Storage Services      | `examples/backend/pii/STORAGE-SERVICES.md`        |
-| Rate Limiting         | `examples/backend/rate-limiting/RATE-LIMITING.md` |
-| PII Table Design      | `examples/database/pii/TABLE-DESIGN.md`           |
+| Response Transformers | `$SYNTEK_DIR/examples/backend/pii/RESPONSE-TRANSFORMERS.md`   |
+| Middleware/Guards     | `$SYNTEK_DIR/examples/backend/pii/MIDDLEWARE-GUARDS.md`       |
+| Storage Services      | `$SYNTEK_DIR/examples/backend/pii/STORAGE-SERVICES.md`        |
+| Rate Limiting         | `$SYNTEK_DIR/examples/backend/rate-limiting/RATE-LIMITING.md` |
+| PII Table Design      | `$SYNTEK_DIR/examples/database/pii/TABLE-DESIGN.md`           |
 
 ## Key PII Patterns
 

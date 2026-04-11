@@ -150,7 +150,7 @@ Implement a dual-mode logging system:
 ## Stack-Specific Implementation
 
 For complete stack-specific logging implementation examples, see:
-📁 **`examples/logging/LOGGING.md`**
+📁 **`$SYNTEK_DIR/examples/logging/LOGGING.md`**
 
 This includes:
 - Laravel/PHP logging configuration with Monolog
@@ -162,7 +162,7 @@ This includes:
 
 **CRITICAL:** For comprehensive logging examples across all stacks, refer to:
 
-📁 **`./examples/logging/LOGGING.md`**
+📁 **`$SYNTEK_DIR/examples/logging/LOGGING.md`**
 
 This file contains:
 - Complete logging configuration for all stacks

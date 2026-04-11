@@ -145,12 +145,12 @@ Before implementing authentication features, refer to the example templates:
 
 | Feature                                        | Example File                                     |
 | ---------------------------------------------- | ------------------------------------------------ |
-| Password validation (Laravel, Django, Node.js) | `examples/authentication/PASSWORD-VALIDATION.md` |
-| Multi-factor authentication (TOTP, OTP)        | `examples/authentication/MFA.md`                 |
-| Session management and logout                  | `examples/authentication/SESSION-MANAGEMENT.md`  |
-| IP address security logging                    | `examples/authentication/IP-SECURITY.md`         |
+| Password validation (Laravel, Django, Node.js) | `$SYNTEK_DIR/examples/authentication/PASSWORD-VALIDATION.md` |
+| Multi-factor authentication (TOTP, OTP)        | `$SYNTEK_DIR/examples/authentication/MFA.md`                 |
+| Session management and logout                  | `$SYNTEK_DIR/examples/authentication/SESSION-MANAGEMENT.md`  |
+| IP address security logging                    | `$SYNTEK_DIR/examples/authentication/IP-SECURITY.md`         |
 
-Check `examples/VERSIONS.md` to ensure framework versions match the project.
+Check `$SYNTEK_DIR/examples/VERSIONS.md` to ensure framework versions match the project.
 
 ---
 
@@ -174,7 +174,7 @@ Enhanced Checks:
 - Not a repeated character sequence (aaaa, 1111)
 ```
 
-**Implementation:** See `examples/authentication/PASSWORD-VALIDATION.md` for full implementations in Laravel, Django, Next.js, and React Native.
+**Implementation:** See `$SYNTEK_DIR/examples/authentication/PASSWORD-VALIDATION.md` for full implementations in Laravel, Django, Next.js, and React Native.
 
 ---
 
@@ -192,7 +192,7 @@ Enhanced Checks:
 - Implement rate limiting on verification attempts
 - Set appropriate expiration times (10 minutes recommended)
 
-**Implementation:** See `examples/authentication/MFA.md` for full implementations across all stacks.
+**Implementation:** See `$SYNTEK_DIR/examples/authentication/MFA.md` for full implementations across all stacks.
 
 ---
 
@@ -210,7 +210,7 @@ Enhanced Checks:
 - Logout from all devices (invalidate all tokens, clear sessions table)
 - List active sessions for user security monitoring
 
-**Implementation:** See `examples/authentication/SESSION-MANAGEMENT.md` for full implementations across all stacks.
+**Implementation:** See `$SYNTEK_DIR/examples/authentication/SESSION-MANAGEMENT.md` for full implementations across all stacks.
 
 ---
 
@@ -221,7 +221,7 @@ Enhanced Checks:
 - Clear attempt counter on successful login
 - Return appropriate 429 status with retry-after header
 
-**Implementation:** See `examples/authentication/SESSION-MANAGEMENT.md` for rate limiting middleware examples.
+**Implementation:** See `$SYNTEK_DIR/examples/authentication/SESSION-MANAGEMENT.md` for rate limiting middleware examples.
 
 ---
 
@@ -244,7 +244,7 @@ Enhanced Checks:
 - Check for suspicious activity based on failed login count
 - Log all authentication events with IP, user agent, and timestamp
 
-**Implementation:** See `examples/authentication/IP-SECURITY.md` for full implementations across all stacks.
+**Implementation:** See `$SYNTEK_DIR/examples/authentication/IP-SECURITY.md` for full implementations across all stacks.
 
 ---
 
@@ -258,7 +258,7 @@ Enhanced Checks:
 - Invalidate all sessions after password reset
 - Enforce strong password requirements on new password
 
-**Implementation:** See `examples/authentication/SESSION-MANAGEMENT.md` for password reset controller examples.
+**Implementation:** See `$SYNTEK_DIR/examples/authentication/SESSION-MANAGEMENT.md` for password reset controller examples.
 
 # 3. SECURITY CHECKLIST
 

@@ -114,14 +114,14 @@ Before performing refactoring, review the refactoring patterns and examples:
 
 | Pattern                                 | Example File                       |
 | --------------------------------------- | ---------------------------------- |
-| Extract Service pattern                 | `examples/refactor/REFACTORING.md` |
-| Replace Conditional with Polymorphism   | `examples/refactor/REFACTORING.md` |
-| Introduce DTO/Dataclass                 | `examples/refactor/REFACTORING.md` |
-| Extract Custom Hook (React)             | `examples/refactor/REFACTORING.md` |
-| Component Composition                   | `examples/refactor/REFACTORING.md` |
-| Performance Optimisation (React Native) | `examples/refactor/REFACTORING.md` |
+| Extract Service pattern                 | `$SYNTEK_DIR/examples/refactor/REFACTORING.md` |
+| Replace Conditional with Polymorphism   | `$SYNTEK_DIR/examples/refactor/REFACTORING.md` |
+| Introduce DTO/Dataclass                 | `$SYNTEK_DIR/examples/refactor/REFACTORING.md` |
+| Extract Custom Hook (React)             | `$SYNTEK_DIR/examples/refactor/REFACTORING.md` |
+| Component Composition                   | `$SYNTEK_DIR/examples/refactor/REFACTORING.md` |
+| Performance Optimisation (React Native) | `$SYNTEK_DIR/examples/refactor/REFACTORING.md` |
 
-Check `examples/VERSIONS.md` to ensure framework versions match the project.
+Check `$SYNTEK_DIR/examples/VERSIONS.md` to ensure framework versions match the project.
 
 ## Localisation Requirements
 **CRITICAL:** Check `CLAUDE.md` for localisation settings and apply them:

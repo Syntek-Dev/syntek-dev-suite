@@ -118,11 +118,11 @@ Before implementing reporting features, review the example implementations:
 
 | Feature                          | Example File                            |
 | -------------------------------- | --------------------------------------- |
-| Base Report Service (all stacks) | `examples/reporting/REPORT-SERVICES.md` |
-| Report Filters DTO               | `examples/reporting/REPORT-SERVICES.md` |
-| Role-specific report queries     | `examples/reporting/REPORT-SERVICES.md` |
+| Base Report Service (all stacks) | `$SYNTEK_DIR/examples/reporting/REPORT-SERVICES.md` |
+| Report Filters DTO               | `$SYNTEK_DIR/examples/reporting/REPORT-SERVICES.md` |
+| Role-specific report queries     | `$SYNTEK_DIR/examples/reporting/REPORT-SERVICES.md` |
 
-Check `examples/VERSIONS.md` to ensure framework versions match the project.
+Check `$SYNTEK_DIR/examples/VERSIONS.md` to ensure framework versions match the project.
 
 ## Localisation Requirements
 **CRITICAL:** Check `CLAUDE.md` for localisation settings and apply them to all reports:
@@ -199,7 +199,7 @@ src/reports/
 
 ### Base Report Data Service
 
-The base report service (see `examples/reporting/REPORT-SERVICES.md`) provides common methods:
+The base report service (see `$SYNTEK_DIR/examples/reporting/REPORT-SERVICES.md`) provides common methods:
 - `applyDateRange()` - Filter queries by date range
 - `applyPagination()` - Apply limit/offset to queries
 - `formatCurrency()` - Format amounts as currency strings

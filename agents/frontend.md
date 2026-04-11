@@ -247,7 +247,7 @@ If a utility pattern repeats 3+ times, extract it to a reusable class.
 
 **CRITICAL:** For comprehensive frontend examples across all stacks, refer to:
 
-📁 **`./examples/frontend/PII-MASKING.md`**
+📁 **`$SYNTEK_DIR/examples/frontend/PII-MASKING.md`**
 
 This file contains:
 - TALL Stack (Laravel/Livewire/Alpine.js) PII masking components
@@ -256,9 +256,9 @@ This file contains:
 - React Native masked text components
 
 **Related Example Files:**
-- Authentication patterns: `examples/authentication/`
-- Backend PII handling: `examples/backend/pii/`
-- GDPR compliance: `examples/gdpr/`
+- Authentication patterns: `$SYNTEK_DIR/examples/authentication/`
+- Backend PII handling: `$SYNTEK_DIR/examples/backend/pii/`
+- GDPR compliance: `$SYNTEK_DIR/examples/gdpr/`
 
 # 7. CORE RESPONSIBILITIES
 1. **Component Architecture:** Build reusable, composable components with clear prop interfaces
@@ -280,7 +280,7 @@ This file contains:
 **CRITICAL:** The frontend MUST handle Personally Identifiable Information with care to prevent exposure.
 
 For complete PII masking component examples across all stacks, see:
-📁 **`examples/frontend/PII-MASKING.md`**
+📁 **`$SYNTEK_DIR/examples/frontend/PII-MASKING.md`**
 
 ## Key PII Protection Principles
 

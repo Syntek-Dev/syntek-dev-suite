@@ -153,12 +153,12 @@ Before implementing notification features, refer to the example templates:
 
 | Feature                                           | Example File                                   |
 | ------------------------------------------------- | ---------------------------------------------- |
-| Email template architecture                       | `examples/notifications/EMAIL-TEMPLATES.md`    |
-| Email provider integrations (Postmark, Mailchimp) | `examples/notifications/EMAIL-PROVIDERS.md`    |
-| Push notification setup (React Native)            | `examples/notifications/PUSH-NOTIFICATIONS.md` |
-| PII masking in notifications                      | `examples/notifications/PII-MASKING.md`        |
+| Email template architecture                       | `$SYNTEK_DIR/examples/notifications/EMAIL-TEMPLATES.md`    |
+| Email provider integrations (Postmark, Mailchimp) | `$SYNTEK_DIR/examples/notifications/EMAIL-PROVIDERS.md`    |
+| Push notification setup (React Native)            | `$SYNTEK_DIR/examples/notifications/PUSH-NOTIFICATIONS.md` |
+| PII masking in notifications                      | `$SYNTEK_DIR/examples/notifications/PII-MASKING.md`        |
 
-Check `examples/VERSIONS.md` to ensure framework versions match the project.
+Check `$SYNTEK_DIR/examples/VERSIONS.md` to ensure framework versions match the project.
 
 ---
 
@@ -189,7 +189,7 @@ Check `examples/VERSIONS.md` to ensure framework versions match the project.
 
 **CRITICAL:** All notifications MUST use the shared header, footer, and body styling components. Individual notifications only define their specific body content.
 
-See `examples/notifications/EMAIL-TEMPLATES.md` for full implementation examples of base layouts, components, styles, and brand configuration.
+See `$SYNTEK_DIR/examples/notifications/EMAIL-TEMPLATES.md` for full implementation examples of base layouts, components, styles, and brand configuration.
 
 ## Template Directory Structure
 
@@ -258,7 +258,7 @@ resources/sms/
     └── ...
 ```
 
-For full template implementation examples including base layouts, components, styles, and brand configuration, see `examples/notifications/EMAIL-TEMPLATES.md`.
+For full template implementation examples including base layouts, components, styles, and brand configuration, see `$SYNTEK_DIR/examples/notifications/EMAIL-TEMPLATES.md`.
 
 # 5. PII PROTECTION IN NOTIFICATIONS (CRITICAL)
 
@@ -302,11 +302,11 @@ Before providing PII masking code examples:
 
 1. **Check Project Versions** - Read `composer.json`, `requirements.txt`, or `package.json`
 2. **Check Latest Secure Versions Online** - Search for latest stable framework versions
-3. **Compare and Adapt** - Compare with `examples/VERSIONS.md`
+3. **Compare and Adapt** - Compare with `$SYNTEK_DIR/examples/VERSIONS.md`
 
 | Pattern             | Example File                            |
 | ------------------- | --------------------------------------- |
-| PII Masking Helpers | `examples/notifications/PII-MASKING.md` |
+| PII Masking Helpers | `$SYNTEK_DIR/examples/notifications/PII-MASKING.md` |
 
 The PII masking helpers provide methods for:
 - `maskEmail()` - Shows first 2 chars and domain (e.g., "jo****@example.com")

@@ -208,14 +208,14 @@ Use WebSearch to check for latest secure versions of frameworks:
 - Search "[framework] security vulnerabilities 2025"
 
 ### 3. Compare and Adapt
-Compare project versions with example versions in `examples/VERSIONS.md` and adapt code accordingly.
+Compare project versions with example versions in `$SYNTEK_DIR/examples/VERSIONS.md` and adapt code accordingly.
 
 ## Export Example Files
 
 | Pattern         | Example File                            |
 | --------------- | --------------------------------------- |
-| CSV Formatter   | `examples/export/CSV-FORMATTER.md`      |
-| Report Services | `examples/reporting/REPORT-SERVICES.md` |
+| CSV Formatter   | `$SYNTEK_DIR/examples/export/CSV-FORMATTER.md`      |
+| Report Services | `$SYNTEK_DIR/examples/reporting/REPORT-SERVICES.md` |
 
 ## CSV Export
 
@@ -224,7 +224,7 @@ CSV formatters provide:
 - Streaming support for large datasets
 - Proper escaping of special characters
 
-See `examples/export/CSV-FORMATTER.md` for full implementation examples in all stacks.
+See `$SYNTEK_DIR/examples/export/CSV-FORMATTER.md` for full implementation examples in all stacks.
 
 ## Excel Export
 

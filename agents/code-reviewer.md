@@ -129,9 +129,9 @@ Before conducting code reviews, refer to the example templates for review patter
 
 | Feature                                     | Example File                            |
 | ------------------------------------------- | --------------------------------------- |
-| Review checklists and before/after examples | `examples/code-reviewer/CODE-REVIEW.md` |
+| Review checklists and before/after examples | `$SYNTEK_DIR/examples/code-reviewer/CODE-REVIEW.md` |
 
-Check `examples/VERSIONS.md` to ensure framework versions match the project.
+Check `$SYNTEK_DIR/examples/VERSIONS.md` to ensure framework versions match the project.
 
 ---
 

@@ -120,14 +120,14 @@ Before implementing SEO features, refer to the example implementations:
 | Feature                            | Reference File                        |
 | ---------------------------------- | ------------------------------------- |
 | Full SEO & AI discoverability audit | `.claude/SEO-CHECKLIST.md`           |
-| Meta tag service (all stacks)      | `examples/seo/SEO.md`                |
-| Open Graph implementation          | `examples/seo/SEO.md`                |
-| JSON-LD structured data            | `examples/seo/SEO.md`                |
-| Sitemap generation                 | `examples/seo/SEO.md`                |
-| Robots.txt configuration           | `examples/seo/SEO.md`                |
+| Meta tag service (all stacks)      | `$SYNTEK_DIR/examples/seo/SEO.md`                |
+| Open Graph implementation          | `$SYNTEK_DIR/examples/seo/SEO.md`                |
+| JSON-LD structured data            | `$SYNTEK_DIR/examples/seo/SEO.md`                |
+| Sitemap generation                 | `$SYNTEK_DIR/examples/seo/SEO.md`                |
+| Robots.txt configuration           | `$SYNTEK_DIR/examples/seo/SEO.md`                |
 | llms.txt / AI discoverability      | `.claude/SEO-CHECKLIST.md` (Beginner — AI section) |
 
-Check `examples/VERSIONS.md` to ensure framework versions match the project.
+Check `$SYNTEK_DIR/examples/VERSIONS.md` to ensure framework versions match the project.
 
 ## Localisation Requirements
 **CRITICAL:** Check `CLAUDE.md` for localisation settings and apply them:
@@ -139,7 +139,7 @@ Check `examples/VERSIONS.md` to ensure framework versions match the project.
 
 ## SEO Implementation
 
-For full implementation examples of all SEO features, see `examples/seo/SEO.md`.
+For full implementation examples of all SEO features, see `$SYNTEK_DIR/examples/seo/SEO.md`.
 
 ### Meta Tags Implementation
 
@@ -174,7 +174,7 @@ JSON-LD schemas to implement where applicable:
 - Breadcrumb schema
 - Local Business schema
 
-See `examples/seo/SEO.md` for complete JSON-LD templates.
+See `$SYNTEK_DIR/examples/seo/SEO.md` for complete JSON-LD templates.
 
 ## Robots.txt & Sitemaps
 
@@ -197,7 +197,7 @@ See `examples/seo/SEO.md` for complete JSON-LD templates.
 - `llms.txt` — AI agent content guide (Markdown, placed at site root)
 - `llms-full.txt` — full content version for AI agents
 
-For all configuration examples including SEO config files, see `examples/seo/SEO.md`.
+For all configuration examples including SEO config files, see `$SYNTEK_DIR/examples/seo/SEO.md`.
 For the complete SEO and AI discoverability audit checklist, see `.claude/SEO-CHECKLIST.md`.
 
 ## AI Discoverability (GEO)

@@ -1,7 +1,7 @@
 # Changelog
 
 **Last Updated**: 11/04/2026
-**Version**: 1.12.0
+**Version**: 1.12.1
 **Maintained By**: Development Team
 **Language**: British English (en_GB)
 **Timezone**: Europe/London
@@ -20,6 +20,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Nothing yet
+
+---
+
+## [1.12.1] - 11/04/2026
+
+### Fixed
+
+- All hardcoded `examples/`, `./examples/`, and `[Reference: examples/]` paths in agents replaced with `$SYNTEK_DIR/examples/` so example files resolve correctly regardless of plugin installation location (local, SSH mount, or `~/.claude/plugins/`)
+- `commands/init.md` bullet list documentation updated to use `$SYNTEK_DIR/examples/setup/`
+- `skills/global-workflow/SKILL.md` — new Section 0 "Plugin Directory Discovery" added as a mandatory preamble for all agents, with the same four-location Glob search used by the `/init` command
+- Two over-broad replacements in `agents/scaffold.md` and `agents/README.md` corrected (descriptive prose was not a file path)
 
 ---
 

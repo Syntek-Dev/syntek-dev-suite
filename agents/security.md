@@ -143,7 +143,7 @@ All functions/methods MUST have docstrings that:
 
 ## Example Files Reference
 
-**CRITICAL:** Use the example files in `./examples/security/` for implementation patterns:
+**CRITICAL:** Use the example files in `$SYNTEK_DIR/examples/security/` for implementation patterns:
 
 | Example File           | Contents                                                |
 | ---------------------- | ------------------------------------------------------- |
@@ -154,8 +154,8 @@ All functions/methods MUST have docstrings that:
 | `PII-ACCESS.md`        | Permission-gated PII access, audit logging              |
 
 Also reference:
-- `examples/gdpr/PII-STORAGE.md` - PII encryption and hashing
-- `examples/database/pii/TABLE-DESIGN.md` - PII database schema
+- `$SYNTEK_DIR/examples/gdpr/PII-STORAGE.md` - PII encryption and hashing
+- `$SYNTEK_DIR/examples/database/pii/TABLE-DESIGN.md` - PII database schema
 
 ---
 
@@ -164,7 +164,7 @@ Also reference:
 ### Why Unreplicable Paths?
 Predictable URLs like `/admin` or `/dashboard` are easy targets. Use obfuscated or signed paths for sensitive areas.
 
-**Implementation patterns:** See `examples/security/SIGNED-URLS.md`
+**Implementation patterns:** See `$SYNTEK_DIR/examples/security/SIGNED-URLS.md`
 
 - Signed URLs with expiry
 - Randomised admin path prefixes (via environment variables)
@@ -191,7 +191,7 @@ Predictable URLs like `/admin` or `/dashboard` are easy targets. Use obfuscated 
 | **HMAC tokens**  | Single-use access                | `/verify/a1b2c3d4e5f6...`                            |
 | **Random slugs** | Human-readable but unpredictable | `/invoice/XK7m9pLq2nR4`                              |
 
-**Implementation patterns:** See `examples/security/IRREVERSIBLE-URLS.md`
+**Implementation patterns:** See `$SYNTEK_DIR/examples/security/IRREVERSIBLE-URLS.md`
 
 ### Security Checklist for URLs
 - [ ] No sequential IDs exposed in public URLs
@@ -214,7 +214,7 @@ Predictable URLs like `/admin` or `/dashboard` are easy targets. Use obfuscated 
 - **User-Role assignment:** Which users have which roles
 - **Direct permissions:** Override permissions for specific users
 
-**Implementation patterns:** See `examples/security/RBAC.md`
+**Implementation patterns:** See `$SYNTEK_DIR/examples/security/RBAC.md`
 
 - Database schema for roles/permissions
 - Permission checking service with caching
@@ -226,7 +226,7 @@ Predictable URLs like `/admin` or `/dashboard` are easy targets. Use obfuscated 
 
 ## Security Hardening
 
-**Implementation patterns:** See `examples/security/SECURITY-HEADERS.md`
+**Implementation patterns:** See `$SYNTEK_DIR/examples/security/SECURITY-HEADERS.md`
 
 ### Rate Limiting
 Apply different rate limits by route type:
@@ -255,7 +255,7 @@ Log all security-relevant actions for compliance and monitoring.
 
 **CRITICAL:** Coordinate with `/gdpr` agent for full PII protection. This section covers the security enforcement.
 
-**Implementation patterns:** See `examples/security/PII-ACCESS.md`
+**Implementation patterns:** See `$SYNTEK_DIR/examples/security/PII-ACCESS.md`
 
 ### Key Requirements
 1. Separate PII into a dedicated table with restricted access

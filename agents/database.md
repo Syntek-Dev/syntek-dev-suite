@@ -157,17 +157,17 @@ Before I create this migration, I need to clarify a few things:
 
 **CRITICAL:** For comprehensive database examples across all stacks, refer to:
 
-📁 **Database Examples Directory:** `./examples/database/`
+📁 **Database Examples Directory:** `$SYNTEK_DIR/examples/database/`
 
 | Pattern              | Example File                                |
 | -------------------- | ------------------------------------------- |
-| SQL Syntax Reference | `examples/database/sql/SYNTAX-REFERENCE.md` |
-| Laravel Migrations   | `examples/database/migrations/LARAVEL.md`   |
-| Django Migrations    | `examples/database/migrations/DJANGO.md`    |
-| Prisma Schema        | `examples/database/migrations/PRISMA.md`    |
-| TypeORM Migrations   | `examples/database/migrations/TYPEORM.md`   |
-| PII Table Design     | `examples/database/pii/TABLE-DESIGN.md`     |
-| Row Level Security   | `examples/database/rls/RLS.md`              |
+| SQL Syntax Reference | `$SYNTEK_DIR/examples/database/sql/SYNTAX-REFERENCE.md` |
+| Laravel Migrations   | `$SYNTEK_DIR/examples/database/migrations/LARAVEL.md`   |
+| Django Migrations    | `$SYNTEK_DIR/examples/database/migrations/DJANGO.md`    |
+| Prisma Schema        | `$SYNTEK_DIR/examples/database/migrations/PRISMA.md`    |
+| TypeORM Migrations   | `$SYNTEK_DIR/examples/database/migrations/TYPEORM.md`   |
+| PII Table Design     | `$SYNTEK_DIR/examples/database/pii/TABLE-DESIGN.md`     |
+| Row Level Security   | `$SYNTEK_DIR/examples/database/rls/RLS.md`              |
 
 These files contain:
 - Database-specific SQL syntax (MySQL, PostgreSQL, SQLite, SQL Server)
@@ -187,14 +187,14 @@ When writing migrations, consider the database engine:
 | SQLite        | INTEGER for boolean, limited ALTER TABLE support    |
 | SQL Server    | BIT for boolean, NVARCHAR for Unicode, IDENTITY     |
 
-Refer to `examples/database/sql/SYNTAX-REFERENCE.md` for complete syntax patterns.
+Refer to `$SYNTEK_DIR/examples/database/sql/SYNTAX-REFERENCE.md` for complete syntax patterns.
 
 # 5. CODE DOCUMENTATION REQUIREMENTS
 
 ## Migration File Headers
 **CRITICAL:** Every migration file MUST begin with a comment block explaining the migration's purpose.
 
-See example migration headers in `examples/database/migrations/` for each framework.
+See example migration headers in `$SYNTEK_DIR/examples/database/migrations/` for each framework.
 
 ## Column and Table Comments
 - Add comments for complex columns explaining the purpose and constraints
@@ -213,7 +213,7 @@ See example migration headers in `examples/database/migrations/` for each framew
 
 **CRITICAL:** All database schemas storing Personally Identifiable Information MUST implement proper protection measures.
 
-📁 **See:** `examples/database/pii/TABLE-DESIGN.md` for complete PII table design patterns.
+📁 **See:** `$SYNTEK_DIR/examples/database/pii/TABLE-DESIGN.md` for complete PII table design patterns.
 
 ## Key PII Principles
 
@@ -237,7 +237,7 @@ See example migration headers in `examples/database/migrations/` for each framew
 ## PII Migration Templates
 
 For complete PII migration templates in Laravel, Django, Prisma, and TypeORM, see:
-📁 **`examples/database/pii/TABLE-DESIGN.md`**
+📁 **`$SYNTEK_DIR/examples/database/pii/TABLE-DESIGN.md`**
 
 This includes:
 - Laravel Blueprint migrations for PII tables
@@ -251,7 +251,7 @@ This includes:
 
 **CRITICAL:** Every table that stores user-scoped or tenant-scoped data MUST have Row Level Security applied. This is non-negotiable regardless of stack.
 
-📁 **See:** `examples/database/rls/RLS.md` for complete RLS patterns across all supported databases and frameworks.
+📁 **See:** `$SYNTEK_DIR/examples/database/rls/RLS.md` for complete RLS patterns across all supported databases and frameworks.
 
 ## RLS Requirements by Database Engine
 
@@ -275,7 +275,7 @@ For every user-scoped or tenant-scoped table, the migration MUST:
 
 ## Setting RLS Session Context
 
-The application middleware must set session variables before executing queries. See `examples/database/rls/RLS.md` for per-framework middleware examples (Laravel, Django, Prisma, TypeORM).
+The application middleware must set session variables before executing queries. See `$SYNTEK_DIR/examples/database/rls/RLS.md` for per-framework middleware examples (Laravel, Django, Prisma, TypeORM).
 
 ## Testing RLS Policies
 
@@ -384,10 +384,10 @@ Documentation created: `docs/DATABASE/MIGRATIONS/MIGRATION-CREATE-ORDERS-TABLE.m
 ## Test Database Setup by Framework
 
 See the migration example files for test database configuration:
-- Laravel: `examples/database/migrations/LARAVEL.md`
-- Django: `examples/database/migrations/DJANGO.md`
-- Prisma: `examples/database/migrations/PRISMA.md`
-- TypeORM: `examples/database/migrations/TYPEORM.md`
+- Laravel: `$SYNTEK_DIR/examples/database/migrations/LARAVEL.md`
+- Django: `$SYNTEK_DIR/examples/database/migrations/DJANGO.md`
+- Prisma: `$SYNTEK_DIR/examples/database/migrations/PRISMA.md`
+- TypeORM: `$SYNTEK_DIR/examples/database/migrations/TYPEORM.md`
 
 ## Test Database Best Practices
 1. **Always suffix with `_test`** - Prevents accidental data loss

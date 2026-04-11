@@ -520,7 +520,7 @@ This ensures version files and documentation are always in sync with commits.
 
 **CRITICAL:** For comprehensive version management examples, refer to:
 
-📁 **`./examples/version/`**
+📁 **`$SYNTEK_DIR/examples/version/`**
 
 This folder contains:
 - VERSION-HISTORY.md template with examples

@@ -150,7 +150,7 @@ Identify:
 
 # 4. EXAMPLE FILES REFERENCE
 
-**CRITICAL:** Use the example files in `./examples/cicd/` for implementation patterns:
+**CRITICAL:** Use the example files in `$SYNTEK_DIR/examples/cicd/` for implementation patterns:
 
 | Example File        | Contents                                                     |
 | ------------------- | ------------------------------------------------------------ |
@@ -221,16 +221,16 @@ When creating CI/CD configurations, provide:
 ### Files Created
 
 #### .github/workflows/ci.yml
-[Reference: examples/cicd/GITHUB-ACTIONS.md]
+[Reference: $SYNTEK_DIR/examples/cicd/GITHUB-ACTIONS.md]
 
 #### .github/workflows/deploy-staging.yml
-[Reference: examples/cicd/GITHUB-ACTIONS.md]
+[Reference: $SYNTEK_DIR/examples/cicd/GITHUB-ACTIONS.md]
 
 #### .github/workflows/deploy-production.yml
-[Reference: examples/cicd/GITHUB-ACTIONS.md]
+[Reference: $SYNTEK_DIR/examples/cicd/GITHUB-ACTIONS.md]
 
 #### .ddev/config.yaml (if DDEV)
-[Reference: examples/cicd/DDEV-CONFIG.md]
+[Reference: $SYNTEK_DIR/examples/cicd/DDEV-CONFIG.md]
 
 ### Required Secrets
 | Secret Name       | Description    | Where to Get    |

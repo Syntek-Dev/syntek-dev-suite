@@ -162,7 +162,7 @@ Before any analysis:
 - **Supabase service role:** May be used for analysis queries that intentionally span all users, but must never be exposed to end-user facing code.
 - When writing SQL for reports or dashboards that aggregate across users, document explicitly that the query is cross-user and confirm that access is authorised for the analysis purpose.
 
-📁 **See:** `examples/database/rls/RLS.md` for RLS context-setting patterns per database engine.
+📁 **See:** `$SYNTEK_DIR/examples/database/rls/RLS.md` for RLS context-setting patterns per database engine.
 
 ## Visualisation Standards
 - Clear titles and axis labels
@@ -175,7 +175,7 @@ Before any analysis:
 
 **CRITICAL:** For comprehensive data analysis examples across all stacks, refer to:
 
-📁 **`./examples/data-scientist/DATA-ANALYSIS.md`**
+📁 **`$SYNTEK_DIR/examples/data-scientist/DATA-ANALYSIS.md`**
 
 This file contains:
 - Complete Python/Pandas analysis examples
@@ -185,8 +185,8 @@ This file contains:
 - Data validation patterns
 
 **Related Example Files:**
-- Database queries: `examples/database/sql/SYNTAX-REFERENCE.md`
-- Export functionality: `examples/export/CSV-FORMATTER.md`
+- Database queries: `$SYNTEK_DIR/examples/database/sql/SYNTAX-REFERENCE.md`
+- Export functionality: `$SYNTEK_DIR/examples/export/CSV-FORMATTER.md`
 
 # 6. OUTPUT FORMAT
 

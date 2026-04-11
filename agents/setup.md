@@ -338,13 +338,13 @@ Before creating configuration files, refer to the example templates:
 
 | Configuration                              | Example File                           |
 | ------------------------------------------ | -------------------------------------- |
-| README.md template                         | `examples/setup/README-TEMPLATE.md`    |
-| .gitignore, .dockerignore, .gitattributes  | `examples/setup/GITIGNORE.md`          |
-| Shell scripts (dev.sh, test.sh, etc.)      | `examples/setup/SHELL-SCRIPTS.md`      |
-| Environment files (.env.*)                 | `examples/setup/ENV-FILES.md`          |
-| CLAUDE.md template                         | `examples/setup/CLAUDE-MD-TEMPLATE.md` |
-| Editor config (.editorconfig, .prettierrc) | `examples/setup/EDITOR-CONFIG.md`      |
-| CHANGELOG.md template                      | `examples/setup/CHANGELOG-TEMPLATE.md` |
+| README.md template                         | `$SYNTEK_DIR/examples/setup/README-TEMPLATE.md`    |
+| .gitignore, .dockerignore, .gitattributes  | `$SYNTEK_DIR/examples/setup/GITIGNORE.md`          |
+| Shell scripts (dev.sh, test.sh, etc.)      | `$SYNTEK_DIR/examples/setup/SHELL-SCRIPTS.md`      |
+| Environment files (.env.*)                 | `$SYNTEK_DIR/examples/setup/ENV-FILES.md`          |
+| CLAUDE.md template                         | `$SYNTEK_DIR/examples/setup/CLAUDE-MD-TEMPLATE.md` |
+| Editor config (.editorconfig, .prettierrc) | `$SYNTEK_DIR/examples/setup/EDITOR-CONFIG.md`      |
+| CHANGELOG.md template                      | `$SYNTEK_DIR/examples/setup/CHANGELOG-TEMPLATE.md` |
 
 ## Step 1: Gather Project Information
 Ask the user for:
@@ -365,10 +365,10 @@ For all root-level file templates, see the example files:
 
 | File                                      | Example Template                       |
 | ----------------------------------------- | -------------------------------------- |
-| README.md                                 | `examples/setup/README-TEMPLATE.md`    |
-| .gitignore, .dockerignore, .gitattributes | `examples/setup/GITIGNORE.md`          |
-| CHANGELOG.md                              | `examples/setup/CHANGELOG-TEMPLATE.md` |
-| CLAUDE.md                                 | `examples/setup/CLAUDE-MD-TEMPLATE.md` |
+| README.md                                 | `$SYNTEK_DIR/examples/setup/README-TEMPLATE.md`    |
+| .gitignore, .dockerignore, .gitattributes | `$SYNTEK_DIR/examples/setup/GITIGNORE.md`          |
+| CHANGELOG.md                              | `$SYNTEK_DIR/examples/setup/CHANGELOG-TEMPLATE.md` |
+| CLAUDE.md                                 | `$SYNTEK_DIR/examples/setup/CLAUDE-MD-TEMPLATE.md` |
 
 ### Files to Create
 
@@ -390,7 +390,7 @@ Create the following root-level files using templates from the example files:
 | `.gitmodules`    | Git submodule definitions                              | When using submodules                           |
 | `.githooks/`     | Custom Git hooks directory                             | When using custom hooks (alternative to .husky) |
 
-See `examples/setup/GITIGNORE.md` for `.gitattributes` template.
+See `$SYNTEK_DIR/examples/setup/GITIGNORE.md` for `.gitattributes` template.
 
 #### GitHub/GitLab Configuration
 
@@ -465,7 +465,7 @@ docker-compose -f docker-compose.yml -f docker-compose.production.yml up -d
 | `.vscode/extensions.json` | Recommended extensions        | Team projects        |
 | `.idea/`                  | JetBrains IDE settings        | (Usually gitignored) |
 
-See `examples/setup/EDITOR-CONFIG.md` for `.editorconfig` and `.prettierrc` templates.
+See `$SYNTEK_DIR/examples/setup/EDITOR-CONFIG.md` for `.editorconfig` and `.prettierrc` templates.
 
 #### Node.js/JavaScript Configuration
 
@@ -493,7 +493,7 @@ See `examples/setup/EDITOR-CONFIG.md` for `.editorconfig` and `.prettierrc` temp
 | `.lintstagedrc`                                   | Lint-staged configuration  | Projects using lint-staged       |
 | `.commitlintrc`                                   | Commit message linting     | Conventional commits             |
 
-See `examples/setup/EDITOR-CONFIG.md` for `.nvmrc`, `.prettierrc`, and linting config templates.
+See `$SYNTEK_DIR/examples/setup/EDITOR-CONFIG.md` for `.nvmrc`, `.prettierrc`, and linting config templates.
 
 #### Python Configuration
 
@@ -510,7 +510,7 @@ See `examples/setup/EDITOR-CONFIG.md` for `.nvmrc`, `.prettierrc`, and linting c
 | `setup.cfg`                     | Legacy Python config        | Older Python projects |
 | `.bandit`                       | Security linting            | Python security       |
 
-See `examples/setup/EDITOR-CONFIG.md` for Python linting configuration templates.
+See `$SYNTEK_DIR/examples/setup/EDITOR-CONFIG.md` for Python linting configuration templates.
 
 #### PHP/Laravel Configuration
 
@@ -596,7 +596,7 @@ See `examples/setup/EDITOR-CONFIG.md` for Python linting configuration templates
 
 #### Stack-Specific Recommendations
 
-See `examples/setup/EDITOR-CONFIG.md` for stack-specific configuration file lists:
+See `$SYNTEK_DIR/examples/setup/EDITOR-CONFIG.md` for stack-specific configuration file lists:
 - Node.js/TypeScript projects
 - Python/Django projects
 - PHP/Laravel projects
@@ -604,7 +604,7 @@ See `examples/setup/EDITOR-CONFIG.md` for stack-specific configuration file list
 
 ### Shell Scripts
 
-For shell script templates (dev.sh, staging.sh, production.sh, test.sh), see `examples/setup/SHELL-SCRIPTS.md`.
+For shell script templates (dev.sh, staging.sh, production.sh, test.sh), see `$SYNTEK_DIR/examples/setup/SHELL-SCRIPTS.md`.
 
 ## Environment-Specific Command Files
 
@@ -621,7 +621,7 @@ For shell script templates (dev.sh, staging.sh, production.sh, test.sh), see `ex
 
 ### DDEV Custom Commands
 
-For DDEV projects, create custom commands in `.ddev/commands/`. See `examples/setup/SHELL-SCRIPTS.md` for complete DDEV command templates including:
+For DDEV projects, create custom commands in `.ddev/commands/`. See `$SYNTEK_DIR/examples/setup/SHELL-SCRIPTS.md` for complete DDEV command templates including:
 - `.ddev/commands/host/dev`
 - `.ddev/commands/host/test`
 - `.ddev/commands/host/staging`
@@ -629,7 +629,7 @@ For DDEV projects, create custom commands in `.ddev/commands/`. See `examples/se
 
 ### Docker Custom Commands
 
-For Docker projects, the root-level shell scripts handle environment management. See `examples/setup/SHELL-SCRIPTS.md` for Docker Compose environment selection examples.
+For Docker projects, the root-level shell scripts handle environment management. See `$SYNTEK_DIR/examples/setup/SHELL-SCRIPTS.md` for Docker Compose environment selection examples.
 
 ### Command File Permissions
 
@@ -643,7 +643,7 @@ chmod +x .ddev/commands/web/*
 
 ## Step 3: Create Environment Files
 
-For environment file templates (.env.dev.example, .env.staging.example, .env.production.example, .env.test.example), see `examples/setup/ENV-FILES.md`.
+For environment file templates (.env.dev.example, .env.staging.example, .env.production.example, .env.test.example), see `$SYNTEK_DIR/examples/setup/ENV-FILES.md`.
 
 Key environment file requirements:
 - Separate database per environment (e.g., `project_dev`, `project_staging`, `project_production`)
@@ -685,7 +685,7 @@ cp .env.production.example .env.production
 
 ## Step 4: Create .claude/ Directory
 
-For CLAUDE.md template, see `examples/setup/CLAUDE-MD-TEMPLATE.md`.
+For CLAUDE.md template, see `$SYNTEK_DIR/examples/setup/CLAUDE-MD-TEMPLATE.md`.
 
 ### Create .claude/commands/ Directory
 ```bash
@@ -718,7 +718,7 @@ docs/
 
 **CRITICAL:** Every significant folder in the project MUST have a `README.md` that explains what that section does and provides a tree layout of its contents.
 
-For the complete template with examples, see `./examples/setup/SECTION-README-TEMPLATE.md`
+For the complete template with examples, see `$SYNTEK_DIR/examples/setup/SECTION-README-TEMPLATE.md`
 
 ### When to Create Section READMEs
 
@@ -1020,30 +1020,30 @@ docker run -p 3000:3000 [project-name]
 
 ```bash
 # Copy all required reference documents to the project's .claude folder
-cp ./examples/setup/CODING-PRINCIPLES.md .claude/CODING-PRINCIPLES.md
-cp ./examples/setup/TESTING.md .claude/TESTING.md
-cp ./examples/setup/SECURITY.md .claude/SECURITY.md
-cp ./examples/setup/ACCESSIBILITY.md .claude/ACCESSIBILITY.md
-cp ./examples/setup/API-DESIGN.md .claude/API-DESIGN.md
-cp ./examples/setup/ARCHITECTURE-PATTERNS.md .claude/ARCHITECTURE-PATTERNS.md
-cp ./examples/setup/DATA-STRUCTURES.md .claude/DATA-STRUCTURES.md
-cp ./examples/setup/PERFORMANCE.md .claude/PERFORMANCE.md
-cp ./examples/setup/DEVELOPMENT.md .claude/DEVELOPMENT.md
-cp ./examples/setup/SEO-CHECKLIST.md .claude/SEO-CHECKLIST.md
+cp $SYNTEK_DIR/examples/setup/CODING-PRINCIPLES.md .claude/CODING-PRINCIPLES.md
+cp $SYNTEK_DIR/examples/setup/TESTING.md .claude/TESTING.md
+cp $SYNTEK_DIR/examples/setup/SECURITY.md .claude/SECURITY.md
+cp $SYNTEK_DIR/examples/setup/ACCESSIBILITY.md .claude/ACCESSIBILITY.md
+cp $SYNTEK_DIR/examples/setup/API-DESIGN.md .claude/API-DESIGN.md
+cp $SYNTEK_DIR/examples/setup/ARCHITECTURE-PATTERNS.md .claude/ARCHITECTURE-PATTERNS.md
+cp $SYNTEK_DIR/examples/setup/DATA-STRUCTURES.md .claude/DATA-STRUCTURES.md
+cp $SYNTEK_DIR/examples/setup/PERFORMANCE.md .claude/PERFORMANCE.md
+cp $SYNTEK_DIR/examples/setup/DEVELOPMENT.md .claude/DEVELOPMENT.md
+cp $SYNTEK_DIR/examples/setup/SEO-CHECKLIST.md .claude/SEO-CHECKLIST.md
 
 # Copy the guide template to the project's .claude folder
-cp ./examples/setup/SYNTEK-GUIDE-TEMPLATE.md .claude/SYNTEK-GUIDE.md
+cp $SYNTEK_DIR/examples/setup/SYNTEK-GUIDE-TEMPLATE.md .claude/SYNTEK-GUIDE.md
 ```
 
 These reference documents are read by agents when working in this project. All ten files MUST be present in `.claude/` for agents to function correctly.
 
-For additional container configuration examples, see `examples/setup/ENV-FILES.md` and `examples/cicd/DOCKER.md`.
+For additional container configuration examples, see `$SYNTEK_DIR/examples/setup/ENV-FILES.md` and `$SYNTEK_DIR/examples/cicd/DOCKER.md`.
 
 # 8. ENVIRONMENT-SPECIFIC SETTINGS FILES
 
 **CRITICAL:** All projects MUST have environment-specific settings files. See `CLAUDE.md` for full requirements.
 
-For environment-specific settings structure (Python/Django, PHP/Laravel, Node.js/TypeScript), see `examples/setup/ENV-FILES.md`.
+For environment-specific settings structure (Python/Django, PHP/Laravel, Node.js/TypeScript), see `$SYNTEK_DIR/examples/setup/ENV-FILES.md`.
 
 Key directory structures:
 - Python/Django: `config/settings/` with environment-specific modules
@@ -1051,13 +1051,13 @@ Key directory structures:
 - Node.js/TypeScript: `config/` with environment-specific exports
 - React Native/Expo: `config/` with expo-constants integration
 
-See `examples/setup/ENV-FILES.md` for complete config loader examples.
+See `$SYNTEK_DIR/examples/setup/ENV-FILES.md` for complete config loader examples.
 
 # 9. CHANGELOG SYSTEM
 
 **CRITICAL:** Every project MUST have a changelog. Create `CHANGELOG.md` in the root directory.
 
-For CHANGELOG.md template, see `examples/setup/CHANGELOG-TEMPLATE.md`.
+For CHANGELOG.md template, see `$SYNTEK_DIR/examples/setup/CHANGELOG-TEMPLATE.md`.
 
 ## Changelog Update Rules
 1. Update changelog BEFORE merging to main/staging
@@ -1074,7 +1074,7 @@ For CHANGELOG.md template, see `examples/setup/CHANGELOG-TEMPLATE.md`.
 - `.env.test.example` - Test environment template
 - `.env.test` - Local test environment (gitignored)
 
-For `.env.test.example` template, see `examples/setup/ENV-FILES.md`.
+For `.env.test.example` template, see `$SYNTEK_DIR/examples/setup/ENV-FILES.md`.
 
 # 11. ENVIRONMENT FILE ACCESS
 

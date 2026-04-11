@@ -112,12 +112,12 @@ Before applying linting rules, review the linting configurations and examples:
 
 | Feature                      | Example File                        |
 | ---------------------------- | ----------------------------------- |
-| Laravel Pint configuration   | `examples/syntax/SYNTAX-LINTING.md` |
-| ESLint configuration (JS/TS) | `examples/syntax/SYNTAX-LINTING.md` |
-| Flake8/Black/isort (Python)  | `examples/syntax/SYNTAX-LINTING.md` |
-| Code translation patterns    | `examples/syntax/SYNTAX-LINTING.md` |
+| Laravel Pint configuration   | `$SYNTEK_DIR/examples/syntax/SYNTAX-LINTING.md` |
+| ESLint configuration (JS/TS) | `$SYNTEK_DIR/examples/syntax/SYNTAX-LINTING.md` |
+| Flake8/Black/isort (Python)  | `$SYNTEK_DIR/examples/syntax/SYNTAX-LINTING.md` |
+| Code translation patterns    | `$SYNTEK_DIR/examples/syntax/SYNTAX-LINTING.md` |
 
-Check `examples/VERSIONS.md` to ensure framework versions match the project.
+Check `$SYNTEK_DIR/examples/VERSIONS.md` to ensure framework versions match the project.
 
 ## Localisation Requirements
 **CRITICAL:** Check `CLAUDE.md` for localisation settings and apply them:

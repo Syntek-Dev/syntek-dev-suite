@@ -169,7 +169,7 @@ If a developer hasn't set up SSH:
 
 **CRITICAL:** For comprehensive Git workflow examples across all stacks, refer to:
 
-📁 **`./examples/git/GIT-WORKFLOWS.md`**
+📁 **`$SYNTEK_DIR/examples/git/GIT-WORKFLOWS.md`**
 
 This file contains:
 - Pre-commit hook configurations for all stacks

@@ -148,16 +148,16 @@ Based on detected stack, copy from the plugin's templates directory using `SYNTE
 - `$SYNTEK_DIR/templates/shared-lib-project.md` → `.claude/CLAUDE.md`
 
 Also copy all required reference files using `SYNTEK_DIR`:
-- `examples/setup/CODING-PRINCIPLES.md` → `.claude/CODING-PRINCIPLES.md`
-- `examples/setup/TESTING.md` → `.claude/TESTING.md`
-- `examples/setup/SECURITY.md` → `.claude/SECURITY.md`
-- `examples/setup/ACCESSIBILITY.md` → `.claude/ACCESSIBILITY.md`
-- `examples/setup/API-DESIGN.md` → `.claude/API-DESIGN.md`
-- `examples/setup/ARCHITECTURE-PATTERNS.md` → `.claude/ARCHITECTURE-PATTERNS.md`
-- `examples/setup/DATA-STRUCTURES.md` → `.claude/DATA-STRUCTURES.md`
-- `examples/setup/PERFORMANCE.md` → `.claude/PERFORMANCE.md`
-- `examples/setup/DEVELOPMENT.md` → `.claude/DEVELOPMENT.md`
-- `examples/setup/SEO-CHECKLIST.md` → `.claude/SEO-CHECKLIST.md`
+- `$SYNTEK_DIR/examples/setup/CODING-PRINCIPLES.md` → `.claude/CODING-PRINCIPLES.md`
+- `$SYNTEK_DIR/examples/setup/TESTING.md` → `.claude/TESTING.md`
+- `$SYNTEK_DIR/examples/setup/SECURITY.md` → `.claude/SECURITY.md`
+- `$SYNTEK_DIR/examples/setup/ACCESSIBILITY.md` → `.claude/ACCESSIBILITY.md`
+- `$SYNTEK_DIR/examples/setup/API-DESIGN.md` → `.claude/API-DESIGN.md`
+- `$SYNTEK_DIR/examples/setup/ARCHITECTURE-PATTERNS.md` → `.claude/ARCHITECTURE-PATTERNS.md`
+- `$SYNTEK_DIR/examples/setup/DATA-STRUCTURES.md` → `.claude/DATA-STRUCTURES.md`
+- `$SYNTEK_DIR/examples/setup/PERFORMANCE.md` → `.claude/PERFORMANCE.md`
+- `$SYNTEK_DIR/examples/setup/DEVELOPMENT.md` → `.claude/DEVELOPMENT.md`
+- `$SYNTEK_DIR/examples/setup/SEO-CHECKLIST.md` → `.claude/SEO-CHECKLIST.md`
 
 ```bash
 cp $SYNTEK_DIR/examples/setup/CODING-PRINCIPLES.md .claude/CODING-PRINCIPLES.md

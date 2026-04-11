@@ -374,7 +374,7 @@ Do NOT create READMEs for:
 
 ## Section README Template
 
-For the complete template with examples, see `./examples/setup/SECTION-README-TEMPLATE.md`
+For the complete template with examples, see `$SYNTEK_DIR/examples/setup/SECTION-README-TEMPLATE.md`
 
 Every Section README MUST follow this structure:
 

@@ -108,12 +108,12 @@ Before performing QA analysis, review the testing patterns and examples:
 
 | Feature                     | Example File                       |
 | --------------------------- | ---------------------------------- |
-| Functional testing examples | `examples/qa-tester/QA-TESTING.md` |
-| API testing patterns        | `examples/qa-tester/QA-TESTING.md` |
-| Security testing examples   | `examples/qa-tester/QA-TESTING.md` |
-| Accessibility testing       | `examples/qa-tester/QA-TESTING.md` |
+| Functional testing examples | `$SYNTEK_DIR/examples/qa-tester/QA-TESTING.md` |
+| API testing patterns        | `$SYNTEK_DIR/examples/qa-tester/QA-TESTING.md` |
+| Security testing examples   | `$SYNTEK_DIR/examples/qa-tester/QA-TESTING.md` |
+| Accessibility testing       | `$SYNTEK_DIR/examples/qa-tester/QA-TESTING.md` |
 
-Check `examples/VERSIONS.md` to ensure framework versions match the project.
+Check `$SYNTEK_DIR/examples/VERSIONS.md` to ensure framework versions match the project.
 
 ## Localisation Requirements
 **CRITICAL:** Check `CLAUDE.md` for localisation settings and apply them to all QA reports:

@@ -57,6 +57,41 @@
 
 ---
 
+## 0. Plugin Directory Discovery
+
+**Every agent must complete this step before referencing any plugin file** — example files, templates, or any path under the syntek-dev-suite installation.
+
+The plugin may be installed at any path (local clone, SSH mount, `~/.claude/plugins/`, or a custom location). Never assume a fixed path.
+
+### Locating SYNTEK_DIR
+
+Search for `plugins/project-tool.py` using the Glob tool in this order:
+
+1. `~/.claude/plugins/syntek-dev-suite/plugins/project-tool.py`
+2. `~/.claude/plugins/**/plugins/project-tool.py`
+3. `~/Repos/**/syntek-dev-suite/plugins/project-tool.py`
+4. `~/**/syntek-dev-suite/plugins/project-tool.py`
+
+Once found, derive `SYNTEK_DIR` as the directory **two levels above** `project-tool.py` — that is, the syntek-dev-suite root containing `plugins/`, `examples/`, `templates/`, and `config.json`.
+
+Use `$SYNTEK_DIR` as the base for all plugin file references throughout the agent's work:
+
+```
+$SYNTEK_DIR/examples/authentication/PASSWORD-VALIDATION.md
+$SYNTEK_DIR/examples/setup/CODING-PRINCIPLES.md
+$SYNTEK_DIR/templates/tall-project.md
+```
+
+If the plugin cannot be found at any of those locations, ask the user:
+
+```
+Could not locate the syntek-dev-suite plugin directory.
+Please confirm the plugin is installed and provide the path, or run:
+  find ~ -name "project-tool.py" -path "*/syntek-dev-suite/*" 2>/dev/null
+```
+
+---
+
 ## 1. Localisation
 
 | Setting         | Value                                                 |

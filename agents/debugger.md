@@ -168,7 +168,7 @@ Follow a systematic approach:
 
 **CRITICAL:** For comprehensive debugging examples across all stacks, refer to:
 
-📁 **`./examples/debugger/DEBUGGING.md`**
+📁 **`$SYNTEK_DIR/examples/debugger/DEBUGGING.md`**
 
 This file contains:
 - Stack-specific debugging techniques (Laravel, Django, React, Node.js)

@@ -131,12 +131,12 @@ Before implementing GDPR features, refer to the example templates:
 
 | Feature                           | Example File                       |
 | --------------------------------- | ---------------------------------- |
-| PII encryption and hashing        | `examples/gdpr/PII-STORAGE.md`     |
-| Data export (DSAR)                | `examples/gdpr/DATA-EXPORT.md`     |
-| Anonymisation and cookie consent  | `examples/gdpr/ANONYMISATION.md`   |
-| Privacy Policy and T&Cs templates | `examples/gdpr/LEGAL-TEMPLATES.md` |
+| PII encryption and hashing        | `$SYNTEK_DIR/examples/gdpr/PII-STORAGE.md`     |
+| Data export (DSAR)                | `$SYNTEK_DIR/examples/gdpr/DATA-EXPORT.md`     |
+| Anonymisation and cookie consent  | `$SYNTEK_DIR/examples/gdpr/ANONYMISATION.md`   |
+| Privacy Policy and T&Cs templates | `$SYNTEK_DIR/examples/gdpr/LEGAL-TEMPLATES.md` |
 
-Check `examples/VERSIONS.md` to ensure framework versions match the project.
+Check `$SYNTEK_DIR/examples/VERSIONS.md` to ensure framework versions match the project.
 
 ---
 
@@ -243,16 +243,16 @@ Use WebSearch to check for latest secure versions of frameworks:
 - Search "[framework] security vulnerabilities 2025"
 
 #### 3. Compare and Adapt
-Compare project versions with example versions in `examples/VERSIONS.md` and adapt code accordingly.
+Compare project versions with example versions in `$SYNTEK_DIR/examples/VERSIONS.md` and adapt code accordingly.
 
 ### PII Example Files
 
 | Pattern               | Example File                                    |
 | --------------------- | ----------------------------------------------- |
-| PII Storage Service   | `examples/gdpr/PII-STORAGE.md`                  |
-| PII Table Design      | `examples/database/pii/TABLE-DESIGN.md`         |
-| Middleware/Guards     | `examples/backend/pii/MIDDLEWARE-GUARDS.md`     |
-| Response Transformers | `examples/backend/pii/RESPONSE-TRANSFORMERS.md` |
+| PII Storage Service   | `$SYNTEK_DIR/examples/gdpr/PII-STORAGE.md`                  |
+| PII Table Design      | `$SYNTEK_DIR/examples/database/pii/TABLE-DESIGN.md`         |
+| Middleware/Guards     | `$SYNTEK_DIR/examples/backend/pii/MIDDLEWARE-GUARDS.md`     |
+| Response Transformers | `$SYNTEK_DIR/examples/backend/pii/RESPONSE-TRANSFORMERS.md` |
 
 ### What Constitutes PII
 | Data Type         | Protection Required                   | Method                               |
@@ -295,7 +295,7 @@ Use ENCRYPTION (reversible) when:
 **CRITICAL:** Both the Privacy Policy and Terms & Conditions MUST be stored as `.md` files for client review, with HTML pages rendering from these source files.
 
 For complete Privacy Policy, Terms & Conditions templates, cookie consent components, and client review workflows, see:
-📁 **`examples/gdpr/LEGAL-TEMPLATES.md`**
+📁 **`$SYNTEK_DIR/examples/gdpr/LEGAL-TEMPLATES.md`**
 
 This includes:
 - Privacy Policy markdown template

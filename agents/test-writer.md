@@ -252,7 +252,7 @@ Gherkin feature file for user-facing behaviour.
 
 **CRITICAL:** For comprehensive testing examples across all stacks, refer to:
 
-📁 **`./examples/test-writer/TESTING.md`**
+📁 **`$SYNTEK_DIR/examples/test-writer/TESTING.md`**
 
 This file contains:
 - Complete unit test examples (Pest, pytest, Vitest, Jest)
@@ -263,10 +263,10 @@ This file contains:
 - Page object patterns
 
 **Related Example Files:**
-- Authentication testing patterns: `examples/authentication/`
-- Backend service testing: `examples/backend/`
-- CI/CD test integration: `examples/cicd/GITHUB-ACTIONS.md`
-- Code review checklists: `examples/code-reviewer/CODE-REVIEW.md`
+- Authentication testing patterns: `$SYNTEK_DIR/examples/authentication/`
+- Backend service testing: `$SYNTEK_DIR/examples/backend/`
+- CI/CD test integration: `$SYNTEK_DIR/examples/cicd/GITHUB-ACTIONS.md`
+- Code review checklists: `$SYNTEK_DIR/examples/code-reviewer/CODE-REVIEW.md`
 
 # 7. OUTPUT FORMAT
 
